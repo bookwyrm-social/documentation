@@ -20,8 +20,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-LINKS = (('Code', 'https://github.com/mouse-reeve/bookwyrm'),
-        ('Donate', 'https://www.patreon.com/bookwyrm'),)
+LINKS = (('Code', 'https://github.com/mouse-reeve/bookwyrm', ''),
+        ('♥ Donate', 'https://www.patreon.com/bookwyrm', 'button'),)
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),

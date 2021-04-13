@@ -48,9 +48,9 @@
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
         <ul class="navbar-end">
-            {% for link, href in LINKS %}
+            {% for link, href, class in LINKS %}
             <li class="navbar-item">
-                <a href="{{ href }}" class="navbar-item">
+                <a href="{{ href }}" class="navbar-item {{ class }}">
                     {{ link }}
                 </a>
             </li>
