@@ -1,28 +1,18 @@
 {% extends "base.html" %}
-{% block content %}
-<section id="content">
-{% block content_title %}
-<h2>BookWyrm Documentation</h2>
+{% block page_header %}
+<header>
+    <h1 class="entry-title">{{ SITENAME }}</h1>
+</header>
 {% endblock %}
 
-<ol id="post-list">
-{% for article in articles_page.object_list %}
-    <li><article class="hentry">
-        <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-        <footer class="post-info">
-            <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-            <address class="vcard author">By
-            {% for author in article.authors %}
-            <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-            {% endfor %}
-            </address>
-        </footer><!-- /.post-info -->
-        <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-    </article></li>
+{% block content %}
+{% for page in pages %}
+<section class="content block">
+    <h2>{{ page.title }}</h2>
+    <div>
+    {{ page.content }}
+    </div>
+</section>
 {% endfor %}
-</ol><!-- /#posts-list -->
-{% if articles_page.has_other_pages() %}
-    {% include 'pagination.html' %}
-{% endif %}
-</section><!-- /#content -->
+
 {% endblock content %}
