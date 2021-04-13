@@ -1,4 +1,4 @@
-title: Contributing
+Title: Contributing
 Date: 2021-04-12
 Category: General
 

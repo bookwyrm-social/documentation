@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<head>
+    {% block head %}
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+    {% endif %}
+    {% if FEED_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    {% if FEED_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+    {% if CATEGORY_FEED_ATOM and category %}
+    <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+    {% endif %}
+    {% if CATEGORY_FEED_RSS and category %}
+    <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+    {% endif %}
+    {% if TAG_FEED_ATOM and tag %}
+    <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+    {% endif %}
+    {% if TAG_FEED_RSS and tag %}
+    <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bulma.min.css" />
+    {% endblock head %}
+</head>
+
+<body id="index" class="home">
+
+<nav class="navbar has-background-white-ter" role="navigation" aria-label="main navigation" id="banner">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo-small.png">
+        </a>
+        <span class="navbar-item">
+            {{ SITENAME }}
+        </span>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+        <ul class="navbar-end">
+            {% for link, href in LINKS %}
+            <li class="navbar-item">
+                <a href="{{ href }}" class="navbar-item">
+                    {{ link }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    </div>
+</nav>
+
+<div class="container">
+
+<div class="columns section">
+    <nav class="menu column is-one-quarter">
+        {% for category, null in categories|sort %}
+        <h2 class="menu-label">{{ category }}</h2>
+        <ul class="menu-list">
+            {% for a in articles %}
+            {% if a.category == category %}
+            <li><a class="{% if a == article %}is-active{% endif %}" href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </nav>
+
+    <div class="column">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+<footer id="contentinfo" class="body">
+    <address id="about" class="vcard body">
+    </address><!-- /#about -->
+</footer><!-- /#contentinfo -->
+
+</div>
+</body>
+</html>

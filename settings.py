@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-AUTHOR = 'Mouse Reeve'
 SITENAME = 'BookWyrm Documentation'
 SITEURL = ''
 
 PATH = 'content'
+THEME = 'theme'
+THEME_STATIC_DIR = 'static'
+THEME_STATIC_PATHS = ['static', 'images']
 
 TIMEZONE = 'US/Pacific'
 
@@ -18,7 +20,6 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
 LINKS = (('GitHub', 'https://github.com/mouse-reeve/bookwyrm'),
         ('Patreon', 'https://www.patreon.com/bookwyrm'),)
 
