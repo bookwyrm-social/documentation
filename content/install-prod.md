@@ -2,17 +2,15 @@ Title: Installing in Production
 Date: 2021-04-12
 Category: Administration
 
-## Installing in Production
-
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
 
-### Server setup
+## Server setup
 - Get a domain name and set up DNS for your server
 - Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04)
 - Set up an email service (such as mailgun) and the appropriate SMTP/DNS settings
 - Install Docker and docker-compose
 
-### Install and configure BookWyrm
+## Install and configure BookWyrm
 
 The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
 
@@ -52,7 +50,7 @@ Instructions for running BookWyrm in production:
 
 Congrats! You did it, go to your domain and enjoy the fruits of your labors.
 
-### Configure your instance
+## Configure your instance
 - Register a user account in the application UI
 - Make your account a superuser (warning: do *not* use django's `createsuperuser` command)
     - On your server, open the django shell
@@ -67,7 +65,7 @@ Congrats! You did it, go to your domain and enjoy the fruits of your labors.
     ```
     - Go to the site settings (`/settings/site-settings` on your domain) and configure your instance name, description, code of conduct, and toggle whether registration is open on your instance
 
-### Backups
+## Backups
 
 BookWyrm's db service dumps a backup copy of its database to its `/backups` directory daily at midnight UTC.
 Backups are named `backup__%Y-%m-%d.sql`.
@@ -81,7 +79,7 @@ You can copy backups from the backups volume to your host machine with `docker c
 - Run `docker-compose ps` to confirm the db service's full name (it's probably `bookwyrm_db_1`.
 - Run `docker cp <container_name>:/backups <host machine path>`
 
-### Updating your instance
+## Updating your instance
 
 When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. This does a number of things:
 - `git pull` gets the updated code from the git repository. If there are conflicts, you may need to run `git pull` separately and resolve the conflicts before trying the `./bw-dev update` script again.
@@ -90,12 +88,12 @@ When there are changes available in the production branch, you can install and g
 - `docker-compose exec web python manage.py collectstatic --no-input` loads any updated static files (such as the JavaScript and CSS)
 - `docker-compose restart` reloads the docker containers
 
-### Re-building activity streams
+## Re-building activity streams
 
 If something goes awry with user timelines, and you want to re-create them en mass, there's a management command for that:
 `docker-compose run --rm web python manage.py rebuild_feeds`
 
-### Port Conflicts
+## Port Conflicts
 
 BookWyrm has multiple services that run on their default ports.
 This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.
@@ -114,7 +112,7 @@ E.g., If you need Redis to run on a different port:
 
 If you are already running a web-server on your machine, you will need to set up a reverse-proxy.
 
-#### Running BookWyrm Behind a Reverse-Proxy
+### Running BookWyrm Behind a Reverse-Proxy
 
 If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.
 
@@ -136,7 +134,7 @@ Once docker is running, you can access your BookWyrm instance at `http://localho
 
 Steps for setting up a reverse-proxy are server dependent.
 
-##### Nginx
+#### Nginx
 
 Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx.
 See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.

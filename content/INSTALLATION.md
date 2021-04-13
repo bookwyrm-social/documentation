@@ -2,9 +2,6 @@ Title: Developer Environment
 Date: 2021-04-12
 Category: Administration
 
-# Installation instructions
-
-
 ## Setting up the developer environment
 
 Set up the development environment file:
