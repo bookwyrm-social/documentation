@@ -30,6 +30,7 @@ Before you can set up nginx, you will need to locate your nginx configuration di
 See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
 
 To set up your server:
+
 - In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
 - In your nginx `servers` directory, create a new file named after your domain containing the following information:
 ```

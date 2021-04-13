@@ -72,10 +72,12 @@ Backups are named `backup__%Y-%m-%d.sql`.
 
 The db service has an optional script for periodically pruning the backups directory so that all recent daily backups are kept, but for older backups, only weekly or monthly backups are kept.
 To enable this script:
+
 - Uncomment the final line in `postgres-docker/cronfile`
 - rebuild your instance `docker-compose up --build`
 
 You can copy backups from the backups volume to your host machine with `docker cp`:
+
 - Run `docker-compose ps` to confirm the db service's full name (it's probably `bookwyrm_db_1`.
 - Run `docker cp <container_name>:/backups <host machine path>`
 
@@ -86,11 +88,13 @@ This means that, depending on what else you are running on your host machine, yo
 
 If this occurs, you will need to change your configuration to run services on different ports.
 This may require one or more changes the following files:
+
 - `docker-compose.yml`
 - `nginx/default.conf`
 - `.env` (You create this file yourself during setup)
 
 E.g., If you need Redis to run on a different port:
+
 - In `docker-compose.yml`:
     - In `services` -> `redis` -> `command`, add `--port YOUR_PORT` to the command
     - In `services` -> `redis` -> `ports`, change `6379:6379` to your port
