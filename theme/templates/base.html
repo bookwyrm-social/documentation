@@ -61,29 +61,29 @@
 
 <div class="container">
 
-<div class="content block column is-offset-one-quarter">
-    {% block page_header %}{% endblock %}
-</div>
-
-<div class="columns block mb-6">
-    <nav class="menu column is-one-quarter">
-        <h2 class="menu-label"><a href="/">Welcome</a></h2>
-        {% for category, null in categories|sort %}
-        <h2 class="menu-label">{{ category }}</h2>
-        <ul class="menu-list">
-            {% for a in articles %}
-            {% if a.category == category %}
-            <li><a class="{% if a == article %}is-active{% endif %}" href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}</a></li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endfor %}
-    </nav>
-    <div class="column">
-        {% block content %}
-        {% endblock %}
+    <div class="content block column is-offset-one-quarter pl-2">
+        {% block page_header %}{% endblock %}
     </div>
-</div>
+
+    <div class="columns block mb-6">
+        <nav class="menu column is-one-quarter">
+            <h2 class="menu-label"><a href="/">Welcome</a></h2>
+            {% for category, null in categories|sort %}
+            <h2 class="menu-label">{{ category }}</h2>
+            <ul class="menu-list">
+                {% for a in articles %}
+                {% if a.category == category %}
+                <li><a class="{% if a == article %}is-active{% endif %}" href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </nav>
+        <div class="column">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
 
 </div>
 
