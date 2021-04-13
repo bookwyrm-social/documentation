@@ -1,6 +1,6 @@
 Title: Instances
 Date: 2021-04-12
-Category: Using BookWyrm
+Order: 1
 
 | Name | URL | Admin contact | Open registration? |
 | :--- | :-- | :------------ | :---------------- |

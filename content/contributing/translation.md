@@ -1,5 +1,6 @@
 Title: Translations
 Date: 2021-04-13
+Order: 3
 
 ## Working with translations and locale files
 Text in the html files are wrapped in translation tags (`{% trans %}` and `{% blocktrans %}`), and Django generates locale files for all the strings in which you can add translations for the text. You can find existing translations in the `locale/` directory.
