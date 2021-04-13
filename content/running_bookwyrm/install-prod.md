@@ -55,15 +55,17 @@ Congrats! You did it, go to your domain and enjoy the fruits of your labors.
 - Make your account a superuser (warning: do *not* use django's `createsuperuser` command)
     - On your server, open the django shell
     `./bw-dev shell`
-    - Load your user and make it a superuser
-    ```python
-    from bookwyrm import models
-    user = models.User.objects.get(id=1)
-    user.is_staff = True
-    user.is_superuser = True
-    user.save()
-    ```
-    - Go to the site settings (`/settings/site-settings` on your domain) and configure your instance name, description, code of conduct, and toggle whether registration is open on your instance
+    - Load your user and make it a superuser:
+```
+:::python linenums=False
+from bookwyrm import models
+user = models.User.objects.get(id=1)
+user.is_staff = True
+user.is_superuser = True
+user.save()
+```
+
+- Go to the site settings (`/settings/site-settings` on your domain) and configure your instance name, description, code of conduct, and toggle whether registration is open on your instance
 
 ## Backups
 
