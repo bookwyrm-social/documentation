@@ -1,6 +1,5 @@
-Title: Contributing
+Title: How to Contribute
 Date: 2021-04-12
-Category: General
 
 There are many ways you can contribute to this project, regardless of your level of technical expertise.
 

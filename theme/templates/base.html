@@ -29,6 +29,7 @@
     {% if TAG_FEED_RSS and tag %}
     <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygment.css" />
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bulma.min.css" />
     {% endblock head %}
 </head>
@@ -69,7 +70,7 @@
         <nav class="menu column is-one-quarter">
             <h2 class="menu-label"><a href="/">Welcome</a></h2>
             {% for category, null in categories|sort %}
-            <h2 class="menu-label">{{ category }}</h2>
+            <h2 class="menu-label">{{ category|replace('_', ' ') }}</h2>
             <ul class="menu-list">
                 {% for a in articles %}
                 {% if a.category == category %}

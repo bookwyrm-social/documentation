@@ -1,6 +1,5 @@
 Title: Installing in Production
 Date: 2021-04-12
-Category: Administration
 
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
 
@@ -142,32 +141,33 @@ See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
 To set up your server:
 - In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
 - In your nginx `servers` directory, create a new file named after your domain containing the following information:
-    ```nginx
-    server {
-        server_name your-domain.com www.your-domain.com;
+```
+:::nginx linenums=false
+server {
+    server_name your-domain.com www.your-domain.com;
 
-        location / {
-            proxy_pass http://localhost:8000;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header Host $host;
-        }
-
-        location /images/ {
-            proxy_pass http://localhost:8001;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header Host $host;
-        }
-
-        location /static/ {
-            proxy_pass http://localhost:8001;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header Host $host;
-        }
-
-        listen [::]:80 ssl;
-        listen 80 ssl;
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
     }
-    ```
+
+    location /images/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /static/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    listen [::]:80 ssl;
+    listen 80 ssl;
+}
+```
 - run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
 - restart nginx
 
