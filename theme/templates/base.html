@@ -61,7 +61,11 @@
 
 <div class="container">
 
-<div class="columns section">
+<div class="content block column is-offset-one-quarter">
+    {% block page_header %}{% endblock %}
+</div>
+
+<div class="columns block mb-6">
     <nav class="menu column is-one-quarter">
         {% for category, null in categories|sort %}
         <h2 class="menu-label">{{ category }}</h2>
@@ -74,12 +78,12 @@
         </ul>
         {% endfor %}
     </nav>
-
     <div class="column">
         {% block content %}
         {% endblock %}
     </div>
 </div>
+
 </div>
 
 <footer id="contentinfo" class="footer">

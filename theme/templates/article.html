@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
 
-{% block title %}{{ SITENAME }} - {{ article.title|striptags  }}{% endblock %}
+{% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
 
 {% block head %}
   {{ super() }}
@@ -21,21 +21,21 @@
 
 {% endblock %}
 
-{% block content %}
-<section id="content" class="body content">
-  <header>
-    <h2 class="entry-title">
+{% block page_header %}
+<header>
+    <h2 class="entry-title mb-0">
       {{ article.title }}</h2>
  {% import 'translations.html' as translations with context %}
  {{ translations.translations_for(article) }}
   </header>
-  <footer class="post-info">
-    <time class="published" datetime="{{ article.date.isoformat() }}">
-      {{ article.locale_date }}
-    </time>
+  <footer class="post-info help mb-3">
     {% if article.modified %}
     <time class="modified" datetime="{{ article.modified.isoformat() }}">
       {{ article.locale_modified }}
+    </time>
+    {% else %}
+    <time class="published" datetime="{{ article.date.isoformat() }}">
+      {{ article.locale_date }}
     </time>
     {% endif %}
     {% if article.authors %}
@@ -54,7 +54,11 @@
     </div>
     {% endif %}
   </footer><!-- /.post-info -->
-  <div class="entry-content">
+{% endblock %}
+
+{% block content %}
+<section id="content" class="body content">
+  <div class="entry-content block content">
     {{ article.content }}
   </div><!-- /.entry-content -->
 </section>
