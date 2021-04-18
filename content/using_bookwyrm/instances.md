@@ -6,3 +6,4 @@ Order: 1
 | :--- | :-- | :------------ | :---------------- |
 | bookwyrm.social | http://bookwyrm.social/ | mousereeve@riseup.net / [@tripofmice@friend.camp](https://friend.camp/@tripofmice) | ❌ |
 | wyrms.de | https://wyrms.de/ | wyrms@tofuwabo.hu / [@tofuwabohu@subversive.zone](https://subversive.zone/@tofuwabohu) | ❌ |
+| bookclub.techstartups.space | https://bookclub.techstartups.space/ | advait.raykar@gmail.com / [@advait@techstartups.space](https://techstartups.space/@advait) |  ✅ |
