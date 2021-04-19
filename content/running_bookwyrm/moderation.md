@@ -17,3 +17,5 @@ When a report is made, there are a few options how the moderator can respond.
 Moderators can block entire instances. This will prevent any activities from coming in from that instance, and deactivate all accounts from that instance locally.
 
 If the instance is un-blocked, all the users who were deactivated by the block will be re-activated.
+
+Moderators can also upload blocklists to block servers in bulk.
