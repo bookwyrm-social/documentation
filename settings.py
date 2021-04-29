@@ -33,3 +33,5 @@ DEFAULT_PAGINATION = False
 #RELATIVE_URLS = True
 
 PORT = 7777
+
+PLUGINS = ['plugins.add_header_links']
