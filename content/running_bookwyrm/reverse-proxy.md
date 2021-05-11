@@ -1,5 +1,5 @@
 Title: Using a Reverse-Proxy
-Date: 2021-04-13
+Date: 2021-05-11
 Order: 3
 
 ## Running BookWyrm Behind a Reverse-Proxy
@@ -65,4 +65,5 @@ server {
 
 If everything worked correctly, your BookWyrm instance should now be externally accessible.
 
+*Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
 
