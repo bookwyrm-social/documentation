@@ -37,13 +37,12 @@ Instructions for running BookWyrm in production:
         - Replace `your-domain.com` with your domain name
         - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
         - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](#running-bookwyrm-behind-a-reverse-proxy)
-- If you need to initialize your certbot for your domain, set `CERTBOT_INIT=true` in your `.env` file
 - Run the application (this should also set up a Certbot ssl cert for your domain) with
     `docker-compose up --build`, and make sure all the images build successfully
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
     See the [troubleshooting guide](#port-conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
-- If you set `CERTBOT_INIT=true` earlier, set it now as `CERTBOT_INIT=false` so that certbot runs in renew mode
+- In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
 - Run docker-compose in the background with: `docker-compose up -d`
 - Initialize the database with: `./bw-dev initdb`
 - Set up schedule backups with cron that runs that `docker-compose exec db pg_dump -U <databasename>` and saves the backup to a safe location
