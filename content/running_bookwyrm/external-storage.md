@@ -1,0 +1,116 @@
+Title: External Storage
+Date: 2021-06-07
+Order: 5
+
+By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses `django-storages` to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+
+## S3-compatible Services
+
+### Setup
+
+Create a bucket at your S3-compatible service of choice, along with an Acces Key ID and a Secret Access Key. These can be self hosted, like Ceph (LGPL 2.1/3.0) or MinIO (GNU AGPL v3.0), or commercial.
+
+This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
+
+### What awaits you
+
+If you are starting a new BookWyrm instance, the process will be:
+
+- Set up your external storage service
+- Enable external storage on BookWyrm
+- Start your BookWyrm instance
+
+If you already started your instance, and images have been uploaded to local storage, the process will be:
+
+- Set up your external storage service
+- Copy your local media to external storage
+- Enable external storage on BookWyrm
+- Restart your BookWyrm instance
+
+### BookWyrm Settings
+
+Edit your `.env` file by uncommenting the following lines:
+
+- `AWS_ACCESS_KEY_ID`: your access key ID
+- `AWS_SECRET_ACCESS_KEY`: your secret access key
+- `AWS_STORAGE_BUCKET_NAME`: your bucket name
+- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` or `"fr-par"`
+
+If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:
+
+- `AWS_S3_CUSTOM_DOMAIN`: the domain that will serve the assets, e.g. `"example-bucket-name.s3.fr-par.scw.cloud"`
+- `AWS_S3_ENDPOINT_URL`: the S3 API endpoint, e.g. `"https://s3.fr-par.scw.cloud"`
+
+### Copying local media to external storage
+
+If your BookWyrm instance is already running, and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
+
+This task is done with the command: 
+
+```bash
+./bw-dev copy_media_to_s3
+```
+
+### Enabling external storage for BookWyrm
+
+To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `False` to `True`:
+
+```
+USE_S3=True
+```
+
+#### Static assets
+
+Then, you will need to run the following command, to copy the static assets to your S3 bucket:
+
+```bash
+./bw-dev collectstatic
+```
+
+#### CORS settings
+
+Once the static assets are collected, you will need to set up CORS for your bucket.
+
+Create a file called `cors.json`, with the following content:
+
+```json
+{
+  "CORSRules": [
+    {
+      "AllowedOrigins": ["http://MY_DOMAIN_NAME", "http://www.MY_DOMAIN_NAME"],
+      "AllowedHeaders": ["*"],
+      "AllowedMethods": ["GET", "HEAD", "POST", "PUT", "DELETE"],
+      "MaxAgeSeconds": 3000,
+      "ExposeHeaders": ["Etag"]
+    }
+  ]
+}
+```
+
+Replace `MY_DOMAIN_NAME` with the domain name(s) of your instance.
+
+Then, run the following command:
+
+```bash
+./bw-dev set_cors_to_s3 cors.json
+```
+
+No output means it should be good.
+
+If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.
+
+### Restarting your instance
+
+Once the media migration has been done and the static assets are collected, you can restart your instance with:
+
+```bash
+docker compose restart
+```
+
+If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong [here](#cors-settings). In that case it might be good to check the headers of a HTTP request against a file on your bucket:
+
+```bash
+curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H "Access-Control-Request-Method: GET"
+```
+
+Replace `MY_DOMAIN_NAME` with your instance domain name, `BUCKET_URL` with the URL for your bucket, you can replace the file path with any other valid path on your bucket.
