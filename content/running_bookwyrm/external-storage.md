@@ -8,7 +8,7 @@ By default, BookWyrm uses local storage for static assets (favicon, default avat
 
 ### Setup
 
-Create a bucket at your S3-compatible service of choice, along with an Acces Key ID and a Secret Access Key. These can be self hosted, like Ceph (LGPL 2.1/3.0) or MinIO (GNU AGPL v3.0), or commercial.
+Create a bucket at your S3-compatible service of choice, along with an Acces Key ID and a Secret Access Key. These can be self hosted, like Ceph (LGPL 2.1/3.0) or MinIO (GNU AGPL v3.0), or commercial (Scaleway, Digital Ocean…).
 
 This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
 
@@ -34,12 +34,12 @@ Edit your `.env` file by uncommenting the following lines:
 - `AWS_ACCESS_KEY_ID`: your access key ID
 - `AWS_SECRET_ACCESS_KEY`: your secret access key
 - `AWS_STORAGE_BUCKET_NAME`: your bucket name
-- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` or `"fr-par"`
+- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` for AWS, `"fr-par"` for Scaleway or `"nyc3"` for Digital Ocean 
 
 If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:
 
-- `AWS_S3_CUSTOM_DOMAIN`: the domain that will serve the assets, e.g. `"example-bucket-name.s3.fr-par.scw.cloud"`
-- `AWS_S3_ENDPOINT_URL`: the S3 API endpoint, e.g. `"https://s3.fr-par.scw.cloud"`
+- `AWS_S3_CUSTOM_DOMAIN`: the domain that will serve the assets, e.g. `"example-bucket-name.s3.fr-par.scw.cloud"` or `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
+- `AWS_S3_ENDPOINT_URL`: the S3 API endpoint, e.g. `"https://s3.fr-par.scw.cloud"` or `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
 
 ### Copying local media to external storage
 
@@ -70,6 +70,10 @@ Then, you will need to run the following command, to copy the static assets to y
 #### CORS settings
 
 Once the static assets are collected, you will need to set up CORS for your bucket.
+
+Some services like Digital Ocean provide an interface to set it up, see [Digital Ocean doc: How to Configure CORS](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
+
+If your service doesn’t provide an interface, you can still set up CORS with the command line.
 
 Create a file called `cors.json`, with the following content:
 
