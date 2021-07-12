@@ -8,6 +8,8 @@ So you want to contribute code to BookWyrm: that rules! If there's an open issue
 
 If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.
 
+Pull requests have to pass all the automated checks before they can be merged - this includes an accessibility linter, python style checks, global linters, a security check, and unit tests.
+
 ## Code style
 
 BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev black`
