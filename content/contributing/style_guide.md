@@ -10,10 +10,8 @@ If you aren't sure how to fix something, or you aren't able to get around to it,
 
 Pull requests have to pass all the automated checks before they can be merged - this includes an accessibility linter, python style checks, global linters, a security check, and unit tests.
 
-## Code style
+## Linting
 
 BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev black`
-
-## Linting
 
 Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
