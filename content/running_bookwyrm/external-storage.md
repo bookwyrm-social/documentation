@@ -8,7 +8,7 @@ By default, BookWyrm uses local storage for static assets (favicon, default avat
 
 ### Setup
 
-Create a bucket at your S3-compatible service of choice, along with an Acces Key ID and a Secret Access Key. These can be self hosted, like Ceph (LGPL 2.1/3.0) or MinIO (GNU AGPL v3.0), or commercial (Scaleway, Digital Ocean…).
+Create a bucket at your S3-compatible service of choice, along with an Acces Key ID and a Secret Access Key. These can be self hosted, like [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) or [MinIO](https://min.io/) (GNU AGPL v3.0), or commercial ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
 
 This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
 
@@ -53,10 +53,10 @@ This task is done with the command:
 
 ### Enabling external storage for BookWyrm
 
-To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `False` to `True`:
+To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `false` to `true`:
 
 ```
-USE_S3=True
+USE_S3=true
 ```
 
 #### Static assets
@@ -81,7 +81,7 @@ Create a file called `cors.json`, with the following content:
 {
   "CORSRules": [
     {
-      "AllowedOrigins": ["http://MY_DOMAIN_NAME", "http://www.MY_DOMAIN_NAME"],
+      "AllowedOrigins": ["https://MY_DOMAIN_NAME", "https://www.MY_DOMAIN_NAME"],
       "AllowedHeaders": ["*"],
       "AllowedMethods": ["GET", "HEAD", "POST", "PUT", "DELETE"],
       "MaxAgeSeconds": 3000,
@@ -118,3 +118,5 @@ curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/imag
 ```
 
 Replace `MY_DOMAIN_NAME` with your instance domain name, `BUCKET_URL` with the URL for your bucket, you can replace the file path with any other valid path on your bucket.
+
+If you see any message, especially a message starting with `<Error><Code>CORSForbidden</Code>`, it didn’t work. If you see no message, it worked.
