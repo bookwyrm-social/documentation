@@ -24,14 +24,14 @@ jobs:
     - name: Build site
       run: |
         pelican content --settings publishconf.py
-    - name: Deploy to server
-      id: deploy
-      uses: Pendect/action-rsyncer@v1.1.0
+    - name: Setup SSH keys
       env:
-        DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
-      with:
-        flags: '-avzr --delete'
-        options: ''
-        ssh_options: ''
-        src: 'output/'
-        dest: 'mouse@docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html/test'
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run:
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
+    - name: Deploy to server
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: |
+        rsync -avc --delete output/ mouse@docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html/test
