@@ -1,8 +1,8 @@
 name: Deploy
 on:
-  push:
-    branches:
-      - main
+  [push]
+#    branches:
+#      - main
 jobs:
   build_job:
     name: Deploy docs
@@ -22,4 +22,4 @@ jobs:
           pelican content --settings publishconf.py
       - name: Deploy via rsync
         run: |
-	  rsync -avc --delete output/ docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html
+	  rsync -avc --delete output/ docs.joinbookwyrm.com:~/test-dir
