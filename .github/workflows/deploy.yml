@@ -34,4 +34,4 @@ jobs:
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
-        rsync -avc --delete output/ docs.joinbookwyrm.com:~/test-dir
+        rsync -avc --delete output/ docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html/test
