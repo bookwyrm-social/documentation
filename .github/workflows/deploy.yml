@@ -30,5 +30,7 @@ jobs:
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
     - name: Deploy via rsync
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
         rsync -avc --delete output/ docs.joinbookwyrm.com:~/test-dir
