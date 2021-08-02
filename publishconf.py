@@ -8,7 +8,7 @@ import os
 import sys
 
 sys.path.append(os.curdir)
-from settings import *
+from settings import *  # pylint: disable=wildcard-import
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = "https://docs.joinbookwyrm.com"
