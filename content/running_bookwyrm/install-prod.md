@@ -43,6 +43,7 @@ Instructions for running BookWyrm in production:
     See the [troubleshooting guide](#port-conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
 - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
+- If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Run docker-compose in the background with: `docker-compose up -d`
 - Initialize the database with: `./bw-dev initdb`
 - Set up schedule backups with cron that runs that `docker-compose exec db pg_dump -U <databasename>` and saves the backup to a safe location

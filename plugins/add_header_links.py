@@ -1,10 +1,12 @@
+""" Adds permalinks to headers """
 from html.parser import HTMLParser
 from urllib.parse import quote as url_quote
 
 from pelican import signals
 
 
-class HeaderLinksHTMLParser(HTMLParser):
+# pylint: disable=no-self-use
+class HeaderLinksHTMLParser(HTMLParser):  # pylint: disable=abstract-method
     """subclass `HTMLParser` to easily transform html.
 
     most of the method overrides re-construct the html and add it to self.data.
@@ -66,19 +68,25 @@ class HeaderLinksHTMLParser(HTMLParser):
     def handle_data(self, data):
         """handle text nodes within a tag
 
-        this does the heavy-lifting of checking for a header and doing appropriate transformations
+        this does the heavy-lifting of checking for a header and doing
+        appropriate transformations
         """
         # ensure that `data` isn't whitespace
         # the newline in '<h2>foo</h2>\n' will start a `handle-data` method call
         # where the `get_starttag_text` method still returns '<h2>' since that method
         # returns the *most recently opened* tag
-        # if we don't check for whitespace here, we get stray link and header openers with no closers
+        # if we don't check for whitespace here, we get stray link and header
+        # openers with no closers
         if self._is_header(self.get_starttag_text()) and data.strip() != "":
             id_slug = self._create_id_slug(data)
-            # use the existing tag excluding the final '>', then append the id and a closing '>'
+            # use the existing tag excluding the final '>',
+            # then append the id and a closing '>'
             new_tag = self.get_starttag_text()[:-1] + f' id="{id_slug}">'
             self.data.append(
-                f'{new_tag}{data}<a href=#{id_slug} class="icon icon-chain pl-3"><span class="is-sr-only">Hyperlink to this header</span></a>'
+                f'''{new_tag}{data}
+<a href=#{id_slug} class="icon icon-chain pl-3 is-size-6">
+    <span class="is-sr-only">Hyperlink to this header</span>
+</a>'''
             )
         else:
             self.data.append(data)
@@ -95,7 +103,7 @@ class HeaderLinksHTMLParser(HTMLParser):
     def handle_entityref(self, name):
         self.handle_data(f"&{name};")
 
-    def handle_charref(name):
+    def handle_charref(self, name):
         self.handle_data(f"&#{name};")
 
     def __str__(self):
@@ -103,7 +111,7 @@ class HeaderLinksHTMLParser(HTMLParser):
 
 
 def add_header_links(content):
-    content.articles[0]._content
+    """inject header links"""
     html_parser = HeaderLinksHTMLParser()
     for index, article in enumerate(content.articles):
         html_parser.feed(article._content)
@@ -112,5 +120,5 @@ def add_header_links(content):
 
 
 def register():
-    # this signal runs after a generator has finished rendering an article
+    """this signal runs after a generator has finished rendering an article"""
     signals.article_generator_finalized.connect(add_header_links)
