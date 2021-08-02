@@ -24,11 +24,11 @@ jobs:
         run: |
           pelican content --settings publishconf.py
     - name: Setup SSH Keys and known_hosts
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: |
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
     - name: Deploy via rsync
       run: |
         rsync -avc --delete output/ docs.joinbookwyrm.com:~/test-dir
