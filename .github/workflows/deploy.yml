@@ -1,10 +1,9 @@
 name: Deploy
 
-on: [push, pull_request]
-#on:
-#  push
-#    branches:
-#      - main
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -34,4 +33,4 @@ jobs:
         options: ''
         ssh_options: ''
         src: 'output/'
-        dest: 'mouse@docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html/test'
+        dest: 'mouse@docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html'
