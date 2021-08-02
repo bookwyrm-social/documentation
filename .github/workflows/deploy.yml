@@ -1,0 +1,25 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build_job:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: Install Pelican
+        run: |
+          pip install -r requirements.txt
+      - name: Run Pelican
+        run: |
+          pelican content --settings publishconf.py
+      - name: Deploy via rsync
+        run: |
+	  rsync -avc --delete output/ docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html
