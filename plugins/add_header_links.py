@@ -95,7 +95,7 @@ class HeaderLinksHTMLParser(HTMLParser):
     def handle_entityref(self, name):
         self.handle_data(f"&{name};")
 
-    def handle_charref(name):
+    def handle_charref(self, name):
         self.handle_data(f"&#{name};")
 
     def __str__(self):

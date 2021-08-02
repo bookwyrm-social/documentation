@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 SITENAME = 'BookWyrm Documentation'
+SITESUBTITLE = 'BookWyrm Documentation'
 SITEURL = ''
 
 PATH = 'content'
