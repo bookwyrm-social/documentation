@@ -1,25 +1,28 @@
 name: Deploy
+
 on: [push, pull_request]
 #on:
 #  push
 #    branches:
 #      - main
+
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Install Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Checkout source
-        uses: actions/checkout@v2
-      - name: Install Pelican
-        run: |
-          pip install -r requirements.txt
-      - name: Run Pelican
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
         run: |
           pelican content --settings publishconf.py
-      - name: Deploy via rsync
-        run: |
-	  rsync -avc --delete output/ docs.joinbookwyrm.com:~/test-dir
+    - name: Deploy via rsync
+      run: |
+        rsync -avc --delete output/ docs.joinbookwyrm.com:~/test-dir
