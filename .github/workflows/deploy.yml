@@ -1,11 +1,11 @@
 name: Deploy
-on:
-  [push]
+on: [push, pull_request]
+#on:
+#  push
 #    branches:
 #      - main
 jobs:
-  build_job:
-    name: Deploy docs
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Install Python
