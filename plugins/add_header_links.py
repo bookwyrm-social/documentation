@@ -83,10 +83,10 @@ class HeaderLinksHTMLParser(HTMLParser):  # pylint: disable=abstract-method
             # then append the id and a closing '>'
             new_tag = self.get_starttag_text()[:-1] + f' id="{id_slug}">'
             self.data.append(
-                f'''{new_tag}{data}
+                f"""{new_tag}{data}
 <a href=#{id_slug} class="icon icon-chain pl-3 is-size-6">
     <span class="is-sr-only">Hyperlink to this header</span>
-</a>'''
+</a>"""
             )
         else:
             self.data.append(data)
