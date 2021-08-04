@@ -3,29 +3,6 @@ Date: 2021-04-13
 
 BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
 
-<div class="section">
-<section class="level is-mobile">
-    <div class="level-item has-text-centered">
-        <div>
-            <p class="title has-text-weight-normal mb-0"><span class="icon icon-graphic-paperplane"></span></p>
-            <p class="heading">Decentralized</p>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <p class="title has-text-weight-normal mb-0"><span class="icon icon-graphic-heart"></span></p>
-            <p class="heading">Friendly</p>
-        </div>
-    </div>
-    <div class="level-item has-text-centered">
-        <div>
-            <p class="title has-text-weight-normal mb-0"><span class="icon icon-graphic-banknote"></span></p>
-            <p class="heading">Anti-Corporate</p>
-        </div>
-    </div>
-</section>
-</div>
-
 ## Features
 Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
 
