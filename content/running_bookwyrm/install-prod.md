@@ -5,10 +5,10 @@ Order: 1
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
 
 ## Server setup
-- Get a domain name and set up DNS for your server
-- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04)
-- Set up an email service (such as mailgun) and the appropriate SMTP/DNS settings
-- Install Docker and docker-compose
+- Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
+- [Install Docker and docker-compose](https://docs.docker.com/compose/install/)
 
 ## Install and configure BookWyrm
 
@@ -17,7 +17,7 @@ The `production` branch of BookWyrm contains a number of tools not on the `main`
 Instructions for running BookWyrm in production:
 
 - Get the application code:
-    `git clone git@github.com:mouse-reeve/bookwyrm.git`
+    `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Switch to the `production` branch:
     `git checkout production`
 - Create your environment variables file, `cp .env.prod.example .env`, and update the following:
@@ -29,31 +29,32 @@ Instructions for running BookWyrm in production:
     - `REDIS_BROKER_PASSWORD` | Set a secure password for Redis queue broker subsystem
     - `FLOWER_USER` | Your own username for accessing Flower queue monitor
     - `FLOWER_PASSWORD` | Your own secure password for accessing Flower queue monitor
-- Update your nginx configuration in `nginx/default.conf`
-    - Replace `your-domain.com` with your domain name
+    - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
+    - `EMAIL_HOST_PASSWORD` | The password provided by your email service
 - Configure nginx
     - Make a copy of the production template config and set it for use in nginx `cp nginx/production nginx/default.conf`
     - Update `nginx/default.conf`:
-        - Replace `your-domain.com` with your domain name
+        - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
         - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](#running-bookwyrm-behind-a-reverse-proxy)
+        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/using-a-reverse-proxy.html)
 - Run the application (this should also set up a Certbot ssl cert for your domain) with
     `docker-compose up --build`, and make sure all the images build successfully
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
-    See the [troubleshooting guide](#port-conflicts) for advice on resolving this.
+    See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
-- In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
+- Set up HTTPS redirect
+    - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
+    - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Run docker-compose in the background with: `docker-compose up -d`
 - Initialize the database with: `./bw-dev initdb`
-- Set up schedule backups with cron that runs that `docker-compose exec db pg_dump -U <databasename>` and saves the backup to a safe location
 
 Congrats! You did it, go to your domain and enjoy the fruits of your labors.
 
 ## Configure your instance
 - Register a user account in the application UI
-- Make your account a superuser (warning: do *not* use django's `createsuperuser` command)
-    - On your server, open the django shell
+- Make your account a superuser (warning: do *not* use Django's `createsuperuser` command)
+    - On your server, open the Django shell
     `./bw-dev shell`
     - Load your user and make it a superuser:
 ```
@@ -100,6 +101,7 @@ If you are already running a web-server on your machine, you will need to set up
 ## Get Connected
 
 Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. There are a few ways in get in touch:
+
  - Open an issue or pull request to add your instance to the [official list](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
  - Reach out to the project on [Mastodon](https://tech.lgbt/@bookwyrm) or [email the maintainer](mailto:mousereeve@riseup.net) directly with your GitHub username
  - Join the [Matrix](https://matrix.to/#/!KjHNDsFvUYokpZqGBL:matrix.org?via=matrix.org) chat room
