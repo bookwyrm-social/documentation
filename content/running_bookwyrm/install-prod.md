@@ -5,9 +5,9 @@ Order: 1
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
 
 ## Server setup
-- Get a domain name and set up DNS for your server
-- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04)
-- Set up an email service (such as mailgun) and the appropriate SMTP/DNS settings
+- Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
 - Install Docker and docker-compose
 
 ## Install and configure BookWyrm
@@ -29,20 +29,22 @@ Instructions for running BookWyrm in production:
     - `REDIS_BROKER_PASSWORD` | Set a secure password for Redis queue broker subsystem
     - `FLOWER_USER` | Your own username for accessing Flower queue monitor
     - `FLOWER_PASSWORD` | Your own secure password for accessing Flower queue monitor
-- Update your nginx configuration in `nginx/default.conf`
-    - Replace `your-domain.com` with your domain name
+    - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
+    - `EMAIL_HOST_PASSWORD` | The password provided by your email service
 - Configure nginx
     - Make a copy of the production template config and set it for use in nginx `cp nginx/production nginx/default.conf`
     - Update `nginx/default.conf`:
         - Replace `your-domain.com` with your domain name
         - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
         - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](#running-bookwyrm-behind-a-reverse-proxy)
-- Run the application (this should also set up a Certbot ssl cert for your domain) with
-    `docker-compose up --build`, and make sure all the images build successfully
-    - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
-    See the [troubleshooting guide](#port-conflicts) for advice on resolving this.
-- When docker has built successfully, stop the process with `CTRL-C`
-- In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
+- Setup ssl
+    - Run the application (this should also set up a Certbot ssl cert for your domain) with
+        `docker-compose up --build`, and make sure all the images build successfully
+        - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
+        See the [troubleshooting guide](#port-conflicts) for advice on resolving this.
+    - When docker has built successfully, stop the process with `CTRL-C`
+    - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
+    - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Run docker-compose in the background with: `docker-compose up -d`
 - Initialize the database with: `./bw-dev initdb`
