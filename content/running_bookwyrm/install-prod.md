@@ -34,15 +34,15 @@ Instructions for running BookWyrm in production:
 - Configure nginx
     - Make a copy of the production template config and set it for use in nginx `cp nginx/production nginx/default.conf`
     - Update `nginx/default.conf`:
-        - Replace `your-domain.com` with your domain name
+        - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
         - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
         - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/using-a-reverse-proxy.html)
-- Set up SSL
-    - Run the application (this should also set up a Certbot ssl cert for your domain) with
-        `docker-compose up --build`, and make sure all the images build successfully
-        - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
-        See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
-    - When docker has built successfully, stop the process with `CTRL-C`
+- Run the application (this should also set up a Certbot ssl cert for your domain) with
+    `docker-compose up --build`, and make sure all the images build successfully
+    - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
+    See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
+- When docker has built successfully, stop the process with `CTRL-C`
+- Set up HTTPS redirect
     - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
     - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
@@ -54,8 +54,8 @@ Congrats! You did it, go to your domain and enjoy the fruits of your labors.
 
 ## Configure your instance
 - Register a user account in the application UI
-- Make your account a superuser (warning: do *not* use django's `createsuperuser` command)
-    - On your server, open the django shell
+- Make your account a superuser (warning: do *not* use Django's `createsuperuser` command)
+    - On your server, open the Django shell
     `./bw-dev shell`
     - Load your user and make it a superuser:
 ```
