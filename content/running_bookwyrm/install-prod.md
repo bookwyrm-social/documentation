@@ -17,7 +17,7 @@ The `production` branch of BookWyrm contains a number of tools not on the `main`
 Instructions for running BookWyrm in production:
 
 - Get the application code:
-    `git clone git@github.com:mouse-reeve/bookwyrm.git`
+    `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Switch to the `production` branch:
     `git checkout production`
 - Create your environment variables file, `cp .env.prod.example .env`, and update the following:
