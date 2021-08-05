@@ -36,12 +36,12 @@ Instructions for running BookWyrm in production:
     - Update `nginx/default.conf`:
         - Replace `your-domain.com` with your domain name
         - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](#running-bookwyrm-behind-a-reverse-proxy)
-- Setup ssl
+        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/using-a-reverse-proxy.html)
+- Set up SSL
     - Run the application (this should also set up a Certbot ssl cert for your domain) with
         `docker-compose up --build`, and make sure all the images build successfully
         - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
-        See the [troubleshooting guide](#port-conflicts) for advice on resolving this.
+        See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
     - When docker has built successfully, stop the process with `CTRL-C`
     - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
     - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
