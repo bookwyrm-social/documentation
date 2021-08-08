@@ -19,6 +19,7 @@ If you are starting a new BookWyrm instance, the process will be:
 - Set up your external storage service
 - Enable external storage on BookWyrm
 - Start your BookWyrm instance
+- Update the instance connector
 
 If you already started your instance, and images have been uploaded to local storage, the process will be:
 
@@ -26,6 +27,7 @@ If you already started your instance, and images have been uploaded to local sto
 - Copy your local media to external storage
 - Enable external storage on BookWyrm
 - Restart your BookWyrm instance
+- Update the instance connector
 
 ### BookWyrm Settings
 
@@ -120,3 +122,13 @@ curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/imag
 Replace `MY_DOMAIN_NAME` with your instance domain name, `BUCKET_URL` with the URL for your bucket, you can replace the file path with any other valid path on your bucket.
 
 If you see any message, especially a message starting with `<Error><Code>CORSForbidden</Code>`, it didn’t work. If you see no message, it worked.
+
+### Updating the instance connector
+
+In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.
+
+Connector data can be accessed through the Django admin interface, located at the url `http://MY_DOMAIN_NAME/admin`. The connector for your own instance is the first record in the database, so you can access the connector with this URL: `https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/`.
+
+The field _Covers url_ is defined by default as `https://MY_DOMAIN_NAME/images`, you have to change it to `https://S3_STORAGE_URL/images`. Then, click the _Save_ button, and voilà!
+
+You will have to update the value for _Covers url_ every time you change the URL for your storage.
