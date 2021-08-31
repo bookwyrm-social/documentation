@@ -21,7 +21,7 @@ Instructions for running BookWyrm in production:
 - Switch to the `production` branch:
     `git checkout production`
 - Create your environment variables file, `cp .env.prod.example .env`, and update the following:
-    - `SECRET_KEY` | A difficult to guess, secret string of characers
+    - `SECRET_KEY` | A difficult to guess, secret string of characters
     - `DOMAIN` | Your web domain
     - `EMAIL` | Email address to be used for certbot domain verification
     - `POSTGRES_PASSWORD` | Set a secure password for the database

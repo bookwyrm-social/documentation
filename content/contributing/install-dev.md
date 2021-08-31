@@ -10,7 +10,7 @@ These instructions assume you are developing BookWyrm using Docker. You'll need 
 
 - Get a copy of [the BookWyrm codebase from GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
 - Go to the directory which contains the code on your computer, you'll be working from there from here on out.
-- Set up your development environment variables file by coping the dev example file (`.env.dev.example`) into a new file named `.env`. In the command line, you can do this with:
+- Set up your development environment variables file by copying the dev example file (`.env.dev.example`) into a new file named `.env`. In the command line, you can do this with:
 ```
 :::bash linenums=False
 cp .env.dev.example .env
