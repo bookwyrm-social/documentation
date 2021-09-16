@@ -33,6 +33,7 @@ To set up your server:
 
 - In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
 - In your nginx `servers` directory, create a new file named after your domain containing the following information:
+
 ```
 :::nginx linenums=false
 server {
@@ -60,10 +61,57 @@ server {
     listen 80 ssl;
 }
 ```
+
+To set up with an ssl block:
+```
+:::nginx linenums=false
+
+server {
+    server_name your.domain;
+
+    listen [::]:80;
+    listen 80;
+    add_header Strict-Transport-Security "max-age=31536000;includeSubDomains" always;
+    rewrite ^ https://$server_name$request_uri;
+    location / { return 301 https://$host$request_uri; }
+}
+
+# SSL code
+ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem;
+
+server {
+    listen [::]:443 ssl http2;
+    listen 443 ssl http2;
+
+    server_name your.domain;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /images/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /static/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+}
+
+```
 - run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
 - restart nginx
 
 If everything worked correctly, your BookWyrm instance should now be externally accessible.
 
 *Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
+
+*Note: the location of the ssl certificates may vary depending on the OS of your server*
 
