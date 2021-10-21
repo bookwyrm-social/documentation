@@ -35,11 +35,12 @@ docker-compose up
 
 ### Editing or creating Models
 
-If you change or create a model, you will probably change the database structure. In order for these changes to take effect you will need to `makemigrations` to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations):
+If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
 
 ```
 :::shell linenums=False
-docker-compose run --rm web python manage.py makemigrations
+./bw-dev makemigrations
+./bw-dev migrate
 ```
 
 ### Editing static files
