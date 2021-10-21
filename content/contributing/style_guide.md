@@ -33,3 +33,21 @@ We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint 
 ### JavaScript
 
 [ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
+
+## Inclusive Design
+
+Bookwyrm aims to be as inclusive and accessible as possible.
+
+When contributing code, check the [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) before you file your pull request. For accessibility advice, [A11Y-101](https://www.a11y-101.com/development) is also a useful source. For information on how to make your page templates multi-lingual, see the [Translations section](/translations.html).
+
+Some particular things that Bookwyrm contributors have found useful to remember are:
+
+### Forms
+
+* Only use `input[type="checkbox"]` or `input[type="radio"]` inside `<label>`
+* If you do not place checkboxes and radio buttons inside the `<label>`, the `<label>` should be placed _after_ the element it relates to
+
+### Buttons and Links
+
+* Use a `<button>` element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a `POST` request (e.g. submitting a form
+* Use an `<a>` element for anything that triggers a `GET` request. Usually, an anchor (`<a>`) element should not be styled as a button (`class="button"`), though there are some exceptions such as "Cancel" buttons. If in doubt, ask for advice in your pull request
