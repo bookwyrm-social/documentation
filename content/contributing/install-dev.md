@@ -33,6 +33,16 @@ docker-compose up
 ```
 - Once the build is complete, you can access the instance at `http://localhost:1333`
 
+### Editing or creating Models
+
+If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
+
+```
+:::shell linenums=False
+./bw-dev makemigrations
+./bw-dev migrate
+```
+
 ### Editing static files
 If you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command in order for your changes to have effect. You can do this by running:
 ```
