@@ -21,7 +21,7 @@ Bookwyrm takes advantage of Django's translation functionality to enable page co
 * all template text should include translation template tags
 * add `{% load i18n %}` at the top of your template to enable translations
 * If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`
+* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
 
 ### Examples
 
@@ -29,7 +29,7 @@ Bookwyrm takes advantage of Django's translation functionality to enable page co
 <p>{% trans "This list is currently empty" %}</p>
 
 <p>
-    {% blocktrans with username=item.user.display_name user_path=item.user.local_path %}
+    {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
     Added by <a href="{{ user_path }}">{{ username }}</a>
     {% endblocktrans %}
 </p>
