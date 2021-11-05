@@ -129,6 +129,10 @@ Creates message files for all translation strings. After you have run `makemessa
 
 Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
+### generate_thumbnails
+
+Generates thumbnail images for book covers.
+
 ### pytest
 
 Run tests. This will not provide a coverage report if your tests fail: in that case use `test` for the coverage report.
@@ -137,6 +141,3 @@ Run tests. This will not provide a coverage report if your tests fail: in that c
 
 Run [a coverage report](https://coverage.readthedocs.io/en/6.1.1/cmd.html#cmd-run) to see how good unit test coverage is.
 
-### generate_thumbnails
-
-TODO: is this the same as generate_preview_images???
