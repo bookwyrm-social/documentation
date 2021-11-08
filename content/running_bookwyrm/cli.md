@@ -1,8 +1,8 @@
 Title: Command Line Tool
-Date: 2021-11-06
+Date: 2021-11-08
 Order: 6
 
-Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder mess up.
+Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
 
 Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
 
@@ -20,21 +20,17 @@ Equivalent to `docker-compose build`.
 
 Open an interactive Postgres database shell. I hope you know what you're doing.
 
-### run
-
-Run an arbitrary command in the `web` cointainer.
-
-Equivalent to `docker-compose run --rm --service-ports web`. 
-
-### rundb
-
-TODO: this command does not appear to actually exist!
-
 ### runweb _args_
 
 Run an arbitrary command in the `web` container.
 
 Equivalent to `docker-compose run --rm web`.
+
+### service_ports_web _args_
+
+Run an arbitrary command in the `web` container with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
+
+Equivalent to `docker-compose run --rm --service-ports web`. 
 
 ### shell
 
@@ -50,7 +46,9 @@ Start or restart Docker containers. Equivalent to `docker-compose up --build [ar
 
 Initialize a database.
 
-### makemigrations
+### makemigrations [<appname> <migration number>]
+
+_This command is not available on the `production` branch_.
 
 Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect.
 
@@ -60,7 +58,9 @@ Runs Django's `migrate` command inside your Docker container. You always need to
 
 ### resetdb
 
-Reset the database. **This command will delete your entire Bookwyrm database**. You should probably not run it in production! It is however useful for development servers. Note that `resetdb` will also initialise a fresh database and run all migrations, so you should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+_This command is not available on the `production` branch_.
+
+Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
 
 ## Managing a Bookwyrm instance
 
@@ -72,9 +72,13 @@ Migrate static assets to either a Docker container or to an S3-compatible "bucke
 
 Generate preview images for site, users, and books. This can take a while if you have a large database.
 
+### generate_thumbnails
+
+Generates thumbnail images for book covers.
+
 ### populate_streams
 
-Re-populates Redis streams (user feeds). You will usually need to run this after `update`.
+Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason.
 
 ### populate_suggestions
 
@@ -106,6 +110,8 @@ Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of y
 
 ## Development and testing
 
+_These commands are not available on the `production` branch_.
+
 ### black
 
 BookWyrm uses the Black code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
@@ -129,15 +135,6 @@ Creates message files for all translation strings. After you have run `makemessa
 
 Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
-### generate_thumbnails
-
-Generates thumbnail images for book covers.
-
 ### pytest
 
-Run tests. This will not provide a coverage report if your tests fail: in that case use `test` for the coverage report.
-
-### test
-
-Run [a coverage report](https://coverage.readthedocs.io/en/6.1.1/cmd.html#cmd-run) to see how good unit test coverage is.
-
+Run tests with `pytest`.
