@@ -1,5 +1,5 @@
 Title: Command Line Tool
-Date: 2021-11-08
+Date: 2021-11-11
 Order: 6
 
 Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
@@ -20,15 +20,15 @@ Equivalent to `docker-compose build`.
 
 Open an interactive Postgres database shell. I hope you know what you're doing.
 
-### runweb _args_
+### runweb args
 
-Run an arbitrary command in the `web` container.
+Run an arbitrary command (represented above by `args`) in the `web` container.
 
 Equivalent to `docker-compose run --rm web`.
 
-### service_ports_web _args_
+### service_ports_web args
 
-Run an arbitrary command in the `web` container with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
+Run an arbitrary command in the `web` container (represented above by `args`) with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
 
 Equivalent to `docker-compose run --rm --service-ports web`. 
 
@@ -38,7 +38,7 @@ Open an interactive Django shell inside the docker `web` container. You would us
 
 ### up [args]
 
-Start or restart Docker containers. Equivalent to `docker-compose up --build [args]`
+Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
 
 ## Managing the database
 
@@ -46,11 +46,11 @@ Start or restart Docker containers. Equivalent to `docker-compose up --build [ar
 
 Initialize a database.
 
-### makemigrations [<appname> <migration number>]
+### makemigrations [appname migration number]
 
 _This command is not available on the `production` branch_.
 
-Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect.
+Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`
 
 ### migrate
 
@@ -104,7 +104,7 @@ See [External Storage](/external-storage.html) for more information.
 
 Migrate uploaded media from an existing Bookwrym installation to an S3-compatible "bucket".
 
-### set_cors_to_s3 _filename_
+### set_cors_to_s3 filename
 
 Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
 
