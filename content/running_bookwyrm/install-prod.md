@@ -45,6 +45,10 @@ Instructions for running BookWyrm in production:
 - Set up HTTPS redirect
     - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
     - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
+- Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
+    - Type `crontab -e` to edit your cron file in the host machine
+    - add a line to try renewing once a day:  
+    `5 0 * * * docker-compose run certbot renew --webroot --webroot-path /var/www/certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Run docker-compose in the background with: `docker-compose up -d`
 - Initialize the database with: `./bw-dev initdb`
