@@ -129,6 +129,13 @@ Replace `MY_DOMAIN_NAME` with your instance domain name, `BUCKET_URL` with the U
 
 If you see any message, especially a message starting with `<Error><Code>CORSForbidden</Code>`, it didn’t work. If you see no message, it worked.
 
+For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage.
+To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:
+
+```bash
+./bw-dev sync_media_to_s3
+```
+
 ### Updating the instance connector
 
 In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.
