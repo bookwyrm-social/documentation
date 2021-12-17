@@ -27,7 +27,7 @@ cp nginx/development nginx/default.conf
 ```
 :::shell linenums=False
 ./bw-dev build            # Build the docker images
-./bw-dev initdb           # Initialize and run migrations for the database
+./bw-dev initdb           # Initialize the database and run migrations
 ./bw-dev collectstatic    # Copy static files into the docker containers
 ./bw-dev up               # Start the docker containers
 ```
