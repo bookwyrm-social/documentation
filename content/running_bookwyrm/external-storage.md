@@ -45,7 +45,7 @@ If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll
 
 ### Copying local media to external storage
 
-If your BookWyrm instance is already running, and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
+If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
 
 This task is done with the command: 
 
@@ -59,6 +59,12 @@ To enable the S3-compatible external storage, you will have to edit your `.env` 
 
 ```
 USE_S3=true
+```
+
+If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that `USE_HTTPS` is set to `true`, so images will be loaded over HTTPS:
+
+```
+USE_HTTPS=true
 ```
 
 #### Static assets
@@ -107,10 +113,10 @@ If you are starting a new BookWyrm instance, you can go back to the setup instru
 
 ### Restarting your instance
 
-Once the media migration has been done and the static assets are collected, you can restart your instance with:
+Once the media migration has been done and the static assets are collected, you can load the new `.env` configuration and restart your instance with:
 
 ```bash
-docker compose restart
+./bw-dev up -d
 ```
 
 If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong [here](#cors-settings). In that case it might be good to check the headers of a HTTP request against a file on your bucket:
