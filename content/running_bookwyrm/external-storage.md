@@ -138,6 +138,8 @@ To ensure that any remaining files are uploaded to external storage after switch
 
 ### Updating the instance connector
 
+*Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in [PR #1413](https://github.com/bookwyrm-social/bookwyrm/pull/1413)*
+
 In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.
 
 Connector data can be accessed through the Django admin interface, located at the url `http://MY_DOMAIN_NAME/admin`. The connector for your own instance is the first record in the database, so you can access the connector with this URL: `https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/`.
