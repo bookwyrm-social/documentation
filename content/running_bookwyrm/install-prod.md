@@ -48,7 +48,7 @@ Instructions for running BookWyrm in production:
 - Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
     - Type `crontab -e` to edit your cron file in the host machine
     - add a line to try renewing once a day:  
-    `5 0 * * * docker-compose run certbot renew --webroot --webroot-path /var/www/certbot`
+    `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Run docker-compose in the background with: `docker-compose up -d`
 - Initialize the database with: `./bw-dev initdb`
