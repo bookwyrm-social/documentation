@@ -27,12 +27,14 @@ cp nginx/development nginx/default.conf
 - Start the application. In the command line, run:
 ```
 :::shell linenums=False
-docker-compose build
-docker-compose run --rm web python manage.py migrate
-docker-compose run --rm web python manage.py initdb
-docker-compose up
+./bw-dev build            # Build the docker images
+./bw-dev initdb           # Initialize the database and run migrations
+./bw-dev collectstatic    # Copy static files into the docker containers
+./bw-dev up               # Start the docker containers
 ```
 - Once the build is complete, you can access the instance at `http://localhost:1333`
+
+If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, or open it up and look around to see exactly what each command is doing!
 
 ### Editing or creating Models
 
@@ -45,7 +47,7 @@ If you change or create a model, you will probably change the database structure
 ```
 
 ### Editing static files
-If you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command in order for your changes to have effect. You can do this by running:
+Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 ```
 :::shell linenums=False
 ./bw-dev collectstatic

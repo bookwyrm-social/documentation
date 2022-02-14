@@ -16,10 +16,12 @@ Feeds for each user are stored in Redis. To re-populate a stream, use the manage
 
 ```
 :::bash linenums=False
+./bw-dev populate_streams
+# Or use docker-compose directly
 docker-compose run --rm web python manage.py populate_streams
 ```
 
-If something has gone terribly awry, the stream data can be deleted. 
+If something has gone terribly awry, the stream data can be deleted.
 
 ```
 :::bash linenums=False
