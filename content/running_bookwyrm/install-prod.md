@@ -47,31 +47,23 @@ Instructions for running BookWyrm in production:
     - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
 - Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
     - Type `crontab -e` to edit your cron file in the host machine
-    - add a line to try renewing once a day:  
+    - add a line to try renewing once a day:
     `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
+- Set up the database with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
+    - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
+```
+:::shell linenums=False
+*******************************************
+Use this code to create your admin account:
+c6c35779-af3a-4091-b330-c026610920d6
+*******************************************
+```
 - Run docker-compose in the background with: `docker-compose up -d`
-- Initialize the database with: `./bw-dev initdb`
-- Import static content into Docker volumes with: `./bw-dev collectstatic`
+- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
 
-Congrats! You did it, go to your domain and enjoy the fruits of your labors.
+Congrats! You did it!! Configure your instance however you'd like.
 
-## Configure your instance
-- Register a user account in the application UI
-- Make your account a superuser (warning: do *not* use Django's `createsuperuser` command)
-    - On your server, open the Django shell
-    `./bw-dev shell`
-    - Load your user and make it a superuser:
-```
-:::python linenums=False
-from bookwyrm import models
-user = models.User.objects.get(id=1)
-user.is_staff = True
-user.is_superuser = True
-user.save()
-```
-
-- Go to the site settings (`/settings/site-settings` on your domain) and configure your instance name, description, code of conduct, and toggle whether registration is open on your instance
 
 ## Backups
 

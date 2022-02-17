@@ -28,13 +28,12 @@ cp nginx/development nginx/default.conf
 ```
 :::shell linenums=False
 ./bw-dev build            # Build the docker images
-./bw-dev initdb           # Initialize the database and run migrations
-./bw-dev collectstatic    # Copy static files into the docker containers
+./bw-dev setup            # Initialize the database and run migrations
 ./bw-dev up               # Start the docker containers
 ```
-- Once the build is complete, you can access the instance at `http://localhost:1333`
+- Once the build is complete, you can access the instance at `http://localhost:1333` and create an admin user.
 
-If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, or open it up and look around to see exactly what each command is doing!
+If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
 
 ### Editing or creating Models
 
@@ -54,4 +53,3 @@ Any time you edit the CSS or JavaScript, you will need to run Django's `collects
 ```
 
 If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
-
