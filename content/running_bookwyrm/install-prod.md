@@ -101,4 +101,4 @@ Because BookWyrm is a young project, we're still working towards a stable releas
 
  - Open an issue or pull request to add your instance to the [official list](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
  - Reach out to the project on [Mastodon](https://tech.lgbt/@bookwyrm) or [email the maintainer](mailto:mousereeve@riseup.net) directly with your GitHub username
- - Join the [Matrix](https://app.element.io/#/room/#bookwyrm:matrix.org) chat room
+ - Join the [Matrix](https://matrix.to/#/#bookwyrm:matrix.org) chat room
