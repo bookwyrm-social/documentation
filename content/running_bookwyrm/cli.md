@@ -30,7 +30,7 @@ Equivalent to `docker-compose run --rm web`.
 
 Run an arbitrary command in the `web` container (represented above by `args`) with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
 
-Equivalent to `docker-compose run --rm --service-ports web`. 
+Equivalent to `docker-compose run --rm --service-ports web`.
 
 ### shell
 
@@ -76,9 +76,13 @@ Generate preview images for site, users, and books. This can take a while if you
 
 Generates thumbnail images for book covers.
 
-### populate_streams
+### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason.
+Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+
+### populate_list_streams
+
+Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
 
 ### populate_suggestions
 
@@ -93,6 +97,10 @@ Restarts the `celery_worker` Docker container.
 When there are changes to the `production` branch, you can update your instance without downtime.
 
 This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+
+### admin_code
+
+Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
 
 ## Setting up S3 compatible storage
 
@@ -118,7 +126,19 @@ _These commands are not available on the `production` branch_.
 
 ### black
 
-BookWyrm uses the Black code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+
+### prettier
+
+BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase consistently styled. Run `prettier` before committing changes to scripts to automatically format your code.
+
+### stylelint
+
+BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
+
+### formatters
+
+This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
 
 ### clean
 
@@ -139,6 +159,6 @@ Creates message files for all translation strings. After you have run `makemessa
 
 Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
-### pytest
+### pytest args
 
 Run tests with `pytest`.
