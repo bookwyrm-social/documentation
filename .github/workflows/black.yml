@@ -1,6 +1,6 @@
 name: Python Formatting (run `black .` to fix)
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   lint:
