@@ -63,7 +63,7 @@ def format_markdown(file_path):
         markdown_content = markdown_content.read()
         markdown_content = re.sub(rf"{HEADER_SLUG}.*\n", "", markdown_content)
 
-        return markdown(markdown_content, extensions=["tables"])
+        return markdown(markdown_content, extensions=["tables", "fenced_code"])
 
 
 if __name__ == "__main__":

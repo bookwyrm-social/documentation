@@ -138,15 +138,13 @@
 </ul>
 <h2>Re-building activity streams</h2>
 <p>Feeds for each user are stored in Redis. To re-populate a stream, use the management command:</p>
-<p>```
-:::bash linenums=False
-./bw-dev populate_streams</p>
-<h1>Or use docker-compose directly</h1>
-<p>docker-compose run --rm web python manage.py populate_streams
-```</p>
+<pre><code class="language-sh">./bw-dev populate_streams
+# Or use docker-compose directly
+docker-compose run --rm web python manage.py populate_streams
+</code></pre>
 <p>If something has gone terribly awry, the stream data can be deleted.</p>
-<p><code>:::bash linenums=False
-docker-compose run --rm web python manage.py erase_streams</code></p>
+<pre><code class="language-sh">docker-compose run --rm web python manage.py erase_streams
+</code></pre>
 </section>
 
         </div>

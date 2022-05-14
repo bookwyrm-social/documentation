@@ -14,8 +14,7 @@ When there are changes available in the production branch, you can install and g
 
 Feeds for each user are stored in Redis. To re-populate a stream, use the management command:
 
-```
-:::bash linenums=False
+``` { .sh }
 ./bw-dev populate_streams
 # Or use docker-compose directly
 docker-compose run --rm web python manage.py populate_streams
@@ -23,7 +22,6 @@ docker-compose run --rm web python manage.py populate_streams
 
 If something has gone terribly awry, the stream data can be deleted.
 
-```
-:::bash linenums=False
+``` { .sh }
 docker-compose run --rm web python manage.py erase_streams
 ```

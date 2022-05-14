@@ -158,75 +158,75 @@ See <a href="http://nginx.org/en/docs/beginners_guide.html">nginx's guide</a> fo
 <li>In you <code>nginx.conf</code> file, ensure that <code>include servers/*;</code> isn't commented out.</li>
 <li>In your nginx <code>servers</code> directory, create a new file named after your domain containing the following information:</li>
 </ul>
-<p>```
-:::nginx linenums=false
+<pre><code class="language-nginx">server {
+    server_name your-domain.com www.your-domain.com;
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /images/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /static/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    listen [::]:80 ssl;
+    listen 80 ssl;
+}
+</code></pre>
+<p>To set up with an ssl block:</p>
+<pre><code class="language-nginx">server {
+    server_name your.domain;
+
+    listen [::]:80;
+    listen 80;
+    add_header Strict-Transport-Security &quot;max-age=31536000;includeSubDomains&quot; always;
+    rewrite ^ https://$server_name$request_uri;
+    location / { return 301 https://$host$request_uri; }
+}
+
+# SSL code
+ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem;
+
 server {
-    server_name your-domain.com www.your-domain.com;</p>
-<pre><code>location / {
-    proxy_pass http://localhost:8000;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $host;
-}
-
-location /images/ {
-    proxy_pass http://localhost:8001;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $host;
-}
-
-location /static/ {
-    proxy_pass http://localhost:8001;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $host;
-}
-
-listen [::]:80 ssl;
-listen 80 ssl;
-</code></pre>
-<p>}
-```</p>
-<p>To set up with an ssl block:
-```
-:::nginx linenums=false</p>
-<p>server {
-    server_name your.domain;</p>
-<pre><code>listen [::]:80;
-listen 80;
-add_header Strict-Transport-Security "max-age=31536000;includeSubDomains" always;
-rewrite ^ https://$server_name$request_uri;
-location / { return 301 https://$host$request_uri; }
-</code></pre>
-<p>}</p>
-<h1>SSL code</h1>
-<p>ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem;</p>
-<p>server {
     listen [::]:443 ssl http2;
-    listen 443 ssl http2;</p>
-<pre><code>server_name your.domain;
-add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-location / {
-    proxy_pass http://localhost:8000;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $host;
-}
+    listen 443 ssl http2;
 
-location /images/ {
-    proxy_pass http://localhost:8001;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $host;
-}
+    server_name your.domain;
+    add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
 
-location /static/ {
-    proxy_pass http://localhost:8001;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $host;
+    location /images/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /static/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
 }
 </code></pre>
-<p>}</p>
-<p><code>``
-- run</code>sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
-- restart nginx</p>
+<ul>
+<li>run <code>sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com</code></li>
+<li>restart nginx</li>
+</ul>
 <p>If everything worked correctly, your BookWyrm instance should now be externally accessible.</p>
 <p><em>Note: the <code>proxy_set_header Host $host;</code> is essential; if you do not include it, incoming messages from federated servers will be rejected.</em></p>
 <p><em>Note: the location of the ssl certificates may vary depending on the OS of your server</em></p>

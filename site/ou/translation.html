@@ -143,15 +143,14 @@
 <li>If the text block includes variables, you should use the template tag pair <code>{% blocktrans %}</code> and <code>{% endblocktrans %}</code>. If you are including padding whitespace or line breaks, use <code>trimmed</code> to automatically remove it when the locale file is generated: <code>{% blocktrans trimmed %}</code></li>
 </ul>
 <h3>Examples</h3>
-<p>```html</p>
-<p>{% trans "This list is currently empty" %}</p>
+<pre><code class="language-html">&lt;p&gt;{% trans &quot;This list is currently empty&quot; %}&lt;/p&gt;
 
-<p>
+&lt;p&gt;
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Added by <a href="{{ user_path }}">{{ username }}</a>
+    Added by &lt;a href=&quot;{{ user_path }}&quot;&gt;{{ username }}&lt;/a&gt;
     {% endblocktrans %}
-</p>
-<p>```</p>
+&lt;/p&gt;
+</code></pre>
 </section>
 
         </div>

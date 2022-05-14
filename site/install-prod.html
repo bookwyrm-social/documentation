@@ -187,19 +187,19 @@ See the <a href="#port_conflicts">troubleshooting guide</a> for advice on resolv
 </li>
 <li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
 <li>Set up the database with <code>./bw-dev setup</code>, and copy the admin code to use when you create your admin account.<ul>
-<li>The output of <code>./bw-dev setup</code> should conclude with your admin code. You can get your code at any time by running <code>./bw-dev admin_code</code> from the command line. Here's an example output:
-```
-:::shell linenums=False</li>
+<li>The output of <code>./bw-dev setup</code> should conclude with your admin code. You can get your code at any time by running <code>./bw-dev admin_code</code> from the command line. Here's an example output:</li>
 </ul>
 </li>
 </ul>
-<hr />
-<p>Use this code to create your admin account:
-c6c35779-af3a-4091-b330-c026610920d6</p>
-<hr />
-<p><code>``
-- Run docker-compose in the background with:</code>docker-compose up -d`
-- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</p>
+<pre><code class="language-sh">*******************************************
+Use this code to create your admin account:
+c6c35779-af3a-4091-b330-c026610920d6
+*******************************************
+</code></pre>
+<ul>
+<li>Run docker-compose in the background with: <code>docker-compose up -d</code></li>
+<li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
+</ul>
 <p>Congrats! You did it!! Configure your instance however you'd like.</p>
 <h2>Backups</h2>
 <p>BookWyrm's db service dumps a backup copy of its database to its <code>/backups</code> directory daily at midnight UTC.

@@ -47,7 +47,7 @@ If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll
 
 If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
 
-This task is done with the command: 
+This task is done with the command:
 
 ```bash
 ./bw-dev copy_media_to_s3
