@@ -32,7 +32,7 @@ def get_page_metadata(slug, page):
     return header_obj
 
 
-def get_site_data(slug):
+def get_site_data(slug, page=None):
     """ this should be a file """
     category_dirs = glob("content/*/")
     categories = []
@@ -49,7 +49,12 @@ def get_site_data(slug):
             {**parsed, **{"subcategories": subcategories}}
         )
     categories.sort(key=lambda v: v["order"])
-    return {"categories": categories}
+    template_data = {"categories": categories}
+
+    if page:
+        template_data["headers"] = get_page_metadata(slug, page)
+
+    return template_data
 
 def format_markdown(file_path):
     """ go from markdown to html, extracting headers """
@@ -64,10 +69,9 @@ def format_markdown(file_path):
 if __name__ == "__main__":
     # iterate through each locale
     for locale in i18n.locales_metadata:
-        data = get_site_data(locale["slug"])
         paths = [
-            ["index.html", data, "content/index.md"],
-            ["page.html", data, "content/**/*.md"],
+            ["index.html", "content/index.md"],
+            ["page.html", "content/**/*.md"],
         ]
 
         i18n.setLocale(locale["code"])
@@ -77,7 +81,7 @@ if __name__ == "__main__":
             LOCALIZED_SITE_PATH = f'site/{locale["slug"]}'
 
         # iterate through template types
-        for (path, data, content_paths) in paths:
+        for (path, content_paths) in paths:
             with open(f"templates/{path}", "r", encoding="utf-8") as template_file:
                 template_string = template_file.read()
             template = env.from_string(template_string)
@@ -93,6 +97,7 @@ if __name__ == "__main__":
                 with open(
                     f"{LOCALIZED_SITE_PATH}{output_path}", "w+", encoding="utf-8"
                 ) as render_file:
+                    data = get_site_data(locale["slug"], content_path)
                     data["content"] = format_markdown(content_path)
                     render_file.write(
                         template.render(
