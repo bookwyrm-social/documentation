@@ -55,8 +55,6 @@
                     
                     <option value="" selected>English (US)</option>
                     
-                    <option value="ou/" >Anglais (Oulipo)</option>
-                    
               </select>
             </div>
         </div>
@@ -144,7 +142,7 @@
 <p>Run an arbitrary command in the <code>web</code> container (represented above by <code>args</code>) with ports exposed. This is useful if you want to run <code>pdb</code> tests because <code>runweb</code> will not expose the <code>pdb</code> prompt.</p>
 <p>Equivalent to <code>docker-compose run --rm --service-ports web</code>.</p>
 <h3>shell</h3>
-<p>Open an interactive Django shell inside the docker <code>web</code> container. You would use this if you want to run Django shell commands directly. For example when <a href="installing-in-production.html#configure_your_instance">making your initial user a superuser</a>.</p>
+<p>Open an interactive Django shell inside the docker <code>web</code> container. You would use this if you want to run Django shell commands directly.</p>
 <h3>up [args]</h3>
 <p>Start or restart Docker containers, optionally including any arguments (represented above by <code>args</code>). Equivalent to <code>docker-compose up --build [args]</code></p>
 <h2>Managing the database</h2>
