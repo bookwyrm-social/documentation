@@ -74,7 +74,7 @@
             <h2 class="menu-label">{{ category.title }}</h2>
             <ul class="menu-list">
                 {% for subcat in category.subcategories %}
-                <li><a href="{{ subcat.path }}">{{ subcat.Title }}</a></li>
+                <li><a href="{{ subcat.path }}" {% if path == subcat.path %}class="is-active"{% endif %}>{{ subcat.Title }}</a></li>
                 {% endfor %}
             </ul>
             {% endfor %}

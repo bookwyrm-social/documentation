@@ -99,6 +99,7 @@ if __name__ == "__main__":
                 ) as render_file:
                     data = get_site_data(locale["slug"], content_path)
                     data["content"] = format_markdown(content_path)
+                    data["path"] = f"/{locale['slug']}{output_path}"
                     render_file.write(
                         template.render(
                             locale=locale,
