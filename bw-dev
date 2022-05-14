@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# exit on errors
+set -e
+
+CMD=$1
+if [ -n "$CMD" ]; then
+    shift
+fi
+
+# show commands as they're executed
+set -x
+
+case "$CMD" in
+    site:compile)
+        python3 generate.py
+        ;;
+    site:serve)
+        cd site
+        python3 -m http.server 8080
+        ;;
+    messages:generate)
+        mkdir -p locale/$@/LC_MESSAGES && touch locale/$@/LC_MESSAGES/messages.po
+        xgettext --no-wrap --join-existing --language=C --from-code=UTF-8 --keyword=_ --output=locale/$@/LC_MESSAGES/messages.po `find templates -name "*.html"`
+        sed -i -e "s/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/g" locale/$@/LC_MESSAGES/messages.po
+        ;;
+    messages:compile)
+        msgfmt locale/$@/LC_MESSAGES/messages.po -o locale/$@/LC_MESSAGES/messages.mo
+        ;;
+    messages:update)
+        git fetch origin l10n_main:l10n_main
+        declare -a locales=("en_Oulipo")
+        for locale in "${locales[@]}"; do
+            git checkout l10n_main locale/$locale
+            msgfmt locale/$locale/LC_MESSAGES/messages.po -o locale/$locale/LC_MESSAGES/messages.mo
+        done
+        xgettext --no-wrap --join-existing --language=C --from-code=UTF-8 --keyword=_ --output=locale/en_US/LC_MESSAGES/messages.po `find templates -name "*.html"`
+        sed -i -e "s/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/g" locale/en_US/LC_MESSAGES/messages.po
+        ;;
+    black)
+        black .
+        ;;
+    *)
+        set +x # No need to echo echo
+        echo "Unrecognised command. Try:"
+        echo "    site:compile"
+        echo "    site:serve"
+        echo "    messages:generate [locale]"
+        echo "    messages:compile [locale]"
+        echo "    messages:update"
+        echo "    black"
+
+        ;;
+esac

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="section">
+    <header class="block has-text-centered">
+        <h1 class="title is-1">{{ _("BookWyrm Documentation") }}</h1>
+        <p class="subtitle">{{ _("Your guide to using and contributing to BookWyrm") }}</p>
+    </header>
+</section>
+
+<section>
+
+    {{ content|safe }}
+
+</section>
+
+{% endblock %}
+
