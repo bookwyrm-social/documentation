@@ -132,16 +132,75 @@
 <p>The instance administrator should have <code>superuser</code> status, which gives them access to Django admin (<code>/admin</code>) and confers all permissions to that user.</p>
 <h2>Permissions and groups</h2>
 <p>This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:</p>
-<p>|                          | admin |  moderator  | editor  | user
-|--------------------------|-------|-------------|---------|------
-| edit instance settings   |  ✔️    |     -       |   -     |  -
-| change user level        |  ✔️    |     -       |   -     |  -
-| manage federation        |  ✔️    |     ✔️       |   -     |  -
-| issue invites            |  ✔️    |     ✔️       |   -     |  -
-| deactivate users         |  ✔️    |     ✔️       |   -     |  -
-| delete posts             |  ✔️    |     ✔️       |   -     |  -
-| edit books               |  ✔️    |     ✔️       |   ✔️     |  -
-| upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>admin</th>
+<th>moderator</th>
+<th>editor</th>
+<th>user</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>edit instance settings</td>
+<td>✔️</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>change user level</td>
+<td>✔️</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>manage federation</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>issue invites</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>deactivate users</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>delete posts</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>edit books</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>-</td>
+</tr>
+<tr>
+<td>upload covers</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+</tr>
+</tbody>
+</table>
 </section>
 
         </div>
