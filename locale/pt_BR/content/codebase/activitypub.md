@@ -1,44 +1,44 @@
-Title: ActivityPub Date: 2021-04-20 Order: 1
+Título: ActivityPub Data: 20/04/2021 Ordem: 1
 
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm usa o protocolo [ActivityPub](http://activitypub.rocks/) para enviar e receber as atividades dos usuários entre instâncias BookWyrm e outros serviços que utilizem o ActivityPub, como o [Mastodon](https://joinmastodon.org/). Para lidar com dados de livros, a BookWyrm tem uma série de tipos estendidos de Atividade (Activity) que não são parte do padrão, mas são legíveis para instâncias BookWyrm.
 
-## Activities and Objects
+## Atividades e Objetos
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Usuários e relações
+As interações de relação entre usuários seguem a especificação padrão do ActivityPub.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Seguir (Follow)`: pedir para receber as publicações de um usuário e ver suas publicações privadas, apenas para seguidores
+- `Aceitar (Accept)`: aprova um pedido para `Seguir` e finaliza a relação
+- `Rejeitar (Reject)`: recusa um pedido para `Seguir`
+- `Bloquear (Block)`: impede que usuários vejam as publicações uns dos outros, e impede que o usuário bloqueado visualize o perfil do agente
+- `Atualizar (Update)`: atualize o perfil do usuário e suas configurações
+- `Excluir (Delete)`: desativa um usuário
+- `Desfazer (Undo)`: reverte um pedido de `Seguir` ou `Bloquear`
 
-### Statuses
-#### Object types
+### Publicações
+#### Tipos de objetos
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Nota (Note)`: em serviços como o Mastodon, a `Nota`s é o tipo primário de publicação. Elas contêm o corpo da mensagem, os anexos, podem mencionar usuários e também serem respostas a publicações de qualquer tipo. Na BookWyrm, uma `Nota`s só pode ser criada como uma mensagem direta ou como respostas a outras publicações.
+- `Resenha (Review)`: Uma resenha é uma publicação em resposta a um livro (indicada pelo campo `inReplyToBook`) que tem um título, corpo e uma avaliação entre 0 (não avaliado) e 5.
+- `Comentário (Comment)`: Um comentário sobre um livro menciona um livro e tem o corpo da mensagem.
+- `Citação (Quotation)`: Uma citação tem o corpo da mensagem, um excerto do livro e menciona um livro.
 
 
-#### Activities
+#### Atividades (Activities)
 
-- `Create`: saves a new status in the database.
+- `Criar (Create)`: salva uma nova publicação no banco de dados.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Lembrete**: A BookWyrm só aceita atividades `Criar (Create)` se elas forem:
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+   - Mensagens diretas (ou seja, `Nota`s com o nível de privacidade `direto (direct)`, que menciona um usuário local),
+   - Relacionadas a um livro (de um tipo de publicação que possua o campo `inReplyToBook`),
+   - Respostas a publicações já salvas no banco de dados
+- `Excluir (Delete)`: apaga uma publicação
+- `Curtir (Like)`: Adiciona um favorito ao status
+- `Compartilhar (Announce)`: compartilha a publicação na linha do tempo do agente
+- `Desfazer (Undo)`: reverte um `Curtir (Like)` ou um `Compartilhar (Announce)`
 
-### Collections
+### Coleções
 User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
 #### Objects
