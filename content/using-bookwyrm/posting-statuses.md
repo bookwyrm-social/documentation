@@ -2,7 +2,9 @@ Title: Posting statuses
 Date: 2022-04-30
 Order: 1
 
-Posting on BookWyrm is similar to [posting on Mastodon](https://docs.joinmastodon.org/user/posting/) in that statuses have visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported. All posts are linked to specific books.
+Posting on BookWyrm starts with a book &mdash; users can write reviews, post quotes, and make general comments on books from the "Your books" sidebar (currently reading and recently read books) or from a book's page. From there, users can reply and start a conversation. BookWyrm posts support a subset of [Markdown formatting](https://www.markdownguide.org/cheat-sheet/) options like bold, italics and links.
+
+If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analagous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
 
 ## Types of statuses
 
@@ -27,9 +29,9 @@ Statuses are generated when a user indicates that they want to read, have starte
 ## Text
 Text can include:
 
-- mentions (@user)
+- Mentions (@user)
 - URLs (`http(s)://` is not displayed)
-- some [markdown formatting](https://www.markdownguide.org/cheat-sheet/)
+- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
   - bold
   - italics
   - block quotes
