@@ -1,4 +1,4 @@
-Title: Updating Your Instance Date: 2021-04-13 Order: 2
+> | Title: Updating Your Instance | Date: 2021-04-13 | Order: 2
 
 When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. This does a number of things:
 
@@ -12,7 +12,7 @@ When there are changes available in the production branch, you can install and g
 
 Feeds for each user are stored in Redis. To re-populate a stream, use the management command:
 
-```
+``` { .sh }
 :::bash linenums=False
 ./bw-dev populate_streams
 # Or use docker-compose directly
@@ -21,7 +21,7 @@ docker-compose run --rm web python manage.py populate_streams
 
 If something has gone terribly awry, the stream data can be deleted.
 
-```
+``` { .sh }
 :::bash linenums=False
 docker-compose run --rm web python manage.py erase_streams
 ```
