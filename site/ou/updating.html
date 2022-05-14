@@ -31,10 +31,10 @@
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
-            <a href="https://joinbookwyrm.com/instances" class="navbar-item">
+            <a href="https://joinbookwyrm.com/ou/instances" class="navbar-item">
                 <span class="button is-success">Join</span>
             </a>
-            <a href="https://joinbookwyrm.com/get-involved" class="navbar-item">
+            <a href="https://joinbookwyrm.com/ou/get-involved" class="navbar-item">
                 Get involved
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
@@ -53,9 +53,9 @@
             <div class="select">
                 <select aria-label="Select a language" id="language_selection">
                     
-                    <option value="" selected>English (US)</option>
+                    <option value="" >English (US)</option>
                     
-                    <option value="ou/" >Anglais (Oulipo)</option>
+                    <option value="ou/" selected>Anglais (Oulipo)</option>
                     
               </select>
             </div>
@@ -67,60 +67,59 @@
     <section class="section">
         <header class="has-text-centered">
             
-<h1 class="title is-1">BookWyrm Documentation</h1>
-<p class="subtitle">How to Use and Contribute</p>
+<h1 class="title is-1"></h1>
 
         </header>
     </section>
     <div class="columns section">
 	<nav class="menu column is-one-quarter mt-2">
-            <h2 class="menu-label"><a href="/">Welcome</a></h2>
+            <h2 class="menu-label"><a href="/ou/">Welcome</a></h2>
             
             <h2 class="menu-label">Using BookWyrm</h2>
             <ul class="menu-list">
                 
-                <li><a href="/posting-statuses.html">Posting statuses</a></li>
+                <li><a href="/ou/posting-statuses.html">Posting statuses</a></li>
                 
             </ul>
             
             <h2 class="menu-label">Running BookWyrm</h2>
             <ul class="menu-list">
                 
-                <li><a href="/install-prod.html">Installing in Production</a></li>
+                <li><a href="/ou/install-prod.html">Installing in Production</a></li>
                 
-                <li><a href="/updating.html">Updating Your Instance</a></li>
+                <li><a href="/ou/updating.html">Updating Your Instance</a></li>
                 
-                <li><a href="/reverse-proxy.html">Using a Reverse-Proxy</a></li>
+                <li><a href="/ou/reverse-proxy.html">Using a Reverse-Proxy</a></li>
                 
-                <li><a href="/moderation.html">Moderation</a></li>
+                <li><a href="/ou/moderation.html">Moderation</a></li>
                 
-                <li><a href="/external-storage.html">External Storage</a></li>
+                <li><a href="/ou/external-storage.html">External Storage</a></li>
                 
-                <li><a href="/optional_features.html">Optional features</a></li>
+                <li><a href="/ou/optional_features.html">Optional features</a></li>
                 
-                <li><a href="/cli.html">Command Line Tool</a></li>
+                <li><a href="/ou/cli.html">Command Line Tool</a></li>
                 
             </ul>
             
             <h2 class="menu-label">Contributing</h2>
             <ul class="menu-list">
                 
-                <li><a href="/contributing.html">How to Contribute</a></li>
+                <li><a href="/ou/contributing.html">How to Contribute</a></li>
                 
-                <li><a href="/install-dev.html">Developer Environment</a></li>
+                <li><a href="/ou/install-dev.html">Developer Environment</a></li>
                 
-                <li><a href="/translation.html">Translations</a></li>
+                <li><a href="/ou/translation.html">Translations</a></li>
                 
-                <li><a href="/style_guide.html">Style Guide</a></li>
+                <li><a href="/ou/style_guide.html">Style Guide</a></li>
                 
             </ul>
             
             <h2 class="menu-label">Codebase</h2>
             <ul class="menu-list">
                 
-                <li><a href="/activitypub.html">ActivityPub</a></li>
+                <li><a href="/ou/activitypub.html">ActivityPub</a></li>
                 
-                <li><a href="/permissions.html">Permissions</a></li>
+                <li><a href="/ou/permissions.html">Permissions</a></li>
                 
             </ul>
             
@@ -129,45 +128,25 @@
         <div class="column">
             
 <section class="block content">
-    <p>BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.</p>
-<h2>Features</h2>
-<p>Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an <a href="https://github.com/bookwyrm-social/bookwyrm/issues">issue</a> to get the conversation going!</p>
+    <p>When there are changes available in the production branch, you can install and get them running on your instance using the command <code>./bw-dev update</code>. This does a number of things:</p>
 <ul>
-<li>Posting about books<ul>
-<li>Compose reviews, with or without ratings, which are aggregated in the book page</li>
-<li>Compose other kinds of statuses about books, such as:<ul>
-<li>Comments on a book</li>
-<li>Quotes or excerpts</li>
+<li><code>git pull</code> gets the updated code from the git repository. If there are conflicts, you may need to run <code>git pull</code> separately and resolve the conflicts before trying the <code>./bw-dev update</code> script again.</li>
+<li><code>docker-compose build</code> rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip <code>requirements.txt</code> packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.</li>
+<li><code>docker-compose exec web python manage.py migrate</code> runs the database migrations in Django</li>
+<li><code>docker-compose exec web python manage.py collectstatic --no-input</code> loads any updated static files (such as the JavaScript and CSS)</li>
+<li><code>docker-compose restart</code> reloads the docker containers</li>
 </ul>
-</li>
-<li>Reply to statuses</li>
-<li>View aggregate reviews of a book across connected BookWyrm instances</li>
-<li>Differentiate local and federated reviews and rating in your activity feed</li>
-</ul>
-</li>
-<li>Track reading activity<ul>
-<li>Shelve books on default "to-read," "currently reading," and "read" shelves</li>
-<li>Create custom shelves</li>
-<li>Store started reading/finished reading dates, as well as progress updates along the way</li>
-<li>Update followers about reading activity (optionally, and with granular privacy controls)</li>
-<li>Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator</li>
-</ul>
-</li>
-<li>Federation with ActivityPub<ul>
-<li>Broadcast and receive user statuses and activity</li>
-<li>Share book data between instances to create a networked database of metadata</li>
-<li>Identify shared books across instances and aggregate related content</li>
-<li>Follow and interact with users across BookWyrm instances</li>
-<li>Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)</li>
-</ul>
-</li>
-<li>Granular privacy controls<ul>
-<li>Private, followers-only, and public privacy levels for posting, shelves, and lists</li>
-<li>Option for users to manually approve followers</li>
-<li>Allow blocking and flagging for moderation</li>
-</ul>
-</li>
-</ul>
+<h2>Re-building activity streams</h2>
+<p>Feeds for each user are stored in Redis. To re-populate a stream, use the management command:</p>
+<p>```
+:::bash linenums=False
+./bw-dev populate_streams</p>
+<h1>Or use docker-compose directly</h1>
+<p>docker-compose run --rm web python manage.py populate_streams
+```</p>
+<p>If something has gone terribly awry, the stream data can be deleted.</p>
+<p><code>:::bash linenums=False
+docker-compose run --rm web python manage.py erase_streams</code></p>
 </section>
 
         </div>
@@ -225,7 +204,7 @@
     (function() {
         var languageSelector = document.getElementById("language_selection");
         languageSelector.onchange = function(event) {
-            var current_locale = "";
+            var current_locale = "ou/";
             var current_location = window.location.pathname;
 
             var locale_index = current_location.indexOf(current_locale);

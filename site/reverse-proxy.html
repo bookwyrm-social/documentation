@@ -67,8 +67,7 @@
     <section class="section">
         <header class="has-text-centered">
             
-<h1 class="title is-1">BookWyrm Documentation</h1>
-<p class="subtitle">How to Use and Contribute</p>
+<h1 class="title is-1"></h1>
 
         </header>
     </section>
@@ -129,45 +128,108 @@
         <div class="column">
             
 <section class="block content">
-    <p>BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.</p>
-<h2>Features</h2>
-<p>Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an <a href="https://github.com/bookwyrm-social/bookwyrm/issues">issue</a> to get the conversation going!</p>
+    <h2>Running BookWyrm Behind a Reverse-Proxy</h2>
+<p>If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.</p>
+<p>The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files.
+The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.</p>
+<p>To run BookWyrm behind a reverse-proxy, make the following changes:</p>
 <ul>
-<li>Posting about books<ul>
-<li>Compose reviews, with or without ratings, which are aggregated in the book page</li>
-<li>Compose other kinds of statuses about books, such as:<ul>
-<li>Comments on a book</li>
-<li>Quotes or excerpts</li>
+<li>In <code>nginx/default.conf</code>:<ul>
+<li>Comment out the two default servers</li>
+<li>Uncomment the server labeled Reverse-Proxy server</li>
+<li>Replace <code>your-domain.com</code> with your domain name</li>
 </ul>
 </li>
-<li>Reply to statuses</li>
-<li>View aggregate reviews of a book across connected BookWyrm instances</li>
-<li>Differentiate local and federated reviews and rating in your activity feed</li>
-</ul>
-</li>
-<li>Track reading activity<ul>
-<li>Shelve books on default "to-read," "currently reading," and "read" shelves</li>
-<li>Create custom shelves</li>
-<li>Store started reading/finished reading dates, as well as progress updates along the way</li>
-<li>Update followers about reading activity (optionally, and with granular privacy controls)</li>
-<li>Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator</li>
-</ul>
-</li>
-<li>Federation with ActivityPub<ul>
-<li>Broadcast and receive user statuses and activity</li>
-<li>Share book data between instances to create a networked database of metadata</li>
-<li>Identify shared books across instances and aggregate related content</li>
-<li>Follow and interact with users across BookWyrm instances</li>
-<li>Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)</li>
-</ul>
-</li>
-<li>Granular privacy controls<ul>
-<li>Private, followers-only, and public privacy levels for posting, shelves, and lists</li>
-<li>Option for users to manually approve followers</li>
-<li>Allow blocking and flagging for moderation</li>
+<li>In <code>docker-compose.yml</code>:<ul>
+<li>In <code>services</code> -&gt; <code>nginx</code> -&gt; <code>ports</code>, comment out the default ports and add <code>- 8001:8001</code></li>
+<li>In <code>services</code> -&gt; <code>nginx</code> -&gt; <code>volumes</code>, comment out the two volumes that begin <code>./certbot/</code></li>
+<li>In <code>services</code>, comment out the <code>certbot</code> service</li>
 </ul>
 </li>
 </ul>
+<p>At this point, you can follow, the <a href="#server-setup">setup</a> instructions as listed.
+Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code>).</p>
+<p>Steps for setting up a reverse-proxy are server dependent.</p>
+<h4>Nginx</h4>
+<p>Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx.
+See <a href="http://nginx.org/en/docs/beginners_guide.html">nginx's guide</a> for details.</p>
+<p>To set up your server:</p>
+<ul>
+<li>In you <code>nginx.conf</code> file, ensure that <code>include servers/*;</code> isn't commented out.</li>
+<li>In your nginx <code>servers</code> directory, create a new file named after your domain containing the following information:</li>
+</ul>
+<p>```
+:::nginx linenums=false
+server {
+    server_name your-domain.com www.your-domain.com;</p>
+<pre><code>location / {
+    proxy_pass http://localhost:8000;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+}
+
+location /images/ {
+    proxy_pass http://localhost:8001;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+}
+
+location /static/ {
+    proxy_pass http://localhost:8001;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+}
+
+listen [::]:80 ssl;
+listen 80 ssl;
+</code></pre>
+<p>}
+```</p>
+<p>To set up with an ssl block:
+```
+:::nginx linenums=false</p>
+<p>server {
+    server_name your.domain;</p>
+<pre><code>listen [::]:80;
+listen 80;
+add_header Strict-Transport-Security "max-age=31536000;includeSubDomains" always;
+rewrite ^ https://$server_name$request_uri;
+location / { return 301 https://$host$request_uri; }
+</code></pre>
+<p>}</p>
+<h1>SSL code</h1>
+<p>ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem;</p>
+<p>server {
+    listen [::]:443 ssl http2;
+    listen 443 ssl http2;</p>
+<pre><code>server_name your.domain;
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+location / {
+    proxy_pass http://localhost:8000;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+}
+
+location /images/ {
+    proxy_pass http://localhost:8001;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+}
+
+location /static/ {
+    proxy_pass http://localhost:8001;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+}
+</code></pre>
+<p>}</p>
+<p><code>``
+- run</code>sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
+- restart nginx</p>
+<p>If everything worked correctly, your BookWyrm instance should now be externally accessible.</p>
+<p><em>Note: the <code>proxy_set_header Host $host;</code> is essential; if you do not include it, incoming messages from federated servers will be rejected.</em></p>
+<p><em>Note: the location of the ssl certificates may vary depending on the OS of your server</em></p>
 </section>
 
         </div>

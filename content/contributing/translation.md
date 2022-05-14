@@ -1,6 +1,6 @@
-Title: Translations
-Date: 2021-10-20
-Order: 3
+>| Title: Translations
+>| Date: 2021-10-20
+>| Order: 3
 
 ## Contributing to translations
 

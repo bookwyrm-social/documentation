@@ -67,8 +67,7 @@
     <section class="section">
         <header class="has-text-centered">
             
-<h1 class="title is-1">BookWyrm Documentation</h1>
-<p class="subtitle">How to Use and Contribute</p>
+<h1 class="title is-1"></h1>
 
         </header>
     </section>
@@ -129,45 +128,87 @@
         <div class="column">
             
 <section class="block content">
-    <p>BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.</p>
-<h2>Features</h2>
-<p>Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an <a href="https://github.com/bookwyrm-social/bookwyrm/issues">issue</a> to get the conversation going!</p>
-<ul>
-<li>Posting about books<ul>
-<li>Compose reviews, with or without ratings, which are aggregated in the book page</li>
-<li>Compose other kinds of statuses about books, such as:<ul>
-<li>Comments on a book</li>
-<li>Quotes or excerpts</li>
-</ul>
-</li>
-<li>Reply to statuses</li>
-<li>View aggregate reviews of a book across connected BookWyrm instances</li>
-<li>Differentiate local and federated reviews and rating in your activity feed</li>
-</ul>
-</li>
-<li>Track reading activity<ul>
-<li>Shelve books on default "to-read," "currently reading," and "read" shelves</li>
-<li>Create custom shelves</li>
-<li>Store started reading/finished reading dates, as well as progress updates along the way</li>
-<li>Update followers about reading activity (optionally, and with granular privacy controls)</li>
-<li>Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator</li>
-</ul>
-</li>
-<li>Federation with ActivityPub<ul>
-<li>Broadcast and receive user statuses and activity</li>
-<li>Share book data between instances to create a networked database of metadata</li>
-<li>Identify shared books across instances and aggregate related content</li>
-<li>Follow and interact with users across BookWyrm instances</li>
-<li>Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)</li>
-</ul>
-</li>
-<li>Granular privacy controls<ul>
-<li>Private, followers-only, and public privacy levels for posting, shelves, and lists</li>
-<li>Option for users to manually approve followers</li>
-<li>Allow blocking and flagging for moderation</li>
-</ul>
-</li>
-</ul>
+    <p>Bookwyrm developers and instance managers can use the <code>bw-dev</code> script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.</p>
+<p>Once you have installed Bookwyrm <a href="installing-in-production.html">in production</a> or <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">in development</a>, you can run the script from the command line with <code>./bw-dev</code> followed by the subcommand you want to run.</p>
+<h2>Docker shortcuts</h2>
+<h3>bash</h3>
+<p>Open an interactive <code>bash</code> session inside the docker <code>web</code> container.</p>
+<h3>build</h3>
+<p>Equivalent to <code>docker-compose build</code>.</p>
+<h3>dbshell</h3>
+<p>Open an interactive Postgres database shell. I hope you know what you're doing.</p>
+<h3>runweb args</h3>
+<p>Run an arbitrary command (represented above by <code>args</code>) in the <code>web</code> container.</p>
+<p>Equivalent to <code>docker-compose run --rm web</code>.</p>
+<h3>service_ports_web args</h3>
+<p>Run an arbitrary command in the <code>web</code> container (represented above by <code>args</code>) with ports exposed. This is useful if you want to run <code>pdb</code> tests because <code>runweb</code> will not expose the <code>pdb</code> prompt.</p>
+<p>Equivalent to <code>docker-compose run --rm --service-ports web</code>.</p>
+<h3>shell</h3>
+<p>Open an interactive Django shell inside the docker <code>web</code> container. You would use this if you want to run Django shell commands directly. For example when <a href="installing-in-production.html#configure_your_instance">making your initial user a superuser</a>.</p>
+<h3>up [args]</h3>
+<p>Start or restart Docker containers, optionally including any arguments (represented above by <code>args</code>). Equivalent to <code>docker-compose up --build [args]</code></p>
+<h2>Managing the database</h2>
+<h3>initdb</h3>
+<p>Initialize a database.</p>
+<h3>makemigrations [appname migration number]</h3>
+<p><em>This command is not available on the <code>production</code> branch</em>.</p>
+<p>Runs Django's <code>makemigrations</code> command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. <code>./bw-dev makemigrations bookwyrm 0108</code></p>
+<h3>migrate</h3>
+<p>Runs Django's <code>migrate</code> command inside your Docker container. You always need to run this after <code>makemigrations</code>.</p>
+<h3>resetdb</h3>
+<p><em>This command is not available on the <code>production</code> branch</em>.</p>
+<p>Resets the database. <strong>This command will delete your entire Bookwyrm database</strong>, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, <em>before</em> running <code>resetdb</code>.</p>
+<h2>Managing a Bookwyrm instance</h2>
+<h3>collectstatic</h3>
+<p>Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.</p>
+<h3>generate_preview_images</h3>
+<p>Generate preview images for site, users, and books. This can take a while if you have a large database.</p>
+<h3>generate_thumbnails</h3>
+<p>Generates thumbnail images for book covers.</p>
+<h3>populate_streams args</h3>
+<p>Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the <code>--stream</code> argument.</p>
+<h3>populate_list_streams</h3>
+<p>Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.</p>
+<h3>populate_suggestions</h3>
+<p>Populate suggested users for all users. You may want to run this manually to refresh suggestions.</p>
+<h3>restart_celery</h3>
+<p>Restarts the <code>celery_worker</code> Docker container.</p>
+<h3>update</h3>
+<p>When there are changes to the <code>production</code> branch, you can update your instance without downtime.</p>
+<p>This command <code>git pull</code>s the latest <code>production</code> branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.</p>
+<h3>admin_code</h3>
+<p>Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.</p>
+<h2>Setting up S3 compatible storage</h2>
+<p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
+<p>See <a href="/external-storage.html">External Storage</a> for more information.</p>
+<h3>copy_media_to_s3</h3>
+<p>Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
+<h3>sync_media_to_s3</h3>
+<p>Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
+<h3>set_cors_to_s3 filename</h3>
+<p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
+<h2>Development and testing</h2>
+<p><em>These commands are not available on the <code>production</code> branch</em>.</p>
+<h3>black</h3>
+<p>BookWyrm uses the <a href="https://github.com/psf/black">Black</a> code formatter to keep the Python codebase consistent styled. Run <code>black</code> before committing your changes so the <code>pylint</code> task does not fail for your pull request and make you sad.</p>
+<h3>prettier</h3>
+<p>BookWyrm uses <a href="https://prettier.io/">Prettier</a> to keep the JavaScript codebase consistently styled. Run <code>prettier</code> before committing changes to scripts to automatically format your code.</p>
+<h3>stylelint</h3>
+<p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelintprettier</code> before committing changes to scripts to automatically format your code.</p>
+<h3>formatters</h3>
+<p>This command runs all code formatters (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) in one go.</p>
+<h3>clean</h3>
+<p>Remove all stopped Docker containers.</p>
+<p>Equivalent to:</p>
+<p><code>shell
+docker-compose stop
+docker-compose rm -f</code></p>
+<h3>makemessages</h3>
+<p>Creates message files for all translation strings. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Django's makemessages</a>.</p>
+<h3>compilemessages</h3>
+<p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
+<h3>pytest args</h3>
+<p>Run tests with <code>pytest</code>.</p>
 </section>
 
         </div>

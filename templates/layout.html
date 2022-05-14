@@ -10,10 +10,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ _("Join Bookwyrm") }}">
-    <meta name="og:title" content="{{ _("Join Bookwyrm") }}">
-    <meta name="twitter:description" content="{{ _("BookWyrm is a decentralized social network for tracking your reading, talking about books, writing reviews, and discovering what to read next.") }}">
-    <meta name="og:description" content="{{ _("BookWyrm is a decentralized social network for tracking your reading, talking about books, writing reviews, and discovering what to read next.") }}">
+    <meta name="twitter:title" content="{{ _("Bookwyrm Documentation") }}">
+    <meta name="og:title" content="{{ _("Bookwyrm Documentation") }}">
+    <meta name="twitter:description" content="{{ _("Documentation for using and contributing to BookWyrm") }}">
+    <meta name="og:description" content="{{ _("Documentation for using and contributing to BookWyrm") }}">
 
     <meta name="twitter:image" content="">
     <meta name="og:image" content="">
@@ -24,17 +24,17 @@
 <body>
 <nav class="navbar container is-max-desktop" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/{{ locale["slug"] }}">
-            <img class="image logo" src="/static/images/logo-small.png" alt="{{ _("Go back to the homepage") }}">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="{{ _('Go back to the homepage') }}">
         </a>
     </div>
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
-            <a href="/{{ locale["slug"] }}instances" class="navbar-item">
+            <a href="https://joinbookwyrm.com/{{ locale["slug"] }}instances" class="navbar-item">
                 <span class="button is-success">{{ _("Join") }}</span>
             </a>
-            <a href="/{{ locale["slug"] }}get-involved" class="navbar-item">
+            <a href="https://joinbookwyrm.com/{{ locale["slug"] }}get-involved" class="navbar-item">
                 {{ _("Get involved") }}
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
@@ -43,7 +43,7 @@
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 {{ _("Code") }}
             </a>
-            <a href="https://docs.joinbookwyrm.com/" class="navbar-item">
+            <a href="#" class="navbar-item is-active">
                 {{ _("Documentation") }}
             </a>
         </div>
@@ -62,7 +62,28 @@
 </nav>
 
 <div class="container is-max-desktop">
-    {% block content %}{% endblock %}
+    <section class="section">
+        <header class="has-text-centered">
+            {% block header %}{% endblock %}
+        </header>
+    </section>
+    <div class="columns section">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/{{ locale['slug'] }}">Welcome</a></h2>
+            {% for category in categories %}
+            <h2 class="menu-label">{{ category.title }}</h2>
+            <ul class="menu-list">
+                {% for subcat in category.subcategories %}
+                <li><a href="{{ subcat.path }}">{{ subcat.Title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </nav>
+
+        <div class="column">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
 </div>
 
 <footer id="contentinfo" class="footer">

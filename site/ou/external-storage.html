@@ -67,8 +67,7 @@
     <section class="section">
         <header class="has-text-centered">
             
-<h1 class="title is-1">BookWyrm Documentation</h1>
-<p class="subtitle">How to Use and Contribute</p>
+<h1 class="title is-1"></h1>
 
         </header>
     </section>
@@ -129,45 +128,96 @@
         <div class="column">
             
 <section class="block content">
-    <p>BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.</p>
-<h2>Features</h2>
-<p>Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an <a href="https://github.com/bookwyrm-social/bookwyrm/issues">issue</a> to get the conversation going!</p>
+    <p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses <code>django-storages</code> to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
+<h2>S3-compatible Services</h2>
+<h3>Setup</h3>
+<p>Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like <a href="https://ceph.io/en/">Ceph</a> (LGPL 2.1/3.0) or <a href="https://min.io/">MinIO</a> (GNU AGPL v3.0), or commercial (<a href="https://www.scaleway.com/en/docs/object-storage-feature/">Scaleway</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key">Digital Ocean</a>…).</p>
+<p>This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the <a href="https://github.com/bookwyrm-social/documentation">BookWyrm Documentation</a> repository.</p>
+<h3>What awaits you</h3>
+<p>If you are starting a new BookWyrm instance, the process will be:</p>
 <ul>
-<li>Posting about books<ul>
-<li>Compose reviews, with or without ratings, which are aggregated in the book page</li>
-<li>Compose other kinds of statuses about books, such as:<ul>
-<li>Comments on a book</li>
-<li>Quotes or excerpts</li>
+<li>Set up your external storage service</li>
+<li>Enable external storage on BookWyrm</li>
+<li>Start your BookWyrm instance</li>
+<li>Update the instance connector</li>
 </ul>
-</li>
-<li>Reply to statuses</li>
-<li>View aggregate reviews of a book across connected BookWyrm instances</li>
-<li>Differentiate local and federated reviews and rating in your activity feed</li>
+<p>If you already started your instance, and images have been uploaded to local storage, the process will be:</p>
+<ul>
+<li>Set up your external storage service</li>
+<li>Copy your local media to external storage</li>
+<li>Enable external storage on BookWyrm</li>
+<li>Restart your BookWyrm instance</li>
+<li>Update the instance connector</li>
 </ul>
-</li>
-<li>Track reading activity<ul>
-<li>Shelve books on default "to-read," "currently reading," and "read" shelves</li>
-<li>Create custom shelves</li>
-<li>Store started reading/finished reading dates, as well as progress updates along the way</li>
-<li>Update followers about reading activity (optionally, and with granular privacy controls)</li>
-<li>Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator</li>
+<h3>BookWyrm Settings</h3>
+<p>Edit your <code>.env</code> file by uncommenting the following lines:</p>
+<ul>
+<li><code>AWS_ACCESS_KEY_ID</code>: your access key ID</li>
+<li><code>AWS_SECRET_ACCESS_KEY</code>: your secret access key</li>
+<li><code>AWS_STORAGE_BUCKET_NAME</code>: your bucket name</li>
+<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway or <code>"nyc3"</code> for Digital Ocean </li>
 </ul>
-</li>
-<li>Federation with ActivityPub<ul>
-<li>Broadcast and receive user statuses and activity</li>
-<li>Share book data between instances to create a networked database of metadata</li>
-<li>Identify shared books across instances and aggregate related content</li>
-<li>Follow and interact with users across BookWyrm instances</li>
-<li>Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)</li>
+<p>If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:</p>
+<ul>
+<li><code>AWS_S3_CUSTOM_DOMAIN</code>: the domain that will serve the assets, e.g. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code> or <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li><code>AWS_S3_ENDPOINT_URL</code>: the S3 API endpoint, e.g. <code>"https://s3.fr-par.scw.cloud"</code> or <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
 </ul>
-</li>
-<li>Granular privacy controls<ul>
-<li>Private, followers-only, and public privacy levels for posting, shelves, and lists</li>
-<li>Option for users to manually approve followers</li>
-<li>Allow blocking and flagging for moderation</li>
-</ul>
-</li>
-</ul>
+<h3>Copying local media to external storage</h3>
+<p>If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.</p>
+<p>This task is done with the command: </p>
+<p><code>bash
+./bw-dev copy_media_to_s3</code></p>
+<h3>Enabling external storage for BookWyrm</h3>
+<p>To enable the S3-compatible external storage, you will have to edit your <code>.env</code> file by changing the property value for <code>USE_S3</code> from <code>false</code> to <code>true</code>:</p>
+<p><code>USE_S3=true</code></p>
+<p>If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that <code>USE_HTTPS</code> is set to <code>true</code>, so images will be loaded over HTTPS:</p>
+<p><code>USE_HTTPS=true</code></p>
+<h4>Static assets</h4>
+<p>Then, you will need to run the following command, to copy the static assets to your S3 bucket:</p>
+<p><code>bash
+./bw-dev collectstatic</code></p>
+<h4>CORS settings</h4>
+<p>Once the static assets are collected, you will need to set up CORS for your bucket.</p>
+<p>Some services like Digital Ocean provide an interface to set it up, see <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
+<p>If your service doesn’t provide an interface, you can still set up CORS with the command line.</p>
+<p>Create a file called <code>cors.json</code>, with the following content:</p>
+<p><code>json
+{
+  "CORSRules": [
+    {
+      "AllowedOrigins": ["https://MY_DOMAIN_NAME", "https://www.MY_DOMAIN_NAME"],
+      "AllowedHeaders": ["*"],
+      "AllowedMethods": ["GET", "HEAD", "POST", "PUT", "DELETE"],
+      "MaxAgeSeconds": 3000,
+      "ExposeHeaders": ["Etag"]
+    }
+  ]
+}</code></p>
+<p>Replace <code>MY_DOMAIN_NAME</code> with the domain name(s) of your instance.</p>
+<p>Then, run the following command:</p>
+<p><code>bash
+./bw-dev set_cors_to_s3 cors.json</code></p>
+<p>No output means it should be good.</p>
+<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.</p>
+<h3>Restarting your instance</h3>
+<p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
+<p><code>bash
+./bw-dev up -d</code></p>
+<p>If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong <a href="#cors-settings">here</a>. In that case it might be good to check the headers of a HTTP request against a file on your bucket:</p>
+<p><code>bash
+curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H "Access-Control-Request-Method: GET"</code></p>
+<p>Replace <code>MY_DOMAIN_NAME</code> with your instance domain name, <code>BUCKET_URL</code> with the URL for your bucket, you can replace the file path with any other valid path on your bucket.</p>
+<p>If you see any message, especially a message starting with <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, it didn’t work. If you see no message, it worked.</p>
+<p>For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage.
+To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:</p>
+<p><code>bash
+./bw-dev sync_media_to_s3</code></p>
+<h3>Updating the instance connector</h3>
+<p><em>Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
+<p>In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.</p>
+<p>Connector data can be accessed through the Django admin interface, located at the url <code>http://MY_DOMAIN_NAME/admin</code>. The connector for your own instance is the first record in the database, so you can access the connector with this URL: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
+<p>The field <em>Covers url</em> is defined by default as <code>https://MY_DOMAIN_NAME/images</code>, you have to change it to <code>https://S3_STORAGE_URL/images</code>. Then, click the <em>Save</em> button, and voilà!</p>
+<p>You will have to update the value for <em>Covers url</em> every time you change the URL for your storage.</p>
 </section>
 
         </div>
