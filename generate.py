@@ -2,11 +2,11 @@
 from glob import glob
 import os
 import re
-import yaml
 
 import i18n
 from jinja2 import Environment, FileSystemLoader
 from markdown import markdown
+import yaml
 
 env = Environment(loader=FileSystemLoader("templates/"), extensions=["jinja2.ext.i18n"])
 
@@ -77,7 +77,7 @@ if __name__ == "__main__":
         i18n.setLocale(locale["code"])
 
         LOCALIZED_SITE_PATH = "site/"
-        if not locale["code"] == "en_US":
+        if locale["code"] != "en_US":
             LOCALIZED_SITE_PATH = f'site/{locale["slug"]}'
 
         # iterate through template types
