@@ -1,3 +1,7 @@
 files:
   - source: /content/**/*.md
     translation: /locale/%locale_with_underscore%/%original_path%/%original_file_name%
+  - source: /locale/en_US/LC_MESSAGES/messages.po
+    translation: /locale/%locale_with_underscore%/LC_MESSAGES/messages.po
+  - source: /content/**/_meta.yml
+    translation: locale/%locale_with_underscore%/%original_path%/%original_file_name%
