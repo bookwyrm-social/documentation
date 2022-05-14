@@ -3,10 +3,11 @@ from glob import glob
 import os
 import re
 
-import i18n
 from jinja2 import Environment, FileSystemLoader
 from markdown import markdown
 import yaml
+
+import i18n
 
 env = Environment(loader=FileSystemLoader("templates/"), extensions=["jinja2.ext.i18n"])
 
