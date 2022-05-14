@@ -39,20 +39,20 @@ As interações de relação entre usuários seguem a especificação padrão do
 - `Desfazer (Undo)`: reverte um `Curtir (Like)` ou um `Compartilhar (Announce)`
 
 ### Coleções
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+Os livros dos usuários e suas listas são representadas com [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
-#### Objects
+#### Objetos
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `Estante (Shelf)`: a coleção de livros de um usuário. Por padrão, todo usuário possui as estantes `to-read (para-ler)`, `reading (lendo)`, e `read (lido)`, elas servem para companhar o andamento da leitura.
+- `Lista (List)`: uma coleção de livros que podem ter itens submetidos por outros usuários além do criador da lista.
 
-#### Activities
+#### Atividades (Activities)
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Criar (Create)`: salva uma estante ou uma lista no banco de dados.
+- `Excluir (Delete)`: exclui uma estante ou lista.
+- `Adicionar (Add)`: adiciona um livro a uma estante ou lista.
+- `Remover (Remove)`: exclui um livro de uma estante ou lista.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+## Serialização alternativa
+Uma vez que a BookWyrm utiliza tipos de objetos especiais (`Resenha (Review)`, `Comentário (Comment)`, `Citação (Quotation)`) que não são compatíveis com o ActivityPub, as publicações são transformadas em objetos do tipo padrão quando são enviadas ou visualizadas por serviços que não a BookWyrm. `Resenhas (Reviews)` são transformadas em `Artigo (Article)`, e `Comentários (Comments)` e `Citações (Quotations)` são transformados em `Notas (Notes)` com um link para o livro e a imagem de capa no anexo.
