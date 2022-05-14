@@ -1,4 +1,4 @@
-Title: Posting statuses Date: 2022-04-30 Order: 1
+> | Title: Posting statuses | Date: 2022-04-30 | Order: 1
 
 Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
