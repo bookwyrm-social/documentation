@@ -17,7 +17,7 @@ env.install_gettext_translations(i18n)
 HEADER_SLUG = r">\|"
 
 
-def get_page_metadata(slug, page):
+def get_page_metadata(page):
     """title/order etc for a page"""
     with open(page, "r", encoding="utf-8") as page_markdown:
         # extract headers
@@ -34,7 +34,7 @@ def get_page_metadata(slug, page):
     return header_obj
 
 
-def get_site_data(slug, page=None):
+def get_site_data(page=None):
     """this should be a file"""
     category_dirs = glob("content/*/")
     categories = []
@@ -44,7 +44,7 @@ def get_site_data(slug, page=None):
 
         subcategories = []
         for subcat in glob(f"{cat_dir}/*.md"):
-            subcategories.append(get_page_metadata(slug, subcat))
+            subcategories.append(get_page_metadata(subcat))
         subcategories.sort(key=lambda v: v.get("Order", -1))
 
         categories.append({**parsed, **{"subcategories": subcategories}})
@@ -52,7 +52,7 @@ def get_site_data(slug, page=None):
     template_data = {"categories": categories}
 
     if page:
-        template_data["headers"] = get_page_metadata(slug, page)
+        template_data["headers"] = get_page_metadata(page)
 
     return template_data
 
@@ -70,6 +70,7 @@ def format_markdown(file_path):
 if __name__ == "__main__":
     # iterate through each locale
     for locale in i18n.locales_metadata:
+        slug = locale["slug"]
         paths = [
             ["index.html", "content/index.md"],
             ["page.html", "content/**/*.md"],
@@ -79,7 +80,11 @@ if __name__ == "__main__":
 
         LOCALIZED_SITE_PATH = "site/"
         if locale["code"] != "en_US":
-            LOCALIZED_SITE_PATH = f'site/{locale["slug"]}'
+            paths = [
+                ["index.html", f"locale/{locale['code']}/content/index.md"],
+                ["page.html", f"locale/{locale['code']}/content/**/*.md"],
+            ]
+            LOCALIZED_SITE_PATH = f'site/{slug}'
 
         # iterate through template types
         for (path, content_paths) in paths:
@@ -98,9 +103,9 @@ if __name__ == "__main__":
                 with open(
                     f"{LOCALIZED_SITE_PATH}{output_path}", "w+", encoding="utf-8"
                 ) as render_file:
-                    data = get_site_data(locale["slug"], content_path)
+                    data = get_site_data(content_path)
                     data["content"] = format_markdown(content_path)
-                    data["path"] = f"/{locale['slug']}{output_path}"
+                    data["path"] = f"/{slug}{output_path}"
                     render_file.write(
                         template.render(
                             locale=locale,
