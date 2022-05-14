@@ -15,25 +15,26 @@ env.install_gettext_translations(i18n)
 
 HEADER_SLUG = r">\|"
 
+
 def get_page_metadata(slug, page):
-    """ title/order etc for a page """
+    """title/order etc for a page"""
     with open(page, "r", encoding="utf-8") as page_markdown:
         # extract headers
         headers = "".join(
-            re.sub(HEADER_SLUG, "", r) for r in
-            re.findall(rf"{HEADER_SLUG} .*\n", page_markdown.read())
+            re.sub(HEADER_SLUG, "", r)
+            for r in re.findall(rf"{HEADER_SLUG} .*\n", page_markdown.read())
         )
     if not headers:
         return {}
 
     header_obj = yaml.safe_load(headers)
     path_dir = page.split("/")[-1].replace(".md", ".html")
-    header_obj["path"] = f'/{slug}{path_dir}'
+    header_obj["path"] = f"/{slug}{path_dir}"
     return header_obj
 
 
 def get_site_data(slug, page=None):
-    """ this should be a file """
+    """this should be a file"""
     category_dirs = glob("content/*/")
     categories = []
     for cat_dir in category_dirs:
@@ -45,9 +46,7 @@ def get_site_data(slug, page=None):
             subcategories.append(get_page_metadata(slug, subcat))
         subcategories.sort(key=lambda v: v.get("Order", -1))
 
-        categories.append(
-            {**parsed, **{"subcategories": subcategories}}
-        )
+        categories.append({**parsed, **{"subcategories": subcategories}})
     categories.sort(key=lambda v: v["order"])
     template_data = {"categories": categories}
 
@@ -56,8 +55,9 @@ def get_site_data(slug, page=None):
 
     return template_data
 
+
 def format_markdown(file_path):
-    """ go from markdown to html, extracting headers """
+    """go from markdown to html, extracting headers"""
     with open(file_path, "r", encoding="utf-8") as markdown_content:
         # remove headers
         markdown_content = markdown_content.read()
