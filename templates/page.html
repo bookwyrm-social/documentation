@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<h1 class="title is-1">{{ headers.Title }}</h1>
+{% endblock %}
+
+
+{% block content %}
+<section class="block content">
+    {{ content|safe }}
+</section>
+{% endblock %}

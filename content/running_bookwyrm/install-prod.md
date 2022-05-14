@@ -1,6 +1,6 @@
-Title: Installing in Production
-Date: 2021-05-18
-Order: 1
+>| Title: Installing in Production
+>| Date: 2021-05-18
+>| Order: 1
 
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
 
@@ -52,13 +52,14 @@ Instructions for running BookWyrm in production:
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Set up the database with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
     - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
-```
-:::shell linenums=False
+
+``` { .sh }
 *******************************************
 Use this code to create your admin account:
 c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
 ```
+
 - Run docker-compose in the background with: `docker-compose up -d`
 - The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
 

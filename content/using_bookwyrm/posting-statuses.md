@@ -1,6 +1,6 @@
-Title: Posting statuses
-Date: 2022-04-30
-Order: 1
+>| Title: Posting statuses
+>| Date: 2022-04-30
+>| Order: 1
 
 Posting on BookWyrm starts with a book.
 Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page.

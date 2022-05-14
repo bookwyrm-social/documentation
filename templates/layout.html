@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="{{ locale['code'][:2]|default('en') }}">
+<head>
+    <title>{{ _("BookWyrm: Social Reading and Reviewing") }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ _("Bookwyrm Documentation") }}">
+    <meta name="og:title" content="{{ _("Bookwyrm Documentation") }}">
+    <meta name="twitter:description" content="{{ _("Documentation for using and contributing to BookWyrm") }}">
+    <meta name="og:description" content="{{ _("Documentation for using and contributing to BookWyrm") }}">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="{{ _('Go back to the homepage') }}">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/{{ locale["slug"] }}instances" class="navbar-item">
+                <span class="button is-success">{{ _("Join") }}</span>
+            </a>
+            <a href="https://joinbookwyrm.com/{{ locale["slug"] }}get-involved" class="navbar-item">
+                {{ _("Get involved") }}
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                {{ _("Support") }}
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                {{ _("Code") }}
+            </a>
+            <a href="#" class="navbar-item is-active">
+                {{ _("Documentation") }}
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="{{ _("Select a language") }}" id="language_selection">
+                    {% for option in locales_metadata %}
+                    <option value="{{ option['slug'] }}" {% if option['slug'] == locale['slug'] %}selected{% endif %}>{{ option['name'] }}</option>
+                    {% endfor %}
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        {% block header %}{% endblock %}
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/{{ locale['slug'] }}">Welcome</a></h2>
+            {% for category in categories %}
+            <h2 class="menu-label">{{ category.title }}</h2>
+            <ul class="menu-list">
+                {% for subcat in category.subcategories %}
+                <li><a href="{{ subcat.path }}" {% if path == subcat.path %}class="is-active"{% endif %}>{{ subcat.Title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </nav>
+
+        <div class="column">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    {{ _("<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.") }}
+                </p>
+                <p>
+                    {{ _("Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.") }}
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">{{ _("Get Involved") }}</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">{{ _("BookWyrm on GitHub") }}</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">{{ _("Contribute to this page") }}</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">{{ _("Learn more") }}</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">{{ _("Documentation") }}</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">{{ _("Contact maintainer") }}</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">{{ _("License") }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "{{ locale['slug']|safe }}";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

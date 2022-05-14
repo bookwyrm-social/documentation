@@ -1,2 +1,3 @@
-output
+venv
+*.swp
 __pycache__

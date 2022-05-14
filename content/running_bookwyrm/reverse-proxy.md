@@ -1,6 +1,6 @@
-Title: Using a Reverse-Proxy
-Date: 2021-05-11
-Order: 3
+>| Title: Using a Reverse-Proxy
+>| Date: 2021-05-11
+>| Order: 3
 
 ## Running BookWyrm Behind a Reverse-Proxy
 If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.
@@ -34,8 +34,7 @@ To set up your server:
 - In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
 - In your nginx `servers` directory, create a new file named after your domain containing the following information:
 
-```
-:::nginx linenums=false
+``` { .nginx }
 server {
     server_name your-domain.com www.your-domain.com;
 
@@ -63,9 +62,7 @@ server {
 ```
 
 To set up with an ssl block:
-```
-:::nginx linenums=false
-
+``` { .nginx }
 server {
     server_name your.domain;
 
@@ -104,7 +101,6 @@ server {
         proxy_set_header Host $host;
     }
 }
-
 ```
 - run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
 - restart nginx
