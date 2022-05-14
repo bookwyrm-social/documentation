@@ -26,6 +26,7 @@ Statuses are generated when a user indicates that they want to read, have starte
 
 ## Text
 Text can include:
+
 - mentions (@user)
 - URLs (`http(s)://` is not displayed)
 - some [markdown formatting](https://www.markdownguide.org/cheat-sheet/)
