@@ -1,11 +1,11 @@
-Titre : ActivityPub Date : 2021-04-20 Ordre : 1
+> | Title: ActivityPub | Date: 2021-04-20 | Order: 1
 
-BookWyrm utilise le protocole [ActivityPub](http://activitypub.rocks/) pour envoyer et recevoir des activités utilisateur entre des instances de BookWyrm et d’autres services qui implémentent ActivityPub, comme [Mastodon](https://joinmastodon.org/). Pour gérer les données de livres, BookWyrm utilise plusieurs extensions de types d’Activity qui ne font pas partie de la norme, mais sont interopérables avec les autres instances de BookWyrm.
+BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
 
 ## Activités et Objets
 
 ### Utilisateurs et relations
-Les interactions de relations entre les utilisateurs suivent la spécification standard ActivityPub.
+User relationship interactions follow the standard ActivityPub spec.
 
 - `Follow` : demande à recevoir les statuts d'un utilisateur et consultez leurs statuts qui ont un réglage de lecture réservée aux abonnés
 - `Accept` : approuve un `Follow` et finalise la relation
