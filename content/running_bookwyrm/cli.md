@@ -34,7 +34,7 @@ Equivalent to `docker-compose run --rm --service-ports web`.
 
 ### shell
 
-Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly. For example when [making your initial user a superuser](installing-in-production.html#configure_your_instance).
+Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly.
 
 ### up [args]
 
