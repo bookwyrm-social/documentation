@@ -17,10 +17,20 @@ def get_site_data():
     dirs = glob("content/**")
     return {"categories": [re.sub(r"\d|_", " ", d) for d in dirs]}
 
+def format_markdown(file_path):
+    """ go from markdown to html, extracting headers """
+    with open(file_path, "r", encoding="utf-8") as markdown_content:
+        # remove headers
+        markdown_content = markdown_content.read()
+        markdown_content = re.sub(r"\|.*\n", "", markdown_content)
+
+        return markdown(markdown_content)
+
+
 if __name__ == "__main__":
     data = get_site_data()
     paths = [
-        ["index.html", data, "content/pages/index.md"],
+        ["index.html", data, "content/index.md"],
     ]
 
     # iterate through each locale
@@ -46,8 +56,7 @@ if __name__ == "__main__":
             with open(
                 f"{LOCALIZED_SITE_PATH}{path}", "w+", encoding="utf-8"
             ) as render_file:
-                with open(content_paths, "r", encoding="utf-8") as markdown_content:
-                    data["content"] = markdown(markdown_content.read())
+                data["content"] = format_markdown(content_paths)
                 render_file.write(
                     template.render(
                         locale=locale,

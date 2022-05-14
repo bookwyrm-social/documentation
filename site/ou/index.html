@@ -24,17 +24,17 @@
 <body>
 <nav class="navbar container is-max-desktop" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+        <a class="navbar-item" href="/ou/">
             <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
         </a>
     </div>
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
-            <a href="/instances" class="navbar-item">
+            <a href="/ou/instances" class="navbar-item">
                 <span class="button is-success">Join</span>
             </a>
-            <a href="/get-involved" class="navbar-item">
+            <a href="/ou/get-involved" class="navbar-item">
                 Get involved
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
@@ -53,9 +53,9 @@
             <div class="select">
                 <select aria-label="Select a language" id="language_selection">
                     
-                    <option value="" selected>English (US)</option>
+                    <option value="" >English (US)</option>
                     
-                    <option value="ou/" >Anglais (Oulipo)</option>
+                    <option value="ou/" selected>Anglais (Oulipo)</option>
                     
               </select>
             </div>
@@ -170,7 +170,7 @@
     (function() {
         var languageSelector = document.getElementById("language_selection");
         languageSelector.onchange = function(event) {
-            var current_locale = "";
+            var current_locale = "ou/";
             var current_location = window.location.pathname;
 
             var locale_index = current_location.indexOf(current_locale);
