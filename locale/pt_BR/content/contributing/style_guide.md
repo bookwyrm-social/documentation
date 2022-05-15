@@ -24,13 +24,13 @@ Your pull request will also be checked by the [curlylint](https://www.curlylint.
 
 ### CSS
 
-We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint [you can disable stylelint](https://stylelint.io/user-guide/ignore-code) for a particular rule, but you will need a good justification for doing so.
+Usamos o [stylelint](https://stylelint.io) para conferir todas as regras de CSS. Como no Pylint, [você pode disativar o stylelint](https://stylelint.io/user-guide/ignore-code) para alguma regra particular, mas você vai precisar de uma boa justificativa para fazê-lo.
 
 ### JavaScript
 
-[ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
+[ESLint](https://eslint.org) verifica todas as modificações em JavaScript que você fizer. Se o ESLint não gostar do seu JavaScript, dê uma olhada na mensagem do linter para ver qual é o problema.
 
-## Inclusive Design
+## Design inclusivo
 
 Bookwyrm aims to be as inclusive and accessible as possible.
 
