@@ -5,13 +5,13 @@ A pessoa que administra a instância deve ser do grupo `superuser`, que dá a el
 ## Permissões e grupos
 Esta tabela mostra os quatro grupos (admin, moderador, editor e usuário) e que permissões usuários nesses grupos têm:
 
-|                        | administrador | moderator | editor | user |
-| ---------------------- | ------------- | --------- | ------ | ---- |
-| edit instance settings | ✔️            | -         | -      | -    |
-| change user level      | ✔️            | -         | -      | -    |
-| manage federation      | ✔️            | ✔️        | -      | -    |
-| issue invites          | ✔️            | ✔️        | -      | -    |
-| deactivate users       | ✔️            | ✔️        | -      | -    |
-| delete posts           | ✔️            | ✔️        | -      | -    |
-| edit books             | ✔️            | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                                   | administrador | moderador | editor | usuário |
+| --------------------------------- | ------------- | --------- | ------ | ------- |
+| editar configurações da instância | ✔️            | -         | -      | -       |
+| mudar nível do usuário            | ✔️            | -         | -      | -       |
+| gerir federação                   | ✔️            | ✔️        | -      | -       |
+| enviar convites                   | ✔️            | ✔️        | -      | -       |
+| desativar usuários                | ✔️            | ✔️        | -      | -       |
+| excluir publicações               | ✔️            | ✔️        | -      | -       |
+| editar livros                     | ✔️            | ✔️        | ✔️     | -       |
+ enviar capas            |  ✔️    |     ✔️       |   ✔️     |  ✔️
