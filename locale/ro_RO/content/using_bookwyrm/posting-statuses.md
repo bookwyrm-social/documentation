@@ -1,5 +1,3 @@
-> | Titlu: Postare stări | Dată: 30-04-2022 | Ordine: 1
-
 Postatul pe BookWyrm începe cu o carte. Utilizatorii pot comenta o carte citită recent sau în curs de citire din secțiunea „Cărțile dvs.” sau de pe pagina principală a unei cărți. De acolo, utilizatorii pot răspunde sau începe o conversație. Postările BookWyrm pot include text formatat precum bold, italic sau legături folosind [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
 Dacă sunteți familiar cu [postatul pe Mastodon](https://docs.joinmastodon.org/user/posting/), veți vedea că stările BookWyrm au setări de vizibilitate similare, avertismente de conținut și mențiuni. Totuși, sondajele, emoticoanele personalizate și atașamentele nu sunt încă implementate.
