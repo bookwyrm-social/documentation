@@ -14,16 +14,16 @@ env = Environment(loader=FileSystemLoader("templates/"), extensions=["jinja2.ext
 env.install_gettext_translations(i18n)
 
 
-HEADER_SLUG = r">\|"
+HEADER_SLUG = r"\[comment\]: <>"
 
 
 def get_page_metadata(page):
     """title/order etc for a page"""
     with open(page, "r", encoding="utf-8") as page_markdown:
         # extract headers
-        headers = "".join(
-            re.sub(HEADER_SLUG, "", r)
-            for r in re.findall(rf"{HEADER_SLUG} .*\n", page_markdown.read())
+        pg = page_markdown.read()
+        headers = "\n".join(
+            re.sub(r"[()]", r"", r) for r in re.findall(rf"{HEADER_SLUG} (.*)\n", pg)
         )
     if not headers:
         return {}
@@ -60,11 +60,7 @@ def get_site_data(page=None):
 def format_markdown(file_path):
     """go from markdown to html, extracting headers"""
     with open(file_path, "r", encoding="utf-8") as markdown_content:
-        # remove headers
-        markdown_content = markdown_content.read()
-        markdown_content = re.sub(rf"{HEADER_SLUG}.*\n", "", markdown_content)
-
-        return markdown(markdown_content, extensions=["tables", "fenced_code"])
+        return markdown(markdown_content.read(), extensions=["tables", "fenced_code"])
 
 
 if __name__ == "__main__":
@@ -84,7 +80,7 @@ if __name__ == "__main__":
                 ["index.html", f"locale/{locale['code']}/content/index.md"],
                 ["page.html", f"locale/{locale['code']}/content/**/*.md"],
             ]
-            LOCALIZED_SITE_PATH = f'site/{slug}'
+            LOCALIZED_SITE_PATH = f"site/{slug}"
 
         # iterate through template types
         for (path, content_paths) in paths:

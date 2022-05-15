@@ -1,6 +1,6 @@
->| Title: Command Line Tool
->| Date: 2021-11-11
->| Order: 6
+[comment]: <> (Title: Command Line Tool)
+[comment]: <> (Date: 2021-11-11)
+[comment]: <> (Order: 6)
 
 Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
 
