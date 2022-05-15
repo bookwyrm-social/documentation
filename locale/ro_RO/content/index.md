@@ -1,5 +1,3 @@
-> | Titlu: Bun venit | Dată: 13-04-2021
-
 BookWyrm este o rețea socială pentru a urmări cititul dvs., vorbi despre cărți, scrie recenzii și descoperi ce să citiți în continuare. Federarea permite utilizatorilor BookWyrm să se alăture unor comunități mici și de încredere care se pot conecta una cu cealaltă și cu alte servicii ActivityPub precum Mastodon și Pleroma.
 
 ## Caracteristici
