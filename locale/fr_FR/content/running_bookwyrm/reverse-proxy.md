@@ -1,5 +1,3 @@
-> | Title: Using a Reverse-Proxy | Date: 2021-05-11 | Order: 3
-
 ## Running BookWyrm Behind a Reverse-Proxy
 If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.
 
