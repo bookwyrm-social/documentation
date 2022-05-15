@@ -30,17 +30,17 @@ Se estiver curiosa: o comando `./bw-dev` é um shell script simples que executa 
 
 ### Editando e criando Modelos (Models)
 
-If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
+Se você quiser editar ou criar um modelo, você provavelmente vai alterar a estrutura do banco de dados. Para que essas alterações funcionem, você precisará executar o comando `makemigrations` do Django para criar um novo [arquivo de migrações do Django](https://docs.djangoproject.com/en/3.2/topics/migrations) e então `migrá-lo`:
 
 ``` { .sh }
 ./bw-dev makemigrations
 ./bw-dev migrate
 ```
 
-### Editing static files
-Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
+### Editando arquivos estáticos
+Toda vez que você alterar o CSS ou o JavaScript, você precisará rodar o comando `collectstatic`do Django para que as alterações passem a funcionar:
 ``` { .sh }
 ./bw-dev collectstatic
 ```
 
-If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
+Se você tiver o [yarn instalado](https://yarnpkg.com/getting-started/install), você pode executar `yarn watch:static` para executar automaticamente o script toda vez que houver alguma mudança no diretório `bookwyrm/static`.
