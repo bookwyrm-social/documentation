@@ -14,27 +14,27 @@ env = Environment(loader=FileSystemLoader("templates/"), extensions=["jinja2.ext
 env.install_gettext_translations(i18n)
 
 
-HEADER_SLUG = r">\|"
+HEADER_SLUG = r"\[comment\]: <>"
 
 
-def get_page_metadata(page):
+def get_page_metadata(locale_slug, page):
     """title/order etc for a page"""
     with open(page, "r", encoding="utf-8") as page_markdown:
         # extract headers
-        headers = "".join(
-            re.sub(HEADER_SLUG, "", r)
-            for r in re.findall(rf"{HEADER_SLUG} .*\n", page_markdown.read())
+        headers = "\n".join(
+            re.sub(r"[()]", r"", r)
+            for r in re.findall(rf"{HEADER_SLUG} (.*)\n", page_markdown.read())
         )
     if not headers:
         return {}
 
     header_obj = yaml.safe_load(headers)
     path_dir = page.split("/")[-1].replace(".md", ".html")
-    header_obj["path"] = f"/{slug}{path_dir}"
+    header_obj["path"] = f"/{locale_slug}{path_dir}"
     return header_obj
 
 
-def get_site_data(page=None):
+def get_site_data(locale_slug, page):
     """this should be a file"""
     category_dirs = glob("content/*/")
     categories = []
@@ -44,15 +44,14 @@ def get_site_data(page=None):
 
         subcategories = []
         for subcat in glob(f"{cat_dir}/*.md"):
-            subcategories.append(get_page_metadata(subcat))
+            subcategories.append(get_page_metadata(locale_slug, subcat))
         subcategories.sort(key=lambda v: v.get("Order", -1))
 
         categories.append({**parsed, **{"subcategories": subcategories}})
     categories.sort(key=lambda v: v["order"])
     template_data = {"categories": categories}
 
-    if page:
-        template_data["headers"] = get_page_metadata(page)
+    template_data["headers"] = get_page_metadata(locale_slug, page)
 
     return template_data
 
@@ -60,17 +59,13 @@ def get_site_data(page=None):
 def format_markdown(file_path):
     """go from markdown to html, extracting headers"""
     with open(file_path, "r", encoding="utf-8") as markdown_content:
-        # remove headers
-        markdown_content = markdown_content.read()
-        markdown_content = re.sub(rf"{HEADER_SLUG}.*\n", "", markdown_content)
-
-        return markdown(markdown_content, extensions=["tables", "fenced_code"])
+        return markdown(markdown_content.read(), extensions=["tables", "fenced_code"])
 
 
 if __name__ == "__main__":
     # iterate through each locale
     for locale in i18n.locales_metadata:
-        slug = locale["slug"]
+        SLUG = locale["slug"]
         paths = [
             ["index.html", "content/index.md"],
             ["page.html", "content/**/*.md"],
@@ -84,7 +79,7 @@ if __name__ == "__main__":
                 ["index.html", f"locale/{locale['code']}/content/index.md"],
                 ["page.html", f"locale/{locale['code']}/content/**/*.md"],
             ]
-            LOCALIZED_SITE_PATH = f'site/{slug}'
+            LOCALIZED_SITE_PATH = f"site/{SLUG}"
 
         # iterate through template types
         for (path, content_paths) in paths:
@@ -103,9 +98,9 @@ if __name__ == "__main__":
                 with open(
                     f"{LOCALIZED_SITE_PATH}{output_path}", "w+", encoding="utf-8"
                 ) as render_file:
-                    data = get_site_data(content_path)
+                    data = get_site_data(SLUG, content_path)
                     data["content"] = format_markdown(content_path)
-                    data["path"] = f"/{slug}{output_path}"
+                    data["path"] = f"/{SLUG}{output_path}"
                     render_file.write(
                         template.render(
                             locale=locale,

@@ -1,6 +1,6 @@
->| Title: Translations
->| Date: 2021-10-20
->| Order: 3
+[comment]: <> (Title: Translations)
+[comment]: <> (Date: 2021-10-20)
+[comment]: <> (Order: 3)
 
 ## Contributing to translations
 

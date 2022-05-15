@@ -1,6 +1,6 @@
->| Title: Optional features
->| Date: 2021-08-02
->| Order: 5
+[comment]: <> (Title: Optional features)
+[comment]: <> (Date: 2021-08-02)
+[comment]: <> (Order: 5)
 
 Some features of BookWyrm have to be enabled to work.
 
