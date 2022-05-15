@@ -1,36 +1,36 @@
-Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+在BookWyrm上发帖，要从一本书开始。 用户可以从“你的书”部分，或从一本书的登陆页面，对正在进行的或最近阅读的书籍进行评论。 从那里，用户可以对评论回复并开始对话。 BookWyrm帖子可以包括一些格式，如使用[Markdown](https://www.markdownguide.org/cheat-sheet/)的粗体、斜体和链接。
 
-If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
+如果你熟悉[在Mastodon上发帖](https://docs.joinmastodon.org/user/posting/)，你会发现BookWyrm的状态有类似的可见性设置、内容警告和提醒。 然而，目前还暂不支持投票、自定义表情符号和附件。
 
-## Types of statuses
+## 状态类型
 
-### User commentary
+### 用户评论
 
-There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
+用户可以直接对对应的书籍创建三种类型的帖子：观后感、评论和引言。 评论是针对一本书的一般方面，引言是针对具体的段落，而观后感则是针对书籍的整体。 用户还可以对状态进行回复。
 
-| Component     | Review | Comment | Quote | Reply |
-| ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
-| Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
-| Quote         |        |         | ✔     |       |
-| Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| 组成部分 | 观后感 | 评论 | 引言 | 回复 |
+| ---- | --- | -- | -- | -- |
+| 文本字段 | ✔   | ✔  | ✔  | ✔  |
+| 剧透警告 | ✔   | ✔  | ✔  | ✔  |
+| 页码   |     | ✔  | ✔  |    |
+| 引用   |     |    | ✔  |    |
+| 评分   | ✔   |    |    |    |
+| 标题字段 | ✔   |    |    |    |
 
 
-### Reading status updates
+### 阅读状态更新
 
-Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
+当用户表示他们想要阅读、已经开始阅读或已经完成阅读一本书时，就会有对应的状态。
 
-## Text
-Text can include:
+## 文本
+文本可以包括：
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+- 提及用户（@user）
+- URLs（`http(s)://` 不会显示）
+- 一些 [Markdown 格式](https://www.markdownguide.org/cheat-sheet/)
+  - 粗体
+  - 斜体
+  - 引用块
+  - 符号列表
+  - 链接
 
