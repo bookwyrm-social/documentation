@@ -14,12 +14,12 @@ Uma vez que o projeto está ainda na fase inicial, as funcionalidades crescem a 
 - Acompanhe sua leitura
     - Coloque livro nas prateleiras padrão, "para-ler", "lendo" e "lido"
     - Crie prateleiras personalizadas
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
-    - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
-- Federation with ActivityPub
-    - Broadcast and receive user statuses and activity
-    - Share book data between instances to create a networked database of metadata
+    - Guarde as datas em que começou ou terminou de ler um livro, além de atualizações sobre o andamento de sua leitura
+    - Envia aos seguidores as atividades de leitura (opcionalmente, e com privacidade de controle granular)
+    - Crie listas de livros que podem ser abertas às submissões de outros usuários, aberta à submissão mas com processo de aprovação ou apenas organizada por quem a criou
+- Federação com o ActivityPub
+    - Envie e receba publicações de usuários e suas atividades
+    - Compartilhe informações sobre livros entre instâncias para criar um banco de dados de metadados distribuído
     - Identify shared books across instances and aggregate related content
     - Follow and interact with users across BookWyrm instances
     - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
