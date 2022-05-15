@@ -16,14 +16,14 @@ Cum proiectul este încă în fazele timpuri, caracteristicile cresc în fiecare
     - Creați rafturi personalizate
     - Înregistrați datele de început și sfârșit de lectură, cât și actualizările de progres
     - Țineți la curent urmăritorii despre activitatea de citit (opțional cu control granulat a confidențialității)
-    - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
-- Federation with ActivityPub
-    - Broadcast and receive user statuses and activity
-    - Share book data between instances to create a networked database of metadata
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
-    - Option for users to manually approve followers
-    - Allow blocking and flagging for moderation
+    - Creați liste de cărți care pot fi deschise modificărilor tuturor sau modificate numai de creator
+- Federație cu ActivityPub
+    - Difuzați și primiți stări și activități de la utilizatori
+    - Partajați date despre cărți între instanțe pentru a crea o bază de metadate la nivel de rețea
+    - Identificați cărțile partajate între instanțe și agregați conținutul conex
+    - Urmăriți și interacționați cu utilizatori de pe alte instanțe BookWyrm
+    - Inter operațional cu servicii ActivityPub în afara BookWyrm (în prezent, Mastodon este suportat)
+- Controale granulate a confidențialității
+    - Nivele de confidențialitate privat, numai urmăritorii și public pentru postări, rafturi și liste
+    - Opțiune pentru utilizatori de a aproba manual urmăritorii
+    - Permite blocarea și semnalarea pentru moderare
