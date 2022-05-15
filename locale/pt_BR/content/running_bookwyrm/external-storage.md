@@ -8,7 +8,7 @@ Create a bucket at your S3-compatible service of choice, along with an Access Ke
 
 This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
 
-### What awaits you
+### O que lhe espera
 
 If you are starting a new BookWyrm instance, the process will be:
 
