@@ -1,17 +1,17 @@
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+O acesso do usuário às diferentes funções do serviço é controlado pelo [sistema nativo de autenticação](https://docs.djangoproject.com/en/3.2/topics/auth/default/) do Django. Quando uma instância é criada, o script `initdb` cria um conjunto de permissões que são atribuídas a grupos. Por padrão, todos os novos usuários são colocados no grupo `editor`, que permite que eles editem metadados de livros.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+A pessoa que administra a instância deve ser do grupo `superuser`, que dá a ela acesso à administração do Django (`/admin`) e a todas as permissões.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Permissões e grupos
+Esta tabela mostra os quatro grupos (admin, moderador, editor e usuário) e que permissões usuários nesses grupos têm:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
+|                        | administrador | moderator | editor | user |
+| ---------------------- | ------------- | --------- | ------ | ---- |
+| edit instance settings | ✔️            | -         | -      | -    |
+| change user level      | ✔️            | -         | -      | -    |
+| manage federation      | ✔️            | ✔️        | -      | -    |
+| issue invites          | ✔️            | ✔️        | -      | -    |
+| deactivate users       | ✔️            | ✔️        | -      | -    |
+| delete posts           | ✔️            | ✔️        | -      | -    |
+| edit books             | ✔️            | ✔️        | ✔️     | -    |
  upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
