@@ -1,19 +1,19 @@
-> | Title: Welcome | Date: 2021-04-13
+> | Titlu: Bun venit | Dată: 13-04-2021
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+BookWyrm este o rețea socială pentru a urmări cititul dvs., vorbi despre cărți, scrie recenzii și descoperi ce să citiți în continuare. Federarea permite utilizatorilor BookWyrm să se alăture unor comunități mici și de încredere care se pot conecta una cu cealaltă și cu alte servicii ActivityPub precum Mastodon și Pleroma.
 
-## Features
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+## Caracteristici
+Cum proiectul este încă în fazele timpuri, caracteristicile cresc în fiecare zi. Există o mulțime de spațiu pentru sugestii și idei. Deschideți un [tichet](https://github.com/bookwyrm-social/bookwyrm/issues) pentru a continua conversația!
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
-        - Comments on a book
-        - Quotes or excerpts
-    - Reply to statuses
-    - View aggregate reviews of a book across connected BookWyrm instances
-    - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
+- Postări despre cărți
+    - Redactați recenzii, cu sau fără evaluări, agregate în continuare pe pagina cărții
+    - Redactați alte tipuri de stări despre cărți, precum:
+        - Comentarii despre o carte
+        - Citate sau extrase
+    - Răspundeți stărilor
+    - Vizualizați recenzii agregate ale unei cărți de pe instanțe BookWyrm conectate
+    - Diferențiați recenzii locale și federate și evaluări în fluxul dvs. de activitate
+- Urmăriți activitatea dvs. de lectură
     - Shelve books on default "to-read," "currently reading," and "read" shelves
     - Create custom shelves
     - Store started reading/finished reading dates, as well as progress updates along the way
