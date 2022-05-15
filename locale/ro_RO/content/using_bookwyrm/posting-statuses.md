@@ -25,14 +25,14 @@ Acestea sunt trei tipuri de postări pe care utilizatorii pot să le creeze dire
 Stările sunt generate când un utilizator indică ceea ce vrea să citească, a început să citească sau a terminat de citit o carte.
 
 ## Text
-Text can include:
+Textul poate să includă:
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
+- Mențiuni (@utilizator)
+- URL-uri (`http(s)://` nu este afișat)
+- [Formatare Markdown](https://www.markdownguide.org/cheat-sheet/)
   - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+  - italic
+  - citate bloc
+  - liste neordonate
+  - legături
 
