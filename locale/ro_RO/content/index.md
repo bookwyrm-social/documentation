@@ -12,10 +12,10 @@ Cum proiectul este încă în fazele timpuri, caracteristicile cresc în fiecare
     - Vizualizați recenzii agregate ale unei cărți de pe instanțe BookWyrm conectate
     - Diferențiați recenzii locale și federate și evaluări în fluxul dvs. de activitate
 - Urmăriți activitatea dvs. de lectură
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
-    - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
+    - Puneți cărți pe rafturile prestabilite „de citit”, „în curs de citire” și „citit”
+    - Creați rafturi personalizate
+    - Înregistrați datele de început și sfârșit de lectură, cât și actualizările de progres
+    - Țineți la curent urmăritorii despre activitatea de citit (opțional cu control granulat a confidențialității)
     - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
 - Federation with ActivityPub
     - Broadcast and receive user statuses and activity
