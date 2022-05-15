@@ -1,5 +1,3 @@
-> | Title: How to Contribute | Date: 2021-04-12 | Order: 1
-
 Title: How to Add Contributions Date: 2021-04-12 Order: 1
 
 ## Ask for Things
