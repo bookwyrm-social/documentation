@@ -1,19 +1,19 @@
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+A BookWyrm é uma rede social para acompanhar sua leitura, falar sobre livros, escrever resenhas e achar outro livro pra ler em seguida. A federação permite que usuários da BookWyrm participem de comunidades pequenas e confiáveis que podem se conectar entre si, e também a outros serviços ActivityPub, como o Mastodon e o Pleroma.
 
-## Features
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+## Funcionalidades
+Uma vez que o projeto está ainda na fase inicial, as funcionalidades crescem a cada dia, e ainda há muito espaço para sugestões e ideias. Abra um [problema](https://github.com/bookwyrm-social/bookwyrm/issues) para conversarmos!
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
-        - Comments on a book
-        - Quotes or excerpts
-    - Reply to statuses
-    - View aggregate reviews of a book across connected BookWyrm instances
-    - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
-    - Create custom shelves
+- Fazendo publicações sobre livros
+    - Escreva resenhas com ou sem nota que aparecerão na página do livro
+    - Escreva outros tipos de publicações sobre livros, como:
+        - Comentários sobre um livro
+        - Citações ou resumos
+    - Respostas a publicações
+    - Veja as resenhas sobre um livro de várias instâncias BookWyrm conectadas
+    - Diferencie resenhas locais e federadas e as notas na sua página de atividades
+- Acompanhe sua leitura
+    - Coloque livro nas prateleiras padrão, "para-ler", "lendo" e "lido"
+    - Crie prateleiras personalizadas
     - Store started reading/finished reading dates, as well as progress updates along the way
     - Update followers about reading activity (optionally, and with granular privacy controls)
     - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
