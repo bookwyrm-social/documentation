@@ -1,56 +1,56 @@
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm folosește protocolul [ActivityPub](http://activitypub.rocks/) pentru a trimite și primi activitatea utilizatorului între alte instanțe BookWyrm și alte servicii care implementează ActivityPub, precum [Mastodon](https://joinmastodon.org/). Pentru a gestiona datele cărților, BookWyrm are câteva tipuri Activity extinse care nu fac parte din standard, dar înțelese de alte instanțe BookWyrm.
 
-## Activities and Objects
+## Activități și obiecte
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Utilizatori și relații
+Interacțiunile dintre relațiile utilizatorilor respectă specificația ActivityPub.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Urmăriți`: solicitați să primiți stări de la un utilizator și să le vizualizați pe cele cu confidențialitatea „numai urmăritori”
+- `Acceptați`: aprobă o `cerere de urmărire` și finalizează relația
+- `Refuzați`: respinge o `cerere de urmărire`
+- `Blocați`: împiedică utilizatorii de a își vedea unul altuia stările și împiedică utilizatorul blocat de a vizualiza profilul actorului
+- `Actualizați`: actualizează profilul și setările unui utilizator
+- `Ștergeți`: dezactivează un utilizator
+- `Revocați`: anulează o `cerere de urmărire` sau `de blocare`
 
-### Statuses
-#### Object types
+### Stări
+#### Tipuri de obiecte
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
-
-
-#### Activities
-
-- `Create`: saves a new status in the database.
-
-   **Note**: BookWyrm only accepts `Create` activities if they are:
-
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
-
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
-
-#### Objects
-
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
-
-#### Activities
-
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Notă`: pe servicii precum Mastodon, `Notele` sunt tipul principal de stare. Ele conțin corpul mesajului, atașamentele, pot menționa utilizatori și pot fi răspunsuri la stări de orice tip. În cadrul BookWyrm, `notele` pot fi create ca mesaje directe sau ca răspunsuri la alte stări.
+- `Recenzie`: o recenzie este o stare ca răspuns unei cărți (indicat de câmpul `inReplyToBook`), care are un titlu, un corp și o evaluare numerică între 0 (fără evaluare) și 5.
+- `Comentariu`: un comentariu despre o carte menționează cartea respectivă și are un corp de mesaj.
+- `Citat`: un citat are un corp de mesaj, un extras dintr-o carte pe care o menționează
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+#### Activități
+
+- `Creați`: salvează o nouă stare în baza de date.
+
+   **Notă**: BookWyrm acceptă activități de `creare` numai dacă sunt:
+
+   - Mesaje directe (de exemplu `Note` cu nivel de confidențialitate `direct`, care menționează un utilizator local),
+   - În legătură cu o carte (de un tip de stare personalizat care include câmpul `inReplyToBook`),
+   - Răspunsuri la stări existente salvate în baza de date
+- `Ștergeți`: elimină o stare
+- `Îmi place`: marchează starea ca favorit
+- `Anunțați`: partajează starea pe fluxul actorului
+- `Revocați`: anulează `îmi place` sau `anunțați`
+
+### Colecții
+Cărțile și listele utilizatorului sunt reprezentate de [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+
+#### Obiecte
+
+- `Raft`: o colecție de cărți a utilizatorului. În mod implicit, fiecare utilizator are un raft „`de citit`”, „`în curs de citire`” și „`citit`” pentru a urmări progresul de lectură.
+- `Listă`: o colecție de cărți care poate avea articole contribuite de alți utilizatori.
+
+#### Activități
+
+- `Creați`: adaugă un raft sau o listă în baza de date.
+- `Ștergeți`: înlătură un raft sau o listă.
+- `Adăugați`: adaugă o carte pe un raft sau într-o listă.
+- `Înlăturați`: înlătură o carte de pe un raft sau dintr-o listă.
+
+
+## Serializare alternativă
+Deoarece BookWyrm folosește propriile tipuri de obiecte (`Recenzie`, `Comentariu`, `Citat`) care nu sunt suportate de ActivityPub, stările sunt transformate în tipuri standard când sunt trimise sau vizualizate de servicii din afara BookWyrm. `Recenziile` sunt convertite în `Articole`, iar `Comentariile` și `Citatele` sunt convertite în `Note` cu o legătură către cartea și imaginea de copertă atașate.
