@@ -1,4 +1,4 @@
-There are many ways you can contribute to this project, regardless of your level of technical expertise.
+Há muitas formas de contribuir com o projeto qualquer que esja seu nível de conhecimento técnico.
 
 ## Feedback and feature requests
 Please feel encouraged and welcome to point out bugs, suggestions, feature requests, and ideas for how things ought to work using [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues).
