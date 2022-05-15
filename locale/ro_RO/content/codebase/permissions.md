@@ -1,17 +1,17 @@
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+Accesul utilizatorului la diferite funcționalități este controlat folosind [sistemul de autentificare încorporat din Django](https://docs.djangoproject.com/en/3.2/topics/auth/default/). Când o instanță este creată, scriptul `initdb` creează o serie de permisiune ce sunt asociate unor grupuri. În mod implicit, toți utilizatorilor noi li se atribuie grupul `editor` care le permite să modifica metadatele cărților.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+Administratorul de rețea ar trebui să aibă statutul de `super utilizator` care îi dă acces la adminul din Django (`/admin`) și lui conferă toate permisiunile.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Permisiuni și grupuri
+Acest tabel arată cele patru grupuri (admin, moderator, editor și utilizator) și ce permisiuni au utilizatorii din fiecare grup:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                                     | admin | moderator | editor | utilizator |
+| ----------------------------------- | ----- | --------- | ------ | ---------- |
+| modificarea setărilor instanței     | ✔️    | -         | -      | -          |
+| schimbarea nivelului utilizatorului | ✔️    | -         | -      | -          |
+| gestionarea federației              | ✔️    | ✔️        | -      | -          |
+| trimiterea de invitații             | ✔️    | ✔️        | -      | -          |
+| dezactivarea utilizatorilor         | ✔️    | ✔️        | -      | -          |
+| ștergerea postărilor                | ✔️    | ✔️        | -      | -          |
+| editarea cărților                   | ✔️    | ✔️        | ✔️     | -          |
+ ✔️
