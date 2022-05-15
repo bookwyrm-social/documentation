@@ -20,10 +20,10 @@ Uma vez que o projeto está ainda na fase inicial, as funcionalidades crescem a 
 - Federação com o ActivityPub
     - Envie e receba publicações de usuários e suas atividades
     - Compartilhe informações sobre livros entre instâncias para criar um banco de dados de metadados distribuído
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
-    - Option for users to manually approve followers
-    - Allow blocking and flagging for moderation
+    - Identifique livros compartilhados entre instâncias e agregue conteúdos relacionados
+    - Siga e interaja com usuários entre diferentes instâncias BookWyrm
+    - Opere junto com outros serviços ActivityPub (atualmente somos compatíveis com o Mastodon)
+- Controle de privacidade granular
+    - Níveis de privacidade privado, só para seguidores e público para publicações, estantes e listas
+    - Opção para que usuários aprovem seguidores manualmente
+    - Permite bloquear e sinalizar para a moderação
