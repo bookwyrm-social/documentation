@@ -14,4 +14,4 @@ This table shows the four groups (admin, moderator, editor, and user) and what p
 | deactivate users       | ✔️    | ✔️        | -      | -    |
 | delete posts           | ✔️    | ✔️        | -      | -    |
 | edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+ subir portadas            |  ✔️    |     ✔️       |   ✔️     |  ✔️
