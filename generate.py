@@ -65,7 +65,7 @@ def format_markdown(file_path):
 if __name__ == "__main__":
     # iterate through each locale
     for locale in i18n.locales_metadata:
-        slug = locale["slug"]
+        SLUG = locale["slug"]
         paths = [
             ["index.html", "content/index.md"],
             ["page.html", "content/**/*.md"],
@@ -79,7 +79,7 @@ if __name__ == "__main__":
                 ["index.html", f"locale/{locale['code']}/content/index.md"],
                 ["page.html", f"locale/{locale['code']}/content/**/*.md"],
             ]
-            LOCALIZED_SITE_PATH = f"site/{slug}"
+            LOCALIZED_SITE_PATH = f"site/{SLUG}"
 
         # iterate through template types
         for (path, content_paths) in paths:
@@ -98,9 +98,9 @@ if __name__ == "__main__":
                 with open(
                     f"{LOCALIZED_SITE_PATH}{output_path}", "w+", encoding="utf-8"
                 ) as render_file:
-                    data = get_site_data(slug, content_path)
+                    data = get_site_data(SLUG, content_path)
                     data["content"] = format_markdown(content_path)
-                    data["path"] = f"/{slug}{output_path}"
+                    data["path"] = f"/{SLUG}{output_path}"
                     render_file.write(
                         template.render(
                             locale=locale,
