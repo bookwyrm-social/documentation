@@ -3,6 +3,6 @@ BookWyrm are o ramură care este configurată să ruleze [Django Debug Toolbar](
 ## Configurare
 
 - Folosind git, deplasați-vă pe ramura [`debug-toolbar`](https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar)
-- Update the branch relative to `main` using `git merge main`. The branch is updated periodically but will likely be behind latest.
-- Re-build the Docker images using `docker-compose up --build` to ensure that the Debug Toolbar library is installed from `requirements.txt`
-- Access the application `web` image directly (instead of via `nginx`) using port `8000`
+- Actualizați ramura relativ la `main` folosind `git merge main`. Ramura este actualizată periodic dar este probabil ca ea să fie în urmă.
+- Reconstruiți imaginea Docker folosind `docker-compose up --build` pentru a vă asigura că biblioteca de instrumente de depanare este instalată din `requirements.txt`
+- Accesați imaginea aplicației `web` direct (în loc de `nginx`) folosind portul `8000`
