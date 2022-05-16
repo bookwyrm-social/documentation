@@ -15,17 +15,17 @@ Instructions for running BookWyrm in production:
 - Get the application code: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Switch to the `production` branch: `git checkout production`
 - Create your environment variables file, `cp .env.example .env`, and update the following:
-    - `SECRET_KEY` | A difficult to guess, secret string of characters
-    - `DOMAIN` | Your web domain
-    - `EMAIL` | Email address to be used for certbot domain verification
-    - `POSTGRES_PASSWORD` | Set a secure password for the database
+    - `SECRET_KEY` | Trudny do odgadnięcia, tajny ciąg znaków
+    - `DOMAIN` | Twoja domena sieciowa
+    - `EMAIL` | Adres e-mail używany do weryfikacji domeny przez bota certyfikującego
+    - `POSTGRES_PASSWORD` | Ustaw bezpieczne hasło dla bazy danych
     - `REDIS_ACTIVITY_PASSWORD` | Set a secure password for Redis Activity subsystem
     - `REDIS_BROKER_PASSWORD` | Set a secure password for Redis queue broker subsystem
     - `FLOWER_USER` | Your own username for accessing Flower queue monitor
     - `FLOWER_PASSWORD` | Your own secure password for accessing Flower queue monitor
     - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
     - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
+- Konfiguracja nginx
     - Make a copy of the production template config and set it for use in nginx `cp nginx/production nginx/default.conf`
     - Update `nginx/default.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
@@ -34,7 +34,7 @@ Instructions for running BookWyrm in production:
 - Run the application (this should also set up a Certbot ssl cert for your domain) with `docker-compose up --build`, and make sure all the images build successfully
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
-- Set up HTTPS redirect
+- Ustaw przekierowanie HTTPS
     - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
     - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
 - Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
