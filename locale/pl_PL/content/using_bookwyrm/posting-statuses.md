@@ -22,15 +22,15 @@ There are three types of posts users can create directly in response to books: r
 
 Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
 
-## Text
-Text can include:
+## Tekst
+Tekst może zawierać:
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
+- Wzmianki (@użytkownik)
+- Adresy URL (`http(s)://` nie jest wyświetlane)
 - Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+  - pogrubienie
+  - kursywa
+  - cytat
+  - lista punktowana
+  - odnośniki
 
