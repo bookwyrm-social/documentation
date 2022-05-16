@@ -1,15 +1,15 @@
-There are many ways you can contribute to this project, regardless of your level of technical expertise.
+Există multe moduri în care puteți contribui la acest proiect, indiferent de nivelul dvs. de expertiză technică.
 
-## Feedback and feature requests
-Please feel encouraged and welcome to point out bugs, suggestions, feature requests, and ideas for how things ought to work using [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues).
+## Retroacțiuni (feedback) și sugestii de funcționalități
+Vă încurajăm și sunteți binevenit să indicați buguri, sugestii și idei despre cum ar trebui lucrurile să meargă folosind [tichetele GitHub](https://github.com/bookwyrm-social/bookwyrm/issues).
 
-## Code contributions
-Code contributions are gladly welcomed! If you're not sure where to start, take a look at the ["Good first issue"](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) tag. Because BookWyrm is a small project, there isn't a lot of formal structure, but there is a huge capacity for one-on-one support, which can look like asking questions as you go, pair programming, video chats, et cetera, so please feel free to reach out.
+## Contribuții la cod
+Contribuțiile la cod sunt mai mult ca binevenite! Dacă nu știți de unde să începeți, aruncați o privire la eticheta [„Primul bun tichet”](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). Deoarece BookWyrm este un proiect mic, nu există nicio structură formală, dar există o mare capacitate de asistență personală, precum pusul unei întrebări, programare în pereche, chat video etc., așa că simțiți-vă liber să ne contactați.
 
-If you have questions about the project or contributing, you can join the [BookWyrm matrix chat](https://app.element.io/#/room/#bookwyrm:matrix.org).
+Dacă aveți întrebări despre proiect sau despre modul de contribuire, puteți să vă alăturați [chatului Matrix BookWyrm](https://app.element.io/#/room/#bookwyrm:matrix.org).
 
-## Translation
-Do you speak a language besides English? BookWyrm needs localization! You can add and edit translations at [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
+## Traduceri
+Vorbiți mai multe limbi străine? BookWyrm are nevoie de localizare! Puteți adăuga și edita traduceri la [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
 
-## Financial Support
-BookWyrm is an ad-free passion project with no intentions of seeking out venture funding or corporate financial relationships. If you want to help keep the project going, you can become a sustaining contributor via [Patreon](https://www.patreon.com/bookwyrm) or [OpenCollective](https://opencollective.com/bookwyrm), or make a one time gift via [PayPal](https://paypal.me/oulipo).
+## Suport financiar
+BookWyrm este un proiect de pasiune fără publicități, fără intenții de a căuta finanțare prin capital de risc sau relații financiare corporative. Dacă doriți să ajutați proiectul să continue, puteți deveni un contribuitor regulat prin [Patreon](https://www.patreon.com/bookwyrm) sau [OpenCollective](https://opencollective.com/bookwyrm) sau să faceți un cadou punctual prin [PayPal](https://paypal.me/oulipo).
