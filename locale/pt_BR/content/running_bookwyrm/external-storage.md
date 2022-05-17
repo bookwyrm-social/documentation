@@ -6,11 +6,11 @@ Por padrão, a BookWyrm usa o armazenamento local para os recursos estáticos (�
 
 Crie um bucket em seu serviço compatível com S3 favorito, junto com uma Access Key ID e uma Scret Access Key. Eles podem ser auto-hospedados, como [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) ou [MinIO](https://min.io/) (GNU AGPL v3.0), ou comercial ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
 
-Este guia foi testado no Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
+Este guia foi testado no Scaleway Object Storage. Se você usa outro serviço, por favor nos conte sua experiência (especialmente se fez algum outro passo) criando um problema (issue) no repositório da [documentação da BookWyrm Documentation](https://github.com/bookwyrm-social/documentation).
 
 ### O que lhe espera
 
-If you are starting a new BookWyrm instance, the process will be:
+Se você está iniciando uma nova instância BookWyrm, o processo será:
 
 - Set up your external storage service
 - Enable external storage on BookWyrm
