@@ -7,11 +7,11 @@ Usuários podem denunciar publicações ou usuários a partir do menu "mais opç
 Quando uma denuncia é feita, há algumas formas de o moderador respondê-la.
 - Enviar uma mensagem direta ao usuário denunciado.
 - Excluir a publicação denunciada.
-- Desativar o usuário. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.
+- Desativar o usuário. Para usuários locais, isso os deixará incapazes de logar, e suas contas não aparecerão na aplicação. Para usuários remotos, o servidor irá rejeitar todas as atividades desse usuário, e eles não aparecerão nas buscas.
 
-## Instance-level moderation
-Moderators can block entire instances. This will prevent any activities from coming in from that instance, and deactivate all accounts from that instance locally.
+## Moderação a nível da instância
+Moderadores podem bloquear instâncias inteiras. Isso fará com que nenhuma atividade dessa instância chegue, e desativará todas as contas daquela instância localmente.
 
-If the instance is un-blocked, all the users who were deactivated by the block will be re-activated.
+Se a instância for desbloqueada, todos os seus usuários que foram desativados serão reativados.
 
-Moderators can also upload blocklists to block servers in bulk.
+Moderadores também podem enviar blocklists para bloquear servidores em massa.
