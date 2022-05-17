@@ -1,22 +1,22 @@
-Some features of BookWyrm have to be enabled to work.
+Alguns recursos da BookWyrm devem ser habilitados para funcionar.
 
-## Preview image generation
+## Geração de pré-visualização
 
-By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
+Por padrão, a BookWyrm usa a logo da instância (ou a padrão) como uma imagem de pré-vusalização OpenGraph. Você pode também habilitar a criação de pré-visualização para livros, usuários e para todo o site.
 
-The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Depending on the type of image, the contents will be:
+As imagens de pré-visualização serão do tamanho grande do OpenGraph (usado pelo twitter com o nome de `summary_large_image`). Dependendo do tipo de imagem, seus conteúdos serão:
 
-- the default instance image will display the big logo, along with the name of the instance and its url
-- the user image will display their avatar, display name, handle (in the form of username@instance)
-- the book image will display their cover, title, subtitle (if present), author and rating (if present)
+- a imagem padrão da instância mostrará a logo grande e o nome da instância e seu endereço
+- a imagem do usuário mostrará seu avatar, nome de exibição e arroba (na forma usuário@instância)
+- a imagem do livro mostrará sua capa, título, subtítulo (se tiver), autor e avaliação (se tiver)
 
-These images will be updated at various points:
+Essas imagens serão atualizadas em vários casos:
 
-- instance image: when the instance name or big logo are changed
-- user image: when the display name or avatar are changed
-- book image: when the title(s), author(s) or cover are changed, or when a new rating is added
+- imagem da instância: quando o nome da instância ou a logo são alterados
+- imagem do usuário: quando o nome de exibição ou o avatar são alterados
+- imagem do livro: quando o título, a autoria ou a capa são alterados, ou quando uma nova avaliação é feita
 
-### Enabling preview images
+### Habilitando imagens de pré-visualização
 
 In order to enable the feature with default settings, you have to uncomment (remove the `#` in front of) the line `ENABLE_PREVIEW_IMAGES=true` in your `.env` file. All the new updating events aforementioned will cause the generation of the corresponding image.
 
