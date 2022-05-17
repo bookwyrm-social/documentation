@@ -90,57 +90,57 @@ Reinicia o container Docker do `celery_worker`.
 
 ### update
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Quando há alterações no branch `produção (production)`, você pode atualizar sua instância sem ficar fora do ar.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Este comando faz o `git pull` das últimas atualizações do branch `produção (production)`, constroi a imagem Docker, se for necessário, executa as migrações do Django, atualiza os arquivos estáticos e reinicia todos os containers do Docker.
 
 ### admin_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Obtem o código secreto da administração para registrar o usuário administrador inicial em uma nova instância BookWyrm.
 
-## Setting up S3 compatible storage
+## Configurando um armazenamento compatível com S3
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+Por padrão, a BookWyrm usa o armazenamento local para os recursos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o django-storages para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.
 
-See [External Storage](/external-storage.html) for more information.
+Veja [Armazenamento externo](/external-storage.html) para mais informações.
 
 ### copy_media_to_s3
 
-Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
+Migra todas as mídias enviadas de uma instalação BookWyrm para um "bucket" compatível com S3. Utilizar para fazer o upload inicial para um "bucket" vazio.
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
+Sincroniza as mídias enviadas, novas ou alteradas, de uma instância BookWyrm para um "bucket" compatível com S3. Utilizar para garantir que todos os arquivos locais sejam enviados a um "bucket" existente.
 
-### set_cors_to_s3 filename
+### set_cors_to_s3 nomedoarquivo
 
-Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
+Copia um arquivo JSON com as regras CORS para o seu bucket S3, onde `nomedoarquivo` é o nome de seu arquivo JSON (p. ex: `/bw-dev set_cors_to_s3 cors.json`)
 
-## Development and testing
+## Desenvolvimento e teste
 
-_These commands are not available on the `production` branch_.
+_Estes comandos estão disponíveis no branch `produção (production)`_.
 
 ### black
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+A BookWyrm usa o formatador de código [Black](https://github.com/psf/black) pra manter o código Python com um estilo consistente. Execute o `black` antes de enviar/comitar suas alterações para que a tarefa `pylint` não gere erros no seu pull request e te entristeça.
 
 ### prettier
 
-BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase consistently styled. Run `prettier` before committing changes to scripts to automatically format your code.
+A BookWyrm usa o [Prettier](https://prettier.io/) para manter os códigos JavaScript com um estilo consistente. Execute o `prettier` antes de enviar suas alterações nos scripts para formatar seu código automaticamente.
 
 ### stylelint
 
-BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
+A BookWyrm usa o [Stylelint](uhttps://stylelint.io/) para manter o estilo dos arquivos CSS consistentes. Execute o `stylelintprettier` antes de enviar/comitar alterações nos scripts para formatar seu código automaticamente.
 
 ### formatters
 
-This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
+Este comando executa todos os formatadores de estilo (`black`, `prettier`, and `stylelint`) de uma vez.
 
 ### clean
 
-Remove all stopped Docker containers.
+Remove todos os containers do Docker parados.
 
-Equivalent to:
+Equivalente a:
 
 ```shell
 docker-compose stop
@@ -149,12 +149,12 @@ docker-compose rm -f
 
 ### makemessages
 
-Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Cria arquivo de mensagens para todas as strings de tradução. Depois de executar `makemessages` você deve executar `compilemessages` para compilar as traduções. Veja o [makemessages do Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compila os arquivos de tradução. Veja o [compilemessages do Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Run tests with `pytest`.
+Executa testes com o `pytest`.
