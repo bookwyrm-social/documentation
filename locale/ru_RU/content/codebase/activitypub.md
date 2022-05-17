@@ -1,13 +1,13 @@
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm использует протокол [ActivityPub](http://activitypub.rocks/) для отправки и получения активности пользователей между другими экземплярами BookWyrm и другими службами, реализующими ActivityPub, такими как [Mastodon](https://joinmastodon.org/). Для обработки книжных данных BookWyrm имеет несколько типов расширенных действий, которые не являются частью стандарта, но разборчивы к другим экземплярам BookWyrm.
 
-## Activities and Objects
+## Действия и объекты
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Пользователи и отношения
+Взаимодействие между пользователями соответствует стандартной спецификации ActivityPub.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
+- `Follow (Подпишитесь на)`: запрос на получение статусов от пользователя и просмотрите их статусы, в которых есть только подписчики
+- `Accept (Принять)`: одобряет `Следовать` и фиксирует взаимоотношения
+- `Reject (Отклонить)`: запрещает `Follow (подписку)`
 - `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
 - `Update`: updates a user's profile and settings
 - `Delete`: deactivates a user
@@ -22,7 +22,7 @@ User relationship interactions follow the standard ActivityPub spec.
 - `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
 
 
-#### Activities
+#### Действия
 
 - `Create`: saves a new status in the database.
 
