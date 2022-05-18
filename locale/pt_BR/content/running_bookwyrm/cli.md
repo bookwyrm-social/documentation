@@ -62,7 +62,7 @@ Reinicia o banco de dados. **Este comando vai excluir todo o banco de dados da B
 
 ### collectstatic
 
-Migra os recursos estáticos para um container Docker ou para um "bucket" compatível com S3, dependendo do contexto.
+Migra os arquivos estáticos para um container Docker ou para um "bucket" compatível com S3, dependendo do contexto.
 
 ### generate_preview_images
 
@@ -100,7 +100,7 @@ Obtem o código secreto da administração para registrar o usuário administrad
 
 ## Configurando um armazenamento compatível com S3
 
-Por padrão, a BookWyrm usa o armazenamento local para os recursos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o django-storages para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.
+Por padrão, a BookWyrm usa o armazenamento local para os arquivos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o django-storages para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.
 
 Veja [Armazenamento externo](/external-storage.html) para mais informações.
 
