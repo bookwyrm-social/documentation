@@ -1,4 +1,4 @@
-Por padrão, a BookWyrm usa o armazenamento local para os recursos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o `django-storages` para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.
+Por padrão, a BookWyrm usa o armazenamento local para os arquivos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o `django-storages` para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.
 
 ## Serviços compatíveis com S3
 
@@ -12,66 +12,66 @@ Este guia foi testado no Scaleway Object Storage. Se você usa outro serviço, p
 
 Se você está iniciando uma nova instância BookWyrm, o processo será:
 
-- Set up your external storage service
-- Enable external storage on BookWyrm
-- Start your BookWyrm instance
-- Update the instance connector
+- Configurar seu serviço de armazenamento externo
+- Habilitar o armazenamento externo na BookWyrm
+- Inicie sua instância BookWyrm
+- Atualize o conector da instância
 
-If you already started your instance, and images have been uploaded to local storage, the process will be:
+Se você já iniciou a instância, e imagens foram enviadas para o armazenamento local, o processo será:
 
-- Set up your external storage service
-- Copy your local media to external storage
-- Enable external storage on BookWyrm
-- Restart your BookWyrm instance
-- Update the instance connector
+- Configure seu serviço de armazenamento externo
+- Copie sua mídia local para o armazenamento externo
+- Habilite o armazenamento externo na BookWyrm
+- Reinicie sua instância BookWyrm
+- Atualize o conector da instância
 
-### BookWyrm Settings
+### Configurações da BookWyrm
 
-Edit your `.env` file by uncommenting the following lines:
+Edite seu arquivo `.env` descomentando as seguintes linhas:
 
-- `AWS_ACCESS_KEY_ID`: your access key ID
-- `AWS_SECRET_ACCESS_KEY`: your secret access key
-- `AWS_STORAGE_BUCKET_NAME`: your bucket name
-- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` for AWS, `"fr-par"` for Scaleway or `"nyc3"` for Digital Ocean
+- `AWS_ACCESS_KEY_ID`: sua ID de acesso
+- `AWS_SECRET_ACCESS_KEY`: sua chave de acesso secreta
+- `AWS_STORAGE_BUCKET_NAME`: o nome do seu bucket
+- `AWS_S3_REGION_NAME`: p.ex. `"eu-west-1"` para a AWS, `"fr-par"` para a Scaleway ou `"nyc3"` para a Digital Ocean
 
-If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:
+Se seu serviço compatível com S3 for a Amazon AWS, já está tudo pronto. Se não, você deverá descomentar as seguintes linhas:
 
-- `AWS_S3_CUSTOM_DOMAIN`: the domain that will serve the assets, e.g. `"example-bucket-name.s3.fr-par.scw.cloud"` or `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
-- `AWS_S3_ENDPOINT_URL`: the S3 API endpoint, e.g. `"https://s3.fr-par.scw.cloud"` or `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
+- `AWS_S3_CUSTOM_DOMAIN`: o domínio que irá servir os arquivos, p.ex `"example-bucket-name.s3.fr-par.scw.cloud"` ou `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
+- `AWS_S3_ENDPOINT_URL`: o endpoint da API S3, p. ex `"https://s3.fr-par.scw.cloud"` ou `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
 
-### Copying local media to external storage
+### Copiando a mídia local para o armazenamento externo
 
-If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
+Se sua instância BookWyrm já está rodando e já recebeu mídias (avatares de usuários, capas de livros…), você precisará migrar essa mídia enviada para seu bucket.
 
-This task is done with the command:
+Essa tarefá é feita com o comando:
 
 ```bash
 ./bw-dev copy_media_to_s3
 ```
 
-### Enabling external storage for BookWyrm
+### Habilitando o armazenamento externo na BookWyrm
 
-To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `false` to `true`:
+Para habilitar o armazenamento externo compatível com S3, você deverá editar seu arquivo `.env` e mudar a propriedade da variável `USE_S3` de `false` para `true`:
 
 ```
 USE_S3=true
 ```
 
-If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that `USE_HTTPS` is set to `true`, so images will be loaded over HTTPS:
+Se seu armazenamento externo está servindo via HTTPS (como a maioria hoje em dia), você também precisará se certificar de que `USE_HTTPS` seja `true` para que as imagens carreguem via HTTPS:
 
 ```
 USE_HTTPS=true
 ```
 
-#### Static assets
+#### Arquivos estáticos
 
-Then, you will need to run the following command, to copy the static assets to your S3 bucket:
+Então, para copiar os arquivos estáticos para o seu bucket S3 você precisará executar o seguinte comando:
 
 ```bash
 ./bw-dev collectstatic
 ```
 
-#### CORS settings
+#### Configurações do CORS
 
 Once the static assets are collected, you will need to set up CORS for your bucket.
 
