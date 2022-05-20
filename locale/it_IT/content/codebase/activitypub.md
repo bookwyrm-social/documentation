@@ -30,13 +30,13 @@ Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 
    - Messaggi diretti (cioè, `Note`s con il livello di privacy `direct`, che menzionano un utente locale),
    - Relativo a un libro (un tipo di stato personalizzato che include il campo `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+   - Risposte agli stati esistenti salvati nel database
+- `Delete`: Rimuove uno stato
+- `Like`: Crea un preferito sullo stato
+- `Annuounce`: Condivide lo stato nella timeline dell'utente
+- `Undo`: Inverte un `Like` o `Announce`
 
-### Collections
+### Collezioni
 User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
 #### Objects
