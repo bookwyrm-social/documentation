@@ -1,49 +1,49 @@
 ## Cereri de extragere (pull requests)
 
-Deci vreți să contribuiți la codul BookWyrm: super! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
+Deci vreți să contribuiți la codul BookWyrm: super! Dacă există un tichet nerezolvat pe care ați vrea să-l rezolvați, este util să lăsați un comentariu pentru ca munca să nu fie duplicată. Încercați să păstrați obiectivul cererilor de extragere mic și concentrat pe o singură temă. În acest fel este mai ușor de revizuit, iar dacă o parte are nevoie de schimbări, nu le va bloca pe celelalte.
 
-If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.
+Dacă nu sunteți sigur de cum să rezolvați ceva sau nu vă descurcați, este complet în regulă. Doar lăsați un comentariu la cererea de extragere și ne vom descurca 💖.
 
-Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
+Cererile de extragere au nevoie de a trece verificările automate înainte de a fi fuzionate. Acestea includ verificări de stil, lintere globale, o verificare de securitate și teste unitare.
 
 ## Linting
 
 ### Global
 
-We use [EditorConfig](https://editorconfig.org) to maintain consistent indenting and line endings.
+Folosim [EditorConfig](https://editorconfig.org) pentru a menține indentarea și finalul liniilor consecvente.
 
 ### Python
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev black`
+BookWyrm folosește formatorul de cod [Black](https://github.com/psf/black) pentru a menține stilul codului consistent. Toate cererile noi de extragere sunt verificate cu acțiunile GitHub și puteți regla în modul automat problemele de stil de cod rulând `./bw-dev black`
 
-Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
+Codul este de asemenea verificat cu Pylint folosind acțiunile GitHub. Avertismentele Pylint trebuie abordate înainte ca cererile de extragere să fie fuzionate, dar este un apel de judecată dacă sugestia ar trebui folosită sau suprimată. Pentru a șterge un avertisment, adăugați un comentariu la finalul sau deasupra avertismentului: `# pylint: disable=warning-name`
 
-### Templates (HTML)
+### Șabloane (HTML)
 
-Your pull request will also be checked by the [curlylint](https://www.curlylint.org) linter for Django templates.
+Cererile dumneavoastră de extragere vor fi de asemenea verificate de linterul [curlylint](https://www.curlylint.org) pentru șabloanele Django.
 
 ### CSS
 
-We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint [you can disable stylelint](https://stylelint.io/user-guide/ignore-code) for a particular rule, but you will need a good justification for doing so.
+Folosim [stylelint](https://stylelint.io) pentru a verifica toate regulile CSS. Ca și în cazul lui Pylint [puteți dezactiva stylelint](https://stylelint.io/user-guide/ignore-code) pentru o regulă particulară, dar veți avea nevoie de o bună justificare pentru a face asta.
 
 ### JavaScript
 
-[ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
+[ESLint](https://eslint.org) verifică orice modificare JavaScript pe care ați făcut-o. Dacă lui ESLint nu-i place munca dvs. JavaScript, verificați mesajul linterului pentru problema exactă.
 
-## Inclusive Design
+## Design inclusiv
 
-Bookwyrm aims to be as inclusive and accessible as possible.
+BookWyrm dorește să fie cât mai inclusiv și accesibil posibil.
 
-When contributing code, check the [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) before you file your pull request. For accessibility advice, [A11Y-101](https://www.a11y-101.com/development) is also a useful source. For information on how to make your page templates multi-lingual, see the [Translations section](/translations.html).
+Când contribuiți la cod, verificați [lista Design Web Inclusiv](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) înainte de a depune cererea dvs. de extragere. Pentru sfaturi de accesibilitate, [A11Y-101](https://www.a11y-101.com/development) este de asemenea o resursă utilă. Pentru informații despre cum să faceți șablonul de pagină bilingv, consultați [secțiunea de Traduceri](/translations.html).
 
-Some particular things that Bookwyrm contributors have found useful to remember are:
+Câteva lucruri care li s-au părut contribuitorilor BookWyrm util de reținut sunt:
 
-### Forms
+### Formulare
 
-* Only use `input[type="checkbox"]` or `input[type="radio"]` inside `<label>`
-* If you do not place checkboxes and radio buttons inside the `<label>`, the `<label>` should be placed _after_ the element it relates to
+* Folosiți numai `input[type="checkbox"]` sau `input[type="radio"]` în interiorul `<label>`
+* Dacă nu vă plac casetele de selectare sau butoanele radio în interiorul `<label>`, `<label>` ar trebui plasat _după_ elementul la care se referă
 
-### Buttons and Links
+### Butoane și legături
 
-* Use a `<button>` element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a `POST` request (e.g. submitting a form)
-* Use an `<a>` element for anything that triggers a `GET` request. Usually, an anchor (`<a>`) element should not be styled as a button (`class="button"`), though there are some exceptions, such as "Cancel" buttons. If in doubt, ask for advice in your pull request
+* Folosiți `<button>` pentru orice obiect care declanșează o acțiune JavaScript (de exemplu ascunsul sau afișatul unui formular) sau trimisul unei cereri `POST` (de exemplu trimiterea unui formular)
+* Folosiți`<a>` pentru orice obiect care declanșează o cerere `GET`. De obicei, un element ancoră (`<a>`) nu ar trebui stilizat ca un buton (`class="button"`), deși există unele excepții precum butoanele de "Anulați". Dacă aveți dubii, cereți sfaturi în cererile dvs. de extragere
