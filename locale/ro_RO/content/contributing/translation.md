@@ -1,10 +1,10 @@
-## Contributing to translations
+## Contribuiți la traducere
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Puteți să vă alăturați proiectului de traducere BookWyrm la [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Limbaj neutru de gen
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Ori de câte ori este posibil, traducerile BookWyrm ar trebui să folosească limbaj de gen neutru. Asta se aplică dacă o limbă folosește în mod implicit genul masculin ca gen neutru sau dacă folosește ceva similar precum „el/ea”. Este de asemenea important ca traducerile să fie clare, concise și lizibile pentru un cititor de ecran. Uneori, aceste obiective intră în conflict. Nu există un răspuns perfect, universal valabil. Soluția depinde de limbă.
 
 As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
 
