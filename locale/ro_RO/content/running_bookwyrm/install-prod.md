@@ -31,18 +31,19 @@ Instrucțiuni pentru rularea BookWyrm în producție:
         - Înlocuiți `your-domain.com` cu numele domeniului dvs. peste tot în fișier (inclusiv liniile care sunt momentan comentate)
         - Dacă nu folosiți subdomeniul `www`, înlăturați versiunea www.your-domain.com a domeniului din `server_name` în primul bloc al server-ului în `nginx/default.conf` și înlăturați opțiunea `-d www.${DOMAIN}` de la finalul comenzii `certbot` din `docker-compose.yml`.
         - Dacă rulați un alt server web pe calculatorul dvs. gazdă, veți avea nevoie să urmați [instrucțiunile pentru reverse-proxy](/using-a-reverse-proxy.html)
-- Rulați aplicația prin `docker-compose up --build` (asta ar trebui să configureze de asemenea și un Certbot ssl cert pentru domeniul dvs.) și asigurați-vă că toate imaginile au fost compilate cu succes
-    - Dacă rulați alte servicii pe calculatorul gazdă al dvs., s-ar putea să vă confruntați cu erori când serviciile eșuează încercând să se lege la un port. Vedeți [ghidul de depanare](#port_conflicts) pentru sfaturi despre rezolvarea acestor probleme.
-- Când Docker s-a compilat cu succes, opriți procesul cu `CTRL-C`
-- Configurați redirecționarea HTTPS
-    - În `docker-compose.yml`, comentați comanda certbot activă, care instalează certificatul, și decomentați linia de mai jos, care configurează automat reînnoirea.
-    - În `nginx/default.conf`, decomentați de la linia 18 până la 50 pentru a activa redirecționarea HTTPS. Ar trebui să aveți două blocuri `server` activate
-- Configurați o sarcină (job) `cron` pentru a păstra certificatele dvs. actualizate (certificatele Lets Encrypt expiră după 90 de zile)
-    - Tastați `crontab -e ` pentru a edita fișierul dvs. cron pe mașina gazdă
-    - adăugați o linie pentru a încerca reînnoirea o dată pe zi: `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
-- Dacă doriți să folosiți un mediu de stocare externă pentru modelele statice și fișierele media (precum un serviciu S3 compatibil), [urmați instrucțiunile](/external-storage.html) până când vă spune să reveniți aici
-- Configurați baza de date cu `./bw-dev setup` și copiați codul adminului pentru a îl folosi când vă creați contul dvs. de admin.
-    - Afișajul `./bw-dev setup` ar trebui să se termine cu codul dvs. de admin. Puteți obține codul dvs. oricând rulând `./bw-dev admin_code` din linia de comandă. Iată un exemplu de afișaj:
+- Initialize the database by running `./bw-dev migrate`
+- Run the application (this should also set up a Certbot ssl cert for your domain) with `docker-compose up --build`, and make sure all the images build successfully
+    - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
+- When docker has built successfully, stop the process with `CTRL-C`
+- Set up HTTPS redirect
+    - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
+    - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
+- Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
+    - Type `crontab -e` to edit your cron file in the host machine
+    - add a line to try renewing once a day: `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
+- If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
+- Initialize the application with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
+    - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
 
 ``` { .sh }
 *******************************************
