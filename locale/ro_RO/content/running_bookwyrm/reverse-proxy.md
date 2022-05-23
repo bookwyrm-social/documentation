@@ -1,31 +1,31 @@
-## Running BookWyrm Behind a Reverse-Proxy
-If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.
+## Rularea BookWyrm în spatele unui Reverse-Proxy
+Dacă rulați un alt server web pe mașina dvs., trebuie să-l configurați să transmită cererile web către BookWyrm.
 
-The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files. The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.
+Configurația BookWyrm de bază are deja un server nginx care redirecționează cererile către aplicația Django care se ocupă de SSL și deservește în mod direct fișierele statice. Fișierele statice sunt stocate într-un volum Docker la care au acces mai multe servicii BookWrym, deci nu este recomandat să înlăturați complet acest server.
 
-To run BookWyrm behind a reverse-proxy, make the following changes:
+Pentru a rula BookWyrm în spatele unui reverse-proxy, faceți următoarele schimbări:
 
-- In `nginx/default.conf`:
-    - Comment out the two default servers
-    - Uncomment the server labeled Reverse-Proxy server
-    - Replace `your-domain.com` with your domain name
-- In `docker-compose.yml`:
-    - In `services` -> `nginx` -> `ports`, comment out the default ports and add `- 8001:8001`
-    - In `services` -> `nginx` -> `volumes`, comment out the two volumes that begin `./certbot/`
-    - In `services`, comment out the `certbot` service
+- În `nginx/default.conf`:
+    - Comentați cele două servere implicite
+    - Decomentați server-ul etichetat „Reverse-Proxy server”
+    - Înlocuiți `your-domain.com` cu numele domeniului dvs.
+- În `docker-compose.yml`:
+    - În `services` -> `nginx` -> `ports`, comentați porturile implicite și adăugați `- 8001:8001`
+    - În `services` -> `nginx` -> `volumes`, comentați cele două volume care încep `./certbot/`
+    - În `services`, comentați serviciul `certbot`
 
-At this point, you can follow, the [setup](#server-setup) instructions as listed. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https`).
+În acest moment, puteți urmări instrucțiunile [setup](#server-setup) listate. Odată ce Docker rulează, puteți accesa instanța dvs. de BookWyrm la `http://localhost:8001` (**NOTĂ:** serverul dvs. nu este accesibil prin `https`).
 
-Steps for setting up a reverse-proxy are server dependent.
+Pașii pentru configurarea unui reverse-proxy sunt independenți de server.
 
 #### Nginx
 
-Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx. See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
+Înainte de a putea configura nginx, veți avea nevoie să localizați dosarul dvs. de configurare nginx, care este dependent de platforma dvs. și de cum ați instalat nginx. Vedeți [ghidul nginx](http://nginx.org/en/docs/beginners_guide.html) pentru detalii.
 
-To set up your server:
+Pentru a configura serverul dvs.:
 
-- In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
-- In your nginx `servers` directory, create a new file named after your domain containing the following information:
+- În fișierul dvs. `nginx.conf`, asigurați-vă că `include servers/*;` nu este comentat.
+- În dosarul dvs. nginx `servers`, creați un nou fișier numit după domeniul dvs. conținând următoarele informații:
 
 ``` { .nginx }
 server {
@@ -54,7 +54,7 @@ server {
 }
 ```
 
-To set up with an ssl block:
+Pentru a configura un bloc SSL:
 ``` { .nginx }
 server {
     server_name your.domain;
@@ -95,12 +95,12 @@ server {
     }
 }
 ```
-- run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
-- restart nginx
+- rulați `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
+- reporniți nginx
 
-If everything worked correctly, your BookWyrm instance should now be externally accessible.
+Dacă totul a funcționat corect, instanța dvs. BookWyrm ar trebui să fie acum accesibilă din exterior.
 
-*Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
+*Notă: `proxy_set_header Host $host;` este esențial; dacă nu-l includeți, mesajele primite de la serverele federate vor fi respinse.*
 
-*Note: the location of the ssl certificates may vary depending on the OS of your server*
+*Notă: locația certificatelor SSL poate varia în funcție de SO (sistemul de operare) al serverului dvs.*
 
