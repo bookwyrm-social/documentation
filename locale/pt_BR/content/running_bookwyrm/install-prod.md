@@ -31,7 +31,8 @@ Instruções para rodar a BookWyrm em produção:
         - Substitua `your-domain.com` com seu domínio em todos os lugares do arquivo (incluindo as linhas comentadas)
         - Se você não estiver utilizando o subdomínio `www`, exclua a versão do domínio www.your-domain.com do `server_name` no primeiro bloco server no `nginx/default.conf` e exclua a flag `-d www.${DOMAIN}` no fim do comando `certbot` no `docker-compose.yml`.
         - Se você estiver executando outro servidor web na sua máquina, você precisará seguir as [instruções de proxy reverso](/using-a-reverse-proxy.html)
-- Rode a aplicação (e isso deve também configurar o certificado ssl do Certbot para seu domínio) com `docker-compose up --build`, e certifique-se de que todas as imagens foram construidas com sucesso
+- Initialize the database by running `./bw-dev migrate`
+- Run the application (this should also set up a Certbot ssl cert for your domain) with `docker-compose up --build`, and make sure all the images build successfully
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
 - Set up HTTPS redirect
@@ -41,7 +42,7 @@ Instruções para rodar a BookWyrm em produção:
     - Type `crontab -e` to edit your cron file in the host machine
     - add a line to try renewing once a day: `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
-- Set up the database with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
+- Initialize the application with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
     - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
 
 ``` { .sh }
