@@ -16,25 +16,25 @@ Aceste imagini vor fi actualizate în diferite puncte:
 - imaginea de utilizator: când numele afișat sau avatarul au fost schimbate
 - imaginea de carte: când titlul/titlurile, autorul/autorii sau coperta au fost schimbați sau o nouă recenzie este adăugată
 
-### Enabling preview images
+### Activați imaginile de previzualizare
 
-In order to enable the feature with default settings, you have to uncomment (remove the `#` in front of) the line `ENABLE_PREVIEW_IMAGES=true` in your `.env` file. All the new updating events aforementioned will cause the generation of the corresponding image.
+Pentru a activa această funcționalitate cu setările implicite, trebuie să decomentați (să înlăturați `#` din fața) liniei `ENABLE_PREVIEW_IMAGES=true` în fișierul dvs. `.env`. Toate evenimentele noi de actualizare menționate anterior vor cauza generarea imaginii corespunzătoare.
 
-Examples for these images can be viewed on the [feature’s pull request’s description](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink).
+Exemple pentru aceste imaginii pot fi vizualizate pe [descrierea cererii de extragere a funcționalității](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink).
 
-### Generating preview images
+### Generarea imaginilor de previzualizare
 
-If you enable this setting after your instance has been started, some images may not have been generated. A command has been added to automate the image generation. In order to prevent a ressource hog by generating **A LOT** of images, you have to pass the argument `--all` (or `-a`) to start the generation of the preview images for all users and books. Without this argument, only the site preview will be generated.
+Dacă activați această setare după ce instanța dvs. a fost pornită, s-ar putea ca unele imagini să nu fi fost generate. O comandă a fost adăugată pentru a automatiza generarea de imagini. Pentru a preveni consumarea excesivă de resurse prin generarea **MULTOR** imagini, trebuie să transmiteți argumentul `--all` (sau `-a`) pentru a începe generarea imaginilor de previzualizare pentru toți utilizatorii și toate cărțile. Fără acest argument, numai previzualizarea site-ului va fi generată.
 
-User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.
+Imaginile de previzualizare pentru utilizatori și cărți vor fi generate asincron: sarcina va fi trimisă către Flower. S-ar putea să fie nevoie de ceva timp ca toate cărțile și toți utilizatorii să aibă o imagine de previzualizare funcțională. Dacă aveți o carte bună 📖, un pisoi 🐱 sau o prăjitură 🍰, acum este momentul perfect pentru a le acorda ceva atenție 💖.
 
-### Optional settings
+### Setări opționale
 
-So you want to customize your preview images? Here are the options:
+Deci vreți să vă personalizați imaginile de previzualizare? Iată câteva opțiuni:
 
-- `PREVIEW_BG_COLOR` will set the color for the preview image background. You can supply a color value, like `#b00cc0`, or the following values `use_dominant_color_light` or `use_dominant_color_dark`. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.
-- `PREVIEW_TEXT_COLOR` will set the color for the text. Depending on the choice for the background color, you should find a value that will have a sufficient contrast for the image to be accessible. A contrast ratio of 1:4.5 is recommended.
-- `PREVIEW_IMG_WIDTH` and `PREVIEW_IMG_HEIGHT` will set the dimensions of the image. Currently, the system will work best on images with a landscape (horizontal) orientation.
-- `PREVIEW_DEFAULT_COVER_COLOR` will set the color for books without covers.
+- `PREVIEW_BG_COLOR` va seta culoarea de fundal a imaginii de previzualizare. Puteți furniza o valoare de culoare, precum `#b00cc0` sau următoarele valori: `use_dominant_color_light` sau `use_dominant_color_dark`. Acestea vor extrage culoarea dominantă a coperții cărții și o vor folosi într-o temă deschisă, respectiv întunecată.
+- `PREVIEW_TEXT_COLOR` va seta culoarea pentru text. Depinzând de alegerea dumneavoastră pentru culoarea de fundal, trebuie să găsiți o valoarea care are suficient contrast pentru ca imaginea să fie lizibilă. Se recomandă un raport de contrast 1:4,5.
+- `PREVIEW_IMG_WIDTH` și `PREVIEW_IMG_HEIGHT` vor seta dimensiunile imaginii. În prezent, sistemul va funcționa cel mai bine cu imagini având o orientare peisaj (orizontală).
+- `PREVIEW_DEFAULT_COVER_COLOR` va seta culoarea pentru cărțile fără copertă.
 
-All the color variables accept values that can be recognized as colors by Pillow’s `ImageColor` module: [Learn more about Pillow color names](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
+Toate variabilele de culoare acceptă valori care pot fi recunoscute ca atare de modulul `ImageColor` a lui Pillow: [Aflați mai multe despre numele de culori Pillow](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
