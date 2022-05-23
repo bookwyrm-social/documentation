@@ -1,22 +1,22 @@
-When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. This does a number of things:
+Când sunt schimbări disponibile în ramura de producție, puteți să le instalați și rula utilizând comanda `./bw-dev update` pe instanța dvs. Aceasta face mai multe de lucruri:
 
-- `git pull` gets the updated code from the git repository. If there are conflicts, you may need to run `git pull` separately and resolve the conflicts before trying the `./bw-dev update` script again.
-- `docker-compose build` rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip `requirements.txt` packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.
-- `docker-compose exec web python manage.py migrate` runs the database migrations in Django
-- `docker-compose exec web python manage.py collectstatic --no-input` loads any updated static files (such as the JavaScript and CSS)
-- `docker-compose restart` reloads the docker containers
+- `git pull` obține codul actualizat de pe depozitul git. Dacă sunt conflicte, s-ar putea să aveți nevoie să rulați `git pull` separat și să rezolvați conflictele înainte de a reîncerca scriptul `./bw-dev update`.
+- `docker-compose build` recompilează imaginile, ceea ce asigură că pachetele corecte au fost instalate. Acest pas durează mult timp și este necesar numai dacă dependențele (inclusiv pachetele pip `requirements.txt`) s-au schimbat, deci puteți să-l comentați dacă vreți o cale de actualizare mai rapidă și nu vă deranjează să-l decomentați când este necesar.
+- `docker-compose exec web python manage.py migrate` rulează migrările bazei de date în Django
+- `docker-compose exec web python manage.py collectstatic --no-input` încarcă orice fișier static actualizat (precum JavaScript și CSS)
+- `docker-compose restart` reîncarcă containerele Docker
 
-## Re-building activity streams
+## Recompilați fluxurile de activitate
 
-Feeds for each user are stored in Redis. To re-populate a stream, use the management command:
+Fluxurile pentru fiecare utilizator sunt stocate în Redis. Pentru a repopula un flux, folosiți comanda de gestionare:
 
 ``` { .sh }
 ./bw-dev populate_streams
-# Or use docker-compose directly
+# Sau folosiți direct docker-compose
 docker-compose run --rm web python manage.py populate_streams
 ```
 
-If something has gone terribly awry, the stream data can be deleted.
+Dacă ceva a mers groaznic, datele fluxului pot fi șterse.
 
 ``` { .sh }
 docker-compose run --rm web python manage.py erase_streams
