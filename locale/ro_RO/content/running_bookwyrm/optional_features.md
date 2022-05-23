@@ -1,20 +1,20 @@
-Some features of BookWyrm have to be enabled to work.
+Unele funcționalități BookWyrm trebuie să fie activate pentru a funcționa.
 
-## Preview image generation
+## Previzualizarea generării de imagine
 
-By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
+În mod implicit, BookWyrm folosește logo-ul instanței (sau logo-ul de bază) ca imagine de previzualizare OpenGraph. Ca alternativă, puteți activa generarea de imagini de previzualizare pentru cărți, utilizatori și site-uri web.
 
-The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Depending on the type of image, the contents will be:
+Imaginile de previzualizare vor fi dimensionate pentru imagini OpenGraph mari (folosite de Twitter sub denumirea de `summay_large_image`). Depinzând de tipul imaginii, conținutul va fi:
 
-- the default instance image will display the big logo, along with the name of the instance and its url
-- the user image will display their avatar, display name, handle (in the form of username@instance)
-- the book image will display their cover, title, subtitle (if present), author and rating (if present)
+- imaginea implicită a instanței va afișa logo-ul mare, împreună cu numele instanței și URL-ul său
+- imaginea de utilizator va afișa avatarul său, numele său afișat, numele de utilizator (sub forma numeutilizator@instanță)
+- imaginea de carte va afișa coperta sa, titlul, subtitlul (dacă este cazul), autorul și ratingul (dacă este cazul)
 
-These images will be updated at various points:
+Aceste imagini vor fi actualizate în diferite puncte:
 
-- instance image: when the instance name or big logo are changed
-- user image: when the display name or avatar are changed
-- book image: when the title(s), author(s) or cover are changed, or when a new rating is added
+- imaginea instanței: când numele instanței sau logo-ul mare au fost schimbate
+- imaginea de utilizator: când numele afișat sau avatarul au fost schimbate
+- imaginea de carte: când titlul/titlurile, autorul/autorii sau coperta au fost schimbați sau o nouă recenzie este adăugată
 
 ### Enabling preview images
 
