@@ -1,7 +1,7 @@
-## Blocking
-Users have the option to block other users on their own, without a moderator intervening. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.
+## Blocare
+Utilizatorii au opțiunea de a bloca alți utilizatori pe cont propriu fără ca un moderator să intervină. Din punctul de vedere al adminului de „Servere federate”, administratorii pot vedea cât de mulți utilizatori de pe o instanță au fost blocați de utilizatori locali.
 
-## Reports
+## Raporturi
 Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.
 
 When a report is made, there are a few options how the moderator can respond.
