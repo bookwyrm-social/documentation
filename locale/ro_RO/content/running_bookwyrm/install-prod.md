@@ -89,4 +89,4 @@ Deoarece BookWyrm este un proiect tânăr, încă lucrăm la un program de lansa
 
  - Deschideți un tichet sau o cerere de extragere pentru a adăuga instanța dvs. la [lista oficială](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
  - Contactați proiectul pe [Mastodon](https://tech.lgbt/@bookwyrm) sau prin [email-ul maintainer-ului](mailto:mousereeve@riseup.net) direct cu numele dvs. GitHub
- - Join the [Matrix](https://matrix.to/#/#bookwyrm:matrix.org) chat room
+ - Alăturați-vă salonului de discuție (chat room) [Matrix](https://matrix.to/#/#bookwyrm:matrix.org)
