@@ -201,6 +201,7 @@ Installing in Production
 </li>
 </ul>
 </li>
+<li>Initialize the database by running <code>./bw-dev migrate</code></li>
 <li>Run the application (this should also set up a Certbot ssl cert for your domain) with
     <code>docker-compose up --build</code>, and make sure all the images build successfully<ul>
 <li>If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
@@ -220,7 +221,7 @@ See the <a href="#port_conflicts">troubleshooting guide</a> for advice on resolv
 </ul>
 </li>
 <li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
-<li>Set up the database with <code>./bw-dev setup</code>, and copy the admin code to use when you create your admin account.<ul>
+<li>Initialize the application with <code>./bw-dev setup</code>, and copy the admin code to use when you create your admin account.<ul>
 <li>The output of <code>./bw-dev setup</code> should conclude with your admin code. You can get your code at any time by running <code>./bw-dev admin_code</code> from the command line. Here's an example output:</li>
 </ul>
 </li>
