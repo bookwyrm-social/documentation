@@ -1,22 +1,22 @@
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm utilise le protocole [ActivityPub](http://activitypub.rocks/) pour envoyer et recevoir des activités utilisateur entre des instances de BookWyrm et d’autres services qui implémentent ActivityPub, comme [Mastodon](https://joinmastodon.org/). Pour gérer les données de livres, BookWyrm utilise plusieurs extensions de types d’Activity qui ne font pas partie de la norme, mais sont interopérables avec les autres instances de BookWyrm.
 
 ## Activités et Objets
 
 ### Utilisateurs et relations
-User relationship interactions follow the standard ActivityPub spec.
+Les interactions de relations entre les utilisateurs suivent la spécification ActivityPub standard.
 
 - `Follow` : demande à recevoir les statuts d'un utilisateur et consultez leurs statuts qui ont un réglage de lecture réservée aux abonnés
 - `Accept` : approuve un `Follow` et finalise la relation
 - `Reject` : refuse un `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Block` : empêche les utilisateurs de voir les statuts de l'autre et empêche l'utilisateur bloqué de voir le profil de l'acteur
+- `Update` : met à jour le profil et les paramètres d'un utilisateur
+- `Delete` : désactive un utilisateur
+- `Undo` : inverse un `Follow` ou un `Block`
 
-### Statuses
-#### Object types
+### Statuts
+#### Types d'Object
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
+- `Note` : Sur les services comme Mastodon, les `Note`s sont le type principal de statut. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
 - `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
 - `Comment`: A comment on a book mentions a book and has a message body.
 - `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
