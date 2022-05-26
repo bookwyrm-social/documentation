@@ -1,8 +1,8 @@
-BookWyrm a une branche qui est configurée pour exécuter la [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/). This branch will never get merged into `main` and has a few tweaks that make it work with the toolbar, but unsafe to use in anything resembling a production environment. To use this branch, you will need to go through a few steps to get it running.
+BookWyrm a une branche qui est configurée pour exécuter la [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/). Cette branche ne sera jamais fusionnée dans `main` et a quelques améliorations qui la font fonctionner avec la barre d'outils, mais qui sont dangereuses à utiliser dans un environnement étant ou approchant de la production. Pour utiliser cette branche, vous devez passer par quelques étapes pour que ça marche.
 
-## Set up
+## Configuration
 
-- Using git, checkout out the [`debug-toolbar`](https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar) branch
-- Update the branch relative to `main` using `git merge main`. The branch is updated periodically but will likely be behind latest.
-- Re-build the Docker images using `docker-compose up --build` to ensure that the Debug Toolbar library is installed from `requirements.txt`
-- Access the application `web` image directly (instead of via `nginx`) using port `8000`
+- Avec git, basez-vous la branche [`debug-toolbar`](https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar)
+- Mettre à jour la branche relative à `main` en utilisant `git merge main`. La branche est mise à jour périodiquement, mais sera probablement en retard par rapport à la dernière version.
+- Reconstruisez les images Docker en utilisant `docker-compose up --build` pour vous assurer que la lib Debug Toolbar est installée depuis `requirements.txt`
+- Accédez à l'application depuis l'image `web` directement (au lieu d'y accéder via `nginx`) en utilisant le port `8000`
