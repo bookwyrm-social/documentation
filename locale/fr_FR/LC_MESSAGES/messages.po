@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-14 13:51-0700\n"
-"PO-Revision-Date: 2022-05-14 21:36\n"
+"PO-Revision-Date: 2022-05-26 19:35\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -19,69 +19,69 @@ msgstr ""
 
 #: templates/index.html:5
 msgid "BookWyrm Documentation"
-msgstr ""
+msgstr "Documentation de BookWyrm"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
-msgstr ""
+msgstr "Votre guide d'utilisation et de contribution à BookWyrm"
 
 #: templates/index.html:6
 msgid "How to Use and Contribute"
-msgstr ""
+msgstr "Comment utiliser et contribuer"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
-msgstr ""
+msgstr "BookWyrm : Lecture et critique de livres, de manière sociale et décentralisée"
 
 #: templates/layout.html:35
 msgid "Join"
-msgstr ""
+msgstr "Rejoindre"
 
 #: templates/layout.html:38
 msgid "Get involved"
-msgstr ""
+msgstr "Comment s'impliquer ?"
 
 #: templates/layout.html:41
 msgid "Support"
-msgstr ""
+msgstr "Soutenir"
 
 #: templates/layout.html:44
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: templates/layout.html:47 templates/layout.html:124
 msgid "Documentation"
-msgstr ""
+msgstr "Documentation"
 
 #: templates/layout.html:95
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr ""
+msgstr "<strong>BookWyrm</strong> est un logiciel collaboratif et anti-commercial maintenu par <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 
 #: templates/layout.html:98
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
-msgstr ""
+msgstr "Soutenir BookWyrm sur <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 
 #: templates/layout.html:102
 msgid "Get Involved"
-msgstr ""
+msgstr "Contribuer"
 
 #: templates/layout.html:104
 msgid "BookWyrm on GitHub"
-msgstr ""
+msgstr "BookWyrm sur GitHub"
 
 #: templates/layout.html:107
 msgid "Contribute to this page"
-msgstr ""
+msgstr "Contribuer à cette page"
 
 #: templates/layout.html:122
 msgid "Learn more"
-msgstr ""
+msgstr "En savoir plus"
 
 #: templates/layout.html:127
 msgid "Contact maintainer"
-msgstr ""
+msgstr "Contact"
 
 #: templates/layout.html:130
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
