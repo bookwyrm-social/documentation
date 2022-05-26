@@ -41,16 +41,16 @@ Les livres et listes d'un utilisateurs sont représentés par [`OrderedCollectio
 
 #### Objects
 
-- `Shelf` : Collection de livres d'un utilisateur. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `Shelf` : Collection de livres d'un utilisateur. Par défaut, chaque utilisateur a les étagères `to-read` (à lire), `reading` (en cours de lecture), et `read` (livres lus), qui sont utilisées pour suivre la progression de la lecture.
+- `List` : Une collection de livres qui peut avoir des éléments contribués par des utilisateurs autres que celui qui a créé la liste.
 
 #### Activities
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Create` : sauvegarde une étagère ou une liste dans la base de données.
+- `Delete` : Supprime une étagère ou une liste.
+- `Add` : Ajoute un livre à une étagère ou une liste.
+- `Remove` : Supprime un livre d'une étagère ou d'une liste.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+## Sérialisation alternative
+Parce que BookWyrm utilise des types d'objets personnalisés (`Review`, `Comment`, `Quotation`) qui ne sont pas pris en charge par ActivityPub, les statuts sont transformés en types standards lorsqu'ils sont envoyés ou vus par des services non-BookWyrm. Les `Review`s sont converties en `Article`s, les `Comment`s et `Quotation`s sont convertis en `Note`s, avec un lien vers le livre et l'image de couverture en pièce jointe.
