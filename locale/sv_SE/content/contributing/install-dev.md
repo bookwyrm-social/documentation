@@ -18,7 +18,7 @@ cp .env.example .env
 cp nginx/development nginx/default.conf
 ```
 
-- Start the application. In the command line, run:
+- Starta applikationen. Kör på kommandoraden:
 ``` { .sh }
 ./bw-dev build            # Build the docker images
 ./bw-dev setup            # Initialize the database and run migrations
