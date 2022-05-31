@@ -2,7 +2,7 @@ User access to different features is controlled using Django's [built-in authent
 
 The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
 
-## Permissions and groups
+## Behörigheter och grupper
 This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
 
 |                        | admin | moderator | editor | user |
