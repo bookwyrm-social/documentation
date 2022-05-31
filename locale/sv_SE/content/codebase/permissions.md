@@ -11,7 +11,7 @@ This table shows the four groups (admin, moderator, editor, and user) and what p
 | change user level      | ✔️    | -         | -      | -    |
 | manage federation      | ✔️    | ✔️        | -      | -    |
 | issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
+| inaktivera användare   | ✔️    | ✔️        | -      | -    |
+| ta bort inlägg         | ✔️    | ✔️        | -      | -    |
+| redigera böcker        | ✔️    | ✔️        | ✔️     | -    |
  upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
