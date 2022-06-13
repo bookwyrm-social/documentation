@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-14 13:51-0700\n"
-"PO-Revision-Date: 2022-05-14 21:35\n"
+"PO-Revision-Date: 2022-06-13 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -19,15 +19,15 @@ msgstr ""
 
 #: templates/index.html:5
 msgid "BookWyrm Documentation"
-msgstr ""
+msgstr "BookWyrm ドキュメント"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
-msgstr ""
+msgstr "BookWyrmの使用と貢献のためのガイド"
 
 #: templates/index.html:6
 msgid "How to Use and Contribute"
-msgstr ""
+msgstr "使い方と貢献する方法"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
