@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-14 13:51-0700\n"
-"PO-Revision-Date: 2022-06-14 01:17\n"
+"PO-Revision-Date: 2022-06-14 02:15\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -55,11 +55,11 @@ msgstr "ドキュメンテーション"
 
 #: templates/layout.html:95
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr ""
+msgstr "<strong>BookWyrm</strong> は、<a href='https://www.mousereeve.com/'>Mouse Reeve</a> によって維持されている、共同作業による反企業的なソフトウェアです。"
 
 #: templates/layout.html:98
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
-msgstr ""
+msgstr "<a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a> で BookWyrm をサポート。"
 
 #: templates/layout.html:102
 msgid "Get Involved"
@@ -67,15 +67,15 @@ msgstr ""
 
 #: templates/layout.html:104
 msgid "BookWyrm on GitHub"
-msgstr ""
+msgstr "BookWyrm on GitHub"
 
 #: templates/layout.html:107
 msgid "Contribute to this page"
-msgstr ""
+msgstr "このページへの貢献"
 
 #: templates/layout.html:122
 msgid "Learn more"
-msgstr ""
+msgstr "詳しく見る"
 
 #: templates/layout.html:127
 msgid "Contact maintainer"
