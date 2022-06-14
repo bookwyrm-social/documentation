@@ -1,7 +1,7 @@
-BookWyrmは、読書記録を残し、本について語り、レビューを書き、次に読むべき本を発見するためのソーシャルネットワークです。 Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+BookWyrmは、読書記録を残し、本について語り、レビューを書き、次に読むべき本を発見するためのソーシャルネットワークです。 フェデレーション機能によりBookWyrmのユーザーは、互いに接続できる小さな信頼できるコミュニティや、MastodonやPleromaのような他のActivityPubサービスに参加することができます。
 
 ## 機能紹介
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+プロジェクトはまだ初期段階であるため、機能は日々増え続けており、提案やアイデアを出す余地は十分にあります。 [課題](https://github.com/bookwyrm-social/bookwyrm/issues)を開いて会話を盛り上げましょう!
 
 - Posting about books
     - Compose reviews, with or without ratings, which are aggregated in the book page
@@ -11,7 +11,7 @@ Since the project is still in its early stages, the features are growing every d
     - Reply to statuses
     - View aggregate reviews of a book across connected BookWyrm instances
     - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
+- 読書アクティビティを追跡
     - Shelve books on default "to-read," "currently reading," and "read" shelves
     - Create custom shelves
     - Store started reading/finished reading dates, as well as progress updates along the way
@@ -23,7 +23,7 @@ Since the project is still in its early stages, the features are growing every d
     - Identify shared books across instances and aggregate related content
     - Follow and interact with users across BookWyrm instances
     - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
-    - Option for users to manually approve followers
-    - Allow blocking and flagging for moderation
+- 詳細なプライバシー管理
+    - 投稿、本棚、リストのための非公開、フォロワーのみ、および公開のプライバシーレベル
+    - ユーザーが手動でフォロワーを承認するためのオプション
+    - ブロックとモデレーションのフラグ付けが可能
