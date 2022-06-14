@@ -3,12 +3,12 @@ BookWyrmは、読書記録を残し、本について語り、レビューを書
 ## 機能紹介
 プロジェクトはまだ初期段階であるため、機能は日々増え続けており、提案やアイデアを出す余地は十分にあります。 [課題](https://github.com/bookwyrm-social/bookwyrm/issues)を開いて会話を盛り上げましょう!
 
-- Posting about books
+- 本について投稿
     - Compose reviews, with or without ratings, which are aggregated in the book page
     - Compose other kinds of statuses about books, such as:
         - Comments on a book
         - Quotes or excerpts
-    - Reply to statuses
+    - ステータスへ返信
     - View aggregate reviews of a book across connected BookWyrm instances
     - Differentiate local and federated reviews and rating in your activity feed
 - 読書アクティビティを追跡
