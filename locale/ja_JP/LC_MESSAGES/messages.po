@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-14 13:51-0700\n"
-"PO-Revision-Date: 2022-06-13 02:26\n"
+"PO-Revision-Date: 2022-06-14 01:17\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -31,27 +31,27 @@ msgstr "使い方と貢献する方法"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
-msgstr ""
+msgstr "BookWyrm: ソーシャルリーディングとレビュー"
 
 #: templates/layout.html:35
 msgid "Join"
-msgstr ""
+msgstr "参加する"
 
 #: templates/layout.html:38
 msgid "Get involved"
-msgstr ""
+msgstr "活動に参加する"
 
 #: templates/layout.html:41
 msgid "Support"
-msgstr ""
+msgstr "お問い合わせ"
 
 #: templates/layout.html:44
 msgid "Code"
-msgstr ""
+msgstr "ソースコード"
 
 #: templates/layout.html:47 templates/layout.html:124
 msgid "Documentation"
-msgstr ""
+msgstr "ドキュメンテーション"
 
 #: templates/layout.html:95
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
