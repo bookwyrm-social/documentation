@@ -1,58 +1,56 @@
-> | Title: ActivityPub | Date: 2021-04-20 | Order: 1
-
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm utilise le protocole [ActivityPub](http://activitypub.rocks/) pour envoyer et recevoir des activités utilisateur entre des instances de BookWyrm et d’autres services qui implémentent ActivityPub, comme [Mastodon](https://joinmastodon.org/). Pour gérer les données de livres, BookWyrm utilise plusieurs extensions de types d’Activity qui ne font pas partie de la norme, mais sont interopérables avec les autres instances de BookWyrm.
 
 ## Activités et Objets
 
 ### Utilisateurs et relations
-User relationship interactions follow the standard ActivityPub spec.
+Les interactions de relations entre les utilisateurs suivent la spécification ActivityPub standard.
 
 - `Follow` : demande à recevoir les statuts d'un utilisateur et consultez leurs statuts qui ont un réglage de lecture réservée aux abonnés
 - `Accept` : approuve un `Follow` et finalise la relation
 - `Reject` : refuse un `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Block` : empêche les utilisateurs de voir les statuts de l'autre et empêche l'utilisateur bloqué de voir le profil de l'acteur
+- `Update` : met à jour le profil et les paramètres d'un utilisateur
+- `Delete` : désactive un utilisateur
+- `Undo` : inverse un `Follow` ou un `Block`
 
-### Statuses
-#### Object types
+### Statuts
+#### Types d'Object
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Note` : Sur les services comme Mastodon, les `Note`s sont le type principal de statut. Ils contiennent un corps de message, des pièces jointes, peuvent mentionner les utilisateurs et être des réponses à des statuts de n'importe quel type. Dans BookWyrm, les `Note`s ne peuvent être créés qu'en tant que messages directs ou en tant que réponses à d'autres statuts.
+- `Review` : Une critique est un statut en réponse à un livre (indiqué par le champ `inReplyToBook` ), qui a un titre, un corps et une note numérique entre 0 (non évalué) et 5.
+- `Comment` : Un commentaire sur un livre mentionne un livre et a un corps de message.
+- `Quotation` : Une citation a un corps de message, un extrait d'un livre et mentionne un livre
 
 
 #### Activities
 
-- `Create`: saves a new status in the database.
+- `Create` : sauvegarde un nouveau statut dans la base de données.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Remarque** : BookWyrm n'accepte les activités `Create` que si elles sont :
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+   - des messages directs (c'est à dire des `Note`s avec le niveau de confidentialité `direct`, qui mentionnent un utilisateur local),
+   - liées à un livre (d'un type de statut personnalisé qui inclut le champ `inReplyToBook`),
+   - en réponse à des statuts existants enregistrés dans la base de données
+- `Delete` : Supprime un statut
+- `Like` : Crée un favori sur le statut
+- `Announce` : Booste (reposte) le statut dans la chronologie de l'acteur
+- `Undo` : Inverse un `Like` ou un `Announce`
 
 ### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+Les livres et listes d'un utilisateurs sont représentés par [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
 #### Objects
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `Shelf` : Collection de livres d'un utilisateur. Par défaut, chaque utilisateur a les étagères `to-read` (à lire), `reading` (en cours de lecture), et `read` (livres lus), qui sont utilisées pour suivre la progression de la lecture.
+- `List` : Une collection de livres qui peut avoir des éléments contribués par des utilisateurs autres que celui qui a créé la liste.
 
 #### Activities
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Create` : sauvegarde une étagère ou une liste dans la base de données.
+- `Delete` : Supprime une étagère ou une liste.
+- `Add` : Ajoute un livre à une étagère ou une liste.
+- `Remove` : Supprime un livre d'une étagère ou d'une liste.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+## Sérialisation alternative
+Parce que BookWyrm utilise des types d'objets personnalisés (`Review`, `Comment`, `Quotation`) qui ne sont pas pris en charge par ActivityPub, les statuts sont transformés en types standards lorsqu'ils sont envoyés ou vus par des services non-BookWyrm. Les `Review`s sont converties en `Article`s, les `Comment`s et `Quotation`s sont convertis en `Note`s, avec un lien vers le livre et l'image de couverture en pièce jointe.

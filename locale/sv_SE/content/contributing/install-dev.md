@@ -1,5 +1,3 @@
-> | Title: Developer Environment | Date: 2021-04-12 | Order: 2
-
 ## Prerequisites
 
 These instructions assume you are developing BookWyrm using Docker. You'll need to [install Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to get started.
@@ -20,7 +18,7 @@ cp .env.example .env
 cp nginx/development nginx/default.conf
 ```
 
-- Start the application. In the command line, run:
+- Starta applikationen. Kör på kommandoraden:
 ``` { .sh }
 ./bw-dev build            # Build the docker images
 ./bw-dev setup            # Initialize the database and run migrations

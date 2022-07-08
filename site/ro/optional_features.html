@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>
+        
+
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/ro/instances" class="navbar-item">
+                <span class="button is-success">Alăturați-vă</span>
+            </a>
+            <a href="https://joinbookwyrm.com/ro/get-involved" class="navbar-item">
+                Implicați-vă
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Susțineți
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Cod
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentație
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="ro/" selected>Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1"></h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/ro/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/posting-statuses.html" >Posting statuses</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/optional_features.html" class="is-active">Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/cli.html" >Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/contributing.html" >How to Contribute</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/permissions.html" >Permissions</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>Unele funcționalități BookWyrm trebuie să fie activate pentru a funcționa.</p>
+<h2>Previzualizarea generării de imagine</h2>
+<p>În mod implicit, BookWyrm folosește logo-ul instanței (sau logo-ul de bază) ca imagine de previzualizare OpenGraph. Ca alternativă, puteți activa generarea de imagini de previzualizare pentru cărți, utilizatori și site-uri web.</p>
+<p>Imaginile de previzualizare vor fi dimensionate pentru imagini OpenGraph mari (folosite de Twitter sub denumirea de <code>summay_large_image</code>). Depinzând de tipul imaginii, conținutul va fi:</p>
+<ul>
+<li>imaginea implicită a instanței va afișa logo-ul mare, împreună cu numele instanței și URL-ul său</li>
+<li>imaginea de utilizator va afișa avatarul său, numele său afișat, numele de utilizator (sub forma numeutilizator@instanță)</li>
+<li>imaginea de carte va afișa coperta sa, titlul, subtitlul (dacă este cazul), autorul și ratingul (dacă este cazul)</li>
+</ul>
+<p>Aceste imagini vor fi actualizate în diferite puncte:</p>
+<ul>
+<li>imaginea instanței: când numele instanței sau logo-ul mare au fost schimbate</li>
+<li>imaginea de utilizator: când numele afișat sau avatarul au fost schimbate</li>
+<li>imaginea de carte: când titlul/titlurile, autorul/autorii sau coperta au fost schimbați sau o nouă recenzie este adăugată</li>
+</ul>
+<h3>Activați imaginile de previzualizare</h3>
+<p>Pentru a activa această funcționalitate cu setările implicite, trebuie să decomentați (să înlăturați <code>#</code> din fața) liniei <code>ENABLE_PREVIEW_IMAGES=true</code> în fișierul dvs. <code>.env</code>. Toate evenimentele noi de actualizare menționate anterior vor cauza generarea imaginii corespunzătoare.</p>
+<p>Exemple pentru aceste imaginii pot fi vizualizate pe <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">descrierea cererii de extragere a funcționalității</a>.</p>
+<h3>Generarea imaginilor de previzualizare</h3>
+<p>Dacă activați această setare după ce instanța dvs. a fost pornită, s-ar putea ca unele imagini să nu fi fost generate. O comandă a fost adăugată pentru a automatiza generarea de imagini. Pentru a preveni consumarea excesivă de resurse prin generarea <strong>MULTOR</strong> imagini, trebuie să transmiteți argumentul <code>--all</code> (sau <code>-a</code>) pentru a începe generarea imaginilor de previzualizare pentru toți utilizatorii și toate cărțile. Fără acest argument, numai previzualizarea site-ului va fi generată.</p>
+<p>Imaginile de previzualizare pentru utilizatori și cărți vor fi generate asincron: sarcina va fi trimisă către Flower. S-ar putea să fie nevoie de ceva timp ca toate cărțile și toți utilizatorii să aibă o imagine de previzualizare funcțională. Dacă aveți o carte bună 📖, un pisoi 🐱 sau o prăjitură 🍰, acum este momentul perfect pentru a le acorda ceva atenție 💖.</p>
+<h3>Setări opționale</h3>
+<p>Deci vreți să vă personalizați imaginile de previzualizare? Iată câteva opțiuni:</p>
+<ul>
+<li><code>PREVIEW_BG_COLOR</code> va seta culoarea de fundal a imaginii de previzualizare. Puteți furniza o valoare de culoare, precum <code>#b00cc0</code> sau următoarele valori: <code>use_dominant_color_light</code> sau <code>use_dominant_color_dark</code>. Acestea vor extrage culoarea dominantă a coperții cărții și o vor folosi într-o temă deschisă, respectiv întunecată.</li>
+<li><code>PREVIEW_TEXT_COLOR</code> va seta culoarea pentru text. Depinzând de alegerea dumneavoastră pentru culoarea de fundal, trebuie să găsiți o valoarea care are suficient contrast pentru ca imaginea să fie lizibilă. Se recomandă un raport de contrast 1:4,5.</li>
+<li><code>PREVIEW_IMG_WIDTH</code> și <code>PREVIEW_IMG_HEIGHT</code> vor seta dimensiunile imaginii. În prezent, sistemul va funcționa cel mai bine cu imagini având o orientare peisaj (orizontală).</li>
+<li><code>PREVIEW_DEFAULT_COVER_COLOR</code> va seta culoarea pentru cărțile fără copertă.</li>
+</ul>
+<p>Toate variabilele de culoare acceptă valori care pot fi recunoscute ca atare de modulul <code>ImageColor</code> a lui Pillow: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Aflați mai multe despre numele de culori Pillow</a>.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> este un program colaborativ, anti-corporație, menținut de <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Susțineți BookWyrm pe <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Alăturați-vă</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Contribuiți la această pagină</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Aflați mai multe</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentație</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contactați responsabilul</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licență</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "ro/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

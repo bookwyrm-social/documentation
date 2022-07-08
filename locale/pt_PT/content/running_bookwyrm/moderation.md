@@ -1,5 +1,3 @@
-> | Title: Moderation | Date: 2021-04-18 | Order: 4
-
 ## Blocking
 Users have the option to block other users on their own, without a moderator intervening. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.
 

@@ -1,38 +1,37 @@
-> | Title: Installing in Production | Date: 2021-05-18 | Order: 1
+Este projeto ainda é jovem e não está, no momento, muito estável, então tenha cuidado ao rodá-lo em produção.
 
-This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
+## Configuração do servidor
+- Obtenha um domínio e configure o DNS para seu servidor. Você deverá apontar os nameservers do seu domínio no provedor de DNS ao servidor onde você hospedará a BookWyrm. Aqui estão as instruções para a [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Configure o seu servidor com firewalls adequados a uma aplicação web (estas instruções foram testadas no Ubuntu 20.04). Aqui estão as instruções para a [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Configure um serviço de email (como o [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) e as configurações corretas de SMTP/DNS. Use a documentação do serviço para configurar seu DNS
+- [Instale o Docker e docker-compose](https://docs.docker.com/compose/install/)
 
-## Server setup
-- Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
-- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
-- Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- [Install Docker and docker-compose](https://docs.docker.com/compose/install/)
+## Instale e configure a BookWyrm
 
-## Install and configure BookWyrm
+O branch `produção (production)` da BookWyrm tem uma série de ferramentas indisponíveis no branch `principal (main)` que servem para a execução em produção, como alterações no `docker-compose` para atualizar os comandos padrão, configuração de containers e alterações individuais nas configurações dos containers para ativar coisas com SSL ou backups comuns.
 
-The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
+Instruções para rodar a BookWyrm em produção:
 
-Instructions for running BookWyrm in production:
-
-- Get the application code: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
-- Switch to the `production` branch: `git checkout production`
-- Create your environment variables file, `cp .env.example .env`, and update the following:
-    - `SECRET_KEY` | A difficult to guess, secret string of characters
-    - `DOMAIN` | Your web domain
-    - `EMAIL` | Email address to be used for certbot domain verification
-    - `POSTGRES_PASSWORD` | Set a secure password for the database
-    - `REDIS_ACTIVITY_PASSWORD` | Set a secure password for Redis Activity subsystem
-    - `REDIS_BROKER_PASSWORD` | Set a secure password for Redis queue broker subsystem
-    - `FLOWER_USER` | Your own username for accessing Flower queue monitor
-    - `FLOWER_PASSWORD` | Your own secure password for accessing Flower queue monitor
-    - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
-    - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
-    - Make a copy of the production template config and set it for use in nginx `cp nginx/production nginx/default.conf`
-    - Update `nginx/default.conf`:
-        - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
-        - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/using-a-reverse-proxy.html)
+- Obtenha o código da aplicação: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
+- Mude para o branch `produção (production)`: `git checkout production`
+- Crie seu arquivo de variáveis do ambiente, `cp .env.example .env`, e atualize o seguinte:
+    - `SECRET_KEY` | Uma string de caracteres difíceis de descobrir
+    - `DOMAIN` | Seu domínio
+    - `EMAIL` | Um endereço de email para ser usado na verificação de domínio do certbot
+    - `POSTGRES_PASSWORD` | Defina uma senha segura para o banco de dados
+    - `REDIS_ACTIVITY_PASSWORD` | Defina uma senha segura para o subsistema Redis Activity
+    - `REDIS_BROKER_PASSWORD` | Defina uma senha segura para o subsistema Redis queue broker
+    - `FLOWER_USER` | Seu nome de usuário para acessar o monitor de filas Flower
+    - `FLOWER_PASSWORD` | Sua senha segura para acessar o monitor de filas Flower
+    - `EMAIL_HOST_USER` | O endereço do recipiente que o aplicativo usará para enviar emails
+    - `EMAIL_HOST_PASSWORD` | A senha do seu serviço de email
+- Configure o nginx
+    - Faça uma cópia do template da configuração de produção e ative-o no ngix `cp nginx/production nginx/default.conf`
+    - Atualize o `nginx/default.conf`:
+        - Substitua `your-domain.com` com seu domínio em todos os lugares do arquivo (incluindo as linhas comentadas)
+        - Se você não estiver utilizando o subdomínio `www`, exclua a versão do domínio www.your-domain.com do `server_name` no primeiro bloco server no `nginx/default.conf` e exclua a flag `-d www.${DOMAIN}` no fim do comando `certbot` no `docker-compose.yml`.
+        - Se você estiver executando outro servidor web na sua máquina, você precisará seguir as [instruções de proxy reverso](/using-a-reverse-proxy.html)
+- Initialize the database by running `./bw-dev migrate`
 - Run the application (this should also set up a Certbot ssl cert for your domain) with `docker-compose up --build`, and make sure all the images build successfully
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
@@ -43,7 +42,7 @@ Instructions for running BookWyrm in production:
     - Type `crontab -e` to edit your cron file in the host machine
     - add a line to try renewing once a day: `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
-- Set up the database with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
+- Initialize the application with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
     - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
 
 ``` { .sh }
