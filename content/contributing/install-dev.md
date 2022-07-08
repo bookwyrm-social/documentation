@@ -1,6 +1,8 @@
-[comment]: <> (Title: Developer Environment)
-[comment]: <> (Date: 2021-04-12)
-[comment]: <> (Order: 3)
+---
+Title: Developer Environment
+Date: 2021-04-12
+Order: 3
+---
 
 ## Prerequisites
 

@@ -1,6 +1,8 @@
-[comment]: <> (Title: Permissions)
-[comment]: <> (Date: 2021-04-18)
-[comment]: <> (Order: 2)
+---
+Title: Permissions
+Date: 2021-04-18
+Order: 2
+---
 
 User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
 
