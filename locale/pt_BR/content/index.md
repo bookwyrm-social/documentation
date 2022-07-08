@@ -2,10 +2,10 @@
 Title: Welcome Date: 2021-04-13
 - - -
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+A BookWyrm é uma rede social para acompanhar sua leitura, falar sobre livros, escrever resenhas e achar outro livro pra ler em seguida. A federação permite que usuários da BookWyrm participem de comunidades pequenas e confiáveis que podem se conectar entre si, e também a outros serviços ActivityPub, como o Mastodon e o Pleroma.
 
 ## Funcionalidades
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+Uma vez que o projeto está ainda na fase inicial, as funcionalidades crescem a cada dia, e ainda há muito espaço para sugestões e ideias. Abra um [problema](https://github.com/bookwyrm-social/bookwyrm/issues) para conversarmos!
 
 - Fazendo publicações sobre livros
     - Escreva resenhas com ou sem nota que aparecerão na página do livro
