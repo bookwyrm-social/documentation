@@ -1,7 +1,6 @@
 """ generate html files """
 from glob import glob
 import os
-import re
 
 from jinja2 import Environment, FileSystemLoader
 from markdown import markdown
@@ -14,21 +13,19 @@ env = Environment(loader=FileSystemLoader("templates/"), extensions=["jinja2.ext
 env.install_gettext_translations(i18n)
 
 
-HEADER_SLUG = r"\[comment\]: <>"
-
-
 def get_page_metadata(locale_slug, page):
     """title/order etc for a page"""
+    headers = []
     with open(page, "r", encoding="utf-8") as page_markdown:
-        # extract headers
-        headers = "\n".join(
-            re.sub(r"[()]", r"", r)
-            for r in re.findall(rf"{HEADER_SLUG} (.*)\n", page_markdown.read())
-        )
-    if not headers:
-        return {}
+        header_block_open = False
+        for line in page_markdown.readlines():
+            if line == "---\n":
+                header_block_open = not header_block_open
+            if not header_block_open:
+                break
+            headers.append(line)
 
-    header_obj = yaml.safe_load(headers)
+    header_obj = yaml.safe_load("".join(headers)) or {}
     path_dir = page.split("/")[-1].replace(".md", ".html")
     header_obj["path"] = f"/{locale_slug}{path_dir}"
     return header_obj
@@ -59,7 +56,14 @@ def get_site_data(locale_slug, page):
 def format_markdown(file_path):
     """go from markdown to html, extracting headers"""
     with open(file_path, "r", encoding="utf-8") as markdown_content:
-        return markdown(markdown_content.read(), extensions=["tables", "fenced_code"])
+        headerless = []
+        header_block_open = False
+        for line in markdown_content.readlines():
+            if line == "---\n":
+                header_block_open = not header_block_open
+            elif not header_block_open:
+                headerless.append(line)
+        return markdown("".join(headerless), extensions=["tables", "fenced_code"])
 
 
 if __name__ == "__main__":

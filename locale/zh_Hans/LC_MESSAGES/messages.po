@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-14 13:51-0700\n"
-"PO-Revision-Date: 2022-05-14 21:36\n"
+"PO-Revision-Date: 2022-05-15 02:46\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -19,67 +19,67 @@ msgstr ""
 
 #: templates/index.html:5
 msgid "BookWyrm Documentation"
-msgstr ""
+msgstr "BookWyr 文档"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
-msgstr ""
+msgstr "有关在BookWyrm上使用和贡献的指南"
 
 #: templates/index.html:6
 msgid "How to Use and Contribute"
-msgstr ""
+msgstr "如何使用和贡献"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
-msgstr ""
+msgstr "BookWyrm：社会阅读和评论"
 
 #: templates/layout.html:35
 msgid "Join"
-msgstr ""
+msgstr "加入"
 
 #: templates/layout.html:38
 msgid "Get involved"
-msgstr ""
+msgstr "参与"
 
 #: templates/layout.html:41
 msgid "Support"
-msgstr ""
+msgstr "支持"
 
 #: templates/layout.html:44
 msgid "Code"
-msgstr ""
+msgstr "代码"
 
 #: templates/layout.html:47 templates/layout.html:124
 msgid "Documentation"
-msgstr ""
+msgstr "文档"
 
 #: templates/layout.html:95
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr ""
+msgstr "<strong>BookWyrm</strong> 是协力完成的、反企业化的软件，由 <a href='https://www.mousereeve.com/'>Mouse Reeve</a> 维护。"
 
 #: templates/layout.html:98
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
-msgstr ""
+msgstr "在 <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a> 上支持 BookWyrm 。"
 
 #: templates/layout.html:102
 msgid "Get Involved"
-msgstr ""
+msgstr "参与"
 
 #: templates/layout.html:104
 msgid "BookWyrm on GitHub"
-msgstr ""
+msgstr "GitHub 上的 BookWyrm"
 
 #: templates/layout.html:107
 msgid "Contribute to this page"
-msgstr ""
+msgstr "给本页面贡献力量"
 
 #: templates/layout.html:122
 msgid "Learn more"
-msgstr ""
+msgstr "了解更多"
 
 #: templates/layout.html:127
 msgid "Contact maintainer"
-msgstr ""
+msgstr "联系维护者"
 
 #: templates/layout.html:130
 msgid "License"

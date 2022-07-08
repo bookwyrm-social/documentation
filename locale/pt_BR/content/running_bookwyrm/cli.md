@@ -1,148 +1,146 @@
-> | Title: Command Line Tool | Date: 2021-11-11 | Order: 6
+Desenvolvedores e administradores de instâncias Bookwyrm podem usar o script `bw-dev` para tarefas cotidianas. Isso pode tornar seus comandos mais curtos, mais fáceis de lembrar e mais difíceis de serem confundidos.
 
-Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
+Se tiver uma instalado uma instância BookWyrm [em produção](installing-in-production.html) ou [em desenvolvimento](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), você pode executar o script pela linha de comando com `./bw-dev` seguido com um subcomando para executar.
 
-Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
-
-## Docker shortcuts
+## Atalhos do Docker
 
 ### bash
 
-Open an interactive `bash` session inside the docker `web` container.
+Abre uma sessão `bash` interativa dentro do container `web` do Docker.
 
 ### build
 
-Equivalent to `docker-compose build`.
+Equivalente ao `docker-compose build`.
 
 ### dbshell
 
-Open an interactive Postgres database shell. I hope you know what you're doing.
+Abre um shell interativo do banco de dados Postgres. Espero que você saiba o que está fazendo.
 
 ### runweb args
 
-Run an arbitrary command (represented above by `args`) in the `web` container.
+Executa um comando arbitrário (representado acima pelo `args`) no container `web`.
 
-Equivalent to `docker-compose run --rm web`.
+Equivalente ao `docker-compose run --rm web`.
 
 ### service_ports_web args
 
-Run an arbitrary command in the `web` container (represented above by `args`) with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
+Executa um comando arbitrário no container `web` (representado acima por `args`) com as portas expostas. Isso é útil para quando você quer executar testes `pdb` porque o `runweb` não irá expor o promp `pdb`.
 
-Equivalent to `docker-compose run --rm --service-ports web`.
+Equivalente ao `docker-compose run --rm --service-ports web`.
 
 ### shell
 
-Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly.
+Abre um shell interativo Django dentro do container `web` do Docker. Você pode usar isso se quiser executar comandos do shell do Django diretamente.
 
 ### up [args]
 
-Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
+Inicia ou reinicia containers do Docker, incluindo opcionalmente quaisquer argumentos (representados acima por `args`). Equivalente ao `docker-compose up --build [args]`
 
-## Managing the database
+## Gerenciando o banco de dados
 
 ### initdb
 
-Initialize a database.
+Inicializa um banco de dados.
 
 ### makemigrations [appname migration number]
 
-_This command is not available on the `production` branch_.
+_Este comando não está disponível no branch `produção`_.
 
-Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`
+Executa o comando `makemigrations` do Django dentro do seu container Docker. Se você alterou a estrutura do banco de dados em um branch de desenvolvimento, você precisará executar este comando para que suas alterações tenham efeito. Facultativamente, você pode especificar alguma migração para executar, p. ex. `./bw-dev makemigrations bookwyrm 0108`
 
 ### migrate
 
-Runs Django's `migrate` command inside your Docker container. You always need to run this after `makemigrations`.
+Executa o comando `migrate` do Django dentro de seu container Docker. Você sempre irá precisar executá-lo após o `makemigrations`.
 
 ### resetdb
 
-_This command is not available on the `production` branch_.
+_Este comando não está disponível no branch `produção`_.
 
-Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+Reinicia o banco de dados. **Este comando vai excluir todo o banco de dados da BookWyrm**, criar outro banco de dados e executar todas as migrações. Você deve deletar todos os arquivos de migração recentes que não quer rodar _antes_ de executar `resetdb`.
 
-## Managing a Bookwyrm instance
+## Gerenciando uma instância BookWyrm
 
 ### collectstatic
 
-Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
+Migra os arquivos estáticos para um container Docker ou para um "bucket" compatível com S3, dependendo do contexto.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database.
+Gera imagens de pré-visualização de sites, usuários e livros. Isso pode demorar algum tempo se você tiver um banco de dados grande.
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Gera miniaturas das capas dos livros.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Preenche novamente os streams do Redis (feeds dos usuários). Você geralmente não vai precisar rodar isto a não ser que haja algum erro que apague seus feeds de usuários por algum motivo. Você pode escpecificar o stream utilizando o argumento `--stream`.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
+Preenche novamente o cache de listas do Redis. Você geralmente não vai precisar executar isso a não ser que haja um erro que apaguei as listas dos usuários por algum motivo.
 
 ### populate_suggestions
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Gera sugestões de usuários para todos os usuários. Você pode executar isso manualmente para atualizar as sugestões.
 
 ### restart_celery
 
-Restarts the `celery_worker` Docker container.
+Reinicia o container Docker do `celery_worker`.
 
 ### update
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Quando há alterações no branch `produção (production)`, você pode atualizar sua instância sem ficar fora do ar.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Este comando faz o `git pull` das últimas atualizações do branch `produção (production)`, constroi a imagem Docker, se for necessário, executa as migrações do Django, atualiza os arquivos estáticos e reinicia todos os containers do Docker.
 
 ### admin_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Obtem o código secreto da administração para registrar o usuário administrador inicial em uma nova instância BookWyrm.
 
-## Setting up S3 compatible storage
+## Configurando um armazenamento compatível com S3
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+Por padrão, a BookWyrm usa o armazenamento local para os arquivos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o django-storages para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.
 
-See [External Storage](/external-storage.html) for more information.
+Veja [Armazenamento externo](/external-storage.html) para mais informações.
 
 ### copy_media_to_s3
 
-Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
+Migra todas as mídias enviadas de uma instalação BookWyrm para um "bucket" compatível com S3. Utilizar para fazer o upload inicial para um "bucket" vazio.
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
+Sincroniza as mídias enviadas, novas ou alteradas, de uma instância BookWyrm para um "bucket" compatível com S3. Utilizar para garantir que todos os arquivos locais sejam enviados a um "bucket" existente.
 
-### set_cors_to_s3 filename
+### set_cors_to_s3 nomedoarquivo
 
-Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
+Copia um arquivo JSON com as regras CORS para o seu bucket S3, onde `nomedoarquivo` é o nome de seu arquivo JSON (p. ex: `/bw-dev set_cors_to_s3 cors.json`)
 
-## Development and testing
+## Desenvolvimento e teste
 
-_These commands are not available on the `production` branch_.
+_Estes comandos estão disponíveis no branch `produção (production)`_.
 
 ### black
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+A BookWyrm usa o formatador de código [Black](https://github.com/psf/black) pra manter o código Python com um estilo consistente. Execute o `black` antes de enviar/comitar suas alterações para que a tarefa `pylint` não gere erros no seu pull request e te entristeça.
 
 ### prettier
 
-BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase consistently styled. Run `prettier` before committing changes to scripts to automatically format your code.
+A BookWyrm usa o [Prettier](https://prettier.io/) para manter os códigos JavaScript com um estilo consistente. Execute o `prettier` antes de enviar suas alterações nos scripts para formatar seu código automaticamente.
 
 ### stylelint
 
-BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
+A BookWyrm usa o [Stylelint](uhttps://stylelint.io/) para manter o estilo dos arquivos CSS consistentes. Execute o `stylelintprettier` antes de enviar/comitar alterações nos scripts para formatar seu código automaticamente.
 
 ### formatters
 
-This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
+Este comando executa todos os formatadores de estilo (`black`, `prettier`, and `stylelint`) de uma vez.
 
 ### clean
 
-Remove all stopped Docker containers.
+Remove todos os containers do Docker parados.
 
-Equivalent to:
+Equivalente a:
 
 ```shell
 docker-compose stop
@@ -151,12 +149,12 @@ docker-compose rm -f
 
 ### makemessages
 
-Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Cria arquivo de mensagens para todas as strings de tradução. Depois de executar `makemessages` você deve executar `compilemessages` para compilar as traduções. Veja o [makemessages do Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compila os arquivos de tradução. Veja o [compilemessages do Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Run tests with `pytest`.
+Executa testes com o `pytest`.

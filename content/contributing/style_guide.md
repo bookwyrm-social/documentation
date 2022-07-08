@@ -1,6 +1,8 @@
-[comment]: <> (Title: Style Guide)
-[comment]: <> (Date: 2021-10-20)
-[comment]: <> (Order: 4)
+---
+Title: Style Guide
+Date: 2021-10-20
+Order: 4
+---
 
 ## Pull requests
 

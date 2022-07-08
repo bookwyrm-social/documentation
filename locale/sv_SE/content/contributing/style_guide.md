@@ -1,5 +1,3 @@
-> | Title: Style Guide | Date: 2021-10-20 | Order: 4
-
 ## Pull requests
 
 So you want to contribute code to BookWyrm: that rules! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
@@ -20,7 +18,7 @@ BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep t
 
 Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
 
-### Templates (HTML)
+### Mallar (HTML)
 
 Your pull request will also be checked by the [curlylint](https://www.curlylint.org) linter for Django templates.
 
@@ -40,12 +38,12 @@ When contributing code, check the [Inclusive Web Design Checklist](https://githu
 
 Some particular things that Bookwyrm contributors have found useful to remember are:
 
-### Forms
+### Formulär
 
 * Only use `input[type="checkbox"]` or `input[type="radio"]` inside `<label>`
 * If you do not place checkboxes and radio buttons inside the `<label>`, the `<label>` should be placed _after_ the element it relates to
 
-### Buttons and Links
+### Knappar och länkar
 
 * Use a `<button>` element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a `POST` request (e.g. submitting a form)
 * Use an `<a>` element for anything that triggers a `GET` request. Usually, an anchor (`<a>`) element should not be styled as a button (`class="button"`), though there are some exceptions, such as "Cancel" buttons. If in doubt, ask for advice in your pull request

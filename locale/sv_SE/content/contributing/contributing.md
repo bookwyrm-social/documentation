@@ -1,5 +1,3 @@
-> | Title: How to Contribute | Date: 2021-04-12 | Order: 1
-
 There are many ways you can contribute to this project, regardless of your level of technical expertise.
 
 ## Feedback and feature requests
@@ -10,8 +8,8 @@ Code contributions are gladly welcomed! If you're not sure where to start, take 
 
 If you have questions about the project or contributing, you can join the [BookWyrm matrix chat](https://app.element.io/#/room/#bookwyrm:matrix.org).
 
-## Translation
+## Översättning
 Do you speak a language besides English? BookWyrm needs localization! You can add and edit translations at [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
 
-## Financial Support
+## Finansiellt stöd
 BookWyrm is an ad-free passion project with no intentions of seeking out venture funding or corporate financial relationships. If you want to help keep the project going, you can become a sustaining contributor via [Patreon](https://www.patreon.com/bookwyrm) or [OpenCollective](https://opencollective.com/bookwyrm), or make a one time gift via [PayPal](https://paypal.me/oulipo).

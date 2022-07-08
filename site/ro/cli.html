@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>
+        
+
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/ro/instances" class="navbar-item">
+                <span class="button is-success">Alăturați-vă</span>
+            </a>
+            <a href="https://joinbookwyrm.com/ro/get-involved" class="navbar-item">
+                Implicați-vă
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Susțineți
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Cod
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentație
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="ro/" selected>Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1"></h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/ro/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/posting-statuses.html" >Posting statuses</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/cli.html" class="is-active">Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/contributing.html" >How to Contribute</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/permissions.html" >Permissions</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>Dezvoltatorii BookWyrm și managerii de instanțe pot folosi scriptul <code>bw-dev</code> pentru sarcinile comune. Poate face comenzile dvs. mai scurte, mai ușor de reținut și mai greu de confundat.</p>
+<p>Odată ce ați instalat BookWyrm <a href="installing-in-production.html">în producție</a> sau <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">în dezvoltare</a>, puteți rula scriptul din linia de comandă cu <code>./bw-dev</code> urmat de o subcomandă pe care doriți să o rulați.</p>
+<h2>Scurtături Docker</h2>
+<h3>bash</h3>
+<p>Deschide o sesiune interactivă de <code>bash</code> în interiorul containerului docker <code>web</code>.</p>
+<h3>build</h3>
+<p>Echivalent cu <code>docker-compose build</code>.</p>
+<h3>dbshell</h3>
+<p>Deschide un shell interactiv pentru baza de date Postgres. Sper că știți ceea ce faceți.</p>
+<h3>runweb args</h3>
+<p>Rulează o comandă arbitrară (reprezentată deasupra de <code>args</code>) în containerul <code>web</code>.</p>
+<p>Echivalent cu <code>docker-compose run --rm web</code>.</p>
+<h3>service_ports_web args</h3>
+<p>Rulează o comandă arbitrară în containerul <code>web</code> (reprezentată deasupra de <code>args</code>) cu porturile expuse. Aceasta este utilă dacă vreți să rulați teste <code>pdb</code> deoarece <code>runweb</code> nu expune promptul <code>pdb</code>.</p>
+<p>Echivalent cu <code>docker-compose run --rm --service-ports web</code>.</p>
+<h3>shell</h3>
+<p>Deschide un shell interactiv Django în interiorul containerului docker <code>web</code>. O veți folosi dacă vreți să rulați comenzi de shell Django direct.</p>
+<h3>up [args]</h3>
+<p>Pornește sau repornește containerele Dcoker, opțional incluzând orice argument(reprezentat mai sus de <code>args</code>). Echivalent cu <code>docker-compose up --build [args]</code></p>
+<h2>Gestionarea bazei de date</h2>
+<h3>initdb</h3>
+<p>Inițializează o bază de date.</p>
+<h3>makemigrations [appname migration number]</h3>
+<p><em>Această comandă nu este disponibilă în ramura de <code>producție</code></em>.</p>
+<p>Rulează comanda Django <code>makemigrations</code> în interiorul containerului dvs. Docker. Dacă ați schimbat structura bazei de date în ramura de dezvoltare veți avea nevoie să o rulați pentru ca schimbările dvs. să aibă efect. Opțional, puteți specifica o migrație specifică pe care să o rulați, de ex. <code>./bw-dev makemigrations bookwyrm 0108</code></p>
+<h3>migrate</h3>
+<p>Rulează comanda Django <code>migrate</code> în interiorul containerului dvs. Docker. Veți avea nevoie mereu de a o rula după <code>makemigrations</code>.</p>
+<h3>resetdb</h3>
+<p><em>Această comandă nu este disponibilă în ramura de <code>producție</code></em>.</p>
+<p>Resetează baza de date. <strong>Această comandă va șterge întreaga bază de date BookWyrm</strong>, iar apoi va iniția o bază de date nouă și rula toate migrațiile. Va trebui să ștergeți orice fișier de migrație recent pe care nu vreți să-l rulați <em>înainte</em> de a rula <code>resetdb</code>.</p>
+<h2>Gestionarea unei instanțe BookWyrm</h2>
+<h3>collectstatic</h3>
+<p>Migrează modulele statice fie către un container web, fie către un „bucket” S3 compatibil, depinzând de context.</p>
+<h3>generate_preview_images</h3>
+<p>Generează imagini de previzualizare pentru site, utilizatori și cărți. Acest lucru poate dura ceva timp dacă aveți o bază de date mare.</p>
+<h3>generate_thumbnails</h3>
+<p>Generează miniaturi pentru coperțile cărților.</p>
+<h3>populate_streams args</h3>
+<p>Repopulează fluxurile Redis (fluxurile utilizatorilor). De obicei nu veți avea nevoie să o rulați numai dacă o eroare șterge toate fluxurile de utilizator ale dvs. pentru un motiv sau altul. Puteți specifica fluxul folosind argumentul <code>--stream</code>.</p>
+<h3>populate_list_streams</h3>
+<p>Repopulează cache-ul Redis de liste. De obicei nu veți avea nevoie să o rulați numai dacă o eroare șterge toate listele de utilizator ale dvs. dintr-un motiv sau altul.</p>
+<h3>populate_suggestions</h3>
+<p>Populează utilizatorii sugerați pentru toți utilizatorii. S-ar putea să doriți să o rulați manual pentru a reîmprospăta sugestiile.</p>
+<h3>restart_celery</h3>
+<p>Repornește containerul Docker <code>celery_worker</code>.</p>
+<h3>update</h3>
+<p>Când există schimbări pentru ramura de <code>producție</code>, puteți actualiza instanța dvs. fără timp de oprire.</p>
+<p>Această comandă extrage cele mai recente actualizări ale ramurii de <code>producție</code> prin <code>git pull</code>, construiește imaginile docker dacă este necesar, rulează migrările Django, actualizează fișierele statice și repornește toate containerele Docker.</p>
+<h3>admid_code</h3>
+<p>Obține codul secret de admin folosit pentru a înscrie utilizatorul admin inițial pe o instanță BookWyrm nouă.</p>
+<h2>Configurați stocare S3 compatibilă</h2>
+<p>În mod implicit, BookWyrm folosește stocarea locală pentru modelele statice (favicon, avatarul de bază etc.) și media (avatarurile utilizatorilor, coperțile cărților etc.), dar puteți folosi un serviciu de stocare extern pentru a deservi aceste fișiere. BookWyrm folosește stocare Django pentru a manipula stocarea externă, precum servicii S3 compatibile, Apache Libcloud sau SFTP.</p>
+<p>Vedeți <a href="/external-storage.html">Stocare externă</a> pentru mai multe detalii.</p>
+<h3>copy_media_to_s3</h3>
+<p>Migrează toate fișierele media încărcate de pe o instalație BookWyrm către un serviciu „bucket” S3 compatibil. Utilizați pentru o încărcare inițială către un „bucket” gol.</p>
+<h3>sync_media_to_s3</h3>
+<p>Sincronizează fișiere media noi sau schimbate de pe o instalație BookWyrm către un „bucket” S3 compatibil. Folosiți pentru a asigura că toate fișierele locale sunt încărcate către un „bucket” existent.</p>
+<h3>set_cors_to_s3 filename</h3>
+<p>Copiază un fișier JSON cu reguli CORS către „găleata” dvs. S3, unde <code>filename</code> este numele fișierului dvs. JSON (de ex. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
+<h2>Dezvoltare și testare</h2>
+<p><em>Aceste comenzi nu sunt disponibile în ramura de <code>producție</code></em>.</p>
+<h3>black</h3>
+<p>BookWyrm folosește formatorul de cod <a href="https://github.com/psf/black">Black</a> pentru a păstra stilul codul Python consistent. Rulați <code>black</code> înainte de a trimite schimbările dvs. pentru ca sarcina <code>pylint</code> să nu eșueze pentru cererea dvs. de extracție și să vă facă trist.</p>
+<h3>prettier</h3>
+<p>BookWyrm folosește <a href="https://prettier.io/">Prettier</a> pentru a păstra stilul codului JavaScript consistent. Executați <code>prettier</code> înainte de a trimite schimbările dvs. scripturilor pentru a formata automat codul dvs.</p>
+<h3>stylelint</h3>
+<p>BookWyrm folosește <a href="uhttps://stylelint.io/">Stylelint</a> pentru a păstra stilul fișierelor CSS consistent. Executați <code>stylelintprettier</code> înainte de a trimite schimbările scripturilor pentru a formata automat codul dvs.</p>
+<h3>formatters</h3>
+<p>Această comandă rulează toate formatoarele (<code>black</code>, <code>prettier</code> și <code>stylelint</code>) într-o singură etapă.</p>
+<h3>clean</h3>
+<p>Elimină toate containerele Docker oprite.</p>
+<p>Echivalent cu:</p>
+<pre><code class="language-shell">docker-compose stop
+docker-compose rm -f
+</code></pre>
+<h3>makemessages</h3>
+<p>Creează fișiere mesaj pentru toate șirurile de caractere de tradus. După ce ați rulat <code>makemessages</code> trebuie să rulați <code>compilemessages</code> pentru a compila traducerile. Vedeți <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">makemessages Django</a>.</p>
+<h3>compilemessages</h3>
+<p>Compilează fișierele de traducere. Vedeți <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">compilemessages Django</a>.</p>
+<h3>pytest args</h3>
+<p>Rulează testele cu <code>pytest</code>.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> este un program colaborativ, anti-corporație, menținut de <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Susțineți BookWyrm pe <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Alăturați-vă</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Contribuiți la această pagină</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Aflați mai multe</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentație</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contactați responsabilul</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licență</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "ro/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

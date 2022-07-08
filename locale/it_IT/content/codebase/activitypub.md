@@ -1,11 +1,9 @@
-> | Title: ActivityPub | Date: 2021-04-20 | Order: 1
-
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm utilizza il protocollo [ActivityPub](http://activitypub.rocks/) per inviare e ricevere le attività dell'utente tra altre istanze di BookWyrm e altri servizi che implementano ActivityPub, come [Mastodon](https://joinmastodon.org/). Per gestire i dati del libro, BookWyrm ha una manciata di tipi di attività estesi che non fanno parte dello standard, ma sono leggibili ad altre istanze di BookWyrm.
 
 ## Attività e oggetti
 
 ### Utenti e relazioni
-User relationship interactions follow the standard ActivityPub spec.
+Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 
 - `Segui`: richiesta di ricevere aggiornamenti di un utente e visualizzare i sui stati che hanno privacy solo follower
 - `Accetta`: approva un `Segui` e finalizza la relazione
@@ -20,25 +18,25 @@ User relationship interactions follow the standard ActivityPub spec.
 
 - `Nota`: Su servizi come Mastodon, `Nota` è il tipo primario di stato. Contengono il corpo del messaggio, gli allegati, possono menzionare gli utenti, ed posso ricevere in risposta qualsiasi tipo di stato. All'interno di BookWyrm, la `Nota`s può essere creata solo come messaggio diretto o come risposta ad altri stati.
 - `Review`: Una recensione è uno stato in risposta un libro (indicato dal campo `inReplyToBook`), che ha un titolo, un corpo e una valutazione numerica compresa tra 0 (non valutato) e 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Comment`: Un commento a un libro parla del libro stesso e ha un corpo messaggio.
+- `Citazione`: Una citazione ha un corpo del messaggio, un estratto da un libro e menziona un libro
 
 
-#### Activities
+#### Attività
 
-- `Create`: saves a new status in the database.
+- `Crea`: salva un nuovo stato nel database.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Note**: BookWyrm accetta attività `Create` solo se sono:
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+   - Messaggi diretti (cioè, `Note`s con il livello di privacy `direct`, che menzionano un utente locale),
+   - Relativo a un libro (un tipo di stato personalizzato che include il campo `inReplyToBook`),
+   - Risposte agli stati esistenti salvati nel database
+- `Delete`: Rimuove uno stato
+- `Like`: Crea un preferito sullo stato
+- `Annuounce`: Condivide lo stato nella timeline dell'utente
+- `Undo`: Inverte un `Like` o `Announce`
 
-### Collections
+### Collezioni
 User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
 #### Objects
