@@ -1,9 +1,13 @@
-O acesso do usuário às diferentes funções do serviço é controlado pelo [sistema nativo de autenticação](https://docs.djangoproject.com/en/3.2/topics/auth/default/) do Django. Quando uma instância é criada, o script `initdb` cria um conjunto de permissões que são atribuídas a grupos. Por padrão, todos os novos usuários são colocados no grupo `editor`, que permite que eles editem metadados de livros.
+- - -
+Title: Permissions Date: 2021-04-18 Order: 2
+- - -
 
-A pessoa que administra a instância deve ser do grupo `superuser`, que dá a ela acesso à administração do Django (`/admin`) e a todas as permissões.
+User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+
+The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
 
 ## Permissões e grupos
-Esta tabela mostra os quatro grupos (admin, moderador, editor e usuário) e que permissões usuários nesses grupos têm:
+This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
 
 |                                   | administrador | moderador | editor | usuário |
 | --------------------------------- | ------------- | --------- | ------ | ------- |
@@ -14,4 +18,4 @@ Esta tabela mostra os quatro grupos (admin, moderador, editor e usuário) e que 
 | desativar usuários                | ✔️            | ✔️        | -      | -       |
 | excluir publicações               | ✔️            | ✔️        | -      | -       |
 | editar livros                     | ✔️            | ✔️        | ✔️     | -       |
- enviar capas            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+ upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
