@@ -1,12 +1,16 @@
-Postatul pe BookWyrm începe cu o carte. Utilizatorii pot comenta o carte citită recent sau în curs de citire din secțiunea „Cărțile dvs.” sau de pe pagina principală a unei cărți. De acolo, utilizatorii pot răspunde sau începe o conversație. Postările BookWyrm pot include text formatat precum bold, italic sau legături folosind [Markdown](https://www.markdownguide.org/cheat-sheet/).
+- - -
+Title: Posting statuses 4ate: 2022-04-30 Order: 1
+- - -
 
-Dacă sunteți familiar cu [postatul pe Mastodon](https://docs.joinmastodon.org/user/posting/), veți vedea că stările BookWyrm au setări de vizibilitate similare, avertismente de conținut și mențiuni. Totuși, sondajele, emoticoanele personalizate și atașamentele nu sunt încă implementate.
+Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+
+If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
 
 ## Tipuri de stări
 
 ### Comentariu de utilizator
 
-Acestea sunt trei tipuri de postări pe care utilizatorii pot să le creeze direct ca răspuns cărților: recenzii, comentarii și citate. Comentariile corespund aspectelor generale ale unei cărți, citatele unor pasaje specifice și recenziile tratează cărțile în general. Utilizatorii pot de asemenea răspunde stărilor.
+There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
 
 | Componentă          | Recenzie | Comentariu | Citat | Răspuns |
 | ------------------- | -------- | ---------- | ----- | ------- |
@@ -20,10 +24,10 @@ Acestea sunt trei tipuri de postări pe care utilizatorii pot să le creeze dire
 
 ### Actualizări a stărilor de lectură
 
-Stările sunt generate când un utilizator indică ceea ce vrea să citească, a început să citească sau a terminat de citit o carte.
+Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
 
 ## Text
-Textul poate să includă:
+Text can include:
 
 - Mențiuni (@utilizator)
 - URL-uri (`http(s)://` nu este afișat)
