@@ -14,18 +14,42 @@ env.install_gettext_translations(i18n)
 
 
 def get_page_metadata(locale_slug, page):
-    """title/order etc for a page"""
+    """title/order etc for a page
+    this is how the markdown file is composed:
+
+    > ---
+    > Header: value
+    > Another key: another value
+    > ---
+
+    and this is how crowdin sends it back as:
+
+    > - - -
+    > Header: value Another key: another value
+    > - - -
+
+    I don't know how to ask crowdin nicely not to do this, so instead I'm supporting
+    both styles, which is janky.
+    """
     headers = []
+
     with open(page, "r", encoding="utf-8") as page_markdown:
         header_block_open = False
         for line in page_markdown.readlines():
-            if line == "---\n":
+            if line.replace(" ", "").strip() == "---":
                 header_block_open = not header_block_open
+                continue
             if not header_block_open:
                 break
-            headers.append(line)
+            for word in line.split(" "):
+                # start of a new header
+                if word[-1] == ":":
+                    headers.append([word])
+                else:
+                    headers[-1].append(word)
+        headers = "\n".join(" ".join(line) for line in headers)
 
-    header_obj = yaml.safe_load("".join(headers)) or {}
+    header_obj = yaml.safe_load(headers) or {}
     path_dir = page.split("/")[-1].replace(".md", ".html")
     header_obj["path"] = f"/{locale_slug}{path_dir}"
     return header_obj
@@ -55,15 +79,22 @@ def get_site_data(locale_slug, page):
 
 def format_markdown(file_path):
     """go from markdown to html, extracting headers"""
+    with open(file_path, "r", encoding="utf-8") as page_markdown:
+        first_line = page_markdown.readline()
+        print(first_line)
+        dashed_header_format = first_line.strip() ==  "---"
+
     with open(file_path, "r", encoding="utf-8") as markdown_content:
-        headerless = []
-        header_block_open = False
-        for line in markdown_content.readlines():
-            if line == "---\n":
-                header_block_open = not header_block_open
-            elif not header_block_open:
-                headerless.append(line)
-        return markdown("".join(headerless), extensions=["tables", "fenced_code"])
+        if dashed_header_format:
+            headerless = []
+            header_block_open = False
+            for line in markdown_content.readlines():
+                if line.replace(" ", "").strip() == "---\n":
+                    header_block_open = not header_block_open
+                elif not header_block_open:
+                    headerless.append(line)
+            return markdown("".join(headerless), extensions=["tables", "fenced_code"])
+        return markdown("".join(markdown_content.readlines()[3:]))
 
 
 if __name__ == "__main__":
