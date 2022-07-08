@@ -1,3 +1,7 @@
+- - -
+Title: Style Guide Date: 2021-10-20 Order: 4
+- - -
+
 ## Cereri de extragere (pull requests)
 
 Deci vreți să contribuiți la codul BookWyrm: super! Dacă există un tichet nerezolvat pe care ați vrea să-l rezolvați, este util să lăsați un comentariu pentru ca munca să nu fie duplicată. Încercați să păstrați obiectivul cererilor de extragere mic și concentrat pe o singură temă. În acest fel este mai ușor de revizuit, iar dacă o parte are nevoie de schimbări, nu le va bloca pe celelalte.

@@ -1,3 +1,7 @@
+- - -
+Title: Developer Environment Date: 2021-04-12 Order: 3
+- - -
+
 ## Pré-requisitos
 
 Estas instruções supoem que você esteja rodando a BookWyrm utilizando o Docker. Você vai precisar [instalar o Docker](https://docs.docker.com/engine/install/) e o [docker-compose](https://docs.docker.com/compose/install/) para começar.

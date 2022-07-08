@@ -1,3 +1,7 @@
+- - -
+Title: External Storage Date: 2021-06-07 Order: 5
+- - -
+
 Por padrão, a BookWyrm usa o armazenamento local para os arquivos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o `django-storages` para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.
 
 ## Serviços compatíveis com S3

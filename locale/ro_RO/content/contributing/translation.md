@@ -1,3 +1,7 @@
+- - -
+Title: Translations Date: 2021-10-20 Order: 2
+- - -
+
 ## Contribuiți la traducere
 
 Puteți să vă alăturați proiectului de traducere BookWyrm la [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).

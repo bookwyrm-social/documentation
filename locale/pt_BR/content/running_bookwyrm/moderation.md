@@ -1,3 +1,7 @@
+- - -
+Title: Moderation Date: 2021-04-18 Order: 4
+- - -
+
 ## Blocking
 Usuários têm a opção de bloquear outros usuários por conta própria, sem a intervenção da moderação. Da página da administração "Servidores federados", administradores podem ver quantos usuários de uma instância foram bloqueadas por usuários locais.
 

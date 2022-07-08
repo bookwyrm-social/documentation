@@ -1,3 +1,7 @@
+- - -
+Title: ActivitatePub Date: 2021-04-20 Order: 1
+- - -
+
 BookWyrm folosește protocolul [ActivityPub](http://activitypub.rocks/) pentru a trimite și primi activitatea utilizatorului între alte instanțe BookWyrm și alte servicii care implementează ActivityPub, precum [Mastodon](https://joinmastodon.org/). Pentru a gestiona datele cărților, BookWyrm are câteva tipuri Activity extinse care nu fac parte din standard, dar înțelese de alte instanțe BookWyrm.
 
 ## Activități și obiecte

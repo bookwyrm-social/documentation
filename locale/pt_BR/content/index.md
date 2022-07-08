@@ -1,3 +1,7 @@
+- - -
+Title: Welcome Date: 2021-04-13
+- - -
+
 A BookWyrm é uma rede social para acompanhar sua leitura, falar sobre livros, escrever resenhas e achar outro livro pra ler em seguida. A federação permite que usuários da BookWyrm participem de comunidades pequenas e confiáveis que podem se conectar entre si, e também a outros serviços ActivityPub, como o Mastodon e o Pleroma.
 
 ## Funcionalidades

@@ -1,3 +1,7 @@
+- - -
+Title: Optional features Date: 2021-08-02 Order: 5
+- - -
+
 Alguns recursos da BookWyrm devem ser habilitados para funcionar.
 
 ## Geração de pré-visualização

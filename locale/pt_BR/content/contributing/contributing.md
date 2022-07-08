@@ -1,3 +1,7 @@
+- - -
+Title: How to Contribute Date: 2021-04-12 Order: 1
+- - -
+
 Há muitas formas de contribuir com o projeto qualquer que esja seu nível de conhecimento técnico.
 
 ## Feedback e pedido de recursos
