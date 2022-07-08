@@ -4,7 +4,7 @@ Title: Developer Environment Date: 2021-04-12 Order: 3
 
 ## Cerințe preliminare
 
-These instructions assume you are developing BookWyrm using Docker. You'll need to [install Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to get started.
+Aceste instrucțiuni presupun că dezvoltați BookWyrm folosind Docker. Va trebui să [instalați Docker](https://docs.docker.com/engine/install/) și [docker-compose](https://docs.docker.com/compose/install/) pentru a începe.
 
 ## Configurați mediul de dezvoltare
 
@@ -30,11 +30,11 @@ cp nginx/development nginx/default.conf
 ```
 - Odată compilarea terminată, puteți accesa instanța la `http://localhost:1333` și crea un utilizator administrator.
 
-If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
+Dacă sunteți curios: comanda `./bw-dev` este un simplu script shell care rulează multe alte comenzi: deasupra, ați putea sări peste ea și rula `docker-compose build` sau `docker-compose up` direct dacă doriți. `./bw-dev` doar le colectează într-un singur loc pentru conveniență. Rulați-o fără argumente pentru a obține o listă a comenzilor disponibile, citiți [pagina de documentație](/command-line-tool.html) pentru ea sau deschideți-o pentru a vedea ce face fiecare comandă!
 
 ### Editați sau configurați modele
 
-If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
+Dacă schimbați sau creați un model, veți schimba probabil structura bazei de date. Pentru ca aceste schimbă să aibă efect va trebui să rulați comanda Django `makemigrations` pentru a crea un nou [fișier de migrare Django](https://docs.djangoproject.com/en/3.2/topics/migrations) și apoi `migrate`:
 
 ``` { .sh }
 ./bw-dev makemigrations
@@ -42,9 +42,9 @@ If you change or create a model, you will probably change the database structure
 ```
 
 ### Editați fișiere statice
-Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
+De fiecare dată când editați CSS sau JavaScript, va trebui să rulați comanda Django `collectstatic` pentru ca schimbările dvs. să aibă efect:
 ``` { .sh }
 ./bw-dev collectstatic
 ```
 
-If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
+Dacă aveți [yarn instalat](https://yarnpkg.com/getting-started/install), puteți rula `yarn watch:static` pentru a rula automat scriptul precedent de fiecare dată când o schimbare are loc în dosarul `bookwyrm/static`.
