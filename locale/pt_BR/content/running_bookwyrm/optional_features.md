@@ -2,19 +2,19 @@
 Title: Optional features Date: 2021-08-02 Order: 5
 - - -
 
-Some features of BookWyrm have to be enabled to work.
+Alguns recursos da BookWyrm devem ser habilitados para funcionar.
 
 ## Geração de pré-visualização
 
-By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
+Por padrão, a BookWyrm usa a logo da instância (ou a padrão) como uma imagem de pré-vusalização OpenGraph. Você pode também habilitar a criação de pré-visualização para livros, usuários e para todo o site.
 
-The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Depending on the type of image, the contents will be:
+As imagens de pré-visualização serão do tamanho grande do OpenGraph (usado pelo twitter com o nome de `summary_large_image`). Dependendo do tipo de imagem, seus conteúdos serão:
 
 - a imagem padrão da instância mostrará a logo grande e o nome da instância e seu endereço
 - a imagem do usuário mostrará seu avatar, nome de exibição e arroba (na forma usuário@instância)
 - a imagem do livro mostrará sua capa, título, subtítulo (se tiver), autor e avaliação (se tiver)
 
-These images will be updated at various points:
+Essas imagens serão atualizadas em vários casos:
 
 - imagem da instância: quando o nome da instância ou a logo são alterados
 - imagem do usuário: quando o nome de exibição ou o avatar são alterados
