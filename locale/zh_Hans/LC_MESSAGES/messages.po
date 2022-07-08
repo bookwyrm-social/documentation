@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-14 13:51-0700\n"
-"PO-Revision-Date: 2022-05-15 02:46\n"
+"POT-Creation-Date: 2022-07-08 10:16-0700\n"
+"PO-Revision-Date: 2022-07-08 17:52\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File: /[bookwyrm-social.documentation] main/locale/en_US/LC_MESSAGES/messages.po\n"
 "X-Crowdin-File-ID: 1636\n"
 
-#: templates/index.html:5
+#: templates/index.html:5 templates/layout.html:6
 msgid "BookWyrm Documentation"
 msgstr "BookWyr 文档"
 
@@ -33,55 +33,56 @@ msgstr "如何使用和贡献"
 msgid "BookWyrm: Social Reading and Reviewing"
 msgstr "BookWyrm：社会阅读和评论"
 
-#: templates/layout.html:35
+#: templates/layout.html:35 templates/layout.html:39
 msgid "Join"
 msgstr "加入"
 
-#: templates/layout.html:38
+#: templates/layout.html:38 templates/layout.html:42
 msgid "Get involved"
 msgstr "参与"
 
-#: templates/layout.html:41
+#: templates/layout.html:41 templates/layout.html:45
 msgid "Support"
 msgstr "支持"
 
-#: templates/layout.html:44
+#: templates/layout.html:44 templates/layout.html:48
 msgid "Code"
 msgstr "代码"
 
-#: templates/layout.html:47 templates/layout.html:124
+#: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
+#: templates/layout.html:130
 msgid "Documentation"
 msgstr "文档"
 
-#: templates/layout.html:95
+#: templates/layout.html:95 templates/layout.html:101
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 msgstr "<strong>BookWyrm</strong> 是协力完成的、反企业化的软件，由 <a href='https://www.mousereeve.com/'>Mouse Reeve</a> 维护。"
 
-#: templates/layout.html:98
+#: templates/layout.html:98 templates/layout.html:104
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 msgstr "在 <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a> 上支持 BookWyrm 。"
 
-#: templates/layout.html:102
+#: templates/layout.html:102 templates/layout.html:108
 msgid "Get Involved"
 msgstr "参与"
 
-#: templates/layout.html:104
+#: templates/layout.html:104 templates/layout.html:110
 msgid "BookWyrm on GitHub"
 msgstr "GitHub 上的 BookWyrm"
 
-#: templates/layout.html:107
+#: templates/layout.html:107 templates/layout.html:113
 msgid "Contribute to this page"
 msgstr "给本页面贡献力量"
 
-#: templates/layout.html:122
+#: templates/layout.html:122 templates/layout.html:128
 msgid "Learn more"
 msgstr "了解更多"
 
-#: templates/layout.html:127
+#: templates/layout.html:127 templates/layout.html:133
 msgid "Contact maintainer"
 msgstr "联系维护者"
 
-#: templates/layout.html:130
+#: templates/layout.html:130 templates/layout.html:136
 msgid "License"
 msgstr ""
 
