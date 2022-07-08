@@ -1,18 +1,22 @@
+- - -
+Title: Translations Date: 2021-10-20 Order: 2
+- - -
+
 ## Contribuiți la traducere
 
-Puteți să vă alăturați proiectului de traducere BookWyrm la [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
 ## Limbaj neutru de gen
 
-Ori de câte ori este posibil, traducerile BookWyrm ar trebui să folosească limbaj de gen neutru. Asta se aplică dacă o limbă folosește în mod implicit genul masculin ca gen neutru sau dacă folosește ceva similar precum „el/ea”. Este de asemenea important ca traducerile să fie clare, concise și lizibile pentru un cititor de ecran. Uneori, aceste obiective intră în conflict. Nu există un răspuns perfect, universal valabil. Soluția depinde de limbă.
+Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
 
-Ca directivă principală, încercați să acordați prioritate unui limbaj incluziv și neutru decât unui limbaj formal corect sau aprobat în mod oficial. În engleză, de exemplu, foarte multe recomandări de stil necesită un pronume persoana I „she” sau „he” pentru a se referi la un individ, dar ar fi mai bine ca în BookWyrm să se folosească în schimb „they”, neutru din punct de vedere al genului.
+As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
 
-Dacă nu sunteți siguri despre cum să abordați cel mai bine o problemă de traducere, lăsați un comentariu sau deschideți [un subiect de discuție](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) pentru a adresa întrebări la scară mai largă.
+If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
 
 ## Traducerea șabloanelor
 
-BookWyrm profită de funcționalitățile de traducere Django pentru a permite conținutului paginii să se schimbe în funcție de limba de afișare aleasă de utilizator. Documentația Django [oferă o explicație utilă](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) despre cum funcționează acest proces, dar iată versiunea scurtă:
+Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
 
 * toate șabloanele text trebuie să includă taguri de șabloane de traducere
 * adăugați `{% load i18n %}` în partea de sus a șablonului dvs. pentru a activa traducerile
