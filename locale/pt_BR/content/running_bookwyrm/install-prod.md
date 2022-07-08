@@ -2,7 +2,7 @@
 Title: Installing in Production Date: 2021-05-18 Order: 1
 - - -
 
-This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
+Este projeto ainda é jovem e não está, no momento, muito estável, então tenha cuidado ao rodá-lo em produção.
 
 ## Configuração do servidor
 - Obtenha um domínio e configure o DNS para seu servidor. Você deverá apontar os nameservers do seu domínio no provedor de DNS ao servidor onde você hospedará a BookWyrm. Aqui estão as instruções para a [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
@@ -12,9 +12,9 @@ This project is still young and isn't, at the moment, very stable, so please pro
 
 ## Instale e configure a BookWyrm
 
-The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
+O branch `produção (production)` da BookWyrm tem uma série de ferramentas indisponíveis no branch `principal (main)` que servem para a execução em produção, como alterações no `docker-compose` para atualizar os comandos padrão, configuração de containers e alterações individuais nas configurações dos containers para ativar coisas com SSL ou backups comuns.
 
-Instructions for running BookWyrm in production:
+Instruções para rodar a BookWyrm em produção:
 
 - Obtenha o código da aplicação: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Mude para o branch `produção (production)`: `git checkout production`
@@ -36,7 +36,7 @@ Instructions for running BookWyrm in production:
         - Se você não estiver utilizando o subdomínio `www`, exclua a versão do domínio www.your-domain.com do `server_name` no primeiro bloco server no `nginx/default.conf` e exclua a flag `-d www.${DOMAIN}` no fim do comando `certbot` no `docker-compose.yml`.
         - Se você estiver executando outro servidor web na sua máquina, você precisará seguir as [instruções de proxy reverso](/using-a-reverse-proxy.html)
 - Initialize the database by running `./bw-dev migrate`
-- Run the application (this should also set up a Certbot ssl cert for your domain) with `docker-compose up --build`, and make sure all the images build successfully
+- Rode a aplicação (e isso deve também configurar o certificado ssl do Certbot para seu domínio) com `docker-compose up --build`, e certifique-se de que todas as imagens foram construidas com sucesso
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
 - Set up HTTPS redirect
