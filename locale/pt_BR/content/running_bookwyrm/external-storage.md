@@ -143,6 +143,6 @@ Para que o endereço correto seja utilizado ao mostrar resultados da pesquisa de
 
 Os dados do conector podem ser acessados pela interface de administração do Django presentes no endereço `http://MY_DOMAIN_NAME/admin`. O conector da sua própria instância é o primeiro registro no banco de dados, então você pode acessá-lo pelo seguinte endereço: `https://MEU_DOMINIO/admin/bookwyrm/connector/1/change/`.
 
-The field _Covers url_ is defined by default as `https://MY_DOMAIN_NAME/images`, you have to change it to `https://S3_STORAGE_URL/images`. Then, click the _Save_ button, and voilà!
+O campo _URL das capas (Covers url)_ é, por padrão, `https://MEU_DOMINIO/images`, você deve mudá-lo para `https://ENDEREÇO_DO_ARMAZENAMENTO_S3/images`. Então clique o botão de _Salvar_ e voilà!
 
-You will have to update the value for _Covers url_ every time you change the URL for your storage.
+Você deverá atualizar o valor do _Covers url_ toda vez que alterar o endereço de seu armazenamento.
