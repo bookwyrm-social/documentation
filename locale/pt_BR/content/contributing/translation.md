@@ -1,18 +1,22 @@
+- - -
+Title: Translations Date: 2021-10-20 Order: 2
+- - -
+
 ## Colaborar com traduções
 
-Você pode participar do projeto de tradução da BookWorm no [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
 ## Linguagem neutra
 
-As traduções da BookWyrm devem usar marcação de gênero neutra o máximo possível. Isso se aplica mesmo se a língua utiliza o masculino como gênero neutro padrão, ou se possui algo similiar a "ele/ela". Também é importante que as traduções sejam claras, concisas e legíveis em leitores de tela, e às vezes esses objetivos entram em conflito; não há uma solução perfeita para todos os problemas, e a solução depende do idioma.
+Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
 
-Como elemento norteador, tente dar mais ênfase ao aspecto inclusivo e ao uso de palavras de gênero neutro do que se fiar à correção formal ou a guias de estilo oficiais. No Inglês, por exemplo, muitos guias de estilo formais exigem que se use um pronome singular "she" ou "he" para se referir a um indivíduo, mas na BookWyrm seria melhor utilizar o pronome singular neutro "they".
+As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
 
-Se você não sabe como resolver algum problema de tradução, abra um [tópico de discussão](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) para tratar de problemas mais amplos.
+If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
 
 ## Fazendo templates traduzíveis
 
-A BookWyrm se utiliza da função de tradução do Django para fazer com que o conteúdo das páginas mude dependendo da língua da interface selecionada pelo usuário. A documentação do Django traz [uma ótima explicação](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) de como ela funciona, mas aqui temos uma versão mais curta:
+Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
 
 * todo texto no template deve incluir as tags de tradução de template
 * adicione `{% load i18n %}` no início do arquivo de template pra ativar as traduções
