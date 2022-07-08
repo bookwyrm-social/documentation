@@ -1,7 +1,11 @@
-BookWyrm是一个社交网络，用于跟踪你的阅读，谈论书籍，撰写评论，并发现下一步的阅读内容。 联盟允许BookWyrm用户加入小型的、可信赖的社区，这些社区可以相互联系，并与其他ActivityPub服务（如Mastodon和Pleroma）联系。
+- - -
+Title: Welcome Date: 2021-04-13
+- - -
+
+BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
 
 ## 特点
-由于该项目仍处于早期阶段，其功能每天都在增加，而且有很多建议和想法的空间。 打开一个[Issue](https://github.com/bookwyrm-social/bookwyrm/issues)，让你的意见继续下去！
+Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
 
 - 发表关于书籍的文章
     - 撰写评论，无论是否有评级，都会在书页中汇总。
