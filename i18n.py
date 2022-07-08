@@ -10,7 +10,6 @@ thread_local_data.locale = "en_US"
 
 locales_metadata = [
     {"code": "en_US", "name": "English (US)", "slug": ""},
-    {"code": "ro_RO", "name": "Română", "slug": "ro/"},
 ]
 
 default_locale = "en_US"  # pylint: disable=invalid-name

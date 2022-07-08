@@ -81,20 +81,22 @@ def format_markdown(file_path):
     """go from markdown to html, extracting headers"""
     with open(file_path, "r", encoding="utf-8") as page_markdown:
         first_line = page_markdown.readline()
-        print(first_line)
-        dashed_header_format = first_line.strip() ==  "---"
+        dashed_header_format = first_line == "---\n"
 
     with open(file_path, "r", encoding="utf-8") as markdown_content:
         if dashed_header_format:
             headerless = []
             header_block_open = False
             for line in markdown_content.readlines():
-                if line.replace(" ", "").strip() == "---\n":
+                if line.replace(" ", "") == "---\n":
                     header_block_open = not header_block_open
                 elif not header_block_open:
                     headerless.append(line)
             return markdown("".join(headerless), extensions=["tables", "fenced_code"])
-        return markdown("".join(markdown_content.readlines()[3:]))
+        return markdown(
+            "".join(markdown_content.readlines()[3:]),
+            extensions=["tables", "fenced_code"],
+        )
 
 
 if __name__ == "__main__":
