@@ -1,9 +1,13 @@
-BookWyrm folosește protocolul [ActivityPub](http://activitypub.rocks/) pentru a trimite și primi activitatea utilizatorului între alte instanțe BookWyrm și alte servicii care implementează ActivityPub, precum [Mastodon](https://joinmastodon.org/). Pentru a gestiona datele cărților, BookWyrm are câteva tipuri Activity extinse care nu fac parte din standard, dar înțelese de alte instanțe BookWyrm.
+- - -
+Title: ActivityPub Date: 2021-04-20 Order: 1
+- - -
+
+BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
 
 ## Activități și obiecte
 
 ### Utilizatori și relații
-Interacțiunile dintre relațiile utilizatorilor respectă specificația ActivityPub.
+User relationship interactions follow the standard ActivityPub spec.
 
 - `Follow`: solicitați să primiți stări de la un utilizator și să le vizualizați pe cele cu confidențialitatea „numai urmăritori”
 - `Accept`: aprobă o `cerere de urmărire` și finalizează relația
@@ -37,7 +41,7 @@ Interacțiunile dintre relațiile utilizatorilor respectă specificația Activit
 - `Undo`: anulează `Like` sau `Announce`
 
 ### Colecții
-Cărțile și listele utilizatorului sunt reprezentate de [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
 #### Obiecte
 
@@ -53,4 +57,4 @@ Cărțile și listele utilizatorului sunt reprezentate de [`OrderedCollection`](
 
 
 ## Serializare alternativă
-Deoarece BookWyrm folosește propriile tipuri de obiecte (`Review`, `Comment`, `Quotation`) care nu sunt suportate de ActivityPub, stările sunt transformate în tipuri standard când sunt trimise sau vizualizate de servicii din afara BookWyrm. `Review`s sunt convertite în `Article`s, iar `Comment`s și `Quotation`s sunt convertite în `Note`s cu o legătură către cartea și imaginea de copertă atașate.
+Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
