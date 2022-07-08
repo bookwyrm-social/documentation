@@ -2,149 +2,149 @@
 Title: Command Line Tool Date: 2021-11-11 Order: 6
 - - -
 
-Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
+Dezvoltatorii BookWyrm și managerii de instanțe pot folosi scriptul `bw-dev` pentru sarcinile comune. Poate face comenzile dvs. mai scurte, mai ușor de reținut și mai greu de confundat.
 
-Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
+Odată ce ați instalat BookWyrm [în producție](installing-in-production.html) sau [în dezvoltare](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), puteți rula scriptul din linia de comandă cu `./bw-dev` urmat de o subcomandă pe care doriți să o rulați.
 
 ## Scurtături Docker
 
 ### bash
 
-Open an interactive `bash` session inside the docker `web` container.
+Deschide o sesiune interactivă de `bash` în interiorul containerului docker `web`.
 
 ### build
 
-Equivalent to `docker-compose build`.
+Echivalent cu `docker-compose build`.
 
 ### dbshell
 
-Open an interactive Postgres database shell. I hope you know what you're doing.
+Deschide un shell interactiv pentru baza de date Postgres. Sper că știți ceea ce faceți.
 
 ### runweb args
 
-Run an arbitrary command (represented above by `args`) in the `web` container.
+Rulează o comandă arbitrară (reprezentată deasupra de `args`) în containerul `web`.
 
-Equivalent to `docker-compose run --rm web`.
+Echivalent cu `docker-compose run --rm web`.
 
 ### service_ports_web args
 
-Run an arbitrary command in the `web` container (represented above by `args`) with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
+Rulează o comandă arbitrară în containerul `web` (reprezentată deasupra de `args`) cu porturile expuse. Aceasta este utilă dacă vreți să rulați teste `pdb` deoarece `runweb` nu expune promptul `pdb`.
 
-Equivalent to `docker-compose run --rm --service-ports web`.
+Echivalent cu `docker-compose run --rm --service-ports web`.
 
 ### shell
 
-Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly.
+Deschide un shell interactiv Django în interiorul containerului docker `web`. O veți folosi dacă vreți să rulați comenzi de shell Django direct.
 
 ### up [args]
 
-Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
+Pornește sau repornește containerele Dcoker, opțional incluzând orice argument(reprezentat mai sus de `args`). Echivalent cu `docker-compose up --build [args]`
 
 ## Gestionarea bazei de date
 
 ### initdb
 
-Initialize a database.
+Inițializează o bază de date.
 
 ### makemigrations [appname migration number]
 
-_This command is not available on the `production` branch_.
+_Această comandă nu este disponibilă în ramura de `producție`_.
 
-Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`
+Rulează comanda Django `makemigrations` în interiorul containerului dvs. Docker. Dacă ați schimbat structura bazei de date în ramura de dezvoltare veți avea nevoie să o rulați pentru ca schimbările dvs. să aibă efect. Opțional, puteți specifica o migrație specifică pe care să o rulați, de ex. `./bw-dev makemigrations bookwyrm 0108`
 
 ### migrate
 
-Runs Django's `migrate` command inside your Docker container. You always need to run this after `makemigrations`.
+Rulează comanda Django `migrate` în interiorul containerului dvs. Docker. Veți avea nevoie mereu de a o rula după `makemigrations`.
 
 ### resetdb
 
-_This command is not available on the `production` branch_.
+_Această comandă nu este disponibilă în ramura de `producție`_.
 
-Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+Resetează baza de date. **Această comandă va șterge întreaga bază de date BookWyrm**, iar apoi va iniția o bază de date nouă și rula toate migrațiile. Va trebui să ștergeți orice fișier de migrație recent pe care nu vreți să-l rulați _înainte_ de a rula `resetdb`.
 
 ## Gestionarea unei instanțe BookWyrm
 
 ### collectstatic
 
-Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
+Migrează modulele statice fie către un container web, fie către un „bucket” S3 compatibil, depinzând de context.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database.
+Generează imagini de previzualizare pentru site, utilizatori și cărți. Acest lucru poate dura ceva timp dacă aveți o bază de date mare.
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Generează miniaturi pentru coperțile cărților.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Repopulează fluxurile Redis (fluxurile utilizatorilor). De obicei nu veți avea nevoie să o rulați numai dacă o eroare șterge toate fluxurile de utilizator ale dvs. pentru un motiv sau altul. Puteți specifica fluxul folosind argumentul `--stream`.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
+Repopulează cache-ul Redis de liste. De obicei nu veți avea nevoie să o rulați numai dacă o eroare șterge toate listele de utilizator ale dvs. dintr-un motiv sau altul.
 
 ### populate_suggestions
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Populează utilizatorii sugerați pentru toți utilizatorii. S-ar putea să doriți să o rulați manual pentru a reîmprospăta sugestiile.
 
 ### restart_celery
 
-Restarts the `celery_worker` Docker container.
+Repornește containerul Docker `celery_worker`.
 
 ### update
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Când există schimbări pentru ramura de `producție`, puteți actualiza instanța dvs. fără timp de oprire.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Această comandă extrage cele mai recente actualizări ale ramurii de `producție` prin `git pull`, construiește imaginile docker dacă este necesar, rulează migrările Django, actualizează fișierele statice și repornește toate containerele Docker.
 
 ### admid_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Obține codul secret de admin folosit pentru a înscrie utilizatorul admin inițial pe o instanță BookWyrm nouă.
 
 ## Configurați stocare S3 compatibilă
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+În mod implicit, BookWyrm folosește stocarea locală pentru modelele statice (favicon, avatarul de bază etc.) și media (avatarurile utilizatorilor, coperțile cărților etc.), dar puteți folosi un serviciu de stocare extern pentru a deservi aceste fișiere. BookWyrm folosește stocare Django pentru a manipula stocarea externă, precum servicii S3 compatibile, Apache Libcloud sau SFTP.
 
-See [External Storage](/external-storage.html) for more information.
+Vedeți [Stocare externă](/external-storage.html) pentru mai multe detalii.
 
 ### copy_media_to_s3
 
-Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
+Migrează toate fișierele media încărcate de pe o instalație BookWyrm către un serviciu „bucket” S3 compatibil. Utilizați pentru o încărcare inițială către un „bucket” gol.
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
+Sincronizează fișiere media noi sau schimbate de pe o instalație BookWyrm către un „bucket” S3 compatibil. Folosiți pentru a asigura că toate fișierele locale sunt încărcate către un „bucket” existent.
 
 ### set_cors_to_s3 filename
 
-Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
+Copiază un fișier JSON cu reguli CORS către „găleata” dvs. S3, unde `filename` este numele fișierului dvs. JSON (de ex. `./bw-dev set_cors_to_s3 cors.json`)
 
 ## Dezvoltare și testare
 
-_These commands are not available on the `production` branch_.
+_Aceste comenzi nu sunt disponibile în ramura de `producție`_.
 
 ### black
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+BookWyrm folosește formatorul de cod [Black](https://github.com/psf/black) pentru a menține stilul codului consistent. Rulați `black` înainte de a trimite schimbările dvs. pentru ca sarcina `pylint` să nu eșueze pentru cererea dvs. de extracție și să vă facă trist.
 
 ### prettier
 
-BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase consistently styled. Run `prettier` before committing changes to scripts to automatically format your code.
+BookWyrm folosește [Prettier](https://prettier.io/) pentru a păstra stilul codului JavaScript consistent. Executați `prettier` înainte de a trimite schimbările dvs. scripturilor pentru a formata automat codul dvs.
 
 ### stylelint
 
-BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
+BookWyrm folosește [Stylelint](uhttps://stylelint.io/) pentru a păstra stilul fișierelor CSS consistent. Executați `stylelintprettier` înainte de a trimite schimbările scripturilor pentru a formata automat codul dvs.
 
 ### formatters
 
-This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
+Această comandă rulează toate formatoarele (`black`, `prettier` și `stylelint`) într-o singură etapă.
 
 ### clean
 
-Remove all stopped Docker containers.
+Elimină toate containerele Docker oprite.
 
-Equivalent to:
+Echivalent cu:
 
 ```shell
 docker-compose stop
@@ -153,12 +153,12 @@ docker-compose rm -f
 
 ### makemessages
 
-Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Creează fișiere mesaj pentru toate șirurile de caractere de tradus. După ce ați rulat `makemessages` trebuie să rulați `compilemessages` pentru a compila traducerile. Vedeți [makemessages Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compilează fișierele de traducere. Vedeți [compilemessages Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Run tests with `pytest`.
+Rulează testele cu `pytest`.
