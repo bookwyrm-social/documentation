@@ -1,9 +1,13 @@
-BookWyrm utilizza il protocollo [ActivityPub](http://activitypub.rocks/) per inviare e ricevere le attività dell'utente tra altre istanze di BookWyrm e altri servizi che implementano ActivityPub, come [Mastodon](https://joinmastodon.org/). Per gestire i dati del libro, BookWyrm ha una manciata di tipi di attività estesi che non fanno parte dello standard, ma sono leggibili ad altre istanze di BookWyrm.
+- - -
+Title: ActivityPub Date: 2021-04-20 Order: 1
+- - -
+
+BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
 
 ## Attività e oggetti
 
 ### Utenti e relazioni
-Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
+User relationship interactions follow the standard ActivityPub spec.
 
 - `Segui`: richiesta di ricevere aggiornamenti di un utente e visualizzare i sui stati che hanno privacy solo follower
 - `Accetta`: approva un `Segui` e finalizza la relazione
