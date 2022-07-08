@@ -1,3 +1,7 @@
+- - -
+Title: Style Guide Date: 2021-10-20 Order: 4
+- - -
+
 ## Pull requests
 
 Então você quer contribuir com a BookWyrm? Show! Se houver algum problema aberto no repositório que você quer consertar, deixer um comentário para que o trabalho não seja feito mais de uma vez. Tente manter o escopo dos pull requests pequenos e focados em uma única questão. Assim é mais fácil revisar, e se alguma parte precisar ser alterada, isso não atrapalhará as outras partes.

@@ -1,4 +1,6 @@
+- - -
 Title: Command Line Tool Date: 2021-11-11 Order: 6
+- - -
 
 Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
 
@@ -32,7 +34,7 @@ Equivalent to `docker-compose run --rm --service-ports web`.
 
 ### shell
 
-Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly. For example when [making your initial user a superuser](installing-in-production.html#configure_your_instance).
+Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly.
 
 ### up [args]
 

@@ -1,3 +1,7 @@
+- - -
+Title: Moderation Date: 2021-04-18 Order: 4
+- - -
+
 ## Blocare
 Utilizatorii au opțiunea de a bloca alți utilizatori pe cont propriu fără ca un moderator să intervină. Din punctul de vedere al adminului de „Servere federate”, administratorii pot vedea cât de mulți utilizatori de pe o instanță au fost blocați de utilizatori locali.
 

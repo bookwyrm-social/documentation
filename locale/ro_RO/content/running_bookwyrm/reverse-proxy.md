@@ -1,3 +1,7 @@
+- - -
+Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 3
+- - -
+
 ## Rularea BookWyrm în spatele unui Reverse-Proxy
 Dacă rulați un alt server web pe mașina dvs., trebuie să-l configurați să transmită cererile web către BookWyrm.
 

@@ -1,3 +1,7 @@
+- - -
+Title: Welcome Date: 2021-04-13
+- - -
+
 BookWyrm是一个社交网络，用于跟踪你的阅读，谈论书籍，撰写评论，并发现下一步的阅读内容。 联盟允许BookWyrm用户加入小型的、可信赖的社区，这些社区可以相互联系，并与其他ActivityPub服务（如Mastodon和Pleroma）联系。
 
 ## 特点

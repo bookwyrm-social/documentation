@@ -1,3 +1,7 @@
+- - -
+Title: Posting statuses Date: 2022-04-30 Order: 1
+- - -
+
 在BookWyrm上发帖，要从一本书开始。 用户可以从“你的书”部分，或从一本书的登陆页面，对正在进行的或最近阅读的书籍进行评论。 从那里，用户可以对评论回复并开始对话。 BookWyrm帖子可以包括一些格式，如使用[Markdown](https://www.markdownguide.org/cheat-sheet/)的粗体、斜体和链接。
 
 如果你熟悉[在Mastodon上发帖](https://docs.joinmastodon.org/user/posting/)，你会发现BookWyrm的状态有类似的可见性设置、内容警告和提醒。 然而，目前还暂不支持投票、自定义表情符号和附件。

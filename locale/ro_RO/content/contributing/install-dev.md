@@ -1,3 +1,7 @@
+- - -
+Title: Developer Environment Date: 2021-04-12 Order: 3
+- - -
+
 ## Cerințe preliminare
 
 Aceste instrucțiuni presupun că dezvoltați BookWyrm folosind Docker. Va trebui să [instalați Docker](https://docs.docker.com/engine/install/) și [docker-compose](https://docs.docker.com/compose/install/) pentru a începe.

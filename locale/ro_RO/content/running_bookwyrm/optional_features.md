@@ -1,3 +1,7 @@
+- - -
+Title: Optional features Date: 2021-08-02 Order: 5
+- - -
+
 Unele funcționalități BookWyrm trebuie să fie activate pentru a funcționa.
 
 ## Previzualizarea generării de imagine

@@ -1,3 +1,7 @@
+- - -
+Title: How to Contribute Date: 2021-04-12 Order: 1
+- - -
+
 Există multe moduri în care puteți contribui la acest proiect, indiferent de nivelul dvs. de expertiză technică.
 
 ## Retroacțiuni (feedback) și sugestii de funcționalități

@@ -1,3 +1,7 @@
+- - -
+Title: Command Line Tool Date: 2021-11-11 Order: 6
+- - -
+
 Desenvolvedores e administradores de instâncias Bookwyrm podem usar o script `bw-dev` para tarefas cotidianas. Isso pode tornar seus comandos mais curtos, mais fáceis de lembrar e mais difíceis de serem confundidos.
 
 Se tiver uma instalado uma instância BookWyrm [em produção](installing-in-production.html) ou [em desenvolvimento](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), você pode executar o script pela linha de comando com `./bw-dev` seguido com um subcomando para executar.
@@ -20,7 +24,7 @@ Abre um shell interativo do banco de dados Postgres. Espero que você saiba o qu
 
 Executa um comando arbitrário (representado acima pelo `args`) no container `web`.
 
-Equivalente ao `docker-compose run --rm web`.
+Equivalent to `docker-compose run --rm web`.
 
 ### service_ports_web args
 

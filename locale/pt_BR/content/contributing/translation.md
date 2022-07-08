@@ -1,3 +1,7 @@
+- - -
+TItle: Traduções Date: 2021-10-20 Order: 2
+- - -
+
 ## Colaborar com traduções
 
 Você pode participar do projeto de tradução da BookWorm no [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).

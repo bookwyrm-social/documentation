@@ -1,3 +1,7 @@
+- - -
+Title: Installing in Production Date: 2021-05-18 Order: 1
+- - -
+
 Acest proiect este încă tânăr și nu foarte stabil în acest moment, așa că vă rugăm să continuați cu precauție atunci când rulați în producție.
 
 ## Configurarea server-ului

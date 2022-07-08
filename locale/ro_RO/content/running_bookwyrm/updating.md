@@ -1,3 +1,7 @@
+- - -
+Title: Updating Your Instance Date: 2021-04-13 Order: 2
+- - -
+
 Când sunt schimbări disponibile în ramura de producție, puteți să le instalați și rula utilizând comanda `./bw-dev update` pe instanța dvs. Aceasta face mai multe de lucruri:
 
 - `git pull` obține codul actualizat de pe depozitul git. Dacă sunt conflicte, s-ar putea să aveți nevoie să rulați `git pull` separat și să rezolvați conflictele înainte de a reîncerca scriptul `./bw-dev update`.

@@ -1,3 +1,7 @@
+- - -
+Title: Command Line Tool Date: 2021-11-11 Order: 6
+- - -
+
 Dezvoltatorii BookWyrm și managerii de instanțe pot folosi scriptul `bw-dev` pentru sarcinile comune. Poate face comenzile dvs. mai scurte, mai ușor de reținut și mai greu de confundat.
 
 Odată ce ați instalat BookWyrm [în producție](installing-in-production.html) sau [în dezvoltare](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), puteți rula scriptul din linia de comandă cu `./bw-dev` urmat de o subcomandă pe care doriți să o rulați.
@@ -122,7 +126,7 @@ _Aceste comenzi nu sunt disponibile în ramura de `producție`_.
 
 ### black
 
-BookWyrm folosește formatorul de cod [Black](https://github.com/psf/black) pentru a păstra stilul codul Python consistent. Rulați `black` înainte de a trimite schimbările dvs. pentru ca sarcina `pylint` să nu eșueze pentru cererea dvs. de extracție și să vă facă trist.
+BookWyrm folosește formatorul de cod [Black](https://github.com/psf/black) pentru a menține stilul codului consistent. Rulați `black` înainte de a trimite schimbările dvs. pentru ca sarcina `pylint` să nu eșueze pentru cererea dvs. de extracție și să vă facă trist.
 
 ### prettier
 
