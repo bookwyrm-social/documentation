@@ -1,4 +1,8 @@
-Este projeto ainda é jovem e não está, no momento, muito estável, então tenha cuidado ao rodá-lo em produção.
+- - -
+Title: Installing in Production Date: 2021-05-18 Order: 1
+- - -
+
+This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
 
 ## Configuração do servidor
 - Obtenha um domínio e configure o DNS para seu servidor. Você deverá apontar os nameservers do seu domínio no provedor de DNS ao servidor onde você hospedará a BookWyrm. Aqui estão as instruções para a [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
@@ -8,9 +12,9 @@ Este projeto ainda é jovem e não está, no momento, muito estável, então ten
 
 ## Instale e configure a BookWyrm
 
-O branch `produção (production)` da BookWyrm tem uma série de ferramentas indisponíveis no branch `principal (main)` que servem para a execução em produção, como alterações no `docker-compose` para atualizar os comandos padrão, configuração de containers e alterações individuais nas configurações dos containers para ativar coisas com SSL ou backups comuns.
+The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
 
-Instruções para rodar a BookWyrm em produção:
+Instructions for running BookWyrm in production:
 
 - Obtenha o código da aplicação: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Mude para o branch `produção (production)`: `git checkout production`
