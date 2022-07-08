@@ -1,7 +1,11 @@
-BookWyrmは、読書記録を残し、本について語り、レビューを書き、次に読むべき本を発見するためのソーシャルネットワークです。 フェデレーション機能によりBookWyrmのユーザーは、互いに接続できる小さな信頼できるコミュニティや、MastodonやPleromaのような他のActivityPubサービスに参加することができます。
+- - -
+Title: Welcome Date: 2021-04-13
+- - -
+
+BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
 
 ## 機能紹介
-プロジェクトはまだ初期段階であるため、機能は日々増え続けており、提案やアイデアを出す余地は十分にあります。 [課題](https://github.com/bookwyrm-social/bookwyrm/issues)を開いて会話を盛り上げましょう!
+Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
 
 - 本について投稿
     - Compose reviews, with or without ratings, which are aggregated in the book page
