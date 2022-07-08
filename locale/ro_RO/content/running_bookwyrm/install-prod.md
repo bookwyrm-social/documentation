@@ -2,7 +2,7 @@
 Title: Installing in Production Date: 2021-05-18 Order: 1
 - - -
 
-This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
+Acest proiect este încă tânăr și nu foarte stabil în acest moment, așa că vă rugăm să continuați cu precauție atunci când rulați în producție.
 
 ## Configurarea server-ului
 - Obțineți un nume de domeniu și configurați DNS-ul pentru server-ul dvs. Veți avea nevoie să indicați numele server-ului furnizorului dvs. DNS pentru server-ul unde veți găzdui BookWyrm. Iată instrucțiunile pentru [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
@@ -12,9 +12,9 @@ This project is still young and isn't, at the moment, very stable, so please pro
 
 ## Instalați și configurați BookWyrm
 
-The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
+Ramura de `producție` BookWyrm conține un număr de unelte care nu sunt prezente pe ramura `main` și care sunt potrivite pentru rularea în producție, precum `docker-compose` care schimbă comenzile de bază sau configurarea containerelor și schimbări individuale pentru a activa lucruri precum SSL sau copii de rezervă regulate (regular backups).
 
-Instructions for running BookWyrm in production:
+Instrucțiuni pentru rularea BookWyrm în producție:
 
 - Obțineți codul aplicației: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Comutați la ramura de `production`: `git checkout production`
@@ -59,38 +59,38 @@ c6c35779-af3a-4091-b330-c026610920d6
 - Rulați docker-compose în fundal cu: `docker-compose up -d`
 - Aplicația ar trebui să ruleze la domeniul dvs. Când încărcați domeniul, ar trebui să obțineți o pagină de configurare ce confirmă setările instanței dvs. și un formular pentru crearea unui cont de admin. Folosiți codul dvs. de admin pentru înregistrare.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Felicitări! Ați reușit! Configurați instanța dvs. oricum doriți.
 
 
 ## Copii de rezervă
 
-BookWyrm's db service dumps a backup copy of its database to its `/backups` directory daily at midnight UTC. Backups are named `backup__%Y-%m-%d.sql`.
+Serviciul db al BookWyrm creează o copie de rezervă în dosarul său `/backups` în fiecare zi la miezul nopții UTC. Copiile de rezervă sunt numite `backup__%Y-%m-%d.sql`.
 
-The db service has an optional script for periodically pruning the backups directory so that all recent daily backups are kept, but for older backups, only weekly or monthly backups are kept. To enable this script:
+Serviciul db are un script opțional ce șterge periodic dosarul cu copii de rezervă în așa fel încât toate copiile recente sunt păstrate, dar în cazul celor mai vechi, doar cele săptămânale sau lunare sunt păstrate. Pentru a activa acest script:
 
 - Decomentați linia finală în `postgres-docker/cronfile`
 - recompilați instanța dvs. `docker-compose up --build`
 
-You can copy backups from the backups volume to your host machine with `docker cp`:
+Puteți copia copii de rezervă din volumul cu copii de rezervă către mașina dvs. gazdă cu `docker cp`:
 
 - Rulați `docker-compose ps` pentru a confirma numele întreg al serviciul db (probabil `bookwyrm_db_1`).
 - Rulați `docker cp <container_name>:/backups <host machine path>`
 
 ## Conflicte la porturi
 
-BookWyrm has multiple services that run on their default ports. This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.
+BookWyrm are multiple servicii care rulează pe porturile lor implicite. Asta înseamnă că, depinzând de ce altceva rulați pe mașina dvs. gazdă, s-ar putea să vă confruntați cu erori la compilarea sau rularea BookWyrm când conectarea la aceste porturi eșuează.
 
-If this occurs, you will need to change your configuration to run services on different ports. This may require one or more changes the following files:
+Dacă se întâmplă acest lucru, veți avea nevoie să schimbați fișierul dvs. de configurare pentru a rula serviciile pe porturi diferite. Acest lucru poate necesita una sau multe schimbări ale următoarelor fișiere:
 
 - `docker-compose.yml`
 - `nginx/default.conf`
 - `.env` (Dvs. creați acest fișier în timpul configurării)
 
-If you are already running a web-server on your machine, you will need to set up a reverse-proxy.
+Dacă rulați deja un server web pe mașina dvs., veți avea nevoie să configurați un reverse-proxy.
 
 ## Conectați-vă
 
-Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. There are a few ways in get in touch:
+Deoarece BookWyrm este un proiect tânăr, încă lucrăm la un program de lansare stabil, existând o mulțime de buguri și schimbări care strică totul. Avem o echipă GitHub care poate fi notificată când este ceva important de știut despre o actualizare, echipă căreia vă puteți alătura partajând numele dvs. GitHub. Există câteva moduri de a lua legătura:
 
  - Deschideți un tichet sau o cerere de extragere pentru a adăuga instanța dvs. la [lista oficială](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
  - Contactați proiectul pe [Mastodon](https://tech.lgbt/@bookwyrm) sau prin [email-ul maintainer-ului](mailto:mousereeve@riseup.net) direct cu numele dvs. GitHub
