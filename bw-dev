@@ -29,7 +29,7 @@ case "$CMD" in
         ;;
     messages:update)
         git fetch origin l10n_main:l10n_main
-        declare -a locales=("de_DE" "es_ES" "gl_ES" "it_IT" "fi_FI" "fr_FR" "lt_LT" "no_NO" "pt_PT" "pt_BR" "ro_RO" "sv_SE" "zh_Hans")
+        declare -a locales=("de_DE" "es_ES" "gl_ES" "it_IT" "fi_FI" "fr_FR" "lt_LT" "no_NO" "pt_PT" "pt_BR" "ro_RO" "sv_SE" "en_Oulipo" "zh_Hans")
         for locale in "${locales[@]}"; do
             git checkout l10n_main locale/$locale
             msgfmt locale/$locale/LC_MESSAGES/messages.po -o locale/$locale/LC_MESSAGES/messages.mo

@@ -1,6 +1,6 @@
 ---
 Title: Posting statuses
-4ate: 2022-04-30
+Date: 2022-04-30
 Order: 1
 ---
 
