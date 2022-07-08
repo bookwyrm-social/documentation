@@ -1,3 +1,7 @@
+- - -
+Title: Style Guide Date: 2021-10-20 Order: 4
+- - -
+
 ## Pull requests
 
 So you want to contribute code to BookWyrm: that rules! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
