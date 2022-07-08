@@ -1,6 +1,10 @@
+- - -
+Title: Developer Environment Date: 2021-04-12 Order: 3
+- - -
+
 ## Prérequis
 
-Ces instructions supposent que vous développez BookWyrm en utilisant Docker. Vous devrez [installer Docker](https://docs.docker.com/engine/install/) et [docker-compose](https://docs.docker.com/compose/install/) avant toute chose.
+These instructions assume you are developing BookWyrm using Docker. You'll need to [install Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to get started.
 
 ## Mise en place de l'environnement de développement
 
@@ -26,11 +30,11 @@ cp nginx/development nginx/default.conf
 ```
 - Une fois la compilation terminée, vous pouvez accéder à l'instance sur `http://localhost:1333` et créer un utilisateur admin.
 
-Pour les curieux·ses : la commande `./bw-dev` est un simple script shell qui exécute divers autres outils ; au lieu des commandes ci-dessus, vous auriez pu exécuter `docker-compose build` ou `docker-compose up` directement si vous le souhaitez. `./bw-dev` les rassemble dans un seul endroit pour plus de commodité. Exécutez la commande sans argument pour obtenir une liste des commandes disponibles, lisez la [page de documentation](/command-line-tool.html) dédiée, ou ouvrez le fichier et examinez exactement ce que chaque commande fait !
+If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
 
 ### Édition ou création du modèle de données
 
-Si vous créez ou modifiez un modèle, vous changerez probablement la structure de la base de données. Pour que ces changements aient des effets, vous devrez utiliser la commande `makemigrations` de Django pour créer un nouveau [fichier de migration Django](https://docs.djangoproject.com/en/3.2/topics/migrations), puis la commande `migrate` pour le migrer :
+If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
 
 ``` { .sh }
 ./bw-dev makemigrations
@@ -38,9 +42,9 @@ Si vous créez ou modifiez un modèle, vous changerez probablement la structure 
 ```
 
 ### Édition des fichiers statiques
-Chaque fois que vous éditez du CSS ou du JavaScript, vous devrez exécuter la commande `collectstatic` de Django pour que vos changements aient un effet :
+Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 ``` { .sh }
 ./bw-dev collectstatic
 ```
 
-Si vous avez [installé yarn](https://yarnpkg.com/getting-started/install), vous pouvez exécuter `yarn watch:static` qui va exécuter automatiquement le script précédent à chaque fois qu'un changement se produit dans le répertoire `bookwyrm/static`.
+If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
