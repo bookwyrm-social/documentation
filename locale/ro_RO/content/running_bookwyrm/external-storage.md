@@ -2,26 +2,26 @@
 Title: External Storage Date: 2021-06-07 Order: 5
 - - -
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses `django-storages` to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+În mod implicit, BookWyrm folosește stocarea locală pentru modelele statice (favicon, avatarul de bază etc.) și media (avatarurile utilizatorilor, coperțile cărților etc.), dar puteți folosi un serviciu de stocare extern pentru a deservi aceste fișiere. BookWyrm folosește `django-storages` pentru a manipula stocarea externă, precum servicii S3 compatibile, Apache Libcloud sau SFTP.
 
 ## Servicii S3 compatibile
 
 ### Configurare
 
-Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) or [MinIO](https://min.io/) (GNU AGPL v3.0), or commercial ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
+Creați o „găleată” la serviciul dvs. S3 compatibil împreună cu ID-ul unei chei de acces și o cheie de acces secretă. Acestea pot fi auto-găzduite, precum [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) sau [MinIO](https://min.io/) (GNU AGPL v3.0) sau comerciale ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
 
-This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
+Acest ghid a fost testat cu Scaleway Object Storage. Dacă folosiți un alt serviciu, vă rugăm partajați experiența dvs. (în special dacă a trebuit să urmați pași diferiți) completând un tichet pe depozitul [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation).
 
 ### Ce vă așteaptă
 
-If you are starting a new BookWyrm instance, the process will be:
+Dacă începeți o nouă instanță BookWyrm, procesul va fi:
 
 - Configurarea serviciul dvs. extern de stocare
 - Activatul stocării externii pe BookWyrm
 - Porniți instanța BookWyrm
 - Actualizați conectorul instanței
 
-If you already started your instance, and images have been uploaded to local storage, the process will be:
+Dacă ați început deja o instanță și imaginile au fost încărcate în stocarea internă, procesul va fi:
 
 - Configurați serviciul dvs. extern de stocare
 - Copiați fișierele media locale pe stocarea externă
@@ -31,23 +31,23 @@ If you already started your instance, and images have been uploaded to local sto
 
 ### Setări BookWyrm
 
-Edit your `.env` file by uncommenting the following lines:
+Editați fișierul dvs. `.env` decomentând următoarele linii:
 
 - `AWS_ACCESS_KEY_ID`: ID-ul cheie de acces al dvs.
 - `AWS_SECRET_ACCESS_KEY`: cheia de acces secretă a dvs.
 - `AWS_STORAGE_BUCKET_NAME`: numele „găleții” dvs.
 - `AWS_S3_REGION_NAME`: de ex. `"eu-west-1"` pentru AWS, `"fr-par"` pentru Scaleway sau `"nyc3"` pentru Digital Ocean
 
-If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:
+Dacă serviciul dvs. S3 compatibil este Amazon AWS, ar trebui să fie deja setat. Dacă nu, va trebui să decomentați următoarele linii:
 
 - `AWS_S3_CUSTOM_DOMAIN`: domeniul care va deservi modelele, de ex. `"example-bucket-name.s3.fr-par.scw.cloud"` sau `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
 - `AWS_S3_ENDPOINT_URL`: punctul final al API-ului S3 (S3 API endpoint), de ex. `"https://s3.fr-par.scw.cloud"` sau `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
 
 ### Copiați fișierele media locale pe stocarea externă
 
-If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
+Dacă instanța dvs. BookWyrm rulează deja și fișierele media au fost încărcate (avatare de utilizator, coperți de cărți…), va trebui să migrați fișierele media încărcate pe „găleata” (bucket) dvs.
 
-This task is done with the command:
+Această sarcină este realizată de comanda:
 
 ```bash
 ./bw-dev copy_media_to_s3
@@ -55,13 +55,13 @@ This task is done with the command:
 
 ### Activați stocarea externă pentru BookWyrm
 
-To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `false` to `true`:
+Pentru a activa stocarea externă S3 compatibiliă, va trebui să editați fișierul dvs. `.env` schimbând valoarea proprietății pentru `USE_S3` din `false` în `true`:
 
 ```
 USE_S3=true
 ```
 
-If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that `USE_HTTPS` is set to `true`, so images will be loaded over HTTPS:
+Dacă stocarea externă a dvs. este deservită prin HTTPS (cel mai des în prezent), veți avea nevoie de asemenea să vă asigurați că `USE_HTTPS` este setat la `true`, în așa fel încât imaginile vor fi încărcate prin HTTPS:
 
 ```
 USE_HTTPS=true
@@ -69,7 +69,7 @@ USE_HTTPS=true
 
 #### Modele statice
 
-Then, you will need to run the following command, to copy the static assets to your S3 bucket:
+Apoi, veți avea nevoie să rulați următoarea comandă pentru a copia modelele statice către „găleata” dvs. S3:
 
 ```bash
 ./bw-dev collectstatic
@@ -77,13 +77,13 @@ Then, you will need to run the following command, to copy the static assets to y
 
 #### Setări CORS
 
-Once the static assets are collected, you will need to set up CORS for your bucket.
+Odată ce modelele statice au fost colectate, veți avea nevoie să configurați CORS pentru găleata dvs.
 
-Some services like Digital Ocean provide an interface to set it up, see [Digital Ocean doc: How to Configure CORS](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
+Unele servicii precum Digital Ocean oferă o interfață de configurare, vedeți [Digital Ocean doc: How to Configure CORS](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
 
-If your service doesn’t provide an interface, you can still set up CORS with the command line.
+Dacă serviciul dvs. nu oferă o interfață, încă puteți configura CORS în linia de comandă.
 
-Create a file called `cors.json`, with the following content:
+Creați un fișier numit `cors.json` cu conținutul următor:
 
 ```json
 {
@@ -99,37 +99,37 @@ Create a file called `cors.json`, with the following content:
 }
 ```
 
-Replace `MY_DOMAIN_NAME` with the domain name(s) of your instance.
+Înlocuiți `MY_DOMAIN_NAME` cu numele domeniului/domeniilor ale instanței dvs.
 
-Then, run the following command:
+Apoi rulați următoarea comandă:
 
 ```bash
 ./bw-dev set_cors_to_s3 cors.json
 ```
 
-No output means it should be good.
+Dacă nu afișează nimic este de bine.
 
-If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.
+Dacă începeți o instanță nouă BookWyrm, puteți reveni la instrucțiunile de configurare acum. Dacă nu, continuați să citiți.
 
 ### Reporniți instanța dvs.
 
-Once the media migration has been done and the static assets are collected, you can load the new `.env` configuration and restart your instance with:
+Odată ce migrarea fișierelor media a fost făcută și modelele statice colectate, puteți încărca noua configurare `.env` și reporni instanța cu:
 
 ```bash
 ./bw-dev up -d
 ```
 
-If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong [here](#cors-settings). In that case it might be good to check the headers of a HTTP request against a file on your bucket:
+Dacă totul decurge cum trebuie, stocarea dvs. a fost schimbată fără timp de oprire. Dacă unele fonturi lipsesc (și consola JS a navigatorului dvs. vă arată alerte CORS), atunci ceva a mers greșit [here](#cors-settings). În acest caz, ar fi bine să verificați antetele unei cereri HTTP cu un fișier al „găleții” dvs:
 
 ```bash
 curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H "Access-Control-Request-Method: GET"
 ```
 
-Replace `MY_DOMAIN_NAME` with your instance domain name, `BUCKET_URL` with the URL for your bucket, you can replace the file path with any other valid path on your bucket.
+Înlocuiți `MY_DOMAIN_NAME` cu numele domeniului instanței dvs., `BUCKET_URL` cu URL-ul pentru găleata dvs. Puteți înlocui calea fișierului co orice altă cale validă pentru găleata dvs.
 
-If you see any message, especially a message starting with `<Error><Code>CORSForbidden</Code>`, it didn’t work. If you see no message, it worked.
+Dacă vedeți vrun mesaj, în special un mesaj începând cu `<Error><Code>CORSForbidden</Code>`, nu a funcționat. Dacă nu vedeți niciun mesaj, atunci a mers.
 
-For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage. To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:
+Pentru o instanță activă, s-ar putea să fie câteva fișiere care au fost create local în timpul migrării fișierelor pe stocarea externă. Reporniți aplicația pentru a folosi stocarea externă. Pentru a vă asigura că orice fișier rămas este încărcat pe stocarea externă după schimbare, puteți folosi comanda următoare, care va încărca numai fișierele care nu sunt prezente pe stocarea externă:
 
 ```bash
 ./bw-dev sync_media_to_s3
@@ -137,12 +137,12 @@ For an active instance, there may be a handful of files that were created locall
 
 ### Actualizați conectorul instanței
 
-*Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in [PR #1413](https://github.com/bookwyrm-social/bookwyrm/pull/1413)*
+*Notă: puteți sări acest pas dacă rulați o versiune actualizată de BookWyrm. În septembrie 2021, „conectorul de raft” a fost înlăturat în [PR #1413](https://github.com/bookwyrm-social/bookwyrm/pull/1413)*
 
-In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.
+Pentru ca URL-ul corect să fie utilizat la afișarea rezultatelor de căutare pentru cărțile locale, va trebui să modificați valoarea pentru URL de bază a imaginilor de copertă.
 
-Connector data can be accessed through the Django admin interface, located at the url `http://MY_DOMAIN_NAME/admin`. The connector for your own instance is the first record in the database, so you can access the connector with this URL: `https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/`.
+Datele conectorului pot fi accesate cu interfața de admin Django, situată la URL-ul `http://MY_DOMAIN_NAME/admin`. Conectorul pentru propria voastră instanță este prima intrare în baza de date, deci puteți să-l accesați prin acest URL: `https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/`.
 
-The field _Covers url_ is defined by default as `https://MY_DOMAIN_NAME/images`, you have to change it to `https://S3_STORAGE_URL/images`. Then, click the _Save_ button, and voilà!
+Câmpul _Covers url_ este definit în mod implicat ca `https://MY_DOMAIN_NAME/images`. Trebuie să-l schimbați cu `https://S3_STORAGE_URL/images`. Apoi, apăsați butonul _Save_. Voilà!
 
-You will have to update the value for _Covers url_ every time you change the URL for your storage.
+Va trebui să actualizați valoarea pentru _Covers url_ de fiecare dată când schimbați URL-ul pentru stocarea dvs.
