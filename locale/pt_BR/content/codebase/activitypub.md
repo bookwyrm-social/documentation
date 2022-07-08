@@ -1,9 +1,13 @@
-BookWyrm usa o protocolo [ActivityPub](http://activitypub.rocks/) para enviar e receber as atividades dos usuários entre instâncias BookWyrm e outros serviços que utilizam o ActivityPub, como o [Mastodon](https://joinmastodon.org/). Para lidar com dados de livros, a BookWyrm tem uma série de tipos estendidos de Atividade (Activity) que não são parte do padrão, mas são legíveis para instâncias BookWyrm.
+- - -
+Title: ActivityPub Date: 2021-04-20 Order: 1
+- - -
+
+BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
 
 ## Atividades e Objetos
 
 ### Usuários e relações
-As interações de relação entre usuários seguem a especificação padrão do ActivityPub.
+User relationship interactions follow the standard ActivityPub spec.
 
 - `Seguir (Follow)`: pedir para receber as publicações de um usuário e ver suas publicações privadas, apenas para seguidores
 - `Aceitar (Accept)`: aprova um pedido para `Seguir` e finaliza a relação
@@ -37,7 +41,7 @@ As interações de relação entre usuários seguem a especificação padrão do
 - `Desfazer (Undo)`: reverte um `Curtir (Like)` ou um `Compartilhar (Announce)`
 
 ### Coleções
-Os livros dos usuários e suas listas são representadas com [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
 #### Objetos
 
@@ -53,4 +57,4 @@ Os livros dos usuários e suas listas são representadas com [`OrderedCollection
 
 
 ## Serialização alternativa
-Uma vez que a BookWyrm utiliza tipos de objetos especiais (`Resenha (Review)`, `Comentário (Comment)`, `Citação (Quotation)`) que não são compatíveis com o ActivityPub, as publicações são transformadas em objetos do tipo padrão quando são enviadas ou visualizadas por serviços que não a BookWyrm. `Resenhas (Reviews)` são transformadas em `Artigo (Article)`, e `Comentários (Comments)` e `Citações (Quotations)` são transformados em `Notas (Notes)` com um link para o livro e a imagem de capa no anexo.
+Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
