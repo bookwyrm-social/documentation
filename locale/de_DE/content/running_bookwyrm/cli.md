@@ -1,20 +1,20 @@
 - - -
-Title: Command Line Tool Date: 2021-11-11 Order: 6
+Titel: Befehlszeilenwerkzeug Datum: 2021-11-11 Bestellung: 6
 - - -
 
-Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
+Bookwyrm-Entwickler und Instanz-Manager können das `bw-dev`-Skript für gemeinsame Aufgaben verwenden. Dies macht deine Befehle kürzer, leichter zu merken und schwieriger durcheinander zu bringen.
 
-Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
+Sobald Sie Bookwyrm [in Produktion](installing-in-production.html) oder [in Entwicklung](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment)installiert haben, können Sie das Skript von der Kommandozeile aus mit `./bw-dev` ausführen, gefolgt von dem Unterbefehl, den Sie ausführen wollen.
 
-## Docker shortcuts
+## Docker Kurzbefehle
 
 ### bash
 
-Open an interactive `bash` session inside the docker `web` container.
+Öffne eine interaktive `bash`-Sitzung im Docker-`Web`-Container.
 
 ### build
 
-Equivalent to `docker-compose build`.
+Äquivalent zu `docker-compose build`.
 
 ### dbshell
 
@@ -22,25 +22,25 @@ Equivalent to `docker-compose build`.
 
 ### runweb args
 
-Run an arbitrary command (represented above by `args`) in the `web` container.
+Führe einen beliebigen Befehl (oben durch `args` repräsentiert) im `web`-Container aus.
 
-Equivalent to `docker-compose run --rm web`.
+Äquivalent zu `docker-compose run --rm web`.
 
 ### service_ports_web args
 
-Run an arbitrary command in the `web` container (represented above by `args`) with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
+Führen Sie einen beliebigen Befehl im `Web`-Container (oben dargestellt durch `args`) mit exponierten Ports aus. Dies ist nützlich, wenn du `pdb`-Tests ausführen möchtest, da `runweb` nicht die `pdb`-Prompt freigibt.
 
-Equivalent to `docker-compose run --rm --service-ports web`.
+Äquivalent zu `docker-compose run --rm --service-ports web`.
 
 ### shell
 
-Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly.
+Öffne eine interaktive Django-Shell im Docker-`Web`-Container. Sie würden dies verwenden, wenn Sie Django Shell-Befehle direkt ausführen möchten.
 
 ### up [args]
 
-Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
+Docker-Container starten oder neustarten, optional inklusive aller Argumente (oben dargestellt durch `args`). Äquivalent zu `docker-compose up --build [args]`
 
-## Managing the database
+## Datenbank verwalten
 
 ### initdb
 
@@ -48,17 +48,17 @@ Eine Datenbank initialisieren.
 
 ### makemigrations [appname migration number]
 
-_This command is not available on the `production` branch_.
+_Dieser Befehl ist nicht verfügbar im `Produktion`szweig_.
 
-Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`
+Führt Djangos `makemigrations`-Befehl im Docker-Container aus. Wenn Sie die Datenbankstruktur in einem Entwicklungszweig geändert haben, müssen Sie dies ausführen, damit Ihre Änderungen wirksam werden. Optional können Sie eine bestimmte Migration angeben, z.B. `./bw-dev makemigrations bookwyrm 0108`
 
 ### migrate
 
-Runs Django's `migrate` command inside your Docker container. You always need to run this after `makemigrations`.
+Führt Djangos `migrate`-Kommando im Docker-Container aus. Sie müssen dies immer nach `makemigrations` ausführen.
 
 ### resetdb
 
-_This command is not available on the `production` branch_.
+_Dieser Befehl ist nicht verfügbar im `Produktion`szweig_.
 
 Setzt die Datenbank zurück. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
 
