@@ -1,30 +1,30 @@
 - - -
-Title: Command Line Tool Date: 2021-11-11 Order: 6
+Titre : Outils en ligne de commande Date : 11/11/2021 Ordre: 6
 - - -
 
-Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
+Les développeur-e-s de BookWyrm et les gestionnaires d'une instance peuvent utiliser le script `bw-dev` pour des tâches courantes. Cela peut simplifier vos commandes en les rendant plus courtes, plus faciles à mémoriser et diminuer le risque d'erreur.
 
-Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
+Une fois que vous avez installé Bookwyrm [en production](installing-in-production.html) ou [en développement](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), vous pouvez exécuter le script à partir de la ligne de commande avec `./bw-dev` suivi de la sous-commande que vous voulez exécuter.
 
-## Docker shortcuts
+## Raccourcis Docker
 
 ### bash
 
-Open an interactive `bash` session inside the docker `web` container.
+Ouvez une session interactive `bash` dans le conteneur docker `web`.
 
 ### build
 
-Equivalent to `docker-compose build`.
+Équivalent à `docker-compose build`.
 
 ### dbshell
 
-Open an interactive Postgres database shell. I hope you know what you're doing.
+Ouvrir un shell de base de donnée Postgres interactif. On espère que vous savez ce que vous faites.
 
 ### runweb args
 
-Run an arbitrary command (represented above by `args`) in the `web` container.
+Exécuter une commande arbitraire (représentée ci-dessus par `args`) dans le conteneur `web`.
 
-Equivalent to `docker-compose run --rm web`.
+Équivalent à `docker-compose run --rm web`.
 
 ### service_ports_web args
 
