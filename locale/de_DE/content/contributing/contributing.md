@@ -12,8 +12,8 @@ Code contributions are gladly welcomed! If you're not sure where to start, take 
 
 If you have questions about the project or contributing, you can join the [BookWyrm matrix chat](https://app.element.io/#/room/#bookwyrm:matrix.org).
 
-## Translation
-Do you speak a language besides English? BookWyrm needs localization! You can add and edit translations at [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
+## Übersetzung
+Sprechen Sie neben Englisch eine weitere Sprache? BookWyrm benötigt Übersetzungen! Sie können Übersetzungen hinzufügen und bearbeiten unter [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
 
-## Financial Support
+## Finanzielle Hilfe
 BookWyrm is an ad-free passion project with no intentions of seeking out venture funding or corporate financial relationships. If you want to help keep the project going, you can become a sustaining contributor via [Patreon](https://www.patreon.com/bookwyrm) or [OpenCollective](https://opencollective.com/bookwyrm), or make a one time gift via [PayPal](https://paypal.me/oulipo).
