@@ -12,14 +12,14 @@ If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user
 
 There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
 
-| Component     | Review | Comment | Quote | Reply |
-| ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
-| Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
-| Quote         |        |         | ✔     |       |
-| Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| Komponente      | Rezensionen | Kommentar | Zitat | Antwort |
+| --------------- | ----------- | --------- | ----- | ------- |
+| Textfeld        | ✔           | ✔         | ✔     | ✔       |
+| Spoiler-Warnung | ✔           | ✔         | ✔     | ✔       |
+| Page number     |             | ✔         | ✔     |         |
+| Quote           |             |           | ✔     |         |
+| Rating          | ✔           |           |       |         |
+| Title field     | ✔           |           |       |         |
 
 
 ### Reading status updates
@@ -29,12 +29,12 @@ Statuses are generated when a user indicates that they want to read, have starte
 ## Text
 Text can include:
 
-- Mentions (@user)
+- Erwähnungen (@Benutzer)
 - URLs (`http(s)://` is not displayed)
 - Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+  - fett
+  - kursiv
+  - Zitatblock
+  - Aufzählungsliste
+  - Links
 
