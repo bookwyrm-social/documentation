@@ -1,13 +1,13 @@
 - - -
-Title: Permissions Date: 2021-04-18 Order: 2
+Titel: Berechtigungen Datum: 2021-04-18 Bestellung: 2
 - - -
 
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+Der Benutzerzugriff auf verschiedene Funktionen wird über das [integrierte Authentifizierungssystem von Django](https://docs.djangoproject.com/en/3.2/topics/auth/default/) gesteuert. Wenn eine Instanz erstellt wird, erstellt das `initdb`-Skript eine Reihe von Berechtigungen, die auf Gruppen übertragen werden. Standardmäßig wird allen neuen Benutzern die `-Editor-Gruppe` zugewiesen, die es ihnen erlaubt, Buch-Metadaten zu bearbeiten.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+Der Instanzadministrator sollte `Superuser` Status haben, was Zugriff auf Django Admin (`/admin`) gibt und diesem Benutzer alle Berechtigungen überträgt.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Berechtigungen und Gruppen
+Diese Tabelle zeigt die vier Gruppen (Administrator, Moderator, Editor und Benutzer) und welche Berechtigungen Benutzer in dieser Gruppe haben:
 
 |                                 | Administrator | Moderator | Editor | Benutzer |
 | ------------------------------- | ------------- | --------- | ------ | -------- |
