@@ -16,6 +16,6 @@ This table shows the four groups (admin, moderator, editor, and user) and what p
 | verwalte Föderation             | ✔️            | ✔️        | -      | -        |
 | sende Einladungen               | ✔️            | ✔️        | -      | -        |
 | deaktiviere Benutzer            | ✔️            | ✔️        | -      | -        |
-| delete posts                    | ✔️            | ✔️        | -      | -        |
-| edit books                      | ✔️            | ✔️        | ✔️     | -        |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+| entferne Beiträge               | ✔️            | ✔️        | -      | -        |
+| bearbeite Bücher                | ✔️            | ✔️        | ✔️     | -        |
+ lade Titelbilder hoch | ✔️ | ✔️ | ✔️ | ✔️
