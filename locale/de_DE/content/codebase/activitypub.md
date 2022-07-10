@@ -13,8 +13,8 @@ Benutzerbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.
 - `Akzeptieren`: genehmigt `Folgen` und erstellt die Beziehung
 - `Ablehnen`: verweigert `Folgen`
 - `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
+- `Update`: Aktualisiert das Profil und die Einstellungen eines Benutzers
+- `Löschen`: Deaktiviert einen Benutzer
 - `Undo`: reverses a `Follow` or `Block`
 
 ### Status
@@ -23,29 +23,29 @@ Benutzerbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.
 - `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
 - `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
 - `Kommentar`: Ein Kommentar zu einem Buch erwähnt ein Buch und hat einen Text.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Zitat`: Ein Zitat hat einen Text, einen Auszug aus einem Buch und erwähnt ein Buch
 
 
 #### Aktivitäten
 
-- `Create`: saves a new status in the database.
+- `Erstellen`: Speichert einen neuen Status in der Datenbank.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Hinweis**: BookWyrm akzeptiert nur `Erstellen`-Aktivitäten, wenn sie sind:
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+   - Direktnachrichten (d.h. `Hinweis`e mit der Datenschutzstufe `direkt`, welche einen lokalen Benutzer erwähnen),
+   - Verbunden mit einem Buch (eines benutzerdefinierten Statusstyps, der das Feld `inReplyToBook` enthält),
+   - Antworten auf existierende Status in der Datenbank
+- `Löschen`: Entfernt einen Status
+- `Gefällt`: Erstellt einen Favoriten für den Status
+- `Ankündigung`: Teilt den Status in der Zeitleiste des Akteurs
+- `Rückgängig`: Reversiert `Gefällt` oder `Ankündigung`
 
 ### Sammlungen
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+Bücher und Listen von Benutzern werden durch [`Sortierte Sammlung`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection) repräsentiert
 
 #### Objekte
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
+- `Regal`: Buchsammlung eines Benutzers. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
 - `List`: A collection of books that may have items contributed by users other than the one who created the list.
 
 #### Aktivitäten
