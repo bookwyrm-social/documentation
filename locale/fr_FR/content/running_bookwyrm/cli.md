@@ -28,49 +28,49 @@ Exécuter une commande arbitraire (représentée ci-dessus par `args`) dans le c
 
 ### service_ports_web args
 
-Run an arbitrary command in the `web` container (represented above by `args`) with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
+Exécuter une commande arbitraire dans le conteneur `web` (représenté ci-dessus par `args`) avec les ports exposés. Ceci est utile si vous voulez exécuter des tests `pdb` parce que `runweb` n'affiche pas l'invite de commande `pdb`.
 
-Equivalent to `docker-compose run --rm --service-ports web`.
+Équivalent à `docker-compose run --rm web`.
 
 ### shell
 
-Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly.
+Ouvrir un shell Django interactif à l'intérieur du conteneur docker `web`. Cela sert à exécuter directement des commandes Django.
 
 ### up [args]
 
-Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
+Démarrer ou redémarrer des conteneurs Docker, en incluant optionnellement des arguments (représentés ci-dessus par `args`). Équivalent à `docker-compose up --build [args]`
 
-## Managing the database
+## Gérer la base de données
 
 ### initdb
 
-Initialize a database.
+Initialiser une base de données.
 
 ### makemigrations [appname migration number]
 
-_This command is not available on the `production` branch_.
+_Cette commande n'est pas disponible sur la branche de `production`_.
 
-Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`
+Exécute la commande Django `makemigrations` à l'intérieur du conteneur Docker. Si vous avez changé la structure de la base de donnée dans une branche de développement, vous allez devoir exécuter cette commande pour que vos changements s'appliquent. Facultativement, vous pouvez préciser quelle migration exécuter, par exemple `./bw-dev makemigrations bookwyrm 0108`
 
 ### migrate
 
-Runs Django's `migrate` command inside your Docker container. You always need to run this after `makemigrations`.
+Exécute la commande Django `migrate` à l'intérieur de votre conteneur Docker. Il faut toujours faire ceci après `makemigrations`.
 
 ### resetdb
 
-_This command is not available on the `production` branch_.
+_Cette commande n'est pas disponible sur la branche de `production`_.
 
-Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+Réinitialise la base de données. **Cette commande va supprimer votre base de données Bookwyrm en entier**, et va ensuite initialiser une nouvelle base de donnée et effectuer toutes les migrations. Vous devriez supprimer tous les fichiers de migration récents que vous ne voulez pas exécuter _avant_ d'exécuter `resetdb`.
 
-## Managing a Bookwyrm instance
+## Gérer une instance de Bookwyrm
 
 ### collectstatic
 
-Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
+Migre les ressources statiques soit vers un conteneur Docker, soit vers un "compartiment" S3-compatible, dépendamment du contexte.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database.
+Génère un aperçu pour le site, les utilisateur-ice-s et les livres. Si vous avez une grande base de données, cela peut prendre un certain temps.
 
 ### generate_thumbnails
 
