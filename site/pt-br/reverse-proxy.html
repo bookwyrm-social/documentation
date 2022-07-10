@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <title>
         
-Permissions
+Using a Reverse-Proxy
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,10 +35,10 @@ Permissions
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
-            <a href="https://joinbookwyrm.com/instances" class="navbar-item">
+            <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
                 <span class="button is-success">Join</span>
             </a>
-            <a href="https://joinbookwyrm.com/get-involved" class="navbar-item">
+            <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
                 Get involved
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
@@ -57,9 +57,9 @@ Permissions
             <div class="select">
                 <select aria-label="Select a language" id="language_selection">
                     
-                    <option value="" selected>English (US)</option>
+                    <option value="" >English (US)</option>
                     
-                    <option value="pt-br/" >Português do Brasil</option>
+                    <option value="pt-br/" selected>Português do Brasil</option>
                     
                     <option value="ro/" >Română</option>
                     
@@ -74,18 +74,18 @@ Permissions
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Permissions</h1>
+<h1 class="title is-1">Using a Reverse-Proxy</h1>
 
     </header>
     <div class="columns">
 	<nav class="menu column is-one-quarter mt-2">
-            <h2 class="menu-label"><a href="/">Welcome</a></h2>
+            <h2 class="menu-label"><a href="/pt-br/">Welcome</a></h2>
             
             <h2 class="menu-label">Using BookWyrm</h2>
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/posting-statuses.html" >Posting statuses</a>
+                    <a href="/pt-br/posting-statuses.html" >Posting statuses</a>
                 </li>
                 
             </ul>
@@ -94,31 +94,31 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/install-prod.html" >Installing in Production</a>
+                    <a href="/pt-br/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/updating.html" >Updating Your Instance</a>
+                    <a href="/pt-br/updating.html" >Updating Your Instance</a>
                 </li>
                 
                 <li>
-                    <a href="/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/pt-br/reverse-proxy.html" class="is-active">Using a Reverse-Proxy</a>
                 </li>
                 
                 <li>
-                    <a href="/moderation.html" >Moderation</a>
+                    <a href="/pt-br/moderation.html" >Moderation</a>
                 </li>
                 
                 <li>
-                    <a href="/external-storage.html" >External Storage</a>
+                    <a href="/pt-br/external-storage.html" >External Storage</a>
                 </li>
                 
                 <li>
-                    <a href="/optional_features.html" >Optional features</a>
+                    <a href="/pt-br/optional_features.html" >Optional features</a>
                 </li>
                 
                 <li>
-                    <a href="/cli.html" >Command Line Tool</a>
+                    <a href="/pt-br/cli.html" >Command Line Tool</a>
                 </li>
                 
             </ul>
@@ -127,23 +127,23 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/contributing.html" >How to Contribute</a>
+                    <a href="/pt-br/contributing.html" >How to Contribute</a>
                 </li>
                 
                 <li>
-                    <a href="/translation.html" >Translations</a>
+                    <a href="/pt-br/translation.html" >Translations</a>
                 </li>
                 
                 <li>
-                    <a href="/install-dev.html" >Developer Environment</a>
+                    <a href="/pt-br/install-dev.html" >Developer Environment</a>
                 </li>
                 
                 <li>
-                    <a href="/style_guide.html" >Style Guide</a>
+                    <a href="/pt-br/style_guide.html" >Style Guide</a>
                 </li>
                 
                 <li>
-                    <a href="/debug_toolbar.html" >Django Debug Toolbar</a>
+                    <a href="/pt-br/debug_toolbar.html" >Django Debug Toolbar</a>
                 </li>
                 
             </ul>
@@ -152,11 +152,11 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/activitypub.html" >ActivityPub</a>
+                    <a href="/pt-br/activitypub.html" >ActivityPub</a>
                 </li>
                 
                 <li>
-                    <a href="/permissions.html" class="is-active">Permissions</a>
+                    <a href="/pt-br/permissions.html" >Permissions</a>
                 </li>
                 
             </ul>
@@ -166,79 +166,105 @@ Permissions
         <div class="column">
             
 <section class="block content">
-    <p>User access to different features is controlled using Django's <a href="https://docs.djangoproject.com/en/3.2/topics/auth/default/">built-in authentication system</a>. When an instance is created, the <code>initdb</code> script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the <code>editor</code> group, which allows them to edit book metadata.</p>
-<p>The instance administrator should have <code>superuser</code> status, which gives them access to Django admin (<code>/admin</code>) and confers all permissions to that user.</p>
-<h2>Permissions and groups</h2>
-<p>This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>admin</th>
-<th>moderator</th>
-<th>editor</th>
-<th>user</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>edit instance settings</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>change user level</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>manage federation</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>issue invites</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>deactivate users</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>delete posts</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>edit books</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-</tr>
-<tr>
-<td>upload covers</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
-</tbody>
-</table>
+    <h2>Running BookWyrm Behind a Reverse-Proxy</h2>
+<p>If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.</p>
+<p>The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files. The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.</p>
+<p>To run BookWyrm behind a reverse-proxy, make the following changes:</p>
+<ul>
+<li>In <code>nginx/default.conf</code>:<ul>
+<li>Comment out the two default servers</li>
+<li>Uncomment the server labeled Reverse-Proxy server</li>
+<li>Replace <code>your-domain.com</code> with your domain name</li>
+</ul>
+</li>
+<li>In <code>docker-compose.yml</code>:<ul>
+<li>In <code>services</code> -&gt; <code>nginx</code> -&gt; <code>ports</code>, comment out the default ports and add <code>- 8001:8001</code></li>
+<li>In <code>services</code> -&gt; <code>nginx</code> -&gt; <code>volumes</code>, comment out the two volumes that begin <code>./certbot/</code></li>
+<li>In <code>services</code>, comment out the <code>certbot</code> service</li>
+</ul>
+</li>
+</ul>
+<p>At this point, you can follow, the <a href="#server-setup">setup</a> instructions as listed. Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code>).</p>
+<p>Steps for setting up a reverse-proxy are server dependent.</p>
+<h4>Nginx</h4>
+<p>Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx. See <a href="http://nginx.org/en/docs/beginners_guide.html">nginx's guide</a> for details.</p>
+<p>To set up your server:</p>
+<ul>
+<li>In you <code>nginx.conf</code> file, ensure that <code>include servers/*;</code> isn't commented out.</li>
+<li>In your nginx <code>servers</code> directory, create a new file named after your domain containing the following information:</li>
+</ul>
+<pre><code class="language-nginx">server {
+    server_name your-domain.com www.your-domain.com;
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /images/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /static/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    listen [::]:80 ssl;
+    listen 80 ssl;
+}
+</code></pre>
+<p>To set up with an ssl block:</p>
+<pre><code class="language-nginx">server {
+    server_name your.domain;
+
+    listen [::]:80;
+    listen 80;
+    add_header Strict-Transport-Security &quot;max-age=31536000;includeSubDomains&quot; always;
+    rewrite ^ https://$server_name$request_uri;
+    location / { return 301 https://$host$request_uri; }
+}
+
+# SSL code
+ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem;
+
+server {
+    listen [::]:443 ssl http2;
+    listen 443 ssl http2;
+
+    server_name your.domain;
+    add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /images/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+
+    location /static/ {
+        proxy_pass http://localhost:8001;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+    }
+}
+</code></pre>
+<ul>
+<li>run <code>sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com</code></li>
+<li>restart nginx</li>
+</ul>
+<p>If everything worked correctly, your BookWyrm instance should now be externally accessible.</p>
+<p><em>Note: the <code>proxy_set_header Host $host;</code> is essential; if you do not include it, incoming messages from federated servers will be rejected.</em></p>
+<p><em>Note: the location of the ssl certificates may vary depending on the OS of your server</em></p>
 </section>
 
         </div>
@@ -297,7 +323,7 @@ Permissions
     (function() {
         var languageSelector = document.getElementById("language_selection");
         languageSelector.onchange = function(event) {
-            var current_locale = "";
+            var current_locale = "pt-br/";
             var current_location = window.location.pathname;
 
             var locale_index = current_location.indexOf(current_locale);
