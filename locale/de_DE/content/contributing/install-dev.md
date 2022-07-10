@@ -2,11 +2,11 @@
 Title: Developer Environment Date: 2021-04-12 Order: 3
 - - -
 
-## Prerequisites
+## Voraussetzungen
 
 These instructions assume you are developing BookWyrm using Docker. You'll need to [install Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to get started.
 
-## Setting up the developer environment
+## Entwicklungsumgebung einrichten
 
 - Get a copy of [the BookWyrm codebase from GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
 - Go to the directory which contains the code on your computer, you'll be working from there from here on out.
@@ -22,7 +22,7 @@ cp .env.example .env
 cp nginx/development nginx/default.conf
 ```
 
-- Start the application. In the command line, run:
+- Starte die Applikation. Führen sie folgendes über die Kommandozeile aus:
 ``` { .sh }
 ./bw-dev build            # Build the docker images
 ./bw-dev setup            # Initialize the database and run migrations
@@ -32,7 +32,7 @@ cp nginx/development nginx/default.conf
 
 If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
 
-### Editing or creating Models
+### Modelle editieren oder erstellen
 
 If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
 
@@ -41,7 +41,7 @@ If you change or create a model, you will probably change the database structure
 ./bw-dev migrate
 ```
 
-### Editing static files
+### Statische Dateien editieren
 Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 ``` { .sh }
 ./bw-dev collectstatic
