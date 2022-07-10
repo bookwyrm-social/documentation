@@ -19,7 +19,7 @@ Comme le projet en est encore à ses débuts, ses caractéristiques se développ
     - Organisez vos livres dans les sections par défault "à lire", "présentement en train de lire" et "lu"
     - Créez des sections personnalisées
     - Enregistrez les dates du début et de la fin de la lecture et mettez à jour votre progression à mesure
-    - Tenez au courant vos abonné-e-s à propos de votre activité (optionnellement, et avec des contrôles de confidentialité précis (?))
+    - Tenez au courant vos abonné-e-s à propos de votre activité (optionnellement, et avec des contrôles de confidentialité précis)
     - Créez des listes de livres qui peuvent être soit ouvertes aux suggestions de tout le monde, soit séléctionnées, soit modifiée seulement par le/la créateur-ice
 - Fédération avec ActivityPub
     - Diffusez et recevez les statuts des utilisateur-ice-s et leur activité
