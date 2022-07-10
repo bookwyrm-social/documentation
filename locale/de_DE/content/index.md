@@ -2,10 +2,10 @@
 Title: Willkommen Date: 2021-04-13
 - - -
 
-BookWyrm ist ein soziales Netzwerk für die Verfolgung Ihres Lesens, das Sprechen über Bücher, das Schreiben von Rezensionen und der Entdeckung, was Sie als Nächstes lesen können. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+BookWyrm ist ein soziales Netzwerk für die Verfolgung Ihres Lesens, das Sprechen über Bücher, das Schreiben von Rezensionen und der Entdeckung, was Sie als Nächstes lesen können. Föderation ermöglicht es BookWyrm-Benutzern, kleinen, vertrauenswürdigen Gemeinschaften beizutreten, die sich untereinander und mit anderen ActivityPub-Diensten wie Mastodon und Pleroma verbinden können.
 
 ## Funktionen
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+Da sich das Projekt noch in den Anfangsphasen befindet, wachsen die Funktionen jeden Tag und es gibt viel Raum für Anregungen und Ideen. Öffne ein [Ticket](https://github.com/bookwyrm-social/bookwyrm/issues), um die Unterhaltung in Gang zu bringen!
 
 - Über Bücher schreiben
     - Rezensionen mit oder ohne Bewertungen erstellen, die in der Buchseite zusammengefasst werden
@@ -13,21 +13,21 @@ Since the project is still in its early stages, the features are growing every d
         - Kommentare zu einem Buch
         - Zitate oder Auszüge
     - Auf Status antworten
-    - View aggregate reviews of a book across connected BookWyrm instances
-    - Differentiate local and federated reviews and rating in your activity feed
+    - Gesamte Rezensionen eines Buches über verbundene BookWyrm-Instanzen ansehen
+    - Differenzieren Sie lokale und föderierte Rezensionen und Bewertungen in Ihrem Aktivitätsfeed
 - Leseaktivität verfolgen
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
-    - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
-    - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
-- Federation with ActivityPub
-    - Broadcast and receive user statuses and activity
-    - Share book data between instances to create a networked database of metadata
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
-    - Option for users to manually approve followers
-    - Allow blocking and flagging for moderation
+    - Bücher in die Standardregale "Zu Lesen", "Aktuell Lesend" und "Gelesen" einsortieren
+    - Erstelle eigene Regale
+    - Speichere Lesestart/Leseende Daten sowie Fortschrittsaktualisierungen während des Lesens
+    - Aktualisiere Follower über Leseaktivitäten (optional mit granularen Privatsphäreeinstellungen)
+    - Erstelle Listen von Büchern, die offen für Einreichungen von jedem, kurartiert oder nur vom Ersteller bearbeitet werden können
+- Föderation mit ActivityPub
+    - Übertrage und empfange Nutzerstatus und -aktivität
+    - Teile Buchdaten zwischen Instanzen, um eine vernetzte Datenbank mit Metadaten zu erstellen
+    - Identifiziere freigegebene Bücher über Instanzen hinweg und aggregiere verwandte Inhalte
+    - Folge und interagiere mit Benutzern von BookWyrm-Instanzen
+    - Arbeite mit nicht-BookWyrm-ActivityPub-Diensten (derzeit wird Mastodon unterstützt) zusammen
+- Granulare Privatsphäreeinstellungen
+    - Privat, nur Follower und öffentliches Privatsphärelevel für Beiträge, Regale und Listen
+    - Option für die manuelle Genehmigung von Followern
+    - Blockieren und Markieren für Moderation erlauben
