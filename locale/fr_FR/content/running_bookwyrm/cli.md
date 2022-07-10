@@ -74,7 +74,7 @@ Génère un aperçu pour le site, les utilisateur-ice-s et les livres. Si vous a
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Génère des vignettes pour les couvertures des livres.
 
 ### populate_streams args
 
