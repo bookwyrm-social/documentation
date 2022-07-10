@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <title>
         
-Permissions
+Optional features
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,10 +35,10 @@ Permissions
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
-            <a href="https://joinbookwyrm.com/instances" class="navbar-item">
+            <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
                 <span class="button is-success">Join</span>
             </a>
-            <a href="https://joinbookwyrm.com/get-involved" class="navbar-item">
+            <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
                 Get involved
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
@@ -57,9 +57,9 @@ Permissions
             <div class="select">
                 <select aria-label="Select a language" id="language_selection">
                     
-                    <option value="" selected>English (US)</option>
+                    <option value="" >English (US)</option>
                     
-                    <option value="pt-br/" >Português do Brasil</option>
+                    <option value="pt-br/" selected>Português do Brasil</option>
                     
                     <option value="ro/" >Română</option>
                     
@@ -74,18 +74,18 @@ Permissions
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Permissions</h1>
+<h1 class="title is-1">Optional features</h1>
 
     </header>
     <div class="columns">
 	<nav class="menu column is-one-quarter mt-2">
-            <h2 class="menu-label"><a href="/">Welcome</a></h2>
+            <h2 class="menu-label"><a href="/pt-br/">Welcome</a></h2>
             
             <h2 class="menu-label">Using BookWyrm</h2>
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/posting-statuses.html" >Posting statuses</a>
+                    <a href="/pt-br/posting-statuses.html" >Posting statuses</a>
                 </li>
                 
             </ul>
@@ -94,31 +94,31 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/install-prod.html" >Installing in Production</a>
+                    <a href="/pt-br/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/updating.html" >Updating Your Instance</a>
+                    <a href="/pt-br/updating.html" >Updating Your Instance</a>
                 </li>
                 
                 <li>
-                    <a href="/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/pt-br/reverse-proxy.html" >Using a Reverse-Proxy</a>
                 </li>
                 
                 <li>
-                    <a href="/moderation.html" >Moderation</a>
+                    <a href="/pt-br/moderation.html" >Moderation</a>
                 </li>
                 
                 <li>
-                    <a href="/external-storage.html" >External Storage</a>
+                    <a href="/pt-br/external-storage.html" >External Storage</a>
                 </li>
                 
                 <li>
-                    <a href="/optional_features.html" >Optional features</a>
+                    <a href="/pt-br/optional_features.html" class="is-active">Optional features</a>
                 </li>
                 
                 <li>
-                    <a href="/cli.html" >Command Line Tool</a>
+                    <a href="/pt-br/cli.html" >Command Line Tool</a>
                 </li>
                 
             </ul>
@@ -127,23 +127,23 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/contributing.html" >How to Contribute</a>
+                    <a href="/pt-br/contributing.html" >How to Contribute</a>
                 </li>
                 
                 <li>
-                    <a href="/translation.html" >Translations</a>
+                    <a href="/pt-br/translation.html" >Translations</a>
                 </li>
                 
                 <li>
-                    <a href="/install-dev.html" >Developer Environment</a>
+                    <a href="/pt-br/install-dev.html" >Developer Environment</a>
                 </li>
                 
                 <li>
-                    <a href="/style_guide.html" >Style Guide</a>
+                    <a href="/pt-br/style_guide.html" >Style Guide</a>
                 </li>
                 
                 <li>
-                    <a href="/debug_toolbar.html" >Django Debug Toolbar</a>
+                    <a href="/pt-br/debug_toolbar.html" >Django Debug Toolbar</a>
                 </li>
                 
             </ul>
@@ -152,11 +152,11 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/activitypub.html" >ActivityPub</a>
+                    <a href="/pt-br/activitypub.html" >ActivityPub</a>
                 </li>
                 
                 <li>
-                    <a href="/permissions.html" class="is-active">Permissions</a>
+                    <a href="/pt-br/permissions.html" >Permissions</a>
                 </li>
                 
             </ul>
@@ -166,79 +166,36 @@ Permissions
         <div class="column">
             
 <section class="block content">
-    <p>User access to different features is controlled using Django's <a href="https://docs.djangoproject.com/en/3.2/topics/auth/default/">built-in authentication system</a>. When an instance is created, the <code>initdb</code> script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the <code>editor</code> group, which allows them to edit book metadata.</p>
-<p>The instance administrator should have <code>superuser</code> status, which gives them access to Django admin (<code>/admin</code>) and confers all permissions to that user.</p>
-<h2>Permissions and groups</h2>
-<p>This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>admin</th>
-<th>moderator</th>
-<th>editor</th>
-<th>user</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>edit instance settings</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>change user level</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>manage federation</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>issue invites</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>deactivate users</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>delete posts</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>edit books</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-</tr>
-<tr>
-<td>upload covers</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
-</tbody>
-</table>
+    <p>Alguns recursos da BookWyrm devem ser habilitados para funcionar.</p>
+<h2>Geração de pré-visualização</h2>
+<p>Por padrão, a BookWyrm usa a logo da instância (ou a padrão) como uma imagem de pré-vusalização OpenGraph. Você pode também habilitar a criação de pré-visualização para livros, usuários e para todo o site.</p>
+<p>As imagens de pré-visualização serão do tamanho grande do OpenGraph (usado pelo twitter com o nome de <code>summary_large_image</code>). Dependendo do tipo de imagem, seus conteúdos serão:</p>
+<ul>
+<li>a imagem padrão da instância mostrará a logo grande e o nome da instância e seu endereço</li>
+<li>a imagem do usuário mostrará seu avatar, nome de exibição e arroba (na forma usuário@instância)</li>
+<li>a imagem do livro mostrará sua capa, título, subtítulo (se tiver), autor e avaliação (se tiver)</li>
+</ul>
+<p>Essas imagens serão atualizadas em vários casos:</p>
+<ul>
+<li>imagem da instância: quando o nome da instância ou a logo são alterados</li>
+<li>imagem do usuário: quando o nome de exibição ou o avatar são alterados</li>
+<li>imagem do livro: quando o título, a autoria ou a capa são alterados, ou quando uma nova avaliação é feita</li>
+</ul>
+<h3>Habilitando imagens de pré-visualização</h3>
+<p>In order to enable the feature with default settings, you have to uncomment (remove the <code>#</code> in front of) the line <code>ENABLE_PREVIEW_IMAGES=true</code> in your <code>.env</code> file. All the new updating events aforementioned will cause the generation of the corresponding image.</p>
+<p>Examples for these images can be viewed on the <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">feature’s pull request’s description</a>.</p>
+<h3>Generating preview images</h3>
+<p>If you enable this setting after your instance has been started, some images may not have been generated. A command has been added to automate the image generation. In order to prevent a ressource hog by generating <strong>A LOT</strong> of images, you have to pass the argument <code>--all</code> (or <code>-a</code>) to start the generation of the preview images for all users and books. Without this argument, only the site preview will be generated.</p>
+<p>User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.</p>
+<h3>Optional settings</h3>
+<p>So you want to customize your preview images? Here are the options:</p>
+<ul>
+<li><code>PREVIEW_BG_COLOR</code> will set the color for the preview image background. You can supply a color value, like <code>#b00cc0</code>, or the following values <code>use_dominant_color_light</code> or <code>use_dominant_color_dark</code>. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.</li>
+<li><code>PREVIEW_TEXT_COLOR</code> will set the color for the text. Depending on the choice for the background color, you should find a value that will have a sufficient contrast for the image to be accessible. A contrast ratio of 1:4.5 is recommended.</li>
+<li><code>PREVIEW_IMG_WIDTH</code> and <code>PREVIEW_IMG_HEIGHT</code> will set the dimensions of the image. Currently, the system will work best on images with a landscape (horizontal) orientation.</li>
+<li><code>PREVIEW_DEFAULT_COVER_COLOR</code> will set the color for books without covers.</li>
+</ul>
+<p>All the color variables accept values that can be recognized as colors by Pillow’s <code>ImageColor</code> module: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Learn more about Pillow color names</a>.</p>
 </section>
 
         </div>
@@ -297,7 +254,7 @@ Permissions
     (function() {
         var languageSelector = document.getElementById("language_selection");
         languageSelector.onchange = function(event) {
-            var current_locale = "";
+            var current_locale = "pt-br/";
             var current_location = window.location.pathname;
 
             var locale_index = current_location.indexOf(current_locale);

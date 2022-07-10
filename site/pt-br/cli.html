@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>
+        
+Command Line Tool
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
+                <span class="button is-success">Join</span>
+            </a>
+            <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
+                Get involved
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Support
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="pt-br/" selected>Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Command Line Tool</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/pt-br/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pt-br/posting-statuses.html" >Posting statuses</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pt-br/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/cli.html" class="is-active">Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pt-br/contributing.html" >How to Contribute</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pt-br/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/permissions.html" >Permissions</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>Desenvolvedores e administradores de instâncias Bookwyrm podem usar o script <code>bw-dev</code> para tarefas cotidianas. Isso pode tornar seus comandos mais curtos, mais fáceis de lembrar e mais difíceis de serem confundidos.</p>
+<p>Se tiver uma instalado uma instância BookWyrm <a href="installing-in-production.html">em produção</a> ou <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">em desenvolvimento</a>, você pode executar o script pela linha de comando com <code>./bw-dev</code> seguido com um subcomando para executar.</p>
+<h2>Atalhos do Docker</h2>
+<h3>bash</h3>
+<p>Abre uma sessão <code>bash</code> interativa dentro do container <code>web</code> do Docker.</p>
+<h3>build</h3>
+<p>Equivalente ao <code>docker-compose build</code>.</p>
+<h3>dbshell</h3>
+<p>Abre um shell interativo do banco de dados Postgres. Espero que você saiba o que está fazendo.</p>
+<h3>runweb args</h3>
+<p>Executa um comando arbitrário (representado acima pelo <code>args</code>) no container <code>web</code>.</p>
+<p>Equivalent to <code>docker-compose run --rm web</code>.</p>
+<h3>service_ports_web args</h3>
+<p>Executa um comando arbitrário no container <code>web</code> (representado acima por <code>args</code>) com as portas expostas. Isso é útil para quando você quer executar testes <code>pdb</code> porque o <code>runweb</code> não irá expor o promp <code>pdb</code>.</p>
+<p>Equivalente ao <code>docker-compose run --rm --service-ports web</code>.</p>
+<h3>shell</h3>
+<p>Abre um shell interativo Django dentro do container <code>web</code> do Docker. Você pode usar isso se quiser executar comandos do shell do Django diretamente.</p>
+<h3>up [args]</h3>
+<p>Inicia ou reinicia containers do Docker, incluindo opcionalmente quaisquer argumentos (representados acima por <code>args</code>). Equivalente ao <code>docker-compose up --build [args]</code></p>
+<h2>Gerenciando o banco de dados</h2>
+<h3>initdb</h3>
+<p>Inicializa um banco de dados.</p>
+<h3>makemigrations [appname migration number]</h3>
+<p><em>Este comando não está disponível no branch <code>produção</code></em>.</p>
+<p>Executa o comando <code>makemigrations</code> do Django dentro do seu container Docker. Se você alterou a estrutura do banco de dados em um branch de desenvolvimento, você precisará executar este comando para que suas alterações tenham efeito. Facultativamente, você pode especificar alguma migração para executar, p. ex. <code>./bw-dev makemigrations bookwyrm 0108</code></p>
+<h3>migrate</h3>
+<p>Executa o comando <code>migrate</code> do Django dentro de seu container Docker. Você sempre irá precisar executá-lo após o <code>makemigrations</code>.</p>
+<h3>resetdb</h3>
+<p><em>Este comando não está disponível no branch <code>produção</code></em>.</p>
+<p>Reinicia o banco de dados. <strong>Este comando vai excluir todo o banco de dados da BookWyrm</strong>, criar outro banco de dados e executar todas as migrações. Você deve deletar todos os arquivos de migração recentes que não quer rodar <em>antes</em> de executar <code>resetdb</code>.</p>
+<h2>Gerenciando uma instância BookWyrm</h2>
+<h3>collectstatic</h3>
+<p>Migra os arquivos estáticos para um container Docker ou para um "bucket" compatível com S3, dependendo do contexto.</p>
+<h3>generate_preview_images</h3>
+<p>Gera imagens de pré-visualização de sites, usuários e livros. Isso pode demorar algum tempo se você tiver um banco de dados grande.</p>
+<h3>generate_thumbnails</h3>
+<p>Gera miniaturas das capas dos livros.</p>
+<h3>populate_streams args</h3>
+<p>Preenche novamente os streams do Redis (feeds dos usuários). Você geralmente não vai precisar rodar isto a não ser que haja algum erro que apague seus feeds de usuários por algum motivo. Você pode escpecificar o stream utilizando o argumento <code>--stream</code>.</p>
+<h3>populate_list_streams</h3>
+<p>Preenche novamente o cache de listas do Redis. Você geralmente não vai precisar executar isso a não ser que haja um erro que apaguei as listas dos usuários por algum motivo.</p>
+<h3>populate_suggestions</h3>
+<p>Gera sugestões de usuários para todos os usuários. Você pode executar isso manualmente para atualizar as sugestões.</p>
+<h3>restart_celery</h3>
+<p>Reinicia o container Docker do <code>celery_worker</code>.</p>
+<h3>update</h3>
+<p>Quando há alterações no branch <code>produção (production)</code>, você pode atualizar sua instância sem ficar fora do ar.</p>
+<p>Este comando faz o <code>git pull</code> das últimas atualizações do branch <code>produção (production)</code>, constroi a imagem Docker, se for necessário, executa as migrações do Django, atualiza os arquivos estáticos e reinicia todos os containers do Docker.</p>
+<h3>admin_code</h3>
+<p>Obtem o código secreto da administração para registrar o usuário administrador inicial em uma nova instância BookWyrm.</p>
+<h2>Configurando um armazenamento compatível com S3</h2>
+<p>Por padrão, a BookWyrm usa o armazenamento local para os arquivos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o django-storages para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.</p>
+<p>Veja <a href="/external-storage.html">Armazenamento externo</a> para mais informações.</p>
+<h3>copy_media_to_s3</h3>
+<p>Migra todas as mídias enviadas de uma instalação BookWyrm para um "bucket" compatível com S3. Utilizar para fazer o upload inicial para um "bucket" vazio.</p>
+<h3>sync_media_to_s3</h3>
+<p>Sincroniza as mídias enviadas, novas ou alteradas, de uma instância BookWyrm para um "bucket" compatível com S3. Utilizar para garantir que todos os arquivos locais sejam enviados a um "bucket" existente.</p>
+<h3>set_cors_to_s3 nomedoarquivo</h3>
+<p>Copia um arquivo JSON com as regras CORS para o seu bucket S3, onde <code>nomedoarquivo</code> é o nome de seu arquivo JSON (p. ex: <code>/bw-dev set_cors_to_s3 cors.json</code>)</p>
+<h2>Desenvolvimento e teste</h2>
+<p><em>Estes comandos estão disponíveis no branch <code>produção (production)</code></em>.</p>
+<h3>black</h3>
+<p>A BookWyrm usa o formatador de código <a href="https://github.com/psf/black">Black</a> pra manter o código Python com um estilo consistente. Execute o <code>black</code> antes de enviar/comitar suas alterações para que a tarefa <code>pylint</code> não gere erros no seu pull request e te entristeça.</p>
+<h3>prettier</h3>
+<p>A BookWyrm usa o <a href="https://prettier.io/">Prettier</a> para manter os códigos JavaScript com um estilo consistente. Execute o <code>prettier</code> antes de enviar suas alterações nos scripts para formatar seu código automaticamente.</p>
+<h3>stylelint</h3>
+<p>A BookWyrm usa o <a href="uhttps://stylelint.io/">Stylelint</a> para manter o estilo dos arquivos CSS consistentes. Execute o <code>stylelintprettier</code> antes de enviar/comitar alterações nos scripts para formatar seu código automaticamente.</p>
+<h3>formatters</h3>
+<p>Este comando executa todos os formatadores de estilo (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) de uma vez.</p>
+<h3>clean</h3>
+<p>Remove todos os containers do Docker parados.</p>
+<p>Equivalente a:</p>
+<pre><code class="language-shell">docker-compose stop
+docker-compose rm -f
+</code></pre>
+<h3>makemessages</h3>
+<p>Cria arquivo de mensagens para todas as strings de tradução. Depois de executar <code>makemessages</code> você deve executar <code>compilemessages</code> para compilar as traduções. Veja o <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">makemessages do Django</a>.</p>
+<h3>compilemessages</h3>
+<p>Compila os arquivos de tradução. Veja o <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">compilemessages do Django</a>.</p>
+<h3>pytest args</h3>
+<p>Executa testes com o <code>pytest</code>.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Get Involved</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Contribute to this page</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Learn more</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact maintainer</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">License</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "pt-br/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

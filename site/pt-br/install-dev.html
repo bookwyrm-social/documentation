@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <title>
         
-Permissions
+Developer Environment
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,10 +35,10 @@ Permissions
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
-            <a href="https://joinbookwyrm.com/instances" class="navbar-item">
+            <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
                 <span class="button is-success">Join</span>
             </a>
-            <a href="https://joinbookwyrm.com/get-involved" class="navbar-item">
+            <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
                 Get involved
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
@@ -57,9 +57,9 @@ Permissions
             <div class="select">
                 <select aria-label="Select a language" id="language_selection">
                     
-                    <option value="" selected>English (US)</option>
+                    <option value="" >English (US)</option>
                     
-                    <option value="pt-br/" >Português do Brasil</option>
+                    <option value="pt-br/" selected>Português do Brasil</option>
                     
                     <option value="ro/" >Română</option>
                     
@@ -74,18 +74,18 @@ Permissions
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Permissions</h1>
+<h1 class="title is-1">Developer Environment</h1>
 
     </header>
     <div class="columns">
 	<nav class="menu column is-one-quarter mt-2">
-            <h2 class="menu-label"><a href="/">Welcome</a></h2>
+            <h2 class="menu-label"><a href="/pt-br/">Welcome</a></h2>
             
             <h2 class="menu-label">Using BookWyrm</h2>
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/posting-statuses.html" >Posting statuses</a>
+                    <a href="/pt-br/posting-statuses.html" >Posting statuses</a>
                 </li>
                 
             </ul>
@@ -94,31 +94,31 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/install-prod.html" >Installing in Production</a>
+                    <a href="/pt-br/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/updating.html" >Updating Your Instance</a>
+                    <a href="/pt-br/updating.html" >Updating Your Instance</a>
                 </li>
                 
                 <li>
-                    <a href="/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/pt-br/reverse-proxy.html" >Using a Reverse-Proxy</a>
                 </li>
                 
                 <li>
-                    <a href="/moderation.html" >Moderation</a>
+                    <a href="/pt-br/moderation.html" >Moderation</a>
                 </li>
                 
                 <li>
-                    <a href="/external-storage.html" >External Storage</a>
+                    <a href="/pt-br/external-storage.html" >External Storage</a>
                 </li>
                 
                 <li>
-                    <a href="/optional_features.html" >Optional features</a>
+                    <a href="/pt-br/optional_features.html" >Optional features</a>
                 </li>
                 
                 <li>
-                    <a href="/cli.html" >Command Line Tool</a>
+                    <a href="/pt-br/cli.html" >Command Line Tool</a>
                 </li>
                 
             </ul>
@@ -127,23 +127,23 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/contributing.html" >How to Contribute</a>
+                    <a href="/pt-br/contributing.html" >How to Contribute</a>
                 </li>
                 
                 <li>
-                    <a href="/translation.html" >Translations</a>
+                    <a href="/pt-br/translation.html" >Translations</a>
                 </li>
                 
                 <li>
-                    <a href="/install-dev.html" >Developer Environment</a>
+                    <a href="/pt-br/install-dev.html" class="is-active">Developer Environment</a>
                 </li>
                 
                 <li>
-                    <a href="/style_guide.html" >Style Guide</a>
+                    <a href="/pt-br/style_guide.html" >Style Guide</a>
                 </li>
                 
                 <li>
-                    <a href="/debug_toolbar.html" >Django Debug Toolbar</a>
+                    <a href="/pt-br/debug_toolbar.html" >Django Debug Toolbar</a>
                 </li>
                 
             </ul>
@@ -152,11 +152,11 @@ Permissions
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/activitypub.html" >ActivityPub</a>
+                    <a href="/pt-br/activitypub.html" >ActivityPub</a>
                 </li>
                 
                 <li>
-                    <a href="/permissions.html" class="is-active">Permissions</a>
+                    <a href="/pt-br/permissions.html" >Permissions</a>
                 </li>
                 
             </ul>
@@ -166,79 +166,48 @@ Permissions
         <div class="column">
             
 <section class="block content">
-    <p>User access to different features is controlled using Django's <a href="https://docs.djangoproject.com/en/3.2/topics/auth/default/">built-in authentication system</a>. When an instance is created, the <code>initdb</code> script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the <code>editor</code> group, which allows them to edit book metadata.</p>
-<p>The instance administrator should have <code>superuser</code> status, which gives them access to Django admin (<code>/admin</code>) and confers all permissions to that user.</p>
-<h2>Permissions and groups</h2>
-<p>This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>admin</th>
-<th>moderator</th>
-<th>editor</th>
-<th>user</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>edit instance settings</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>change user level</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>manage federation</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>issue invites</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>deactivate users</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>delete posts</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>edit books</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-</tr>
-<tr>
-<td>upload covers</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
-</tbody>
-</table>
+    <h2>Pré-requisitos</h2>
+<p>Estas instruções supoem que você esteja rodando a BookWyrm utilizando o Docker. Você vai precisar <a href="https://docs.docker.com/engine/install/">instalar o Docker</a> e o <a href="https://docs.docker.com/compose/install/">docker-compose</a> para começar.</p>
+<h2>Configurando o ambiente de desenvolvimento</h2>
+<ul>
+<li>Faça uma cópia do <a href="https://github.com/bookwyrm-social/bookwyrm">código da BookWyrm no GitHub</a>. Você pode <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">criar uma bifurcação (fork)</a> do repositório e então <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">usar <code>git clone</code> pra baixar o código</a> para seu computador.</li>
+<li>Vá ao diretório onde o código foi baixado no seu computador; você trabalhará a partir dele daqui em diante.</li>
+<li>Configure as variáveis do seu ambiente de trabalho copiando o arquivo de ambiente de exemplo (<code>.env.example</code>) e renomeando o arquivo para <code>.env</code>. Na linha de comando, você pode fazer assim:</li>
+</ul>
+<pre><code class="language-sh">cp .env.example .env
+</code></pre>
+<ul>
+<li>No <code>.env</code>, altere <code>DEBUG</code> para <code>true</code></li>
+<li>
+<p>Facultativamente, você pode usar algum serviço como o <a href="https://ngrok.com/">ngrok</a> para configurar um domínio e apontar a variável <code>DOMAIN</code> do seu arquivo <code>.env</code> para o domínio gerado pelo ngrok.</p>
+</li>
+<li>
+<p>Configure o nginx para o ambiente de desenvolvimento copiando o arquivo de configuração para desenvolvimento (<code>nginx/development</code>) e renomeando o arquivo para <code>nginx/default.conf</code>:</p>
+</li>
+</ul>
+<pre><code class="language-sh">cp nginx/development nginx/default.conf
+</code></pre>
+<ul>
+<li>Inicie o aplicativo. In the command line, run:</li>
+</ul>
+<pre><code class="language-sh">./bw-dev build            # Gera a imagem docker
+./bw-dev setup            # Inicializa o banco de dados e executa as migrações
+./bw-dev up               # Inicia os containers do docker
+</code></pre>
+<ul>
+<li>Uma vez completado o build, você pode acessar a instância no endereço <code>http://localhost:1333</code> e criar um usuário administrador.</li>
+</ul>
+<p>Se estiver curiosa: o comando <code>./bw-dev</code> é um shell script simples que executa várias ferramentas: no exemplo acima, você poderia pular o script e executar <code>docker-compose build</code> ou <code>docker-compose up</code> diretamente, se preferir. <code>./bw-dev</code> só junta esses comandos em um só, por conveniência. Execute-o sem argumentos para ver uma lista de comandos disponíveis, leia a <a href="/command-line-tool.html">página da documentação</a> ou abra o arquivo para dar uma olhada no que cada comando faz!</p>
+<h3>Editando e criando Modelos (Models)</h3>
+<p>Se você quiser editar ou criar um modelo, você provavelmente vai alterar a estrutura do banco de dados. Para que essas alterações funcionem, você precisará executar o comando <code>makemigrations</code> do Django para criar um novo <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">arquivo de migrações do Django</a> e então <code>migrá-lo</code>:</p>
+<pre><code class="language-sh">./bw-dev makemigrations
+./bw-dev migrate
+</code></pre>
+<h3>Editando arquivos estáticos</h3>
+<p>Toda vez que você alterar o CSS ou o JavaScript, você precisará rodar o comando <code>collectstatic</code>do Django para que as alterações passem a funcionar:</p>
+<pre><code class="language-sh">./bw-dev collectstatic
+</code></pre>
+<p>Se você tiver o <a href="https://yarnpkg.com/getting-started/install">yarn instalado</a>, você pode executar <code>yarn watch:static</code> para executar automaticamente o script toda vez que houver alguma mudança no diretório <code>bookwyrm/static</code>.</p>
 </section>
 
         </div>
@@ -297,7 +266,7 @@ Permissions
     (function() {
         var languageSelector = document.getElementById("language_selection");
         languageSelector.onchange = function(event) {
-            var current_locale = "";
+            var current_locale = "pt-br/";
             var current_location = window.location.pathname;
 
             var locale_index = current_location.indexOf(current_locale);
