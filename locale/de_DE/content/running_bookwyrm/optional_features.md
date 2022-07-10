@@ -4,7 +4,7 @@ Title: Optional features Date: 2021-08-02 Order: 5
 
 Some features of BookWyrm have to be enabled to work.
 
-## Preview image generation
+## Vorschaubilderzeugung
 
 By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
 
@@ -20,21 +20,21 @@ These images will be updated at various points:
 - user image: when the display name or avatar are changed
 - book image: when the title(s), author(s) or cover are changed, or when a new rating is added
 
-### Enabling preview images
+### Vorschaubilder aktivieren
 
 In order to enable the feature with default settings, you have to uncomment (remove the `#` in front of) the line `ENABLE_PREVIEW_IMAGES=true` in your `.env` file. All the new updating events aforementioned will cause the generation of the corresponding image.
 
 Examples for these images can be viewed on the [feature’s pull request’s description](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink).
 
-### Generating preview images
+### Vorschaubilder erzeugen
 
-If you enable this setting after your instance has been started, some images may not have been generated. A command has been added to automate the image generation. In order to prevent a ressource hog by generating **A LOT** of images, you have to pass the argument `--all` (or `-a`) to start the generation of the preview images for all users and books. Without this argument, only the site preview will be generated.
+If you enable this setting after your instance has been started, some images may not have been generated. A command has been added to automate the image generation. In order to prevent a ressource hog by generating **A LOT** of images, you have to pass the argument `--all` (or `-a`) to start the generation of the preview images for all users and books. Ohne dieses Argument wird nur die Seitenvorschau generiert.
 
 User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.
 
-### Optional settings
+### Optionale Einstellungen
 
-So you want to customize your preview images? Here are the options:
+Sie möchten Ihre Vorschaubilder anpassen? Hier sind die Optionen:
 
 - `PREVIEW_BG_COLOR` will set the color for the preview image background. You can supply a color value, like `#b00cc0`, or the following values `use_dominant_color_light` or `use_dominant_color_dark`. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.
 - `PREVIEW_TEXT_COLOR` will set the color for the text. Depending on the choice for the background color, you should find a value that will have a sufficient contrast for the image to be accessible. A contrast ratio of 1:4.5 is recommended.
