@@ -1,20 +1,20 @@
 - - -
-Title: Style Guide Date: 2021-10-20 Order: 4
+Titel: Stilleitfaden Datum: 2021-10-20 Bestellung: 4
 - - -
 
 ## Pull-Anfragen
 
 Also möchten Sie Code zu BookWyrm hinzufügen: Das klingt super! Wenn es ein offenes Problem gibt, das Sie beheben möchten, ist es hilfreich, das Problem zu kommentieren, damit die Arbeit nicht dupliziert wird. Versuchen Sie den Umfang der Pull-Anfragen klein zu halten und konzentrieren Sie sich auf ein einzelnes Thema. Auf diese Weise ist es einfacher zu überprüfen und wenn ein Teil Änderungen braucht, wird er die anderen Teile nicht aufhalten.
 
-If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.
+Wenn Sie sich nicht sicher sind, wie Sie etwas reparieren können, oder nicht in der Lage sind, es zu erledigen, ist das völlig okay, hinterlassen Sie nur einen Kommentar zu der Pull-Anfrage und wir werden es herausfinden 💖.
 
-Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
+Pull-Anfragen müssen alle automatisierten Prüfungen bestehen, bevor sie übernommen werden können - dazu gehören Stil-Prüfungen, globale Linter, eine Sicherheitsprüfung und Unit-Tests.
 
 ## Linten
 
 ### Global
 
-We use [EditorConfig](https://editorconfig.org) to maintain consistent indenting and line endings.
+Wir verwenden [EditorConfig](https://editorconfig.org), um konsistente Einrückungen und Zeilenenden zu erhalten.
 
 ### Python
 
@@ -49,5 +49,5 @@ Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, 
 
 ### Buttons und Links
 
-* Use a `<button>` element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a `POST` request (e.g. submitting a form)
+* Verwenden Sie ein `<button>` Element für alles, was existiert, um eine JavaScript-Aktion auszulösen (z.B. ein Formular verstecken oder enthüllen) oder eine `POST`-Anfrage senden (z.B. ein Formular übermitteln)
 * Verwenden Sie ein `<a>`-Element für alles, was eine `GET`-Anfrage auslöst. Normalerweise sollte ein Ankerelement (`<a>`) nicht als Button (`class="button"`) dargestellt werden, obwohl es einige Ausnahmen gibt, wie z. B. "Abbrechen"-Buttons. Falls Sie Zweifel haben, fragen Sie in Ihrer Pull-Anfrage um Rat
