@@ -10,11 +10,11 @@ This project is still young and isn't, at the moment, very stable, so please pro
 - Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
 - [Install Docker and docker-compose](https://docs.docker.com/compose/install/)
 
-## Install and configure BookWyrm
+## BookWyrm installieren und konfigurieren
 
 The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
 
-Instructions for running BookWyrm in production:
+Anleitung für das Ausführen von BookWyrm in der Produktion:
 
 - Get the application code: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Switch to the `production` branch: `git checkout production`
@@ -29,7 +29,7 @@ Instructions for running BookWyrm in production:
     - `FLOWER_PASSWORD` | Your own secure password for accessing Flower queue monitor
     - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
     - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
+- Nginx konfigurieren
     - Make a copy of the production template config and set it for use in nginx `cp nginx/production nginx/default.conf`
     - Update `nginx/default.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
@@ -62,7 +62,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 Congrats! You did it!! Configure your instance however you'd like.
 
 
-## Backups
+## Sicherungskopien
 
 BookWyrm's db service dumps a backup copy of its database to its `/backups` directory daily at midnight UTC. Backups are named `backup__%Y-%m-%d.sql`.
 
@@ -76,9 +76,9 @@ You can copy backups from the backups volume to your host machine with `docker c
 - Run `docker-compose ps` to confirm the db service's full name (it's probably `bookwyrm_db_1`.
 - Run `docker cp <container_name>:/backups <host machine path>`
 
-## Port Conflicts
+## Port-Konflikte
 
-BookWyrm has multiple services that run on their default ports. This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.
+BookWyrm hat mehrere Dienste, die auf ihren Standard-Ports laufen. This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.
 
 If this occurs, you will need to change your configuration to run services on different ports. This may require one or more changes the following files:
 
