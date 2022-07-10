@@ -18,7 +18,7 @@ Equivalent to `docker-compose build`.
 
 ### dbshell
 
-Open an interactive Postgres database shell. I hope you know what you're doing.
+Öffnen Sie eine interaktive Postgres-Datenbank-Shell. Ich hoffe, Sie wissen, was Sie tun.
 
 ### runweb args
 
@@ -44,7 +44,7 @@ Start or restart Docker containers, optionally including any arguments (represen
 
 ### initdb
 
-Initialize a database.
+Eine Datenbank initialisieren.
 
 ### makemigrations [appname migration number]
 
@@ -60,7 +60,7 @@ Runs Django's `migrate` command inside your Docker container. You always need to
 
 _This command is not available on the `production` branch_.
 
-Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+Setzt die Datenbank zurück. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
 
 ## Managing a Bookwyrm instance
 
@@ -102,7 +102,7 @@ This command `git pull`s the latest `production` branch updates, builds docker i
 
 Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
 
-## Setting up S3 compatible storage
+## S3 kompatiblen Speicher einrichten
 
 By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
 
@@ -126,11 +126,11 @@ _These commands are not available on the `production` branch_.
 
 ### black
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+BookWyrm verwendet den [Black](https://github.com/psf/black) Code-Formatierer, um die Python Codebase konsistent zu gestalten. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
 
 ### prettier
 
-BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase consistently styled. Run `prettier` before committing changes to scripts to automatically format your code.
+BookWyrm verwendet [Prettier](https://prettier.io/) um die JavaScript-Codebasis konsistent zu gestalten. Führen Sie `prettier` aus, bevor Sie Änderungen an Skripten übertragen, um Ihren Code automatisch zu formatieren.
 
 ### stylelint
 
@@ -138,13 +138,13 @@ BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consiste
 
 ### formatters
 
-This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
+Dieser Befehl führt alle Code-Formatierer (`black`, `prettier`, und `stylelint`) auf einmal aus.
 
 ### clean
 
 Remove all stopped Docker containers.
 
-Equivalent to:
+Äquivalent zu:
 
 ```shell
 docker-compose stop
@@ -157,7 +157,7 @@ Creates message files for all translation strings. After you have run `makemessa
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Kompiliert Übersetzungsdateien. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
