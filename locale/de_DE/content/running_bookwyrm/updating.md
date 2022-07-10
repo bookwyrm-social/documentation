@@ -1,8 +1,8 @@
 - - -
-Title: Updating Your Instance Date: 2021-04-13 Order: 2
+Titel: Aktualisieren Ihrer Instanz Datum: 2021-04-13 Bestellung: 2
 - - -
 
-When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. This does a number of things:
+When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. Das macht eine Reihe von Dingen:
 
 - `git pull` gets the updated code from the git repository. If there are conflicts, you may need to run `git pull` separately and resolve the conflicts before trying the `./bw-dev update` script again.
 - `docker-compose build` rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip `requirements.txt` packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.
@@ -10,9 +10,9 @@ When there are changes available in the production branch, you can install and g
 - `docker-compose exec web python manage.py collectstatic --no-input` loads any updated static files (such as the JavaScript and CSS)
 - `docker-compose restart` reloads the docker containers
 
-## Re-building activity streams
+## Aktivitätsstreams neu erstellen
 
-Feeds for each user are stored in Redis. To re-populate a stream, use the management command:
+Feeds für jeden Benutzer werden in Redis gespeichert. Um einen Stream erneut zu befüllen, benutzen Sie den Verwaltungsbefehl:
 
 ``` { .sh }
 ./bw-dev populate_streams
