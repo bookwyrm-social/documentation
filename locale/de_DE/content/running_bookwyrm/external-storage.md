@@ -23,7 +23,7 @@ If you are starting a new BookWyrm instance, the process will be:
 
 If you already started your instance, and images have been uploaded to local storage, the process will be:
 
-- Set up your external storage service
+- Richten Sie Ihren externen Speicherdienst ein
 - Copy your local media to external storage
 - Enable external storage on BookWyrm
 - Restart your BookWyrm instance
@@ -67,7 +67,7 @@ If your external storage is being served over HTTPS (which most are these days),
 USE_HTTPS=true
 ```
 
-#### Static assets
+#### Statische Assets
 
 Then, you will need to run the following command, to copy the static assets to your S3 bucket:
 
@@ -75,7 +75,7 @@ Then, you will need to run the following command, to copy the static assets to y
 ./bw-dev collectstatic
 ```
 
-#### CORS settings
+#### CORS-Einstellungen
 
 Once the static assets are collected, you will need to set up CORS for your bucket.
 
@@ -109,9 +109,9 @@ Then, run the following command:
 
 No output means it should be good.
 
-If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.
+If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. Wenn nicht, lesen Sie weiter.
 
-### Restarting your instance
+### Aktualisiere deine Instanz
 
 Once the media migration has been done and the static assets are collected, you can load the new `.env` configuration and restart your instance with:
 
@@ -127,7 +127,7 @@ curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/imag
 
 Replace `MY_DOMAIN_NAME` with your instance domain name, `BUCKET_URL` with the URL for your bucket, you can replace the file path with any other valid path on your bucket.
 
-If you see any message, especially a message starting with `<Error><Code>CORSForbidden</Code>`, it didn’t work. If you see no message, it worked.
+If you see any message, especially a message starting with `<Error><Code>CORSForbidden</Code>`, it didn’t work. Wenn Sie keine Nachricht sehen, funktionierte es.
 
 For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage. To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:
 
