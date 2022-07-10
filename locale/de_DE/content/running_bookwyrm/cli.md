@@ -62,7 +62,7 @@ _Dieser Befehl ist nicht verfügbar im `Produktion`szweig_.
 
 Setzt die Datenbank zurück. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
 
-## Managing a Bookwyrm instance
+## Eine Bookwyrm-Instanz verwalten
 
 ### collectstatic
 
@@ -78,49 +78,49 @@ Generates thumbnail images for book covers.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. Sie können mit dem Argument `--stream` den Stream angeben.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
+Redis-Cache der Listen wieder befüllen. Sie müssen dies normalerweise nicht ausführen, es sei denn, es gibt einen Fehler, der die Listen Ihrer Benutzer aus irgendeinem Grund löscht.
 
 ### populate_suggestions
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Empfohlene Benutzer für alle Benutzer befüllen. Sie können dies manuell ausführen wollen, um Vorschläge zu aktualisieren.
 
 ### restart_celery
 
-Restarts the `celery_worker` Docker container.
+Startet den `celery_worker`-Docker-Container neu.
 
 ### update
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Wenn es Änderungen im `-Produktions`zweig gibt, können Sie Ihre Instanz ohne Ausfallzeit aktualisieren.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Dieser Befehl `git pull`t die neuesten `Produktion`szweigaktualisierungen, baut Docker Images falls nötig, führt Django-Migrationen aus, aktualisiert statische Dateien und startet alle Docker Container neu.
 
 ### admin_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Ruft den geheimen Admin-Code ab, der verwendet wird, um den initalen Admin-Benutzer in einer neuen BookWyrm-Instanz zu registrieren.
 
 ## S3 kompatiblen Speicher einrichten
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favicon, Standard-Avatar, etc.) und Medien (Benutzer-Avatare, Buchtitelbilder usw.), aber Sie können einen externen Speicherdienst verwenden, um diese Dateien zu bereitzustellen. BookWyrm verwendet django-storages, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.
 
-See [External Storage](/external-storage.html) for more information.
+Siehe [Externer Speicher](/external-storage.html) für weitere Informationen.
 
 ### copy_media_to_s3
 
-Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
+Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Für den ersten Upload in einen leeren Bucket verwenden.
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
+Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Nutzen, um sicherzustellen, dass alle lokalen Dateien in den existierenden Bucket hochgeladen sind.
 
 ### set_cors_to_s3 filename
 
 Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
 
-## Development and testing
+## Entwicklung und Test
 
 _These commands are not available on the `production` branch_.
 
@@ -142,7 +142,7 @@ Dieser Befehl führt alle Code-Formatierer (`black`, `prettier`, und `stylelint`
 
 ### clean
 
-Remove all stopped Docker containers.
+Entferne alle gestoppten Docker-Container.
 
 Äquivalent zu:
 
@@ -153,12 +153,12 @@ docker-compose rm -f
 
 ### makemessages
 
-Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Erstellt Nachrichtendateien für alle Übersetzungstexte. After you have run `makemessages` you need to run `compilemessages` to compile the translations. Siehe [Djangos makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
 ### compilemessages
 
-Kompiliert Übersetzungsdateien. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Kompiliert Übersetzungsdateien. Siehe [Djangos compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Run tests with `pytest`.
+Tests mit `pytest` ausführen.
