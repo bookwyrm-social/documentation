@@ -12,16 +12,16 @@ Benutzerbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.
 - `Folgen`: Bitte, um den Status eines Benutzers zu erhalten und anzusehen, die die Privatsphäre auf nur Follower haben
 - `Akzeptieren`: genehmigt `Folgen` und erstellt die Beziehung
 - `Ablehnen`: verweigert `Folgen`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
+- `Blocken`: verhindert, dass Benutzer einander Status ansehen und verhindert, dass der blockierte Benutzer das Profil des Akteurs ansieht
 - `Update`: Aktualisiert das Profil und die Einstellungen eines Benutzers
 - `Löschen`: Deaktiviert einen Benutzer
-- `Undo`: reverses a `Follow` or `Block`
+- `Rückgängig`: Reversiert `Folgen` oder `Blocken`
 
 ### Status
 #### Objekttypen
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
+- `Notiz`: Bei Diensten wie Mastodon, ist `Notiz`en der primäre Typ des Status. Sie enthalten einen Text, Anhänge, können Benutzer erwähnen und Antworten auf Status jeder Art sein. In BookWyrm können `Notiz`en nur als direkte Nachrichten oder als Antworten auf andere Status erstellt werden.
+- `Rezension`: Eine Rezension ist ein Status in Antwort auf ein Buch (angezeigt durch das `inReplyToBook`-Feld), der einen Titel, Text und eine numerische Bewertung zwischen 0 (nicht bewertet) und 5 hat.
 - `Kommentar`: Ein Kommentar zu einem Buch erwähnt ein Buch und hat einen Text.
 - `Zitat`: Ein Zitat hat einen Text, einen Auszug aus einem Buch und erwähnt ein Buch
 
@@ -45,16 +45,16 @@ Bücher und Listen von Benutzern werden durch [`Sortierte Sammlung`](https://www
 
 #### Objekte
 
-- `Regal`: Buchsammlung eines Benutzers. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `Regal`: Buchsammlung eines Benutzers. Standardmäßig hat jeder Benutzer ein `zu lesen`, `liest`, und `gelesen` Regal, die verwendet werden, um den Lesefortschritt zu verfolgen.
+- `Liste`: Eine Sammlung von Büchern, die möglicherweise von anderen Benutzern als derjenige, der die Liste erstellt hat, beigetragen haben.
 
 #### Aktivitäten
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Erstellen`: Fügt der Datenbank ein Regal oder eine Liste hinzu.
+- `Löschen`: Entfernt ein Regal oder eine Liste.
+- `Hinzufügen`: Fügt ein Buch zu einem Regal oder einer Liste hinzu.
+- `Entfernen`: Entfernt ein Buch aus einem Regal oder einer Liste.
 
 
 ## Alternative Serialisierung
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+Weil BookWyrm eigene Objekttypen (`Rezension`, `Kommentar`, `Zitat`) benutzt, die nicht von ActivityPub unterstützt werden, werden Status in Standardtypen umgewandelt, wenn sie an nicht-BookWyrm-Dienste gesendet oder angezeigt werden. `Rezension`en werden in `Artikel` umgewandelt und `Kommentar`s und `Zitat`s werden in `Notiz`s konvertiert mit einem Link auf das Buch und das Titelbild wird angehängt.
