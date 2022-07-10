@@ -4,18 +4,18 @@ Title: Willkommen Date: 2021-04-13
 
 BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
 
-## Features
+## Funktionen
 Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
-        - Comments on a book
-        - Quotes or excerpts
-    - Reply to statuses
+- Über Bücher schreiben
+    - Rezensionen mit oder ohne Bewertungen erstellen, die in der Buchseite zusammengefasst werden
+    - Verfassen Sie andere Arten von Status zu Büchern, z. B.:
+        - Kommentare zu einem Buch
+        - Zitate oder Auszüge
+    - Auf Status antworten
     - View aggregate reviews of a book across connected BookWyrm instances
     - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
+- Leseaktivität verfolgen
     - Shelve books on default "to-read," "currently reading," and "read" shelves
     - Create custom shelves
     - Store started reading/finished reading dates, as well as progress updates along the way
