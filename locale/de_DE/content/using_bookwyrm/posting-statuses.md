@@ -1,5 +1,5 @@
 - - -
-Titel: Beitragsstatus Datum: 2022-04-30 Bestellung: 1
+Title: Beitragsstatus Date: 2022-04-30 Order: 1
 - - -
 
 Das Schreiben auf BookWyrm beginnt mit einem Buch. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
