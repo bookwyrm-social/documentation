@@ -1,5 +1,5 @@
 - - -
-Titel: Wie mitmachen Datum: 2021-04-12 Bestellung: 1
+Title: Wie mitmachen Date: 2021-04-12 Order: 1
 - - -
 
 Es gibt viele Möglichkeiten, wie Sie zu diesem Projekt beitragen können, unabhängig von Ihrem technischen Know-how.
