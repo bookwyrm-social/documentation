@@ -1,5 +1,5 @@
 - - -
-Titre : Outils en ligne de commande Date : 11/11/2021 Ordre: 6
+Title : Outils en ligne de commande Date : 11/11/2021 Order: 6
 - - -
 
 Les développeur-e-s de BookWyrm et les gestionnaires d'une instance peuvent utiliser le script `bw-dev` pour des tâches courantes. Cela peut simplifier vos commandes en les rendant plus courtes, plus faciles à mémoriser et diminuer le risque d'erreur.
