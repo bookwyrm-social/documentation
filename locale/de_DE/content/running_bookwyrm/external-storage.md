@@ -1,5 +1,5 @@
 - - -
-Titel: Externer Speicher Datum: 2021-06-07 Bestellung: 5
+Title: Externer Speicher Date: 2021-06-07 Order: 5
 - - -
 
 Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favicon, Standard-Avatar, etc.) und Medien (Benutzer-Avatare, Buchtitelbilder usw.), aber Sie können einen externen Speicherdienst verwenden, um diese Dateien zu bereitzustellen. BookWyrm verwendet `django-storages`, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.
