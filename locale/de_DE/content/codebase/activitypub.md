@@ -1,5 +1,5 @@
 - - -
-Titel: ActivityPub Datum: 2021-04-20 Bestellung: 1
+Title: ActivityPub Date: 2021-04-20 Order: 1
 - - -
 
 BookWyrm verwendet das [ActivityPub](http://activitypub.rocks/)-Protokoll, um Benutzeraktivitäten zwischen anderen BookWyrm-Instanzen und anderen Diensten zu senden und zu empfangen, die ActivityPub implementieren, wie [Mastodon](https://joinmastodon.org/). Um Buchdaten zu behandeln, hat BookWyrm eine Handvoll erweiterter Aktivitätstypen, die nicht zum Standard gehören, aber nur für andere BookWyrm-Instanzen lesbar sind.
