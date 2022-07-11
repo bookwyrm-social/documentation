@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-07-08 17:52\n"
+"PO-Revision-Date: 2022-07-10 19:36\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -19,70 +19,70 @@ msgstr ""
 
 #: templates/index.html:5 templates/layout.html:6
 msgid "BookWyrm Documentation"
-msgstr ""
+msgstr "BookWyrm Dokumentation"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
-msgstr ""
+msgstr "Ihre Anleitung zur Nutzung und Weiterentwicklung von BookWyrm"
 
 #: templates/index.html:6
 msgid "How to Use and Contribute"
-msgstr ""
+msgstr "Benutzung und Weiterentwicklung"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
-msgstr ""
+msgstr "BookWyrm: gemeinsames Lesen und Besprechen"
 
 #: templates/layout.html:35 templates/layout.html:39
 msgid "Join"
-msgstr ""
+msgstr "Beitreten"
 
 #: templates/layout.html:38 templates/layout.html:42
 msgid "Get involved"
-msgstr ""
+msgstr "Machen Sie mit"
 
 #: templates/layout.html:41 templates/layout.html:45
 msgid "Support"
-msgstr ""
+msgstr "Unterstützung"
 
 #: templates/layout.html:44 templates/layout.html:48
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
 #: templates/layout.html:130
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentation"
 
 #: templates/layout.html:95 templates/layout.html:101
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr ""
+msgstr "<strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betreut wird."
 
 #: templates/layout.html:98 templates/layout.html:104
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
-msgstr ""
+msgstr "Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 
 #: templates/layout.html:102 templates/layout.html:108
 msgid "Get Involved"
-msgstr ""
+msgstr "Machen Sie mit"
 
 #: templates/layout.html:104 templates/layout.html:110
 msgid "BookWyrm on GitHub"
-msgstr ""
+msgstr "BookWyrm auf GitHub"
 
 #: templates/layout.html:107 templates/layout.html:113
 msgid "Contribute to this page"
-msgstr ""
+msgstr "Zu dieser Seite beitragen"
 
 #: templates/layout.html:122 templates/layout.html:128
 msgid "Learn more"
-msgstr ""
+msgstr "Mehr"
 
 #: templates/layout.html:127 templates/layout.html:133
 msgid "Contact maintainer"
-msgstr ""
+msgstr "Kontaktieren Sie die Entwickler"
 
 #: templates/layout.html:130 templates/layout.html:136
 msgid "License"
-msgstr ""
+msgstr "Lizenz"
 

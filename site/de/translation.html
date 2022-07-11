@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        
+
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
+                <span class="button is-success">Beitreten</span>
+            </a>
+            <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
+                Machen Sie mit
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Unterstützung
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" selected>Deutsch</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1"></h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/de/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/posting-statuses.html" >Posting statuses</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/de/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/de/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/de/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/de/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/de/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/de/cli.html" >Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/contributing.html" >How to Contribute</a>
+                </li>
+                
+                <li>
+                    <a href="/de/translation.html" class="is-active">Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/de/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/de/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/de/permissions.html" >Permissions</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <h2>Zu Übersetzungen beitragen</h2>
+<p>Sie können dem BookWyrm Übersetzungsprojekt unter <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a> beitreten.</p>
+<h2>Geschlechtsneutrale Sprache</h2>
+<p>Wo immer möglich, sollten BookWyrm Übersetzungen geschlechtsneutrale Sprache verwenden. Dies gilt auch dann, wenn eine Sprache als neutrales Geschlecht voreingestellt ist oder wenn sie etwas Ähnliches wie "he/she" verwendet. Es ist auch wichtig, dass Übersetzungen klar, präzise und lesbar für einen Screenreader sind und manchmal stehen diese Ziele im Widerspruch zueinander; es gibt nicht die eine perfekte Lösung und diese hängt von der Sprache ab.</p>
+<p>Als Leitfaden versuchen Sie einen höheren Wert auf inklusive und geschlechtsneutrale Sprache zu legen als auf formale Korrektheit oder offiziell anerkannte Stilführer. Im Englischen zum Beispiel benötigen viele formale Leitfäden ein einzelnes "she"- oder "he"-Pronomen, um für eine Person verwendet zu werden, aber es wäre besser, in BookWyrm das geschlechtsneutrale singuläre "they" zu verwenden.</p>
+<p>Wenn Sie nicht sicher sind, wie Sie am besten an ein Übersetzungsproblem herangehen können, kommentieren Sie die Übersetzung oder öffnen Sie ein <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">-Diskussionsthema</a>, um weitergehende Fragen zu stellen.</p>
+<h2>Vorlagen übersetzbar machen</h2>
+<p>Bookwyrm nutzt die Django-Übersetzungsfunktionalität, um den Seiteninhalt je nach der vom Benutzer gewählten Anzeigesprache ändern zu können. Die Django-Dokumentation <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">bietet hilfreiche Erklärungen</a> wie das funktioniert, aber hier ist eine Kurzversion:</p>
+<ul>
+<li>alle Template-Texte sollten Übersetzungstexte enthalten</li>
+<li>füge <code>{% load i18n %}</code> oben an deiner Vorlage hinzu, um Übersetzungen zu aktivieren</li>
+<li>Wenn der Textblock wörtlicher Text ist, können Sie das Template-Tag <code>{% trans %}</code> verwenden</li>
+<li>Wenn der Textblock Variablen enthält, sollten Sie das Template-Tag-Paar <code>{% blocktrans %}</code> und <code>{% endblocktrans %}</code> verwenden. Wenn Sie Leerzeichen oder Zeilenumbrüche einbauen, nutzen Sie <code>gekürzt</code>, um es automatisch zu entfernen, wenn die Sprachdatei generiert wird: <code>{% blocktrans trimmed %}</code></li>
+</ul>
+<h3>Beispiele</h3>
+<pre><code class="language-html">&lt;p&gt;{% trans &quot;This list is currently empty&quot; %}&lt;/p&gt;
+
+&lt;p&gt;
+    {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
+    hinzugefügt von &lt;a href=&quot;{{ user_path }}&quot;&gt;{{ username }}&lt;/a&gt;
+    {% endblocktrans %}
+&lt;/p&gt;
+</code></pre>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betreut wird.
+                </p>
+                <p>
+                    Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Machen Sie mit</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Zu dieser Seite beitragen</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Mehr</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Kontaktieren Sie die Entwickler</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Lizenz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "de/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

@@ -1,36 +1,36 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Title: Übersetzungen Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Zu Übersetzungen beitragen
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Sie können dem BookWyrm Übersetzungsprojekt unter [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/) beitreten.
 
-## Gender-neutral language
+## Geschlechtsneutrale Sprache
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Wo immer möglich, sollten BookWyrm Übersetzungen geschlechtsneutrale Sprache verwenden. Dies gilt auch dann, wenn eine Sprache als neutrales Geschlecht voreingestellt ist oder wenn sie etwas Ähnliches wie "he/she" verwendet. Es ist auch wichtig, dass Übersetzungen klar, präzise und lesbar für einen Screenreader sind und manchmal stehen diese Ziele im Widerspruch zueinander; es gibt nicht die eine perfekte Lösung und diese hängt von der Sprache ab.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Als Leitfaden versuchen Sie einen höheren Wert auf inklusive und geschlechtsneutrale Sprache zu legen als auf formale Korrektheit oder offiziell anerkannte Stilführer. Im Englischen zum Beispiel benötigen viele formale Leitfäden ein einzelnes "she"- oder "he"-Pronomen, um für eine Person verwendet zu werden, aber es wäre besser, in BookWyrm das geschlechtsneutrale singuläre "they" zu verwenden.
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Wenn Sie nicht sicher sind, wie Sie am besten an ein Übersetzungsproblem herangehen können, kommentieren Sie die Übersetzung oder öffnen Sie ein [-Diskussionsthema](https://translate.joinbookwyrm.com/project/bookwyrm/discussions), um weitergehende Fragen zu stellen.
 
-## Making templates translatable
+## Vorlagen übersetzbar machen
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+Bookwyrm nutzt die Django-Übersetzungsfunktionalität, um den Seiteninhalt je nach der vom Benutzer gewählten Anzeigesprache ändern zu können. Die Django-Dokumentation [bietet hilfreiche Erklärungen](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) wie das funktioniert, aber hier ist eine Kurzversion:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* alle Template-Texte sollten Übersetzungstexte enthalten
+* füge `{% load i18n %}` oben an deiner Vorlage hinzu, um Übersetzungen zu aktivieren
+* Wenn der Textblock wörtlicher Text ist, können Sie das Template-Tag `{% trans %}` verwenden
+* Wenn der Textblock Variablen enthält, sollten Sie das Template-Tag-Paar `{% blocktrans %}` und `{% endblocktrans %}` verwenden. Wenn Sie Leerzeichen oder Zeilenumbrüche einbauen, nutzen Sie `gekürzt`, um es automatisch zu entfernen, wenn die Sprachdatei generiert wird: `{% blocktrans trimmed %}`
 
-### Examples
+### Beispiele
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>
 
 <p>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Added by <a href="{{ user_path }}">{{ username }}</a>
+    hinzugefügt von <a href="{{ user_path }}">{{ username }}</a>
     {% endblocktrans %}
 </p>
 ```
