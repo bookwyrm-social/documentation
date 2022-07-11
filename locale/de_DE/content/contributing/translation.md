@@ -1,5 +1,5 @@
 - - -
-Titel: Übersetzungen Datum: 2021-10-20 Bestellung: 2
+Title: Übersetzungen Date: 2021-10-20 Order: 2
 - - -
 
 ## Zu Übersetzungen beitragen
