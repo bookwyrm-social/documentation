@@ -55,7 +55,7 @@ def get_page_metadata(locale_slug, page):
     return header_obj
 
 
-def get_site_data(locale_slug, page):
+def get_site_data(locale_slug, locale_code, page):
     """this should be a file"""
     category_dirs = glob("content/*/")
     categories = []
@@ -64,7 +64,8 @@ def get_site_data(locale_slug, page):
             parsed = yaml.safe_load(meta_yaml)
 
         subcategories = []
-        for subcat in glob(f"{cat_dir}/*.md"):
+        location = f"locale/{locale_code}/{cat_dir}/*.md" if locale_slug else f"{cat_dir}/*.md"
+        for subcat in glob(location):
             subcategories.append(get_page_metadata(locale_slug, subcat))
         subcategories.sort(key=lambda v: v.get("Order", -1))
 
@@ -135,7 +136,7 @@ if __name__ == "__main__":
                 with open(
                     f"{LOCALIZED_SITE_PATH}{output_path}", "w+", encoding="utf-8"
                 ) as render_file:
-                    data = get_site_data(SLUG, content_path)
+                    data = get_site_data(SLUG, locale["code"], content_path)
                     data["content"] = format_markdown(content_path)
                     data["path"] = f"/{SLUG}{output_path}"
                     render_file.write(
