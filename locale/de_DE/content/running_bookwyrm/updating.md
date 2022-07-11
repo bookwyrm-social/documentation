@@ -1,5 +1,5 @@
 - - -
-Titel: Aktualisieren Ihrer Instanz Datum: 2021-04-13 Bestellung: 2
+Title: Aktualisieren Ihrer Instanz Date: 2021-04-13 Order: 2
 - - -
 
 When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. Das macht eine Reihe von Dingen:
