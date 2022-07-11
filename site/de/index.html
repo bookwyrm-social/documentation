@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        
+
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
+                <span class="button is-success">Beitreten</span>
+            </a>
+            <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
+                Machen Sie mit
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Unterstützung
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" selected>Deutsch</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1"></h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/de/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/posting-statuses.html" >Beitragsstatus</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/de/updating.html" >Aktualisieren Ihrer Instanz</a>
+                </li>
+                
+                <li>
+                    <a href="/de/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/de/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/de/external-storage.html" >Externer Speicher</a>
+                </li>
+                
+                <li>
+                    <a href="/de/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/de/cli.html" >Befehlszeilenwerkzeug</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/contributing.html" >Wie mitmachen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/translation.html" >Übersetzungen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-dev.html" >Entwicklungsumgebung</a>
+                </li>
+                
+                <li>
+                    <a href="/de/style_guide.html" >Stilleitfaden</a>
+                </li>
+                
+                <li>
+                    <a href="/de/debug_toolbar.html" >Django Debug-Symbolleiste</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/de/permissions.html" >Berechtigungen</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <h2>Features</h2>
+<p>Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an <a href="https://github.com/bookwyrm-social/bookwyrm/issues">issue</a> to get the conversation going!</p>
+<ul>
+<li>Posting about books<ul>
+<li>Compose reviews, with or without ratings, which are aggregated in the book page</li>
+<li>Compose other kinds of statuses about books, such as:<ul>
+<li>Comments on a book</li>
+<li>Quotes or excerpts</li>
+</ul>
+</li>
+<li>Reply to statuses</li>
+<li>View aggregate reviews of a book across connected BookWyrm instances</li>
+<li>Differentiate local and federated reviews and rating in your activity feed</li>
+</ul>
+</li>
+<li>Track reading activity<ul>
+<li>Shelve books on default "to-read," "currently reading," and "read" shelves</li>
+<li>Create custom shelves</li>
+<li>Store started reading/finished reading dates, as well as progress updates along the way</li>
+<li>Update followers about reading activity (optionally, and with granular privacy controls)</li>
+<li>Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator</li>
+</ul>
+</li>
+<li>Federation with ActivityPub<ul>
+<li>Broadcast and receive user statuses and activity</li>
+<li>Share book data between instances to create a networked database of metadata</li>
+<li>Identify shared books across instances and aggregate related content</li>
+<li>Follow and interact with users across BookWyrm instances</li>
+<li>Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)</li>
+</ul>
+</li>
+<li>Granular privacy controls<ul>
+<li>Private, followers-only, and public privacy levels for posting, shelves, and lists</li>
+<li>Option for users to manually approve followers</li>
+<li>Allow blocking and flagging for moderation</li>
+</ul>
+</li>
+</ul>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betreut wird.
+                </p>
+                <p>
+                    Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Machen Sie mit</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Zu dieser Seite beitragen</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Mehr</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Kontaktieren Sie die Entwickler</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Lizenz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "de/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

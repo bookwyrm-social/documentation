@@ -16,6 +16,6 @@ Ce tableau montre les quatre groupes (administrateur, modérateur, éditeur et u
 | gérer la fédération                   | ✔️    | ✔️         | -       | -           |
 | créer des invitations                 | ✔️    | ✔️         | -       | -           |
 | désactiver des utilisateurs           | ✔️    | ✔️         | -       | -           |
-| delete posts                          | ✔️    | ✔️         | -       | -           |
-| edit books                            | ✔️    | ✔️         | ✔️      | -           |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+| supprimer des posts                   | ✔️    | ✔️         | -       | -           |
+| modifier des livres                   | ✔️    | ✔️         | ✔️      | -           |
+ mettre en ligne les pages couverture

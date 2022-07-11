@@ -58,7 +58,7 @@ server {
 }
 ```
 
-To set up with an ssl block:
+Um mit einem SSL-Block einzurichten:
 ``` { .nginx }
 server {
     server_name your.domain;
@@ -100,7 +100,7 @@ server {
 }
 ```
 - run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
-- restart nginx
+- nginx neustarten
 
 If everything worked correctly, your BookWyrm instance should now be externally accessible.
 

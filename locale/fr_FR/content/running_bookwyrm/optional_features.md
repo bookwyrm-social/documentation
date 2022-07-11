@@ -2,9 +2,9 @@
 Title: Optional features Date: 2021-08-02 Order: 5
 - - -
 
-Some features of BookWyrm have to be enabled to work.
+Certaines fonctionnalités de BookWyrm doivent être activées pour fonctionner.
 
-## Preview image generation
+## Prévisualisation d'images
 
 By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
 
