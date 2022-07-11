@@ -64,7 +64,9 @@ def get_site_data(locale_slug, locale_code, page):
             parsed = yaml.safe_load(meta_yaml)
 
         subcategories = []
-        location = f"locale/{locale_code}/{cat_dir}/*.md" if locale_slug else f"{cat_dir}/*.md"
+        location = (
+            f"locale/{locale_code}/{cat_dir}/*.md" if locale_slug else f"{cat_dir}/*.md"
+        )
         for subcat in glob(location):
             subcategories.append(get_page_metadata(locale_slug, subcat))
         subcategories.sort(key=lambda v: v.get("Order", -1))
