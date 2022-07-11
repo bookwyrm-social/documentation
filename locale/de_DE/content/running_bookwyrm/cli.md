@@ -1,5 +1,5 @@
 - - -
-Titel: Befehlszeilenwerkzeug Datum: 2021-11-11 Bestellung: 6
+Title: Befehlszeilenwerkzeug Date: 2021-11-11 Order: 6
 - - -
 
 Bookwyrm-Entwickler und Instanz-Manager können das `bw-dev`-Skript für gemeinsame Aufgaben verwenden. Dies macht deine Befehle kürzer, leichter zu merken und schwieriger durcheinander zu bringen.
