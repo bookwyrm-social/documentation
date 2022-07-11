@@ -1,5 +1,5 @@
 - - -
-Titel: Berechtigungen Datum: 2021-04-18 Bestellung: 2
+Title: Berechtigungen Date: 2021-04-18 Order: 2
 - - -
 
 Der Benutzerzugriff auf verschiedene Funktionen wird über das [integrierte Authentifizierungssystem von Django](https://docs.djangoproject.com/en/3.2/topics/auth/default/) gesteuert. Wenn eine Instanz erstellt wird, erstellt das `initdb`-Skript eine Reihe von Berechtigungen, die auf Gruppen übertragen werden. Standardmäßig wird allen neuen Benutzern die `-Editor-Gruppe` zugewiesen, die es ihnen erlaubt, Buch-Metadaten zu bearbeiten.
