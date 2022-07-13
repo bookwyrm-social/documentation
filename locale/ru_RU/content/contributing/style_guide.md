@@ -24,7 +24,7 @@ Code is also checked with Pylint using GitHub Actions. Pylint warnings must be a
 
 ### Templates (HTML)
 
-Your pull request will also be checked by the [curlylint](https://www.curlylint.org) linter for Django templates.
+Ваш запрос на слияние также будет проверен [curlylint](https://www.curlylint.org) для шаблонов Django.
 
 ### CSS
 
