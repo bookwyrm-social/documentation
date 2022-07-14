@@ -4,9 +4,9 @@ Title: Style Guide Date: 2021-10-20 Order: 4
 
 ## Pull requests
 
-So you want to contribute code to BookWyrm: that rules! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
+Alors, vous voulez contribuer au code de BookWyrm, c'est génial! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
 
-If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.
+Si vous ne savez pas comment régler un problème, ou que vous n'êtes plus disponible pour le faire, ne vous en faites pas. Laissez simplement un commentaire sur la requête et nous allons prendre le relais 💖.
 
 Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
 
@@ -34,9 +34,9 @@ We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint 
 
 [ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
 
-## Inclusive Design
+## Design inclusif
 
-Bookwyrm aims to be as inclusive and accessible as possible.
+BookWyrm aspire à être aussi inclusif et accessible que possible.
 
 When contributing code, check the [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) before you file your pull request. For accessibility advice, [A11Y-101](https://www.a11y-101.com/development) is also a useful source. For information on how to make your page templates multi-lingual, see the [Translations section](/translations.html).
 
