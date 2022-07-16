@@ -4,50 +4,50 @@ Title: Style Guide Date: 2021-10-20 Order: 4
 
 ## Pull requests
 
-Alors, vous voulez contribuer au code de BookWyrm, c'est génial! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
+Vous voulez contribuer au code de BookWyrm, c’est génial ! S'il y a un problème ouvert que vous souhaitez corriger, il est préférable de laisser un commentaire dans la conversation pour que le travail ne soit pas dupliqué. Essayez de limiter la portée des pull requests et de concentrer votre attention sur un seul sujet. Comme ça elle est plus facile à relire, et si une partie a besoin de changements elle ne retardera pas les autres parties.
 
-Si vous ne savez pas comment régler un problème, ou que vous n'êtes plus disponible pour le faire, ne vous en faites pas. Laissez simplement un commentaire sur la requête et nous allons prendre le relais 💖.
+Si vous ne savez pas comment régler un problème, ou que vous n'êtes plus disponible pour le faire, ne vous en faites pas. Laissez simplement un commentaire sur la pull request et nous allons prendre le relais 💖.
 
-Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
+Les pull requests doivent valider tous les tests automatiques avant d'être fusionnées, ça inclut des vérifications de style, des linters globaux, un test de sécurité et des tests unitaires.
 
-## Linting
+## Lint
 
 ### Global
 
-We use [EditorConfig](https://editorconfig.org) to maintain consistent indenting and line endings.
+Nous utilisons [EditorConfig](https://editorconfig.org) pour maintenir la cohérence de l’indentation et des fins de lignes.
 
 ### Python
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev black`
+BookWyrm utilise le formateur de code [Black](https://github.com/psf/black) pour maintenir la cohérence de la base de code Python. Toutes les nouvelles pull requests sont vérifiées avec des actions GitHub, et vous pouvez corriger automatiquement les problèmes de style de code en exécutant `./bw-dev black`
 
-Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
+Le code est également vérifié avec Pylint via une action GitHub. Les avertissements de Pylint doivent être traités avant que les pull requests soient fusionnées, mais c'est une question de jugement si la suggestion doit être utilisée, ou l'avertissement supprimé. Pour supprimer un avertissement, ajoutez un commentaire à la fin ou sur la ligne précédant les avertissements : `# pylint: disable=nom-de-la-regle`
 
-### Templates (HTML)
+### Gabarits (HTML)
 
-Your pull request will also be checked by the [curlylint](https://www.curlylint.org) linter for Django templates.
+Votre pull request sera également vérifiée par le linter [curlylint](https://www.curlylint.org) pour les gabarits Django.
 
 ### CSS
 
-We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint [you can disable stylelint](https://stylelint.io/user-guide/ignore-code) for a particular rule, but you will need a good justification for doing so.
+Nous utilisons [stylelint](https://stylelint.io) pour vérifier toutes les règles CSS. Comme pour Pylint [vous pouvez désactiver le stylelint](https://stylelint.io/user-guide/ignore-code) pour une règle particulière, mais vous aurez besoin d'une bonne justification pour le faire.
 
 ### JavaScript
 
-[ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
+[ESLint](https://eslint.org) vérifie toute modification effectuée en JavaScript. Si ESLint n'aime pas votre JavaScript (même fonctionnel), vérifiez le message linter pour le problème exact.
 
 ## Design inclusif
 
 BookWyrm aspire à être aussi inclusif et accessible que possible.
 
-When contributing code, check the [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) before you file your pull request. For accessibility advice, [A11Y-101](https://www.a11y-101.com/development) is also a useful source. For information on how to make your page templates multi-lingual, see the [Translations section](/translations.html).
+Lorsque vous contribuez du code, vérifiez la [checklist Inclusive Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) avant de proposer votre pull request. Pour des conseils sur l'accessibilité, [A11Y-101](https://www.a11y-101.com/development) est également une ressource utile. Pour plus d'informations sur la manière de rendre vos gabarits de page multilingues, voir [la section Traductions](/translations.html).
 
-Some particular things that Bookwyrm contributors have found useful to remember are:
+Quelques particularités à garder en tête pour la contribution au code de BookWyrm :
 
-### Forms
+### Formulaires
 
-* Only use `input[type="checkbox"]` or `input[type="radio"]` inside `<label>`
-* If you do not place checkboxes and radio buttons inside the `<label>`, the `<label>` should be placed _after_ the element it relates to
+* N'utiliser `input[type="checkbox"]` ou `input[type="radio"]` qu’à l'intérieur de `<label>`
+* Si vous ne placez pas les cases à cocher et les boutons radio à l'intérieur du `<label>`, le `<label>` doit être placé _après_ l'élément auquel il se rapporte
 
-### Buttons and Links
+### Boutons et Liens
 
-* Use a `<button>` element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a `POST` request (e.g. submitting a form)
-* Use an `<a>` element for anything that triggers a `GET` request. Usually, an anchor (`<a>`) element should not be styled as a button (`class="button"`), though there are some exceptions, such as "Cancel" buttons. If in doubt, ask for advice in your pull request
+* Utilisez un élément `<button>` pour tout ce qui a pour but de déclencher une action JavaScript (par ex. cacher ou révéler un formulaire) ou envoyer une requête `POST` (par ex. soumettre un formulaire)
+* Utilisez un élément `<a>` pour tout ce qui déclenche une requête `GET`. Habituellement, un lien (`<a>`) ne doit pas avoir l’apparence d’un bouton (`class="button"`), bien qu'il y ait quelques exceptions comme les boutons "Annuler". En cas de doute, demandez conseil dans votre pull request
