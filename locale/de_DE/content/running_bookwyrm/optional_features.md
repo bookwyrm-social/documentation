@@ -24,7 +24,7 @@ Diese Bilder werden an verschiedenen Stellen aktualisiert:
 
 Um die Funktion mit den Standardeinstellungen zu aktivieren, Sie müssen die Zeile `ENABLE_PREVIEW_IMAGES=true` in Ihrer `.env` Datei auskommentieren (entfernen Sie das Zeichen `#` am Anfang). Alle neuen Aktualisierungstermine führen zur Erzeugung des entsprechenden Bildes.
 
-Examples for these images can be viewed on the [feature’s pull request’s description](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink).
+Beispiele für diese Bilder können in der [Beschreibung der Funktions-Pull-Anfrage](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink) angesehen werden.
 
 ### Vorschaubilder erzeugen
 
