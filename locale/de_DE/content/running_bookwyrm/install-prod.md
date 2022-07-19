@@ -37,7 +37,7 @@ Anleitung für das Ausführen von BookWyrm in der Produktion:
         - Wenn Sie einen anderen Webserver auf Ihrem Host-Rechner betreiben, müssen Sie den [Reverse-Proxy-Anweisungen](/using-a-reverse-proxy.html) folgen
 - Initialisieren Sie die Datenbank durch Ausführen von `./bw-dev migrate`
 - Führen Sie die Anwendung aus (dies sollte auch ein Certbot-SSL-Zertifikat für Ihre Domain einrichten) mit `docker-compose up --build` und stellen Sie sicher, dass alle Images erfolgreich erstellt werden
-    - Wenn Sie andere Dienste auf Ihrem Host-Rechner betreiben, können Sie auf Fehler stoßen, dass Dienste fehlschlagen, wenn Sie versuchen, sich an einen Port zu binden. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
+    - Wenn Sie andere Dienste auf Ihrem Host-Rechner betreiben, können Sie auf Fehler stoßen, dass Dienste fehlschlagen, wenn Sie versuchen, sich an einen Port zu binden. Siehe die [Fehlerbehebungsanleitung](#port_conflicts) für Hinweise dies zu beheben.
 - Wenn Docker erfolgreich gebaut wurde, stoppen Sie den Prozess mit `STRG-C`
 - HTTPS-Weiterleitung einrichten
     - In `docker-compose.yml` kommentieren Sie den aktiven certbot-Befehl, der das Zertifikat installiert und entfernen Sie die Kommentarzeile unten, die automatische Erneuerungen einstellt.
