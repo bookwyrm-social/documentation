@@ -55,13 +55,13 @@ Diese Aufgabe wird mit dem Befehl erledigt:
 
 ### Aktivierung des externen Speichers für BookWyrm
 
-To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `false` to `true`:
+Um den S3-kompatiblen externen Speicher zu aktivieren, müssen Sie Ihre `.env`-Datei bearbeiten, indem der Eigenschaftswert für `USE_S3` von `false` zu `true` geändert wird:
 
 ```
 USE_S3=true
 ```
 
-If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that `USE_HTTPS` is set to `true`, so images will be loaded over HTTPS:
+Wenn Ihr externer Speicher über HTTPS ausgeliefert wird (was die meisten dieser Tage sind), müssen Sie auch sicherstellen, dass `USE_HTTPS` auf `true gesetzt ist`, damit Bilder über HTTPS geladen werden:
 
 ```
 USE_HTTPS=true
@@ -69,7 +69,7 @@ USE_HTTPS=true
 
 #### Statische Assets
 
-Then, you will need to run the following command, to copy the static assets to your S3 bucket:
+Danach müssen Sie den folgenden Befehl ausführen, um die statischen Assets in Ihren S3-Bucket zu kopieren:
 
 ```bash
 ./bw-dev collectstatic
@@ -77,13 +77,13 @@ Then, you will need to run the following command, to copy the static assets to y
 
 #### CORS-Einstellungen
 
-Once the static assets are collected, you will need to set up CORS for your bucket.
+Sobald die statischen Assets gesammelt sind, müssen Sie CORS für Ihren Bucket einrichten.
 
-Some services like Digital Ocean provide an interface to set it up, see [Digital Ocean doc: How to Configure CORS](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
+Einige Dienste wie Digital Ocean bieten eine Schnittstelle, um es einzurichten, siehe [Digital Ocean doc: Wie man CORS konfiguriert](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
 
-If your service doesn’t provide an interface, you can still set up CORS with the command line.
+Wenn Ihr Dienst keine Schnittstelle zur Verfügung stellt, können Sie CORS trotzdem mit der Befehlszeile einrichten.
 
-Create a file called `cors.json`, with the following content:
+Erstelle eine Datei namens `cors.json` mit folgendem Inhalt:
 
 ```json
 {
@@ -99,9 +99,9 @@ Create a file called `cors.json`, with the following content:
 }
 ```
 
-Replace `MY_DOMAIN_NAME` with the domain name(s) of your instance.
+Ersetzen Sie `MY_DOMAIN_NAME` durch den/die Domainname(n) Ihrer Instanz.
 
-Then, run the following command:
+Führen Sie dann den folgenden Befehl aus:
 
 ```bash
 ./bw-dev set_cors_to_s3 cors.json
@@ -113,13 +113,13 @@ Wenn Sie eine neue BookWyrm-Instanz starten, können Sie sofort zu den Installat
 
 ### Aktualisiere deine Instanz
 
-Once the media migration has been done and the static assets are collected, you can load the new `.env` configuration and restart your instance with:
+Sobald die Medienmigration abgeschlossen und die statischen Assets gesammelt wurden, können Sie die neue `.env`-Konfiguration laden und Ihre Instanz neustarten mit:
 
 ```bash
 ./bw-dev up -d
 ```
 
-If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong [here](#cors-settings). In that case it might be good to check the headers of a HTTP request against a file on your bucket:
+Wenn alles gut geht, wurde Ihr Speicher ohne Serverausfall geändert. Wenn einige Schriftarten fehlen (und Ihre Browser-JS-Konsole mit Warnung über CORS aufwartet), schlug etwas [hier](#cors-settings) fehl. In that case it might be good to check the headers of a HTTP request against a file on your bucket:
 
 ```bash
 curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H "Access-Control-Request-Method: GET"
