@@ -1,30 +1,30 @@
 - - -
-Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 3
+Titel: Verwenden eines Reverse-Proxy Datum: 2021-05-11 Bestellung: 3
 - - -
 
-## Running BookWyrm Behind a Reverse-Proxy
-If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.
+## BookWyrm hinter einem Reverse-Proxy ausführen
+Wenn Sie einen anderen Webserver auf Ihrem Rechner betreiben, sollten Sie ihn als Proxy für Web-Anfragen an BookWyrm einrichten.
 
-The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files. The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.
+Die Standardkonfiguration von BookWyrm hat bereits einen nginx-Server, der Anfragen an die Django-App weiterleitet, die SSL verarbeitet und statische Dateien direkt bedient. Die statischen Dateien werden in einem Docker Volume gespeichert, auf das mehrere BookWyrm Dienste zugreifen, daher wird es nicht empfohlen, diesen Server komplett zu entfernen.
 
-To run BookWyrm behind a reverse-proxy, make the following changes:
+Um BookWyrm hinter einem Reverse-Proxy auszuführen, führen Sie folgende Änderungen aus:
 
 - In `nginx/default.conf`:
-    - Comment out the two default servers
-    - Uncomment the server labeled Reverse-Proxy server
-    - Replace `your-domain.com` with your domain name
+    - Kommentieren Sie die zwei Standardserver
+    - Kommentieren Sie den Server beschrift als Reverse-Proxy Server aus
+    - Ersetzen Sie `your-domain.com` durch Ihren Domain-Namen
 - In `docker-compose.yml`:
-    - In `services` -> `nginx` -> `ports`, comment out the default ports and add `- 8001:8001`
-    - In `services` -> `nginx` -> `volumes`, comment out the two volumes that begin `./certbot/`
-    - In `services`, comment out the `certbot` service
+    - In `-services` -> `nginx` -> `ports`, kommentieren Sie die Standard-Ports und fügen Sie `- 8001:8001` hinzu
+    - In `services` -> `nginx` -> `volumes` kommentieren Sie die beiden Volumes, die mit `./certbot/` beginnen
+    - In `services` kommentieren Sie den `certbot` Dienst
 
-At this point, you can follow, the [setup](#server-setup) instructions as listed. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https`).
+An dieser Stelle folgen Sie den Anweisungen [Setup](#server-setup) wie aufgeführt. Sobald Docker läuft, können Sie auf Ihre BookWyrm-Instanz zugreifen unter `http://localhost:8001` (**HINWEIS:** Ihr Server ist nicht über `https`).
 
-Steps for setting up a reverse-proxy are server dependent.
+Schritte zum Einrichten eines Reverse-Proxys sind vom Server abhängig.
 
 #### Nginx
 
-Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx. See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
+Bevor Sie nginx einrichten können, müssen Sie Ihr nginx-Konfigurationsverzeichnis finden, das von Ihrer Plattform abhängt und wie Sie nginx installiert haben. See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
 
 To set up your server:
 
