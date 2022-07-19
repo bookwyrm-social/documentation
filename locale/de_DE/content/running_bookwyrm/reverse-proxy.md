@@ -24,12 +24,12 @@ Schritte zum Einrichten eines Reverse-Proxys sind vom Server abhängig.
 
 #### Nginx
 
-Bevor Sie nginx einrichten können, müssen Sie Ihr nginx-Konfigurationsverzeichnis finden, das von Ihrer Plattform abhängt und wie Sie nginx installiert haben. See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
+Bevor Sie nginx einrichten können, müssen Sie Ihr nginx-Konfigurationsverzeichnis finden, das von Ihrer Plattform abhängt und wie Sie nginx installiert haben. Weitere Informationen finden Sie im [nginx Guide](http://nginx.org/en/docs/beginners_guide.html).
 
-To set up your server:
+Um Ihren Server einzurichten:
 
-- In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
-- In your nginx `servers` directory, create a new file named after your domain containing the following information:
+- In Ihrer `nginx.conf`-Datei stellen Sie sicher, dass `include servers/*;` nicht auskommentiert ist.
+- Erstellen Sie in Ihrem nginx-`Server`-Verzeichnis eine neue Datei, die nach deiner Domain benannt ist und die folgende Informationen enthält:
 
 ``` { .nginx }
 server {
@@ -99,12 +99,12 @@ server {
     }
 }
 ```
-- run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
+- führen Sie `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com` aus
 - nginx neustarten
 
-If everything worked correctly, your BookWyrm instance should now be externally accessible.
+Wenn alles richtig funktioniert hat, sollte Ihre BookWyrm-Instanz nun extern zugänglich sein.
 
-*Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
+*Hinweis: Der `proxy_set_header Host $host;` ist unerlässlich; wenn Sie ihn nicht einbinden, werden eingehende Nachrichten von föderierten Servern abgelehnt.*
 
-*Note: the location of the ssl certificates may vary depending on the OS of your server*
+*Hinweis: Der Pfad der SSL Zertifikate kann je nach Betriebssystem Ihres Servers variieren*
 
