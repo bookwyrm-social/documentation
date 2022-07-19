@@ -9,4 +9,4 @@ BookWyrm hat einen Branch, der konfiguriert ist, um die [Django Debug Toolbar](h
 - Mit Git den [`debug-toolbar`](https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar)-Branch auschecken
 - Aktualisieren Sie den Branch relativ zum `main` mit `git merge main`. Der Branch wird periodisch aktualisiert, aber wird wahrscheinlich hinterher sein.
 - Erstellen Sie die Docker-Images mit `docker-compose up --build` neu, um sicherzustellen, dass die Debug-Toolbar-Bibliothek von `requirements.txt` installiert ist
-- Access the application `web` image directly (instead of via `nginx`) using port `8000`
+- Greifen Sie direkt auf das Applikations-`web`-Image (anstatt durch `nginx`) mittel des Ports `8000` zu
