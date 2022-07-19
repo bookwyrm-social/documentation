@@ -16,11 +16,11 @@ Feeds für jeden Benutzer werden in Redis gespeichert. Um einen Stream erneut zu
 
 ``` { .sh }
 ./bw-dev populate_streams
-# Or use docker-compose directly
+# oder verwenden Sie docker-compose direkt
 docker-compose run --rm web python manage.py populate_streams
 ```
 
-If something has gone terribly awry, the stream data can be deleted.
+Wenn etwas furchtbar schief gelaufen ist, können die Streamdaten gelöscht werden.
 
 ``` { .sh }
 docker-compose run --rm web python manage.py erase_streams
