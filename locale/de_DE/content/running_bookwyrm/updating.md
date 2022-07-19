@@ -2,13 +2,13 @@
 Title: Aktualisieren Ihrer Instanz Date: 2021-04-13 Order: 2
 - - -
 
-When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. Das macht eine Reihe von Dingen:
+Wenn Änderungen im Produktionszweig verfügbar sind, kannst du sie mit dem Befehl `./bw-dev update` installieren und auf deine Instanz übertragen. Das macht eine Reihe von Dingen:
 
-- `git pull` gets the updated code from the git repository. If there are conflicts, you may need to run `git pull` separately and resolve the conflicts before trying the `./bw-dev update` script again.
-- `docker-compose build` rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip `requirements.txt` packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.
-- `docker-compose exec web python manage.py migrate` runs the database migrations in Django
-- `docker-compose exec web python manage.py collectstatic --no-input` loads any updated static files (such as the JavaScript and CSS)
-- `docker-compose restart` reloads the docker containers
+- `git pull` holt den aktualisierten Code aus dem git Repository. Wenn es Konflikte gibt, müssen Sie möglicherweise `git pull` separat ausführen und die Konflikte lösen, bevor Sie das `./bw-dev update`-Skript erneut probieren.
+- `docker-compose build` baut die Images neu auf, was sicherstellt, dass die richtigen Pakete installiert sind. Dieser Schritt dauert lange und wird nur benötigt, wenn die Abhängigkeiten (einschließlich pip `requirements.txt` Pakete) geändert wurden, daher können Sie es auskommentieren, wenn Sie einen schnelleren Updatepfad haben möchten und es nicht stört, ihn bei Bedarf zu kommentieren.
+- `docker-compose exec web python manage.py migrate` führt Datenbankmigrationen in Django aus
+- `docker-compose exec web python manage.py collectstatic --no-input` lädt alle aktualisierten statischen Dateien (wie JavaScript und CSS)
+- `docker-compose restart` lädt die Docker-Container neu
 
 ## Aktivitätsstreams neu erstellen
 
