@@ -2,28 +2,28 @@
 Title: Translations Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Contribuer aux traductions
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Vous pouvez rejoindre le projet de traduction de BookWyrm à l'adresse [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Langage non-genré / inclusif
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Dans la mesure du possible, les traductions de BookWyrm doivent utiliser une langue non-genrée. Cela s'applique même si une langue désigne le masculin comme genre neutre par défaut, ou si elle utilise quelque chose de similaire à "il/elle". Il est également important que les traductions soient claires, concises et lisibles pour un lecteur d'écran, et parfois ces objectifs sont en conflit ; il n'y a pas de réponse parfaite et unique, la solution dépend de la langue.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+En tant que principe directeur, essayez de donner une valeur plus élevée à un langage inclusif et neutre par rapport au langage formel correct ou aux guides de style officiellement approuvés. En anglais par exemple, de nombreux guides de style requièrent qu’un pronom singulier "she" ou "he" soit utilisé en référence à un individu, mais il est préférable dans BookWyrm d'utiliser le pronom singulier non-genré "they" à la place.
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Si vous ne savez pas comment aborder un problème de traduction, commentez la traduction ou ouvrez un [sujet de discussion](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) pour répondre aux questions plus larges.
 
-## Making templates translatable
+## Rendre les gabarits traduisibles
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+Bookwyrm profite de la fonctionnalité de traduction de Django pour permettre au contenu de la page de changer en fonction de la langue d'affichage préférée du navigateur. La documentation de Django [fournit une explication utile](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) du fonctionnement, voilà la version courte :
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* tous les textes du gabarit doivent inclure des balises de traduction
+* ajoutez `{% load i18n %}` en haut de votre gabarit pour activer les traductions
+* si le bloc de texte est du texte littéral, vous pouvez utiliser la balise `{% trans %}`
+* Si le bloc de texte inclut des variables, vous devez utiliser la paire de balises `{% blocktrans %}` et `{% endblocktrans %}`. Si vous incluez des espaces ou des sauts de ligne, utilisez `trimmed` pour les supprimer automatiquement lorsque le fichier de langue est généré : `{% blocktrans trimmed %}`
 
-### Examples
+### Exemples
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>

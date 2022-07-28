@@ -45,11 +45,15 @@ def get_page_metadata(locale_slug, page):
                 # start of a new header
                 if word[-1] == ":":
                     headers.append([word])
-                else:
+                elif headers:
                     headers[-1].append(word)
         headers = "\n".join(" ".join(line) for line in headers)
 
-    header_obj = yaml.safe_load(headers) or {}
+    try:
+        header_obj = yaml.safe_load(headers) or {}
+    except yaml.parser.ParserError:
+        header_obj = {}
+
     path_dir = page.split("/")[-1].replace(".md", ".html")
     header_obj["path"] = f"/{locale_slug}{path_dir}"
     return header_obj
