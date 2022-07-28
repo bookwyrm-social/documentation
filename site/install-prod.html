@@ -202,7 +202,7 @@ Installing in Production
 <li>Update <code>nginx/default.conf</code>:<ul>
 <li>Replace <code>your-domain.com</code> with your domain name everywhere in the file (including the lines that are currently commented out)</li>
 <li>If you aren't using the <code>www</code> subdomain, remove the www.your-domain.com version of the domain from the <code>server_name</code> in the first server block in <code>nginx/default.conf</code> and remove the <code>-d www.${DOMAIN}</code> flag at the end of the <code>certbot</code> command in <code>docker-compose.yml</code>.</li>
-<li>If you are running another web-server on your host machine, you will need to follow the <a href="/using-a-reverse-proxy.html">reverse-proxy instructions</a></li>
+<li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
 </ul>
 </li>
 </ul>
