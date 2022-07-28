@@ -1,5 +1,5 @@
 - - -
-Titel: Verwenden eines Reverse-Proxy Datum: 2021-05-11 Bestellung: 3
+Title: Verwenden eines Reverse-Proxy Date: 2021-05-11 Order: 3
 - - -
 
 ## BookWyrm hinter einem Reverse-Proxy ausführen
