@@ -34,7 +34,7 @@ Instructions for running BookWyrm in production:
     - Update `nginx/default.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
         - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/using-a-reverse-proxy.html)
+        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
 - Inicializuokite duomenų bazę, paleidę `./bw-dev migrate`
 - Paleiskite programą (tai taip pat turėtų nustatyti Certbot ssl sertifikatą jūsų domenui) su `docker-compose up --build` ir įsitikinkite, kad visi vaizdai susikūrė sėkmingai
     - Jei savo serveryje taip pat esate paleidę kitas paslaugas, galite gauti klaidų, pranešančių, kad paslaugoms nepavyksta naudoti porto. Norėdami išspręsti šią problemą, skaitykite [problemų sprendimo vadovą](#port_conflicts).

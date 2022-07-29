@@ -61,6 +61,8 @@ Installing in Production
                     
                     <option value="de/" >Deutsch</option>
                     
+                    <option value="fr/" >Français</option>
+                    
                     <option value="pt-br/" selected>Português do Brasil</option>
                     
                     <option value="ro/" >Română</option>
@@ -200,7 +202,7 @@ Installing in Production
 <li>Atualize o <code>nginx/default.conf</code>:<ul>
 <li>Substitua <code>your-domain.com</code> com seu domínio em todos os lugares do arquivo (incluindo as linhas comentadas)</li>
 <li>Se você não estiver utilizando o subdomínio <code>www</code>, exclua a versão do domínio www.your-domain.com do <code>server_name</code> no primeiro bloco server no <code>nginx/default.conf</code> e exclua a flag <code>-d www.${DOMAIN}</code> no fim do comando <code>certbot</code> no <code>docker-compose.yml</code>.</li>
-<li>Se você estiver executando outro servidor web na sua máquina, você precisará seguir as <a href="/using-a-reverse-proxy.html">instruções de proxy reverso</a></li>
+<li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
 </ul>
 </li>
 </ul>

@@ -1,5 +1,5 @@
 - - -
-Titel: Installation in Produktion Datum: 2021-05-18 Bestellung: 1
+Title: Installation in Produktion Date: 2021-05-18 Order: 1
 - - -
 
 Dieses Projekt ist noch jung und im Moment nicht sehr stabil und deshalb sollten Sie bei der Verwendung in Produktion mit Vorsicht vorgehen.
@@ -34,7 +34,7 @@ Anleitung für das Ausführen von BookWyrm in der Produktion:
     - Aktualisiere `nginx/default.conf`:
         - Ersetzen Sie `your-domain.com` mit Ihrem Domain-Namen überall in der Datei (einschließlich der Zeilen, die derzeit auskommentiert sind)
         - Wenn Sie die `www`-Subdomain nicht verwenden, entfernen Sie die www.your-domain.com-Version der Domain aus dem `server_name` im ersten Serverblock in `nginx/default.conf` und entfernen Sie das `-d www.${DOMAIN}`-Flag am Ende des Befehls `certbot` in `docker-compose.yml`.
-        - Wenn Sie einen anderen Webserver auf Ihrem Host-Rechner betreiben, müssen Sie den [Reverse-Proxy-Anweisungen](/using-a-reverse-proxy.html) folgen
+        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
 - Initialisieren Sie die Datenbank durch Ausführen von `./bw-dev migrate`
 - Führen Sie die Anwendung aus (dies sollte auch ein Certbot-SSL-Zertifikat für Ihre Domain einrichten) mit `docker-compose up --build` und stellen Sie sicher, dass alle Images erfolgreich erstellt werden
     - Wenn Sie andere Dienste auf Ihrem Host-Rechner betreiben, können Sie auf Fehler stoßen, dass Dienste fehlschlagen, wenn Sie versuchen, sich an einen Port zu binden. Siehe die [Fehlerbehebungsanleitung](#port_conflicts) für Hinweise dies zu beheben.

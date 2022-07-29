@@ -98,7 +98,7 @@ Entwicklungsumgebung
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/install-prod.html" >Installing in Production</a>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
                 </li>
                 
                 <li>
@@ -106,7 +106,7 @@ Entwicklungsumgebung
                 </li>
                 
                 <li>
-                    <a href="/de/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
                 </li>
                 
                 <li>
@@ -118,7 +118,7 @@ Entwicklungsumgebung
                 </li>
                 
                 <li>
-                    <a href="/de/optional_features.html" >Optional features</a>
+                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
                 </li>
                 
                 <li>
@@ -201,7 +201,7 @@ Entwicklungsumgebung
 <ul>
 <li>Sobald die Erstellung abgeschlossen ist, können Sie auf die Instanz unter <code>http://localhost:1333</code> zugreifen und einen Administrator erstellen.</li>
 </ul>
-<p>If you're curious: the <code>./bw-dev</code> command is a simple shell script runs various other tools: above, you could skip it and run <code>docker-compose build</code> or <code>docker-compose up</code> directly if you like. <code>./bw-dev</code> sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Führen Sie es ohne Argumente aus, um eine Liste der verfügbaren Befehle zu erhalten, lesen Sie die <a href="/command-line-tool.html">Dokumentationsseite</a> dafür oder öffnen Sie es und schauen Sie sich um, um genau zu sehen, was jeder Befehl tut!</p>
+<p>Wenn du neugierig bist: das <code>./bw-dev</code> Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk <code>docker-compose build</code> oder <code>docker-compose up</code> laufen lassen, wenn du magst. <code>./bw-dev</code> sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Führen Sie es ohne Argumente aus, um eine Liste der verfügbaren Befehle zu erhalten, lesen Sie die <a href="/command-line-tool.html">Dokumentationsseite</a> dafür oder öffnen Sie es und schauen Sie sich um, um genau zu sehen, was jeder Befehl tut!</p>
 <h3>Modelle editieren oder erstellen</h3>
 <p>Wenn Sie ein Modell ändern oder erstellen, werden Sie wahrscheinlich die Datenbankstruktur ändern. Damit diese Änderungen wirksam werden, müssen Sie Djangos <code>makemigrations</code>-Befehl ausführen, um eine neue <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django Migrationsdatei</a>zu erstellen und dann diese <code>migrieren</code>:</p>
 <pre><code class="language-sh">./bw-dev makemigrations

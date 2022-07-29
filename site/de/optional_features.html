@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Optional features
+Optionale Funktionen
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -78,7 +78,7 @@ Optional features
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Optional features</h1>
+<h1 class="title is-1">Optionale Funktionen</h1>
 
     </header>
     <div class="columns">
@@ -98,7 +98,7 @@ Optional features
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/install-prod.html" >Installing in Production</a>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
                 </li>
                 
                 <li>
@@ -106,7 +106,7 @@ Optional features
                 </li>
                 
                 <li>
-                    <a href="/de/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
                 </li>
                 
                 <li>
@@ -118,7 +118,7 @@ Optional features
                 </li>
                 
                 <li>
-                    <a href="/de/optional_features.html" class="is-active">Optional features</a>
+                    <a href="/de/optional_features.html" class="is-active">Optionale Funktionen</a>
                 </li>
                 
                 <li>
@@ -170,36 +170,36 @@ Optional features
         <div class="column">
             
 <section class="block content">
-    <p>Some features of BookWyrm have to be enabled to work.</p>
+    <p>Einige Funktionen von BookWyrm müssen aktiviert werden, um zu funktionieren.</p>
 <h2>Vorschaubilderzeugung</h2>
-<p>By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.</p>
-<p>The preview images will be sized for large OpenGraph images (used by Twitter under the name of <code>summary_large_image</code>). Depending on the type of image, the contents will be:</p>
+<p>Standardmäßig verwendet BookWyrm das Logo der Instanz (oder das Standardlogo) als OpenGraph Vorschaubild. Alternativ können Sie die Erstellung von Vorschaubildern für Bücher, Benutzer und die Website aktivieren.</p>
+<p>Die Vorschaubilder werden für große OpenGraph Bilder vergrößert (verwendet von Twitter unter dem Namen <code>summary_large_image</code>). Abhängig von der Art des Bildes wird der Inhalt sein:</p>
 <ul>
-<li>the default instance image will display the big logo, along with the name of the instance and its url</li>
-<li>the user image will display their avatar, display name, handle (in the form of username@instance)</li>
-<li>the book image will display their cover, title, subtitle (if present), author and rating (if present)</li>
+<li>das Standardinstanzbild zeigt das große Logo an, zusammen mit dem Namen der Instanz und ihrer Url</li>
+<li>das Benutzerbild zeigt sein Avatar, den Anzeigenamen an (in Form von Benutzername@Instanz)</li>
+<li>das Buchbild zeigt sein Titelbild, Titel, Untertitel (falls vorhanden), Autor und Bewertung (falls vorhanden) an</li>
 </ul>
-<p>These images will be updated at various points:</p>
+<p>Diese Bilder werden an verschiedenen Stellen aktualisiert:</p>
 <ul>
-<li>instance image: when the instance name or big logo are changed</li>
-<li>user image: when the display name or avatar are changed</li>
-<li>book image: when the title(s), author(s) or cover are changed, or when a new rating is added</li>
+<li>Instanzbild: wenn der Instanzname oder das große Logo geändert werden</li>
+<li>Benutzerbild: wenn der Anzeigename oder das Avatar geändert wird</li>
+<li>Buchbild: wenn der Titel, Autor oder das Cover geändert oder wenn eine neue Bewertung hinzugefügt wird</li>
 </ul>
 <h3>Vorschaubilder aktivieren</h3>
-<p>In order to enable the feature with default settings, you have to uncomment (remove the <code>#</code> in front of) the line <code>ENABLE_PREVIEW_IMAGES=true</code> in your <code>.env</code> file. All the new updating events aforementioned will cause the generation of the corresponding image.</p>
-<p>Examples for these images can be viewed on the <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">feature’s pull request’s description</a>.</p>
+<p>Um die Funktion mit den Standardeinstellungen zu aktivieren, Sie müssen die Zeile <code>ENABLE_PREVIEW_IMAGES=true</code> in Ihrer <code>.env</code> Datei auskommentieren (entfernen Sie das Zeichen <code>#</code> am Anfang). Alle neuen Aktualisierungstermine führen zur Erzeugung des entsprechenden Bildes.</p>
+<p>Beispiele für diese Bilder können in der <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">Beschreibung der Funktions-Pull-Anfrage</a> angesehen werden.</p>
 <h3>Vorschaubilder erzeugen</h3>
-<p>If you enable this setting after your instance has been started, some images may not have been generated. A command has been added to automate the image generation. In order to prevent a ressource hog by generating <strong>A LOT</strong> of images, you have to pass the argument <code>--all</code> (or <code>-a</code>) to start the generation of the preview images for all users and books. Ohne dieses Argument wird nur die Seitenvorschau generiert.</p>
-<p>User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.</p>
+<p>Wenn Sie diese Einstellung aktivieren, nachdem Ihre Instanz gestartet wurde, wurden einige Bilder möglicherweise nicht generiert. Ein Befehl wurde hinzugefügt, um die Bildgenerierung zu automatisieren. Um eine Ressourcenüberlastung zu verhindern, wenn Sie <strong>EINE MENGE</strong> Bilder erzeugen, müssen Sie das Argument <code>--all</code> (oder <code>-a</code>) übergeben, um die Erzeugung der Vorschaubilder für alle Benutzer und Bücher zu starten. Ohne dieses Argument wird nur die Seitenvorschau generiert.</p>
+<p>Benutzer- und Buchvorschaubilder werden asynchron erzeugt: Die Aufgabe wird an Flower gesendet. Etwas Zeit kann benötigt werden, bevor alle Bücher und Benutzer ein funktionierendes Vorschaubild haben. Wenn Sie ein gutes Buch haben 📖, ein Kätzchen 🐱 oder einen Kuchen 🍰, ist dies der perfekte Zeitpunkt, um ihnen Aufmerksamkeit 💖 zu schenken.</p>
 <h3>Optionale Einstellungen</h3>
 <p>Sie möchten Ihre Vorschaubilder anpassen? Hier sind die Optionen:</p>
 <ul>
-<li><code>PREVIEW_BG_COLOR</code> will set the color for the preview image background. You can supply a color value, like <code>#b00cc0</code>, or the following values <code>use_dominant_color_light</code> or <code>use_dominant_color_dark</code>. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.</li>
-<li><code>PREVIEW_TEXT_COLOR</code> will set the color for the text. Depending on the choice for the background color, you should find a value that will have a sufficient contrast for the image to be accessible. A contrast ratio of 1:4.5 is recommended.</li>
-<li><code>PREVIEW_IMG_WIDTH</code> and <code>PREVIEW_IMG_HEIGHT</code> will set the dimensions of the image. Currently, the system will work best on images with a landscape (horizontal) orientation.</li>
-<li><code>PREVIEW_DEFAULT_COVER_COLOR</code> will set the color for books without covers.</li>
+<li><code>PREVIEW_BG_COLOR</code> legt die Farbe für den Vorschauhintergrund fest. Sie können einen Farbwert angeben, wie <code>#b00cc0</code> oder die folgenden Werte <code>use_dominant_color_light</code> oder <code>use_dominant_color_dark</code>. Diese extrahieren eine dominante Farbe aus dem Buchcover und verwenden es in einem hellen bzw. dunklen Thema.</li>
+<li><code>PREVIEW_TEXT_COLOR</code> legt die Farbe für den Text fest. Abhängig von der Auswahl für die Hintergrundfarbe sollten Sie einen Wert finden, der einen ausreichenden Kontrast hat, um das Bild zugänglich zu machen. Ein Kontrastverhältnis von 1:4.5 wird empfohlen.</li>
+<li><code>PREVIEW_IMG_WIDTH</code> und <code>PREVIEW_IMG_HEIGHT</code> werden die Dimensionen des Bildes einstellen. Momentan funktioniert das System am besten mit Bildern mit horizontaler Ausrichtung.</li>
+<li><code>PREVIEW_DEFAULT_COVER_COLOR</code> legt die Farbe für Bücher ohne Cover fest.</li>
 </ul>
-<p>All the color variables accept values that can be recognized as colors by Pillow’s <code>ImageColor</code> module: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Learn more about Pillow color names</a>.</p>
+<p>Alle Farbvariablen akzeptieren Werte, die im Modul <code>ImageColor</code> von Pillow als Farben erkannt werden können: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Erfahren Sie mehr über Farben von Pillow</a>.</p>
 </section>
 
         </div>

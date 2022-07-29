@@ -34,7 +34,7 @@ Instruções para rodar a BookWyrm em produção:
     - Atualize o `nginx/default.conf`:
         - Substitua `your-domain.com` com seu domínio em todos os lugares do arquivo (incluindo as linhas comentadas)
         - Se você não estiver utilizando o subdomínio `www`, exclua a versão do domínio www.your-domain.com do `server_name` no primeiro bloco server no `nginx/default.conf` e exclua a flag `-d www.${DOMAIN}` no fim do comando `certbot` no `docker-compose.yml`.
-        - Se você estiver executando outro servidor web na sua máquina, você precisará seguir as [instruções de proxy reverso](/using-a-reverse-proxy.html)
+        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
 - Initialize the database by running `./bw-dev migrate`
 - Rode a aplicação (e isso deve também configurar o certificado ssl do Certbot para seu domínio) com `docker-compose up --build`, e certifique-se de que todas as imagens foram construidas com sucesso
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.

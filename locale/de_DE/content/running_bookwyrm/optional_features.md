@@ -1,5 +1,5 @@
 - - -
-Titel: Optionale Funktionen Datum: 2021-08-02 Bestellung: 5
+Title: Optionale Funktionen Date: 2021-08-02 Order: 5
 - - -
 
 Einige Funktionen von BookWyrm müssen aktiviert werden, um zu funktionieren.
