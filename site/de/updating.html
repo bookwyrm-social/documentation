@@ -61,6 +61,8 @@ Aktualisieren Ihrer Instanz
                     
                     <option value="de/" selected>Deutsch</option>
                     
+                    <option value="fr/" >Français</option>
+                    
                     <option value="pt-br/" >Português do Brasil</option>
                     
                     <option value="ro/" >Română</option>
@@ -96,7 +98,7 @@ Aktualisieren Ihrer Instanz
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/install-prod.html" >Installing in Production</a>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
                 </li>
                 
                 <li>
@@ -104,7 +106,7 @@ Aktualisieren Ihrer Instanz
                 </li>
                 
                 <li>
-                    <a href="/de/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
                 </li>
                 
                 <li>
@@ -116,7 +118,7 @@ Aktualisieren Ihrer Instanz
                 </li>
                 
                 <li>
-                    <a href="/de/optional_features.html" >Optional features</a>
+                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
                 </li>
                 
                 <li>
@@ -168,21 +170,21 @@ Aktualisieren Ihrer Instanz
         <div class="column">
             
 <section class="block content">
-    <p>When there are changes available in the production branch, you can install and get them running on your instance using the command <code>./bw-dev update</code>. Das macht eine Reihe von Dingen:</p>
+    <p>Wenn Änderungen im Produktionszweig verfügbar sind, kannst du sie mit dem Befehl <code>./bw-dev update</code> installieren und auf deine Instanz übertragen. Das macht eine Reihe von Dingen:</p>
 <ul>
-<li><code>git pull</code> gets the updated code from the git repository. If there are conflicts, you may need to run <code>git pull</code> separately and resolve the conflicts before trying the <code>./bw-dev update</code> script again.</li>
-<li><code>docker-compose build</code> rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip <code>requirements.txt</code> packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.</li>
-<li><code>docker-compose exec web python manage.py migrate</code> runs the database migrations in Django</li>
-<li><code>docker-compose exec web python manage.py collectstatic --no-input</code> loads any updated static files (such as the JavaScript and CSS)</li>
-<li><code>docker-compose restart</code> reloads the docker containers</li>
+<li><code>git pull</code> holt den aktualisierten Code aus dem git Repository. Wenn es Konflikte gibt, müssen Sie möglicherweise <code>git pull</code> separat ausführen und die Konflikte lösen, bevor Sie das <code>./bw-dev update</code>-Skript erneut probieren.</li>
+<li><code>docker-compose build</code> baut die Images neu auf, was sicherstellt, dass die richtigen Pakete installiert sind. Dieser Schritt dauert lange und wird nur benötigt, wenn die Abhängigkeiten (einschließlich pip <code>requirements.txt</code> Pakete) geändert wurden, daher können Sie es auskommentieren, wenn Sie einen schnelleren Updatepfad haben möchten und es nicht stört, ihn bei Bedarf zu kommentieren.</li>
+<li><code>docker-compose exec web python manage.py migrate</code> führt Datenbankmigrationen in Django aus</li>
+<li><code>docker-compose exec web python manage.py collectstatic --no-input</code> lädt alle aktualisierten statischen Dateien (wie JavaScript und CSS)</li>
+<li><code>docker-compose restart</code> lädt die Docker-Container neu</li>
 </ul>
 <h2>Aktivitätsstreams neu erstellen</h2>
 <p>Feeds für jeden Benutzer werden in Redis gespeichert. Um einen Stream erneut zu befüllen, benutzen Sie den Verwaltungsbefehl:</p>
 <pre><code class="language-sh">./bw-dev populate_streams
-# Or use docker-compose directly
+# oder verwenden Sie docker-compose direkt
 docker-compose run --rm web python manage.py populate_streams
 </code></pre>
-<p>If something has gone terribly awry, the stream data can be deleted.</p>
+<p>Wenn etwas furchtbar schief gelaufen ist, können die Streamdaten gelöscht werden.</p>
 <pre><code class="language-sh">docker-compose run --rm web python manage.py erase_streams
 </code></pre>
 </section>

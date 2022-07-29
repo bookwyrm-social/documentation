@@ -13,9 +13,9 @@ When a report is made, there are a few options how the moderator can respond.
 - Delete the reported status.
 - Deactivate the user. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.
 
-## Instance-level moderation
-Moderators can block entire instances. This will prevent any activities from coming in from that instance, and deactivate all accounts from that instance locally.
+## Modération au niveau de l'instance
+Les modérateur-ices peuvent bloquer des instances en entier. Cela va bloquer toute activité venant de cette instance et désactiver tous les comptes de cette instance au niveau local.
 
-If the instance is un-blocked, all the users who were deactivated by the block will be re-activated.
+Si l'instance est ensuite dé-bloquée, les utilisateur-ices qui avaient été désactivé-es seront réactivé-es.
 
-Moderators can also upload blocklists to block servers in bulk.
+Les modérateur-ices peuvent aussi mettre en ligne des listes pour bloquer plusieurs serveurs à la fois.

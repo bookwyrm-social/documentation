@@ -1,5 +1,5 @@
 - - -
-Title: Developer Environment Date: 2021-04-12 Order: 3
+Title: Environnement de développement Date: 2021-04-12 Order: 3
 - - -
 
 ## Prérequis

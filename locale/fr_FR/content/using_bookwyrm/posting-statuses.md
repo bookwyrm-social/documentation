@@ -1,40 +1,40 @@
 - - -
-Title: Posting statuses Date: 2022-04-30 Order: 1
+Title: Publication de statuts Date: 2022-04-30 Order: 1
 - - -
 
-Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+La publication sur BookWyrm commence par un livre. Les utilisateurs peuvent commenter les livres en cours ou récemment lus depuis la section « Vos livres » ou depuis la page d'un livre. De là, les utilisateurs peuvent répondre et démarrer une conversation. Les posts sur BookWyrm peuvent inclure un formatage basique avec du gras, de l'italique et des liens, en utilisant [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
+Si vous avez de la familiarité avec [les posts sur Mastodon](https://docs.joinmastodon.org/user/posting/), vous trouverez que les statuts de BookWyrm ont des paramètres de visibilité similaires, des avertissements de contenu et des mentions. Cependant les sondages, les emoji personnalisés et les pièces jointes ne sont pas encore prises en charge.
 
-## Types of statuses
+## Types de statuts
 
-### User commentary
+### Réactions des utilisateurs
 
-There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
+Il y a trois types de posts que les utilisateurs peuvent créer directement en réponse aux livres : les critiques, les commentaires et les citations. Les commentaires répondent aux aspects généraux d'un livre, les citations se rapportent à des passages spécifiques et les critiques traitent des livres dans leur ensemble. Les utilisateurs peuvent également répondre aux statuts.
 
-| Component     | Review | Comment | Quote | Reply |
-| ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
-| Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
-| Quote         |        |         | ✔     |       |
-| Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| Composant                | Critique | Commentaire | Citation | Réponse |
+| ------------------------ | -------- | ----------- | -------- | ------- |
+| Champ de texte           | ✔        | ✔           | ✔        | ✔       |
+| Avertiseement de spoiler | ✔        | ✔           | ✔        | ✔       |
+| Numéro de page           |          | ✔           | ✔        |         |
+| Citation                 |          |             | ✔        |         |
+| Note                     | ✔        |             |          |         |
+| Champ de titre           | ✔        |             |          |         |
 
 
-### Reading status updates
+### État de lecture
 
-Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
+Ces statuts sont générés lorsqu'un utilisateur indique qu'il veut lire, a commencé à lire ou a fini de lire un livre.
 
-## Text
-Text can include:
+## Texte
+Le texte peut inclure :
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+- des mentions d’utilisateurs (@user)
+- des adresses URL (`http(s)://` n'est pas affiché)
+- du [formatage Markdown](https://www.markdownguide.org/cheat-sheet/)
+  - gras
+  - italique
+  - blocs de citation
+  - listes à puces
+  - liens
 
