@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>
+        
+Style Guide
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/fr/instances" class="navbar-item">
+                <span class="button is-success">Rejoindre</span>
+            </a>
+            <a href="https://joinbookwyrm.com/fr/get-involved" class="navbar-item">
+                Comment s'impliquer ?
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Soutenir
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" selected>Français</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Style Guide</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/fr/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/fr/posting-statuses.html" >Publication de statuts</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/fr/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/cli.html" >Outils en ligne de commande</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/fr/contributing.html" >Comment contribuer</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/install-dev.html" >Environnement de développement</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/style_guide.html" class="is-active">Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/fr/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/permissions.html" >Permissions</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <h2>Pull requests</h2>
+<p>Vous voulez contribuer au code de BookWyrm, c’est génial ! S'il y a un problème ouvert que vous souhaitez corriger, il est préférable de laisser un commentaire dans la conversation pour que le travail ne soit pas dupliqué. Essayez de limiter la portée des pull requests et de concentrer votre attention sur un seul sujet. Comme ça elle est plus facile à relire, et si une partie a besoin de changements elle ne retardera pas les autres parties.</p>
+<p>Si vous ne savez pas comment régler un problème, ou que vous n'êtes plus disponible pour le faire, ne vous en faites pas. Laissez simplement un commentaire sur la pull request et nous allons prendre le relais 💖.</p>
+<p>Les pull requests doivent valider tous les tests automatiques avant d'être fusionnées, ça inclut des vérifications de style, des linters globaux, un test de sécurité et des tests unitaires.</p>
+<h2>Lint</h2>
+<h3>Global</h3>
+<p>Nous utilisons <a href="https://editorconfig.org">EditorConfig</a> pour maintenir la cohérence de l’indentation et des fins de lignes.</p>
+<h3>Python</h3>
+<p>BookWyrm utilise le formateur de code <a href="https://github.com/psf/black">Black</a> pour maintenir la cohérence de la base de code Python. Toutes les nouvelles pull requests sont vérifiées avec des actions GitHub, et vous pouvez corriger automatiquement les problèmes de style de code en exécutant <code>./bw-dev black</code></p>
+<p>Le code est également vérifié avec Pylint via une action GitHub. Les avertissements de Pylint doivent être traités avant que les pull requests soient fusionnées, mais c'est une question de jugement si la suggestion doit être utilisée, ou l'avertissement supprimé. Pour supprimer un avertissement, ajoutez un commentaire à la fin ou sur la ligne précédant les avertissements : <code># pylint: disable=nom-de-la-regle</code></p>
+<h3>Gabarits (HTML)</h3>
+<p>Votre pull request sera également vérifiée par le linter <a href="https://www.curlylint.org">curlylint</a> pour les gabarits Django.</p>
+<h3>CSS</h3>
+<p>Nous utilisons <a href="https://stylelint.io">stylelint</a> pour vérifier toutes les règles CSS. Comme pour Pylint <a href="https://stylelint.io/user-guide/ignore-code">vous pouvez désactiver le stylelint</a> pour une règle particulière, mais vous aurez besoin d'une bonne justification pour le faire.</p>
+<h3>JavaScript</h3>
+<p><a href="https://eslint.org">ESLint</a> vérifie toute modification effectuée en JavaScript. Si ESLint n'aime pas votre JavaScript (même fonctionnel), vérifiez le message linter pour le problème exact.</p>
+<h2>Design inclusif</h2>
+<p>BookWyrm aspire à être aussi inclusif et accessible que possible.</p>
+<p>Lorsque vous contribuez du code, vérifiez la <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">checklist Inclusive Web Design</a> avant de proposer votre pull request. Pour des conseils sur l'accessibilité, <a href="https://www.a11y-101.com/development">A11Y-101</a> est également une ressource utile. Pour plus d'informations sur la manière de rendre vos gabarits de page multilingues, voir <a href="/translations.html">la section Traductions</a>.</p>
+<p>Quelques particularités à garder en tête pour la contribution au code de BookWyrm :</p>
+<h3>Formulaires</h3>
+<ul>
+<li>N'utiliser <code>input[type="checkbox"]</code> ou <code>input[type="radio"]</code> qu’à l'intérieur de <code>&lt;label&gt;</code></li>
+<li>Si vous ne placez pas les cases à cocher et les boutons radio à l'intérieur du <code>&lt;label&gt;</code>, le <code>&lt;label&gt;</code> doit être placé <em>après</em> l'élément auquel il se rapporte</li>
+</ul>
+<h3>Boutons et Liens</h3>
+<ul>
+<li>Utilisez un élément <code>&lt;button&gt;</code> pour tout ce qui a pour but de déclencher une action JavaScript (par ex. cacher ou révéler un formulaire) ou envoyer une requête <code>POST</code> (par ex. soumettre un formulaire)</li>
+<li>Utilisez un élément <code>&lt;a&gt;</code> pour tout ce qui déclenche une requête <code>GET</code>. Habituellement, un lien (<code>&lt;a&gt;</code>) ne doit pas avoir l’apparence d’un bouton (<code>class="button"</code>), bien qu'il y ait quelques exceptions comme les boutons "Annuler". En cas de doute, demandez conseil dans votre pull request</li>
+</ul>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> est un logiciel collaboratif et anti-commercial maintenu par <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Soutenir BookWyrm sur <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Contribuer</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm sur GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Contribuer à cette page</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">En savoir plus</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licence</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "fr/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>
