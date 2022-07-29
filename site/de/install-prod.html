@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Installing in Production
+Installation in Produktion
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,7 +76,7 @@ Installing in Production
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Installing in Production</h1>
+<h1 class="title is-1">Installation in Produktion</h1>
 
     </header>
     <div class="columns">
@@ -96,7 +96,7 @@ Installing in Production
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/install-prod.html" class="is-active">Installing in Production</a>
+                    <a href="/de/install-prod.html" class="is-active">Installation in Produktion</a>
                 </li>
                 
                 <li>
@@ -104,7 +104,7 @@ Installing in Production
                 </li>
                 
                 <li>
-                    <a href="/de/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
                 </li>
                 
                 <li>
@@ -116,7 +116,7 @@ Installing in Production
                 </li>
                 
                 <li>
-                    <a href="/de/optional_features.html" >Optional features</a>
+                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
                 </li>
                 
                 <li>
@@ -168,62 +168,62 @@ Installing in Production
         <div class="column">
             
 <section class="block content">
-    <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.</p>
+    <p>Dieses Projekt ist noch jung und im Moment nicht sehr stabil und deshalb sollten Sie bei der Verwendung in Produktion mit Vorsicht vorgehen.</p>
 <h2>Servereinrichtung</h2>
 <ul>
-<li>Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
-<li>Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
-<li>Set up an email service (such as <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS</li>
+<li>Holen Sie sich einen Domänennamen und konfigurieren Sie DNS für Ihren Server. Sie müssen die Nameserver Ihrer Domain auf Ihren DNS-Provider auf den Server verweisen, auf dem Sie BookWyrm betreiben. Hier sind Anweisungen für <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
+<li>Setzen Sie Ihren Server mit geeigneten Firewalls für den Betrieb einer Web-Anwendung auf (dieser Befehlssatz ist mit Ubuntu 20.04 getestet). Hier sind Anweisungen für <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
+<li>Richten Sie einen E-Mail-Dienst (wie <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutzen Sie die Dokumentation des Dienstes für die Konfiguration Ihres DNS</li>
 <li><a href="https://docs.docker.com/compose/install/">Docker und docker-compose installieren</a></li>
 </ul>
 <h2>BookWyrm installieren und konfigurieren</h2>
-<p>The <code>production</code> branch of BookWyrm contains a number of tools not on the <code>main</code> branch that are suited for running in production, such as <code>docker-compose</code> changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.</p>
+<p>Der <code>-Produktionszweig</code> von BookWyrm enthält eine Reihe von Werkzeugen die nicht auf dem <code>main</code>-Zweig sind, die für den Betrieb in der Produktion geeignet sind zum Beispiel <code>docker-compose</code>-Änderungen, um die Standardbefehle oder die Konfiguration von Containern zu aktualisieren und individuelle Änderungen an der Container-Konfiguration, um Dinge wie SSL oder regelmäßige Sicherungen zu aktivieren.</p>
 <p>Anleitung für das Ausführen von BookWyrm in der Produktion:</p>
 <ul>
-<li>Get the application code: <code>git clone git@github.com:bookwyrm-social/bookwyrm.git</code></li>
-<li>Switch to the <code>production</code> branch: <code>git checkout production</code></li>
-<li>Create your environment variables file, <code>cp .env.example .env</code>, and update the following:<ul>
-<li><code>SECRET_KEY</code> | A difficult to guess, secret string of characters</li>
-<li><code>DOMAIN</code> | Your web domain</li>
-<li><code>EMAIL</code> | Email address to be used for certbot domain verification</li>
-<li><code>POSTGRES_PASSWORD</code> | Set a secure password for the database</li>
-<li><code>REDIS_ACTIVITY_PASSWORD</code> | Set a secure password for Redis Activity subsystem</li>
-<li><code>REDIS_BROKER_PASSWORD</code> | Set a secure password for Redis queue broker subsystem</li>
-<li><code>FLOWER_USER</code> | Your own username for accessing Flower queue monitor</li>
-<li><code>FLOWER_PASSWORD</code> | Your own secure password for accessing Flower queue monitor</li>
-<li><code>EMAIL_HOST_USER</code> | The "from" address that your app will use when sending email</li>
-<li><code>EMAIL_HOST_PASSWORD</code> | The password provided by your email service</li>
+<li>Erhalten Sie den Anwendungsquellcode: <code>git clone git@github.com:bookwyrm-social/bookwyrm.git</code></li>
+<li>Wechseln Sie zum <code>Produktionszweig</code>: <code>git checkout production</code></li>
+<li>Erstellen Sie Ihre Umgebungsvariablendatei <code>cp .env.example .env</code> und aktualisieren Sie Folgendes:<ul>
+<li><code>SECRET_KEY</code> | Eine schwer zu erratende geheime Zeichenfolge</li>
+<li><code>DOMAIN</code> | Ihre Webdomain</li>
+<li><code>EMAIL</code> | E-Mail-Adresse für die Verifizierung der certbot-Domain</li>
+<li><code>POSTGRES_PASSWORD</code> | Setzen Sie ein sicheres Passwort für die Datenbank</li>
+<li><code>REDIS_ACTIVITY_PASSWORD</code> | Setzen Sie ein sicheres Passwort für das Redis Activity Subsystem</li>
+<li><code>REDIS_BROKER_PASSWORD</code> | Setzen Sie ein sicheres Passwort für das Redis Queue Broker Subsystem</li>
+<li><code>FLOWER_USER</code> | Ihr eigener Benutzername für den Zugriff auf den Flower Queue Monitor</li>
+<li><code>FLOWER_PASSWORD</code> | Ihr eigenes sicheres Passwort für den Zugriff auf Flower Queue Monitor</li>
+<li><code>EMAIL_HOST_USER</code> | Die "von"-Adresse, die Ihre App beim Senden von E-Mails verwendet</li>
+<li><code>EMAIL_HOST_PASSWORD</code> | Das von Ihrem E-Mail-Dienst bereitgestellte Passwort</li>
 </ul>
 </li>
 <li>Nginx konfigurieren<ul>
-<li>Make a copy of the production template config and set it for use in nginx <code>cp nginx/production nginx/default.conf</code></li>
+<li>Erstellen Sie eine Kopie der Konfiguration der Produktionsvorlage und setzen Sie sie für die Verwendung in nginx <code>cp nginx/production nginx/default.conf</code></li>
 <li>Aktualisiere <code>nginx/default.conf</code>:<ul>
-<li>Replace <code>your-domain.com</code> with your domain name everywhere in the file (including the lines that are currently commented out)</li>
-<li>If you aren't using the <code>www</code> subdomain, remove the www.your-domain.com version of the domain from the <code>server_name</code> in the first server block in <code>nginx/default.conf</code> and remove the <code>-d www.${DOMAIN}</code> flag at the end of the <code>certbot</code> command in <code>docker-compose.yml</code>.</li>
-<li>If you are running another web-server on your host machine, you will need to follow the <a href="/using-a-reverse-proxy.html">reverse-proxy instructions</a></li>
+<li>Ersetzen Sie <code>your-domain.com</code> mit Ihrem Domain-Namen überall in der Datei (einschließlich der Zeilen, die derzeit auskommentiert sind)</li>
+<li>Wenn Sie die <code>www</code>-Subdomain nicht verwenden, entfernen Sie die www.your-domain.com-Version der Domain aus dem <code>server_name</code> im ersten Serverblock in <code>nginx/default.conf</code> und entfernen Sie das <code>-d www.${DOMAIN}</code>-Flag am Ende des Befehls <code>certbot</code> in <code>docker-compose.yml</code>.</li>
+<li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Initialize the database by running <code>./bw-dev migrate</code></li>
-<li>Run the application (this should also set up a Certbot ssl cert for your domain) with <code>docker-compose up --build</code>, and make sure all the images build successfully<ul>
-<li>If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the <a href="#port_conflicts">troubleshooting guide</a> for advice on resolving this.</li>
+<li>Initialisieren Sie die Datenbank durch Ausführen von <code>./bw-dev migrate</code></li>
+<li>Führen Sie die Anwendung aus (dies sollte auch ein Certbot-SSL-Zertifikat für Ihre Domain einrichten) mit <code>docker-compose up --build</code> und stellen Sie sicher, dass alle Images erfolgreich erstellt werden<ul>
+<li>Wenn Sie andere Dienste auf Ihrem Host-Rechner betreiben, können Sie auf Fehler stoßen, dass Dienste fehlschlagen, wenn Sie versuchen, sich an einen Port zu binden. Siehe die <a href="#port_conflicts">Fehlerbehebungsanleitung</a> für Hinweise dies zu beheben.</li>
 </ul>
 </li>
-<li>When docker has built successfully, stop the process with <code>CTRL-C</code></li>
+<li>Wenn Docker erfolgreich gebaut wurde, stoppen Sie den Prozess mit <code>STRG-C</code></li>
 <li>HTTPS-Weiterleitung einrichten<ul>
-<li>In <code>docker-compose.yml</code>, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.</li>
-<li>In <code>nginx/default.conf</code>, uncomment lines 18 through 50 to enable forwarding to HTTPS. Sie sollten zwei <code>Server</code>-Blöcke aktiviert haben</li>
+<li>In <code>docker-compose.yml</code> kommentieren Sie den aktiven certbot-Befehl, der das Zertifikat installiert und entfernen Sie die Kommentarzeile unten, die automatische Erneuerungen einstellt.</li>
+<li>In <code>nginx/default.conf</code>entfernen Sie die Kommentarzeilen 18 bis 50, um die Weiterleitung zu HTTPS zu aktivieren. Sie sollten zwei <code>Server</code>-Blöcke aktiviert haben</li>
 </ul>
 </li>
-<li>Set up a <code>cron</code> job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)<ul>
-<li>Type <code>crontab -e</code> to edit your cron file in the host machine</li>
-<li>add a line to try renewing once a day: <code>5 0 * * * cd /path/to/your/bookwyrm &amp;&amp; docker-compose run --rm certbot</code></li>
+<li>Richten Sie einen <code>cron</code>-Job ein, um Ihre Zertifikate aktuell zu halten (Lets Encrypt-Zertifikate laufen nach 90 Tagen ab)<ul>
+<li>Geben Sie <code>crontab -e</code> ein, um Ihre cron-Datei im Host zu bearbeiten</li>
+<li>fügen Sie eine Zeile zum Erneuern einmal am Tag hinzu: <code>5 0 * * * cd /path/to/your/bookwyrm &amp;&amp; docker-compose run --rm certbot</code></li>
 </ul>
 </li>
-<li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
-<li>Initialize the application with <code>./bw-dev setup</code>, and copy the admin code to use when you create your admin account.<ul>
-<li>The output of <code>./bw-dev setup</code> should conclude with your admin code. You can get your code at any time by running <code>./bw-dev admin_code</code> from the command line. Hier ist eine Beispielausgabe:</li>
+<li>Wenn Sie einen externen Speicher für statische Assets und Mediendateien verwenden möchten (z. B. einen S3-kompatiblen Dienst), <a href="/external-storage.html">befolgen Sie die Anweisungen</a> bis es Ihnen mitteilt, wieder hierher zu kommen</li>
+<li>Initialisieren Sie die Anwendung mit <code>./bw-dev setup</code> und kopieren Sie den Admin-Code, der beim Erstellen Ihres Admin-Kontos verwendet werden soll.<ul>
+<li>Die Ausgabe von <code>./bw-dev setup</code> sollte mit Ihrem Admin-Code abgeschlossen werden. Sie können Ihren Code jederzeit erhalten, indem Sie <code>./bw-dev admin_code</code> auf der Befehlszeile ausführen. Hier ist eine Beispielausgabe:</li>
 </ul>
 </li>
 </ul>
@@ -233,36 +233,36 @@ c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
 </code></pre>
 <ul>
-<li>Run docker-compose in the background with: <code>docker-compose up -d</code></li>
-<li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
+<li>Starten Sie Docker-Compose im Hintergrund mit: <code>docker-compose up -d</code></li>
+<li>Die Anwendung sollte auf Ihrer Domain laufen. Wenn Sie die Domain laden, erhalten Sie eine Konfigurationsseite, die Ihre Instanzeinstellungen bestätigt und ein Formular zum Erstellen eines Administratorkontos. Benutzen Sie Ihren Admin-Code, um sich zu registrieren.</li>
 </ul>
-<p>Glückwunsch! Sie haben es geschafft! Configure your instance however you'd like.</p>
+<p>Glückwunsch! Sie haben es geschafft! Konfigurieren Sie Ihre Instanz wie Sie möchten.</p>
 <h2>Sicherungskopien</h2>
-<p>BookWyrm's db service dumps a backup copy of its database to its <code>/backups</code> directory daily at midnight UTC. Backups are named <code>backup__%Y-%m-%d.sql</code>.</p>
-<p>The db service has an optional script for periodically pruning the backups directory so that all recent daily backups are kept, but for older backups, only weekly or monthly backups are kept. Um dieses Skript zu aktivieren:</p>
+<p>BookWyrms db Service speichert täglich um Mitternacht UTC eine Sicherungskopie seiner Datenbank in sein <code>/backups</code>-Verzeichnis. Sicherungen heißen <code>backup__%Y-%m-%d.sql</code>.</p>
+<p>Der Datenbankdienst hat ein optionales Skript zum periodischen Beschneiden des Backup-Verzeichnisses, so dass alle aktuellen täglichen Sicherungen beibehalten werden, aber für ältere Backups werden nur wöchentliche oder monatliche Backups aufbewahrt. Um dieses Skript zu aktivieren:</p>
 <ul>
-<li>Uncomment the final line in <code>postgres-docker/cronfile</code></li>
-<li>rebuild your instance <code>docker-compose up --build</code></li>
+<li>Kommentieren Sie die letzte Zeile in <code>postgres-docker/cronfile</code> aus</li>
+<li>bauen Sie Ihre Instanz erneut mit <code>docker-compose up --build</code></li>
 </ul>
-<p>You can copy backups from the backups volume to your host machine with <code>docker cp</code>:</p>
+<p>Sie können mit <code>docker cp</code> Backups aus dem Backup-Volume auf Ihren Host-Rechner kopieren:</p>
 <ul>
-<li>Run <code>docker-compose ps</code> to confirm the db service's full name (it's probably <code>bookwyrm_db_1</code>.</li>
-<li>Run <code>docker cp &lt;container_name&gt;:/backups &lt;host machine path&gt;</code></li>
+<li>Führen Sie <code>docker-compose ps</code> aus, um den vollständigen Namen des Datenbankdienstes zu bestätigen (es ist wahrscheinlich <code>bookwyrm_db_1</code>).</li>
+<li>Führen Sie <code>docker cp &lt;container_name&gt;:/backups &lt;host machine path&gt;</code> aus</li>
 </ul>
 <h2>Port-Konflikte</h2>
-<p>BookWyrm hat mehrere Dienste, die auf ihren Standard-Ports laufen. This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.</p>
-<p>If this occurs, you will need to change your configuration to run services on different ports. This may require one or more changes the following files:</p>
+<p>BookWyrm hat mehrere Dienste, die auf ihren Standard-Ports laufen. Dies bedeutet, dass, je nachdem, was Sie auf Ihrem Host-Rechner laufen haben, können Sie auf Fehler beim Erstellen oder Ausführen von BookWyrm stoßen, wenn Versuche fehlschlagen, sich an diese Ports zu binden.</p>
+<p>Wenn dies geschieht, müssen Sie Ihre Konfiguration ändern, um Dienste auf verschiedenen Ports auszuführen. Dies kann eine oder mehrere Änderungen der folgenden Dateien erfordern:</p>
 <ul>
 <li><code>docker-compose.yml</code></li>
 <li><code>nginx/default.conf</code></li>
-<li><code>.env</code> (You create this file yourself during setup)</li>
+<li><code>.env</code> (Sie erstellen diese Datei selbst während des Setups)</li>
 </ul>
-<p>If you are already running a web-server on your machine, you will need to set up a reverse-proxy.</p>
+<p>Wenn Sie bereits einen Webserver auf Ihrem Rechner betreiben, müssen Sie einen Reverse-Proxy einrichten.</p>
 <h2>Verbinden Sie sich</h2>
-<p>Da BookWyrm ein junges Projekt ist, arbeiten wir noch immer an einem stabilen Veröffentlichungsplan und es gibt viele Fehler und große Änderungen. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. Es gibt einige Möglichkeiten, sich mit uns in Kontakt zu setzen:</p>
+<p>Da BookWyrm ein junges Projekt ist, arbeiten wir noch immer an einem stabilen Veröffentlichungsplan und es gibt viele Fehler und große Änderungen. Es gibt ein GitHub Team, das markiert werden kann, wenn es etwas Wichtiges über ein Update gibt und dem du beitreten kannst, indem du deinen GitHub Benutzernamen teilst. Es gibt einige Möglichkeiten, sich mit uns in Kontakt zu setzen:</p>
 <ul>
-<li>Open an issue or pull request to add your instance to the <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md">official list</a></li>
-<li>Reach out to the project on <a href="https://tech.lgbt/@bookwyrm">Mastodon</a> or <a href="mailto:mousereeve@riseup.net">email the maintainer</a> directly with your GitHub username</li>
+<li>Öffnen Sie ein Problem oder eine Pull-Anfrage, um Ihre Instanz zur <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md">offiziellen Liste</a> hinzuzufügen</li>
+<li>Erreiche das Projekt auf <a href="https://tech.lgbt/@bookwyrm">Mastodon</a> oder <a href="mailto:mousereeve@riseup.net">maile den Betreuern</a> direkt deinen GitHub-Benutzernamen</li>
 <li>Treten Sie dem <a href="https://matrix.to/#/#bookwyrm:matrix.org">Matrix</a> Chatraum bei</li>
 </ul>
 </section>

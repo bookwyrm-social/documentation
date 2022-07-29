@@ -34,20 +34,20 @@ Instructions for running BookWyrm in production:
     - Update `nginx/default.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
         - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/using-a-reverse-proxy.html)
-- Initialize the database by running `./bw-dev migrate`
-- Run the application (this should also set up a Certbot ssl cert for your domain) with `docker-compose up --build`, and make sure all the images build successfully
-    - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
-- When docker has built successfully, stop the process with `CTRL-C`
-- Set up HTTPS redirect
-    - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
-    - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
-- Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
-    - Type `crontab -e` to edit your cron file in the host machine
-    - add a line to try renewing once a day: `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
-- If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
-- Initialize the application with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
-    - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
+        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+- Inicializuokite duomenų bazę, paleidę `./bw-dev migrate`
+- Paleiskite programą (tai taip pat turėtų nustatyti Certbot ssl sertifikatą jūsų domenui) su `docker-compose up --build` ir įsitikinkite, kad visi vaizdai susikūrė sėkmingai
+    - Jei savo serveryje taip pat esate paleidę kitas paslaugas, galite gauti klaidų, pranešančių, kad paslaugoms nepavyksta naudoti porto. Norėdami išspręsti šią problemą, skaitykite [problemų sprendimo vadovą](#port_conflicts).
+- Kai sėkmingai susibildins dokeris, sustabdykite procesą, paspausdami `CTRL-C`
+- Nukreipkite HTTPS
+    - Faile `docker-compose.yml` atkomentuokite aktyvią certbot komandą, kuri diegia sertifikatą, taip pat atkomentuokite žemiau esančią eilutę, atsakingą už automatinius atnaujinimus.
+    - Norėdami įjungti HTTPS persiuntimą, faile `nginx/default.conf` atkomentuokite nuo 18 iki 50 eilutės. Turėtumėte būti įjungę du `serverio` blokus
+- Nustatykite `kroną`, kad sertifikatai visada būtų atnaujinti (užšifruokite sertifikatų galiojimo pasibaigimą už 90 dienų)
+    - Rašykite `crontab -e`, kad paredaguotumėte esamą krono failą
+    - pridėkite eilutę, kad programa bandytų atnaujinti kartą per dieną: `5 0 * * * cd /kelias/iki/jūsų/bookwyrm && docker-compose run --rm certbot`
+- Jei statinių ir medijos failų (pvz., su S3 paslauga susijusių failų) saugojimui norite naudoti išorinę saugyklą, [atlikite instrukcijose nurodytus žingsnius](/external-storage.html), kurie jus galiausiai nukreips grįžti čia
+- Inicializuokite savo programą komanda `./bw-dev setup` ir, kai kursite administratoriaus paskyrą, nukopijuokite administratoriaus kodą.
+    - `./bw-dev setup` išvestis turėtų baigtis jūsų administratoriaus kodu. Savo kodą galite gauti bet kuriuo metu, komandinėje eilutėje parašydami `./bw-dev admin_code`. Pateikiamas išvesties pavyzdys:
 
 ``` { .sh }
 *******************************************

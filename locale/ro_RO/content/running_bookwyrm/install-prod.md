@@ -34,7 +34,7 @@ Instrucțiuni pentru rularea BookWyrm în producție:
     - Actualizați `nginx/default.conf`:
         - Înlocuiți `your-domain.com` cu numele domeniului dvs. peste tot în fișier (inclusiv liniile care sunt momentan comentate)
         - Dacă nu folosiți subdomeniul `www`, înlăturați versiunea www.your-domain.com a domeniului din `server_name` în primul bloc al server-ului în `nginx/default.conf` și înlăturați opțiunea `-d www.${DOMAIN}` de la finalul comenzii `certbot` din `docker-compose.yml`.
-        - Dacă rulați un alt server web pe calculatorul dvs. gazdă, veți avea nevoie să urmați [instrucțiunile pentru reverse-proxy](/using-a-reverse-proxy.html)
+        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
 - Inițializați baza de date rulând `./bw-dev migrate`
 - Rulați aplicația cu `docker-compose up --build` (acest lucru ar trebui să configureze de asemenea un Certbot ssl cert pentru domeniul dvs.) și asigurați-vă că toate imaginile au fost compilate cu succes
     - Dacă rulați alte servicii pe calculatorul gazdă al dvs., s-ar putea să vă confruntați cu erori când serviciile eșuează încercând să se lege la un port. Vedeți [ghidul de depanare](#port_conflicts) pentru sfaturi despre rezolvarea acestor probleme.

@@ -30,7 +30,7 @@ cp nginx/development nginx/default.conf
 ```
 - Sobald die Erstellung abgeschlossen ist, können Sie auf die Instanz unter `http://localhost:1333` zugreifen und einen Administrator erstellen.
 
-If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Führen Sie es ohne Argumente aus, um eine Liste der verfügbaren Befehle zu erhalten, lesen Sie die [Dokumentationsseite](/command-line-tool.html) dafür oder öffnen Sie es und schauen Sie sich um, um genau zu sehen, was jeder Befehl tut!
+Wenn du neugierig bist: das `./bw-dev` Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk `docker-compose build` oder `docker-compose up` laufen lassen, wenn du magst. `./bw-dev` sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Führen Sie es ohne Argumente aus, um eine Liste der verfügbaren Befehle zu erhalten, lesen Sie die [Dokumentationsseite](/command-line-tool.html) dafür oder öffnen Sie es und schauen Sie sich um, um genau zu sehen, was jeder Befehl tut!
 
 ### Modelle editieren oder erstellen
 

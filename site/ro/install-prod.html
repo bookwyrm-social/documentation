@@ -200,7 +200,7 @@ Installing in Production
 <li>Actualizați <code>nginx/default.conf</code>:<ul>
 <li>Înlocuiți <code>your-domain.com</code> cu numele domeniului dvs. peste tot în fișier (inclusiv liniile care sunt momentan comentate)</li>
 <li>Dacă nu folosiți subdomeniul <code>www</code>, înlăturați versiunea www.your-domain.com a domeniului din <code>server_name</code> în primul bloc al server-ului în <code>nginx/default.conf</code> și înlăturați opțiunea <code>-d www.${DOMAIN}</code> de la finalul comenzii <code>certbot</code> din <code>docker-compose.yml</code>.</li>
-<li>Dacă rulați un alt server web pe calculatorul dvs. gazdă, veți avea nevoie să urmați <a href="/using-a-reverse-proxy.html">instrucțiunile pentru reverse-proxy</a></li>
+<li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
 </ul>
 </li>
 </ul>

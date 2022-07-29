@@ -96,7 +96,7 @@ Externer Speicher
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/install-prod.html" >Installing in Production</a>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
                 </li>
                 
                 <li>
@@ -104,7 +104,7 @@ Externer Speicher
                 </li>
                 
                 <li>
-                    <a href="/de/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
                 </li>
                 
                 <li>
@@ -116,7 +116,7 @@ Externer Speicher
                 </li>
                 
                 <li>
-                    <a href="/de/optional_features.html" >Optional features</a>
+                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
                 </li>
                 
                 <li>
@@ -208,21 +208,21 @@ Externer Speicher
 <pre><code class="language-bash">./bw-dev copy_media_to_s3
 </code></pre>
 <h3>Aktivierung des externen Speichers für BookWyrm</h3>
-<p>To enable the S3-compatible external storage, you will have to edit your <code>.env</code> file by changing the property value for <code>USE_S3</code> from <code>false</code> to <code>true</code>:</p>
+<p>Um den S3-kompatiblen externen Speicher zu aktivieren, müssen Sie Ihre <code>.env</code>-Datei bearbeiten, indem der Eigenschaftswert für <code>USE_S3</code> von <code>false</code> zu <code>true</code> geändert wird:</p>
 <pre><code>USE_S3=true
 </code></pre>
-<p>If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that <code>USE_HTTPS</code> is set to <code>true</code>, so images will be loaded over HTTPS:</p>
+<p>Wenn Ihr externer Speicher über HTTPS ausgeliefert wird (was die meisten dieser Tage sind), müssen Sie auch sicherstellen, dass <code>USE_HTTPS</code> auf <code>true gesetzt ist</code>, damit Bilder über HTTPS geladen werden:</p>
 <pre><code>USE_HTTPS=true
 </code></pre>
 <h4>Statische Assets</h4>
-<p>Then, you will need to run the following command, to copy the static assets to your S3 bucket:</p>
+<p>Danach müssen Sie den folgenden Befehl ausführen, um die statischen Assets in Ihren S3-Bucket zu kopieren:</p>
 <pre><code class="language-bash">./bw-dev collectstatic
 </code></pre>
 <h4>CORS-Einstellungen</h4>
-<p>Once the static assets are collected, you will need to set up CORS for your bucket.</p>
-<p>Some services like Digital Ocean provide an interface to set it up, see <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
-<p>If your service doesn’t provide an interface, you can still set up CORS with the command line.</p>
-<p>Create a file called <code>cors.json</code>, with the following content:</p>
+<p>Sobald die statischen Assets gesammelt sind, müssen Sie CORS für Ihren Bucket einrichten.</p>
+<p>Einige Dienste wie Digital Ocean bieten eine Schnittstelle, um es einzurichten, siehe <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: Wie man CORS konfiguriert</a>.</p>
+<p>Wenn Ihr Dienst keine Schnittstelle zur Verfügung stellt, können Sie CORS trotzdem mit der Befehlszeile einrichten.</p>
+<p>Erstelle eine Datei namens <code>cors.json</code> mit folgendem Inhalt:</p>
 <pre><code class="language-json">{
   &quot;CORSRules&quot;: [
     {
@@ -235,30 +235,30 @@ Externer Speicher
   ]
 }
 </code></pre>
-<p>Replace <code>MY_DOMAIN_NAME</code> with the domain name(s) of your instance.</p>
-<p>Then, run the following command:</p>
+<p>Ersetzen Sie <code>MY_DOMAIN_NAME</code> durch den/die Domainname(n) Ihrer Instanz.</p>
+<p>Führen Sie dann den folgenden Befehl aus:</p>
 <pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
 </code></pre>
 <p>Keine Ausgabe bedeutet, dass es gut sein sollte.</p>
 <p>Wenn Sie eine neue BookWyrm-Instanz starten, können Sie sofort zu den Installationsanweisungen zurückkehren. Wenn nicht, lesen Sie weiter.</p>
 <h3>Aktualisiere deine Instanz</h3>
-<p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
+<p>Sobald die Medienmigration abgeschlossen und die statischen Assets gesammelt wurden, können Sie die neue <code>.env</code>-Konfiguration laden und Ihre Instanz neustarten mit:</p>
 <pre><code class="language-bash">./bw-dev up -d
 </code></pre>
-<p>If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong <a href="#cors-settings">here</a>. In that case it might be good to check the headers of a HTTP request against a file on your bucket:</p>
+<p>Wenn alles gut geht, wurde Ihr Speicher ohne Serverausfall geändert. Wenn einige Schriftarten fehlen (und Ihre Browser-JS-Konsole mit Warnung über CORS aufwartet), schlug etwas <a href="#cors-settings">hier</a> fehl. In diesem Fall kann es gut sein, die Header einer HTTP-Anfrage auf eine Datei in Ihrem Bucket zu überprüfen:</p>
 <pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
 </code></pre>
-<p>Replace <code>MY_DOMAIN_NAME</code> with your instance domain name, <code>BUCKET_URL</code> with the URL for your bucket, you can replace the file path with any other valid path on your bucket.</p>
-<p>If you see any message, especially a message starting with <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, it didn’t work. Wenn Sie keine Nachricht sehen, funktionierte es.</p>
-<p>For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage. To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:</p>
+<p>Ersetzen Sie <code>MY_DOMAIN_NAME</code> durch Ihren Domain-Namen, <code>BUCKET_URL</code> mit der URL für Ihren Bucket, Sie können den Dateipfad durch jeden anderen gültigen Pfad in Ihrem Bucket ersetzen.</p>
+<p>Wenn Sie eine Nachricht sehen, insbesondere eine Nachricht, die mit <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code> beginnt, funktionierte sie nicht. Wenn Sie keine Nachricht sehen, funktionierte es.</p>
+<p>Für eine aktive Instanz kann es eine Handvoll Dateien geben, die während der Zeit zwischen der Migration der Dateien auf den externen Speicher lokal erstellt wurden und ein Neustarten der App nutzt den externen Speicher. Um sicherzustellen, dass alle noch verbleibenden Dateien nach dem Umschalten auf den externen Speicher hochgeladen werden, können Sie den folgenden Befehl verwenden, der nur Dateien hochlädt, die nicht bereits im externen Speicher vorhanden sind:</p>
 <pre><code class="language-bash">./bw-dev sync_media_to_s3
 </code></pre>
 <h3>Instanz-Konnektor aktualisieren</h3>
-<p><em>Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
-<p>In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.</p>
-<p>Connector data can be accessed through the Django admin interface, located at the url <code>http://MY_DOMAIN_NAME/admin</code>. The connector for your own instance is the first record in the database, so you can access the connector with this URL: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
-<p>The field <em>Covers url</em> is defined by default as <code>https://MY_DOMAIN_NAME/images</code>, you have to change it to <code>https://S3_STORAGE_URL/images</code>. Then, click the <em>Save</em> button, and voilà!</p>
-<p>You will have to update the value for <em>Covers url</em> every time you change the URL for your storage.</p>
+<p><em>Hinweis: Sie können diesen Schritt überspringen, wenn Sie eine aktualisierte Version von BookWyrm verwenden; im September 2021 wurde der "Selbst-Steckverbinder" in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a> entfernt</em></p>
+<p>Damit die richtige URL für die Anzeige lokaler Buchsuchergebnisse verwendet wird, müssen wir den Wert für die URL-Basis der Titelbilder ändern.</p>
+<p>Konnektor-Daten können über die Django-Admin-Schnittstelle unter der URL <code>http://MY_DOMAIN_NAME/admin</code> aufgerufen werden. Der Konnektor für Ihre eigene Instanz ist der erste Datensatz in der Datenbank, damit Sie auf den Konnektor mit dieser URL zugreifen können: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
+<p>Das Feld <em>Covers url</em> ist standardmäßig als <code>https://MY_DOMAIN_NAME/images</code>definiert, Sie müssen es auf <code>https://S3_STORAGE_URL/images</code> ändern. Klicken Sie dann auf <em>Speichern</em> und voilà!</p>
+<p>Sie müssen den Wert für die <em>Covers Url</em> jedes Mal aktualisieren, wenn Sie die URL für Ihren Speicher ändern.</p>
 </section>
 
         </div>

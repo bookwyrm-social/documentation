@@ -60,25 +60,25 @@ Führt Djangos `migrate`-Kommando im Docker-Container aus. Sie müssen dies imme
 
 _Dieser Befehl ist nicht verfügbar im `Produktion`szweig_.
 
-Setzt die Datenbank zurück. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+Setzt die Datenbank zurück. **Dieser Befehl löscht Ihre gesamte Bookwyrm-Datenbank**und initiiert dann eine neue Datenbank und führt alle Migrationen aus. Sie sollten alle aktuellen Migrationsdateien löschen, die Sie nicht ausführen möchten, _bevor_ das `resetdb` ausgeführt wird.
 
 ## Eine Bookwyrm-Instanz verwalten
 
 ### collectstatic
 
-Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
+Migrieren Sie statische Assets in einen Docker-Container oder in einen S3-kompatiblen "Bucket", abhängig vom Kontext.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database.
+Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. Dies kann eine Weile dauern, wenn Sie eine große Datenbank haben.
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Erzeugt Miniaturbilder für Buchtitelbilder.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. Sie können mit dem Argument `--stream` den Stream angeben.
+Baut den Redis Stream (Benutzer-Feeds) neu auf. Sie müssen dies normalerweise nicht ausführen, es sei denn, es gibt einen Fehler, der die Feeds Ihrer Benutzer aus irgendeinem Grund löscht. Sie können mit dem Argument `--stream` den Stream angeben.
 
 ### populate_list_streams
 
@@ -110,23 +110,23 @@ Siehe [Externer Speicher](/external-storage.html) für weitere Informationen.
 
 ### copy_media_to_s3
 
-Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Für den ersten Upload in einen leeren Bucket verwenden.
+Migrieren Sie alle hochgeladenen Medien von einer bestehenden Bookwrym-Installation in einen S3-kompatiblen "Bucket". Für den ersten Upload in einen leeren Bucket verwenden.
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Nutzen, um sicherzustellen, dass alle lokalen Dateien in den existierenden Bucket hochgeladen sind.
+Synchronisieren Sie neue oder geänderte Medien von einer existierenden Bookwrym-Installation zu einem S3-kompatiblen "Bucket". Nutzen, um sicherzustellen, dass alle lokalen Dateien in den existierenden Bucket hochgeladen sind.
 
 ### set_cors_to_s3 filename
 
-Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
+Kopieren Sie eine CORS-Regel-JSON-Datei in Ihren S3-Bucket, wobei der `Dateiname` der Name Ihrer JSON-Datei ist (z.B. `./bw-dev set_cors_to_s3 cors.json`)
 
 ## Entwicklung und Test
 
-_These commands are not available on the `production` branch_.
+_Diese Befehle sind nicht verfügbar im `Produktionszweig`_.
 
 ### black
 
-BookWyrm verwendet den [Black](https://github.com/psf/black) Code-Formatierer, um die Python Codebase konsistent zu gestalten. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+BookWyrm verwendet den [Black](https://github.com/psf/black) Code-Formatierer, um die Python Codebase konsistent zu gestalten. Führen Sie `black` aus, bevor Sie Ihre Änderungen übertragen, so dass die `pylint` Aufgabe für ihre Pull-Anfrage nicht fehlschlägt und Sie traurig macht.
 
 ### prettier
 
@@ -134,7 +134,7 @@ BookWyrm verwendet [Prettier](https://prettier.io/) um die JavaScript-Codebasis 
 
 ### stylelint
 
-BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
+BookWyrm verwendet [Stylelint](uhttps://stylelint.io/), um die CSS-Dateien einheitlich zu gestalten. Führen Sie `stylelintprettier` aus, bevor Sie Änderungen an Skripten übertragen, um Ihren Code automatisch zu formatieren.
 
 ### formatters
 
@@ -153,7 +153,7 @@ docker-compose rm -f
 
 ### makemessages
 
-Erstellt Nachrichtendateien für alle Übersetzungstexte. After you have run `makemessages` you need to run `compilemessages` to compile the translations. Siehe [Djangos makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Erstellt Nachrichtendateien für alle Übersetzungstexte. Nachdem Sie `makemessages` ausgeführt haben, müssen Sie `compilemessages` ausführen, um die Übersetzungen zu kompilieren. Siehe [Djangos makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
 ### compilemessages
 

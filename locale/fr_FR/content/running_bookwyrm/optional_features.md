@@ -6,21 +6,21 @@ Certaines fonctionnalités de BookWyrm doivent être activées pour fonctionner.
 
 ## Prévisualisation d'images
 
-By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
+Par défault, BookWyrm utilise le logo de l'instance (ou le logo par défault) en tant qu'image d'aperçu OpenGraph. Une autre option est d'activer la création d'aperçus pour les livres, les utilisateur-ices et le site web.
 
-The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Depending on the type of image, the contents will be:
+The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Selon le type d'image, son contenu sera :
 
-- the default instance image will display the big logo, along with the name of the instance and its url
-- the user image will display their avatar, display name, handle (in the form of username@instance)
-- the book image will display their cover, title, subtitle (if present), author and rating (if present)
+- l'image par défault de l'instance va afficher le gros logo, avec le nom de l'instance et son url
+- l'image de l'utilisateur-ice va afficher leur photo de profil, nom d'affichage et nom du compte (sous la forme @nom-d'utilisateur@instance)
+- l'image du livre va afficher sa page courverture, titre, sous-titre (s'il y a lieu), auteur-e et "rating" (s'il y a lieu)
 
-These images will be updated at various points:
+Ces images vont être mises à jour à plusieurs occasions :
 
-- instance image: when the instance name or big logo are changed
-- user image: when the display name or avatar are changed
-- book image: when the title(s), author(s) or cover are changed, or when a new rating is added
+- image de l'instance : lorsque le nom de l'instance ou le logo sont modifiés
+- image de l'utilisateur-ice : lorsque le nom d'affichage ou la photo de profil sont modifiés
+- image du livre : lorsque le titre, l'auteur-e ou la couverture sont modifiés, ou quand une nouvelle note est ajoutée
 
-### Enabling preview images
+### Activer la prévisualisation des images
 
 In order to enable the feature with default settings, you have to uncomment (remove the `#` in front of) the line `ENABLE_PREVIEW_IMAGES=true` in your `.env` file. All the new updating events aforementioned will cause the generation of the corresponding image.
 

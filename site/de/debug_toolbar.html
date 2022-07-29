@@ -96,7 +96,7 @@ Django Debug-Symbolleiste
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/install-prod.html" >Installing in Production</a>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
                 </li>
                 
                 <li>
@@ -104,7 +104,7 @@ Django Debug-Symbolleiste
                 </li>
                 
                 <li>
-                    <a href="/de/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
                 </li>
                 
                 <li>
@@ -116,7 +116,7 @@ Django Debug-Symbolleiste
                 </li>
                 
                 <li>
-                    <a href="/de/optional_features.html" >Optional features</a>
+                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
                 </li>
                 
                 <li>
@@ -168,13 +168,13 @@ Django Debug-Symbolleiste
         <div class="column">
             
 <section class="block content">
-    <p>BookWyrm has a branch that is configured to run <a href="https://django-debug-toolbar.readthedocs.io/en/latest/">Django Debug Toolbar</a>. This branch will never get merged into <code>main</code> and has a few tweaks that make it work with the toolbar, but unsafe to use in anything resembling a production environment. To use this branch, you will need to go through a few steps to get it running.</p>
+    <p>BookWyrm hat einen Branch, der konfiguriert ist, um die <a href="https://django-debug-toolbar.readthedocs.io/en/latest/">Django Debug Toolbar</a> auszuführen. Dieser Branch wird niemals in <code>main</code> zusammengeführt und hat ein paar Optimierungen, die ihn mit der Symbolleiste funktionieren lassen, aber unsicher ist in allem, was einer Produktionsumgebung ähnelt. Um diesen Branch zu verwenden, müssen Sie einige Schritte gehen, um ihn zum Laufen zu bringen.</p>
 <h2>Einrichtung</h2>
 <ul>
-<li>Using git, checkout out the <a href="https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar"><code>debug-toolbar</code></a> branch</li>
-<li>Update the branch relative to <code>main</code> using <code>git merge main</code>. The branch is updated periodically but will likely be behind latest.</li>
+<li>Mit Git den <a href="https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar"><code>debug-toolbar</code></a>-Branch auschecken</li>
+<li>Aktualisieren Sie den Branch relativ zum <code>main</code> mit <code>git merge main</code>. Der Branch wird periodisch aktualisiert, aber wird wahrscheinlich hinterher sein.</li>
 <li>Erstellen Sie die Docker-Images mit <code>docker-compose up --build</code> neu, um sicherzustellen, dass die Debug-Toolbar-Bibliothek von <code>requirements.txt</code> installiert ist</li>
-<li>Access the application <code>web</code> image directly (instead of via <code>nginx</code>) using port <code>8000</code></li>
+<li>Greifen Sie direkt auf das Applikations-<code>web</code>-Image (anstatt durch <code>nginx</code>) mittel des Ports <code>8000</code> zu</li>
 </ul>
 </section>
 
