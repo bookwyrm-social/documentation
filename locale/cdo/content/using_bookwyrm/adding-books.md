@@ -13,7 +13,7 @@ If the book you're looking for isn't available on your instance, there are a few
 
 ## Adding another edition
 
-If you found the book your want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how any editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
+If you found the book your want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
 
 ## Add a completely new book
 
