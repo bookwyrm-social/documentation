@@ -12,27 +12,27 @@ Interakcje stosunków między użytkownikami są zgodne ze specyfikacją Activit
 - `Obserwuj`: poproś o otrzymywanie statusów od użytkownika oraz przeglądanie ich statusów, które mogą wyświetlić tylko obserwujący
 - `Akceptuj`: zatwierdza `Obserwowanie` i nawiązuje stosunek
 - `Odmów`: odrzuca `Obserwowanie`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Zablokuj`: uniemożliwia użytkownikowi wzajemne wyświetlanie statusów oraz uniemożliwia wyświetlanie profilu
+- `Aktualizuj`: aktualizuje profil i ustawienia użytkownika
+- `Usuń`: dezaktywuje użytkownika
+- `Cofnij`: anuluje `Obserwowanie` lub `Zablokowanie`
 
-### Statuses
-#### Object types
+### Statusy
+#### Typy obiektów
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Notatka`: W usługach takich jak Mastodon, `Notatki` są podstawowym typem statusów. Zawierają treść wiadomości, załączniki, wzmianki o użytkownikach oraz są odpowiedziami na inne statusy dowolnego typu. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
+- `Recenzja`: jest to status w odpowiedzi na książkę (wskazaną przez pole `inReplyToBook`), który zawiera tytuł, treść oraz ocenę liczbową od 0 (bez oceny) do 5.
+- `Komentarz`: komentarz do książki wspomina o książce i zawiera treść.
+- `Cytat`: zawiera treść, fragment książki oraz wspomina o książce
 
 
-#### Activities
+#### Aktywności
 
-- `Create`: saves a new status in the database.
+- `Tworzenie`: zapisuje nowy status w bazie danych.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Uwaga**: BookWyrm akceptuje aktywności `Tworzenie`, tylko jeśli:
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
+   - Są wiadomościami bezpośrednimi (np. `Notatki` z ustawieniem `bezpośrednie`, które wspominają lokalnego użytkownika),
    - Related to a book (of a custom status type that includes the field `inReplyToBook`),
    - Replies to existing statuses saved in the database
 - `Delete`: Removes a status
