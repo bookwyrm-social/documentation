@@ -2,16 +2,16 @@
 Title: ActivityPub Date: 2021-04-20 Order: 1
 - - -
 
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm korzysta z protokołu [ActivityPub](http://activitypub.rocks/) do wysyłania i odbierania aktywności użytkownika pomiędzy instancjami BookWyrm oraz innymi usługami, które korzystają z ActivityPub, takimi jak [Mastodon](https://joinmastodon.org/). Do obsługi danych na temat książek BookWyrm posiada kilka rozszerzonych typów Aktywności, które nie są częścią standardu, ale są czytelne dla innych instancji BookWyrm.
 
-## Activities and Objects
+## Aktywności i obiekty
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Użytkownicy i stosunki
+Interakcje stosunków między użytkownikami są zgodne ze specyfikacją ActivityPub.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
+- `Obserwuj`: poproś o otrzymywanie statusów od użytkownika oraz przeglądanie ich statusów, które mogą wyświetlić tylko obserwujący
+- `Akceptuj`: zatwierdza `Obserwowanie` i nawiązuje stosunek
+- `Odmów`: odrzuca `Obserwowanie`
 - `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
 - `Update`: updates a user's profile and settings
 - `Delete`: deactivates a user
