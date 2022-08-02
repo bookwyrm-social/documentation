@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-07-08 17:52\n"
+"PO-Revision-Date: 2022-08-02 14:01\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
@@ -31,7 +31,7 @@ msgstr "Jak korzystać oraz udzielić się"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
-msgstr ""
+msgstr "BookWyrm: Społeczność czytelników"
 
 #: templates/layout.html:35 templates/layout.html:39
 msgid "Join"
@@ -43,7 +43,7 @@ msgstr "Udziel się"
 
 #: templates/layout.html:41 templates/layout.html:45
 msgid "Support"
-msgstr ""
+msgstr "Wsparcie"
 
 #: templates/layout.html:44 templates/layout.html:48
 msgid "Code"
