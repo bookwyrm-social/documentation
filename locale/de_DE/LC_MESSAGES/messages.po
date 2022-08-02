@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-08-02 15:08\n"
+"PO-Revision-Date: 2022-08-02 16:08\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -56,7 +56,7 @@ msgstr "Dokumentation"
 
 #: templates/layout.html:95 templates/layout.html:101
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr "<strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betreut wird."
+msgstr "<strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird."
 
 #: templates/layout.html:98 templates/layout.html:104
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
@@ -76,11 +76,11 @@ msgstr "Zu dieser Seite beitragen"
 
 #: templates/layout.html:122 templates/layout.html:128
 msgid "Learn more"
-msgstr "Mehr"
+msgstr "Mehr erfahren"
 
 #: templates/layout.html:127 templates/layout.html:133
 msgid "Contact maintainer"
-msgstr "Kontaktieren Sie die Entwickler"
+msgstr "Betreiber*in kontaktieren"
 
 #: templates/layout.html:130 templates/layout.html:136
 msgid "License"
