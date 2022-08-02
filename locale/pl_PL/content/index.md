@@ -2,26 +2,26 @@
 Title: Welcome Date: 2021-04-13
 - - -
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+BookWyrm to sieć społecznościowa do śledzenia swojego czytania, rozmów o książkach, pisania recenzji oraz odkrywania swoich kolejnych książek. Federacja umożliwia użytkownikom BookWyrm dołączanie do małych, zaufanych społeczności, które mogą łączyć się ze sobą i z innymi usługami ActivityPub, takimi jak Mastodon i Pleroma.
 
-## Features
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+## Funkcje
+Ponieważ projekt jest nadal we wczesnej fazie rozwoju, funkcje są dodawane każdego dnia, a miejsca na sugestie i pomysły Ci u nas pod dostatkiem. Utwórz [wątek](https://github.com/bookwyrm-social/bookwyrm/issues), aby rozpocząć dysksuję!
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
-        - Comments on a book
-        - Quotes or excerpts
-    - Reply to statuses
-    - View aggregate reviews of a book across connected BookWyrm instances
-    - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
-    - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
+- Zamieszczanie treści o książkach
+    - Twórz recenzje z ocenami lub bez, które będą zamieszczane na stronie książki
+    - Publikuj pozostałe rodzaje statusów o książkach, takie jak:
+        - Komentarze do ksiażęk
+        - Cytaty lub fragmenty
+    - Odpowiadaj na statusy
+    - Przeglądaj zebrane recenzje książki pomiędzy połączonymi instancjami BookWyrm
+    - Oddzielaj lokalne i sfederowane recenzje oraz oceny na swoim kanale aktywności
+- Śledź aktywność czytania
+    - Umieszczaj książki na domyślnych półkach "do przeczytania", "obecnie czytanie" oraz "przeczytane"
+    - Twórz własne półki
+    - Przechowuj daty rozpoczęcia/ukończenia czytania oraz aktualizacje postępu z upływem czasu
+    - Dziel się swoją aktywnością czytania z obserwującymi (opcjonalnie i z bardzo precyzyjnymi ustawieniami prywatności)
     - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
-- Federation with ActivityPub
+- Federacja dzięki ActivityPub
     - Broadcast and receive user statuses and activity
     - Share book data between instances to create a networked database of metadata
     - Identify shared books across instances and aggregate related content
