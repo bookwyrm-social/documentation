@@ -8,29 +8,29 @@ Możesz dołączyć do projektu tłumaczenia BookWyrm na [translate.joinbookwyrm
 
 ## Język neutralny płciowo
 
-Tam, gdzie to możliwe, tłumaczenia BookWyrm powinny zawierać neutralne płciowo wyrazy. Ma to zastosowanie również, gdy rodzaj męski jest traktowany jako neutralny lub istnieje coś podobnego do "on/ona". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Tam, gdzie to możliwe, tłumaczenia BookWyrm powinny zawierać neutralne płciowo wyrazy. Ma to zastosowanie również, gdy rodzaj męski jest traktowany jako neutralny lub istnieje coś podobnego do "on/ona". Równie ważne jest, aby przetłumaczone treści były jasne, zwięzłe i czytelne dla użytkownika, a czasami te wartości nie idą w parze; nie ma jednej odpowiedzi na wszystkie aspekty, więc należy wykorzystać wszelkie zasoby języka.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Poświęć więcej uwagi na integrację oraz neutralny płciowo język niż na poprawność lub oficjalne formy stylizacji. Na przykład w języku angielskim wiele formalnych zwrotów wymaga użycia zaimka "ona" lub "on", gdy odnosimy się do osoby, ale lepiej będzie, jeśli na BookWyrm zastosujemy neutralne płciowo "ono/oni".
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Jeśli nie masz pewności, jak najlepiej podejść do problemu z tłumaczeniem, dodaj komentarz do tłumaczenia lub utwórz [dyskusję](https://translate.joinbookwyrm.com/project/bookwyrm/discussions), aby uzyskać odpowiedź na bardziej zawiłe pytania.
 
-## Making templates translatable
+## Umożliwianie tłumaczenia szablonów
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+BookWyrm korzysta z funkcji tłumaczenia Django, aby umożliwić zmienianie treści strony w zależności od języka wybranego przez użytkownika. Dokumentacja Django [zawiera pomocne objaśnienia](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code), jak to działa, a tutaj krótkie jej podusmowanie:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* cały tekst szablonu powinien zawierać znaczniki tłumaczenia szablonu
+* dodaj `{% load i18n %}` na górze szablonu, aby umożliwić tłumaczenia
+* Jeśli blok tekstu jest tekstem dosłownym, możesz skorzystać z znacznika szablonu `{% trans %}`
+* Jeśli blok tekstu zawiera zmiennie, należy użyć pary znaczników `{% blocktrans %}` oraz `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
 
-### Examples
+### Przykłady
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>
 
 <p>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Added by <a href="{{ user_path }}">{{ username }}</a>
+    Dodane przez <a href="{{ user_path }}">{{ username }}</a>
     {% endblocktrans %}
 </p>
 ```
