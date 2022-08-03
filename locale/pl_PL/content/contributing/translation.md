@@ -1,14 +1,14 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Title: Tłumaczenia Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Udzielanie się w tłumaczeniach
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Możesz dołączyć do projektu tłumaczenia BookWyrm na [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Język neutralny płciowo
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Tam, gdzie to możliwe, tłumaczenia BookWyrm powinny zawierać neutralne płciowo wyrazy. Ma to zastosowanie również, gdy rodzaj męski jest traktowany jako neutralny lub istnieje coś podobnego do "on/ona". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
 
 As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
 
