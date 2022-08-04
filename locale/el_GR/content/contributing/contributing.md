@@ -1,8 +1,8 @@
 - - -
-Title: How to Contribute Date: 2021-04-12 Order: 1
+Τίτλος: Πώς να συνεισφέρετε Ημερομηνία: 2021-04-12 Σειρά: 1
 - - -
 
-There are many ways you can contribute to this project, regardless of your level of technical expertise.
+Υπάρχουν πολλοί τρόποι με τους οποίους μπορείτε να συνεισφέρετε σε αυτό το έργο, ανεξάρτητα από το επίπεδο τεχνικής εξειδίκευσής σας.
 
 ## Feedback and feature requests
 Please feel encouraged and welcome to point out bugs, suggestions, feature requests, and ideas for how things ought to work using [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues).
