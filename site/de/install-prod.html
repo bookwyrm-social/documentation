@@ -93,7 +93,7 @@ Installation in Produktion
                 </li>
                 
                 <li>
-                    <a href="/de/adding-books.html" >Adding Books</a>
+                    <a href="/de/adding-books.html" >Bücher hinzufügen</a>
                 </li>
                 
             </ul>
@@ -206,7 +206,7 @@ Installation in Produktion
 <li>Aktualisiere <code>nginx/default.conf</code>:<ul>
 <li>Ersetzen Sie <code>your-domain.com</code> mit Ihrem Domain-Namen überall in der Datei (einschließlich der Zeilen, die derzeit auskommentiert sind)</li>
 <li>Wenn Sie die <code>www</code>-Subdomain nicht verwenden, entfernen Sie die www.your-domain.com-Version der Domain aus dem <code>server_name</code> im ersten Serverblock in <code>nginx/default.conf</code> und entfernen Sie das <code>-d www.${DOMAIN}</code>-Flag am Ende des Befehls <code>certbot</code> in <code>docker-compose.yml</code>.</li>
-<li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
+<li>Wenn Sie einen anderen Webserver auf Ihrem Host-Rechner betreiben, müssen Sie den <a href="/reverse-proxy.html">Reverse-Proxy-Anweisungen</a> folgen</li>
 </ul>
 </li>
 </ul>
