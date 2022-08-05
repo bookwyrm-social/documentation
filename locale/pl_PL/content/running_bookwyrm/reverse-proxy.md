@@ -28,8 +28,8 @@ Przed konfiguracją nginx należy zlokalizować swój katalog konfiguracji nginx
 
 Aby skonfigurować swój serwer:
 
-- In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
-- In your nginx `servers` directory, create a new file named after your domain containing the following information:
+- Upewnij się, że w pliku `nginx.conf` wiersz `include servers/*;` nie jest zawarty w komentarzu.
+- W swoim katalogu `servers` utwórz nowy plik z nazwą Twojej domeny zawierający następujące informacje:
 
 ``` { .nginx }
 server {
@@ -58,7 +58,7 @@ server {
 }
 ```
 
-To set up with an ssl block:
+Do konfiguracji bloku SSL:
 ``` { .nginx }
 server {
     server_name your.domain;
@@ -99,12 +99,12 @@ server {
     }
 }
 ```
-- run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
-- restart nginx
+- wykonaj `sudo certbot run --nginx --email TWÓJ_EMAIL -d twoja-domena.pl -d www.twoja-domena.pl`
+- uruchom ponownie nginx
 
-If everything worked correctly, your BookWyrm instance should now be externally accessible.
+Jeśli wszystko przebiegło pomyślnie, Twoja instancja BookWyrm powinna być od teraz dostępna z zewnątrz.
 
 *Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
 
-*Note: the location of the ssl certificates may vary depending on the OS of your server*
+*Uwaga: lokalizacja certyfikatów SSL może różnić się w zależności od systemu operacyjnego Twojego serwera*
 
