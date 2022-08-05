@@ -24,9 +24,9 @@ Steps for setting up a reverse-proxy are server dependent.
 
 #### Nginx
 
-Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx. See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
+Przed konfiguracją nginx należy zlokalizować swój katalog konfiguracji nginx, który jest zależny od platformy i jak nginx został zainstalowany. Sprawdź [przewodnik nginx](http://nginx.org/en/docs/beginners_guide.html) po więcej szczegółów.
 
-To set up your server:
+Aby skonfigurować swój serwer:
 
 - In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
 - In your nginx `servers` directory, create a new file named after your domain containing the following information:
