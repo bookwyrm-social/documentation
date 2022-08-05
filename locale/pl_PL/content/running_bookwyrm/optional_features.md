@@ -1,12 +1,12 @@
 - - -
-Title: Optional features Date: 2021-08-02 Order: 5
+Title: Dodatkowe funkcje Date: 2021-08-02 Order: 5
 - - -
 
-Some features of BookWyrm have to be enabled to work.
+Niektóre z funkcji BookWyrm należy aktywować, aby były dostępne.
 
-## Preview image generation
+## Generowanie obrazów podglądu
 
-By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
+Domyślnie BookWyrm używa logo instancji (lub domyślnego logo) jako obrazu podglądu OpenGraph. Możesz jednak włączyć generowanie obrazów podglądu dla książek, użytkowników oraz strony internetowej.
 
 The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Depending on the type of image, the contents will be:
 
