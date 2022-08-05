@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>
+        
+Adding Books
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/ro/instances" class="navbar-item">
+                <span class="button is-success">Alăturați-vă</span>
+            </a>
+            <a href="https://joinbookwyrm.com/ro/get-involved" class="navbar-item">
+                Implicați-vă
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Susțineți
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Cod
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentație
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" selected>Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Adding Books</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/ro/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/posting-statuses.html" >Posting statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/adding-books.html" class="is-active">Adding Books</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/cli.html" >Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/contributing.html" >How to Contribute</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/permissions.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/ro/activitypub.html" >ActivitatePub</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>Există câteva modalități diferite de a adăuga cărți instanței dvs. BookWyrm! Când nu găsiți o carte pe care o căutați, încercați aceste opțiuni în ordine: este mai bine să importați o carte decât să creați una de la zero.</p>
+<h2>Încărcarea de cărți din alte cataloage</h2>
+<p>Dacă cartea pe care o căutați nu este disponibilă pe instanța dvs., există câteva moduri diferite de a o adăuga. Cel mai bun mod este de a o importa dintr-o sursă exterioară -- instanța dvs. poate încărca cărți din alte instanțe BookWyrm, precum și din <a href="http://openlibrary.org/">OpenLibrary</a> și <a href="http://inventaire.io/">Inventaire</a>. Dacă nu există rezultate pentru interogarea dvs., aceste surse vor fi automat întrebate și vor arăta un buton cu „<strong>Importați carte</strong>”. Dacă există rezultate locale care nu sunt ceea ce căutați, puteți face clic pe legătura „<strong>Încărcați rezultate din alte cataloage</strong>” pentru a încărca mai multe rezultate.</p>
+<h2>Adăugați o nouă ediție</h2>
+<p>Dacă ați găsit cartea pe care o doriți, dar nu ediția bună, puteți adăuga o altă ediție a operei din lista de ediții. Click the link below the description that tells you how many editions there are (for example, "<strong>4 editions</strong>"). În partea de jos a listei de ediții este un buton „<strong>Adăugați o altă ediție</strong>”.</p>
+<h2>Adăugați o carte complet nouă</h2>
+<p>Odată ce ați încercat să găsiți cartea dvs., să o importați dintr-un alt catalog și să găsiți alte ediții ale cărții, puteți adăuga o carte nouă manual. Legătura pentru a adăuga manual o carte este în josul paginii de căutare când sunt afișate cataloagele externe. Puteți de asemenea naviga direct la <code>/create-book</code> de pe instanța dvs..</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> este un program colaborativ, anti-corporație, menținut de <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Susțineți BookWyrm pe <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Alăturați-vă</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Contribuiți la această pagină</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Aflați mai multe</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentație</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contactați responsabilul</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licență</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "ro/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>
