@@ -78,31 +78,31 @@ Génère des vignettes pour les couvertures des livres.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Rafraîchit les flux Redis. Vous n’aurez généralement pas besoin de ceci à moins qu’une erreur efface votre flux Redis. Vous pouvez spécifier quel flux en utilisant l’argument `--stream`.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
+Rafraîchit le cache Redis des listes. Vous n’aurez généralement pas besoin de ceci à moins qu’une erreur efface vos listes.
 
 ### populate_suggestions
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Rafraîchir la liste de personnes recommandées pour tout le monde. Vous pouvez exécuter cela manuellement pour actualiser les suggestions.
 
 ### restart_celery
 
-Restarts the `celery_worker` Docker container.
+Redémarre le conteneur Docker `celery_worker`.
 
-### update
+### mise à jour
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Lors de changements sur la branche `production`, vous pouvez mettre à jour votre instance sans temps d’arrêt.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Cette commande `git pull` les dernières mises à jour de la branche `production` , construit des images docker si nécessaire, exécute les migrations Django, met à jour les fichiers statiques et redémarre tous les conteneurs Docker.
 
 ### admin_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Récupère le code admin utilisé pour enregistrer l'admin initial sur une nouvelle instance BookWyrm.
 
-## Setting up S3 compatible storage
+## Configuration du stockage S3 compatible
 
 By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
 
