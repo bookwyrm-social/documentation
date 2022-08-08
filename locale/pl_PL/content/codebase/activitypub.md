@@ -56,5 +56,5 @@ Listy oraz książki użytkownika są reprezentowane przez [`OrderedCollection`]
 - `Usuń`: Usuwa książkę z półki lub listy.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+## Alternatywna serializacja
+BookWyrm wykorzystuje niestandardowe typy obiektów (`Recenzja`, `Komentarz`, `Cytat`), które nie są obsługiwane przez ActivityPub, dlatego statusy są zamieniane na standardowe typy, gdy są wysyłane do lub wyświetlane w usługach poza BookWyrm. `Recenzja` jest konwertowana na `Artykuł`, a `Komentarz` oraz `Cytat` są konwertowane na `Notatki` z odnośnikiem do książki oraz załączonym obrazem okładki.
