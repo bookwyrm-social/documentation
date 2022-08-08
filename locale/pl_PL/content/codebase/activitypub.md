@@ -35,25 +35,25 @@ Interakcje stosunków między użytkownikami są zgodne ze specyfikacją Activit
    - Są wiadomościami bezpośrednimi (np. `Notatki` z ustawieniem `bezpośrednie`, które wspominają lokalnego użytkownika),
    - Related to a book (of a custom status type that includes the field `inReplyToBook`),
    - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+- `Usuń`: Usuwa status
+- `Polub`: Dodaje reakcję do statusu
+- `Ogłoś`: Promuje status do osi czasu podmiotu
+- `Cofnij`: Anuluje `Polub` lub `Ogłoś`
 
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+### Kolekcje
+Listy oraz książki użytkownika są reprezentowane przez [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
-#### Objects
+#### Obiekty
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `Półka`: Kolekcja książek użytkownika. Domyślnie, każdy użytkownik posiada półkę `do przeczytania`, `czytane` oraz `przeczytane`, które są używane do bycia na bieżąco z postępem czytania.
+- `Lista`: Kolekcja książek, która może zawierać elementy od użytkowników innych niż jej autor.
 
-#### Activities
+#### Aktywności
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Utwórz`: Dodaje półkę lub listę do bazy danych.
+- `Usuń`: Usuwa półkę lub listę.
+- `Dodaj`: Dodaje książkę na półkę lub do listy.
+- `Usuń`: Usuwa książkę z półki lub listy.
 
 
 ## Alternative Serialization
