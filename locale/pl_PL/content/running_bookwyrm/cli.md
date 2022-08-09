@@ -1,20 +1,20 @@
 - - -
-Title: Command Line Tool Date: 2021-11-11 Order: 6
+Title: Narzędzie wiersza polecenia Date: 2021-11-11 Order: 6
 - - -
 
-Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
+Programiści BookWyrm oraz menedżerowie instancji mogą skorzystać ze skryptu `bw-dev` do częstych zadań. Może to skrócić Twoje polecenia, ułatwić ich zapamiętanie i utrudnić zepsucie czegoś.
 
 Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
 
-## Docker shortcuts
+## Skróty Docker
 
 ### bash
 
-Open an interactive `bash` session inside the docker `web` container.
+Otwórz interaktywną sesję `bash` w kontenerze `web` dockera.
 
 ### build
 
-Equivalent to `docker-compose build`.
+Równoznaczne z kompilacją `docker-compose`.
 
 ### dbshell
 
