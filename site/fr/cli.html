@@ -212,45 +212,45 @@ Outils en ligne de commande
 <h3>generate_thumbnails</h3>
 <p>Génère des vignettes pour les couvertures des livres.</p>
 <h3>populate_streams args</h3>
-<p>Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the <code>--stream</code> argument.</p>
+<p>Rafraîchit les flux Redis. Vous n’aurez généralement pas besoin de ceci à moins qu’une erreur efface votre flux Redis. Vous pouvez spécifier quel flux en utilisant l’argument <code>--stream</code>.</p>
 <h3>populate_list_streams</h3>
-<p>Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.</p>
+<p>Rafraîchit le cache Redis des listes. Vous n’aurez généralement pas besoin de ceci à moins qu’une erreur efface vos listes.</p>
 <h3>populate_suggestions</h3>
-<p>Populate suggested users for all users. You may want to run this manually to refresh suggestions.</p>
+<p>Rafraîchir la liste de personnes recommandées pour tout le monde. Vous pouvez exécuter cela manuellement pour actualiser les suggestions.</p>
 <h3>restart_celery</h3>
-<p>Restarts the <code>celery_worker</code> Docker container.</p>
-<h3>update</h3>
-<p>When there are changes to the <code>production</code> branch, you can update your instance without downtime.</p>
-<p>This command <code>git pull</code>s the latest <code>production</code> branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.</p>
+<p>Redémarre le conteneur Docker <code>celery_worker</code>.</p>
+<h3>mise à jour</h3>
+<p>Lors de changements sur la branche <code>production</code>, vous pouvez mettre à jour votre instance sans temps d’arrêt.</p>
+<p>Cette commande <code>git pull</code> les dernières mises à jour de la branche <code>production</code> , construit des images docker si nécessaire, exécute les migrations Django, met à jour les fichiers statiques et redémarre tous les conteneurs Docker.</p>
 <h3>admin_code</h3>
-<p>Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.</p>
-<h2>Setting up S3 compatible storage</h2>
-<p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
-<p>See <a href="/external-storage.html">External Storage</a> for more information.</p>
+<p>Récupère le code admin utilisé pour enregistrer l'admin initial sur une nouvelle instance BookWyrm.</p>
+<h2>Configuration du stockage S3 compatible</h2>
+<p>Par défaut, BookWyrm stocke localement les fichiers statiques (favicon, avatar par défaut, etc.) et les médias (avatars, couvertures de livres, etc.), mais vous pouvez utiliser un service de stockage externe. BookWyrm utilise django-storages pour gérer le stockage externe, comme les services compatibles S3, Apache Libcloud ou SFTP.</p>
+<p>Voir <a href="/external-storage.html">Stockage externe</a> pour plus d'informations.</p>
 <h3>copy_media_to_s3</h3>
-<p>Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
+<p>Migrer tous les médias téléversés depuis une installation existante de Bookwrym vers un « seau » S3 compatible. Utiliser pour l'envoi initial vers un seau vide.</p>
 <h3>sync_media_to_s3</h3>
-<p>Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
+<p>Synchroniser les médias téléversés neufs ou modifiés depuis une installation existante de Bookwrym vers un « seau » S3 compatible. À utiliser pour s’assurer que tous les fichiers locaux soient téléversés dans un seau existant.</p>
 <h3>set_cors_to_s3 filename</h3>
-<p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
-<h2>Development and testing</h2>
-<p><em>These commands are not available on the <code>production</code> branch</em>.</p>
+<p>Copiez un fichier JSON de règles CORS dans votre seau S3, où <code>filename</code> est le nom de votre fichier JSON (ex : <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
+<h2>Développement et test</h2>
+<p><em>Ces commandes ne sont pas disponibles sur la branche de <code>production</code></em>.</p>
 <h3>black</h3>
-<p>BookWyrm uses the <a href="https://github.com/psf/black">Black</a> code formatter to keep the Python codebase consistent styled. Run <code>black</code> before committing your changes so the <code>pylint</code> task does not fail for your pull request and make you sad.</p>
+<p>BookWyrm utilise le formateur de code <a href="https://github.com/psf/black">Black</a> pour assurer la cohérence du code Python. Exécutez <code>black</code> avant de valider vos modifications afin que la tâche <code>pylint</code> n’échoue pas pour votre pull request et vous rend triste.</p>
 <h3>prettier</h3>
-<p>BookWyrm uses <a href="https://prettier.io/">Prettier</a> to keep the JavaScript codebase consistently styled. Run <code>prettier</code> before committing changes to scripts to automatically format your code.</p>
+<p>BookWyrm utilise <a href="https://prettier.io/">Prettier</a> pour assurer la cohérence du code JavaScript. Exécutez <code>prettier</code> avant de valider les modifications aux scripts pour formater automatiquement votre code.</p>
 <h3>stylelint</h3>
-<p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelintprettier</code> before committing changes to scripts to automatically format your code.</p>
+<p>BookWyrm utilise <a href="uhttps://stylelint.io/">Stylelint</a> pour assurer la cohérence des fichiers CSS. Exécutez <code>stylelintprettier</code> avant de valider les modifications aux scripts pour formater automatiquement votre code.</p>
 <h3>formatters</h3>
-<p>This command runs all code formatters (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) in one go.</p>
+<p>Cette commande exécute tous les formateurs de code (<code>black</code>, <code>prettier</code>, et <code>stylelint</code>) en une seule fois.</p>
 <h3>clean</h3>
-<p>Remove all stopped Docker containers.</p>
-<p>Equivalent to:</p>
+<p>Supprimer tous les conteneurs Docker arrêtés.</p>
+<p>Équivalent de :</p>
 <pre><code class="language-shell">docker-compose stop
 docker-compose rm -f
 </code></pre>
 <h3>makemessages</h3>
-<p>Creates message files for all translation strings. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Django's makemessages</a>.</p>
+<p>Crée des fichiers de messages pour tous les segments de traduction. Après avoir exécuté <code>makemessages</code> , vous devez exécuter <code>compilemessages</code> pour compiler les traductions. Voir <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">les makemessages Django</a>.</p>
 <h3>compilemessages</h3>
 <p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
 <h3>pytest args</h3>
