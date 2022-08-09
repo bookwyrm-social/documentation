@@ -13,8 +13,8 @@ Dacă cartea pe care o căutați nu este disponibilă pe instanța dvs., există
 
 ## Adăugați o nouă ediție
 
-Dacă ați găsit cartea pe care o doriți, dar nu ediția bună, puteți adăuga o altă ediție a operei din lista de ediții. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). În partea de jos a listei de ediții este un buton „**Adăugați o altă ediție**”.
+If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). În partea de jos a listei de ediții este un buton „**Adăugați o altă ediție**”.
 
 ## Adăugați o carte complet nouă
 
-Odată ce ați încercat să găsiți cartea dvs., să o importați dintr-un alt catalog și să găsiți alte ediții ale cărții, puteți adăuga o carte nouă manual. Legătura pentru a adăuga manual o carte este în josul paginii de căutare când sunt afișate cataloagele externe. Puteți de asemenea naviga direct la `/create-book` de pe instanța dvs..
+Odată ce ați încercat să găsiți cartea dvs., să o importați dintr-un alt catalog și să găsiți alte ediții ale cărții, puteți adăuga o carte nouă manual. The link to manually add a book is at the bottom of the search page when external catalogs are shown. Puteți de asemenea naviga direct la `/create-book` de pe instanța dvs..
