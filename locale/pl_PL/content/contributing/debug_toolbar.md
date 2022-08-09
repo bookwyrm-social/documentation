@@ -2,7 +2,7 @@
 Title: Django Debug Toolbar Date: 2022-05-16 Order: 5
 - - -
 
-BookWyrm has a branch that is configured to run [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/). This branch will never get merged into `main` and has a few tweaks that make it work with the toolbar, but unsafe to use in anything resembling a production environment. To use this branch, you will need to go through a few steps to get it running.
+BookWyrm posiada gałąź skonfigurowaną do uruchamiania [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/). Ta gałąź nigdy nie zostanie złączona z `główna` i posiada kilka ulepszeń, które umożliwiają pracę z paskiem narzędzi, ale nie są bezpieczne do używania z czymkolwiek przypominającym środowisko oficjalne. To use this branch, you will need to go through a few steps to get it running.
 
 ## Set up
 
