@@ -12,14 +12,14 @@ Create a bucket at your S3-compatible service of choice, along with an Access Ke
 
 This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
 
-### What awaits you
+### Co Cię czeka
 
-If you are starting a new BookWyrm instance, the process will be:
+Jeśli rozpoczynasz nową instancję BookWyrm, proces będzie zawierał:
 
-- Set up your external storage service
-- Enable external storage on BookWyrm
-- Start your BookWyrm instance
-- Update the instance connector
+- Konfigurację usługi pamięci zewnętrznej
+- Aktywację pamięci zewnętrznej na BookWyrm
+- Uruchomienie swojej instancji BookWyrm
+- Aktualizację łącznika instancji
 
 If you already started your instance, and images have been uploaded to local storage, the process will be:
 
