@@ -13,8 +13,8 @@ Jeśli książka, której szukasz nie jest dostępna w Twojej instancji, istniej
 
 ## Dodawanie innego wydania
 
-If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Naciśnij na odnośnik poniżej opisu, który zawiera ilość wydań (na przykład: "**4 wydania**"). Na dole listy wydań umieszczony jest przycisk "**Dodaj inne wydanie**".
+Jeśli znajdziesz właściwą książkę, ale nie odpowiednie wydanie, możesz dodać inne wydanie z listy wydań. Naciśnij na odnośnik poniżej opisu, który zawiera ilość wydań (na przykład: "**4 wydania**"). Na dole listy wydań umieszczony jest przycisk "**Dodaj inne wydanie**".
 
 ## Dodawanie zupełnie nowej książki
 
-Po wypróbowaniu szukania książki, importowania jej z pozostałych katalogów oraz szukania innych wydań książki, możesz dodać nową książkę ręcznie. The link to manually add a book is at the bottom of the search page when external catalogs are shown. Możesz również bezpośrednio przejść do `/create-book` na swojej instancji.
+Po wypróbowaniu szukania książki, importowania jej z pozostałych katalogów oraz szukania innych wydań książki, możesz dodać nową książkę ręcznie. Odnośnik do ręcznego dodania książki umieszczony jest na dole strony wyszukiwania, gdy pokazane są zewnętrzne katalogi. Możesz również bezpośrednio przejść do `/create-book` na swojej instancji.
