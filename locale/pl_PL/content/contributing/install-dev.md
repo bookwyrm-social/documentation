@@ -28,23 +28,23 @@ cp nginx/development nginx/default.conf
 ./bw-dev setup            # Inicjuje bazę danych i uruchamia migracje
 ./bw-dev up               # Uruchamia kontenery docker
 ```
-- Once the build is complete, you can access the instance at `http://localhost:1333` and create an admin user.
+- Po zakończeniu kompilacji możesz uzyskać dostęp pod `ttp://localhost:1333` i utworzyć konto administratora.
 
-If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
+Dla ciekawskich: polecenie `./bw-dev` to prosty skrypt uruchamiający wiele różnych narzędzi: powyżej możesz pominąć je i wykonać `docker-compose build` lub `docker-compose up` bezpośrednio, jeśli chcesz. `./bw-dev` po prostu gromadzi je wszystkie w jednym miejscu. Uruchom polecenia bez argumentów, aby uzyskać listę dostępnych poleceń, odczytać [stronę dokumentacji](/command-line-tool.html) dla niego lub otwórz ją i rozejrzyj się, aby sprawdzić, co dokładnie robi dane polecenie!
 
-### Editing or creating Models
+### Edytowanie lub tworzenie modeli
 
-If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
+Zmieniając lub tworząc model prawdopodobnie ulegnie zmianie struktura bazy danych. Aby te zmiany zostały zastosowane, należy uruchomić polecenie Django `makemigrations`, aby utworzyć nowy [plik migracji Django](https://docs.djangoproject.com/en/3.2/topics/migrations), a następnie przenieść go (`migrate`):
 
 ``` { .sh }
 ./bw-dev makemigrations
 ./bw-dev migrate
 ```
 
-### Editing static files
-Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
+### Edytowanie plików statycznych
+Za każdym razem, gdy edytujesz CSS lub JavaScript, należy ponownie uruchomić polecenie Django `collectstatic`, aby miany zostały zastosowane:
 ``` { .sh }
 ./bw-dev collectstatic
 ```
 
-If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
+Jeśli [zainstalowano yarn](https://yarnpkg.com/getting-started/install), możesz wykonać `yarn watch:static`, aby automatycznie wykonać poprzedni skrypt za każdym razem, gdy zajdzie zmiana w katalogu `bookwyrm/static`.
