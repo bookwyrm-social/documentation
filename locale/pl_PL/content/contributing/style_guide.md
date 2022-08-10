@@ -2,11 +2,11 @@
 Title: Style Guide Date: 2021-10-20 Order: 4
 - - -
 
-## Pull requests
+## Prośby o scalenie
 
-So you want to contribute code to BookWyrm: that rules! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
+Jeśli chcesz udzielić się w kodzie BookWyrm, to świetnie! Jeśli istnieje otwarty problem, który chcesz naprawić, możesz zamieścić komentarz do niego, tak aby niczego nie powielać. Staraj się, aby zakres próśb o scalenie był mały i skupiony na jednym temacie. Dzięki temu łatwiej będzie ją sprawdzić i sprawniej wprowadzić zmiany.
 
-If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.
+Jeśli nie masz pewności, jak coś naprawić lub nie możesz się za to zabrać, to nic nie szkodzi i wystarczy, że zamieścisz komentarz do prośby o scalenie i wspólnie znajdziemy rozwiązanie 💖.
 
 Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
 
@@ -22,17 +22,17 @@ BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep t
 
 Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
 
-### Templates (HTML)
+### Szablony (HTML)
 
-Your pull request will also be checked by the [curlylint](https://www.curlylint.org) linter for Django templates.
+Twoje prośby o scalenie zostaną również sprawdzone przez [curlylint](https://www.curlylint.org) w poszukiwaniu szablonów Django.
 
 ### CSS
 
-We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint [you can disable stylelint](https://stylelint.io/user-guide/ignore-code) for a particular rule, but you will need a good justification for doing so.
+Korzystamy z [stylelint](https://stylelint.io), do sprawdzania zasad CSS. Tak jak w przypadku Pylint [możesz wyłączyć stylelint](https://stylelint.io/user-guide/ignore-code) dla konkretnej zasady, ale należy mieć ku temu dobry powód.
 
 ### JavaScript
 
-[ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
+[ESLint](https://eslint.org) sprawdza wszelkie wprowadzone zmiany w JavaScript. Jeśli ESLint nie będzie współpracował z Twoim kodem JavaScript, sprawdź wiadomości narzędzia po więcej informacji.
 
 ## Inclusive Design
 
@@ -40,14 +40,14 @@ Bookwyrm aims to be as inclusive and accessible as possible.
 
 When contributing code, check the [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) before you file your pull request. For accessibility advice, [A11Y-101](https://www.a11y-101.com/development) is also a useful source. For information on how to make your page templates multi-lingual, see the [Translations section](/translations.html).
 
-Some particular things that Bookwyrm contributors have found useful to remember are:
+Niektórymi z aspektów, które współtwórcy BookWyrm uznali za przydatne do zapamiętania są:
 
-### Forms
+### Formularze
 
-* Only use `input[type="checkbox"]` or `input[type="radio"]` inside `<label>`
-* If you do not place checkboxes and radio buttons inside the `<label>`, the `<label>` should be placed _after_ the element it relates to
+* Używaj wyłącznie znaczników `input[type="checkbox"]` lub `input[type="radio"]` w znaczniku `<label>`
+* Jeśli nie umieścisz pól jedno- i wielokrotnego wyboru w znaczniku `<label>`, wówczas należy go umieścić _za_ elementem, do którego się odwołuje
 
-### Buttons and Links
+### Przyciski i odnośniki
 
-* Use a `<button>` element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a `POST` request (e.g. submitting a form)
-* Use an `<a>` element for anything that triggers a `GET` request. Usually, an anchor (`<a>`) element should not be styled as a button (`class="button"`), though there are some exceptions, such as "Cancel" buttons. If in doubt, ask for advice in your pull request
+* Użyj znacznika `<button>` dla czegokolwiek, co istnieje, aby wywołać instrukcję JavaScript (np. ukrywanie i pokazywanie fomrularza) lub wysyła żądanie `POST` (np. przesłanie formularza)
+* Użyj znacznika `<a>` dla czegokolwiek, co wywołuje żądanie `GET`. Zazwyczaj element znacznika odnośnika (`<a>`) nie powinien być stylizowany jako przycisk (`class="button"`), ale istnieje kilka wyjątków, takich jak przyciski "Anuluj". W razie wątpliwości zapytaj o poradę w swojej prośbie o scalenie
