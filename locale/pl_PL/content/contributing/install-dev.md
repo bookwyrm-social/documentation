@@ -17,16 +17,16 @@ cp .env.example .env
 - W pliku `.env` zmień `DEBUG` na `true`
 - Jeśli chcesz, możesz skorzystać z usług, takich jak [ngrok](https://ngrok.com/), aby skonfigurować nazwę domeny oraz ustawić zmienną `DOMAIN` w swoim pliku `.env` dla nazwy domeny wygenerowanej przez ngrok.
 
-- Set up nginx for development by copying the developer nginx configuration file (`nginx/development`) into a new file named `nginx/default.conf`:
+- Skonfiguruj nginx w celu programowania kopiując plik konfiguracyjny nginx (`nginx/development`) do nowego pliku o nazwie `nginx/default.conf`:
 ``` { .sh }
 cp nginx/development nginx/default.conf
 ```
 
-- Start the application. In the command line, run:
+- Uruchom aplikację. W wierszu polecenia wykonaj:
 ``` { .sh }
-./bw-dev build            # Build the docker images
-./bw-dev setup            # Initialize the database and run migrations
-./bw-dev up               # Start the docker containers
+./bw-dev build            # Kompiluje obraz docker
+./bw-dev setup            # Inicjuje bazę danych i uruchamia migracje
+./bw-dev up               # Uruchamia kontenery docker
 ```
 - Once the build is complete, you can access the instance at `http://localhost:1333` and create an admin user.
 
