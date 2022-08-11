@@ -18,13 +18,13 @@ Równoznaczne z kompilacją `docker-compose`.
 
 ### dbshell
 
-Open an interactive Postgres database shell. I hope you know what you're doing.
+Otwiera interaktywną powłokę bazy danych Postgres. Mam nadzieję, że wiesz, co robisz.
 
 ### runweb args
 
-Run an arbitrary command (represented above by `args`) in the `web` container.
+Wykonuje dowolne polecenie (reprezentowane powyżej przez `args`) w kontenerze `web`.
 
-Equivalent to `docker-compose run --rm web`.
+Równoznaczne z `docker-compose run --rm web`.
 
 ### service_ports_web args
 
@@ -40,11 +40,11 @@ Open an interactive Django shell inside the docker `web` container. You would us
 
 Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
 
-## Managing the database
+## Zarządzanie bazą danych
 
 ### initdb
 
-Initialize a database.
+Inicjuje bazę danych.
 
 ### makemigrations [appname migration number]
 
@@ -58,23 +58,23 @@ Runs Django's `migrate` command inside your Docker container. You always need to
 
 ### resetdb
 
-_This command is not available on the `production` branch_.
+_To polecenie nie jest dostępne w gałęzi `production`_.
 
-Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+Zeruje bazę danych. **To polecenie spowoduje usunięcie całej Twojej bazy danych BookWyrm** oraz zainicjuje świeżą bazę danych i wykona wszystkie migracje. Należy usunąć wszystkie najnowsze pliki migracji, których nie chcesz użyć _przed_ wykonaniem `resetdb`.
 
-## Managing a Bookwyrm instance
+## Zarządzanie instancją BookWyrm
 
 ### collectstatic
 
-Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
+Migruje statyczne zasoby do kontenera Docker lub zgodnego z S3 "wiadra" w zależności od kontekstu.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database.
+Generuje obrazy podglądu dla witryny, użytkowników oraz książek. Może to chwilę potrwać, jeśli posiadasz dużą bazę danych.
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Generuje miniatury dla okładek książek.
 
 ### populate_streams args
 
