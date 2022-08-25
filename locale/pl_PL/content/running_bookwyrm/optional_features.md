@@ -37,8 +37,8 @@ User and book preview images will be generated asynchroneously: the task will be
 So you want to customize your preview images? Here are the options:
 
 - `PREVIEW_BG_COLOR` will set the color for the preview image background. You can supply a color value, like `#b00cc0`, or the following values `use_dominant_color_light` or `use_dominant_color_dark`. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.
-- `PREVIEW_TEXT_COLOR` will set the color for the text. Depending on the choice for the background color, you should find a value that will have a sufficient contrast for the image to be accessible. A contrast ratio of 1:4.5 is recommended.
-- `PREVIEW_IMG_WIDTH` and `PREVIEW_IMG_HEIGHT` will set the dimensions of the image. Currently, the system will work best on images with a landscape (horizontal) orientation.
-- `PREVIEW_DEFAULT_COVER_COLOR` will set the color for books without covers.
+- `PREVIEW_TEXT_COLOR` definiuje kolor tekstu. W zależności od wybranego koloru tła, należy znaleźć wartość o odpowiednim kontraście, aby obraz był czytelny. Zalecany kontrast wynosi 1:4.5.
+- `PREVIEW_IMG_WIDTH` oraz `PREVIEW_IMG_HEIGHT` definiują wymiary obrazu. Obecnie system najlepiej współpracuje z obrazami o poziomej orientacji.
+- `PREVIEW_DEFAULT_COVER_COLOR` definiuje color książek bez okładki.
 
 All the color variables accept values that can be recognized as colors by Pillow’s `ImageColor` module: [Learn more about Pillow color names](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
