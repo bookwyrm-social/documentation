@@ -66,9 +66,9 @@ Congrats! You did it!! Configure your instance however you'd like.
 
 BookWyrm's db service dumps a backup copy of its database to its `/backups` directory daily at midnight UTC. Backups are named `backup__%Y-%m-%d.sql`.
 
-The db service has an optional script for periodically pruning the backups directory so that all recent daily backups are kept, but for older backups, only weekly or monthly backups are kept. To enable this script:
+The db service has an optional script for periodically pruning the backups directory so that all recent daily backups are kept, but for older backups, only weekly or monthly backups are kept. Aby aktywować ten skrypt:
 
-- Uncomment the final line in `postgres-docker/cronfile`
+- Usuń znaczniki komentarza w ostatnim wierszu w pliku `postgres-docker/cronfile`
 - rebuild your instance `docker-compose up --build`
 
 You can copy backups from the backups volume to your host machine with `docker cp`:
@@ -76,9 +76,9 @@ You can copy backups from the backups volume to your host machine with `docker c
 - Run `docker-compose ps` to confirm the db service's full name (it's probably `bookwyrm_db_1`.
 - Run `docker cp <container_name>:/backups <host machine path>`
 
-## Port Conflicts
+## Konflikty portów
 
-BookWyrm has multiple services that run on their default ports. This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.
+BookWyrm posiada wiele usług, które działają na ich domyślnych portach. This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.
 
 If this occurs, you will need to change your configuration to run services on different ports. This may require one or more changes the following files:
 
