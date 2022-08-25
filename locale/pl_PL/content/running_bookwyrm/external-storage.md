@@ -47,13 +47,13 @@ If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll
 
 If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
 
-This task is done with the command:
+To zadanie wykonywane jest poleceniem:
 
 ```bash
 ./bw-dev copy_media_to_s3
 ```
 
-### Enabling external storage for BookWyrm
+### Aktywowanie pamięci zewnętrznej dla BookWyrm
 
 To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `false` to `true`:
 
