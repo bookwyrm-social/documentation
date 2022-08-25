@@ -6,11 +6,11 @@ This project is still young and isn't, at the moment, very stable, so please pro
 
 ## Server setup
 - Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
-- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Skonfiguruj swój serwer z odpowiednimi zasadami zapory do uruchamiania aplikacji internetowych (ten zestaw instrukcji został przetestowany na Ubuntu 20.04). Oto instrukcje dla [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
 - [Install Docker and docker-compose](https://docs.docker.com/compose/install/)
 
-## Install and configure BookWyrm
+## Zainstaluj i skonfiguruj BookWyrm
 
 The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
 
@@ -59,10 +59,10 @@ c6c35779-af3a-4091-b330-c026610920d6
 - Run docker-compose in the background with: `docker-compose up -d`
 - The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Gratulacje! Udało się!! Skonfiguruj swoją instancję jak tylko chcesz.
 
 
-## Backups
+## Kopie zapasowe
 
 BookWyrm's db service dumps a backup copy of its database to its `/backups` directory daily at midnight UTC. Backups are named `backup__%Y-%m-%d.sql`.
 
@@ -78,20 +78,20 @@ You can copy backups from the backups volume to your host machine with `docker c
 
 ## Konflikty portów
 
-BookWyrm posiada wiele usług, które działają na ich domyślnych portach. This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.
+BookWyrm posiada wiele usług, które działają na ich domyślnych portach. Oznacza to, że w zależności od tego, co jeszcze działa na Twoim komputerze hosta, możesz napotkać błędy podczas kompilowania lub uruchamiania BookWyrm, gdy próby powiązania z tymi portami zakończą się niepowodzeniem.
 
-If this occurs, you will need to change your configuration to run services on different ports. This may require one or more changes the following files:
+Jeśli tak się stanie, należy zmienić konfigurację, aby usługi działały na różnych portach. Może to wymagać jednej lub więcej zmian w następujących plikach:
 
 - `docker-compose.yml`
 - `nginx/default.conf`
-- `.env` (You create this file yourself during setup)
+- `.env` (Tworzysz ten plik podczas konfiguracji)
 
 If you are already running a web-server on your machine, you will need to set up a reverse-proxy.
 
 ## Get Connected
 
-Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. There are a few ways in get in touch:
+Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. Istnieje kilka sposobów na kontakt:
 
- - Open an issue or pull request to add your instance to the [official list](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
+ - Utwórz problem lub prośbę o scalenie, aby dodać swoją instancję do [oficjalnej listy](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
  - Reach out to the project on [Mastodon](https://tech.lgbt/@bookwyrm) or [email the maintainer](mailto:mousereeve@riseup.net) directly with your GitHub username
- - Join the [Matrix](https://matrix.to/#/#bookwyrm:matrix.org) chat room
+ - Dołącz do pokoju rozmów na [Matrix](https://matrix.to/#/#bookwyrm:matrix.org)
