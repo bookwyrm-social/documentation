@@ -8,35 +8,35 @@ Niektóre z funkcji BookWyrm należy aktywować, aby były dostępne.
 
 Domyślnie BookWyrm używa logo instancji (lub domyślnego logo) jako obrazu podglądu OpenGraph. Możesz jednak włączyć generowanie obrazów podglądu dla książek, użytkowników oraz strony internetowej.
 
-The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Depending on the type of image, the contents will be:
+The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). W zależności od typu obrazu zawartością będzie:
 
-- the default instance image will display the big logo, along with the name of the instance and its url
+- domyślny obraz instancji wyświetlający duże logo wraz z nazwą instancji oraz jej adresem URL
 - the user image will display their avatar, display name, handle (in the form of username@instance)
-- the book image will display their cover, title, subtitle (if present), author and rating (if present)
+- obraz książki wyświetli jej okładkę, podtytuł (jeśli dotyczy), autora oraz oceny (jeśli dotyczy)
 
-These images will be updated at various points:
+Te obrazy będą aktualizowane w różnych momentach:
 
-- instance image: when the instance name or big logo are changed
-- user image: when the display name or avatar are changed
-- book image: when the title(s), author(s) or cover are changed, or when a new rating is added
+- obraz instancji: gdy nazwa instancji lub duże logo ulegną zmianie
+- obraz użytkownika: gdy wyświetlana nazwa lub awatar ulegną zmianie
+- obraz książki: gdy tytuł(y), autorzy lub okładka ulegnie zmianie lub zostanie dodana nowa ocena
 
-### Enabling preview images
+### Aktywacja podglądów obrazów
 
-In order to enable the feature with default settings, you have to uncomment (remove the `#` in front of) the line `ENABLE_PREVIEW_IMAGES=true` in your `.env` file. All the new updating events aforementioned will cause the generation of the corresponding image.
+Aby aktywować tę funkcję z domyślnymi ustawieniami, należy usunąć znacznik komentarza (usunąć `#` z przodu) wiersza `ENABLE_PREVIEW_IMAGES=true` w pliku `.env`. Wszystkie wspomniane nowe zdarzenia aktualizacji spowodują wygenerowanie odpowiedniego obrazu.
 
 Examples for these images can be viewed on the [feature’s pull request’s description](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink).
 
-### Generating preview images
+### Generowanie obrazów podglądu
 
-If you enable this setting after your instance has been started, some images may not have been generated. A command has been added to automate the image generation. In order to prevent a ressource hog by generating **A LOT** of images, you have to pass the argument `--all` (or `-a`) to start the generation of the preview images for all users and books. Without this argument, only the site preview will be generated.
+Jeśli aktywujesz to ustawienie po uruchomieniu instancji, niektóre obrazy mogą nie zostać wygenerowane. Zostało dodane polecenie do automatyzacji generowania obrazów. In order to prevent a ressource hog by generating **A LOT** of images, you have to pass the argument `--all` (or `-a`) to start the generation of the preview images for all users and books. Bez tego argumentu zostanie wygenerowany tylko podgląd witryny.
 
-User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.
+User and book preview images will be generated asynchroneously: the task will be sent to Flower. Może minąć trochę czasu zanim wszystkie książki oraz użytkownicy będą mieć działające obrazy podglądu. Jeśli masz dobrą książkę 📖, zwierzątko 🐱 lub przekąskę 🍰 to jest to idealny moment na poświecenie im trochę uwagi 💖.
 
-### Optional settings
+### Ustawienia opcjonalne
 
-So you want to customize your preview images? Here are the options:
+Chcesz dostosować swoje obrazy podglądu? Oto dostępne opcje:
 
-- `PREVIEW_BG_COLOR` will set the color for the preview image background. You can supply a color value, like `#b00cc0`, or the following values `use_dominant_color_light` or `use_dominant_color_dark`. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.
+- `PREVIEW_BG_COLOR` definiuje kolor tła dla obrazu podglądu. Możesz podać wartość koloru, taką jak `#b00cc0` lub użyć wartości `use_dominant_color_light` lub `use_dominant_color_dark`. Pozwoli to na wyodrębnienie dominującego koloru z okładki książki oraz użycie do odpowiednio w jasnym i ciemnym motywie.
 - `PREVIEW_TEXT_COLOR` definiuje kolor tekstu. W zależności od wybranego koloru tła, należy znaleźć wartość o odpowiednim kontraście, aby obraz był czytelny. Zalecany kontrast wynosi 1:4.5.
 - `PREVIEW_IMG_WIDTH` oraz `PREVIEW_IMG_HEIGHT` definiują wymiary obrazu. Obecnie system najlepiej współpracuje z obrazami o poziomej orientacji.
 - `PREVIEW_DEFAULT_COVER_COLOR` definiuje color książek bez okładki.
