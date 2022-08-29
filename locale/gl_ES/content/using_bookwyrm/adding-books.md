@@ -13,8 +13,8 @@ If the book you're looking for isn't available on your instance, there are a few
 
 ## Adding another edition
 
-If you found the book your want, but not the right edition, you can add another edition to the work from the list of editions. Preme na ligazón debaixo da descrición que indica cantas edicións existen (exemplo, "**4 edicións**"). At the bottom of the editions list, there is a button to "**Add another edition**".
+Se atopaches o libro que buscabas, pero non a edición correcta, podes engadir outra edición desde a lista de edicións. Preme na ligazón debaixo da descrición que indica cantas edicións existen (exemplo, "**4 edicións**"). At the bottom of the editions list, there is a button to "**Add another edition**".
 
 ## Add a completely new book
 
-Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. The link to manually add a book is at the bottom of the search page when external catalogs are show. You can also navigate direclty to `/create-book` on your instance.
+Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. A ligazón para engadir manualmente un libro está abaixo na páxina de busca cando se mostran catálogos externos. You can also navigate direclty to `/create-book` on your instance.
