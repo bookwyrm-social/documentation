@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>
+        
+Django Debug Toolbar
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/pl/instances" class="navbar-item">
+                <span class="button is-success">Dołącz</span>
+            </a>
+            <a href="https://joinbookwyrm.com/pl/get-involved" class="navbar-item">
+                Udziel się
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Wsparcie
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Kod źródłowy
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentacja
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" selected>Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Django Debug Toolbar</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/pl/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pl/posting-statuses.html" >Zamieszczanie statusów</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/adding-books.html" >Dodawanie książek</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pl/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/updating.html" >Aktualizowanie instancji</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/moderation.html" >Moderacja</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/optional_features.html" >Dodatkowe funkcje</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/cli.html" >Narzędzie wiersza polecenia</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pl/contributing.html" >Udzielanie się</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/translation.html" >Tłumaczenia</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/install-dev.html" >Środowisko programistyczne</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/debug_toolbar.html" class="is-active">Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pl/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/permissions.html" >Uprawnienia</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>BookWyrm posiada gałąź skonfigurowaną do uruchamiania <a href="https://django-debug-toolbar.readthedocs.io/en/latest/">Django Debug Toolbar</a>. Ta gałąź nigdy nie zostanie złączona z <code>główna</code> i posiada kilka ulepszeń, które umożliwiają pracę z paskiem narzędzi, ale nie są bezpieczne do używania z czymkolwiek przypominającym środowisko oficjalne. To use this branch, you will need to go through a few steps to get it running.</p>
+<h2>Set up</h2>
+<ul>
+<li>Using git, checkout out the <a href="https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar"><code>debug-toolbar</code></a> branch</li>
+<li>Update the branch relative to <code>main</code> using <code>git merge main</code>. The branch is updated periodically but will likely be behind latest.</li>
+<li>Re-build the Docker images using <code>docker-compose up --build</code> to ensure that the Debug Toolbar library is installed from <code>requirements.txt</code></li>
+<li>Access the application <code>web</code> image directly (instead of via <code>nginx</code>) using port <code>8000</code></li>
+</ul>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> to współtworzone, antykorporacyjne oprogramowanie zarządzane przez <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Wspieraj BookWyrm poprzez <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Udziel się</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm na GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Udziel się na tej stronie</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Dowiedz się więcej</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentacja</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Skontaktuj się z opiekunem</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licencja</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "pl/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

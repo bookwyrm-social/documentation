@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>
+        
+External Storage
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/pl/instances" class="navbar-item">
+                <span class="button is-success">Dołącz</span>
+            </a>
+            <a href="https://joinbookwyrm.com/pl/get-involved" class="navbar-item">
+                Udziel się
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Wsparcie
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Kod źródłowy
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentacja
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" selected>Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">External Storage</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/pl/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pl/posting-statuses.html" >Zamieszczanie statusów</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/adding-books.html" >Dodawanie książek</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pl/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/updating.html" >Aktualizowanie instancji</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/moderation.html" >Moderacja</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/external-storage.html" class="is-active">External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/optional_features.html" >Dodatkowe funkcje</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/cli.html" >Narzędzie wiersza polecenia</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pl/contributing.html" >Udzielanie się</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/translation.html" >Tłumaczenia</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/install-dev.html" >Środowisko programistyczne</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pl/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/pl/permissions.html" >Uprawnienia</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses <code>django-storages</code> to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
+<h2>S3-compatible Services</h2>
+<h3>Setup</h3>
+<p>Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like <a href="https://ceph.io/en/">Ceph</a> (LGPL 2.1/3.0) or <a href="https://min.io/">MinIO</a> (GNU AGPL v3.0), or commercial (<a href="https://www.scaleway.com/en/docs/object-storage-feature/">Scaleway</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key">Digital Ocean</a>…).</p>
+<p>This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the <a href="https://github.com/bookwyrm-social/documentation">BookWyrm Documentation</a> repository.</p>
+<h3>Co Cię czeka</h3>
+<p>Jeśli rozpoczynasz nową instancję BookWyrm, proces będzie zawierał:</p>
+<ul>
+<li>Konfigurację usługi pamięci zewnętrznej</li>
+<li>Aktywację pamięci zewnętrznej na BookWyrm</li>
+<li>Uruchomienie swojej instancji BookWyrm</li>
+<li>Aktualizację łącznika instancji</li>
+</ul>
+<p>If you already started your instance, and images have been uploaded to local storage, the process will be:</p>
+<ul>
+<li>Set up your external storage service</li>
+<li>Copy your local media to external storage</li>
+<li>Enable external storage on BookWyrm</li>
+<li>Restart your BookWyrm instance</li>
+<li>Update the instance connector</li>
+</ul>
+<h3>BookWyrm Settings</h3>
+<p>Edit your <code>.env</code> file by uncommenting the following lines:</p>
+<ul>
+<li><code>AWS_ACCESS_KEY_ID</code>: your access key ID</li>
+<li><code>AWS_SECRET_ACCESS_KEY</code>: your secret access key</li>
+<li><code>AWS_STORAGE_BUCKET_NAME</code>: your bucket name</li>
+<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway or <code>"nyc3"</code> for Digital Ocean</li>
+</ul>
+<p>If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:</p>
+<ul>
+<li><code>AWS_S3_CUSTOM_DOMAIN</code>: the domain that will serve the assets, e.g. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code> or <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li><code>AWS_S3_ENDPOINT_URL</code>: the S3 API endpoint, e.g. <code>"https://s3.fr-par.scw.cloud"</code> or <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+</ul>
+<h3>Copying local media to external storage</h3>
+<p>If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.</p>
+<p>To zadanie wykonywane jest poleceniem:</p>
+<pre><code class="language-bash">./bw-dev copy_media_to_s3
+</code></pre>
+<h3>Aktywowanie pamięci zewnętrznej dla BookWyrm</h3>
+<p>To enable the S3-compatible external storage, you will have to edit your <code>.env</code> file by changing the property value for <code>USE_S3</code> from <code>false</code> to <code>true</code>:</p>
+<pre><code>USE_S3=true
+</code></pre>
+<p>If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that <code>USE_HTTPS</code> is set to <code>true</code>, so images will be loaded over HTTPS:</p>
+<pre><code>USE_HTTPS=true
+</code></pre>
+<h4>Static assets</h4>
+<p>Then, you will need to run the following command, to copy the static assets to your S3 bucket:</p>
+<pre><code class="language-bash">./bw-dev collectstatic
+</code></pre>
+<h4>CORS settings</h4>
+<p>Once the static assets are collected, you will need to set up CORS for your bucket.</p>
+<p>Some services like Digital Ocean provide an interface to set it up, see <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
+<p>If your service doesn’t provide an interface, you can still set up CORS with the command line.</p>
+<p>Create a file called <code>cors.json</code>, with the following content:</p>
+<pre><code class="language-json">{
+  &quot;CORSRules&quot;: [
+    {
+      &quot;AllowedOrigins&quot;: [&quot;https://MY_DOMAIN_NAME&quot;, &quot;https://www.MY_DOMAIN_NAME&quot;],
+      &quot;AllowedHeaders&quot;: [&quot;*&quot;],
+      &quot;AllowedMethods&quot;: [&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;],
+      &quot;MaxAgeSeconds&quot;: 3000,
+      &quot;ExposeHeaders&quot;: [&quot;Etag&quot;]
+    }
+  ]
+}
+</code></pre>
+<p>Replace <code>MY_DOMAIN_NAME</code> with the domain name(s) of your instance.</p>
+<p>Then, run the following command:</p>
+<pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
+</code></pre>
+<p>No output means it should be good.</p>
+<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.</p>
+<h3>Restarting your instance</h3>
+<p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
+<pre><code class="language-bash">./bw-dev up -d
+</code></pre>
+<p>If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong <a href="#cors-settings">here</a>. In that case it might be good to check the headers of a HTTP request against a file on your bucket:</p>
+<pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
+</code></pre>
+<p>Replace <code>MY_DOMAIN_NAME</code> with your instance domain name, <code>BUCKET_URL</code> with the URL for your bucket, you can replace the file path with any other valid path on your bucket.</p>
+<p>If you see any message, especially a message starting with <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, it didn’t work. If you see no message, it worked.</p>
+<p>For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage. To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:</p>
+<pre><code class="language-bash">./bw-dev sync_media_to_s3
+</code></pre>
+<h3>Updating the instance connector</h3>
+<p><em>Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
+<p>In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.</p>
+<p>Connector data can be accessed through the Django admin interface, located at the url <code>http://MY_DOMAIN_NAME/admin</code>. The connector for your own instance is the first record in the database, so you can access the connector with this URL: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
+<p>The field <em>Covers url</em> is defined by default as <code>https://MY_DOMAIN_NAME/images</code>, you have to change it to <code>https://S3_STORAGE_URL/images</code>. Then, click the <em>Save</em> button, and voilà!</p>
+<p>You will have to update the value for <em>Covers url</em> every time you change the URL for your storage.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> to współtworzone, antykorporacyjne oprogramowanie zarządzane przez <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Wspieraj BookWyrm poprzez <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Udziel się</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm na GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Udziel się na tej stronie</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Dowiedz się więcej</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentacja</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Skontaktuj się z opiekunem</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licencja</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "pl/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>
