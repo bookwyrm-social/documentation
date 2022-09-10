@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-07-08 17:52\n"
+"PO-Revision-Date: 2022-09-10 21:23\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -19,70 +19,70 @@ msgstr ""
 
 #: templates/index.html:5 templates/layout.html:6
 msgid "BookWyrm Documentation"
-msgstr ""
+msgstr "Documentación de BookWyrm"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
-msgstr ""
+msgstr "Tu guía para usar y contribuir a BookWyrm"
 
 #: templates/index.html:6
 msgid "How to Use and Contribute"
-msgstr ""
+msgstr "Cómo usar y contribuir"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
-msgstr ""
+msgstr "BookWyrm: Lectura y reseñas sociales"
 
 #: templates/layout.html:35 templates/layout.html:39
 msgid "Join"
-msgstr ""
+msgstr "Únete"
 
 #: templates/layout.html:38 templates/layout.html:42
 msgid "Get involved"
-msgstr ""
+msgstr "Involúcrate"
 
 #: templates/layout.html:41 templates/layout.html:45
 msgid "Support"
-msgstr ""
+msgstr "Soporte técnico"
 
 #: templates/layout.html:44 templates/layout.html:48
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 #: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
 #: templates/layout.html:130
 msgid "Documentation"
-msgstr ""
+msgstr "Documentación"
 
 #: templates/layout.html:95 templates/layout.html:101
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr ""
+msgstr "<strong>BookWyrm</strong> es un software colaborativo anticorporativo mantenido por <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 
 #: templates/layout.html:98 templates/layout.html:104
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
-msgstr ""
+msgstr "Apoya BookWyrm en <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 
 #: templates/layout.html:102 templates/layout.html:108
 msgid "Get Involved"
-msgstr ""
+msgstr "Involúcrate"
 
 #: templates/layout.html:104 templates/layout.html:110
 msgid "BookWyrm on GitHub"
-msgstr ""
+msgstr "BookWyrm en GitHub"
 
 #: templates/layout.html:107 templates/layout.html:113
 msgid "Contribute to this page"
-msgstr ""
+msgstr "Contribuir a esta página"
 
 #: templates/layout.html:122 templates/layout.html:128
 msgid "Learn more"
-msgstr ""
+msgstr "Más información"
 
 #: templates/layout.html:127 templates/layout.html:133
 msgid "Contact maintainer"
-msgstr ""
+msgstr "Contactar con le encargade"
 
 #: templates/layout.html:130 templates/layout.html:136
 msgid "License"
-msgstr ""
+msgstr "Licencia"
 
