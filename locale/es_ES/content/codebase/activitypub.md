@@ -1,20 +1,20 @@
 - - -
-Title: ActivityPub Date: 2021-04-20 Order: 1
+Título: ActivityPub Fecha: 2021-04 Pedido: 1
 - - -
 
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm utiliza el protocolo [ActivityPub](http://activitypub.rocks/) para enviar y recibir actividad de usuario entre otras instancias de BookWyrm y otros servicios que implementan ActivityPub, como [Mastodon](https://joinmastodon.org/). Para manejar los datos de los libros, BookWyrm tiene un puñado de tipos de actividades extendidas que no son parte del estándar, pero son legibles para otras instancias de BookWyrm.
 
-## Activities and Objects
+## Actividades y objetos
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Usuarios y relaciones
+Las interacciones de las relaciones de usuario siguen la especificación estándar de ActivityPub.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
+- `Seguir`: solicita recibir estados de un usuario y ver sus estados que tienen la opción de privacidad «sólo seguidores» activado
+- `Aceptar`: aprueba la acción `Seguir` y finaliza la relación
+- `Rechazar`: deniega una acción `Seguir`
+- `Bloquear`: evita que los usuarios vean los estados de los demás, y evita que el usuario bloqueado vea el perfil del actor
+- `Actualizar`: actualiza el perfil y la configuración de un usuario
+- `Eliminar`: desactiva un usuario
 - `Undo`: reverses a `Follow` or `Block`
 
 ### Statuses
