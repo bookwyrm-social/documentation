@@ -1,5 +1,5 @@
 - - -
-Title: ActivityPub Date: 2021-04-20 Order: 1
+Titolo: ActivityPub Data: 2021-04-20 Ordine: 1
 - - -
 
 BookWyrm utilizza il protocollo [ActivityPub](http://activitypub.rocks/) per inviare e ricevere le attività dell'utente tra altre istanze di BookWyrm e altri servizi che implementano ActivityPub, come [Mastodon](https://joinmastodon.org/). Per gestire i dati del libro, BookWyrm ha una manciata di tipi di attività estesi che non fanno parte dello standard, ma sono leggibili ad altre istanze di BookWyrm.
@@ -41,7 +41,7 @@ Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 - `Undo`: Inverte un `Like` o `Announce`
 
 ### Collezioni
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+I libri e le liste degli utenti sono rappresentati da [`OrdinedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
 #### Obiettivi
 
@@ -56,5 +56,5 @@ User's books and lists are represented by [`OrderedCollection`](https://www.w3.o
 - `Rimuovi`: Rimuove un libro da uno scaffale o da una lista.
 
 
-## Alternative Serialization
+## Serializzazione Alternativa
 Poiché BookWyrm utilizza tipi di oggetti personalizzati (`Recensione`, `Commento`, `Citazione`) che non sono supportati da ActivityPub, gli stati si trasformano in tipi standard quando inviati o visualizzati da servizi non-BookWyrm. `Recensione`s viene convertita in `Articolo`s, `Commento`s e `Citazione`s vengono convertiti in `Nota`s, con un link al libro e l'immagine di copertina allegata.
