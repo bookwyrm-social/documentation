@@ -1,33 +1,33 @@
 - - -
-Title: Welcome Date: 2021-04-13
+Titolo: Benvenuto Data: 13-04-2021
 - - -
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. La Federazione permette agli utenti di BookWyrm di unirsi a piccole comunità di fiducia che possono connettersi tra loro e con altri servizi ActivityPub come Mastodon e Pleroma.
+BookWyrm è un social network per monitorare la lettura, parlare di libri, scrivere recensioni, e scoprire cosa leggere dopo. La Federazione permette agli utenti di BookWyrm di unirsi a piccole comunità di fiducia che possono connettersi tra loro e con altri servizi ActivityPub come Mastodon e Pleroma.
 
 ## Funzionalità
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+Dal momento che il progetto è ancora nelle sue prime fasi, le caratteristiche stanno crescendo ogni giorno, e c'è un sacco di spazio per suggerimenti e idee. Apri una [segnalazione](https://github.com/bookwyrm-social/bookwyrm/issues) per avviare una conversazione!
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
+- Pubblicazioni sui libri
+    - Componi le recensioni, con o senza valutazioni, che vengono aggregate nella pagina del libro
+    - Componi altri tipi di stati sui libri, come:
         - Commenti su un libro
         - Citazioni o estratti
-    - Reply to statuses
+    - Rispondi agli stati
     - Visualizza le recensioni aggregate di un libro attraverso le istanze di BookWyrm collegate
-    - Differentiate local and federated reviews and rating in your activity feed
+    - Differenziare le recensioni locali e federate e la valutazione nel tuo feed di attività
 - Monitorare l'attività di lettura
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
+    - Libri sugli scaffali "da leggere", "letture correnti" e "letti"
     - Creare scaffali personalizzati
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
-    - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
+    - Salva le date di inizio/fine lettura, così come gli aggiornamenti di avanzamento
+    - Aggiorna chi ti segue sull'attività di lettura (opzionalmente, e con controlli sulla privacy)
+    - Crea liste di libri che possono essere aperte al contributo di chiunque, curate o modificate solo dal creatore
 - Federazione con Activitypub
-    - Broadcast and receive user statuses and activity
+    - Trasmetti e ricevi stati e attività dell'utente
     - Condividere i dati dei libri tra istanze per creare un database di metadati in rete
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
+    - Identifica i libri condivisi tra istanze e aggrega contenuti correlati
+    - Segui e interagisci con gli utenti tra le istanze di BookWyrm
+    - Interopera con i servizi di ActivityPub diversi da BookWyrm (attualmente, Mastodon è supportato)
+- Controlli specifici sulla privacy
+    - Livelli privati, solo follower e pubblici per la pubblicazione degli scaffali ed elenchi
     - Opzione per gli utenti di approvare manualmente i follower
-    - Allow blocking and flagging for moderation
+    - Consenti il blocco e la segnalazione per moderazione
