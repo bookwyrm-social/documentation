@@ -4,13 +4,13 @@ Title: Installing in Production Date: 2021-05-18 Order: 1
 
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
 
-## Server setup
+## Configurazione server
 - Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- [Install Docker and docker-compose](https://docs.docker.com/compose/install/)
+- [Installa Docker e docker-compose](https://docs.docker.com/compose/install/)
 
-## Install and configure BookWyrm
+## Installa e configura BookWyrm
 
 The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
 
@@ -47,7 +47,7 @@ Instructions for running BookWyrm in production:
     - add a line to try renewing once a day: `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Initialize the application with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
-    - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
+    - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Ecco un output di esempio:
 
 ``` { .sh }
 *******************************************
@@ -59,7 +59,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 - Run docker-compose in the background with: `docker-compose up -d`
 - The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Congratulazioni! Ce l'hai fatta!! Configure your instance however you'd like.
 
 
 ## Backups
