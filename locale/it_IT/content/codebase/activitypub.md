@@ -43,7 +43,7 @@ Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 ### Collezioni
 User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
-#### Objects
+#### Obiettivi
 
 - `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
 - `List`: A collection of books that may have items contributed by users other than the one who created the list.
