@@ -14,7 +14,7 @@ Questa tabella mostra i quattro gruppi (admin, moderatore, editor e utente) e qu
 | modifica impostazioni istanza   | ✔️    | -          | -      | -      |
 | modifica il livello dell'utente | ✔️    | -          | -      | -      |
 | gestire la federazione          | ✔️    | ✔️         | -      | -      |
-| issue invites                   | ✔️    | ✔️         | -      | -      |
+| invito a correggere errori      | ✔️    | ✔️         | -      | -      |
 | disattiva utenti                | ✔️    | ✔️         | -      | -      |
 | cancella post                   | ✔️    | ✔️         | -      | -      |
 | modifica libri                  | ✔️    | ✔️         | ✔️     | -      |
