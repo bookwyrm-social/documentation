@@ -42,9 +42,9 @@ Se cambi o crei un modello, probabilmente dovrai cambiare la struttura del datab
 ```
 
 ### Modifica file statici
-Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
+Ogni volta che modifichi il CSS o JavaScript, è necessario eseguire nuovamente il comando `collectstatic` di Django affinché le modifiche abbiano effetto:
 ``` { .sh }
 ./bw-dev collectstatic
 ```
 
-If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
+Se hai [installato yarn](https://yarnpkg.com/getting-started/install), è possibile eseguire `yarn watch:static` per eseguire automaticamente lo script precedente ogni volta che si verifica un cambiamento nella directory `bookwyrm/static`.
