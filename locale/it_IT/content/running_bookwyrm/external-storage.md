@@ -2,23 +2,23 @@
 Title: External Storage Date: 2021-06-07 Order: 5
 - - -
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses `django-storages` to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm utilizza `django-storages` per gestire l'archiviazione esterna, come servizi compatibili con S3, Apache Libcloud o SFTP.
 
 ## S3-compatible Services
 
-### Setup
+### Configurazione
 
 Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) or [MinIO](https://min.io/) (GNU AGPL v3.0), or commercial ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
 
-This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
+This guide has been tested against Scaleway Object Storage. Se utilizzi un altro servizio, per favore condividi la tua esperienza (specialmente se hai dovuto fare passi diversi) scrivendo sul repository [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation).
 
-### What awaits you
+### Cosa ti aspetta
 
-If you are starting a new BookWyrm instance, the process will be:
+Se stai iniziando una nuova istanza di BookWyrm, il processo sarà:
 
-- Set up your external storage service
-- Enable external storage on BookWyrm
-- Start your BookWyrm instance
+- Imposta il tuo servizio di archiviazione esterno
+- Attiva memoria esterna su BookWyrm
+- Avvia la tua istanza BookWyrm
 - Update the instance connector
 
 If you already started your instance, and images have been uploaded to local storage, the process will be:
@@ -53,7 +53,7 @@ This task is done with the command:
 ./bw-dev copy_media_to_s3
 ```
 
-### Enabling external storage for BookWyrm
+### Attiva memoria esterna su BookWyrm
 
 To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `false` to `true`:
 
