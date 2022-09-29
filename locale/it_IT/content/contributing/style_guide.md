@@ -1,26 +1,26 @@
 - - -
-Title: Style Guide Date: 2021-10-20 Order: 4
+Titolo: Guida di stile Data: 20-10-2021 Ordine: 4
 - - -
 
 ## Pull requests
 
-Quindi vuoi contribuire al codice di BookWyrm: fantastico! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
+Quindi vuoi contribuire al codice di BookWyrm: fantastico! Se c'è un problema aperto che si desidera risolvere, è utile commentare il problema in modo che il lavoro non venga duplicato. Cerca di mantenere piccola la portata delle richieste nel pull e focalizzati su un singolo argomento. In questo modo è più facile da rivedere, e se una parte ha bisogno di cambiamenti, non bloccherà le altre parti.
 
-If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.
+Se non sei sicuro di come risolvere qualcosa, o non sei in grado di aggirare il problema, va benissimo, basta lasciare un commento sulla pull request e lo capiremo 💖.
 
 Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
 
 ## Linting
 
-### Global
+### Globale
 
-We use [EditorConfig](https://editorconfig.org) to maintain consistent indenting and line endings.
+Usiamo [EditorConfig](https://editorconfig.org) per mantenere costanti le terminazioni di indentazione e di linea.
 
 ### Python
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev black`
+BookWyrm utilizza il formattatore del codice [Black](https://github.com/psf/black) per mantenere coerente lo stile del codebase Python. Tutte le nuove richieste sono controllate con le azioni GitHub e puoi risolvere automaticamente i problemi di stile del codice eseguendo `./bw-dev black`
 
-Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
+Il codice è anche controllato con Pylint utilizzando le azioni GitHub. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
 
 ### Templates (HTML)
 
