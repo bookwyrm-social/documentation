@@ -1,11 +1,11 @@
 - - -
-Title: How to Contribute Date: 2021-04-12 Order: 1
+Titolo: Come contribuire Data: 12-04-2021 Ordine: 1
 - - -
 
-There are many ways you can contribute to this project, regardless of your level of technical expertise.
+Ci sono molti modi in cui puoi contribuire a questo progetto, indipendentemente dal tuo livello di competenza tecnica,.
 
-## Feedback and feature requests
-Please feel encouraged and welcome to point out bugs, suggestions, feature requests, and ideas for how things ought to work using [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues).
+## Commenti e richieste di funzionalità
+Ti preghiamo di sentirti incoraggiato e benvenuto a segnalare bug, suggerimenti, richieste di caratteristiche, e idee su come le cose dovrebbero funzionare usando [problemi di GitHub](https://github.com/bookwyrm-social/bookwyrm/issues).
 
 ## Code contributions
 Code contributions are gladly welcomed! If you're not sure where to start, take a look at the ["Good first issue"](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) tag. Because BookWyrm is a small project, there isn't a lot of formal structure, but there is a huge capacity for one-on-one support, which can look like asking questions as you go, pair programming, video chats, et cetera, so please feel free to reach out.
