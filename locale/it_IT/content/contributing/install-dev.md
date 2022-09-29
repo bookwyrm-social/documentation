@@ -28,11 +28,11 @@ cp nginx/development nginx/default.conf
 ./bw-dev setup            # Initialize the database and run migrations
 ./bw-dev up               # Start the docker containers
 ```
-- Once the build is complete, you can access the instance at `http://localhost:1333` and create an admin user.
+- Una volta completato il build, puoi accedere all'istanza su `http://localhost:1333` e creare un utente amministratore.
 
 If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
 
-### Editing or creating Models
+### Modifica o crea dei modelli
 
 If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
 
