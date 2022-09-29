@@ -10,13 +10,13 @@ You can join the BookWyrm translation project at [translate.joinbookwyrm.com](ht
 
 Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Come principio guida, cercare di posizionare un valore più alto su un linguaggio inclusivo e neutro che su una correttezza formale o guide di stile ufficialmente approvate. In inglese, per esempio, molte guide di stile formali richiedono un pronome "lei" o "he" singolare da utilizzare quando si riferisce a un individuo, ma sarebbe meglio in BookWyrm utilizzare il genere neutro singolare "loro" invece.
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Se non siete sicuri di come meglio affrontare un problema di traduzione, commentate la traduzione o aprite un [argomento di discussione](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) per affrontare domande su larga scala.
 
-## Making templates translatable
+## Creare modelli traducibili
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+Bookwyrm sfrutta la funzionalità di traduzione di Django per consentire ai contenuti della pagina di cambiare a seconda della lingua di visualizzazione scelta dall'utente. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
 
 * all template text should include translation template tags
 * add `{% load i18n %}` at the top of your template to enable translations
