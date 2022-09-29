@@ -2,7 +2,7 @@
 Title: Command Line Tool Date: 2021-11-11 Order: 6
 - - -
 
-Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
+Gli sviluppatori e i gestori di istanze di Bookwyrm possono utilizzare lo script `bw-dev` per le attività comuni. This can make your commands shorter, easier to remember, and harder to mess up.
 
 Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
 
@@ -86,7 +86,7 @@ Re-populates Redis cache of lists. You will not usually need to run this unless 
 
 ### populate_suggestions
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Popolare utenti suggeriti per tutti gli utenti. You may want to run this manually to refresh suggestions.
 
 ### restart_celery
 
@@ -110,7 +110,7 @@ See [External Storage](/external-storage.html) for more information.
 
 ### copy_media_to_s3
 
-Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
+Migrare tutti i media caricati da un'installazione di Bookwrym esistente a un "bucket" compatibile con S3. Use for initial upload to an empty bucket.
 
 ### sync_media_to_s3
 
