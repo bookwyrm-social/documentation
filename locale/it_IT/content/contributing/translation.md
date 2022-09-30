@@ -2,13 +2,13 @@
 Title: Translations Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Contribuisci alle traduzioni
 
 You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Linguaggio gender-neutral
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". È anche importante che le traduzioni siano chiare, concise e leggibili per un lettore a schermo e a volte questi obiettivi sono in conflitto; non c'è una risposta perfetta, unica e adatta a tutti, e la soluzione dipende dalla lingua.
+Laddove possibile, le traduzioni di BookWyrm dovrebbero utilizzare un linguaggio neutro dal punto di vista del genere. Questo vale anche se la lingua utilizza il maschile come un genere neutrale, o se usa qualcosa di simile a "lui/lei". È anche importante che le traduzioni siano chiare, concise e leggibili per un lettore a schermo e a volte questi obiettivi sono in conflitto; non c'è una risposta perfetta, unica e adatta a tutti, e la soluzione dipende dalla lingua.
 
 Come principio guida, cercare di posizionare un valore più alto su un linguaggio inclusivo e neutro che su una correttezza formale o guide di stile ufficialmente approvate. In inglese, per esempio, molte guide di stile formali richiedono un pronome "lei" o "he" singolare da utilizzare quando si riferisce a un individuo, ma sarebbe meglio in BookWyrm utilizzare il genere neutro singolare "loro" invece.
 
