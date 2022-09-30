@@ -74,25 +74,25 @@ Genera immagini di anteprima per sito, utenti e libri. Questo può richiedere un
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Genera le miniature per le copertine dei libri.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Ripopolare i flussi Redis (feed utente). Di solito non è necessario eseguire questo a meno che non vi sia un errore che cancella i tuoi feed utente per qualche motivo. Puoi specificare quale stream usando l'argomento `--stream`.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
+Ripopola la cache Redis delle liste. Di solito non è necessario eseguire questo a meno che non vi sia un errore che cancella le tue liste per qualche motivo.
 
 ### populate_suggestions
 
-Popolare utenti suggeriti per tutti gli utenti. You may want to run this manually to refresh suggestions.
+Popolare utenti suggeriti per tutti gli utenti. Potresti voler eseguire manualmente questa operazione per aggiornare i suggerimenti.
 
 ### restart_celery
 
-Restarts the `celery_worker` Docker container.
+Riavvia il contenitore Docker `celery_worker`.
 
-### update
+### aggiorna
 
 When there are changes to the `production` branch, you can update your instance without downtime.
 
@@ -102,9 +102,9 @@ This command `git pull`s the latest `production` branch updates, builds docker i
 
 Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
 
-## Setting up S3 compatible storage
+## Impostazione dello storage compatibile con S3
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+Per impostazione predefinita, BookWyrm utilizza la memoria locale per le risorse statiche (favicon, avatar predefinito, ecc...) e supporti (avatar utente, copertine di libri, ecc.), ma è possibile utilizzare un servizio di archiviazione esterno per questi file. BookWyrm utilizza django-storages per gestire l'archiviazione esterna come ad esempio servizi compatibili con S3, Apache Libcloud o SFTP.
 
 See [External Storage](/external-storage.html) for more information.
 
@@ -114,13 +114,13 @@ Migrare tutti i media caricati da un'installazione di Bookwrym esistente a un "b
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
+Sincronizza i media caricati, nuovi o modificati da un'installazione di Bookwrym esistente a un "bucket" compatibile con S3. Utilizzare per garantire che tutti i file locali siano caricati su un bucket esistente.
 
 ### set_cors_to_s3 filename
 
 Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
 
-## Development and testing
+## Sviluppo e test
 
 _These commands are not available on the `production` branch_.
 
