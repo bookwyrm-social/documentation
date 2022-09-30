@@ -1,24 +1,24 @@
 - - -
-Title: Command Line Tool Date: 2021-11-11 Order: 6
+Titolo: Strumenti da riga di comando Data: 11-11-2021 Ordine: 6
 - - -
 
-Gli sviluppatori e i gestori di istanze di Bookwyrm possono utilizzare lo script `bw-dev` per le attività comuni. This can make your commands shorter, easier to remember, and harder to mess up.
+Gli sviluppatori e i gestori di istanze di Bookwyrm possono utilizzare lo script `bw-dev` per le attività comuni. Questo può rendere i tuoi comandi più brevi, più facile da ricordare, e più difficile da sbagliare.
 
-Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
+Una volta installato Bookwyrm [in produzione](installing-in-production.html) o [in sviluppo](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), è possibile eseguire lo script dalla riga di comando con `. bw-dev` seguito dal sottocomando che si desidera eseguire.
 
-## Docker shortcuts
+## Scorciatoie Docker
 
 ### bash
 
-Open an interactive `bash` session inside the docker `web` container.
+Apri una sessione interattiva `bash` all'interno del contenitore `web` docker.
 
 ### build
 
-Equivalent to `docker-compose build`.
+Equivalente a `docker-compose build`.
 
 ### dbshell
 
-Open an interactive Postgres database shell. I hope you know what you're doing.
+Apri una shell interattiva per il database Postgres. Spero che tu sappia cosa stai facendo.
 
 ### runweb args
 
@@ -60,17 +60,17 @@ Runs Django's `migrate` command inside your Docker container. You always need to
 
 _This command is not available on the `production` branch_.
 
-Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+Resetta il database. **Questo comando eliminerà l'intero database di Bookwyrm**, quindi avvierà un nuovo database ed eseguirà tutte le migrazioni. È necessario eliminare qualsiasi file di migrazione recente che non si desidera eseguire, _prima di_ eseguire `resetdb`.
 
-## Managing a Bookwyrm instance
+## Gestione di un'istanza Bookwyrm
 
 ### collectstatic
 
-Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
+Migrare risorse statiche a un contenitore Docker o a un "bucket" compatibile con S3, a seconda del contesto.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database.
+Genera immagini di anteprima per sito, utenti e libri. Questo può richiedere un po' di tempo se il database è molto grande.
 
 ### generate_thumbnails
 
