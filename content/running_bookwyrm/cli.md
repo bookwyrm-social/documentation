@@ -1,7 +1,7 @@
 ---
 Title: Command Line Tool
 Date: 2021-11-11
-Order: 6
+Order: 7
 ---
 
 Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.

@@ -1,7 +1,7 @@
 ---
 Title: Updating Your Instance
 Date: 2021-04-13
-Order: 2
+Order: 3
 ---
 
 When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. This does a number of things:
