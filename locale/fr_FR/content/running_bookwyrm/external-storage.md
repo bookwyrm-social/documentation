@@ -2,88 +2,88 @@
 Title: Stockage Externe Date: 2021-06-07 Order: 5
 - - -
 
-Par défaut, BookWyrm stocke localement les ressources statiques (favicon, avatar par défaut, etc.) et les médias (avatars, couvertures de livres, etc.), mais vous pouvez utiliser un service de stockage externe pour ces fichiers. BookWyrm uses `django-storages` to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+Par défaut, BookWyrm stocke localement les ressources statiques (favicon, avatar par défaut, etc.) et les médias (avatars, couvertures de livres, etc.), mais vous pouvez utiliser un service de stockage externe pour ces fichiers. BookWyrm utilise `django-storages` pour gérer le stockage externe, tel que les services compatibles S3, Apache Libcloud ou SFTP.
 
-## S3-compatible Services
+## Services compatibles S3
 
-### Setup
+### Configuration
 
-Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) or [MinIO](https://min.io/) (GNU AGPL v3.0), or commercial ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
+Créez un compartiment auprès du service compatible S3 de votre choix, ainsi qu'un ID de clé d'accès et une clé d'accès secrète. Ceux-ci peuvent être auto-hébergés, tels que [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) ou [MinIO](https://min.io/) (GNU AGPL v3.0), ou commerciaux ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)...).
 
-This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
+Ce guide a été testé avec Object Storage de Scaleway. Si vous utiliser un autre service, partagez votre expérience (en particulier si vous avez dû prendre des mesures différentes) en ouvrant un ticket sur le dépôt de la [Documentation de BookWyrm](https://github.com/bookwyrm-social/documentation).
 
-### What awaits you
+### Ce qui vous attend
 
-If you are starting a new BookWyrm instance, the process will be:
+Si vous installez une nouvelle instance de BookWyrm, les étapes seront :
 
-- Set up your external storage service
-- Enable external storage on BookWyrm
-- Start your BookWyrm instance
-- Update the instance connector
+- Configurer votre service de stockage externe
+- Activer le stockage externe sur BookWyrm
+- Démarrer votre instance BookWyrm
+- Mettre à jour le connecteur de l'instance
 
-If you already started your instance, and images have been uploaded to local storage, the process will be:
+Si votre instance est déjà en place, et que des images ont été téléchargées sur le stockage local, les étapes seront :
 
-- Set up your external storage service
-- Copy your local media to external storage
-- Enable external storage on BookWyrm
-- Restart your BookWyrm instance
-- Update the instance connector
+- Configurer votre service de stockage externe
+- Copier vos médias locaux sur le stockage externe
+- Activer le stockage externe sur BookWyrm
+- Redémarrer votre instance BookWyrm
+- Mettre à jour le connecteur de l'instance
 
-### BookWyrm Settings
+### Paramètres de BookWyrm
 
-Edit your `.env` file by uncommenting the following lines:
+Modifiez votre fichier `.env` en décommentant les lignes suivantes :
 
-- `AWS_ACCESS_KEY_ID`: your access key ID
-- `AWS_SECRET_ACCESS_KEY`: your secret access key
-- `AWS_STORAGE_BUCKET_NAME`: your bucket name
-- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` for AWS, `"fr-par"` for Scaleway or `"nyc3"` for Digital Ocean
+- `AWS_ACCESS_KEY_ID`: votre ID de clé d'accès
+- `AWS_SECRET_ACCESS_KEY`: votre clé d'accès secrète
+- `AWS_STORAGE_BUCKET_NAME`: le nom de votre compartiment
+- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` pour AWS, `"fr-par"` pour Scaleway ou `"nyc3"` pour Digital Ocean
 
-If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:
+Si votre service compatible S3 est Amazon AWS, la configuration devrait être terminée. Pour les autres services, vous aurez à décommenter les lignes suivantes :
 
-- `AWS_S3_CUSTOM_DOMAIN`: the domain that will serve the assets, e.g. `"example-bucket-name.s3.fr-par.scw.cloud"` or `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
-- `AWS_S3_ENDPOINT_URL`: the S3 API endpoint, e.g. `"https://s3.fr-par.scw.cloud"` or `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
+- `AWS_S3_CUSTOM_DOMAIN`: le domaine qui va mettre à disposition les fichiers, par exemple `"exemple-nom-compartiment-s3.fr-par.scw.cloud"` ou `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
+- `AWS_S3_ENDPOINT_URL`: le point de terminaison d'API S3, par exemple `"https://s3.fr-par.scw.cloud"` ou `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
 
-### Copying local media to external storage
+### Copie de vos médias locaux sur le stockage externe
 
-If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
+Si votre instance BookWyrm est déjà en cours d'exécution et que des fichiers médias ont été téléchargés (avatars d'utilisateur, couvertures de livres…), vous devrez copier les médias téléchargés sur votre compartiment.
 
-This task is done with the command:
+Cette tâche est effectuée avec la commande :
 
 ```bash
 ./bw-dev copy_media_to_s3
 ```
 
-### Enabling external storage for BookWyrm
+### Activation du stockage externe sur BookWyrm
 
-To enable the S3-compatible external storage, you will have to edit your `.env` file by changing the property value for `USE_S3` from `false` to `true`:
+Pour activer le stockage externe compatible S3, vous devrez modifier votre fichier `.env` en changeant la valeur de la propriété `USE_S3` de `false` à `true`:
 
 ```
 USE_S3=true
 ```
 
-If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that `USE_HTTPS` is set to `true`, so images will be loaded over HTTPS:
+Si votre stockage externe est accessible via HTTPS (la plupart le sont actuellement), vous devrez également vous assurer que `USE_HTTPS` est défini à `true`, afin que les images soient téléchargées via HTTPS :
 
 ```
 USE_HTTPS=true
 ```
 
-#### Static assets
+#### Ressources statiques
 
-Then, you will need to run the following command, to copy the static assets to your S3 bucket:
+Vous devrez ensuite exécuter la commande suivante, afin de copier les ressources statiques vers votre compartiment S3 :
 
 ```bash
 ./bw-dev collectstatic
 ```
 
-#### CORS settings
+#### Paramètres CORS
 
 Once the static assets are collected, you will need to set up CORS for your bucket.
 
-Some services like Digital Ocean provide an interface to set it up, see [Digital Ocean doc: How to Configure CORS](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
+Certains services tels que Digital Ocean mettent à disposition une interface pour cette étape, voir [Documentation de Digital Ocean: Comment configurer CORS](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
 
-If your service doesn’t provide an interface, you can still set up CORS with the command line.
+Si votre service ne met pas d'interface à disposition, vous pouvez tout de même configurer CORS via la ligne de commande.
 
-Create a file called `cors.json`, with the following content:
+Créez un fichier nommé `cors.json` avec le contenu suivant :
 
 ```json
 {
@@ -99,9 +99,9 @@ Create a file called `cors.json`, with the following content:
 }
 ```
 
-Replace `MY_DOMAIN_NAME` with the domain name(s) of your instance.
+Remplacez `MY_DOMAIN_NAME` par le(s) nom(s) de domaine de votre instance.
 
-Then, run the following command:
+Exécutez alors la commande suivante :
 
 ```bash
 ./bw-dev set_cors_to_s3 cors.json
