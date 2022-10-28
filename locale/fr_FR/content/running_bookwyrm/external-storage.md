@@ -77,7 +77,7 @@ Vous devrez ensuite exécuter la commande suivante, afin de copier les ressource
 
 #### Paramètres CORS
 
-Once the static assets are collected, you will need to set up CORS for your bucket.
+Une fois que les ressources statiques ont été recueillies, vous devrez configurer CORS pour votre compartiment.
 
 Certains services tels que Digital Ocean mettent à disposition une interface pour cette étape, voir [Documentation de Digital Ocean: Comment configurer CORS](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
 
@@ -107,42 +107,42 @@ Exécutez alors la commande suivante :
 ./bw-dev set_cors_to_s3 cors.json
 ```
 
-No output means it should be good.
+Une absence de retour signifie que cela a fonctionné.
 
-If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.
+Si vous installez une nouvelle instance de BookWyrm, vous pouvez retourner aux instructions de configuration dès maintenant. Dans le cas contraire, continuez à lire.
 
-### Restarting your instance
+### Redémarrage de votre instance
 
-Once the media migration has been done and the static assets are collected, you can load the new `.env` configuration and restart your instance with:
+Une fois la copie des fichiers médias effectuée et les ressources statiques recueillies, vous pouvez charger la nouvelle configuration `.env` et redémarrer votre instance avec la commande :
 
 ```bash
 ./bw-dev up -d
 ```
 
-If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong [here](#cors-settings). In that case it might be good to check the headers of a HTTP request against a file on your bucket:
+Si tout se passe bien, votre stockage a été modifié sans arrêt du serveur. Si des polices sont manquantes (et que la console JS de votre navigateur génère des alertes à propos de CORS), quelque chose s'est mal passé [à cette étape](#cors-settings). Dans ce cas, il peut être bon de vérifier les en-têtes d'une requête HTTP pour un fichier sur votre compartiment :
 
 ```bash
 curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H "Access-Control-Request-Method: GET"
 ```
 
-Replace `MY_DOMAIN_NAME` with your instance domain name, `BUCKET_URL` with the URL for your bucket, you can replace the file path with any other valid path on your bucket.
+Remplacez `MY_DOMAIN_NAME` par votre nom de domaine de l'instance, `BUCKET_URL` avec l'URL de votre compartiment, et le chemin du fichier par n'importe quel autre chemin valide sur votre compartiment.
 
-If you see any message, especially a message starting with `<Error><Code>CORSForbidden</Code>`, it didn’t work. If you see no message, it worked.
+Si vous voyez un message, en particulier un message commençant par `<Error><Code>CORSForbidden</Code>`, cela n'a pas fonctionné. Si vous ne voyez aucun message, cela a fonctionné.
 
-For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage. To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:
+Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe, et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe après avoir basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe:
 
 ```bash
 ./bw-dev sync_media_to_s3
 ```
 
-### Updating the instance connector
+### Mise à jour du connecteur de l'instance
 
-*Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in [PR #1413](https://github.com/bookwyrm-social/bookwyrm/pull/1413)*
+*Remarque : Vous pouvez sauter cette étape si vous utilisez une version à jour de BookWyrm; en septembre 2021 le "self connector" a été retiré dans [PR #1413](https://github.com/bookwyrm-social/bookwyrm/pull/1413)*
 
-In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.
+Afin que la bonne URL soit utilisée lors de l'affichage des résultats de recherche locale de livres, nous devons modifier la valeur de la racine d'URL des images de couverture.
 
-Connector data can be accessed through the Django admin interface, located at the url `http://MY_DOMAIN_NAME/admin`. The connector for your own instance is the first record in the database, so you can access the connector with this URL: `https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/`.
+Les données du connecteur sont accessibles via l'interface d'administration de Django, située à l'url `http://MY_DOMAIN_NAME/admin`. Le connecteur pour votre propre instance est le premier enregistrement dans la base de données, vous pouvez donc accéder au connecteur via cette URL : `https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/`.
 
-The field _Covers url_ is defined by default as `https://MY_DOMAIN_NAME/images`, you have to change it to `https://S3_STORAGE_URL/images`. Then, click the _Save_ button, and voilà!
+Le champ _Covers url_ est défini par défaut comme `https://MY_DOMAIN_NAME/images`, vous devez le changer en `https://S3_STORAGE_URL/images`. Ensuite, cliquez sur le bouton _Enregistrer_.
 
-You will have to update the value for _Covers url_ every time you change the URL for your storage.
+Vous devrez mettre à jour la valeur de _Covers url_ chaque fois que vous changez l'URL de votre stockage.
