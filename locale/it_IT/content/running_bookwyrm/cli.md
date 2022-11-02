@@ -1,5 +1,5 @@
 - - -
-Titolo: Strumenti da riga di comando Data: 11-11-2021 Ordine: 6
+Title: Command Line Tool Date: 2021-11-11 Order: 7
 - - -
 
 Gli sviluppatori e i gestori di istanze di Bookwyrm possono utilizzare lo script `bw-dev` per le attività comuni. Questo può rendere i tuoi comandi più brevi, più facile da ricordare, e più difficile da sbagliare.
