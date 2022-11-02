@@ -61,18 +61,18 @@ Instructions for running BookWyrm in production without Docker:
 - Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
     
     `sudo -i -u postgres psql`
-    
-    ```
-     CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
-    
-     CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
-    
-     ALTER DATABASE bookwyrm OWNER TO bookwyrm;
-    
-     GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 
-     \q
-    ```
+```
+CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
+
+CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
+
+ALTER DATABASE bookwyrm OWNER TO bookwyrm;
+    
+GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
+
+\q
+```
     
 - Initialize the database by running `venv/bin/python3 manage.py migrate`
 - Create the static by running `venv/bin/python3 manage.py collectstatic --no-input`
@@ -112,7 +112,6 @@ set -e
 /opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &
 # /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &
 ```
-- 
     - Replace `/opt/bookwyrm` with your install dir
     - Change `8000` to your custom port number
     - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
