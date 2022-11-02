@@ -4,52 +4,52 @@ Date: 2022-10-02
 Order: 2
 ---
 
-Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites preuve de prudence lors de son utilisation en production. Ce mode d'installation nécessite plus de travail, et est donc à réserver aux administrateurs plus expérimentés. L'installation via docker est recommandée Ce mode d'installation suppose que vous avez déjà configuré ssl, et avez des certificats à disposition
+Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites preuve de prudence lors de son utilisation en production. Ce mode d'installation nécessite plus de travail, et est donc à réserver aux administrateurs plus expérimentés. L'installation via docker est recommandée Cette méthode d'installation suppose que vous ayez déjà configuré ssl, avec les certificats à votre disposition
 
 ## Configuration du serveur
 - Obtenez un nom de domaine et configurez le DNS pour votre serveur. Vous devez faire pointer les serveurs de noms de domaine de votre fournisseur DNS vers le serveur où vous allez héberger BookWyrm. Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
-- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
-- Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv libpq-dev`
+- Configurez votre serveur avec des pare-feu appropriés pour l"exécution d'une application web (ces instructions ont été testées avec Ubuntu 20.04). Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Configurez un service de messagerie (tel que [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) et les paramètres SMTP/DNS appropriés. Utilisez la documentation du service pour la configuration de votre DNS
+- Installez les dépendances. Sur debian, cela pourrait ressembler à `apt install postgresql redis nginx python3-venv libpq-dev`
 
-## Install and configure BookWyrm
+## Installez et configurez BookWyrm
 
-The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the `production` branch is still recommended
+La branche `production` de BookWyrm contient un certain nombre d'outils qui ne sont pas sur la branche `main`, prévus pour fonctionner en production, tels que des modifications de `docker-compose` pour mettre à jour les commandes par défaut ou la configuration des conteneurs, ou des modifications spécifiques à des containers pour activer des fonctionnalités telles que SSL ou des sauvegardes régulières. Tous ces changements n'ont pas nécessairement un impact sur l'installation sans docker, mais la branche `production` est néanmoins recommandée
 
-Instructions for running BookWyrm in production without Docker:
+Instructions pour l'exécution de BookWyrm en production sans Docker:
 
-- Make and enter directory you want to install bookwyrm too. For example `/opt/bookwyrm`: `mkdir /opt/bookwyrm && cd /opt/bookwyrm`
-- Get the application code: `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
-- Switch to the `production` branch: `git checkout production`
-- Create your environment variables file, `cp .env.example .env`, and update the following:
-    - `SECRET_KEY` | A difficult to guess, secret string of characters
-    - `DOMAIN` | Your web domain
-    - `POSTGRES_PASSWORD` | Set a secure password for the database
-    - `POSTGRES_HOST` | Set to `localhost` (the machine running your db)
-    - `POSTGRES_USER` | Set to `bookwyrm` (recommended) or something custom (configured later)
-    - `POSTGRES_DB` | Set to `bookwyrm`
-    - `REDIS_ACTIVITY_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
-    - `REDIS_ACTIVITY_HOST` | Set to `localhost` (the machine running redis)
-    - `REDIS_BROKER_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
-    - `REDIS_BROKER_HOST` | Set to `localhost` (the machine running redis)
-    - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
-    - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
-    - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
-    - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
-    - Update nginx `bookwyrm.conf`:
-        - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
-        - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
-        - Uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
-        - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
-        - Change line 4 so that it says `server localhost:8000`. You may choose a different port here if you wish
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
-    - Enable the nginx config: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
-     - Reload nginx: `systemctl reload nginx`
-- Setup the python virtual enviroment
-    - Make the python venv directory in your install dir: `mkdir venv` `python3 -m venv ./venv`
-    - Install bookwyrm python dependencies with pip: `./venv/bin/pip3 install -r requirements.txt`
-- Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
+- Créez et déplacez vous dans le répertoire où vous voulez installer BookWyrm. Par exemple `/opt/bookwyrm`: `mkdir /opt/bookwyrm && cd /opt/bookwyrm`
+- Téléchargez le code de l'application : `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
+- Passez sur la branche `production` : `git checkout production`
+- Créez votre fichier de variables d'environnement, `cp .env.example .env`, et mettez à jour ce qui suit&nbsp;:
+    - `SECRET_KEY` | Une chaîne de caractères secrète, difficile à deviner
+    - `DOMAIN` | Votre domaine web
+    - `POSTGRES_PASSWORD` | Utilisez un mot de passe sécurisé pour la base de données
+    - `POSTGRES_HOST` | Mettez à `localhost` (la machine exécutant votre bdd)
+    - `POSTGRES_USER` | Mettez à `bookwyrm` (recommendé) ou une valeur personnalisée (configurée plus tard)
+    - `POSTGRES_DB` | Définir à `bookwyrm`
+    - `REDIS_ACTIVITY_PASSWORD` | Laissez à blanc (adapté pour une machine locale avec un pare-feu)
+    - `REDIS_ACTIVITY_HOST` | Mettez à `localhost` (la machine exécutant redis)
+    - `REDIS_BROKER_PASSWORD` | Laissez à blanc (adapté pour une machine locale avec un pare-feu)
+    - `REDIS_BROKER_HOST` | Mettez à `localhost` (la machine exécutant redis)
+    - `EMAIL_HOST_USER` | L'adresse d'expéditeur de laquelle votre application enverra des emails
+    - `EMAIL_HOST_PASSWORD` | Le mot de passe fourni par votre service d'emailing
+- Configurez nginx
+    - Copiez le fichier server_config vers le répertoire conf.d de nginx's&nbsp;: `cp nginx/server_config /etc/nginx/conf.d/server_config`
+    - Faites une copie du modèle de configurationde site de production et mettez le en place dans nginx&nbsp;: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
+    - Mettez à jour le fichier `bookwyrm.conf` de nginx&nbsp;:
+        - Remplacez `your-domain.com` par votre nom de domaine partout dans le fichier (y compris dans les lignes qui sont pour l'instant commentées)
+        - Remplacez `/app/` avec votre chemin d'installation `/opt/bookwyrm/` partout dans le fichier (y compris dans les commentaires)
+        - Décommentez les lignes 18 à 50 pour permettre la redirection vers HTTPS. Vous devriez avoir deux blocs `server` actifs
+        - Remplacez les chemins de `ssl_certificate` et `ssl_certificate_key` par ceux de votre fullchain et privkey
+        - Modifiez la ligne 4 en `server localhost:8000`. Vous pouvez choisir un port différent si vous le souhaitez
+        - Si vous exécutez un autre serveur web sur votre machine hôte, vous devrez suivre [les instructions pour serveur mandataire inverse](/reverse-proxy.html)
+    - Activez la configuration nginx: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
+     - Rechargez la configuration nginx&nbsp;: `systemctl reload nginx`
+- Configurez l'environnement virtuel python
+    - Créez le répertoire venv python dans votre répertoire d'installation&nbsp;: `mkdir venv` `python3 -m venv ./venv`
+    - Installez les dépendances python de bookwyrm avec pip&nbsp;: `./venv/bin/pip3 install -r requirements.txt`
+- Créez la base de données postgresql de bookwyrm. Assurez-vous de changer le mot de passe en ce que vous avez défini dans la configuration `.env`&nbsp;:
 
     `sudo -i -u postgres psql`
 
@@ -65,16 +65,16 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 \q
 ```
 
-- Initialize the database by running `venv/bin/python3 manage.py migrate`
-- Create the static by running `venv/bin/python3 manage.py collectstatic --no-input`
-- If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
-- Create and setup your `bookwyrm` user
-    - Make the system bookwyrm user: `useradd bookwyrm -r`
-    - Change the owner of your install directory to bookwyrm: `chown -R /opt/bookwyrm bookwyrm:bookwyrm`
-    - You should now run bookwyrm related commands as the bookwyrm user: `sudo -u bookwyrm echo I am the $(whoami) user`
+- Initialisez la base de données en exécutant `venv/bin/python3 manage.py migrate`
+- Générez les static en exécutant `venv/bin/python3 manage.py collectstatic --no-input`
+- Si vous souhaitez utiliser un stockage externe pour les ressources statiques et les fichiers multimédias (comme un service compatible S3), [suivez les instructions](/external-storage.html) jusqu'à être redirigé ici
+- Créez et configurez votre utilisateur `bookwyrm`
+    - Créez l'utilisateur système bookwyrm: `useradd bookwyrm -r`
+    - Changez le propriétaire de votre répertoire d'installation en bookwyrm&nbsp;: `chown -R /opt/bookwyrm bookwyrm:bookwyrm`
+    - Vous devriez maintenant exécuter les commandes liées à bookwyrm avec l'utilisateur de bookwyrm&nbsp;: `sudo -u bookwyrm echo I am the $(whoami) user`
 
-- Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
-- You can get your code at any time by re-running that command. Here's an example output:
+- Générez le code administrateur avec `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, et copiez le pour l'utiliser lors de la création du compte administrateur.
+- Vous pouvez obtenir un code à n'importe quel moment en ré-exécutant la commande. Voici un exemple de sortie&nbsp;:
 
 ``` { .sh }
 *******************************************
@@ -83,8 +83,8 @@ c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
 ```
 
-- Make and configure the run script
-    - Make a file called dockerless-run.sh and fill it with the following contents
+- Créez et configurez le script d'exécution
+    - Créez un fichier nommé dockerless-run.sh et remplissez le avec le contenu suivant
 
 ``` { .sh }
 #!/bin/bash
@@ -100,12 +100,12 @@ set -e
 /opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &
 # /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &
 ```
-    - Replace `/opt/bookwyrm` with your install dir
-    - Change `8000` to your custom port number
-    - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
-- You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
-- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
-- You may want to configure BookWyrm to autorun with a systemd service. Here is an example:
+    - Remplacez `/opt/bookwyrm` par votre répertoire d'installation
+    - Remplacez `8000` par votre numéro de port personnalisé
+    - Flower a été ici désactivé parce qu'il n'est pas configuré automatiquement avec le mot de passe défini dans le fichier `.env`
+- Vous pouvez à présent exécuter BookWyrm avec&nbsp;: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
+- L'application devrait s'exécuter sur votre domaine. Lorsque vous chargez le domaine, vous devriez obtenir une page de configuration qui confirme vos paramètres d'instance, ainsi qu'un formulaire pour créer un compte d'administrateur. Utilisez votre code d'administration pour vous inscrire.
+- Vous pouvez configurer BookWyrm pour qu'il s'exécute automatique à l'aide d'un service systemd. Voici un exemple&nbsp;:
 ```
 # /etc/systemd/system/bookwyrm.service
 [Unit]
@@ -125,8 +125,8 @@ WorkingDirectory=/opt/bookwyrm/
 WantedBy=multi-user.target
 ```
 
-Congrats! You did it!! Configure your instance however you'd like.
+Félicitations ! Vous y êtes arrivé !! Configurez votre instance comme vous le souhaitez.
 
-## Get Involved
+## Participer
 
-See [Get Involved](https://joinbookwyrm.com/get-involved/) for details.
+Voir [Participer](https://joinbookwyrm.com/get-involved/) pour plus de détails.
