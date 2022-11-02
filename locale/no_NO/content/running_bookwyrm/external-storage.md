@@ -1,5 +1,5 @@
 - - -
-Title: External Storage Date: 2021-06-07 Order: 5
+Title: External Storage Date: 2021-06-07 Order: 6
 - - -
 
 By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses `django-storages` to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
