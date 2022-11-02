@@ -1,5 +1,5 @@
 - - -
-Title: Befehlszeilenwerkzeug Date: 2021-11-11 Order: 6
+Title: Command Line Tool Date: 2021-11-11 Order: 7
 - - -
 
 Bookwyrm-Entwickler und Instanz-Manager können das `bw-dev`-Skript für gemeinsame Aufgaben verwenden. Dies macht deine Befehle kürzer, leichter zu merken und schwieriger durcheinander zu bringen.
