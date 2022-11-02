@@ -7,7 +7,7 @@ Order: 2
 Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites preuve de prudence lors de son utilisation en production. Ce mode d'installation nécessite plus de travail, et est donc à réserver aux administrateurs plus expérimentés. L'installation via docker est recommandée Ce mode d'installation suppose que vous avez déjà configuré ssl, et avez des certificats à disposition
 
 ## Configuration du serveur
-- Obtenez un nom de domaine et configurez le DNS pour votre serveur. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Obtenez un nom de domaine et configurez le DNS pour votre serveur. Vous devez faire pointer les serveurs de noms de domaine de votre fournisseur DNS vers le serveur où vous allez héberger BookWyrm. Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
 - Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv libpq-dev`
