@@ -14,14 +14,14 @@ Ce guide a été testé avec Object Storage de Scaleway. Si vous utiliser un aut
 
 ### Ce qui vous attend
 
-Si vous installez une nouvelle instance de BookWyrm, les étapes seront :
+Si vous installez une nouvelle instance de BookWyrm, les étapes seront&nbsp;:
 
 - Configurer votre service de stockage externe
 - Activer le stockage externe sur BookWyrm
 - Démarrer votre instance BookWyrm
 - Mettre à jour le connecteur de l'instance
 
-Si votre instance est déjà en place, et que des images ont été téléchargées sur le stockage local, les étapes seront :
+Si votre instance est déjà en place, et que des images ont été téléchargées sur le stockage local, les étapes seront&nbsp;:
 
 - Configurer votre service de stockage externe
 - Copier vos médias locaux sur le stockage externe
@@ -38,7 +38,7 @@ Modifiez votre fichier `.env` en décommentant les lignes suivantes :
 - `AWS_STORAGE_BUCKET_NAME`: le nom de votre compartiment
 - `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` pour AWS, `"fr-par"` pour Scaleway ou `"nyc3"` pour Digital Ocean
 
-Si votre service compatible S3 est Amazon AWS, la configuration devrait être terminée. Pour les autres services, vous aurez à décommenter les lignes suivantes :
+Si votre service compatible S3 est Amazon AWS, la configuration devrait être terminée. Pour les autres services, vous aurez à décommenter les lignes suivantes&nbsp;:
 
 - `AWS_S3_CUSTOM_DOMAIN`: le domaine qui va mettre à disposition les fichiers, par exemple `"exemple-nom-compartiment-s3.fr-par.scw.cloud"` ou `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
 - `AWS_S3_ENDPOINT_URL`: le point de terminaison d'API S3, par exemple `"https://s3.fr-par.scw.cloud"` ou `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
@@ -47,7 +47,7 @@ Si votre service compatible S3 est Amazon AWS, la configuration devrait être te
 
 Si votre instance BookWyrm est déjà en cours d'exécution et que des fichiers médias ont été téléchargés (avatars d'utilisateur, couvertures de livres…), vous devrez copier les médias téléchargés sur votre compartiment.
 
-Cette tâche est effectuée avec la commande :
+Cette tâche est effectuée avec la commande&nbsp;:
 
 ```bash
 ./bw-dev copy_media_to_s3
@@ -61,7 +61,7 @@ Pour activer le stockage externe compatible S3, vous devrez modifier votre fichi
 USE_S3=true
 ```
 
-Si votre stockage externe est accessible via HTTPS (la plupart le sont actuellement), vous devrez également vous assurer que `USE_HTTPS` est défini à `true`, afin que les images soient téléchargées via HTTPS :
+Si votre stockage externe est accessible via HTTPS (la plupart le sont actuellement), vous devrez également vous assurer que `USE_HTTPS` est défini à `true`, afin que les images soient téléchargées via HTTPS&nbsp;:
 
 ```
 USE_HTTPS=true
@@ -69,7 +69,7 @@ USE_HTTPS=true
 
 #### Ressources statiques
 
-Vous devrez ensuite exécuter la commande suivante, afin de copier les ressources statiques vers votre compartiment S3 :
+Vous devrez ensuite exécuter la commande suivante, afin de copier les ressources statiques vers votre compartiment S3&nbsp;:
 
 ```bash
 ./bw-dev collectstatic
@@ -83,7 +83,7 @@ Certains services tels que Digital Ocean mettent à disposition une interface po
 
 Si votre service ne met pas d'interface à disposition, vous pouvez tout de même configurer CORS via la ligne de commande.
 
-Créez un fichier nommé `cors.json` avec le contenu suivant :
+Créez un fichier nommé `cors.json` avec le contenu suivant&nbsp;:
 
 ```json
 {
@@ -101,7 +101,7 @@ Créez un fichier nommé `cors.json` avec le contenu suivant :
 
 Remplacez `MY_DOMAIN_NAME` par le(s) nom(s) de domaine de votre instance.
 
-Exécutez alors la commande suivante :
+Exécutez alors la commande suivante&nbsp;:
 
 ```bash
 ./bw-dev set_cors_to_s3 cors.json
@@ -113,13 +113,13 @@ Si vous installez une nouvelle instance de BookWyrm, vous pouvez retourner aux i
 
 ### Redémarrage de votre instance
 
-Une fois la copie des fichiers médias effectuée et les ressources statiques recueillies, vous pouvez charger la nouvelle configuration `.env` et redémarrer votre instance avec la commande :
+Une fois la copie des fichiers médias effectuée et les ressources statiques recueillies, vous pouvez charger la nouvelle configuration `.env` et redémarrer votre instance avec la commande&nbsp;:
 
 ```bash
 ./bw-dev up -d
 ```
 
-Si tout se passe bien, votre stockage a été modifié sans arrêt du serveur. Si des polices sont manquantes (et que la console JS de votre navigateur génère des alertes à propos de CORS), quelque chose s'est mal passé [à cette étape](#cors-settings). Dans ce cas, il peut être bon de vérifier les en-têtes d'une requête HTTP pour un fichier sur votre compartiment :
+Si tout se passe bien, votre stockage a été modifié sans arrêt du serveur. Si des polices sont manquantes (et que la console JS de votre navigateur génère des alertes à propos de CORS), quelque chose s'est mal passé [à cette étape](#cors-settings). Dans ce cas, il peut être bon de vérifier les en-têtes d'une requête HTTP pour un fichier sur votre compartiment&nbsp;:
 
 ```bash
 curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H "Access-Control-Request-Method: GET"
@@ -129,7 +129,7 @@ Remplacez `MY_DOMAIN_NAME` par votre nom de domaine de l'instance, `BUCKET_URL` 
 
 Si vous voyez un message, en particulier un message commençant par `<Error><Code>CORSForbidden</Code>`, cela n'a pas fonctionné. Si vous ne voyez aucun message, cela a fonctionné.
 
-Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe, et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe après avoir basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe:
+Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe, et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe après avoir basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe&nbsp;:
 
 ```bash
 ./bw-dev sync_media_to_s3
