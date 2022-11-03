@@ -74,7 +74,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
     - Vous devriez maintenant exécuter les commandes liées à bookwyrm avec l'utilisateur de bookwyrm&nbsp;: `sudo -u bookwyrm echo I am the $(whoami) user`
 
 - Générez le code administrateur avec `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, et copiez le pour l'utiliser lors de la création du compte administrateur.
-- Vous pouvez obtenir un code à n'importe quel moment en ré-exécutant la commande. Voici un exemple de sortie&nbsp;:
+- Vous pouvez obtenir ce code à n'importe quel moment en ré-exécutant la commande. Voici un exemple de sortie&nbsp;:
 
 ``` { .sh }
 *******************************************
