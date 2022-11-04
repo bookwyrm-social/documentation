@@ -1,20 +1,20 @@
 ---
-Title: Adding Books
+Title: Ajout de livres
 Date: 2022-07-29
 Order: 2
 ---
 
-There are a few different ways to add books to your BookWyrm instance! When you can't find the book you're looking for, try these options in order -- it's better to import a book than to create one from scratch.
+Il y a plusieurs façons d'ajouter des livres à votre instance BookWyrm&nbsp;! Quand vous ne trouvez pas le livre que vous cherchez, essayez ces options dans l'ordre -- il vaut mieux importer un livre que d'en créer un à partir de zéro.
 
-## Loading books from other catalogs
+## Chargement de livres à partir d'autres catalogues
 
-If the book you're looking for isn't available on your instance, there are a few different ways to add it. The best way is to import it from an outside source -- your instance can load books from other BookWyrm instances, as well as [OpenLibrary](http://openlibrary.org/) and [Inventaire](http://inventaire.io/). If there are no search results for your query, these sources will automatically be queried, and will show up with a button to "**Import book**". If there are local search results that aren't what you're looking for, you can click the "**Load results from other catalogues**" link to load more results.
+Si le livre que vous cherchez n'est pas disponible sur votre instance, il y a plusieurs façons de l'ajouter. La meilleure manière est de l'importer depuis une source externe -- votre instance peut charger des livres depuis d'autres instances BookWyrm, ainsi que d'[OpenLibrary](http://openlibrary.org/) et [Inventaire](http://inventaire.io/). S'il n'y a pas de résultats de recherche à votre requête, ces sources seront automatiquement interrogées, et les réponses s'afficheront avec un bouton "**Importer le livre**". S'il y a des résultats de recherche locaux qui ne sont pas ceux que vous recherchez, vous pouvez cliquer sur le lien "**Charger les résultats d’autres catalogues**" pour charger plus de résultats.
 
 
-## Adding another edition
+## Ajout d'une nouvelle édition
 
-Si vous avez trouvé le livre que vous cherchiez mais pas dans la bonne édition, vous pouvez ajouter une autre édition à l’œuvre à partir de la liste des éditions. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
+Si vous avez trouvé le livre que vous cherchiez mais pas dans la bonne édition, vous pouvez ajouter une autre édition à l’œuvre à partir de la liste des éditions. Cliquez sur le lien en dessous de la description qui vous indique le nombre d'éditions (par exemple, "**4 éditions**"). En bas de la liste des éditions il y a un bouton pour «**Ajouter une nouvelle édition**».
 
-## Add a completely new book
+## Ajouter un nouveau livre
 
-Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. Le lien pour ajouter manuellement un livre se trouve au bas de la page de recherche lorsque les résultats des catalogues externes sont affichés. You can also navigate direclty to `/create-book` on your instance.
+Une fois que vous avez essayé sans succès de rechercher votre livre, de l'importez depuis un autre catalogue, et de trouver d'autres éditions de ce livre, vous pouvez ajouter un nouveau livre manuellement. Le lien pour ajouter manuellement un livre se trouve au bas de la page de recherche lorsque les résultats des catalogues externes sont affichés. Vous pouvez également directement ouvrir `/create-book` sur votre instance.
