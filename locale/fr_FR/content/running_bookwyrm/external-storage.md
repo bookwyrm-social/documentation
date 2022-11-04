@@ -137,7 +137,7 @@ Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui 
 
 ### Mise à jour du connecteur de l'instance
 
-*Remarque : Vous pouvez sauter cette étape si vous utilisez une version à jour de BookWyrm; en septembre 2021 le "self connector" a été retiré dans [PR #1413](https://github.com/bookwyrm-social/bookwyrm/pull/1413)*
+*Remarque : Vous pouvez sauter cette étape si vous utilisez une version à jour de BookWyrm; en septembre 2021 le « self connector » a été retiré dans [PR #1413](https://github.com/bookwyrm-social/bookwyrm/pull/1413)*
 
 Afin que la bonne URL soit utilisée lors de l'affichage des résultats de recherche locale de livres, nous devons modifier la valeur de la racine d'URL des images de couverture.
 
