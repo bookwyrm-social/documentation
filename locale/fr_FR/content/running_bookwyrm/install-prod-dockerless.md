@@ -8,7 +8,7 @@ Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites pr
 
 ## Configuration du serveur
 - Obtenez un nom de domaine et configurez le DNS pour votre serveur. Vous devez faire pointer les serveurs de noms de domaine de votre fournisseur DNS vers le serveur où vous allez héberger BookWyrm. Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
-- Configurez votre serveur avec des pare-feu appropriés pour l"exécution d'une application web (ces instructions ont été testées avec Ubuntu 20.04). Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Configurez votre serveur avec des pare-feu appropriés pour l'exécution d'une application web (ces instructions ont été testées avec Ubuntu 20.04). Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Configurez un service de messagerie (tel que [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) et les paramètres SMTP/DNS appropriés. Utilisez la documentation du service pour la configuration de votre DNS
 - Installez les dépendances. Sur debian, cela pourrait ressembler à `apt install postgresql redis nginx python3-venv libpq-dev`
 
@@ -16,12 +16,12 @@ Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites pr
 
 La branche `production` de BookWyrm contient un certain nombre d'outils qui ne sont pas sur la branche `main`, prévus pour fonctionner en production, tels que des modifications de `docker-compose` pour mettre à jour les commandes par défaut ou la configuration des conteneurs, ou des modifications spécifiques à des containers pour activer des fonctionnalités telles que SSL ou des sauvegardes régulières. Tous ces changements n'ont pas nécessairement un impact sur l'installation sans docker, mais la branche `production` est néanmoins recommandée
 
-Instructions pour l'exécution de BookWyrm en production sans Docker:
+Instructions pour l'exécution de BookWyrm en production sans Docker :
 
-- Créez et déplacez vous dans le répertoire où vous voulez installer BookWyrm. Par exemple `/opt/bookwyrm`: `mkdir /opt/bookwyrm && cd /opt/bookwyrm`
+- Créez et déplacez vous dans le répertoire où vous voulez installer BookWyrm. Par exemple `/opt/bookwyrm` : `mkdir /opt/bookwyrm && cd /opt/bookwyrm`
 - Téléchargez le code de l'application : `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
-- Passez sur la branche `production` : `git checkout production`
-- Créez votre fichier de variables d'environnement, `cp .env.example .env`, et mettez à jour ce qui suit&nbsp;:
+- Passez sur la branche `production` : `git checkout production`
+- Créez votre fichier de variables d'environnement, `cp .env.example .env`, et mettez à jour ce qui suit :
     - `SECRET_KEY` | Une chaîne de caractères secrète, difficile à deviner
     - `DOMAIN` | Votre domaine web
     - `POSTGRES_PASSWORD` | Utilisez un mot de passe sécurisé pour la base de données
@@ -35,21 +35,21 @@ Instructions pour l'exécution de BookWyrm en production sans Docker:
     - `EMAIL_HOST_USER` | L'adresse d'expéditeur de laquelle votre application enverra des emails
     - `EMAIL_HOST_PASSWORD` | Le mot de passe fourni par votre service d'emailing
 - Configurez nginx
-    - Copiez le fichier server_config vers le répertoire conf.d de nginx's&nbsp;: `cp nginx/server_config /etc/nginx/conf.d/server_config`
+    - Copiez le fichier server_config vers le répertoire conf.d de nginx : `cp nginx/server_config /etc/nginx/conf.d/server_config`
     - Faites une copie du modèle de configurationde site de production et mettez le en place dans nginx&nbsp;: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
-    - Mettez à jour le fichier `bookwyrm.conf` de nginx&nbsp;:
+    - Mettez à jour le fichier `bookwyrm.conf` de nginx :
         - Remplacez `your-domain.com` par votre nom de domaine partout dans le fichier (y compris dans les lignes qui sont pour l'instant commentées)
         - Remplacez `/app/` avec votre chemin d'installation `/opt/bookwyrm/` partout dans le fichier (y compris dans les commentaires)
         - Décommentez les lignes 18 à 50 pour permettre la redirection vers HTTPS. Vous devriez avoir deux blocs `server` actifs
         - Remplacez les chemins de `ssl_certificate` et `ssl_certificate_key` par ceux de votre fullchain et privkey
         - Modifiez la ligne 4 en `server localhost:8000`. Vous pouvez choisir un port différent si vous le souhaitez
         - Si vous exécutez un autre serveur web sur votre machine hôte, vous devrez suivre [les instructions pour serveur mandataire inverse](/reverse-proxy.html)
-    - Activez la configuration nginx: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
-     - Rechargez la configuration nginx&nbsp;: `systemctl reload nginx`
+    - Activez la configuration nginx : `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
+     - Rechargez la configuration nginx : `systemctl reload nginx`
 - Configurez l'environnement virtuel python
-    - Créez le répertoire venv python dans votre répertoire d'installation&nbsp;: `mkdir venv` `python3 -m venv ./venv`
-    - Installez les dépendances python de bookwyrm avec pip&nbsp;: `./venv/bin/pip3 install -r requirements.txt`
-- Créez la base de données postgresql de bookwyrm. Assurez-vous de changer le mot de passe en ce que vous avez défini dans la configuration `.env`&nbsp;:
+    - Créez le répertoire venv python dans votre répertoire d'installation : `mkdir venv` `python3 -m venv ./venv`
+    - Installez les dépendances python de bookwyrm avec pip : `./venv/bin/pip3 install -r requirements.txt`
+- Créez la base de données postgresql de bookwyrm. Assurez-vous de remplacer le mot de passe par ce que vous avez défini dans la configuration `.env` :
 
     `sudo -i -u postgres psql`
 
@@ -71,10 +71,10 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 - Créez et configurez votre utilisateur `bookwyrm`
     - Créez l'utilisateur système bookwyrm: `useradd bookwyrm -r`
     - Changez le propriétaire de votre répertoire d'installation en bookwyrm&nbsp;: `chown -R /opt/bookwyrm bookwyrm:bookwyrm`
-    - Vous devriez maintenant exécuter les commandes liées à bookwyrm avec l'utilisateur de bookwyrm&nbsp;: `sudo -u bookwyrm echo I am the $(whoami) user`
+    - Vous devriez maintenant exécuter les commandes liées à bookwyrm avec l'utilisateur de bookwyrm : `sudo -u bookwyrm echo I am the $(whoami) user`
 
 - Générez le code administrateur avec `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, et copiez le pour l'utiliser lors de la création du compte administrateur.
-- Vous pouvez obtenir ce code à n'importe quel moment en ré-exécutant la commande. Voici un exemple de sortie&nbsp;:
+- Vous pouvez obtenir ce code à n'importe quel moment en ré-exécutant la commande. Voici un exemple de sortie :
 
 ``` { .sh }
 *******************************************
@@ -105,7 +105,7 @@ set -e
     - Flower a été ici désactivé parce qu'il n'est pas configuré automatiquement avec le mot de passe défini dans le fichier `.env`
 - Vous pouvez à présent exécuter BookWyrm avec&nbsp;: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
 - L'application devrait s'exécuter sur votre domaine. Lorsque vous chargez le domaine, vous devriez obtenir une page de configuration qui confirme vos paramètres d'instance, ainsi qu'un formulaire pour créer un compte d'administrateur. Utilisez votre code d'administration pour vous inscrire.
-- Vous pouvez configurer BookWyrm pour qu'il s'exécute automatique à l'aide d'un service systemd. Voici un exemple&nbsp;:
+- Vous pouvez configurer BookWyrm pour qu'il s'exécute automatique à l'aide d'un service systemd. Voici un exemple :
 ```
 # /etc/systemd/system/bookwyrm.service
 [Unit]
@@ -125,7 +125,7 @@ WorkingDirectory=/opt/bookwyrm/
 WantedBy=multi-user.target
 ```
 
-Félicitations ! Vous y êtes arrivé !! Configurez votre instance comme vous le souhaitez.
+Félicitations ! Vous y êtes arrivé !! Configurez votre instance comme vous le souhaitez.
 
 ## Participer
 
