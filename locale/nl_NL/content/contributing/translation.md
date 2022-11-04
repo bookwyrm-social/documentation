@@ -1,8 +1,8 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Vertalingen
 - - -
 
-## Contributing to translations
+## Bijdragen aan vertalingen
 
 You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
