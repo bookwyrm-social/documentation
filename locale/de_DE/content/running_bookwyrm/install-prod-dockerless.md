@@ -1,12 +1,12 @@
 ---
-Title: Installing Without Docker
+Title: Installation ohne Docker
 Date: 2022-10-02
 Order: 2
 ---
 
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production. This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended This install method assumes you already have ssl configured with certificates available
 
-## Server setup
+## Servereinrichtung
 - Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
@@ -42,11 +42,11 @@ Instructions for running BookWyrm in production without Docker:
         - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
         - Uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
         - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
-        - Change line 4 so that it says `server localhost:8000`. You may choose a different port here if you wish
+        - Change line 4 so that it says `server localhost:8000`. Sie können hier einen anderen Port wählen, wenn Sie möchten
         - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
     - Enable the nginx config: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
      - Reload nginx: `systemctl reload nginx`
-- Setup the python virtual enviroment
+- Einrichtung der virtuellen Python-Umgebung
     - Make the python venv directory in your install dir: `mkdir venv` `python3 -m venv ./venv`
     - Install bookwyrm python dependencies with pip: `./venv/bin/pip3 install -r requirements.txt`
 - Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
@@ -74,7 +74,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
     - You should now run bookwyrm related commands as the bookwyrm user: `sudo -u bookwyrm echo I am the $(whoami) user`
 
 - Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
-- You can get your code at any time by re-running that command. Here's an example output:
+- You can get your code at any time by re-running that command. Hier ist eine Beispielausgabe:
 
 ``` { .sh }
 *******************************************
