@@ -1,5 +1,5 @@
 - - -
-Title: Aktualisieren Ihrer Instanz Date: 2021-04-13 Order: 2
+Title: Updating Your Instance Date: 2021-04-13 Order: 3
 - - -
 
 Wenn Änderungen im Produktionszweig verfügbar sind, kannst du sie mit dem Befehl `./bw-dev update` installieren und auf deine Instanz übertragen. Das macht eine Reihe von Dingen:

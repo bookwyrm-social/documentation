@@ -1,5 +1,5 @@
 - - -
-Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 3
+Titre : Utilisation d'un serveur mandataire inverse Date: 2021-05-11 Ordre: 4
 - - -
 
 ## Running BookWyrm Behind a Reverse-Proxy

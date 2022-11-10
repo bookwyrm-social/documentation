@@ -1,21 +1,21 @@
 - - -
-Title: Moderation Date: 2021-04-18 Order: 4
+Title: Modération
 - - -
 
-## Blocking
-Les utilisateur-ice-s ont l'option de bloquer d'autres utilisateur-ice-s eux-mêmes, sans l'intervention d'un-e modérateur-ice. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.
+## Bloquage
+Les utilisateur⸳ices ont l'option de bloquer d'autres utilisateur⸳ices sans l'intervention d'un⸳e modérateur⸳ice. Dans la vue d'administration « Instances fédérées », les administrateur⸳ices peuvent voir combien d'utilisateur⸳ices d'une instance ont été bloqué⸳es par des utilisateur⸳ices locaux⸳ales.
 
-## Reports
-Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.
+## Signalements
+Les utilisateur⸳ices peuvent signaler les statuts ou les utilisateur⸳ices à partir du menu « Plus d’options » dans le bas de page des messages et des boutons « S’abonner »/« Se désabonner » pour les utilisateur⸳ices. Lorsqu'un signalement est effectué, tous les utilisateur⸳ices ayant les droits d'administration recevront une notification.
 
-When a report is made, there are a few options how the moderator can respond.
-- Send a direct message to the reported user.
-- Delete the reported status.
-- Deactivate the user. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.
+Lorsqu'un signalement est effectué, les modérateur⸳ices peuvent y répondre de plusieurs manières.
+- Envoyer un message direct à l'utilisateur⸳ice signalé⸳e.
+- Supprimé le statut signalé.
+- Désactiver l'utilisateur-ice. Pour les utilisateur⸳ices locaux⸳ales, cela les empêchera de se connecter, et leur compte ne sera plus affiché dans l'application. Pour les utilisateur⸳ices d'autres instances, le serveur rejettera toute activité de cet⸳te utilisateur⸳ice, qui n'apparaîtra également plus dans les recherches.
 
 ## Modération au niveau de l'instance
-Les modérateur-ices peuvent bloquer des instances en entier. Cela va bloquer toute activité venant de cette instance et désactiver tous les comptes de cette instance au niveau local.
+Les modérateur⸳ices peuvent bloquer intégralement des instances. Cela va bloquer toute activité venant de cette instance et désactiver tous les comptes de cette instance au niveau local.
 
-Si l'instance est ensuite dé-bloquée, les utilisateur-ices qui avaient été désactivé-es seront réactivé-es.
+Si l'instance est ensuite débloquée, les utilisateur⸳ices qui avaient été désactivé⸳es seront réactivé⸳es.
 
-Les modérateur-ices peuvent aussi mettre en ligne des listes pour bloquer plusieurs serveurs à la fois.
+Les modérateur⸳ices peuvent aussi mettre en ligne des listes pour bloquer plusieurs serveurs à la fois.

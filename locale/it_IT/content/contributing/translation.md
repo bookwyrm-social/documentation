@@ -2,28 +2,28 @@
 Title: Translations Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Contribuisci alle traduzioni
 
 You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Linguaggio gender-neutral
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Laddove possibile, le traduzioni di BookWyrm dovrebbero utilizzare un linguaggio neutro dal punto di vista del genere. Questo vale anche se la lingua utilizza il maschile come un genere neutrale, o se usa qualcosa di simile a "lui/lei". È anche importante che le traduzioni siano chiare, concise e leggibili per un lettore a schermo e a volte questi obiettivi sono in conflitto; non c'è una risposta perfetta, unica e adatta a tutti, e la soluzione dipende dalla lingua.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Come principio guida, cercare di posizionare un valore più alto su un linguaggio inclusivo e neutro che su una correttezza formale o guide di stile ufficialmente approvate. In inglese, per esempio, molte guide di stile formali richiedono un pronome "lei" o "he" singolare da utilizzare quando si riferisce a un individuo, ma sarebbe meglio in BookWyrm utilizzare il genere neutro singolare "loro" invece.
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Se non siete sicuri di come meglio affrontare un problema di traduzione, commentate la traduzione o aprite un [argomento di discussione](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) per affrontare domande su larga scala.
 
-## Making templates translatable
+## Creare modelli traducibili
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+Bookwyrm sfrutta la funzionalità di traduzione di Django per consentire ai contenuti della pagina di cambiare a seconda della lingua di visualizzazione scelta dall'utente. La documentazione Django [fornisce un'utile spiegazione](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) di come funziona, ma ecco una versione breve:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* tutto il testo del modello dovrebbe includere i tag del modello di traduzione
+* aggiungi `{% load i18n %}` nella parte superiore del tuo modello per abilitare le traduzioni
+* Se il blocco di testo è un testo letterale, puoi usare il tag modello `{% trans %}`
+* Se il blocco di testo include variabili, dovresti usare la coppia di tag modello `{% blocktrans %}` e `{% endblocktrans %}`. Se stai includendo spazio bianco di riempimento o interruzioni di linea, usa `trimmed` per rimuoverlo automaticamente quando il file locale viene generato: `{% blocktrans trimmed %}`
 
-### Examples
+### Esempi
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>

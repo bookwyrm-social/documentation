@@ -1,5 +1,5 @@
 - - -
-Title: ActivityPub Date: 2021-04-20 Order: 1
+Titolo: ActivityPub Data: 2021-04-20 Ordine: 1
 - - -
 
 BookWyrm utilizza il protocollo [ActivityPub](http://activitypub.rocks/) per inviare e ricevere le attività dell'utente tra altre istanze di BookWyrm e altri servizi che implementano ActivityPub, come [Mastodon](https://joinmastodon.org/). Per gestire i dati del libro, BookWyrm ha una manciata di tipi di attività estesi che non fanno parte dello standard, ma sono leggibili ad altre istanze di BookWyrm.
@@ -12,7 +12,7 @@ Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 - `Segui`: richiesta di ricevere aggiornamenti di un utente e visualizzare i sui stati che hanno privacy solo follower
 - `Accetta`: approva un `Segui` e finalizza la relazione
 - `Rifiuta`: nega un `Segui`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
+- `Blocco`: impedisce agli utenti di vedere gli stati degli altri e impedisce all'utente bloccato di visualizzare il profilo del bloccante
 - `Aggiorna`: aggiorna il profilo e le impostazioni di un utente
 - `Elimina`: disattiva un utente
 - `Annulla`: inverte un `Segui` o `Blocco`
@@ -41,20 +41,20 @@ Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 - `Undo`: Inverte un `Like` o `Announce`
 
 ### Collezioni
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+I libri e le liste degli utenti sono rappresentati da [`OrdinedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
-#### Objects
+#### Obiettivi
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `Scaffale`: Collezione di libri di un utente. Per impostazione predefinita, ogni utente ha gli scaffali `da leggere`, `letture correnti`, e `letti` che vengono utilizzati per monitorare i progressi di lettura.
+- `Lista`: Una raccolta di libri che può avere elementi forniti da utenti diversi da quello che ha creato la lista.
 
-#### Activities
+#### Attività
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Crea`: Aggiunge uno scaffale o una lista al database.
+- `Elimina`: Rimuove uno scaffale o una lista.
+- `Aggiungi`: Aggiunge un libro a uno scaffale o una lista.
+- `Rimuovi`: Rimuove un libro da uno scaffale o da una lista.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+## Serializzazione Alternativa
+Poiché BookWyrm utilizza tipi di oggetti personalizzati (`Recensione`, `Commento`, `Citazione`) che non sono supportati da ActivityPub, gli stati si trasformano in tipi standard quando inviati o visualizzati da servizi non-BookWyrm. `Recensione`s viene convertita in `Articolo`s, `Commento`s e `Citazione`s vengono convertiti in `Nota`s, con un link al libro e l'immagine di copertina allegata.

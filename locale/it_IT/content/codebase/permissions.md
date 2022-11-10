@@ -1,21 +1,21 @@
 - - -
-Title: Permissions Date: 2021-04-18 Order: 2
+Titolo: Permessi Data: 18-04-2021 Ordine: 2
 - - -
 
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+L'accesso dell'utente a diverse funzioni è controllato tramite il sistema di autenticazione integrato [di Django](https://docs.djangoproject.com/en/3.2/topics/auth/default/). Quando viene creata un'istanza, lo script `initdb` crea un insieme di permessi, che vengono assegnati ai gruppi. Per impostazione predefinita, a tutti i nuovi utenti viene assegnato il gruppo `editor`, che consente loro di modificare i metadati del libro.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+L'amministratore dell'istanza dovrebbe avere lo stato `superuser`, che gli consente l0accesso a Django admin (`/admin`) e conferisce tutte le autorizzazioni al suo utente.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Permessi e gruppi
+Questa tabella mostra i quattro gruppi (admin, moderatore, editor e utente) e quali permessi gli utenti di quel gruppo hanno:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                                 | admin | moderatore | editor | utente |
+| ------------------------------- | ----- | ---------- | ------ | ------ |
+| modifica impostazioni istanza   | ✔️    | -          | -      | -      |
+| modifica il livello dell'utente | ✔️    | -          | -      | -      |
+| gestire la federazione          | ✔️    | ✔️         | -      | -      |
+| invito a correggere errori      | ✔️    | ✔️         | -      | -      |
+| disattiva utenti                | ✔️    | ✔️         | -      | -      |
+| cancella post                   | ✔️    | ✔️         | -      | -      |
+| modifica libri                  | ✔️    | ✔️         | ✔️     | -      |
+ carica le copertine           |  ✔️    |     ✔️       |   ✔️     |  ✔️

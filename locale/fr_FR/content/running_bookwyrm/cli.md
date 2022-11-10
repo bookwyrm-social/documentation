@@ -1,8 +1,8 @@
 - - -
-Title: Outils en ligne de commande Date: 11/11/2021 Order: 6
+Title: Outils en ligne de commande Date: 11/11/2021 Order: 7
 - - -
 
-Les développeur-e-s de BookWyrm et les gestionnaires d'une instance peuvent utiliser le script `bw-dev` pour des tâches courantes. Cela peut simplifier vos commandes en les rendant plus courtes, plus faciles à mémoriser et diminuer le risque d'erreur.
+Les développeur·ses de BookWyrm et les gestionnaires d'une instance peuvent utiliser le script `bw-dev` pour des tâches courantes. Cela peut simplifier vos commandes en les rendant plus courtes, plus faciles à mémoriser et diminuer le risque d'erreur.
 
 Une fois que vous avez installé Bookwyrm [en production](installing-in-production.html) ou [en développement](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), vous pouvez exécuter le script à partir de la ligne de commande avec `./bw-dev` suivi de la sous-commande que vous voulez exécuter.
 
@@ -157,8 +157,8 @@ Crée des fichiers de messages pour tous les segments de traduction. Après avoi
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compile les fichiers de traduction. Voir [la doc de Django pour compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
-### pytest args
+### Arguments de pytest
 
-Run tests with `pytest`.
+Exécutez des tests avec `pytest`.

@@ -1,33 +1,33 @@
 - - -
-Title: Welcome Date: 2021-04-13
+Titolo: Benvenuto Data: 13-04-2021
 - - -
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+BookWyrm è un social network per monitorare la lettura, parlare di libri, scrivere recensioni, e scoprire cosa leggere dopo. La Federazione permette agli utenti di BookWyrm di unirsi a piccole comunità di fiducia che possono connettersi tra loro e con altri servizi ActivityPub come Mastodon e Pleroma.
 
-## Features
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+## Funzionalità
+Dal momento che il progetto è ancora nelle sue prime fasi, le caratteristiche stanno crescendo ogni giorno, e c'è un sacco di spazio per suggerimenti e idee. Apri una [segnalazione](https://github.com/bookwyrm-social/bookwyrm/issues) per avviare una conversazione!
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
-        - Comments on a book
-        - Quotes or excerpts
-    - Reply to statuses
-    - View aggregate reviews of a book across connected BookWyrm instances
-    - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
-    - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
-    - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
-- Federation with ActivityPub
-    - Broadcast and receive user statuses and activity
-    - Share book data between instances to create a networked database of metadata
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
-    - Option for users to manually approve followers
-    - Allow blocking and flagging for moderation
+- Pubblicazioni sui libri
+    - Componi le recensioni, con o senza valutazioni, che vengono aggregate nella pagina del libro
+    - Componi altri tipi di stati sui libri, come:
+        - Commenti su un libro
+        - Citazioni o estratti
+    - Rispondi agli stati
+    - Visualizza le recensioni aggregate di un libro attraverso le istanze di BookWyrm collegate
+    - Differenziare le recensioni locali e federate e la valutazione nel tuo feed di attività
+- Monitorare l'attività di lettura
+    - Libri sugli scaffali "da leggere", "letture correnti" e "letti"
+    - Creare scaffali personalizzati
+    - Salva le date di inizio/fine lettura, così come gli aggiornamenti di avanzamento
+    - Aggiorna chi ti segue sull'attività di lettura (opzionalmente, e con controlli sulla privacy)
+    - Crea liste di libri che possono essere aperte al contributo di chiunque, curate o modificate solo dal creatore
+- Federazione con Activitypub
+    - Trasmetti e ricevi stati e attività dell'utente
+    - Condividere i dati dei libri tra istanze per creare un database di metadati in rete
+    - Identifica i libri condivisi tra istanze e aggrega contenuti correlati
+    - Segui e interagisci con gli utenti tra le istanze di BookWyrm
+    - Interopera con i servizi di ActivityPub diversi da BookWyrm (attualmente, Mastodon è supportato)
+- Controlli specifici sulla privacy
+    - Livelli privati, solo follower e pubblici per la pubblicazione degli scaffali ed elenchi
+    - Opzione per gli utenti di approvare manualmente i follower
+    - Consenti il blocco e la segnalazione per moderazione
