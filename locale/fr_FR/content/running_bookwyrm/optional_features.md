@@ -1,5 +1,5 @@
 - - -
-Titre : Fonctionnalités optionnelles Date : 2021-08-02 Ordre : 6
+Title : Fonctionnalités optionnelles Date : 2021-08-02 Ordre : 6
 - - -
 
 Certaines fonctionnalités de BookWyrm doivent être activées pour fonctionner.
