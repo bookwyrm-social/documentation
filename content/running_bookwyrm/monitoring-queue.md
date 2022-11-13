@@ -20,6 +20,7 @@ To watch Celery jobs in real-time BookWyrm uses
 In case you haven't tweaked the
 [`docker-compose.yml`](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100) you can find the
 service on [port 8888](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45).
+That is: `https://MY_DOMAIN_NAME:8888/`.
 
 ### Tasks
 
