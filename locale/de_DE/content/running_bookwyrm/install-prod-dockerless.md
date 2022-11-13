@@ -65,12 +65,13 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 \q
 ```
 
-- Initialize the database by running `venv/bin/python3 manage.py migrate`
+- Migrate the database schema by running `venv/bin/python3 manage.py migrate`
+- Initialize the database by running `venv/bin/python3 manage.py initdb`
 - Create the static by running `venv/bin/python3 manage.py collectstatic --no-input`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Create and setup your `bookwyrm` user
     - Make the system bookwyrm user: `useradd bookwyrm -r`
-    - Change the owner of your install directory to bookwyrm: `chown -R /opt/bookwyrm bookwyrm:bookwyrm`
+    - Change the owner of your install directory to bookwyrm: `chown -R bookwyrm:bookwyrm /opt/bookwyrm`
     - You should now run bookwyrm related commands as the bookwyrm user: `sudo -u bookwyrm echo I am the $(whoami) user`
 
 - Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
