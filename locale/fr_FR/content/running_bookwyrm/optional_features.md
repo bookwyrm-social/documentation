@@ -8,7 +8,7 @@ Certaines fonctionnalités de BookWyrm doivent être activées pour fonctionner.
 
 Par défault, BookWyrm utilise le logo de l'instance (ou le logo par défault) en tant qu'image d'aperçu OpenGraph. Une autre option est d'activer la création d'aperçus pour les livres, les utilisateur-ices et le site web.
 
-The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Selon le type d'image, son contenu sera :
+Les images d'aperçu seront dimensionnées pour les grandes images OpenGraph (utilisé par Twitter sous le nom `summary_large_image`). Selon le type d'image, son contenu sera :
 
 - l'image par défault de l'instance va afficher le gros logo, avec le nom de l'instance et son url
 - l'image de l'utilisateur-ice va afficher leur photo de profil, nom d'affichage et nom du compte (sous la forme @nom-d'utilisateur@instance)
@@ -22,7 +22,7 @@ Ces images vont être mises à jour à plusieurs occasions :
 
 ### Activer la prévisualisation des images
 
-In order to enable the feature with default settings, you have to uncomment (remove the `#` in front of) the line `ENABLE_PREVIEW_IMAGES=true` in your `.env` file. All the new updating events aforementioned will cause the generation of the corresponding image.
+Pour activer cette fonctionnalité avec les paramètres par défaut, il faut décommenter (retirer le `#` au début de) la ligne `ENABLE_PREVIEW_IMAGES=true` dans le fichier `.env`. Tous les nouveaux événements de mise à jour précédemment mentionnés provoqueront la génération de l'image correspondante.
 
 Examples for these images can be viewed on the [feature’s pull request’s description](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink).
 
