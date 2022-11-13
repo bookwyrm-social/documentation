@@ -4,7 +4,7 @@ Date: 2022-11-23
 Order: 6
 ---
 
-There might be occurences where your instances behaves slow. One option would
+There might be occurences where your instances behaves slowly. One option would
 be to inspect the queue to see, whether some jobs hang. Read on to learn how.
 
 ## Celery
