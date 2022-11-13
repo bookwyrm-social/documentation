@@ -65,8 +65,8 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 \q
 ```
 
-- Migrate the database schema by running `venv/bin/python3 manage.py migrate`
-- Initialize the database by running `venv/bin/python3 manage.py initdb`
+- ניתן להעביר את סכמת מסד הנתונים על ידי הרצה `venv/bin/python3 manage.py migrate`
+- ניתן לאתחל את מסג הנתונים על ידי הרצת `venv/bin/python3 manage.py initdb`
 - Create the static by running `venv/bin/python3 manage.py collectstatic --no-input`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Create and setup your `bookwyrm` user
