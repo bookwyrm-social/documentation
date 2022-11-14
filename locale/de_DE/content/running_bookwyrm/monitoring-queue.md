@@ -4,18 +4,18 @@ Date: 2022-11-23
 Order: 6
 ---
 
-There might be occurences where your instances behaves slowly. One option would be to inspect the queue to see, whether some jobs hang. Read on to learn how.
+Es kann passieren, dass Ihre Instanz langsam ist. Eine Option wäre die Warteschlange zu inspizieren, um zu sehen, ob einige Jobs hängen. Lesen Sie weiter, um zu erfahren, wie.
 
 ## Celery
 
-BookWyrm is using [Celery](https://docs.celeryq.dev/en/stable/) to manage background jobs.
+BookWyrm verwendet [Celery](https://docs.celeryq.dev/en/stable/) um Hintergrundjobs zu verwalten.
 
 ## Flower
 
-To watch Celery jobs in real-time BookWyrm uses [Flower](https://flower.readthedocs.io/en/latest/).
+Um Celery-Jobs in Echtzeit zu sehen, verwendet BookWyrm [Flower](https://flower.readthedocs.io/en/latest/).
 
-In case you haven't tweaked the [`docker-compose.yml`](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100) you can find the service on [port 8888](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45). That is: `https://MY_DOMAIN_NAME:8888/`.
+Falls Sie das [`Docker-compose.yml nicht geändert haben`](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100) finden Sie den Service auf [Port 8888](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45). Das ist: `https://MY_DOMAIN_NAME:8888/`.
 
-### Tasks
+### Aufgaben
 
-You can find [`@app.task` annotated](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task) tasks in the codebase.
+Sie finden unter [`@app.task` kommentiert](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task) Aufgaben in der Codebase.
