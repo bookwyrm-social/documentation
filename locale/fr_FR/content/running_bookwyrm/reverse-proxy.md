@@ -2,8 +2,8 @@
 Title : Utilisation d'un serveur mandataire inverse Date: 2021-05-11 Ordre: 4
 - - -
 
-## Running BookWyrm Behind a Reverse-Proxy
-If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.
+## Faire fonctionner BookWyrm derrière un proxy inverse
+Si un autre serveur web est installé sur la machine, il serait préférable que ce dernier fasse proxy pour les requêtes vers BookWyrm.
 
 The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files. The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.
 
