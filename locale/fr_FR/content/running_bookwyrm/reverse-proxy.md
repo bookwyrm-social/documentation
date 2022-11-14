@@ -1,5 +1,5 @@
 - - -
-Title : Utilisation d'un serveur mandataire inverse Date: 2021-05-11 Ordre: 4
+Title : Utilisation d'un serveur mandataire inverse Date: 2021-05-11 Order: 4
 - - -
 
 ## Faire fonctionner BookWyrm derrière un proxy inverse
