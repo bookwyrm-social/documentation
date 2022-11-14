@@ -1,5 +1,5 @@
 - - -
-Title: Optional features Date: 2021-08-02 Order: 6
+Title: Optional features Date: 2021-08-02 Order: 8
 - - -
 
 Some features of BookWyrm have to be enabled to work.
