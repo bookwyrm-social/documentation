@@ -6,7 +6,7 @@ Bookwyrm developers and instance managers can use the `bw-dev` script for common
 
 Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
 
-## Docker shortcuts
+## Συντομεύσεις πληκτρολογίου
 
 ### bash
 
@@ -36,15 +36,15 @@ Equivalent to `docker-compose run --rm --service-ports web`.
 
 Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly.
 
-### up [args]
+### Πάνω
 
 Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
 
-## Managing the database
+## Το μέγεθος της βάσης δεδομένων στο δίσκο:
 
 ### initdb
 
-Initialize a database.
+Το μέγεθος της βάσης δεδομένων στο δίσκο:
 
 ### makemigrations [appname migration number]
 
@@ -60,19 +60,19 @@ Runs Django's `migrate` command inside your Docker container. You always need to
 
 _This command is not available on the `production` branch_.
 
-Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
+Το μέγεθος της βάσης δεδομένων στο δίσκο: **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
 
-## Managing a Bookwyrm instance
+## Κόμβος
 
 ### collectstatic
 
 Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
 
-### generate_preview_images
+### Προεπισκόπηση
 
 Generate preview images for site, users, and books. This can take a while if you have a large database.
 
-### generate_thumbnails
+### Θόλωμα μικρογραφιών
 
 Generates thumbnail images for book covers.
 
@@ -80,25 +80,25 @@ Generates thumbnail images for book covers.
 
 Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
 
-### populate_list_streams
+### Διαγραφή αυτής της λίστας;
 
 Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
 
-### populate_suggestions
+### Προτάσεις
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Εμφάνιση αυτού του λογαριασμού σε προτεινόμενους χρήστες: You may want to run this manually to refresh suggestions.
 
-### restart_celery
+### Επανεκίνηση
 
 Restarts the `celery_worker` Docker container.
 
-### update
+### Αναβάθμιση
 
 When there are changes to the `production` branch, you can update your instance without downtime.
 
 This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
 
-### admin_code
+### Διαχειριστής
 
 Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
 
@@ -108,11 +108,11 @@ By default, BookWyrm uses local storage for static assets (favicon, default avat
 
 See [External Storage](/external-storage.html) for more information.
 
-### copy_media_to_s3
+### Δεν βρέθηκε συμβατή πηγή για το πολυμέσο.
 
 Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
 
-### sync_media_to_s3
+### Συγχρονισμός
 
 Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
 
@@ -124,7 +124,7 @@ Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of y
 
 _These commands are not available on the `production` branch_.
 
-### black
+### Μαύρο
 
 BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
 
@@ -140,11 +140,11 @@ BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consiste
 
 This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
 
-### clean
+### Το Weblate είναι ένα διαδικτυακό εργαλείο μετάφρασης με ενσωματωμένο έλεγχο έκδοσης. Διαθέτει καθαρό και απλό περιβάλλον χρήστη, διαμοιρασμό των μεταφράσεων μεταξύ των συστατικών, ποιοτικούς ελέγχους και αυτόματη σύνδεση με τα πηγαία αρχεία.
 
 Remove all stopped Docker containers.
 
-Equivalent to:
+Επί του παρόντος λαμβάνετε το ισοδύναμο {money_amount} ανά εβδομάδα από δωρεές σε ξένα συναλλάγματα. Αυτές οι δωρεές δεν θα μετατραπούν στο κύριο συνάλλαγμα σας.
 
 ```shell
 docker-compose stop
@@ -157,7 +157,7 @@ Creates message files for all translation strings. After you have run `makemessa
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Διαλέξτε αρχεία μετάφρασης για εισαγωγή See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
