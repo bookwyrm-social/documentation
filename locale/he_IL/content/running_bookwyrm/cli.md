@@ -1,5 +1,5 @@
 - - -
-Title: Command Line Tool Date: 2021-11-11 Order: 9
+כותרת: כלי שורת הפקודה תאריך: 11-11-2021 מקום: 9
 - - -
 
 Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
