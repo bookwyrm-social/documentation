@@ -1,5 +1,5 @@
 - - -
-Title: Narzędzie wiersza polecenia Date: 2021-11-11 Order: 7
+Title: Command Line Tool Date: 2021-11-11 Order: 9
 - - -
 
 Programiści BookWyrm oraz menedżerowie instancji mogą skorzystać ze skryptu `bw-dev` do częstych zadań. Może to skrócić Twoje polecenia, ułatwić ich zapamiętanie i utrudnić zepsucie czegoś.
