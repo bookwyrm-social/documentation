@@ -1,5 +1,5 @@
 - - -
-Title: Optional features Date: 2021-08-02 Order: 8
+כותרת: תכונות אופציונליות תאריך: 02-08-2021 מקום: 8
 - - -
 
 Some features of BookWyrm have to be enabled to work.
