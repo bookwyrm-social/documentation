@@ -1,14 +1,14 @@
 ---
-Title: Monitoring Queue
-Date: 2022-11-23
+Title: תור ניטור
+Date: 23-11-2022
 Order: 6
 ---
 
-There might be occurences where your instances behaves slowly. One option would be to inspect the queue to see, whether some jobs hang. Read on to learn how.
+ייתכנו מקרים בהם המופעים שלך יתנהגו באיטיות יותר. אפשרות אחת תהיה לבדוק את התור כדי לראות אם חלק מהעבודות תקועות. יש לקרוא כדי ללמוד איך.
 
 ## Celery
 
-BookWyrm is using [Celery](https://docs.celeryq.dev/en/stable/) to manage background jobs.
+BookWyrm משתמש ב-[Celery](https://docs.celeryq.dev/en/stable/) כדי לנהל את העבודות ברקע.
 
 ## Flower
 
