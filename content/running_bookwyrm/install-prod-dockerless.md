@@ -82,7 +82,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
     - Make the system bookwyrm user:
         `useradd bookwyrm -r`
     - Change the owner of your install directory to bookwyrm:
-        `chown -R /opt/bookwyrm bookwyrm:bookwyrm`
+        `chown -R bookwyrm:bookwyrm /opt/bookwyrm`
     - You should now run bookwyrm related commands as the bookwyrm user:
         `sudo -u bookwyrm echo I am the $(whoami) user`
 
