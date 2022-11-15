@@ -1,16 +1,16 @@
 - - -
-Title: Installing in Production Date: 2021-05-18 Order: 1
+Title: Installation en Production Date: 2021-05-18 Order: 1
 - - -
 
-This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
+Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites preuve de prudence lors de son utilisation en production.
 
-## Server setup
-- Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
-- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
-- Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- [Install Docker and docker-compose](https://docs.docker.com/compose/install/)
+## Configuration du serveur
+- Obtenez un nom de domaine et configurez DNS pour votre serveur. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Configurez votre serveur avec un pare-feu approprié pour les applications web (cette page de documentation est testée avec Ubuntu 20.04). Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Configurez un service mail (comme [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) et les paramètres SMTP/DNS appropriés. Utilisez la documentation du service pour configurer vos DNS
+- [Installez Docker et docker-compose](https://docs.docker.com/compose/install/)
 
-## Install and configure BookWyrm
+## Installation et configuration de BookWyrm
 
 The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
 
