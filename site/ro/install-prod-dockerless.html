@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>
+        
+Installing Without Docker
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/ro/instances" class="navbar-item">
+                <span class="button is-success">Alăturați-vă</span>
+            </a>
+            <a href="https://joinbookwyrm.com/ro/get-involved" class="navbar-item">
+                Implicați-vă
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Susțineți
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Cod
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentație
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" selected>Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Installing Without Docker</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/ro/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/posting-statuses.html" >Posting statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/adding-books.html" >Adding Books</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/install-prod-dockerless.html" class="is-active">Installing Without Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/monitoring-queue.html" >Monitoring Queue</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/cli.html" >Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/contributing.html" >How to Contribute</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/permissions.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/ro/activitypub.html" >ActivitatePub</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production. This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended This install method assumes you already have ssl configured with certificates available</p>
+<h2>Server setup</h2>
+<ul>
+<li>Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
+<li>Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
+<li>Set up an email service (such as <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS</li>
+<li>Install dependencies. On debian this could look like <code>apt install postgresql redis nginx python3-venv libpq-dev</code></li>
+</ul>
+<h2>Install and configure BookWyrm</h2>
+<p>The <code>production</code> branch of BookWyrm contains a number of tools not on the <code>main</code> branch that are suited for running in production, such as <code>docker-compose</code> changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the <code>production</code> branch is still recommended</p>
+<p>Instructions for running BookWyrm in production without Docker:</p>
+<ul>
+<li>Make and enter directory you want to install bookwyrm too. For example <code>/opt/bookwyrm</code>: <code>mkdir /opt/bookwyrm &amp;&amp; cd /opt/bookwyrm</code></li>
+<li>Get the application code: <code>git clone git@github.com:bookwyrm-social/bookwyrm.git ./</code></li>
+<li>Switch to the <code>production</code> branch: <code>git checkout production</code></li>
+<li>Create your environment variables file, <code>cp .env.example .env</code>, and update the following:<ul>
+<li><code>SECRET_KEY</code> | A difficult to guess, secret string of characters</li>
+<li><code>DOMAIN</code> | Your web domain</li>
+<li><code>POSTGRES_PASSWORD</code> | Set a secure password for the database</li>
+<li><code>POSTGRES_HOST</code> | Set to <code>localhost</code> (the machine running your db)</li>
+<li><code>POSTGRES_USER</code> | Set to <code>bookwyrm</code> (recommended) or something custom (configured later)</li>
+<li><code>POSTGRES_DB</code> | Set to <code>bookwyrm</code></li>
+<li><code>REDIS_ACTIVITY_PASSWORD</code> | Set to nothing (fine on a local machine with a firewall)</li>
+<li><code>REDIS_ACTIVITY_HOST</code> | Set to <code>localhost</code> (the machine running redis)</li>
+<li><code>REDIS_BROKER_PASSWORD</code> | Set to nothing (fine on a local machine with a firewall)</li>
+<li><code>REDIS_BROKER_HOST</code> | Set to <code>localhost</code> (the machine running redis)</li>
+<li><code>EMAIL_HOST_USER</code> | The "from" address that your app will use when sending email</li>
+<li><code>EMAIL_HOST_PASSWORD</code> | The password provided by your email service</li>
+</ul>
+</li>
+<li>Configure nginx<ul>
+<li>Copy the server_config to nginx's conf.d: <code>cp nginx/server_config /etc/nginx/conf.d/server_config</code></li>
+<li>Make a copy of the production template config and set it for use in nginx: <code>cp nginx/production /etc/nginx/sites-available/bookwyrm.conf</code></li>
+<li>Update nginx <code>bookwyrm.conf</code>:<ul>
+<li>Replace <code>your-domain.com</code> with your domain name everywhere in the file (including the lines that are currently commented out)</li>
+<li>Replace <code>/app/</code> with your install directory <code>/opt/bookwyrm/</code> everywhere in the file (including commented out)</li>
+<li>Uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two <code>server</code> blocks enabled</li>
+<li>Change the <code>ssl_certificate</code> and <code>ssl_certificate_key</code> paths to your fullchain and privkey locations</li>
+<li>Change line 4 so that it says <code>server localhost:8000</code>. You may choose a different port here if you wish</li>
+<li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
+</ul>
+</li>
+<li>Enable the nginx config: <code>ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf</code></li>
+<li>Reload nginx: <code>systemctl reload nginx</code></li>
+</ul>
+</li>
+<li>Setup the python virtual enviroment<ul>
+<li>Make the python venv directory in your install dir: <code>mkdir venv</code> <code>python3 -m venv ./venv</code></li>
+<li>Install bookwyrm python dependencies with pip: <code>./venv/bin/pip3 install -r requirements.txt</code></li>
+</ul>
+</li>
+<li>
+<p>Make the bookwyrm postgresql database. Make sure to change the password to what you set in the <code>.env</code> config:</p>
+<p><code>sudo -i -u postgres psql</code></p>
+</li>
+</ul>
+<pre><code>CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
+
+CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
+
+ALTER DATABASE bookwyrm OWNER TO bookwyrm;
+
+GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
+
+\q
+</code></pre>
+<ul>
+<li>Migrate the database schema by running <code>venv/bin/python3 manage.py migrate</code></li>
+<li>Initialize the database by running <code>venv/bin/python3 manage.py initdb</code></li>
+<li>Create the static by running <code>venv/bin/python3 manage.py collectstatic --no-input</code></li>
+<li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
+<li>
+<p>Create and setup your <code>bookwyrm</code> user</p>
+<ul>
+<li>Make the system bookwyrm user: <code>useradd bookwyrm -r</code></li>
+<li>Change the owner of your install directory to bookwyrm: <code>chown -R bookwyrm:bookwyrm /opt/bookwyrm</code></li>
+<li>You should now run bookwyrm related commands as the bookwyrm user: <code>sudo -u bookwyrm echo I am the $(whoami) user</code></li>
+</ul>
+</li>
+<li>
+<p>Generate the admin code with <code>sudo -u bookwyrm venv/bin/python3 manage.py admin_code</code>, and copy the admin code to use when you create your admin account.</p>
+</li>
+<li>You can get your code at any time by re-running that command. Here's an example output:</li>
+</ul>
+<pre><code class="language-sh">*******************************************
+Use this code to create your admin account:
+c6c35779-af3a-4091-b330-c026610920d6
+*******************************************
+</code></pre>
+<ul>
+<li>Make and configure the run script<ul>
+<li>Make a file called dockerless-run.sh and fill it with the following contents</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sh">#!/bin/bash
+
+# stop if one process fails
+set -e
+
+# bookwyrm
+/opt/bookwyrm/venv/bin/gunicorn bookwyrm.wsgi:application --bind 0.0.0.0:8000 &amp;
+
+# celery
+/opt/bookwyrm/venv/bin/celery -A celerywyrm worker -l info -Q high_priority,medium_priority,low_priority &amp;
+/opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &amp;
+# /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &amp;
+</code></pre>
+<pre><code>- Replace `/opt/bookwyrm` with your install dir
+- Change `8000` to your custom port number
+- Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
+</code></pre>
+<ul>
+<li>You can now run BookWyrm with: <code>sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh</code></li>
+<li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
+<li>You may want to configure BookWyrm to autorun with a systemd service. Here is an example:</li>
+</ul>
+<pre><code># /etc/systemd/system/bookwyrm.service
+[Unit]
+Description=Bookwyrm Server
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
+
+[Service]
+User=bookwyrm
+Type=simple
+Restart=always
+ExecStart=/bin/bash /opt/bookwyrm/dockerless-run.sh
+WorkingDirectory=/opt/bookwyrm/
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Congrats! You did it!! Configure your instance however you'd like.</p>
+<h2>Get Involved</h2>
+<p>See <a href="https://joinbookwyrm.com/get-involved/">Get Involved</a> for details.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> este un program colaborativ, anti-corporație, menținut de <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Susțineți BookWyrm pe <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Alăturați-vă</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/join-bookwyrm">Contribuiți la această pagină</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Aflați mai multe</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentație</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contactați responsabilul</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licență</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "ro/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>
