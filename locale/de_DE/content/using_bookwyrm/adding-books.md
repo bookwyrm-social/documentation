@@ -13,8 +13,8 @@ Wenn das von Ihnen gesuchte Buch in Ihrer Instanz nicht verfügbar ist, gibt es 
 
 ## Eine weitere Ausgabe hinzufügen
 
-If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Klicken Sie auf den Link unter der Beschreibung, der Ihnen angibt, wie viele Ausgaben es gibt (zum Beispiel "**4 Ausgaben**"). Am unteren Rand der Editionsliste befindet sich ein Button zum "**Eine weitere Ausgabe hinzufügen**".
+Wenn Sie das gesuchte Buch gefunden haben, es aber die falsche Ausgabe ist, können Sie eine andere Ausgabe aus der Liste der Ausgaben hinzufügen. Klicken Sie auf den Link unter der Beschreibung, der Ihnen angibt, wie viele Ausgaben es gibt (zum Beispiel "**4 Ausgaben**"). Am unteren Rand der Editionsliste befindet sich ein Button zum "**Eine weitere Ausgabe hinzufügen**".
 
 ## Ein komplett neues Buch hinzufügen
 
-Sobald Sie versucht haben, nach Ihrem Buch zu suchen, es aus einem anderen Katalog zu importieren und finden anderer Ausgaben des Buchs, können Sie ein neues Buch manuell hinzufügen. The link to manually add a book is at the bottom of the search page when external catalogs are shown. Sie können auch direkt zu `/create-book` in Ihrer Instanz navigieren.
+Sobald Sie versucht haben, nach Ihrem Buch zu suchen, es aus einem anderen Katalog zu importieren und finden anderer Ausgaben des Buchs, können Sie ein neues Buch manuell hinzufügen. Der Link zum manuellen Hinzufügen eines Buches befindet sich am Ende der Suchseite, wenn externe Kataloge angezeigt werden. Sie können auch direkt zu `/create-book` in Ihrer Instanz navigieren.

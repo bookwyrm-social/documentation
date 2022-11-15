@@ -95,7 +95,7 @@ Outils en ligne de commande
                 </li>
                 
                 <li>
-                    <a href="/fr/adding-books.html" >Adding Books</a>
+                    <a href="/fr/adding-books.html" >Ajout de livres</a>
                 </li>
                 
             </ul>
@@ -104,19 +104,27 @@ Outils en ligne de commande
             <ul class="menu-list">
                 
                 <li>
+                    <a href="/fr/updating.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/reverse-proxy.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/moderation.html" >Modération</a>
+                </li>
+                
+                <li>
                     <a href="/fr/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/updating.html" >Updating Your Instance</a>
+                    <a href="/fr/install-prod-dockerless.html" >Installation sans Docker</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/reverse-proxy.html" >Using a Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/moderation.html" >Moderation</a>
+                    <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
@@ -176,7 +184,7 @@ Outils en ligne de commande
         <div class="column">
             
 <section class="block content">
-    <p>Les développeur-e-s de BookWyrm et les gestionnaires d'une instance peuvent utiliser le script <code>bw-dev</code> pour des tâches courantes. Cela peut simplifier vos commandes en les rendant plus courtes, plus faciles à mémoriser et diminuer le risque d'erreur.</p>
+    <p>Les développeur·ses de BookWyrm et les gestionnaires d'une instance peuvent utiliser le script <code>bw-dev</code> pour des tâches courantes. Cela peut simplifier vos commandes en les rendant plus courtes, plus faciles à mémoriser et diminuer le risque d'erreur.</p>
 <p>Une fois que vous avez installé Bookwyrm <a href="installing-in-production.html">en production</a> ou <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">en développement</a>, vous pouvez exécuter le script à partir de la ligne de commande avec <code>./bw-dev</code> suivi de la sous-commande que vous voulez exécuter.</p>
 <h2>Raccourcis Docker</h2>
 <h3>bash</h3>
@@ -254,9 +262,9 @@ docker-compose rm -f
 <h3>makemessages</h3>
 <p>Crée des fichiers de messages pour tous les segments de traduction. Après avoir exécuté <code>makemessages</code> , vous devez exécuter <code>compilemessages</code> pour compiler les traductions. Voir <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">les makemessages Django</a>.</p>
 <h3>compilemessages</h3>
-<p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
-<h3>pytest args</h3>
-<p>Run tests with <code>pytest</code>.</p>
+<p>Compile les fichiers de traduction. Voir <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">la doc de Django pour compilemessages</a>.</p>
+<h3>Arguments de pytest</h3>
+<p>Exécutez des tests avec <code>pytest</code>.</p>
 </section>
 
         </div>

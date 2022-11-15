@@ -1,5 +1,5 @@
 - - -
-Title: External Storage Date: 2021-06-07 Order: 6
+Title: External Storage Date: 2021-06-07 Order: 7
 - - -
 
 În mod implicit, BookWyrm folosește stocarea locală pentru modelele statice (favicon, avatarul de bază etc.) și media (avatarurile utilizatorilor, coperțile cărților etc.), dar puteți folosi un serviciu de stocare extern pentru a deservi aceste fișiere. BookWyrm folosește `django-storages` pentru a manipula stocarea externă, precum servicii S3 compatibile, Apache Libcloud sau SFTP.

@@ -1,35 +1,35 @@
 - - -
-Titre : Utilisation d'un serveur mandataire inverse Date: 2021-05-11 Ordre: 4
+Title : Utilisation d'un serveur mandataire inverse Date: 2021-05-11 Order: 4
 - - -
 
-## Running BookWyrm Behind a Reverse-Proxy
-If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.
+## Faire fonctionner BookWyrm derrière un proxy inverse
+Si un autre serveur web est installé sur la machine, il serait préférable que ce dernier fasse proxy pour les requêtes vers BookWyrm.
 
-The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files. The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.
+La configuration par défaut de BookWyrm a déjà un serveur Nginx qui sert de proxy pour les requêtes vers l'application Django gérant le SSL et servant directement les fichiers statiques. Les fichiers statiques sont stockés dans un volume Docker accessible par plusieurs services BookWyrm, il est donc déconseillé de complétement retirer ce serveur.
 
-To run BookWyrm behind a reverse-proxy, make the following changes:
+Pour faire fonctionner BookWyrm derrière un proxy inverse, les changements suivants doivent être faits :
 
-- In `nginx/default.conf`:
-    - Comment out the two default servers
-    - Uncomment the server labeled Reverse-Proxy server
-    - Replace `your-domain.com` with your domain name
-- In `docker-compose.yml`:
-    - In `services` -> `nginx` -> `ports`, comment out the default ports and add `- 8001:8001`
-    - In `services` -> `nginx` -> `volumes`, comment out the two volumes that begin `./certbot/`
-    - In `services`, comment out the `certbot` service
+- Dans `nginx/default.conf` :
+    - Décommenter les deux blocs "server" par défaut
+    - Décommenter le bloc "server" nommé "Reverse-Proxy server"
+    - Remplacer `your-domain.com` par votre nom de domaine
+- Dans `docker-compose.yml` :
+    - Dans `services` -> `nginx` -> `ports`, décommenter le port par défaut et ajouter `- 8001:8001`
+    - Dans `services` -> `nginx` -> `volumes`, décommenter les deux volumes commançant par `./certbot/`
+    - Dans `services`, décommenter le service `certbot`
 
-At this point, you can follow, the [setup](#server-setup) instructions as listed. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https`).
+À partir de là, il est possible de suivre [les instructions d'installation](#server-setup) telles quelles. Une fois Docker lancé, il est possible d'accéder à l'instance BookWyrm à l'adresse `http://localhost:8001` (**IMPORTANT:** le serveur n'est pas accessible via `https`).
 
-Steps for setting up a reverse-proxy are server dependent.
+Les étapes pour configurer un proxy inverse dépendent du serveur.
 
 #### Nginx
 
-Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx. See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
+Avant de pouvoir configurer Nginx, il faudra trouver son dossier de configuration, qui dépend de la plateforme et de la manière dont Nginx a été installé. Voir [le guide de Nginx](http://nginx.org/en/docs/beginners_guide.html) pour plus de détails.
 
-To set up your server:
+Pour configurer le serveur :
 
-- In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
-- In your nginx `servers` directory, create a new file named after your domain containing the following information:
+- Dans le fichier `nginx.conf`, vérifier que `include servers/*;` n'est pas commenté.
+- Dans le dossier `servers` de Nginx, créer un nouveau fichier nommé d'après le nom de domaine de l'instance et contenant les informations suivantes :
 
 ``` { .nginx }
 server {
@@ -58,7 +58,7 @@ server {
 }
 ```
 
-To set up with an ssl block:
+Pour configurer avec un bloc SSL :
 ``` { .nginx }
 server {
     server_name your.domain;
@@ -99,12 +99,12 @@ server {
     }
 }
 ```
-- run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
-- restart nginx
+- Exécuter `sudo certbot run --nginx --email VOTRE_ADRESSE_MAIL -d votre-nom-de-domaine.com -d www.votre-nom-de-domaine.com`
+- Redémarrer Nginx
 
-If everything worked correctly, your BookWyrm instance should now be externally accessible.
+Si tout fonctionne correctement, l'instance BookWyrm devrait à présent être accessible depuis l'extérieur.
 
-*Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
+*Note : le `proxy_set_header Host $host;` est essentiel ; s'il n'est pas inclus, les messages en provenance des serveurs fédérés seront rejetés.*
 
-*Note: the location of the ssl certificates may vary depending on the OS of your server*
+*Note : l'emplacement des certificats SSL peut varier selon le système d'exploitation de votre serveur*
 

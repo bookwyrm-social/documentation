@@ -95,7 +95,7 @@ Optional features
                 </li>
                 
                 <li>
-                    <a href="/fr/adding-books.html" >Adding Books</a>
+                    <a href="/fr/adding-books.html" >Ajout de livres</a>
                 </li>
                 
             </ul>
@@ -104,19 +104,27 @@ Optional features
             <ul class="menu-list">
                 
                 <li>
+                    <a href="/fr/updating.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/reverse-proxy.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/moderation.html" >Modération</a>
+                </li>
+                
+                <li>
                     <a href="/fr/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/updating.html" >Updating Your Instance</a>
+                    <a href="/fr/install-prod-dockerless.html" >Installation sans Docker</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/reverse-proxy.html" >Using a Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/moderation.html" >Moderation</a>
+                    <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
@@ -179,7 +187,7 @@ Optional features
     <p>Certaines fonctionnalités de BookWyrm doivent être activées pour fonctionner.</p>
 <h2>Prévisualisation d'images</h2>
 <p>Par défault, BookWyrm utilise le logo de l'instance (ou le logo par défault) en tant qu'image d'aperçu OpenGraph. Une autre option est d'activer la création d'aperçus pour les livres, les utilisateur-ices et le site web.</p>
-<p>The preview images will be sized for large OpenGraph images (used by Twitter under the name of <code>summary_large_image</code>). Selon le type d'image, son contenu sera :</p>
+<p>Les images d'aperçu seront dimensionnées pour les grandes images OpenGraph (utilisé par Twitter sous le nom <code>summary_large_image</code>). Selon le type d'image, son contenu sera :</p>
 <ul>
 <li>l'image par défault de l'instance va afficher le gros logo, avec le nom de l'instance et son url</li>
 <li>l'image de l'utilisateur-ice va afficher leur photo de profil, nom d'affichage et nom du compte (sous la forme @nom-d'utilisateur@instance)</li>
@@ -192,20 +200,20 @@ Optional features
 <li>image du livre : lorsque le titre, l'auteur-e ou la couverture sont modifiés, ou quand une nouvelle note est ajoutée</li>
 </ul>
 <h3>Activer la prévisualisation des images</h3>
-<p>In order to enable the feature with default settings, you have to uncomment (remove the <code>#</code> in front of) the line <code>ENABLE_PREVIEW_IMAGES=true</code> in your <code>.env</code> file. All the new updating events aforementioned will cause the generation of the corresponding image.</p>
-<p>Examples for these images can be viewed on the <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">feature’s pull request’s description</a>.</p>
-<h3>Generating preview images</h3>
-<p>If you enable this setting after your instance has been started, some images may not have been generated. A command has been added to automate the image generation. In order to prevent a ressource hog by generating <strong>A LOT</strong> of images, you have to pass the argument <code>--all</code> (or <code>-a</code>) to start the generation of the preview images for all users and books. Without this argument, only the site preview will be generated.</p>
-<p>User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.</p>
-<h3>Optional settings</h3>
-<p>So you want to customize your preview images? Here are the options:</p>
+<p>Pour activer cette fonctionnalité avec les paramètres par défaut, il faut décommenter (retirer le <code>#</code> au début de) la ligne <code>ENABLE_PREVIEW_IMAGES=true</code> dans le fichier <code>.env</code>. Tous les nouveaux événements de mise à jour précédemment mentionnés provoqueront la génération de l'image correspondante.</p>
+<p>Des exemples pour ces images peuvent être consultés dans <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">la description de la pull request de cette fonctionnalité</a>.</p>
+<h3>Générer les images de prévisualisation</h3>
+<p>Si ce paramètre est activé après le démarrage de l'instance, certaines images pourraient ne pas avoir été générées. Une commande a été ajoutée pour automatiser la génération d'images. Afin d'éviter une surconsommation de ressources en générant <strong>BEAUCOUP</strong> d'images, il faut passer l'argument <code>--all</code> (ou <code>-a</code>) au lancement de la génération des images de prévisualisation pour toustes les utilisateur·ices et livres. Sans cet argument, seules les prévisualisations du site seront générées.</p>
+<p>Les images de prévisualisation des utilisateur·ices et des livres seront générées de manière asynchrone : la tâche sera envoyée à Flower. Un certain temps peut être nécessaire avant que toutes les images de prévisualisation des utilisateur·ices et des livres soient disponibles. Si vous avez un bon livre 📖, un chaton 🐱 ou un gâteau 🍰, c'est le moment parfait pour leur accorder de l'attention 💖.</p>
+<h3>Paramètres facultatifs</h3>
+<p>Alors comme ça vous voulez personnaliser vos images de prévisualisation ? Voici les possibilités :</p>
 <ul>
-<li><code>PREVIEW_BG_COLOR</code> will set the color for the preview image background. You can supply a color value, like <code>#b00cc0</code>, or the following values <code>use_dominant_color_light</code> or <code>use_dominant_color_dark</code>. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.</li>
-<li><code>PREVIEW_TEXT_COLOR</code> will set the color for the text. Depending on the choice for the background color, you should find a value that will have a sufficient contrast for the image to be accessible. A contrast ratio of 1:4.5 is recommended.</li>
-<li><code>PREVIEW_IMG_WIDTH</code> and <code>PREVIEW_IMG_HEIGHT</code> will set the dimensions of the image. Currently, the system will work best on images with a landscape (horizontal) orientation.</li>
-<li><code>PREVIEW_DEFAULT_COVER_COLOR</code> will set the color for books without covers.</li>
+<li><code>PREVIEW_BG_COLOR</code> définit la couleur de fond de l'image de prévisualisation. Il est possible de mettre une valeur de couleur, comme <code>#b00cc0</code>, ou les valeurs suivantes : <code>use_dominant_color_light</code> ou <code>use_dominant_color_dark</code>. Cela va extraire une couleur dominante de la couverture du livre et l'utiliser, respectivement pour le thème clair ou sombre.</li>
+<li><code>PREVIEW_TEXT_COLOR</code> définit la couleur du texte. En fonction du choix de la couleur de fond, vous devriez trouver une valeur qui a un contraste suffisant pour que l'image soit accessible. Un rapport de contraste de 1:4,5 est recommandé.</li>
+<li><code>PREVIEW_IMG_WIDTH</code> et <code>PREVIEW_IMG_HEIGHT</code> définissent les dimensions de l'image. Actuellement, le système fonctionnera mieux avec des images au format paysage (horizontal).</li>
+<li><code>PREVIEW_DEFAULT_COVER_COLOR</code> définit la couleur des livres sans couvertures.</li>
 </ul>
-<p>All the color variables accept values that can be recognized as colors by Pillow’s <code>ImageColor</code> module: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Learn more about Pillow color names</a>.</p>
+<p>Toutes les variables de couleur acceptent des valeurs reconnues par le module <code>ImageColor</code> de Pillow : <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">En apprendre plus sur les noms de couleurs dans Pillow</a>.</p>
 </section>
 
         </div>
