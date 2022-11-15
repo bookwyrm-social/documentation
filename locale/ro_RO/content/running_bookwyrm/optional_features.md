@@ -1,5 +1,5 @@
 - - -
-Title: Optional features Date: 2021-08-02 Order: 6
+Title: Optional features Date: 2021-08-02 Order: 8
 - - -
 
 Unele funcționalități BookWyrm trebuie să fie activate pentru a funcționa.

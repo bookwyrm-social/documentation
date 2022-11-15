@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Using a Reverse-Proxy
+
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@ Using a Reverse-Proxy
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Using a Reverse-Proxy</h1>
+<h1 class="title is-1"></h1>
 
     </header>
     <div class="columns">
@@ -95,7 +95,7 @@ Using a Reverse-Proxy
                 </li>
                 
                 <li>
-                    <a href="/fr/adding-books.html" >Adding Books</a>
+                    <a href="/fr/adding-books.html" >Ajout de livres</a>
                 </li>
                 
             </ul>
@@ -104,19 +104,27 @@ Using a Reverse-Proxy
             <ul class="menu-list">
                 
                 <li>
+                    <a href="/fr/updating.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/reverse-proxy.html" class="is-active"></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/moderation.html" >Modération</a>
+                </li>
+                
+                <li>
                     <a href="/fr/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/updating.html" >Updating Your Instance</a>
+                    <a href="/fr/install-prod-dockerless.html" >Installation sans Docker</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/reverse-proxy.html" class="is-active">Using a Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/moderation.html" >Moderation</a>
+                    <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
@@ -176,32 +184,32 @@ Using a Reverse-Proxy
         <div class="column">
             
 <section class="block content">
-    <h2>Running BookWyrm Behind a Reverse-Proxy</h2>
-<p>If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.</p>
-<p>The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files. The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.</p>
-<p>To run BookWyrm behind a reverse-proxy, make the following changes:</p>
+    <h2>Faire fonctionner BookWyrm derrière un proxy inverse</h2>
+<p>Si un autre serveur web est installé sur la machine, il serait préférable que ce dernier fasse proxy pour les requêtes vers BookWyrm.</p>
+<p>La configuration par défaut de BookWyrm a déjà un serveur Nginx qui sert de proxy pour les requêtes vers l'application Django gérant le SSL et servant directement les fichiers statiques. Les fichiers statiques sont stockés dans un volume Docker accessible par plusieurs services BookWyrm, il est donc déconseillé de complétement retirer ce serveur.</p>
+<p>Pour faire fonctionner BookWyrm derrière un proxy inverse, les changements suivants doivent être faits :</p>
 <ul>
-<li>In <code>nginx/default.conf</code>:<ul>
-<li>Comment out the two default servers</li>
-<li>Uncomment the server labeled Reverse-Proxy server</li>
-<li>Replace <code>your-domain.com</code> with your domain name</li>
+<li>Dans <code>nginx/default.conf</code> :<ul>
+<li>Décommenter les deux blocs "server" par défaut</li>
+<li>Décommenter le bloc "server" nommé "Reverse-Proxy server"</li>
+<li>Remplacer <code>your-domain.com</code> par votre nom de domaine</li>
 </ul>
 </li>
-<li>In <code>docker-compose.yml</code>:<ul>
-<li>In <code>services</code> -&gt; <code>nginx</code> -&gt; <code>ports</code>, comment out the default ports and add <code>- 8001:8001</code></li>
-<li>In <code>services</code> -&gt; <code>nginx</code> -&gt; <code>volumes</code>, comment out the two volumes that begin <code>./certbot/</code></li>
-<li>In <code>services</code>, comment out the <code>certbot</code> service</li>
+<li>Dans <code>docker-compose.yml</code> :<ul>
+<li>Dans <code>services</code> -&gt; <code>nginx</code> -&gt; <code>ports</code>, décommenter le port par défaut et ajouter <code>- 8001:8001</code></li>
+<li>Dans <code>services</code> -&gt; <code>nginx</code> -&gt; <code>volumes</code>, décommenter les deux volumes commançant par <code>./certbot/</code></li>
+<li>Dans <code>services</code>, décommenter le service <code>certbot</code></li>
 </ul>
 </li>
 </ul>
-<p>At this point, you can follow, the <a href="#server-setup">setup</a> instructions as listed. Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code>).</p>
-<p>Steps for setting up a reverse-proxy are server dependent.</p>
+<p>À partir de là, il est possible de suivre <a href="#server-setup">les instructions d'installation</a> telles quelles. Une fois Docker lancé, il est possible d'accéder à l'instance BookWyrm à l'adresse <code>http://localhost:8001</code> (<strong>IMPORTANT:</strong> le serveur n'est pas accessible via <code>https</code>).</p>
+<p>Les étapes pour configurer un proxy inverse dépendent du serveur.</p>
 <h4>Nginx</h4>
-<p>Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx. See <a href="http://nginx.org/en/docs/beginners_guide.html">nginx's guide</a> for details.</p>
-<p>To set up your server:</p>
+<p>Avant de pouvoir configurer Nginx, il faudra trouver son dossier de configuration, qui dépend de la plateforme et de la manière dont Nginx a été installé. Voir <a href="http://nginx.org/en/docs/beginners_guide.html">le guide de Nginx</a> pour plus de détails.</p>
+<p>Pour configurer le serveur :</p>
 <ul>
-<li>In you <code>nginx.conf</code> file, ensure that <code>include servers/*;</code> isn't commented out.</li>
-<li>In your nginx <code>servers</code> directory, create a new file named after your domain containing the following information:</li>
+<li>Dans le fichier <code>nginx.conf</code>, vérifier que <code>include servers/*;</code> n'est pas commenté.</li>
+<li>Dans le dossier <code>servers</code> de Nginx, créer un nouveau fichier nommé d'après le nom de domaine de l'instance et contenant les informations suivantes :</li>
 </ul>
 <pre><code class="language-nginx">server {
     server_name your-domain.com www.your-domain.com;
@@ -228,7 +236,7 @@ Using a Reverse-Proxy
     listen 80 ssl;
 }
 </code></pre>
-<p>To set up with an ssl block:</p>
+<p>Pour configurer avec un bloc SSL :</p>
 <pre><code class="language-nginx">server {
     server_name your.domain;
 
@@ -269,12 +277,12 @@ server {
 }
 </code></pre>
 <ul>
-<li>run <code>sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com</code></li>
-<li>restart nginx</li>
+<li>Exécuter <code>sudo certbot run --nginx --email VOTRE_ADRESSE_MAIL -d votre-nom-de-domaine.com -d www.votre-nom-de-domaine.com</code></li>
+<li>Redémarrer Nginx</li>
 </ul>
-<p>If everything worked correctly, your BookWyrm instance should now be externally accessible.</p>
-<p><em>Note: the <code>proxy_set_header Host $host;</code> is essential; if you do not include it, incoming messages from federated servers will be rejected.</em></p>
-<p><em>Note: the location of the ssl certificates may vary depending on the OS of your server</em></p>
+<p>Si tout fonctionne correctement, l'instance BookWyrm devrait à présent être accessible depuis l'extérieur.</p>
+<p><em>Note : le <code>proxy_set_header Host $host;</code> est essentiel ; s'il n'est pas inclus, les messages en provenance des serveurs fédérés seront rejetés.</em></p>
+<p><em>Note : l'emplacement des certificats SSL peut varier selon le système d'exploitation de votre serveur</em></p>
 </section>
 
         </div>

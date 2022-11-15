@@ -1,26 +1,26 @@
 - - -
-Titre : Mise à jour de votre instance Date : 2021-04-13 Ordre : 3
+Title : Mise à jour de votre instance Date : 2021-04-13 Order : 3
 - - -
 
-When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. This does a number of things:
+Quand des changements sont disponibles sur la branche de production, il est possible de les installer et les faire fonctionner sur l'instance en utilisant la commande `./bw-dev update`. Cela fait plusieurs choses :
 
-- `git pull` gets the updated code from the git repository. If there are conflicts, you may need to run `git pull` separately and resolve the conflicts before trying the `./bw-dev update` script again.
-- `docker-compose build` rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip `requirements.txt` packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.
-- `docker-compose exec web python manage.py migrate` runs the database migrations in Django
-- `docker-compose exec web python manage.py collectstatic --no-input` loads any updated static files (such as the JavaScript and CSS)
-- `docker-compose restart` reloads the docker containers
+- `git pull` récupère le code à jour depuis le dépôt git. S'il y a des conflits, vous pourriez avoir besoin de lancer `git pull` indépendamment et résoudre les conflits avant d'essayer le script `./bw-dev update` à nouveau.
+- `docker-compose build` reconstruit les images, ce qui permet de s'assurer que les bons paquets sont installés. Cette étape prend beaucoup de temps et est nécessaire uniquement lorsque les dépendances (incluant les paquets pip `requirements.txt`) ont changées, il est donc possible de la commenter si on souhaite une mise à jour plus rapide et ne pas être gêné de la décommenter si nécessaire.
+- `docker-compose exec web python manage.py migrate` lance la migration de la base de données dans Django
+- `docker-compose exec web python manage.py collectstatic --no-input` charge tous les fichiers statiques mis à jour (comme les fichiers JavaScript et CSS)
+- `docker-compose restart` relance les conteneurs docker
 
-## Re-building activity streams
+## Reconstruire les flux d'activité
 
-Feeds for each user are stored in Redis. To re-populate a stream, use the management command:
+Les flux de chaque utilisateur·ice sont stockés dans Redis. Pour repeupler un flux, il faut utiliser la commande de gestion :
 
 ``` { .sh }
 ./bw-dev populate_streams
-# Or use docker-compose directly
+# Ou en utilisant directement docker-compose
 docker-compose run --rm web python manage.py populate_streams
 ```
 
-If something has gone terribly awry, the stream data can be deleted.
+Si quelque chose s'est terriblement mal passé, le flux de donnée peut être supprimé.
 
 ``` { .sh }
 docker-compose run --rm web python manage.py erase_streams

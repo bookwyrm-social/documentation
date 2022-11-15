@@ -95,7 +95,7 @@ External Storage
                 </li>
                 
                 <li>
-                    <a href="/fr/adding-books.html" >Adding Books</a>
+                    <a href="/fr/adding-books.html" >Ajout de livres</a>
                 </li>
                 
             </ul>
@@ -104,19 +104,27 @@ External Storage
             <ul class="menu-list">
                 
                 <li>
+                    <a href="/fr/updating.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/reverse-proxy.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/moderation.html" >Modération</a>
+                </li>
+                
+                <li>
                     <a href="/fr/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/updating.html" >Updating Your Instance</a>
+                    <a href="/fr/install-prod-dockerless.html" >Installation sans Docker</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/reverse-proxy.html" >Using a Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/moderation.html" >Moderation</a>
+                    <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
@@ -176,61 +184,61 @@ External Storage
         <div class="column">
             
 <section class="block content">
-    <p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses <code>django-storages</code> to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
-<h2>S3-compatible Services</h2>
-<h3>Setup</h3>
-<p>Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like <a href="https://ceph.io/en/">Ceph</a> (LGPL 2.1/3.0) or <a href="https://min.io/">MinIO</a> (GNU AGPL v3.0), or commercial (<a href="https://www.scaleway.com/en/docs/object-storage-feature/">Scaleway</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key">Digital Ocean</a>…).</p>
-<p>This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the <a href="https://github.com/bookwyrm-social/documentation">BookWyrm Documentation</a> repository.</p>
-<h3>What awaits you</h3>
-<p>If you are starting a new BookWyrm instance, the process will be:</p>
+    <p>Par défaut, BookWyrm stocke localement les ressources statiques (favicon, avatar par défaut, etc.) et les médias (avatars, couvertures de livres, etc.), mais vous pouvez utiliser un service de stockage externe pour ces fichiers. BookWyrm utilise <code>django-storages</code> pour gérer le stockage externe, tel que les services compatibles S3, Apache Libcloud ou SFTP.</p>
+<h2>Services compatibles S3</h2>
+<h3>Configuration</h3>
+<p>Créez un compartiment auprès du service compatible S3 de votre choix, ainsi qu'un ID de clé d'accès et une clé d'accès secrète. Ceux-ci peuvent être auto-hébergés, tels que <a href="https://ceph.io/en/">Ceph</a> (LGPL 2.1/3.0) ou <a href="https://min.io/">MinIO</a> (GNU AGPL v3.0), ou commerciaux (<a href="https://www.scaleway.com/en/docs/object-storage-feature/">Scaleway</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key">Digital Ocean</a>...).</p>
+<p>Ce guide a été testé avec Object Storage de Scaleway. Si vous utiliser un autre service, partagez votre expérience (en particulier si vous avez dû prendre des mesures différentes) en ouvrant un ticket sur le dépôt de la <a href="https://github.com/bookwyrm-social/documentation">Documentation de BookWyrm</a>.</p>
+<h3>Ce qui vous attend</h3>
+<p>Si vous installez une nouvelle instance de BookWyrm, les étapes seront :</p>
 <ul>
-<li>Set up your external storage service</li>
-<li>Enable external storage on BookWyrm</li>
-<li>Start your BookWyrm instance</li>
-<li>Update the instance connector</li>
+<li>Configurer votre service de stockage externe</li>
+<li>Activer le stockage externe sur BookWyrm</li>
+<li>Démarrer votre instance BookWyrm</li>
+<li>Mettre à jour le connecteur de l'instance</li>
 </ul>
-<p>If you already started your instance, and images have been uploaded to local storage, the process will be:</p>
+<p>Si votre instance est déjà en place, et que des images ont été téléchargées sur le stockage local, les étapes seront :</p>
 <ul>
-<li>Set up your external storage service</li>
-<li>Copy your local media to external storage</li>
-<li>Enable external storage on BookWyrm</li>
-<li>Restart your BookWyrm instance</li>
-<li>Update the instance connector</li>
+<li>Configurer votre service de stockage externe</li>
+<li>Copier vos médias locaux sur le stockage externe</li>
+<li>Activer le stockage externe sur BookWyrm</li>
+<li>Redémarrer votre instance BookWyrm</li>
+<li>Mettre à jour le connecteur de l'instance</li>
 </ul>
-<h3>BookWyrm Settings</h3>
-<p>Edit your <code>.env</code> file by uncommenting the following lines:</p>
+<h3>Paramètres de BookWyrm</h3>
+<p>Modifiez votre fichier <code>.env</code> en décommentant les lignes suivantes :</p>
 <ul>
-<li><code>AWS_ACCESS_KEY_ID</code>: your access key ID</li>
-<li><code>AWS_SECRET_ACCESS_KEY</code>: your secret access key</li>
-<li><code>AWS_STORAGE_BUCKET_NAME</code>: your bucket name</li>
-<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway or <code>"nyc3"</code> for Digital Ocean</li>
+<li><code>AWS_ACCESS_KEY_ID</code>: votre ID de clé d'accès</li>
+<li><code>AWS_SECRET_ACCESS_KEY</code>: votre clé d'accès secrète</li>
+<li><code>AWS_STORAGE_BUCKET_NAME</code>: le nom de votre compartiment</li>
+<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> pour AWS, <code>"fr-par"</code> pour Scaleway ou <code>"nyc3"</code> pour Digital Ocean</li>
 </ul>
-<p>If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:</p>
+<p>Si votre service compatible S3 est Amazon AWS, la configuration devrait être terminée. Pour les autres services, vous aurez à décommenter les lignes suivantes :</p>
 <ul>
-<li><code>AWS_S3_CUSTOM_DOMAIN</code>: the domain that will serve the assets, e.g. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code> or <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
-<li><code>AWS_S3_ENDPOINT_URL</code>: the S3 API endpoint, e.g. <code>"https://s3.fr-par.scw.cloud"</code> or <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li><code>AWS_S3_CUSTOM_DOMAIN</code>: le domaine qui va mettre à disposition les fichiers, par exemple <code>"exemple-nom-compartiment-s3.fr-par.scw.cloud"</code> ou <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li><code>AWS_S3_ENDPOINT_URL</code>: le point de terminaison d'API S3, par exemple <code>"https://s3.fr-par.scw.cloud"</code> ou <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
 </ul>
-<h3>Copying local media to external storage</h3>
-<p>If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.</p>
-<p>This task is done with the command:</p>
+<h3>Copie de vos médias locaux sur le stockage externe</h3>
+<p>Si votre instance BookWyrm est déjà en cours d'exécution et que des fichiers médias ont été téléchargés (avatars d'utilisateur, couvertures de livres…), vous devrez copier les médias téléchargés sur votre compartiment.</p>
+<p>Cette tâche est effectuée avec la commande :</p>
 <pre><code class="language-bash">./bw-dev copy_media_to_s3
 </code></pre>
-<h3>Enabling external storage for BookWyrm</h3>
-<p>To enable the S3-compatible external storage, you will have to edit your <code>.env</code> file by changing the property value for <code>USE_S3</code> from <code>false</code> to <code>true</code>:</p>
+<h3>Activation du stockage externe sur BookWyrm</h3>
+<p>Pour activer le stockage externe compatible S3, vous devrez modifier votre fichier <code>.env</code> en changeant la valeur de la propriété <code>USE_S3</code> de <code>false</code> à <code>true</code>:</p>
 <pre><code>USE_S3=true
 </code></pre>
-<p>If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that <code>USE_HTTPS</code> is set to <code>true</code>, so images will be loaded over HTTPS:</p>
+<p>Si votre stockage externe est accessible via HTTPS (la plupart le sont actuellement), vous devrez également vous assurer que <code>USE_HTTPS</code> est défini à <code>true</code>, afin que les images soient téléchargées via HTTPS :</p>
 <pre><code>USE_HTTPS=true
 </code></pre>
-<h4>Static assets</h4>
-<p>Then, you will need to run the following command, to copy the static assets to your S3 bucket:</p>
+<h4>Ressources statiques</h4>
+<p>Vous devrez ensuite exécuter la commande suivante, afin de copier les ressources statiques vers votre compartiment S3 :</p>
 <pre><code class="language-bash">./bw-dev collectstatic
 </code></pre>
-<h4>CORS settings</h4>
-<p>Once the static assets are collected, you will need to set up CORS for your bucket.</p>
-<p>Some services like Digital Ocean provide an interface to set it up, see <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
-<p>If your service doesn’t provide an interface, you can still set up CORS with the command line.</p>
-<p>Create a file called <code>cors.json</code>, with the following content:</p>
+<h4>Paramètres CORS</h4>
+<p>Une fois que les ressources statiques ont été recueillies, vous devrez configurer CORS pour votre compartiment.</p>
+<p>Certains services tels que Digital Ocean mettent à disposition une interface pour cette étape, voir <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Documentation de Digital Ocean: Comment configurer CORS</a>.</p>
+<p>Si votre service ne met pas d'interface à disposition, vous pouvez tout de même configurer CORS via la ligne de commande.</p>
+<p>Créez un fichier nommé <code>cors.json</code> avec le contenu suivant :</p>
 <pre><code class="language-json">{
   &quot;CORSRules&quot;: [
     {
@@ -243,30 +251,30 @@ External Storage
   ]
 }
 </code></pre>
-<p>Replace <code>MY_DOMAIN_NAME</code> with the domain name(s) of your instance.</p>
-<p>Then, run the following command:</p>
+<p>Remplacez <code>MY_DOMAIN_NAME</code> par le(s) nom(s) de domaine de votre instance.</p>
+<p>Exécutez alors la commande suivante :</p>
 <pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
 </code></pre>
-<p>No output means it should be good.</p>
-<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.</p>
-<h3>Restarting your instance</h3>
-<p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
+<p>Une absence de retour signifie que cela a fonctionné.</p>
+<p>Si vous installez une nouvelle instance de BookWyrm, vous pouvez retourner aux instructions de configuration dès maintenant. Dans le cas contraire, continuez à lire.</p>
+<h3>Redémarrage de votre instance</h3>
+<p>Une fois la copie des fichiers médias effectuée et les ressources statiques recueillies, vous pouvez charger la nouvelle configuration <code>.env</code> et redémarrer votre instance avec la commande :</p>
 <pre><code class="language-bash">./bw-dev up -d
 </code></pre>
-<p>If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong <a href="#cors-settings">here</a>. In that case it might be good to check the headers of a HTTP request against a file on your bucket:</p>
+<p>Si tout se passe bien, votre stockage a été modifié sans arrêt du serveur. Si des polices sont manquantes (et que la console JS de votre navigateur génère des alertes à propos de CORS), quelque chose s'est mal passé <a href="#cors-settings">à cette étape</a>. Dans ce cas, il peut être bon de vérifier les en-têtes d'une requête HTTP pour un fichier sur votre compartiment :</p>
 <pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
 </code></pre>
-<p>Replace <code>MY_DOMAIN_NAME</code> with your instance domain name, <code>BUCKET_URL</code> with the URL for your bucket, you can replace the file path with any other valid path on your bucket.</p>
-<p>If you see any message, especially a message starting with <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, it didn’t work. If you see no message, it worked.</p>
-<p>For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage. To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:</p>
+<p>Remplacez <code>MY_DOMAIN_NAME</code> par votre nom de domaine de l'instance, <code>BUCKET_URL</code> avec l'URL de votre compartiment, et le chemin du fichier par n'importe quel autre chemin valide sur votre compartiment.</p>
+<p>Si vous voyez un message, en particulier un message commençant par <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, cela n'a pas fonctionné. Si vous ne voyez aucun message, cela a fonctionné.</p>
+<p>Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe, et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe après avoir basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe :</p>
 <pre><code class="language-bash">./bw-dev sync_media_to_s3
 </code></pre>
-<h3>Updating the instance connector</h3>
-<p><em>Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
-<p>In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.</p>
-<p>Connector data can be accessed through the Django admin interface, located at the url <code>http://MY_DOMAIN_NAME/admin</code>. The connector for your own instance is the first record in the database, so you can access the connector with this URL: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
-<p>The field <em>Covers url</em> is defined by default as <code>https://MY_DOMAIN_NAME/images</code>, you have to change it to <code>https://S3_STORAGE_URL/images</code>. Then, click the <em>Save</em> button, and voilà!</p>
-<p>You will have to update the value for <em>Covers url</em> every time you change the URL for your storage.</p>
+<h3>Mise à jour du connecteur de l'instance</h3>
+<p><em>Remarque : Vous pouvez sauter cette étape si vous utilisez une version à jour de BookWyrm; en septembre 2021 le « self connector » a été retiré dans <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
+<p>Afin que la bonne URL soit utilisée lors de l'affichage des résultats de recherche locale de livres, nous devons modifier la valeur de la racine d'URL des images de couverture.</p>
+<p>Les données du connecteur sont accessibles via l'interface d'administration de Django, située à l'url <code>http://MY_DOMAIN_NAME/admin</code>. Le connecteur pour votre propre instance est le premier enregistrement dans la base de données, vous pouvez donc accéder au connecteur via cette URL : <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
+<p>Le champ <em>Covers url</em> est défini par défaut comme <code>https://MY_DOMAIN_NAME/images</code>, vous devez le changer en <code>https://S3_STORAGE_URL/images</code>. Ensuite, cliquez sur le bouton <em>Enregistrer</em>.</p>
+<p>Vous devrez mettre à jour la valeur de <em>Covers url</em> chaque fois que vous changez l'URL de votre stockage.</p>
 </section>
 
         </div>

@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Adding Books
+Ajout de livres
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@ Adding Books
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Adding Books</h1>
+<h1 class="title is-1">Ajout de livres</h1>
 
     </header>
     <div class="columns">
@@ -95,7 +95,7 @@ Adding Books
                 </li>
                 
                 <li>
-                    <a href="/fr/adding-books.html" class="is-active">Adding Books</a>
+                    <a href="/fr/adding-books.html" class="is-active">Ajout de livres</a>
                 </li>
                 
             </ul>
@@ -104,19 +104,27 @@ Adding Books
             <ul class="menu-list">
                 
                 <li>
+                    <a href="/fr/updating.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/reverse-proxy.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/moderation.html" >Modération</a>
+                </li>
+                
+                <li>
                     <a href="/fr/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/updating.html" >Updating Your Instance</a>
+                    <a href="/fr/install-prod-dockerless.html" >Installation sans Docker</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/reverse-proxy.html" >Using a Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/moderation.html" >Moderation</a>
+                    <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
@@ -176,13 +184,13 @@ Adding Books
         <div class="column">
             
 <section class="block content">
-    <p>There are a few different ways to add books to your BookWyrm instance! When you can't find the book you're looking for, try these options in order -- it's better to import a book than to create one from scratch.</p>
-<h2>Loading books from other catalogs</h2>
-<p>If the book you're looking for isn't available on your instance, there are a few different ways to add it. The best way is to import it from an outside source -- your instance can load books from other BookWyrm instances, as well as <a href="http://openlibrary.org/">OpenLibrary</a> and <a href="http://inventaire.io/">Inventaire</a>. If there are no search results for your query, these sources will automatically be queried, and will show up with a button to "<strong>Import book</strong>". If there are local search results that aren't what you're looking for, you can click the "<strong>Load results from other catalogues</strong>" link to load more results.</p>
-<h2>Adding another edition</h2>
-<p>Si vous avez trouvé le livre que vous cherchiez mais pas dans la bonne édition, vous pouvez ajouter une autre édition à l’œuvre à partir de la liste des éditions. Click the link below the description that tells you how many editions there are (for example, "<strong>4 editions</strong>"). At the bottom of the editions list, there is a button to "<strong>Add another edition</strong>".</p>
-<h2>Add a completely new book</h2>
-<p>Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. Le lien pour ajouter manuellement un livre se trouve au bas de la page de recherche lorsque les résultats des catalogues externes sont affichés. You can also navigate direclty to <code>/create-book</code> on your instance.</p>
+    <p>Il y a plusieurs façons d'ajouter des livres à votre instance BookWyrm ! Quand vous ne trouvez pas le livre que vous cherchez, essayez ces options dans l'ordre -- il vaut mieux importer un livre que d'en créer un à partir de zéro.</p>
+<h2>Chargement de livres à partir d'autres catalogues</h2>
+<p>Si le livre que vous cherchez n'est pas disponible sur votre instance, il y a plusieurs façons de l'ajouter. La meilleure manière est de l'importer depuis une source externe -- votre instance peut charger des livres depuis d'autres instances BookWyrm, ainsi que d'<a href="http://openlibrary.org/">OpenLibrary</a> et <a href="http://inventaire.io/">Inventaire</a>. S'il n'y a pas de résultats de recherche à votre requête, ces sources seront automatiquement interrogées, et les réponses s'afficheront avec un bouton « <strong>Importer le livre</strong> ». S'il y a des résultats de recherche locaux qui ne sont pas ceux que vous recherchez, vous pouvez cliquer sur le lien «<strong>Charger les résultats d’autres catalogues</strong>» pour charger plus de résultats.</p>
+<h2>Ajout d'une nouvelle édition</h2>
+<p>Si vous avez trouvé le livre que vous cherchiez mais pas dans la bonne édition, vous pouvez ajouter une autre édition à l’œuvre à partir de la liste des éditions. Cliquez sur le lien en dessous de la description qui vous indique le nombre d'éditions (par exemple, « <strong>4 éditions</strong> »). En bas de la liste des éditions il y a un bouton pour « <strong>Ajouter une nouvelle édition</strong> ».</p>
+<h2>Ajouter un nouveau livre</h2>
+<p>Une fois que vous avez essayé sans succès de rechercher votre livre, de l'importez depuis un autre catalogue, et de trouver d'autres éditions de ce livre, vous pouvez ajouter un nouveau livre manuellement. Le lien pour ajouter manuellement un livre se trouve au bas de la page de recherche lorsque les résultats des catalogues externes sont affichés. Vous pouvez également directement ouvrir <code>/create-book</code> sur votre instance.</p>
 </section>
 
         </div>

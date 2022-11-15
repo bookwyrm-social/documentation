@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Moderation
+Modération
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@ Moderation
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Moderation</h1>
+<h1 class="title is-1">Modération</h1>
 
     </header>
     <div class="columns">
@@ -95,7 +95,7 @@ Moderation
                 </li>
                 
                 <li>
-                    <a href="/fr/adding-books.html" >Adding Books</a>
+                    <a href="/fr/adding-books.html" >Ajout de livres</a>
                 </li>
                 
             </ul>
@@ -104,19 +104,27 @@ Moderation
             <ul class="menu-list">
                 
                 <li>
+                    <a href="/fr/updating.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/reverse-proxy.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/moderation.html" class="is-active">Modération</a>
+                </li>
+                
+                <li>
                     <a href="/fr/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/updating.html" >Updating Your Instance</a>
+                    <a href="/fr/install-prod-dockerless.html" >Installation sans Docker</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/reverse-proxy.html" >Using a Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/moderation.html" class="is-active">Moderation</a>
+                    <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
@@ -176,17 +184,17 @@ Moderation
         <div class="column">
             
 <section class="block content">
-    <h2>Blocking</h2>
-<p>Les utilisateur-ice-s ont l'option de bloquer d'autres utilisateur-ice-s eux-mêmes, sans l'intervention d'un-e modérateur-ice. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.</p>
-<h2>Reports</h2>
-<p>Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.</p>
-<p>When a report is made, there are a few options how the moderator can respond.
-- Send a direct message to the reported user.
-- Delete the reported status.
-- Deactivate the user. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.</p>
+    <h2>Bloquage</h2>
+<p>Les utilisateur-ices ont l'option de bloquer d'autres utilisateur-ices sans l'intervention d'un-e modérateur⸳ice. Dans la vue d'administration « Instances fédérées », les administrateur-ices peuvent voir combien d'utilisateur-ices d'une instance ont été bloqué-es par des utilisateur-ices locaux-ales.</p>
+<h2>Signalements</h2>
+<p>Les utilisateur-ices peuvent signaler les statuts ou les utilisateur-ices à partir du menu « Plus d’options » dans le bas de page des messages et des boutons « S’abonner »/« Se désabonner » pour les utilisateur-ices. Lorsqu'un signalement est effectué, tous les utilisateur-ices ayant les droits d'administration recevront une notification.</p>
+<p>Lorsqu'un signalement est effectué, les modérateur-ices peuvent y répondre de plusieurs manières.
+- Envoyer un message direct à l'utilisateur-ice signalé-e.
+- Supprimé le statut signalé.
+- Désactiver l'utilisateur-ice. Pour les utilisateur-ices locaux-ales, cela les empêchera de se connecter, et leur compte ne sera plus affiché dans l'application. Pour les utilisateur-ices d'autres instances, le serveur rejettera toute activité de cet-te utilisateur-ice, qui n'apparaîtra également plus dans les recherches.</p>
 <h2>Modération au niveau de l'instance</h2>
 <p>Les modérateur-ices peuvent bloquer des instances en entier. Cela va bloquer toute activité venant de cette instance et désactiver tous les comptes de cette instance au niveau local.</p>
-<p>Si l'instance est ensuite dé-bloquée, les utilisateur-ices qui avaient été désactivé-es seront réactivé-es.</p>
+<p>Si l'instance est ensuite débloquée, les utilisateur-ices qui avaient été désactivé-es seront réactivé-es.</p>
 <p>Les modérateur-ices peuvent aussi mettre en ligne des listes pour bloquer plusieurs serveurs à la fois.</p>
 </section>
 

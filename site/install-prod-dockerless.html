@@ -124,6 +124,10 @@ Installing Without Docker
                 </li>
                 
                 <li>
+                    <a href="/monitoring-queue.html" >Monitoring Queue</a>
+                </li>
+                
+                <li>
                     <a href="/external-storage.html" >External Storage</a>
                 </li>
                 
@@ -256,7 +260,8 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 \q
 </code></pre>
 <ul>
-<li>Initialize the database by running <code>venv/bin/python3 manage.py migrate</code></li>
+<li>Migrate the database schema by running <code>venv/bin/python3 manage.py migrate</code></li>
+<li>Initialize the database by running <code>venv/bin/python3 manage.py initdb</code></li>
 <li>Create the static by running <code>venv/bin/python3 manage.py collectstatic --no-input</code></li>
 <li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
 <li>
@@ -265,7 +270,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 <li>Make the system bookwyrm user:
     <code>useradd bookwyrm -r</code></li>
 <li>Change the owner of your install directory to bookwyrm:
-    <code>chown -R /opt/bookwyrm bookwyrm:bookwyrm</code></li>
+    <code>chown -R bookwyrm:bookwyrm /opt/bookwyrm</code></li>
 <li>You should now run bookwyrm related commands as the bookwyrm user:
     <code>sudo -u bookwyrm echo I am the $(whoami) user</code></li>
 </ul>

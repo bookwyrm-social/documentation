@@ -1,5 +1,5 @@
 - - -
-Title: Command Line Tool Date: 2021-11-11 Order: 7
+Title: Command Line Tool Date: 2021-11-11 Order: 9
 - - -
 
 Dezvoltatorii BookWyrm și managerii de instanțe pot folosi scriptul `bw-dev` pentru sarcinile comune. Poate face comenzile dvs. mai scurte, mai ușor de reținut și mai greu de confundat.
