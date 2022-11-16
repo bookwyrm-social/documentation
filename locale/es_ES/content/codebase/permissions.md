@@ -1,8 +1,8 @@
 - - -
-Title: Permissions Date: 2021-04-18 Order: 2
+Título: Permisos Fecha: 18-04-2021 Pedido: 2
 - - -
 
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+El acceso del usuario a diferentes características se controla usando el [sistema de autenticación integrado](https://docs.djangoproject.com/en/3.2/topics/auth/default/) de Django. Cuando se crea una instancia, el script `initdb` crea un conjunto de permisos, que son asignados a grupos. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
 
 The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
 
