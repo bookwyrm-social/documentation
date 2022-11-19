@@ -1,40 +1,40 @@
 - - -
-Title: Posting statuses Date: 2022-04-30 Order: 1
+Título: Publicando estados Fecha: 2022-04-30 Pedido: 1
 - - -
 
-Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+Publicar en BookWyrm empieza con un libro. Usuarios pueden comentar sobre libros que están en leyendo o ya han acabado en la sección de "Tus Libros" o desde la página de inicio de un libro. Desde ahí, los usuarios pueden responder y empezar una conversación. Las publicaciones de BookWyrm incluyen formatos como negritas, itálicas y enlaces usando [lenguaje de marcado](https://www.markdownguide.org/cheat-sheet/).
 
-If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
+Si estás familiarizado con [publicar en Mastodon](https://docs.joinmastodon.org/user/posting/), encontrarás que los estados de BookWyrm configuraciones análogas de visibilidad, advertencias de contenido y menciones. Sin embargo, encuestas, emojis personalizados y los archivos adjuntos aún no son compatibles.
 
-## Types of statuses
+## Tipos de estados
 
-### User commentary
+### Comentario de usuario
 
-There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
+Hay tres tipos de publicaciones que un usuario puede crear directamente en respuesta a libros: reseñas, comentarios y citas. Comentarios a aspectos generales de un libro, citas que pertenecen a un pasaje en específico y reseñas que tratan del libro en general. Los usuarios también puede responder a esos estados.
 
-| Component     | Review | Comment | Quote | Reply |
-| ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
-| Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
-| Quote         |        |         | ✔     |       |
-| Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| Componente        | Reseña | Comentario | Cita | Respuesta |
+| ----------------- | ------ | ---------- | ---- | --------- |
+| Campo de texto    | ✔      | ✔          | ✔    | ✔         |
+| Alerta de spoiler | ✔      | ✔          | ✔    | ✔         |
+| Número de página  |        | ✔          | ✔    |           |
+| Cita              |        |            | ✔    |           |
+| Puntuación        | ✔      |            |      |           |
+| Campo de título   | ✔      |            |      |           |
 
 
-### Reading status updates
+### Leyendo actualizaciones de estados
 
-Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
+Estados son generados cuando un usuario indica que quiere leer, que está leyendo o que ha finalizado un libro.
 
-## Text
-Text can include:
+## Texto
+Los textos incluyen:
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+- Menciones (@usuario)
+- URLs (`http(s)://` no se muestra)
+- Algunos [ formatos de Markdown](https://www.markdownguide.org/cheat-sheet/)
+  - negrita
+  - itálicas
+  - citas en bloque
+  - listas de viñetas
+  - enlaces
 
