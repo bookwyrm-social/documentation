@@ -4,37 +4,37 @@ Date: 2022-10-02
 Order: 2
 ---
 
-Dieses Projekt ist noch jung und, im Moment, nicht sehr stabil. Bitte verwende es nur mit Vorsicht in Produktion. This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended This install method assumes you already have ssl configured with certificates available
+Dieses Projekt ist noch jung und, im Moment, nicht sehr stabil. Bitte verwende es nur mit Vorsicht in Produktion. Diese Methode der Installation benötigt mehr Können und ist daher für erfahrene Administrator*innen. Docker Installation wird empfohlen Diese Installationsmethode geht davon aus, dass Du bereits SSL mit verfügbaren Zertifikaten konfiguriert hast
 
 ## Servereinrichtung
-- Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
-- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
-- Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv libpq-dev`
+- Holen Dir eine Domain und konfiguriere DNS für Deinen Server. Du musst die Nameserver Deiner Domain bei Deinem DNS-Provider auf den Server verweisen, auf dem Du BookWyrm betreibst. Hier sind Anweisungen für [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Setze Deiner Server mit geeigneter Firewall für den Betrieb einer Web-Anwendung auf (dieser Befehlssatz ist mit Ubuntu 20.04 getestet). Hier ist eine Anleitung für [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Richte einen E-Mail-Dienst (wie [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutze die Dokumentation des Dienstes für die Konfiguration Deines DNS
+- Abhängigkeiten installieren. Auf Debian könnte das wie `apt install postgresql redis nginx python3-venv libpq-dev` aussehen.
 
-## Install and configure BookWyrm
+## BookWyrm installieren und konfigurieren
 
-The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the `production` branch is still recommended
+Die `-Produktion` Zweig von BookWyrm enthält eine Reihe von Werkzeugen die nicht auf dem `Haupt-` -Zweig sind, die für den Betrieb in der Produktion geeignet sind zum Beispiel `docker-compose` Änderungen, um die Standardbefehle oder die Konfiguration von Containern zu aktualisieren und individuelle Änderungen an der Container-Konfiguration, um Dinge wie SSL oder regelmäßige Sicherungen zu aktivieren. Nicht alle diese Änderungen wirken sich auf die Installation ohne Docker aus, aber der `-production`-Zweig wird immer noch empfohlen
 
-Instructions for running BookWyrm in production without Docker:
+Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:
 
-- Make and enter directory you want to install bookwyrm too. For example `/opt/bookwyrm`: `mkdir /opt/bookwyrm && cd /opt/bookwyrm`
-- Get the application code: `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
-- Switch to the `production` branch: `git checkout production`
+- Erstelle und betrete das Verzeichnis, in das Du  BookWyrm installieren willst. Für das Beispiel: `/opt/bookwyrm`: `mkdir /opt/bookwyrm && cd /opt/bookwyrm`
+- Hole den Quelltext: `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
+- Wechsel in den `production`-zweig: `git checkout production`
 - Create your environment variables file, `cp .env.example .env`, and update the following:
-    - `SECRET_KEY` | A difficult to guess, secret string of characters
-    - `DOMAIN` | Your web domain
-    - `POSTGRES_PASSWORD` | Set a secure password for the database
-    - `POSTGRES_HOST` | Set to `localhost` (the machine running your db)
-    - `POSTGRES_USER` | Set to `bookwyrm` (recommended) or something custom (configured later)
-    - `POSTGRES_DB` | Set to `bookwyrm`
-    - `REDIS_ACTIVITY_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
-    - `REDIS_ACTIVITY_HOST` | Set to `localhost` (the machine running redis)
-    - `REDIS_BROKER_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
-    - `REDIS_BROKER_HOST` | Set to `localhost` (the machine running redis)
-    - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
-    - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
+    - `SECRET_KEY` | Eine schwer zu erratende geheime Zeichenfolge
+    - `DOMAIN` | Deine Web-Domain
+    - `POSTGRES_PASSWORD` | Setze ein sicheres Passwort für die Datenbank
+    - `POSTGRES_HOST` | Auf `localhost` (setzen die Maschine auf der Deine Datenbank läuft)
+    - `POSTGRES_USER` | Auf `bookwyrm` setzen (empfohlen) oder etwas Eigenes. (später konfiguriert)
+    - `POSTGRES_DB` | Auf `Bookwyrm` setzen
+    - `REDIS_ACTIVITY_PASSWORD` | Auf nichts setzen (auf einem lokalen Rechner mit einer Firewall)
+    - `REDIS_ACTIVITY_HOST` | Auf  `localhost` setzen (die Maschine, auf der  redis läuft)
+    - `REDIS_BROKER_PASSWORD` | Auf nichts setzen (auf einem lokalen Rechner mit einer Firewall)
+    - `REDIS_BROKER_HOST` | Auf  `localhost` setzen (die Maschine, auf der  redis läuft)
+    - `EMAIL_HOST_USER` | Die "von"-Adresse, die Deine App beim Senden von E-Mails verwendet
+    - `EMAIL_HOST_PASSWORD` | Das Passwort von Deinem E-Mail-Dienst
+- Nginx konfigurieren
     - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
     - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
     - Update nginx `bookwyrm.conf`:
