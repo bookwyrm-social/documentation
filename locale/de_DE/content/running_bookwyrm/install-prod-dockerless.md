@@ -37,7 +37,7 @@ Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:
 - Nginx konfigurieren
     - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
     - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
-    - Update nginx `bookwyrm.conf`:
+    - Aktualisiere nginx `bookwyrm.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
         - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
         - Uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
@@ -102,11 +102,11 @@ set -e
 # /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &
 ```
     - Replace `/opt/bookwyrm` with your install dir
-    - Change `8000` to your custom port number
-    - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
+    - Ändere `8000` auf deine eigene Portnummer
+    - Flower wurde hier deaktiviert, da es nicht automatisch mit dem Passwort in der `.env` Datei konfiguriert ist
 - You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
 - The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
-- You may want to configure BookWyrm to autorun with a systemd service. Here is an example:
+- You may want to configure BookWyrm to autorun with a systemd service. Hier ist ein Beispiel:
 ```
 # /etc/systemd/system/bookwyrm.service
 [Unit]
@@ -126,8 +126,8 @@ WorkingDirectory=/opt/bookwyrm/
 WantedBy=multi-user.target
 ```
 
-Congrats! You did it!! Configure your instance however you'd like.
+Glückwunsch! Du hast es geschafft!! Configure your instance however you'd like.
 
-## Get Involved
+## Mitmachen
 
-See [Get Involved](https://joinbookwyrm.com/get-involved/) for details.
+Siehe [Mitmachen](https://joinbookwyrm.com/get-involved/) für Details.
