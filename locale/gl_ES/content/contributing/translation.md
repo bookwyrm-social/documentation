@@ -8,22 +8,22 @@ Podes unirte ao proxecto de tradución de BookWyrm en [translate.joinbookwyrm.co
 
 ## Linguaxe de xénero neutro
 
-Sempre que sexa posible, as traducións de BookWyrm deberán utilizar unha linguaxe de xénero neutro. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Sempre que sexa posible, as traducións de BookWyrm deberán utilizar unha linguaxe de xénero neutro. Isto é de aplicación incluso se o idioma adopta a forma masculina como xénero neutro, ou se utiliza algo semellante a "el/ela". É importante tamén que as traducións sexan concisas e claras, lexibles para lectores de pantalla, polo que hai veces que estos obxectivos entran en conflito; nada é perfecto, non hai unha solución que contente a todo o mundo, e esta solución depende do idioma en cuestión.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Como criterio superior, intenta poñer máis énfase nunha linguaxe de xénero neutro e inclusivo que na corrección formal ou as guías de estilo oficialmente establecidas. En inglés, por exemplo, as guías de estilo indican a forma singular do pronome "she" ou "he" para referirse a un individuo, pero en BookWyrm avogamos polo uso da forma de xénero neutro singular "they".
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Se non tes certeza sobre como afrontar este problema de tradución, fai un comentario na tradución ou abre un [tema de discusión](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) para afrontar o problema nunha instancia superior.
 
-## Making templates translatable
+## Facer os modelos traducibles
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+BookWyrm aproveita as vantaxes da funcionabilidade das traducións de Django para permitir que o contido da páxina varíe en función do idioma elexido. A documentación de Django [proporciona axuda](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) sobre como funciona, pero aquí tes unha versión reducida:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* tódolos modelos do texto deben incluír etiquetas do modelo da tradución
+* engade `{% load i18n %}` na parte superior do modelo para activar as traducións
+* Se o bloque de texto é texto literal, podes usar o modelo de etiqueta `{% trans %}`
+* Se o bloque inclúe variables, debes usar o par de modelos de etiqueta `{% blocktrans %}` e `{% endblocktrans %}`. Se estás incluíndo espazos en branco ou saltos de liña, usa `trimmed` para eliminalos automáticamente cando se crea o ficheiro coa tradución: `{% blocktrans trimmed %}`
 
-### Examples
+### Exemplos
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>
