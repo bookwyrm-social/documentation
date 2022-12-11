@@ -1,40 +1,40 @@
 - - -
-Title: Posting statuses Date: 2022-04-30 Order: 1
+Titel: Statussen publiceren Datum: 2022-04-30 Bestelling: 1
 - - -
 
-Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+Plaatsen op BookWyrm begint met een boek. Gebruikers kunnen commentaar geven op de voortgang of recent gelezen boeken vanuit het "Jouw boeken" gedeelte, of vanaf de landingspagina van een boek. Vanaf daar kunnen gebruikers antwoorden en een gesprek beginnen. BookWyrm publicaties kunnen opmaak zoals dikgedrukt, schuingedrukt en koppelingen bevatten met behulp van [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
+Als je bekend bent met [berichten op Mastodon](https://docs.joinmastodon.org/user/posting/)dan zie je dat BookWyrm statussen gelijksoortige zichtbaarheidsinstellingen, waarschuwingen van inhoud en vermeldingen hebben. Echter, enquêtes, aangepaste emoji en bijlagen worden nog niet ondersteund.
 
-## Types of statuses
+## Soorten statussen
 
-### User commentary
+### Gebruiker commentaar
 
-There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
+Er zijn drie soorten publicaties die gebruikers rechtstreeks kunnen maken in reactie op boeken: recensies, opmerkingen en citaten. Opmerkingen reageren op algemene aspecten van een boek, citaties hebben betrekking op specifieke passages en recensies gaan over boeken in het algemeen. Gebruikers kunnen ook antwoorden op statussen.
 
-| Component     | Review | Comment | Quote | Reply |
-| ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
-| Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
-| Quote         |        |         | ✔     |       |
-| Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| Onderdeel            | Recensie | Reactie | Citaat | Antwoorden |
+| -------------------- | -------- | ------- | ------ | ---------- |
+| Tekstveld            | ✔        | ✔       | ✔      | ✔          |
+| Spoiler waarschuwing | ✔        | ✔       | ✔      | ✔          |
+| Paginanummer         |          | ✔       | ✔      |            |
+| Citaat               |          |         | ✔      |            |
+| Beoordeling          | ✔        |         |        |            |
+| Titel veld           | ✔        |         |        |            |
 
 
-### Reading status updates
+### Lees status updates
 
-Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
+Statussen worden gegenereerd wanneer een gebruiker aangeeft te willen lezen, te zijn begonnen met lezen, te willen lezen, of het hebben uitgelezen van een boek.
 
-## Text
-Text can include:
+## Tekst
+Tekst kan bevatten:
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+- Vermeldingen (@user)
+- URLs (`http(s)://` wordt niet weergegeven)
+- Sommige [Markdown opmaak](https://www.markdownguide.org/cheat-sheet/)
+  - dikgedrukt
+  - schuingedrukt
+  - blokcitaat
+  - opsomming lijsten
+  - koppelingen
 
