@@ -19,15 +19,15 @@ Aangezien het project zich nog in de beginfase bevindt, groeien de functies elke
     - Schuif boeken op standaard "te lezen", "momenteel aan het lezen," en "gelezen" planken
     - Maak aangepaste planken aan
     - Sla onderweg lezen-/afrondingsdatums en voortgangsupdates op
-    - Informeer volgers over je lees activiteit (en optioneel, met granulaire privacy bediening)
+    - Informeer volgers over je lees activiteit (en optioneel, met fijnmazige privacy-controles)
     - Maak lijsten met boeken die open zijn voor inzendingen van iedereen, samengesteld of alleen bewerkt door diens maker
 - Federatie met ActivityPub
-    - Broadcast and receive user statuses and activity
-    - Share book data between instances to create a networked database of metadata
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
-    - Option for users to manually approve followers
-    - Allow blocking and flagging for moderation
+    - Verzend en ontvang gebruikersstatussen en -activiteit
+    - Deel boekgegevens tussen instanties om een netwerkdatabase van gegevens te maken
+    - Identificeer gedeelde boeken over instanties en voeg gerelateerde inhoud samen
+    - Volg en verbind met gebruikers over BookWyrm instanties
+    - Integreer met niet-BookWyrm ActivityPub diensten (momenteel wordt Mastodon ondersteund)
+- Fijnmazige privacy-controles
+    - Privé, alleen volgelingen, en openbare privacyniveaus voor publicaties, planken en lijsten
+    - Mogelijkheid voor gebruikers om handmatig volgers goed te keuren
+    - Blokkeren en markeren voor bemiddelen toestaan
