@@ -162,3 +162,11 @@ Kompiliert Übersetzungsdateien. Siehe [Djangos compilemessages](https://docs.dj
 ### pytest args
 
 Tests mit `pytest` ausführen.
+
+### deactivate_2fa
+
+Deactivates two factor authentication for a given user.
+
+### manual_confirm
+
+Confirms a users email, sets the user to active.
