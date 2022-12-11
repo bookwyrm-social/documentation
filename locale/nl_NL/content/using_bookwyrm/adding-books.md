@@ -8,13 +8,13 @@ Er zijn een aantal verschillende manieren om boeken toe te voegen aan je BookWyr
 
 ## Boeken uit andere catalogi laden
 
-Als het boek dat je zoekt niet beschikbaar is in je instantie, zijn er een enkele verschillende manieren om het toe te voegen. The best way is to import it from an outside source -- your instance can load books from other BookWyrm instances, as well as [OpenLibrary](http://openlibrary.org/) and [Inventaire](http://inventaire.io/). If there are no search results for your query, these sources will automatically be queried, and will show up with a button to "**Import book**". If there are local search results that aren't what you're looking for, you can click the "**Load results from other catalogues**" link to load more results.
+Als het boek dat je zoekt niet beschikbaar is in je instantie, zijn er een enkele verschillende manieren om het toe te voegen. De beste manier is om deze te importeren uit een externe bron -- je instantie kan boeken laden uit andere BookWyrm instanties, evenals vanuit [OpenLibrary](http://openlibrary.org/) en [Inventaire](http://inventaire.io/). Als er geen zoekresultaten zijn voor uw zoekopdracht, zullen deze bronnen automatisch worden bevraagd, en verschijnt er een "**Importeer boek**" knop. Als er lokale zoekresultaten niet zijn wat je zoekt, klik dan op de "**Laad resultaten van andere catalogi**" koppeling om meer resultaten te laden.
 
 
-## Adding another edition
+## Een editie toevoegen
 
-If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
+Als je het boek dat je wilt vinden, maar deze niet de juiste editie is, kun je nog een editie toevoegen aan het werk vanuit de lijst met edities. Klik op de koppeling onder de beschrijving die je vertelt hoeveel edities er zijn (bijvoorbeeld "**4 edities**"). Onder aan de lijst met edities, is er een knop om "**Een andere editie** " toe te voegen.
 
-## Add a completely new book
+## Een geheel nieuw boek toevoegen
 
-Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. The link to manually add a book is at the bottom of the search page when external catalogs are shown. You can also navigate direclty to `/create-book` on your instance.
+Nadat je hebt geprobeerd om naar je boek te zoeken, importeer deze vanuit een andere catalogus en zoek naar andere edities van het boek, deze kan je handmatig een nieuw boek toevoegen. De koppeling om handmatig een boek toe te voegen staat onderaan de zoekpagina als externe catalogi worden weergegeven. Je kunt ook direct navigeren naar `/create-book` in je instantie.
