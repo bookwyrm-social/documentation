@@ -162,3 +162,11 @@ Compilează fișierele de traducere. Vedeți [compilemessages Django](https://do
 ### pytest args
 
 Rulează testele cu `pytest`.
+
+### deactivate_2fa
+
+Deactivates two factor authentication for a given user.
+
+### manual_confirm
+
+Confirms a users email, sets the user to active.
