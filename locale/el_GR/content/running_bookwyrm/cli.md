@@ -162,3 +162,11 @@ Creates message files for all translation strings. After you have run `makemessa
 ### pytest args
 
 Run tests with `pytest`.
+
+### deactivate_2fa
+
+Deactivates two factor authentication for a given user.
+
+### manual_confirm
+
+Confirms a users email, sets the user to active.
