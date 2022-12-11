@@ -162,3 +162,11 @@ Compile les fichiers de traduction. Voir [la doc de Django pour compilemessages]
 ### Arguments de pytest
 
 Exécutez des tests avec `pytest`.
+
+### deactivate_2fa
+
+Deactivates two factor authentication for a given user.
+
+### manual_confirm
+
+Confirms a users email, sets the user to active.
