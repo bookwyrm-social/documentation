@@ -1,14 +1,14 @@
 ---
-Title: Adding Books
+Title: Boeken toevoegen
 Date: 2022-07-29
 Order: 2
 ---
 
-There are a few different ways to add books to your BookWyrm instance! When you can't find the book you're looking for, try these options in order -- it's better to import a book than to create one from scratch.
+Er zijn een aantal verschillende manieren om boeken toe te voegen aan je BookWyrm instantie! Wanneer je het boek waar je naar op zoek bent niet kunt vinden probeer de opties in genoemde volgorde -- het is beter om een boek te importeren dan er eentje vanuit het niets te maken.
 
-## Loading books from other catalogs
+## Boeken uit andere catalogi laden
 
-If the book you're looking for isn't available on your instance, there are a few different ways to add it. The best way is to import it from an outside source -- your instance can load books from other BookWyrm instances, as well as [OpenLibrary](http://openlibrary.org/) and [Inventaire](http://inventaire.io/). If there are no search results for your query, these sources will automatically be queried, and will show up with a button to "**Import book**". If there are local search results that aren't what you're looking for, you can click the "**Load results from other catalogues**" link to load more results.
+Als het boek dat je zoekt niet beschikbaar is in je instantie, zijn er een enkele verschillende manieren om het toe te voegen. The best way is to import it from an outside source -- your instance can load books from other BookWyrm instances, as well as [OpenLibrary](http://openlibrary.org/) and [Inventaire](http://inventaire.io/). If there are no search results for your query, these sources will automatically be queried, and will show up with a button to "**Import book**". If there are local search results that aren't what you're looking for, you can click the "**Load results from other catalogues**" link to load more results.
 
 
 ## Adding another edition
