@@ -10,7 +10,7 @@ Dieses Projekt ist noch jung und, im Moment, nicht sehr stabil. Bitte verwende e
 - Holen Dir eine Domain und konfiguriere DNS für Deinen Server. Du musst die Nameserver Deiner Domain bei Deinem DNS-Provider auf den Server verweisen, auf dem Du BookWyrm betreibst. Hier sind Anweisungen für [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Setze Deiner Server mit geeigneter Firewall für den Betrieb einer Web-Anwendung auf (dieser Befehlssatz ist mit Ubuntu 20.04 getestet). Hier ist eine Anleitung für [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Richte einen E-Mail-Dienst (wie [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutze die Dokumentation des Dienstes für die Konfiguration Deines DNS
-- Abhängigkeiten installieren. On debian this could look like `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev`
+- Abhängigkeiten installieren. Auf Debian könnte das wie `apt install postgresql redis nginx python3-venv libpq-dev` aussehen.
 
 ## BookWyrm installieren und konfigurieren
 
@@ -40,7 +40,7 @@ Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:
     - Aktualisiere nginx `bookwyrm.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
         - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
-        - Uncomment lines 18 to 67 to enable forwarding to HTTPS. You should have two `server` blocks enabled
+        - Zeilen 18 bis 67 entkommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two `server` blocks enabled
         - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
         - Change line 4 so that it says `server localhost:8000`. Sie können hier einen anderen Port wählen, wenn Sie möchten
         - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
@@ -125,7 +125,7 @@ WorkingDirectory=/opt/bookwyrm/
 [Install]
 WantedBy=multi-user.target
 ```
-You will need to set up a Cron job for the service to start automatically on a server restart.
+Du musst einen Cron-Job einrichten, damit der Dienst beim Neustart automatisch starten kann.
 
 Glückwunsch! Du hast es geschafft!! Configure your instance however you'd like.
 
