@@ -163,10 +163,10 @@ Compiles translation files. See [Django's compilemessages](https://docs.djangopr
 
 Run tests with `pytest`.
 
-### deactivate_2fa
+### desativar_2fa
 
-Deactivates two factor authentication for a given user.
+Desativa a autenticação de dois fatores para um determinado usuário.
 
-### manual_confirm
+### confirmar_manual
 
-Confirms a users email, sets the user to active.
+Confirma um email de usuário, define o usuário para ativo.
