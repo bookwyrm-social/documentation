@@ -165,8 +165,8 @@ Tests mit `pytest` ausführen.
 
 ### deactivate_2fa
 
-Deactivates two factor authentication for a given user.
+Deaktiviert die Zwei-Faktor-Authentifizierung für eine*n bestimmte*n Benutzer*in
 
 ### manual_confirm
 
-Confirms a users email, sets the user to active.
+Bestätigt eine Nutzer*innen-E-Mail, setzt Nutzer*in auf aktiv.
