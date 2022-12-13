@@ -11,10 +11,10 @@ Order: 2
 Si el libro que estás buscando no está disponible en tu instancia, hay varias maneras de añadirlo. La mejor manera es importarlo desde una fuente externa -- tu instancia puede cargar libros desde otras instancias de BookWyrm, así como de [OpenLibrary](http://openlibrary.org/) e [Inventaire](http://inventaire.io/). Si no hay resultados de búsqueda para tu consulta, estas fuentes serán automáticamente consultadas, y se mostrará con un botón a "**Importar libro**". Si hay resultados de búsqueda locales que no son lo que buscas, puede hacer clic en el enlace "**Cargar resultados de otros catálogos**" para cargar más resultados.
 
 
-## Adding another edition
+## Añadir otra edición
 
-If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
+Si encuentras el libro que quieres, pero no la edición correcta, puedes añadir otra edición a la obra de la lista de ediciones. Haga clic en el enlace debajo de la descripción que le indica cuántas ediciones hay (por ejemplo, "**4 ediciones**"). En la parte inferior de la lista de ediciones, hay un botón para "**Añadir otra edición**".
 
-## Add a completely new book
+## Añadir un libro completamente nuevo
 
-Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. The link to manually add a book is at the bottom of the search page when external catalogs are shown. You can also navigate direclty to `/create-book` on your instance.
+Una vez que hayas intentado buscar tu libro, importarlo desde otro catálogo, y encontrar otras ediciones del libro, puedes añadir un nuevo libro manualmente. El enlace para añadir manualmente un libro está en la parte inferior de la página de búsqueda cuando se muestran catálogos externos. También puedes navegar directamente a `/create-book` en tu instancia.
