@@ -7,15 +7,15 @@ BookWryrm es una red social para registrar tu lectura, hablar sobre libros, escr
 ## Características
 Dado que el proyecto está todavía en sus primeras etapas, las características crecen cada día, y hay mucho espacio para sugerencias e ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
-        - Comments on a book
-        - Quotes or excerpts
-    - Reply to statuses
-    - View aggregate reviews of a book across connected BookWyrm instances
-    - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
+- Publicar sobre libros
+    - Redactar reseñas, con o sin calificaciones, que se agregan a la página del libro
+    - Redactar otros tipos de estados sobre libros, como:
+        - Comentarios en un libro
+        - Citas o extractos
+    - Respuestas a estados
+    - Ver reseñas agregadas de un libro a través de instancias de BookWyrm asociadas
+    - Diferenciar reseñas y calificaciones locales y federadas en tu feed de actividad
+- Seguimiento de tu actividad de lectura
     - Shelve books on default "to-read," "currently reading," and "read" shelves
     - Create custom shelves
     - Store started reading/finished reading dates, as well as progress updates along the way
