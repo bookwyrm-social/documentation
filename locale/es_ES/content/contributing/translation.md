@@ -2,9 +2,9 @@
 Title: Translations Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Contribuyendo a las traducciones
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Puedes unirte al proyecto de traducción en [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
 ## Lenguaje en género neutro
 
@@ -12,7 +12,7 @@ Siempre que sea posible, las traducciones de BookWyrm deberían utilizar un leng
 
 Como principio rector, trata de valorar más un lenguaje inclusivo y neutral para el género en lugar de la correción formal o las guías de estilo oficialmente aprobadas. En Español, por ejemplo, muchas guías de estilo formal utilizan los pronombres "ella" o "él" al referirse a un individuo, pero sería mejor en BookWyrm usar el género-neutro "elle" en su lugar.
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Si tienes dudas sobre cómo abordar un problema de traducción, comenta en la traducción o abre un [tema de discusión](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) para abordar preguntas más generales.
 
 ## Making templates translatable
 
