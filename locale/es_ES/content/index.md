@@ -5,7 +5,7 @@ Título: Bienvenido Fecha: 2021-04-13
 BookWryrm es una red social para registrar tu lectura, hablar sobre libros, escribir reseñas y descubrir que es lo siguiente por leer. La federación permite usuarios de BookWyrm unirse a pequeñas y confiables comunidades con las que conectar entre sí y otros servicios de ActivyPub como Mastodon y Pleroma.
 
 ## Características
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+Dado que el proyecto está todavía en sus primeras etapas, las características crecen cada día, y hay mucho espacio para sugerencias e ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
 
 - Posting about books
     - Compose reviews, with or without ratings, which are aggregated in the book page
