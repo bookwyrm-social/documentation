@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-12-01 20:21\n"
+"PO-Revision-Date: 2022-12-13 06:56\n"
 "Last-Translator: \n"
 "Language-Team: Slovenian\n"
 "Language: sl_SI\n"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: templates/layout.html:35 templates/layout.html:39
 msgid "Join"
-msgstr ""
+msgstr "Pridruži se"
 
 #: templates/layout.html:38 templates/layout.html:42
 msgid "Get involved"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: templates/layout.html:41 templates/layout.html:45
 msgid "Support"
-msgstr ""
+msgstr "Podpora"
 
 #: templates/layout.html:44 templates/layout.html:48
 msgid "Code"
@@ -84,5 +84,5 @@ msgstr ""
 
 #: templates/layout.html:130 templates/layout.html:136
 msgid "License"
-msgstr ""
+msgstr "Licenca"
 
