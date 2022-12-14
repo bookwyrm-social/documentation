@@ -165,8 +165,8 @@ Exécutez des tests avec `pytest`.
 
 ### deactivate_2fa
 
-Deactivates two factor authentication for a given user.
+Désactive l'authetification à deux facteurs pour un utilisateur donné.
 
 ### manual_confirm
 
-Confirms a users email, sets the user to active.
+Confirme l'adresse e-mail d'un-e utilisateur-ice et l'active.
