@@ -2,31 +2,31 @@
 Title: ActivityPub Date: 2021-04-20 Order: 1
 - - -
 
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm використовує [ActivityPub](http://activitypub.rocks/) протокол для надсилання та отримання діяльності користувача між іншими екземплярами BookWyrm та іншими службами, що реалізують ActivityPub, як [Mastodon](https://joinmastodon.org/). Для обробки даних книги, BookWyrm має декілька розширених типів діяльності, які не є частиною стандарту, але вони зрозумілі для інших екземплярів BookWyrm.
 
-## Activities and Objects
+## Діяльність та об'єкти
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Користувачі та зв'язки
+Користувацькі взаємодії слідують стандартній специфікації ActivityPub.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Follow`: запит на отримання статусів від користувача і перегляд їхніх статусів, що мають followers-only конфіденційність
+- `Accept`: затверджує `Follow` запит і завершує формування зв'язку
+- `Reject`: відмовляє `Follow` запит
+- `Block`: не дає користувачам бачити статуси одне одного та не дозволяє заблокованому користувачу переглядати профіль персони
+- `Update`: оновлює профіль користувача та налаштування
+- `Delete`: деактивує користувача
+- `Undo`: скасовує `Follow` або `Block`
 
-### Statuses
-#### Object types
+### Статуси
+#### Типи об'єктів
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Note`: На службах, таких як Mastodon, `Note` - це основний тип статусу. Вони містять тіло повідомлення, вкладення, можуть згадувати користувачів та відповідати на статуси будь-якого типу. У додатку BookWyrm `Note` можна створювати лише як прямі повідомлення або відповідати на інші статуси.
+- `Review`: Відгук - це статус у відповідь на книгу (вказану полем `ReplyToBook`), який має заголовок, тіло та числовий рейтинг між 0 (нема рейтингу) і 5.
+- `Comment`: коментар до книги, який згадує книгу і має тіло повідомлення.
+- `quotation`: цитата має тіло повідомлення, уривок з книги та згадує книгу
 
 
-#### Activities
+#### Activities (дії)
 
 - `Create`: saves a new status in the database.
 
@@ -48,7 +48,7 @@ User's books and lists are represented by [`OrderedCollection`](https://www.w3.o
 - `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
 - `List`: A collection of books that may have items contributed by users other than the one who created the list.
 
-#### Activities
+#### Activities (дії)
 
 - `Create`: Adds a shelf or list to the database.
 - `Delete`: Removes a shelf or list.
@@ -56,5 +56,5 @@ User's books and lists are represented by [`OrderedCollection`](https://www.w3.o
 - `Remove`: Removes a book from a shelf or list.
 
 
-## Alternative Serialization
+## Альтернативна серіалізація
 Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
