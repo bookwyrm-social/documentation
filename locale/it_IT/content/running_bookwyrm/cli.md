@@ -28,7 +28,7 @@ Equivalente a `docker-compose run --rm web`.
 
 ### service_ports_web args
 
-Esegue un comando arbitrario nel contenitore `web` (rappresentato sopra da `args`) con porte esposte. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
+Esegue un comando arbitrario nel contenitore `web` (rappresentato sopra da `args`) con porte esposte. Questo è utile se vuoi eseguire `test pdb` perché `runweb` non esporrà il prompt `pdb`.
 
 Equivalente a `docker-compose run --rm --service-ports web`.
 
@@ -106,11 +106,11 @@ Ottieni il codice di amministrazione segreto utilizzato per registrare l'utente 
 
 Per impostazione predefinita, BookWyrm utilizza la memoria locale per le risorse statiche (favicon, avatar predefinito, ecc...) e supporti (avatar utente, copertine di libri, ecc.), ma è possibile utilizzare un servizio di archiviazione esterno per questi file. BookWyrm utilizza django-storages per gestire l'archiviazione esterna come ad esempio servizi compatibili con S3, Apache Libcloud o SFTP.
 
-See [External Storage](/external-storage.html) for more information.
+Vedi [Memoria esterna](/external-storage.html) per ulteriori informazioni.
 
 ### copy_media_to_s3
 
-Migrare tutti i media caricati da un'installazione di Bookwrym esistente a un "bucket" compatibile con S3. Use for initial upload to an empty bucket.
+Migrare tutti i media caricati da un'installazione di Bookwrym esistente a un "bucket" compatibile con S3. Usa per il caricamento iniziale in un secchio vuoto.
 
 ### sync_media_to_s3
 
@@ -118,19 +118,19 @@ Sincronizza i media caricati, nuovi o modificati da un'installazione di Bookwrym
 
 ### set_cors_to_s3 filename
 
-Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
+Copia un file JSON regole CORS nel tuo secchio S3, dove `nome del file` è il nome del tuo file JSON (e.. `./bw-dev set_cors_to_s3 cors.json`)
 
 ## Sviluppo e test
 
-_These commands are not available on the `production` branch_.
+_Questi comandi non sono disponibili sul ramo `produzione`_.
 
-### black
+### nero
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+BookWyrm utilizza il formattatore del codice [Black](https://github.com/psf/black) per mantenere coerente lo stile del codebase Python. Esegui `black` prima di effettuare le modifiche in modo che il task `pylint` non fallisca per la tua pull request e ti renda triste.
 
 ### prettier
 
-BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase consistently styled. Run `prettier` before committing changes to scripts to automatically format your code.
+BookWyrm utilizza [Prettier](https://prettier.io/) per mantenere il codice JavaScript costantemente stilizzato. Esegui `prettier` prima di inviare modifiche agli script per formattare automaticamente il codice.
 
 ### stylelint
 
