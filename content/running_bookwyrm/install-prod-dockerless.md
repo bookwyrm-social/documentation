@@ -59,7 +59,7 @@ Instructions for running BookWyrm in production without Docker:
     - Install bookwyrm python dependencies with pip:
         `./venv/bin/pip3 install -r requirements.txt`
 - Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
-    
+
     `sudo -i -u postgres psql`
 
 ```
@@ -68,15 +68,16 @@ CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
 CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
 
 ALTER DATABASE bookwyrm OWNER TO bookwyrm;
-    
+
 GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 
 \q
 ```
-    
+
 - Migrate the database schema by running `venv/bin/python3 manage.py migrate`
 - Initialize the database by running `venv/bin/python3 manage.py initdb`
-- Create the static by running `venv/bin/python3 manage.py collectstatic --no-input`
+- Compile the themes by running `venv/bin/python3 manage.py compile_themes`
+- Create the static files by running `venv/bin/python3 manage.py collectstatic --no-input`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Create and setup your `bookwyrm` user
     - Make the system bookwyrm user:

@@ -66,6 +66,10 @@ Resets the database. **This command will delete your entire Bookwyrm database**,
 
 ## Managing a Bookwyrm instance
 
+### compile_themes
+
+Compiles all BookWyrm themes, which are `*.scss` files listed in `bookwyrm/static/css/themes`.
+
 ### collectstatic
 
 Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
@@ -167,7 +171,7 @@ Run tests with `pytest`.
 
 ### deactivate_2fa
 
-Deactivates two factor authentication for a given user. 
+Deactivates two factor authentication for a given user.
 
 ### manual_confirm
 
