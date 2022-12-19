@@ -8,7 +8,7 @@ Quindi vuoi contribuire al codice di BookWyrm: fantastico! Se c'è un problema a
 
 Se non sei sicuro di come risolvere qualcosa, o non sei in grado di aggirare il problema, va benissimo, basta lasciare un commento sulla pull request e lo capiremo 💖.
 
-Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
+Le richieste di prelievo devono superare tutti i controlli automatici prima che possano essere uniti - questo include controlli di stile, linters globali, un controllo di sicurezza e test di unità.
 
 ## Linting
 
@@ -20,7 +20,7 @@ Usiamo [EditorConfig](https://editorconfig.org) per mantenere costanti le termin
 
 BookWyrm utilizza il formattatore del codice [Black](https://github.com/psf/black) per mantenere coerente lo stile del codebase Python. Tutte le nuove richieste sono controllate con le azioni GitHub e puoi risolvere automaticamente i problemi di stile del codice eseguendo `./bw-dev black`
 
-Il codice è anche controllato con Pylint utilizzando le azioni GitHub. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
+Il codice è anche controllato con Pylint utilizzando le azioni GitHub. Gli avvertimenti di Pylint devono essere risolti prima che le richieste di pull siano unite, ma è una chiamata di giudizio se il suggerimento deve essere utilizzato, o l'avviso soppresso. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
 
 ### Templates (HTML)
 
