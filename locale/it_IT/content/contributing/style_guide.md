@@ -24,30 +24,30 @@ Il codice è anche controllato con Pylint utilizzando le azioni GitHub. Gli avve
 
 ### Templates (HTML)
 
-Your pull request will also be checked by the [curlylint](https://www.curlylint.org) linter for Django templates.
+La tua richiesta di pull sarà anche controllata dall'linter [curlylint](https://www.curlylint.org) per i modelli Django.
 
 ### CSS
 
-We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint [you can disable stylelint](https://stylelint.io/user-guide/ignore-code) for a particular rule, but you will need a good justification for doing so.
+Usiamo [stylelint](https://stylelint.io) per controllare tutte le regole CSS. Come con Pylint [puoi disabilitare stylelint](https://stylelint.io/user-guide/ignore-code) per una regola particolare, ma avrai bisogno di una buona motivazione per farlo.
 
 ### JavaScript
 
-[ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
+[ESLint](https://eslint.org) controlla qualsiasi modifica JavaScript che hai apportato. Se a ESLint non piace il tuo JavaScript, controlla il messaggio linter per verificare il problema esatto.
 
 ## Progettazione Inclusiva
 
 Bookwyrm mira a essere il più completo e accessibile possibile.
 
-When contributing code, check the [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) before you file your pull request. For accessibility advice, [A11Y-101](https://www.a11y-101.com/development) is also a useful source. For information on how to make your page templates multi-lingual, see the [Translations section](/translations.html).
+Quando si contribuisce con il codice, controllare la checklist [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) prima di archiviare la tua richiesta pull. Per la consulenza in materia di accessibilità, [A11Y-101](https://www.a11y-101.com/development) è anche una fonte utile. Per informazioni su come rendere i modelli di pagina multilingue, vedere la [sezione Traduzioni](/translations.html).
 
-Some particular things that Bookwyrm contributors have found useful to remember are:
+Alcune cose particolari che i contributori di Bookwyrm hanno trovato utili per ricordare sono:
 
-### Forms
+### Moduli
 
-* Only use `input[type="checkbox"]` or `input[type="radio"]` inside `<label>`
-* If you do not place checkboxes and radio buttons inside the `<label>`, the `<label>` should be placed _after_ the element it relates to
+* Utilizza solo `input[type="checkbox"]` o `input[type="radio"]` dentro `<label>`
+* Se non piazzi caselle di controllo e pulsanti radio all'interno del `<label>`, il `<label>` dovrebbe essere posizionato _dopo_ l'elemento cui si riferisce
 
-### Pulsanti e collegamenti
+### Tasti e collegamenti
 
-* Use a `<button>` element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a `POST` request (e.g. submitting a form)
-* Use an `<a>` element for anything that triggers a `GET` request. Usually, an anchor (`<a>`) element should not be styled as a button (`class="button"`), though there are some exceptions, such as "Cancel" buttons. If in doubt, ask for advice in your pull request
+* Usa un elemento `<button>` per qualsiasi cosa esistente per attivare un'azione JavaScript (e.. nascondere o svuotare una forma) o invia una richiesta `POST` (ad esempio inviare un modulo)
+* Usa un elemento `<a>` per tutto quello che attiva una richiesta `GET`. Di solito, un elemento di ancoraggio (`<a>`) non dovrebbe essere stilato come pulsante (`class="pulsante"`), anche se ci sono alcune eccezioni, come i pulsanti "Annulla". In caso di dubbio, chieda consiglio nella tua pull request
