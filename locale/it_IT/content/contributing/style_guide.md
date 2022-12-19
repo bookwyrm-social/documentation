@@ -20,7 +20,7 @@ Usiamo [EditorConfig](https://editorconfig.org) per mantenere costanti le termin
 
 BookWyrm utilizza il formattatore del codice [Black](https://github.com/psf/black) per mantenere coerente lo stile del codebase Python. Tutte le nuove richieste sono controllate con le azioni GitHub e puoi risolvere automaticamente i problemi di stile del codice eseguendo `./bw-dev black`
 
-Il codice è anche controllato con Pylint utilizzando le azioni GitHub. Gli avvertimenti di Pylint devono essere risolti prima che le richieste di pull siano unite, ma è una chiamata di giudizio se il suggerimento deve essere utilizzato, o l'avviso soppresso. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
+Il codice è anche controllato con Pylint utilizzando le azioni GitHub. Gli avvertimenti di Pylint devono essere risolti prima che le richieste di pull siano unite, ma è una chiamata di giudizio se il suggerimento deve essere utilizzato, o l'avviso soppresso. Per sopprimere un avviso, aggiungi un commento alla fine o sulla riga sopra gli avvisi: `# pylint: disable=warning-name`
 
 ### Templates (HTML)
 
