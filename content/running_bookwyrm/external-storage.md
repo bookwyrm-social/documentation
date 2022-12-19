@@ -38,7 +38,7 @@ Edit your `.env` file by uncommenting the following lines:
 - `AWS_ACCESS_KEY_ID`: your access key ID
 - `AWS_SECRET_ACCESS_KEY`: your secret access key
 - `AWS_STORAGE_BUCKET_NAME`: your bucket name
-- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` for AWS, `"fr-par"` for Scaleway or `"nyc3"` for Digital Ocean 
+- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` for AWS, `"fr-par"` for Scaleway or `"nyc3"` for Digital Ocean
 
 If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:
 
@@ -71,9 +71,10 @@ USE_HTTPS=true
 
 #### Static assets
 
-Then, you will need to run the following command, to copy the static assets to your S3 bucket:
+Then, you will need to run the following commands to compile the themes and copy all static assets to your S3 bucket:
 
 ```bash
+./bw-dev compile_themes
 ./bw-dev collectstatic
 ```
 
