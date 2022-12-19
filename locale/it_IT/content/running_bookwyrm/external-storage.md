@@ -1,16 +1,16 @@
 - - -
-Title: External Storage Date: 2021-06-07 Order: 7
+Titolo: Archivio esterno Data: 2021-06-07 Ordine: 7
 - - -
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm utilizza `django-storages` per gestire l'archiviazione esterna, come servizi compatibili con S3, Apache Libcloud o SFTP.
+Per impostazione predefinita, BookWyrm utilizza memoria locale per le risorse statiche (favicon, avatar predefinito, ecc., e i supporti (avatar utente, copertine di libri, ecc.), ma è possibile utilizzare un servizio di archiviazione esterno per servire questi file. BookWyrm utilizza `django-storages` per gestire l'archiviazione esterna, come servizi compatibili con S3, Apache Libcloud o SFTP.
 
-## S3-compatible Services
+## Servizi S3 Compatibili
 
 ### Configurazione
 
-Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) or [MinIO](https://min.io/) (GNU AGPL v3.0), or commercial ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
+Crea un secchio al tuo servizio S3 compatibile, insieme ad un ID chiave di accesso e a una chiave di accesso segreto. Questi possono essere ospitati autonomamente, come [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) o [MinIO](https://min.io/) (GNU AGPL v3.), o commerciale ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
 
-This guide has been tested against Scaleway Object Storage. Se utilizzi un altro servizio, per favore condividi la tua esperienza (specialmente se hai dovuto fare passi diversi) scrivendo sul repository [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation).
+Questa guida è stata testata contro l'archivio oggetti di Scaleway. Se utilizzi un altro servizio, per favore condividi la tua esperienza (specialmente se hai dovuto fare passi diversi) scrivendo sul repository [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation).
 
 ### Cosa ti aspetta
 
@@ -19,11 +19,11 @@ Se stai iniziando una nuova istanza di BookWyrm, il processo sarà:
 - Imposta il tuo servizio di archiviazione esterno
 - Attiva memoria esterna su BookWyrm
 - Avvia la tua istanza BookWyrm
-- Update the instance connector
+- Aggiorna il connettore dell'istanza
 
-If you already started your instance, and images have been uploaded to local storage, the process will be:
+Se hai già avviato la tua istanza e le immagini sono state caricate nell'archivio locale, il processo sarà:
 
-- Set up your external storage service
+- Configura il tuo servizio di archiviazione esterno
 - Copy your local media to external storage
 - Enable external storage on BookWyrm
 - Restart your BookWyrm instance
