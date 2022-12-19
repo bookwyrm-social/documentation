@@ -134,17 +134,17 @@ BookWyrm utilizza [Prettier](https://prettier.io/) per mantenere il codice JavaS
 
 ### stylelint
 
-BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
+BookWyrm utilizza [Stylelint](uhttps://stylelint.io/) per mantenere i file CSS in stile coerente. Esegui `stylelintprettier` prima di inviare le modifiche agli script per formattare automaticamente il tuo codice.
 
 ### formatters
 
-This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
+Questo comando esegue tutti i formatori di codice (`black`, `prettier`, and `stylelint`) in una volta.
 
 ### clean
 
-Remove all stopped Docker containers.
+Rimuovere tutti i contenitori Docker interrotti.
 
-Equivalent to:
+Equivalente a:
 
 ```shell
 docker-compose stop
@@ -153,20 +153,20 @@ docker-compose rm -f
 
 ### makemessages
 
-Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Crea i file di messaggio per tutte le stringhe di traduzione. Dopo aver eseguito `makemessages` è necessario eseguire `compilemessages` per compilare le traduzioni,. Vedi [makemessages di Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
-### compilemessages
+### compilazione
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compila file traduzioni. Vedi i compilemessages [di Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Run tests with `pytest`.
+Esegui test con `pytest`.
 
 ### deactivate_2fa
 
-Deactivates two factor authentication for a given user.
+Disattiva l'autenticazione a due fattori per un utente specifico.
 
 ### manual_confirm
 
-Confirms a users email, sets the user to active.
+Conferma l'email degli utenti, imposta l'utente a attivare.
