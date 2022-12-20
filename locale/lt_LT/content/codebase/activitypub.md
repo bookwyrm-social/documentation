@@ -21,40 +21,40 @@ Narių santykių sąveika atitinka standartinę „ActivityPub“ specifikaciją
 #### Objekto tipai
 
 - `Užrašas`: tokiose paslaugose, kaip „Mastodon“, `Užrašas` yra pirminis būsenos tipas. Juose yra žinutė, prisegtukai, galima minėti narius arba atsakyti į bet kokio tipo būsenas. „BookWyrm“ `Užrašus` galima sukurti kaip tiesiogines žinutes arba atsakymus į kitas būsenas.
-- `Apžvalga`: tai yra atsako į knygą būsena (nurodyta laukelyje `Atsakas į knygą`), kurios pavadinimas, turinys ir skaitinis įvertinimas yra nuo 0 (neįvertinta) iki 5.
+- `Apžvalga`: tai yra atsako į knygą būsena (nurodyta laukelyje `inReplyToBook`), kurios pavadinimas, turinys ir skaitinis įvertinimas yra nuo 0 (neįvertinta) iki 5.
 - `Komentaras`: knygos komentare minima knyga ir yra pranešimo tekstas.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Citavimas`: citata turi vietą žinutei, ištrauką iš knygos ir knygos pavadinimą
 
 
-#### Activities
+#### Veiklos
 
-- `Create`: saves a new status in the database.
+- `Sukurti`: išsaugo naują būseną duomenų bazėje.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Užrašas**: „BookWyrm“ priima tik `Sukūrimo` veiklas, jei jos:
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+   - Tiesioginės žinutės (pvz., `Užrašas`, kurio privatumo lygis `tiesioginis` ir minintis vietos narį);
+   - Susiję su knyga (būsenos tipas, kuriame yra laukelis `inReplyToBook`);
+   - Atsako į duomenų bazėje išsaugotas būsenas
+- `Ištrinti`: ištrina būseną
+- `Patinka`: pažymi, kad būsena patinka
+- `Pranešimas`: iškelia būseną į laiko juostą
+- `Grąžinti į pradinę būseną`: pakeičia `Patinka` arba `Pranešimo` būseną
 
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+### Kolekcijos
+Naudotojo knygas ir sąrašus reprezentuoja [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
-#### Objects
+#### Objektai
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `Lentyna`: nario knygų kolekcija. Kiekvienas naudotojas turi lentynas `perskaityti`, `skaitoma` ir `perskaityta`, kurios padeda sekti progresą.
+- `Sąrašas`: knygų rinkinys, kuriame gali būti kitų narių knygų, o ne tik sąrašą sukūrusių narių.
 
-#### Activities
+#### Veiklos
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Sukurti`: prideda lentyną arba sąrašą į duomenų bazę.
+- `Ištrinti`: pašalina lentyną arba sąrašą.
+- `Pridėti`: prideda knygą į lentyną arba sąrašą.
+- `Pašalinti`: pašalina knygą iš lentynos arba sąrašo.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+## Alternatyvus serializavimas
+Kadangi „BookWyrm“ naudoja pasirinktinius objektų tipus (`Apžvalga`, `Komentaras`, `Citavimas`), kurių „ActivityPub“ nepalaiko, siunčiamos būsenos transformuojamos į standartinius tipus, kai siunčia arba peržiūri ne „BookWyrm“. `Apžvalga` paverčiama `Straipsniu`, o `Komentaras` ir `Citavimas` paverčiami `Užrašu` su nuoroda į knygą ir prisegtą viršelio nuotrauką.
