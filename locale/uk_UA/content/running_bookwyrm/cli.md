@@ -165,8 +165,8 @@ Run tests with `pytest`.
 
 ### deactivate_2fa
 
-Deactivates two factor authentication for a given user.
+Деактивує двофакторну аутентифікацію для даного користувача.
 
 ### manual_confirm
 
-Confirms a users email, sets the user to active.
+Підтверджує електронну пошту користувача, ставить користувача активним.
