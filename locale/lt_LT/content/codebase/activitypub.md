@@ -6,23 +6,23 @@ BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and 
 
 ## Activities and Objects
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Nariai ir santykiai
+Narių santykių sąveika atitinka standartinę „ActivityPub“ specifikaciją.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Sekti`: užklausa gauti nario būsenas ir peržiūrėti tas, kurios turi tik stebėtojų privatumą
+- `Patvirtinti`: patvirtina kvietimą `Sekti` ir finalizuoja santykį
+- `Atmesti`: atmeta prašymą `Sekti`
+- `Blokuoti`: neleisti nariams matyti vienas kito būsenų ir neleisti užblokuotam nariui matyti profilio
+- `Atnaujinti`: atnaujina nario paskyrą ir nustatymus
+- `Ištrinti`: išaktyvuoja narį
+- `Grąžinti į pradinę būseną`: pakeičia `Sekimo` arba `Blokavimo` būseną
 
-### Statuses
-#### Object types
+### Būsenos
+#### Objekto tipai
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
+- `Užrašas`: tokiose paslaugose, kaip „Mastodon“, `Užrašas` yra pirminis būsenos tipas. Juose yra žinutė, prisegtukai, galima minėti narius arba atsakyti į bet kokio tipo būsenas. „BookWyrm“ `Užrašus` galima sukurti kaip tiesiogines žinutes arba atsakymus į kitas būsenas.
+- `Apžvalga`: tai yra atsako į knygą būsena (nurodyta laukelyje `Atsakas į knygą`), kurios pavadinimas, turinys ir skaitinis įvertinimas yra nuo 0 (neįvertinta) iki 5.
+- `Komentaras`: knygos komentare minima knyga ir yra pranešimo tekstas.
 - `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
 
 
