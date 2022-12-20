@@ -28,7 +28,7 @@ BookWyrm використовує [ActivityPub](http://activitypub.rocks/) пр�
 
 #### Activities (дії)
 
-- `Create`: saves a new status in the database.
+- `Create`: збереже новий статус в базі даних.
 
    **Note**: BookWyrm only accepts `Create` activities if they are:
 
