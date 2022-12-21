@@ -64,15 +64,23 @@ _This command is not available on the `production` branch_.
 
 ## Κόμβος
 
+### compile_themes
+
+Compiles all BookWyrm themes, which are `*.scss` files listed in `bookwyrm/static/css/themes`.
+
 ### collectstatic
 
 Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
 
-### Προεπισκόπηση
+### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database.
+Generate preview images for site, users, and books. This can take a while if you have a large database. See [Optional Features: Generating preview images](/optional_features.html)
 
-### Θόλωμα μικρογραφιών
+### remove_remote_user_preview_images
+
+Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
+
+### generate_thumbnails
 
 Generates thumbnail images for book covers.
 
@@ -80,25 +88,25 @@ Generates thumbnail images for book covers.
 
 Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
 
-### Διαγραφή αυτής της λίστας;
+### populate_list_streams
 
 Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
 
-### Προτάσεις
+### populate_suggestions
 
-Εμφάνιση αυτού του λογαριασμού σε προτεινόμενους χρήστες: You may want to run this manually to refresh suggestions.
+Populate suggested users for all users. You may want to run this manually to refresh suggestions.
 
-### Επανεκίνηση
+### restart_celery
 
 Restarts the `celery_worker` Docker container.
 
-### Αναβάθμιση
+### update
 
 When there are changes to the `production` branch, you can update your instance without downtime.
 
 This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
 
-### Διαχειριστής
+### admin_code
 
 Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
 
@@ -108,11 +116,11 @@ By default, BookWyrm uses local storage for static assets (favicon, default avat
 
 See [External Storage](/external-storage.html) for more information.
 
-### Δεν βρέθηκε συμβατή πηγή για το πολυμέσο.
+### copy_media_to_s3
 
 Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
 
-### Συγχρονισμός
+### sync_media_to_s3
 
 Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
 
@@ -124,7 +132,7 @@ Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of y
 
 _These commands are not available on the `production` branch_.
 
-### Μαύρο
+### black
 
 BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
 
@@ -140,11 +148,11 @@ BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consiste
 
 This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
 
-### Το Weblate είναι ένα διαδικτυακό εργαλείο μετάφρασης με ενσωματωμένο έλεγχο έκδοσης. Διαθέτει καθαρό και απλό περιβάλλον χρήστη, διαμοιρασμό των μεταφράσεων μεταξύ των συστατικών, ποιοτικούς ελέγχους και αυτόματη σύνδεση με τα πηγαία αρχεία.
+### clean
 
 Remove all stopped Docker containers.
 
-Επί του παρόντος λαμβάνετε το ισοδύναμο {money_amount} ανά εβδομάδα από δωρεές σε ξένα συναλλάγματα. Αυτές οι δωρεές δεν θα μετατραπούν στο κύριο συνάλλαγμα σας.
+Equivalent to:
 
 ```shell
 docker-compose stop
@@ -157,7 +165,7 @@ Creates message files for all translation strings. After you have run `makemessa
 
 ### compilemessages
 
-Διαλέξτε αρχεία μετάφρασης για εισαγωγή See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
