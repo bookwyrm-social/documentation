@@ -66,15 +66,15 @@ Setzt die Datenbank zurück. **Dieser Befehl löscht Ihre gesamte Bookwyrm-Daten
 
 ### compile_themes
 
-Compiles all BookWyrm themes, which are `*.scss` files listed in `bookwyrm/static/css/themes`.
+Kompiliert alle BookWyrm Themes, die `*.scss` Dateien sind, die in `bookwyrm/static/css/themes aufgelistet sind`.
 
 ### collectstatic
 
-Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
+Migrier statische Assets in einen Docker-Container oder in einen S3-kompatiblen "Bucket", abhängig vom Kontext.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database. See [Optional Features: Generating preview images](/optional_features.html)
+Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. This can take a while if you have a large database. See [Optional Features: Generating preview images](/optional_features.html)
 
 ### remove_remote_user_preview_images
 
@@ -98,11 +98,11 @@ Populate suggested users for all users. You may want to run this manually to ref
 
 ### restart_celery
 
-Restarts the `celery_worker` Docker container.
+Startet den `celery_worker`-Docker-Container neu.
 
 ### update
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Wenn es Änderungen im `-Produktions`-Zweig gibt, kannst Du Deine Instanz ohne Ausfallzeit aktualisieren.
 
 This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
 
@@ -112,13 +112,13 @@ Gets the secret admin code used to register the inital admin user on a new BookW
 
 ## S3 kompatiblen Speicher einrichten
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm verwendet django-storages, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.
 
-See [External Storage](/external-storage.html) for more information.
+Siehe [Externer Speicher](/external-storage.html) für weitere Informationen.
 
 ### copy_media_to_s3
 
-Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
+Migriere alle hochgeladenen Medien von einer bestehenden Bookwrym-Installation in einen S3-kompatiblen "Bucket". Use for initial upload to an empty bucket.
 
 ### sync_media_to_s3
 
@@ -134,7 +134,7 @@ _These commands are not available on the `production` branch_.
 
 ### black
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
+BookWyrm verwendet den [Black](https://github.com/psf/black) Code-Formatierer, um die Python Codebasis konsistent zu gestalten. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
 
 ### prettier
 
@@ -152,7 +152,7 @@ This command runs all code formatters (`black`, `prettier`, and `stylelint`) in 
 
 Remove all stopped Docker containers.
 
-Equivalent to:
+Äquivalent zu:
 
 ```shell
 docker-compose stop
@@ -161,7 +161,7 @@ docker-compose rm -f
 
 ### makemessages
 
-Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Erstellt Nachrichtendateien für alle Übersetzungstexte. After you have run `makemessages` you need to run `compilemessages` to compile the translations. Siehe [Djangos makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
 ### compilemessages
 
