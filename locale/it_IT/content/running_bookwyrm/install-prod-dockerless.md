@@ -1,34 +1,34 @@
 ---
-Title: Installing Without Docker
+Title: Installazione Senza Docker
 Date: 2022-10-02
 Order: 2
 ---
 
-This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production. This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended This install method assumes you already have ssl configured with certificates available
+Questo progetto è ancora giovane e al momento non è molto stabile, quindi vi prego di procedere con cautela quando si esegue in produzione. Questo metodo di installazione è più coinvolto, e quindi è per admin più esperti. L'installazione via docker è raccomandato. Questo metodo di installazione assume che tu hai ssl configurato con certifiche disponibili
 
-## Server setup
-- Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
-- Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
-- Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev`
+## Configurazione server
+- Ottieni un nome di dominio e imposta il DNS per il server. Dovrai indicare i nameservers del tuo dominio sul tuo provider DNS al server in cui ospiterai BookWyrm. Qui ci sono istruzioni per [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Impostare il server con firewall appropriati per l'esecuzione di un'applicazione web (questo set di istruzioni viene testato contro Ubuntu 20.04). Qui ci sono istruzioni per [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
+- Impostare un servizio email (come [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) e le impostazioni SMTP/DNS appropriate. Utilizza la documentazione del servizio per configurare il DNS
+- Installare le dipendenze. Su debian questo potrebbe apparire come `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev`,
 
-## Install and configure BookWyrm
+## Installa e configura BookWyrm
 
-The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the `production` branch is still recommended
+Il ramo di produzione `` di BookWyrm contiene una serie di strumenti non presenti sul ramo `principale` che sono adatti per funzionare nella produzione, come `docker-compose` modifiche per aggiornare i comandi o la configurazione predefinita dei container, e cambiamenti individuali alla configurazione del contenitore per abilitare cose come SSL o backup regolari. Non tutte queste modifiche effetto l'installazione dockerless, tuttavia il ramo `production` è ancora consigliato
 
-Instructions for running BookWyrm in production without Docker:
+Istruzioni per la gestione di BookWyrm in produzione senza Docker:
 
-- Make and enter directory you want to install bookwyrm too. For example `/opt/bookwyrm`: `mkdir /opt/bookwyrm && cd /opt/bookwyrm`
-- Get the application code: `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
-- Switch to the `production` branch: `git checkout production`
-- Create your environment variables file, `cp .env.example .env`, and update the following:
-    - `SECRET_KEY` | A difficult to guess, secret string of characters
-    - `DOMAIN` | Your web domain
-    - `POSTGRES_PASSWORD` | Set a secure password for the database
-    - `POSTGRES_HOST` | Set to `localhost` (the machine running your db)
-    - `POSTGRES_USER` | Set to `bookwyrm` (recommended) or something custom (configured later)
-    - `POSTGRES_DB` | Set to `bookwyrm`
-    - `REDIS_ACTIVITY_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
+- Crea ed inserisci anche la directory che vuoi installare bookwyrm. Per esempio, `/opt/bookwyrm`: `mkdir /opt/bookwyrm && cd /opt/bookwyrm`
+- Scarica il codice applicativo: `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
+- Passa al ramo `produzione`: `git checkout production`
+- Crea il tuo file delle variabili di ambiente, `cp .env.example .env`e aggiorna quanto segue:
+    - `SECRET_KEY` <unk> Una stringa segreta di personaggi difficile da indovinare
+    - `DOMANDA` <unk> Il tuo dominio web
+    - `POSTGRES_PASSWORD` <unk> Imposta una password sicura per il database
+    - `POSTGRES_HOST` <unk> Impostare a `localhost` (la macchina che esegue il vostro db)
+    - `POSTGRES_USER` <unk> Impostare a `bookwyrm` (raccomandato) o qualcosa di personalizzato (configurato in seguito)
+    - `POSTGRES_DB` <unk> Impostare a `bookwyrm`
+    - `REDIS_ACTIVITY_PASSWORD` <unk> Impostare a nulla (multare su una macchina locale con un firewall)
     - `REDIS_ACTIVITY_HOST` | Set to `localhost` (the machine running redis)
     - `REDIS_BROKER_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
     - `REDIS_BROKER_HOST` | Set to `localhost` (the machine running redis)
@@ -129,6 +129,6 @@ You will need to set up a Cron job for the service to start automatically on a s
 
 Congrats! You did it!! Configure your instance however you'd like.
 
-## Get Involved
+## Partecipa
 
-See [Get Involved](https://joinbookwyrm.com/get-involved/) for details.
+Vedi [Partecipa](https://joinbookwyrm.com/get-involved/) per dettagli.
