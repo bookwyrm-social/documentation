@@ -64,13 +64,21 @@ Resets the database. **This command will delete your entire Bookwyrm database**,
 
 ## Managing a Bookwyrm instance
 
+### compile_themes
+
+Compiles all BookWyrm themes, which are `*.scss` files listed in `bookwyrm/static/css/themes`.
+
 ### collectstatic
 
 Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database.
+Generate preview images for site, users, and books. This can take a while if you have a large database. See [Optional Features: Generating preview images](/optional_features.html)
+
+### remove_remote_user_preview_images
+
+Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
 
 ### generate_thumbnails
 
@@ -165,8 +173,8 @@ Run tests with `pytest`.
 
 ### deactivate_2fa
 
-Деактивує двофакторну аутентифікацію для даного користувача.
+Deactivates two factor authentication for a given user.
 
 ### manual_confirm
 
-Підтверджує електронну пошту користувача, ставить користувача активним.
+Confirms a users email, sets the user to active.
