@@ -66,7 +66,7 @@ Resets the database. **This command will delete your entire Bookwyrm database**,
 
 ### compile_themes
 
-Compiles all BookWyrm themes, which are `*.scss` files listed in `bookwyrm/static/css/themes`.
+Kompilerar alla BookWyrm-teman, `*.scss`-filer listade i `bookwyrm/static/css/themes`.
 
 ### collectstatic
 
