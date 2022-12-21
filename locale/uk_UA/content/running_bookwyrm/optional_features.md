@@ -42,3 +42,13 @@ So you want to customize your preview images? Here are the options:
 - `PREVIEW_DEFAULT_COVER_COLOR` will set the color for books without covers.
 
 All the color variables accept values that can be recognized as colors by Pillow’s `ImageColor` module: [Learn more about Pillow color names](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
+
+### Removing preview images for remote users
+
+Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:
+
+```sh
+./bw-dev remove_remote_user_preview_images
+```
+
+That command will empty the `user.preview_image` property in the database for remote users, and delete the file in storage.
