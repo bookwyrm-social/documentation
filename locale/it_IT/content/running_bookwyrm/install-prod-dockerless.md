@@ -29,27 +29,27 @@ Istruzioni per la gestione di BookWyrm in produzione senza Docker:
     - `POSTGRES_USER` <unk> Impostare a `bookwyrm` (raccomandato) o qualcosa di personalizzato (configurato in seguito)
     - `POSTGRES_DB` <unk> Impostare a `bookwyrm`
     - `REDIS_ACTIVITY_PASSWORD` <unk> Impostare a nulla (multare su una macchina locale con un firewall)
-    - `REDIS_ACTIVITY_HOST` | Set to `localhost` (the machine running redis)
-    - `REDIS_BROKER_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
-    - `REDIS_BROKER_HOST` | Set to `localhost` (the machine running redis)
-    - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
-    - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
-    - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
-    - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
-    - Update nginx `bookwyrm.conf`:
-        - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
-        - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
-        - Uncomment lines 18 to 67 to enable forwarding to HTTPS. You should have two `server` blocks enabled
-        - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
-        - Change line 4 so that it says `server localhost:8000`. You may choose a different port here if you wish
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
-    - Enable the nginx config: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
-     - Reload nginx: `systemctl reload nginx`
-- Setup the python virtual enviroment
-    - Make the python venv directory in your install dir: `mkdir venv` `python3 -m venv ./venv`
-    - Install bookwyrm python dependencies with pip: `./venv/bin/pip3 install -r requirements.txt`
-- Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
+    - `REDIS_ACTIVITY_HOST` <unk> Impostare su `localhost` (la macchina che esegue redis)
+    - `REDIS_BROKER_PASSWORD` <unk> Impostare a nulla (multare su una macchina locale con un firewall)
+    - `REDIS_BROKER_HOST` <unk> Imposta su `localhost` (la macchina che esegue redis)
+    - `EMAIL_HOST_USER` <unk> L'indirizzo "da" che la tua app utilizzerà quando invierai un'email
+    - `EMAIL_HOST_PASSWORD` <unk> La password fornita dal vostro servizio email
+- Configura nginX
+    - Copia il server_config in nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
+    - Crea una copia della configurazione del modello di produzione e impostalo per l'uso in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
+    - Aggiorna nginx `bookwyrm.conf`:
+        - Sostituisci `your-domain.com` con il tuo nome di dominio ovunque nel file (incluse le righe che sono attualmente commentate)
+        - Sostituisci `/app/` con la tua directory di installazione `/opt/bookwyrm/` ovunque nel file (incluso commentato)
+        - Decommenta le righe da 18 a 67 per consentire l'inoltro a HTTPS. Dovresti avere abilitato due blocchi `server`
+        - Cambia i percorsi `ssl_certificate` e `ssl_certificate_key` alla tua catena completa e alla tua posizione privkey
+        - Cambia la riga 4 in modo che dica `server localhost:8000`. Puoi scegliere una porta diversa qui se desideri
+        - Se stai utilizzando un altro web-server sulla tua macchina host, dovrai seguire le istruzioni [reverse-proxy](/reverse-proxy.html)
+    - Abilita la configurazione nginx: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`Name
+     - Ricarica nginx: `systemctl reload nginx`
+- Configura l'ambiente virtuale python
+    - Rendi la directory python venv nella tua directory di installazione: `mkdir venv` `python3 -m venv ./venv`
+    - Installa le dipendenze di python di bookwyrm con pip: `./venv/bin/pip3 install -r requirements.txt`
+- Crea il database postgresql di bookwyrm. Make sure to change the password to what you set in the `.env` config:
 
     `sudo -i -u postgres psql`
 
