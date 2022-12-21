@@ -49,85 +49,85 @@ Istruzioni per la gestione di BookWyrm in produzione senza Docker:
 - Configura l'ambiente virtuale python
     - Rendi la directory python venv nella tua directory di installazione: `mkdir venv` `python3 -m venv ./venv`
     - Installa le dipendenze di python di bookwyrm con pip: `./venv/bin/pip3 install -r requirements.txt`
-- Crea il database postgresql di bookwyrm. Make sure to change the password to what you set in the `.env` config:
+- Crea il database postgresql di bookwyrm. Assicurati di cambiare la password in quello che hai impostato nel config: `.env`:
 
     `sudo -i -u postgres psql`
 
 ```
-CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
+CREA bookwyrm UTILIZZATORE CON PASSWORD 'securedbypassword123';
 
-CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
+CREA DATABASE bookwyrm TEMPLATE template0 CODIFICAZIONE 'UNICODIZIONE'.
 
 ALTER DATABASE bookwyrm OWNER TO bookwyrm;
 
-GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
+CONSERVARE TUTTI I PRIVILEGI SUL bookwyrm di DATABASE A bookwyrm;
 
 \q
 ```
 
-- Migrate the database schema by running `venv/bin/python3 manage.py migrate`
-- Initialize the database by running `venv/bin/python3 manage.py initdb`
-- Create the static by running `venv/bin/python3 manage.py collectstatic --no-input`
-- If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
-- Create and setup your `bookwyrm` user
-    - Make the system bookwyrm user: `useradd bookwyrm -r`
-    - Change the owner of your install directory to bookwyrm: `chown -R bookwyrm:bookwyrm /opt/bookwyrm`
-    - You should now run bookwyrm related commands as the bookwyrm user: `sudo -u bookwyrm echo I am the $(whoami) user`
+- Migrare lo schema del database eseguendo `venv/bin/python3 manage.py Migrate`
+- Inizializza il database con `venv/bin/python3 manage.py initdb`
+- Crea lo statico eseguendo `venv/bin/python3 manage.py collectstatico --no-input`
+- Se si desidera utilizzare un archivio esterno per risorse statiche e file multimediali (come un servizio compatibile con S3), [segui le istruzioni](/external-storage.html) fino a quando ti dice di tornare qui
+- Crea e imposta il tuo utente di `bookwyrm`
+    - Crea il bookwyrm di sistema utente: `useradd bookwyrm -r`
+    - Cambia il proprietario della tua cartella di installazione in bookwyrm: `chown -R bookwyrm:bookwyrm /opt/bookwyrm`
+    - Ora dovresti eseguire i comandi relativi a bookwyrm come utente bookwyrm: `sudo -u bookwyrm echo Io sono l'utente $(whoami)`
 
-- Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
-- You can get your code at any time by re-running that command. Here's an example output:
+- Generare il codice di amministrazione con `sudo -u bookwyrm venv/bin/python3 manage. y admin_code`, e copia il codice di amministrazione da usare quando crei il tuo account amministrativo.
+- È possibile ottenere il tuo codice in qualsiasi momento rieseguendo quel comando. Ecco un risultato di esempio:
 
 ``` { .sh }
-*******************************************
-Use this code to create your admin account:
+*********************************************
+Usa questo codice per creare il tuo account amministratore:
 c6c35779-af3a-4091-b330-c026610920d6
-*******************************************
+***********************************************************
 ```
 
-- Make and configure the run script
-    - Make a file called dockerless-run.sh and fill it with the following contents
+- Crea e configurare lo script di esecuzione
+    - Crea un file chiamato dockerless-run.sh e riempirlo con i seguenti contenuti
 
 ``` { .sh }
 #!/bin/bash
 
-# stop if one process fails
+# stop se un processo non riesce
 set -e
 
 # bookwyrm
-/opt/bookwyrm/venv/bin/gunicorn bookwyrm.wsgi:application --bind 0.0.0.0:8000 &
+/opt/bookwyrm/venv/bin/gunicorn bookwyrm.wsgi:application --bind 0.0.0.:8000 &
 
-# celery
-/opt/bookwyrm/venv/bin/celery -A celerywyrm worker -l info -Q high_priority,medium_priority,low_priority &
-/opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &
-# /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &
+# sedano
+/opt/bookwyrm/venv/bin/sedano -A celerywyrm worker -l info -Q High_priority,medium_priority, ow_priority &
+/opt/bookwyrm/venv/bin/sedano -A battuto celerywyrm -l INFO --scheduler django_celery_beat. chedulers:DatabaseScheduler &
+# /opt/bookwyrm/venv/bin/sedano -A fiore di sedano sedano &
 ```
-    - Replace `/opt/bookwyrm` with your install dir
-    - Change `8000` to your custom port number
-    - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
-- You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
-- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
-- You may want to configure BookWyrm to autorun with a systemd service. Here is an example:
+    - Sostituisci `/opt/bookwyrm` con la cartella di installazione
+    - Cambia `8000` al tuo numero di porta personalizzato
+    - Flower è stato disabilitato qui perché non è autoconfigurato con la password impostata nel file `.env`
+- Puoi ora eseguire BookWyrm con: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
+- L'applicazione deve essere in esecuzione nel tuo dominio. Quando carichi il dominio, dovresti ottenere una pagina di configurazione che confermi le impostazioni dell'istanza e un modulo per creare un account amministratore. Usa il tuo codice amministratore per registrarsi.
+- Si consiglia di configurare BookWyrm per autorun con un servizio di sistema. Ecco un esempio:
 ```
 # /etc/systemd/system/bookwyrm.service
 [Unit]
-Description=Bookwyrm Server
+Description=Bookwyrm server
 After=network.target
 After=systemd-user-sessions.service
-After=network-online.target
+After=network-online. arget
 
 [Service]
 User=bookwyrm
 Type=simple
-Restart=always
+Riavvio=always
 ExecStart=/bin/bash /opt/bookwyrm/dockerless-run.sh
 WorkingDirectory=/opt/bookwyrm/
 
 [Install]
 WantedBy=multi-user.target
 ```
-You will need to set up a Cron job for the service to start automatically on a server restart.
+È necessario impostare un lavoro di Cron per avviare automaticamente il servizio su un riavvio del server.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Congratulazioni! Ce l'hai fatta!! Configura la tua istanza come preferisci.
 
 ## Partecipa
 
