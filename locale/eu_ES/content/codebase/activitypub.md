@@ -57,4 +57,4 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
 
 
 ## Serializazio alternatiboa
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+BookWyrm-ek Activity Pub-ekin bateragarriak ez diren objektu pertsonalizatu motak (`Review`, `Comment`, `Quotation`) erabiltzen dituenez, egoerak tipo estandar bihurtzen dira BookWyrm ez diren zerbitzuek bidaltzen edo ikusten dituztenean. `Review`-ak, `Article` bihurtzen dira, eta `Comment` eta `Quotation`-ak `Note` bihurtzen dira, libururako esteka batekin eta erantsitako azaleko irudi batekin.
