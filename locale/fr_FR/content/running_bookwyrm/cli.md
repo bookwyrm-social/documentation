@@ -66,51 +66,51 @@ Réinitialise la base de données. **Cette commande va supprimer votre base de d
 
 ### compile_themes
 
-Compiles all BookWyrm themes, which are `*.scss` files listed in `bookwyrm/static/css/themes`.
+Compile tous les thèmes BookWyrm, qui sont des fichiers `*.scss` répertoriés dans `bookwyrm/static/css/themes`.
 
 ### collectstatic
 
-Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
+Migre les ressources statiques vers un conteneur Docker ou un compartiment compatible S3, selon le contexte.
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database. See [Optional Features: Generating preview images](/optional_features.html)
+Génère des images de prévisualisation pour le site, les utilisateur-ice-s et les livres. Si vous avez une grande base de données, cela peut prendre un temps conséquent. Voir [Optional features : Générer les images de prévisualisation](/optional_features.html)
 
 ### remove_remote_user_preview_images
 
-Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
+Supprime les images de prévisualisation pour les comptes externes. Voir [Optional Features : Supprimer les images de prévisualisation pour les comptes externes](/optional_features.html)
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Génère les miniatures pour les couvertures de livres.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Rafraîchit les flux Redis (flux utilisateurs). Vous n'aurez généralement pas besoin d'exécuter cela à moins qu'une erreur n'efface vos flux utilisateurs pour une raison ou une autre. Vous pouvez préciser quel flux en particulier en utilisant l'argument `--stream`.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
+Rafraîchit le cache Redis des listes. Vous n'aurez généralement pas besoin d'exécuter cela à moins qu'une erreur n'efface les listes de vos utilisateur-ice-s pour une raison ou une autre.
 
 ### populate_suggestions
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Rafraîchit la liste des comptes suggérés pour tous-tes les utilisateur-ice-s. Vous pouvez exécuter cela afin d'actualiser les suggestions.
 
 ### restart_celery
 
-Restarts the `celery_worker` Docker container.
+Redémarre le conteneur Docker `celery_worker`.
 
 ### update
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Lors de changements sur la branche `production`, vous pouvez mettre à jour votre instance sans la rendre indisponible.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Cette commande `git pull` les dernières mises à jour de la branche `production` , construit des images docker si nécessaire, exécute les migrations Django, met à jour les fichiers statiques et redémarre tous les conteneurs Docker.
 
 ### admin_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Récupère le code admin utilisé pour enregistrer l'admin initial sur une nouvelle instance BookWyrm.
 
-## Configuration du stockage S3 compatible
+## Configuration du stockage compatible S3
 
 Par défaut, BookWyrm stocke localement les ressources statiques (favicon, avatar par défaut, etc.) et les médias (avatars, couvertures de livres, etc.), mais vous pouvez utiliser un service de stockage externe pour ces fichiers. BookWyrm utilise django-storages pour gérer le stockage externe, tel que les services compatibles S3, Apache Libcloud ou SFTP.
 
@@ -150,9 +150,9 @@ Cette commande exécute tous les formateurs de code (`black`, `prettier`, et `st
 
 ### clean
 
-Remove all stopped Docker containers.
+Supprime tous les conteneurs Docker arrêtés.
 
-Equivalent to:
+Correspond à :
 
 ```shell
 docker-compose stop
@@ -161,20 +161,20 @@ docker-compose rm -f
 
 ### makemessages
 
-Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Génère les fichiers de messages pour toutes les chaînes de traduction. Après avoir exécuté `makemessages`, vous devez exécuter `compilemessages` pour compiler les traductions. Voir [makemessages dans Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compile les fichiers de traduction. Voir [compilemessages dans Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Run tests with `pytest`.
+Exécute les tests avec `pytest`.
 
 ### deactivate_2fa
 
-Deactivates two factor authentication for a given user.
+Désactive l'authentification à deux facteurs pour un utilisateur donné.
 
 ### manual_confirm
 
-Confirms a users email, sets the user to active.
+Confirme l'adresse e-mail d'un-e utilisateur-ice et l'active.
