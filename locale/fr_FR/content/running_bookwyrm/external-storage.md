@@ -129,7 +129,7 @@ Remplacez `MY_DOMAIN_NAME` par votre nom de domaine de l'instance, `BUCKET_URL` 
 
 Si vous voyez un message, en particulier un message commençant par `<Error><Code>CORSForbidden</Code>`, cela n'a pas fonctionné. Si vous ne voyez aucun message, cela a fonctionné.
 
-Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe, et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe après avoir basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe :
+Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe une fois basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe :
 
 ```bash
 ./bw-dev sync_media_to_s3
