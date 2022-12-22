@@ -43,12 +43,12 @@ Alors comme ça vous voulez personnaliser vos images de prévisualisation ? Voic
 
 Toutes les variables de couleur acceptent des valeurs reconnues par le module `ImageColor` de Pillow : [En apprendre plus sur les noms de couleurs dans Pillow](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
 
-### Removing preview images for remote users
+### Supprimer les images de prévisualisation pour les comptes externes
 
-Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:
+Avant BookWyrm 0.5.4, des images de prévisualisation étaient générées pour les comptes externes. Comme cela était couteux en termes d'espace disque et de puissance de calcul, cela a été interrompu. Si vous souhaitez supprimer en masse toutes les images précédemment générées pour les comptes distants, une nouvelle commande a été ajoutée :
 
 ```sh
 ./bw-dev remove_remote_user_preview_images
 ```
 
-That command will empty the `user.preview_image` property in the database for remote users, and delete the file in storage.
+Cette commande va retirer dans la base de données la valeur de la propriété `user.preview_image` pour les comptes externes et supprimer le fichier associé.
