@@ -1,21 +1,21 @@
 - - -
-Title: Permissions Date: 2021-04-18 Order: 2
+Izenburua: Baimenak Eguna: 2021-04-18 Ordena: 2
 - - -
 
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+Erabiltzailearen hainbat ezaugarritarako sarbidea Djangoko [autentifikazio-sistema integratuaren](https://docs.djangoproject.com/en/3.2/topics/auth/default/) bidez kontrolatzen da. Instantzia bat sortzen denean, `initdb` sriptak taldeei esleitutako baimen sorta bat sortzen du. Lehenespenez, erabiltzaile berri guztiak `editor` taldeari esleitzen dira eta horrela liburuaren metadatuak aldatzeko eskubidea dute.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+Administrazio instantziak `superuser` estatusa izan behar du. Horrek Djangoren administraziorako sarbidea (`/admin`) ematen dio eta erabiltzaile horri baimen guztiak ematen dizkio.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Baimenak eta taldeak
+Taula honek lau taldeak erakusten ditu (administratzailea, moderatzailea, editorea eta erabiltzailea) eta talde horien erabiltzaileei dagozkien baimenak:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                                   | administratzailea | moderatzailea | editorea | erabiltzailea |
+| --------------------------------- | ----------------- | ------------- | -------- | ------------- |
+| instantziaren ezarpenak aldatzea  | ✔️                | -             | -        | -             |
+| erabiltzaile baten maila aldatzea | ✔️                | -             | -        | -             |
+| federazioa kudeatzea              | ✔️                | ✔️            | -        | -             |
+| gonbidapenak sortzea              | ✔️                | ✔️            | -        | -             |
+| erabiltzaileak deskaktibatzea     | ✔️                | ✔️            | -        | -             |
+| mezuak ezabatzea                  | ✔️                | ✔️            | -        | -             |
+| liburuak editatzea                | ✔️                | ✔️            | ✔️       | -             |
+ azalak linean ezartzea            |  ✔️    |     ✔️       |   ✔️     |  ✔️
