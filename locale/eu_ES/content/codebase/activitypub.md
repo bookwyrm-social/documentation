@@ -32,7 +32,7 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
 
    **Note**: BookWyrm-ek `Create` jarduerak baimentzen ditu baldin eta:
 
-   - Mezu zuzenak diren (hots, `Note` elementuak `direct` pribatutasun mailarekin, tokiko erabiltzailearen aipamenarekin),
+   - Mezu zuzenak badira (hots, `Note` elementuak `direct` pribatutasun mailarekin, tokiko erabiltzailearen aipamenarekin),
    - Related to a book (of a custom status type that includes the field `inReplyToBook`),
    - Replies to existing statuses saved in the database
 - `Delete`: Removes a status
