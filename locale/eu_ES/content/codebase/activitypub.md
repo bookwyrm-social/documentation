@@ -46,15 +46,15 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
 #### Objektuak
 
 - `Shelf`: Erabiltzaile baten liburu bilduma. Lehenespenez, erabiltzaile bakoitzak hainbat atal ditu, irakurtketaren aurrerapenari jarraitzeko: `irakurtzekoak`, `irakurtzen hasitakoak` eta `irakurriak`.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `List`: Zerrenda sortu zuen erabiltzaileaz besteko elementuak izan ditzakeen liburu-bilduma.
 
-#### Activities
+#### Jarduerak
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Create`: Gehitu apal bat edo zerrenda bat datu-basean.
+- `Delete`: Ezabatu apal bat edo zerrenda bat.
+- `Add`: Liburu bat gehitzen du apal edo zerrenda batean.
+- `Remove`: Apal edo zerrenda batetik liburu bat ezabatzen du.
 
 
-## Alternative Serialization
+## Serializazio alternatiboa
 Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
