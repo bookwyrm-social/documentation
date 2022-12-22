@@ -2,18 +2,18 @@
 Izenburua: Nola lagundu Eguna: 2021-04-12 Ordena: 1
 - - -
 
-There are many ways you can contribute to this project, regardless of your level of technical expertise.
+Proiektu honetan laguntzeko hainbat modu daude, esperientzia teknikoko maila guztietarako.
 
-## Feedback and feature requests
-Please feel encouraged and welcome to point out bugs, suggestions, feature requests, and ideas for how things ought to work using [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues).
+## Iruzkinak eta funtzionalitateei buruzko eskaerak
+Ongi etorria senti zaitez akatsak jakinarazteko, iradokizunak, funtzio berrietarako eskaerak eta gauzen funtzionamenduari buruzko ideiak aurkezteko, eta horiek [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues) bidez bidaltzeko.
 
-## Code contributions
-Code contributions are gladly welcomed! If you're not sure where to start, take a look at the ["Good first issue"](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) tag. Because BookWyrm is a small project, there isn't a lot of formal structure, but there is a huge capacity for one-on-one support, which can look like asking questions as you go, pair programming, video chats, et cetera, so please feel free to reach out.
+## Koderako ekarpenak
+Koderako ekarpenak ongi etorriak dira! Ez badakizu nondik hasi, begira iezaiozu ["Good first issue"](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) etiketari. BookWyrm eskala txikiko proiektua denez, haren egitura ez da oso formala, baina euskarri pertsonalizaturako gaitasun handia du, hainbat forma har ditzake: galderak neurrira egin, binomioan programatu, bideo-deiak egin, etab. Beraz, lasai jarri gurekin harremanetan.
 
-If you have questions about the project or contributing, you can join the [BookWyrm matrix chat](https://app.element.io/#/room/#bookwyrm:matrix.org).
+Proiektuari edo ekarpenei buruzko galderarik baduzu, [BookWyrm matrix txatean](https://app.element.io/#/room/#bookwyrm:matrix.org) sar zaitezke.
 
-## Translation
-Do you speak a language besides English? BookWyrm needs localization! You can add and edit translations at [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
+## Itzulpena
+Ingelesez gain beste hizkuntza bat hitz egiten duzu? BookWyrm itzulpenen beharrean dago! Gehitzen edo aldatzen ahal dituzu itzulpenak hemen: [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
 
-## Financial Support
-BookWyrm is an ad-free passion project with no intentions of seeking out venture funding or corporate financial relationships. If you want to help keep the project going, you can become a sustaining contributor via [Patreon](https://www.patreon.com/bookwyrm) or [OpenCollective](https://opencollective.com/bookwyrm), or make a one time gift via [PayPal](https://paypal.me/oulipo).
+## Finantza laguntza
+BookWyrm pasio-proiektua da, publizitaterik gabea, eta ez du asmorik enpresen finantziazioa edo finantza-harremanak bilatzeko. Proiektua martxan izaten lagundu nahi baduzu, diru-sustengatzaile bihur zaitezke plataforma hauen bidez: [Patreon](https://www.patreon.com/bookwyrm) edo [OpenCollective](https://opencollective.com/bookwyrm), edo aldi baterako emaitza eginez [PayPal](https://paypal.me/oulipo) webgunean.
