@@ -5,7 +5,7 @@ Title: Installation en Production Date: 2021-05-18 Order: 1
 Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites preuve de prudence lors de son utilisation en production.
 
 ## Configuration du serveur
-- Obtenez un nom de domaine et configurez DNS pour votre serveur. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Obtenez un nom de domaine et configurez le DNS pour votre serveur. Vous devez faire pointer les serveurs de noms de domaine de votre fournisseur DNS vers le serveur où vous allez héberger BookWyrm. Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Configurez votre serveur avec un pare-feu approprié pour les applications web (cette page de documentation est testée avec Ubuntu 20.04). Voici les instructions pour [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Configurez un service mail (comme [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) et les paramètres SMTP/DNS appropriés. Utilisez la documentation du service pour configurer vos DNS
 - [Installez Docker et docker-compose](https://docs.docker.com/compose/install/)
