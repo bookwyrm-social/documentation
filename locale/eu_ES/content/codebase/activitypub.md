@@ -33,19 +33,19 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
    **Note**: BookWyrm-ek `Create` jarduerak baimentzen ditu baldin eta:
 
    - Mezu zuzenak badira (hots, `Note` elementuak `direct` pribatutasun mailarekin, tokiko erabiltzailearen aipamenarekin),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+   - Liburu batekin lotuta badira ( `inReplyToBook` eremua barne duen egoera pertsonalizatuko mota batekoa),
+   - Datu-basean gordetako egoerei emandako erantzunak
+- `Delete`: Egoera bat ezabatzen du
+- `Like`: Sortzen du gogoko bat egoeretan
+- `Announce`: Egoera sustatzen du aktorearen kronologian
+- `Undo`: Desegiten ditu `Like` bat edo `Announce` bat
 
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+### Bildumak
+[`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection) elementuari esker erabiltzaile baten liburuak eta zerrendak ager daitezke
 
-#### Objects
+#### Objektuak
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
+- `Shelf`: Erabiltzaile baten liburu bilduma. Lehenespenez, erabiltzaile bakoitzak hainbat atal ditu, irakurtketaren aurrerapenari jarraitzeko: `irakurtzekoak`, `irakurtzen hasitakoak` eta `irakurriak`.
 - `List`: A collection of books that may have items contributed by users other than the one who created the list.
 
 #### Activities
