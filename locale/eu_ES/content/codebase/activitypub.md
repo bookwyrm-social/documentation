@@ -2,7 +2,7 @@
 Izenburua: ActivityPub Eguna: 2021-04-20 Ordena: 1
 - - -
 
-BookWyrm-ek [Activity Pub](http://activitypub.rocks/) protokoloa erabiltzen du erabiltzailearen jarduera bidaltzeko eta jasotzeko, BookWyrm instantzien eta ActivityPub ezarria duten beste zerbitzu baten artean, [Mastodon](https://joinmastodon.org/) bezala. Liburuko datuak erabiltzeko, BookWyrm-ek estandarrak ez diren Activity motako hainbat gehigarri erabiltzen ditu, baina BookWyrme-n beste instantziekin erabilgarriak direnak.
+BookWyrm-ek [Activity Pub](http://activitypub.rocks/) protokoloa erabiltzen du erabiltzailearen jarduera bidaltzeko eta jasotzeko, BookWyrm instantzien eta ActivityPub ezarria duten beste zerbitzu baten artean, [Mastodon](https://joinmastodon.org/) bezala. Liburuko datuak erabiltzeko, BookWyrm-ek estandarrak ez diren Activity motako hainbat gehigarri erabiltzen ditu, baina BookWyrm-en beste instantziekin erabilgarriak direnak.
 
 ## Jarduerak eta Objektuak
 
@@ -32,7 +32,7 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
 
    **Note**: BookWyrm-ek `Create` jarduerak baimentzen ditu baldin eta:
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
+   - Mezu zuzenak diren (hots, `Note` elementuak `direct` pribatutasun mailarekin, tokiko erabiltzailearen aipamenarekin),
    - Related to a book (of a custom status type that includes the field `inReplyToBook`),
    - Replies to existing statuses saved in the database
 - `Delete`: Removes a status
