@@ -2,35 +2,35 @@
 Izenburua: ActivityPub Eguna: 2021-04-20 Ordena: 1
 - - -
 
-BookWyrm-ek [Activity Pub](http://activitypub.rocks/) protokoloa erabiltzen du erabiltzailearen jarduera bidaltzeko eta jasotzeko, BookWyrm instantzien eta ActivityPub ezarria duten beste zerbitzu baten artean, [Mastodon](https://joinmastodon.org/) bezala. To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm-ek [Activity Pub](http://activitypub.rocks/) protokoloa erabiltzen du erabiltzailearen jarduera bidaltzeko eta jasotzeko, BookWyrm instantzien eta ActivityPub ezarria duten beste zerbitzu baten artean, [Mastodon](https://joinmastodon.org/) bezala. Liburuko datuak erabiltzeko, BookWyrm-ek estandarrak ez diren Activity motako hainbat gehigarri erabiltzen ditu, baina BookWyrme-n beste instantziekin erabilgarriak direnak.
 
-## Activities and Objects
+## Jarduerak eta Objektuak
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Erabiltzaileak eta harremanak
+Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrari jarraitzen diote.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Follow`: erabiltzaile baten egoera jasotzeko eskatzen du eta pribatutasun-aukera «jarraitzaileak soilik» aktibatuta duten egoerak erakusten ditu
+- `Accept`: `Follow` bat onartzen eta harremana gauzatzen du
+- `Reject`: `Follow` bati uko egiten dio
+- `Block`: erabiltzaileek bestearen egoerak ikustea eragozten du eta blokeatutako erabiltzaileak aktorearen profila ikustea eragozten du
+- `Update`: erabiltzaile baten profila eta konfigurazioa eguneratzen ditu
+- `Delete`: erabiltzaile bat desaktibatzen du
+- `Undo`: desegiten ditu `Follow` bat edo `Block` bat
 
-### Statuses
-#### Object types
+### Egoerak
+#### Objektu motak
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Note`: Mastodon bezalako zerbitzuetan, `Note` elementuak egoera-mota nagusia dira. Barne hartzen dute mezu eremu bat, fitxategi erantsiak, erabiltzaileak aipa ditzakete eta edozein motatako estatutuen erantzunak izan daitezke. BookWyrm-en, `Note` elementuak zuzeneko mezu gisa soilik sor daitezke edo beste egoera batzuei emandako erantzun gisa.
+- `Review`: Kritika, liburu bati erantzunda ematen den egoera da (`inReplyToBook` elementuaren eremuak adierazten du), izenburu bat, gorputz bat eta 0 (sailkatu gabea) eta 5 arteko nota digital bat dauzkana.
+- `Comment`: Liburu bati buruzko iruzkin batek liburu bat aipatzen du eta mezu gorputz bat dauka.
+- `Quotation`: Aipamen batek mezu gorputz bat dauka, liburu baten zati bat eta liburu bat aipatzen du
 
 
-#### Activities
+#### Jarduerak
 
-- `Create`: saves a new status in the database.
+- `Create`: egoera berri bat gordetzen du datu-basean.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Note**: BookWyrm-ek `Create` jarduerak baimentzen ditu baldin eta:
 
    - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
    - Related to a book (of a custom status type that includes the field `inReplyToBook`),
