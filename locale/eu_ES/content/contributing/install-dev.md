@@ -10,7 +10,7 @@ Jarraibide hauen arabera, BookWyrm ari zara garatzen Docker erabiliz. Ezer baino
 
 - Eskura ezazu [GitHub-etik BookWyrm-en kode-basea](https://github.com/bookwyrm-social/bookwyrm). Paketearen [fork bat sortu](https://docs.github.com/en/get-started/quickstart/fork-a-repo) dezakezu, ondotik [erabili `git clone` kodea deskargatzeko](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) zure ordenagailuan.
 - Joan zure ordenagailuko kodea duen direktoriora, orain direktorio honetatik lan egingo duzu.
-- Konfigura ezazu zure garapen-inguruneko aldagaien artxiboa, inguruneko adibide-fitxategia (`.env.example`) `.env` izeneko fitxategi berri batean kopiatuz. Komando-lerroan, hau egin dezakezu idatziz:
+- Konfigura ezazu zure garapen-inguruneko aldagaien artxiboa, inguruneko adibide-fitxategia (`.env.example`) `.env` izeneko fitxategi berri batean kopiatuz. Komando-lerroan, hori egin dezakezu idatziz:
 ``` { .sh }
 cp .env.example .env
 ```
