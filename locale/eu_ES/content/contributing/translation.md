@@ -1,14 +1,14 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Izenburua: Itzulpenak Eguna: 2021-10-20 Ordena: 2
 - - -
 
-## Contributing to translations
+## Itzultzen lagundu
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+BookWyrm-en itzulpen proiektuarekin bat egin dezakezu hemen: [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Genero-hizkuntza neutrala
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Ahal den neurrian, BookWyrm-en itzulpenek genero neutrala duen hizkuntza erabili behar dute. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
 
 As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
 
