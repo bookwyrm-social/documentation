@@ -8,29 +8,29 @@ BookWyrm-en itzulpen proiektuarekin bat egin dezakezu hemen: [translate.joinbook
 
 ## Genero-hizkuntza neutrala
 
-Ahal den neurrian, BookWyrm-en itzulpenek genero neutrala duen hizkuntza erabili behar dute. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Ahal den neurrian, BookWyrm-en itzulpenek genero neutrala duen hizkuntza erabili behar dute. Hizkuntza batek gizakia genero neutral gisa betetzen ez badu ere aplikatzen da hori, edo gizonezko eta emakumezkoen aldaera nabarmentzen badu izenordain batzuen bidez. Garrantzitsua da, halaber, itzulpenak argiak, zehatzak eta irakurgarriak izatea pantaila bidezko irakurlearentzat, eta, batzuetan, helburu horiek gatazkan daude; ez dago erantzun perfekturik eta bakarra, irtenbidea hizkuntzaren araberakoa da.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Ideia nagusi gisa, saiatu balio handiagoa jartzen hizkuntza neutral eta inklusiboari, hizkuntza formal zuzenari edo ofizialki onartutako estilo-liburuei baino. Ingelesez, adibidez, estilo-gida askok eskatzen dute "she" edo "he" izenordain berezi bat erabiltzea gizabanako bati dagokionez, baina BookWyrmen hobe da "they" izenordain berezi ez-generikoa erabiltzea haren ordez.
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Itzulpen arazo bati nola heldu ez badakizu, iruzkindu itzulpena eta ireki [eztabaida gai](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) bat, galdera zabalagoei erantzuteko.
 
-## Making templates translatable
+## Jarri txantiloiak itzulgarriak
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+Bookwyrm-ek Djangoren itzulpen-funtzionalitatea erabiltzen du, orrialdearen edukia erabiltzaileak aukeratutako bistaratze-hizkuntzaren arabera alda dadin. Django dokumentazioak, garapen esparru hori [nola funtzionatzen duen azaltzen du](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code), hona hemen bertsio laburra:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* txantiloiaren testu guztiek itzulpen etiketak barne izan behar dituzte
+* erantsi `{% load i18n %}` txantiloiaren goiko aldean itzulpenak gaitzeko
+* Testu-blokea testu literala bada, `{% trans %}` txantiloiaren etiketa erabil dezakezu
+* Testu-blokeak aldagaiak baldin baditu, txantiloiaren etiketa-bikotea erabili behar duzu `{% blocktrans %}` and `{% endblocktrans %}`. Lerro-espazioak edo -jauziak sartzen badituzu, erabili `trimmed` hizkuntza-fitxategia sortzen denean automatikoki ezabatzeko: `{% blocktrans trimmed %}`
 
-### Examples
+### Adibideak
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>
 
 <p>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Added by <a href="{{ user_path }}">{{ username }}</a>
+    Honek gehitua: <a href="{{ user_path }}">{{ username }}</a>
     {% endblocktrans %}
 </p>
 ```
