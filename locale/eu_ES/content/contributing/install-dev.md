@@ -30,21 +30,21 @@ cp nginx/development nginx/default.conf
 ```
 - Konpilazioa bukatuta, `http://localhost:1333` instantziara irits zaitezke eta admin erabiltzaile bat sor dezakezu.
 
-If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
+Kuriosa bazara: `./bw-dev` komandoa shell skript soil bat da eta beste hainbat tresna exekutatzen ditu: aurreko komandoen ordez, zuk `docker-compose build` edo `docker-compose up` exekutatzen ahal zenuen zuzenean, nahi izanez gero. `./bw-dev` komandoak leku bakar batean biltzen ditu erosotasun gehiagorako. Exekutatu komando hori argumenturik gabe eskura dauden komandoen zerrenda lortzeko, irakurri dagokion [dokumentazio-orria](/command-line-tool.html) edo ireki fitxategia eta berrikusi zehatz-mehatz komando bakoitzak egiten duena!
 
-### Editing or creating Models
+### Ereduak editatzea edo sortzea
 
-If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
+Eredu bat aldatzen edo sortzen baduzu, seguruenik datu-basearen egitura aldatuko duzu. Aldaketa horiek eragina izan dezaten, Djangoko `makemigrations` komandoa exekutatu beharko duzu [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations) berri bat sortzeko, eta, ondoren, `migrate` komandoa, azken hau migratzeko:
 
 ``` { .sh }
 ./bw-dev makemigrations
 ./bw-dev migrate
 ```
 
-### Editing static files
-Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
+### Fitxategi estatikoak editatzea
+CSS edo JavaScript kodea editatzen duzun bakoitzean, berriro exekutatu beharko duzu `collectstatic` komandoa, zure aldaketek eragina izan dezaten:
 ``` { .sh }
 ./bw-dev collectstatic
 ```
 
-If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
+[yarn instalatuta](https://yarnpkg.com/getting-started/install) baduzu, exekuta dezakezu `yarn watch:static`, `bookwyrm/static` errepertorioan aldaketa bat gertatzen den bakoitzean aurreko scripta automatikoki exekutatzeko.
