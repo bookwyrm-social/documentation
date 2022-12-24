@@ -1,53 +1,53 @@
 - - -
-Title: Style Guide Date: 2021-10-20 Order: 4
+Izenburua: Estiloen gida Eguna: 2021-10-20 Ordena: 4
 - - -
 
-## Pull requests
+## Pull eskariak
 
-So you want to contribute code to BookWyrm: that rules! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
+BookWyrm-en kodean parte-hartzeko asmoa duzu, bikaina da! Arazo ireki bat konpondu nahi baduzu, hobe da iruzkin bat uztea elkarrizketan, lana bikoiztu ez dadin. Saiatu pull eskarien gaiari mugatzen, eta kontzentratu zure arreta gai bakar batean. Horrela, irakurgarriagoa izaten da eta zati batek aldaketak behar baditu, ez ditu beste aldeak atzeratzen.
 
-If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.
+Arazo bat nola konpondu ez badakizu edo konpontzeko prest ez bazaude, lasai egon. Nahikoa da pull eskaeran iruzkin bat egitea, eta txanda hartuko dugu 💖.
 
-Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
+Pull eskaerek egiaztapen automatizatu guztiak egin behar dituzte bat egin baino lehen, hala nola estilo-egiaztapenak, Linters globalak, segurtasun-kontrola eta proba unitarioak.
 
-## Linting
+## Linting-a
 
-### Global
+### Orokorra
 
-We use [EditorConfig](https://editorconfig.org) to maintain consistent indenting and line endings.
+[EditorConfig](https://editorconfig.org) erabiltzen dugu indentazio eta lerro koherenteak mantentzeko.
 
 ### Python
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev black`
+BookWyrm-ek [Black](https://github.com/psf/black) kodearen formatzailea erabiltzen du Python kodearen oinarriaren koherentzia mantentzeko. Pull eskaera berri guztiak GitHuben ekintzekin egiaztatzen dira, eta automatikoki konpon daitezke kode-estiloko arazoak `./bw-dev black` exekutatuz
 
-Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
+Kodea Pylint-ekin ere egiaztatzen da GitHuben ekintza baten bidez. Pylint-en ohartarazpenei ekin behar zaie pull eskaerak bateratu baino lehen, baina zure iritziaren araberakoa da iradokizuna erabili edo oharra ezabatu behar den. Ohar bat ezabatzeko, gehitu iruzkin bat amaieran edo oharrak aipatzen diren aitzineko lerroan: `# pylint: disable=warning-name`
 
-### Templates (HTML)
+### Txantiloiak (HTML)
 
-Your pull request will also be checked by the [curlylint](https://www.curlylint.org) linter for Django templates.
+Zure pull eskaria, [curlylint](https://www.curlylint.org) linter-rak egiaztatuko du Django txantiloietarako.
 
 ### CSS
 
-We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint [you can disable stylelint](https://stylelint.io/user-guide/ignore-code) for a particular rule, but you will need a good justification for doing so.
+[Stylelint](https://stylelint.io) erabiltzen dugu CSS arau guztiak egiaztatzeko. Pylint-ekin bezala, [stylelint desaktiba dezakezu](https://stylelint.io/user-guide/ignore-code) arau jakin baterako, baina horretarako justifikazio ona beharko duzu.
 
 ### JavaScript
 
-[ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
+[ESLint](https://eslint.org)ek egiaztatzen ditu JavaScript-ean egin aldaketa guztiak. ESLint-ek zure JavaScript kodea (funtzionatzen badu ere) gustuko ez badu, egiaztatu linter mezua arazo zehatz horretarako.
 
-## Inclusive Design
+## Diseinu inklusiboa
 
-Bookwyrm aims to be as inclusive and accessible as possible.
+Bookwyrm-ek ahalik eta inklusiboena eta eskuragarriena izan nahi du.
 
-When contributing code, check the [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) before you file your pull request. For accessibility advice, [A11Y-101](https://www.a11y-101.com/development) is also a useful source. For information on how to make your page templates multi-lingual, see the [Translations section](/translations.html).
+Kodearekin ekarpenak egiten dituzunean, egiaztatu [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354), pull eskari bat proposatu aurretik. Irisgarritasunari buruzko aholkuetarako, [A11Y-101](https://www.a11y-101.com/development) ere baliabide baliagarria da. Zure orrialde txantiloiak eleaniztunak izateko moduari buruzko informazioa lortzeko, kontsultatu [Itzulpenak atala](/translations.html).
 
-Some particular things that Bookwyrm contributors have found useful to remember are:
+Hona hemen Bookwyrm-eko kolaboratzaileek gogoan hartu behar dituzten elementu batzuk:
 
-### Forms
+### Formularioak
 
-* Only use `input[type="checkbox"]` or `input[type="radio"]` inside `<label>`
-* If you do not place checkboxes and radio buttons inside the `<label>`, the `<label>` should be placed _after_ the element it relates to
+* Soilik erabili `input[type="checkbox"]` edo `input[type="radio"]` honen barnean: `<label>`
+* Kontrol-kaxarik eta irrati-botoirik ez baduzu ezartzen `<label>` barnean, `<label>`a dagokion elementuaren _ondoren_ jarri behar da
 
-### Buttons and Links
+### Botoiak eta Estekak
 
-* Use a `<button>` element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a `POST` request (e.g. submitting a form)
-* Use an `<a>` element for anything that triggers a `GET` request. Usually, an anchor (`<a>`) element should not be styled as a button (`class="button"`), though there are some exceptions, such as "Cancel" buttons. If in doubt, ask for advice in your pull request
+* Erabili `<button>` elementu bat JavaScript ekintza bat aktibatzeko helburua duen orotarako (adibidez: formulario bat ezkutatu edo erakusteko) edo `POST` eskaria bat bidaltzeko (adibidez, formulario bat aurkezteko)
+* Erabili `<a>` elementu bat `GET` eskaria eragiten duen gauza orotarako. Usaian, esteka batek (`<a>`) ez du botoi (`class="button"`) baten itxura izan behar, nahiz eta salbuespen batzuk dauden "Ezeztatu" botoiak bezala. Zalantzarik izanez gero, aholku bat eska ezazu zure pull eskarian
