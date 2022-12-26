@@ -21,9 +21,9 @@ Benutzerbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.
 #### Objekttypen
 
 - `Notiz`: Bei Diensten wie Mastodon, ist `Notiz`en der primäre Typ des Status. Sie enthalten einen Text, Anhänge, können Benutzer erwähnen und Antworten auf Status jeder Art sein. In BookWyrm können `Notiz`en nur als direkte Nachrichten oder als Antworten auf andere Status erstellt werden.
-- `Rezension`: Eine Rezension ist ein Status in Antwort auf ein Buch (angezeigt durch das `inReplyToBook`-Feld), der einen Titel, Text und eine numerische Bewertung zwischen 0 (nicht bewertet) und 5 hat.
+- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
 - `Kommentar`: Ein Kommentar zu einem Buch erwähnt ein Buch und hat einen Text.
-- `Zitat`: Ein Zitat hat einen Text, einen Auszug aus einem Buch und erwähnt ein Buch
+- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
 
 
 #### Aktivitäten
