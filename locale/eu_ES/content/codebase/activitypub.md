@@ -21,9 +21,9 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
 #### Objektu motak
 
 - `Note`: Mastodon bezalako zerbitzuetan, `Note` elementuak egoera-mota nagusia dira. Barne hartzen dute mezu eremu bat, fitxategi erantsiak, erabiltzaileak aipa ditzakete eta edozein motatako estatutuen erantzunak izan daitezke. BookWyrm-en, `Note` elementuak zuzeneko mezu gisa soilik sor daitezke edo beste egoera batzuei emandako erantzun gisa.
-- `Review`: Kritika, liburu bati erantzunda ematen den egoera da (`inReplyToBook` elementuaren eremuak adierazten du), izenburu bat, gorputz bat eta 0 (sailkatu gabea) eta 5 arteko nota digital bat dauzkana.
+- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
 - `Comment`: Liburu bati buruzko iruzkin batek liburu bat aipatzen du eta mezu gorputz bat dauka.
-- `Quotation`: Aipamen batek mezu gorputz bat dauka, liburu baten zati bat eta liburu bat aipatzen du
+- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
 
 
 #### Jarduerak
