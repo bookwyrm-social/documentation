@@ -21,9 +21,9 @@ As interações de relação entre usuários seguem a especificação padrão do
 #### Tipos de objetos
 
 - `Nota (Note)`: em serviços como o Mastodon, a `Nota`s é o tipo primário de publicação. Elas contêm o corpo da mensagem, os anexos, podem mencionar usuários e também serem respostas a publicações de qualquer tipo. Na BookWyrm, uma `Nota`s só pode ser criada como uma mensagem direta ou como respostas a outras publicações.
-- `Resenha (Review)`: Uma resenha é uma publicação em resposta a um livro (indicada pelo campo `inReplyToBook`) que tem um título, corpo e uma avaliação entre 0 (não avaliado) e 5.
+- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
 - `Comentário (Comment)`: Um comentário sobre um livro menciona um livro e tem o corpo da mensagem.
-- `Citação (Quotation)`: Uma citação tem o corpo da mensagem, um excerto do livro e menciona um livro.
+- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
 
 
 #### Atividades (Activities)
