@@ -1,5 +1,5 @@
 - - -
-Título: Bienvenido Fecha: 2021-04-13
+Título: Hola Fecha: 2021-04-13
 - - -
 
 BookWryrm es una red social para registrar tu lectura, hablar sobre libros, escribir reseñas y descubrir que es lo siguiente por leer. La federación permite usuarios de BookWyrm unirse a pequeñas y confiables comunidades con las que conectar entre sí y otros servicios de ActivyPub como Mastodon y Pleroma.
