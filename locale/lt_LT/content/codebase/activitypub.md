@@ -21,9 +21,9 @@ Narių santykių sąveika atitinka standartinę „ActivityPub“ specifikaciją
 #### Objekto tipai
 
 - `Užrašas`: tokiose paslaugose, kaip „Mastodon“, `Užrašas` yra pirminis būsenos tipas. Juose yra žinutė, prisegtukai, galima minėti narius arba atsakyti į bet kokio tipo būsenas. „BookWyrm“ `Užrašus` galima sukurti kaip tiesiogines žinutes arba atsakymus į kitas būsenas.
-- `Apžvalga`: tai yra atsako į knygą būsena (nurodyta laukelyje `inReplyToBook`), kurios pavadinimas, turinys ir skaitinis įvertinimas yra nuo 0 (neįvertinta) iki 5.
+- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
 - `Komentaras`: knygos komentare minima knyga ir yra pranešimo tekstas.
-- `Citavimas`: citata turi vietą žinutei, ištrauką iš knygos ir knygos pavadinimą
+- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
 
 
 #### Veiklos
