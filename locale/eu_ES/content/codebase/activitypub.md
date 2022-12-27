@@ -15,7 +15,7 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
 - `Blokeatu`: erabiltzaileek bestearen egoerak ikustea eragozten du eta blokeatutako erabiltzaileak aktorearen profila ikustea eragozten du
 - `Eguneratu`: erabiltzaile baten profila eta konfigurazioa eguneratzen ditu
 - `Ezabatu`: erabiltzaile bat desaktibatzen du
-- `Atzera`: desegiten ditu `Jarraitze` bat edo `Blokeo` bat
+- `Desegin`: desegiten ditu `Jarraitze` bat edo `Blokeo` bat
 
 ### Egoerak
 #### Objektu motak
@@ -38,7 +38,7 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
 - `Ezabatu`: Egoera bat ezabatzen du
 - `Atsegin`: Sortzen du gogoko bat egoeretan
 - `Partekatu`: Egoera sustatzen du aktorearen kronologian
-- `Atzera`: Desegiten ditu `Atsegin` bat edo `Partekatu` bat
+- `Desegin`: Desegiten ditu `Atsegin` bat edo `Partekatu` bat
 
 ### Bildumak
 [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection) elementuari esker erabiltzaile baten liburuak eta zerrendak ager daitezke
