@@ -1,40 +1,40 @@
 - - -
-Title: Posting statuses Date: 2022-04-30 Order: 1
+Izenburua: Bidalketak egin Eguna: 2022-04-30 Ordena: 1
 - - -
 
-Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+BookWyrmen bidalketak liburu batekin hasten dira. Erabiltzaileek irakurtzen ari diren edo irakurri berri dituzten liburuen gainean iruzkinak egin ditzakete "Zure liburuak" atalean edo liburu baten hasiera orrian. Bertan, erabiltzaileek elkarrizketa bat hasi eta mezuei erantzun ahalko diete. BookWyrmeko bidalketek formatoa izan dezakete, hala nola letra lodia, etzana eta hiperestekak. Horretarako [Markdown](https://www.markdownguide.org/cheat-sheet/) erabili behar da.
 
-If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
+[Mastodonen argitaratzea](https://docs.joinmastodon.org/user/posting/) ezaguna baduzu, konturatuko zara BookWyrmen bidalketek antzekotasunak dituztela ikusgarritasun ezarpenei, eduki oharrei eta aipuei dagokienez. Hala ere, gaur-gaurkoz, ezin dira inkestak edo eranskinak egin, ezta pertsonalizatutako emojiak erabili.
 
-## Types of statuses
+## Bidalketa motak
 
-### User commentary
+### Iruzkinak
 
-There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
+Erabiltzaileek hiru bidalketa mota egin ditzakete liburuen gainean: kritikak, iruzkinak eta aipuak. Iruzkinak liburuaren alderdi orokorrei buruzkoak dira, aipuak pasarte zehatz bati buruzkoak eta kritikek liburuaren osotasuna hartzen dute kontuan. Era berean, erabiltzaileek bidalketei erantzun diezaiekete.
 
-| Component     | Review | Comment | Quote | Reply |
-| ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
-| Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
-| Quote         |        |         | ✔     |       |
-| Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| Osagaia           | Kritika | Iruzkina | Aipua | Erantzuna |
+| ----------------- | ------- | -------- | ----- | --------- |
+| Testu-eremua      | ✔       | ✔        | ✔     | ✔         |
+| Spoiler alertak   | ✔       | ✔        | ✔     | ✔         |
+| Orrialde-zenbakia |         | ✔        | ✔     |           |
+| Aipua             |         |          | ✔     |           |
+| Kalifikazioa      | ✔       |          |       |           |
+| Izenburu-eremua   | ✔       |          |       |           |
 
 
-### Reading status updates
+### Irakurketa-egoeraren eguneraketa
 
-Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
+Bidalketok sortzen dira erabiltzaile batek adierazten duenean liburu bat irakurri nahi duela, irakurtzen hasi dela edo amaitu duela.
 
-## Text
-Text can include:
+## Testua
+Testuak izan dezake:
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+- Aipamenak (@erabiltzailea)
+- URLak (`http(s)://` ez da erakusten)
+- [Markdown formato](https://www.markdownguide.org/cheat-sheet/) batzuk
+  - letra lodia
+  - letra etzana
+  - bloke-aipuak
+  - puntu-zerrendak
+  - estekak
 
