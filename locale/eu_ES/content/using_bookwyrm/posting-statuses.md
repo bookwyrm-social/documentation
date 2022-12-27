@@ -2,9 +2,9 @@
 Izenburua: Bidalketak egin Eguna: 2022-04-30 Ordena: 1
 - - -
 
-BookWyrmen bidalketak liburu batekin hasten dira. Erabiltzaileek irakurtzen ari diren edo irakurri berri dituzten liburuen gainean iruzkinak egin ditzakete "Zure liburuak" atalean edo liburu baten hasiera orrian. Bertan, erabiltzaileek elkarrizketa bat hasi eta mezuei erantzun ahalko diete. BookWyrmeko bidalketek formatoa izan dezakete, hala nola letra lodia, etzana eta hiperestekak. Horretarako [Markdown](https://www.markdownguide.org/cheat-sheet/) erabili behar da.
+BookWyrm-en bidalketak liburu batekin hasten dira. Erabiltzaileek irakurtzen ari diren edo irakurri berri dituzten liburuen gainean iruzkinak egin ditzakete "Zure liburuak" atalean edo liburu baten hasiera orrian. Bertan, erabiltzaileek elkarrizketa bat hasi eta mezuei erantzun ahalko diete. BookWyrm-eko bidalketek formatoa izan dezakete, hala nola letra lodia, etzana eta hiperestekak. Horretarako [Markdown](https://www.markdownguide.org/cheat-sheet/) erabili behar da.
 
-[Mastodonen argitaratzea](https://docs.joinmastodon.org/user/posting/) ezaguna baduzu, konturatuko zara BookWyrmen bidalketek antzekotasunak dituztela ikusgarritasun ezarpenei, eduki oharrei eta aipuei dagokienez. Hala ere, gaur-gaurkoz, ezin dira inkestak edo eranskinak egin, ezta pertsonalizatutako emojiak erabili.
+[Mastodonen argitaratzea](https://docs.joinmastodon.org/user/posting/) ezaguna baduzu, konturatuko zara BookWyrm-en bidalketek antzekotasunak dituztela ikusgarritasun ezarpenei, eduki oharrei eta aipuei dagokienez. Hala ere, gaur-gaurkoz, ezin dira inkestak edo eranskinak egin, ezta pertsonalizatutako emojiak erabili.
 
 ## Bidalketa motak
 
@@ -31,7 +31,7 @@ Testuak izan dezake:
 
 - Aipamenak (@erabiltzailea)
 - URLak (`http(s)://` ez da erakusten)
-- [Markdown formato](https://www.markdownguide.org/cheat-sheet/) batzuk
+- [Markdown formatu](https://www.markdownguide.org/cheat-sheet/) batzuk
   - letra lodia
   - letra etzana
   - bloke-aipuak
