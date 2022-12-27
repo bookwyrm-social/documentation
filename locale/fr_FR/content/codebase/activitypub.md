@@ -21,9 +21,9 @@ Les interactions de relations entre les utilisateurs suivent la spécification s
 #### Types d'Object
 
 - `Note` : Sur les services comme Mastodon, les `Note`s sont le type principal de statut. Ils contiennent un corps de message, des pièces jointes, peuvent mentionner les utilisateurs et être des réponses à des statuts de n'importe quel type. Dans BookWyrm, les `Note`s ne peuvent être créés qu'en tant que messages directs ou en tant que réponses à d'autres statuts.
-- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
+- `Critique` : Une critique est un statut en réponse à un livre (indiqué par le champ `inReplyToBook`), qui a un titre, un corps et une évaluation numérique entre 0 (non évalué) et 5.
 - `Comment` : Un commentaire sur un livre mentionne un livre et a un corps de message.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
+- `Citation` : Une citation a un corps de message, un extrait d'un livre et mentionne un livre.
 
 
 #### Activities
