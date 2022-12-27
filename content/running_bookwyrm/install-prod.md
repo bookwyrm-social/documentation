@@ -14,6 +14,8 @@ This project is still young and isn't, at the moment, very stable, so please pro
 
 ## Install and configure BookWyrm
 
+There are several repos in the BookWyrm org, including documentation, a static landing page, and the actual Bookwyrm code. To run BookWyrm, you want the actual app code which is in [bookwyrm-social/bookwyrm](https://github.com/bookwyrm-social/bookwyrm).
+
 The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.
 
 Instructions for running BookWyrm in production:
