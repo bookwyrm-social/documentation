@@ -1,5 +1,5 @@
 ---
-Title: Adding Books
+Title: Liburuak gehitu
 Date: 2022-07-29
 Order: 2
 ---
