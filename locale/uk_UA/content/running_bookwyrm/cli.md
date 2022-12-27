@@ -86,7 +86,7 @@ Generates thumbnail images for book covers.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Re-populates Redis streams (user feeds). Зазвичай вам не потрібно це запускати, якщо немає помилки, яка зачищає ваші стрічки користувачів з якихось причин. You can specify which stream using the `--stream` argument.
 
 ### populate_list_streams
 
@@ -169,11 +169,11 @@ Compiles translation files. See [Django's compilemessages](https://docs.djangopr
 
 ### pytest args
 
-Run tests with `pytest`.
+Запустити тести з `pytest`.
 
 ### deactivate_2fa
 
-Deactivates two factor authentication for a given user.
+Деактивує двофакторну аутентифікацію для цього користувача.
 
 ### manual_confirm
 
