@@ -35,7 +35,7 @@ BookWyrm використовує [ActivityPub](http://activitypub.rocks/) пр�
    - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
    - Related to a book (of a custom status type that includes the field `inReplyToBook`),
    - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
+- `Delete`: Видаляє статус
 - `Like`: Creates a favorite on the status
 - `Announce`: Boosts the status into the actor's timeline
 - `Undo`: Reverses a `Like` or `Announce`
