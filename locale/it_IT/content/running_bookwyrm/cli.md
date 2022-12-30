@@ -66,7 +66,7 @@ Resetta il database. **Questo comando eliminerà l'intero database di Bookwyrm**
 
 ### compile_themes
 
-Compiles all BookWyrm themes, which are `*.scss` files listed in `bookwyrm/static/css/themes`.
+Compila tutti i temi di BookWyrm, che sono file `*.scss` in `bookwyrm/static/css/themes`.
 
 ### collectstatic
 
@@ -74,7 +74,7 @@ Migrate static assets to either a Docker container or to an S3-compatible "bucke
 
 ### generate_preview_images
 
-Generate preview images for site, users, and books. This can take a while if you have a large database. See [Optional Features: Generating preview images](/optional_features.html)
+Genera un'anteprima per siti, utenti e libri. Può richiedere un po' di tempo se il database è molto grande. See [Optional Features: Generating preview images](/optional_features.html)
 
 ### remove_remote_user_preview_images
 
@@ -82,7 +82,7 @@ Remove generated preview images for remote users. See [Optional Features: Removi
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Genera le thumbnail per le copertine dei libri.
 
 ### populate_streams args
 
@@ -98,17 +98,17 @@ Populate suggested users for all users. You may want to run this manually to ref
 
 ### restart_celery
 
-Restarts the `celery_worker` Docker container.
+Riavvia il contenitore Docker `celery_worker`.
 
 ### update
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Quando ci sono cambiamenti in `production`, puoi aggiornare la tua istanza senza tempo fuori servizio.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Questo comando fa `git pull` degli ultimi aggiornamenti sul branch `production`, genera immagini docker se necessario, esegue migrazioni Django, aggiorna i file statici e riavvia tutti i contenitori Docker.
 
 ### admin_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Ottiene il codice amministratore segreto utilizzato per registrare l'utente amministratore iniziale su una nuova istanza di BookWyrm.
 
 ## Impostazione dello storage compatibile con S3
 
@@ -165,16 +165,16 @@ Creates message files for all translation strings. After you have run `makemessa
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compila file di traduzione. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Run tests with `pytest`.
+Esegui test con `pytest`.
 
 ### deactivate_2fa
 
-Deactivates two factor authentication for a given user.
+Disattiva l'autenticazione a due fattori per un determinato utente.
 
 ### manual_confirm
 
-Confirms a users email, sets the user to active.
+Conferma l'email degli utenti, imposta l'utente a attivare.
