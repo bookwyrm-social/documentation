@@ -74,7 +74,7 @@ Migrier statische Assets in einen Docker-Container oder in einen S3-kompatiblen 
 
 ### generate_preview_images
 
-Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. This can take a while if you have a large database. See [Optional Features: Generating preview images](/optional_features.html)
+Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. Es kann eine Weile dauern, wenn du viele Bücher hast. See [Optional Features: Generating preview images](/optional_features.html)
 
 ### remove_remote_user_preview_images
 
