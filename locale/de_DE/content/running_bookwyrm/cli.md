@@ -118,7 +118,7 @@ Siehe [Externer Speicher](/external-storage.html) für weitere Informationen.
 
 ### copy_media_to_s3
 
-Migriere alle hochgeladenen Medien von einer bestehenden Bookwrym-Installation in einen S3-kompatiblen "Bucket". Use for initial upload to an empty bucket.
+Migrate all uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
 
 ### sync_media_to_s3
 
