@@ -104,10 +104,6 @@ Outils en ligne de commande
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/fr/updating.html" ></a>
-                </li>
-                
-                <li>
                     <a href="/fr/reverse-proxy.html" ></a>
                 </li>
                 
@@ -116,7 +112,7 @@ Outils en ligne de commande
                 </li>
                 
                 <li>
-                    <a href="/fr/install-prod.html" >Installing in Production</a>
+                    <a href="/fr/install-prod.html" >Installation en Production</a>
                 </li>
                 
                 <li>
@@ -124,15 +120,19 @@ Outils en ligne de commande
                 </li>
                 
                 <li>
+                    <a href="/fr/updating.html" >Mise à jour de votre instance</a>
+                </li>
+                
+                <li>
                     <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/external-storage.html" >External Storage</a>
+                    <a href="/fr/external-storage.html" >Stockage Externe</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/optional_features.html" >Optional features</a>
+                    <a href="/fr/optional_features.html" >Fonctionnalités optionnelles</a>
                 </li>
                 
                 <li>
@@ -215,56 +215,64 @@ Outils en ligne de commande
 <p><em>Cette commande n'est pas disponible sur la branche de <code>production</code></em>.</p>
 <p>Réinitialise la base de données. <strong>Cette commande va supprimer votre base de données Bookwyrm en entier</strong>, et va ensuite initialiser une nouvelle base de donnée et effectuer toutes les migrations. Vous devriez supprimer tous les fichiers de migration récents que vous ne voulez pas exécuter <em>avant</em> d'exécuter <code>resetdb</code>.</p>
 <h2>Gérer une instance de Bookwyrm</h2>
+<h3>compile_themes</h3>
+<p>Compile tous les thèmes BookWyrm, qui sont des fichiers <code>*.scss</code> répertoriés dans <code>bookwyrm/static/css/themes</code>.</p>
 <h3>collectstatic</h3>
-<p>Migre les ressources statiques soit vers un conteneur Docker, soit vers un "compartiment" S3-compatible, dépendamment du contexte.</p>
+<p>Migre les ressources statiques vers un conteneur Docker ou un compartiment compatible S3, selon le contexte.</p>
 <h3>generate_preview_images</h3>
-<p>Génère un aperçu pour le site, les utilisateur-ice-s et les livres. Si vous avez une grande base de données, cela peut prendre un certain temps.</p>
+<p>Génère des images de prévisualisation pour le site, les utilisateur-ice-s et les livres. Si vous avez une grande base de données, cela peut prendre un temps conséquent. Voir <a href="/optional_features.html">Optional features : Générer les images de prévisualisation</a></p>
+<h3>remove_remote_user_preview_images</h3>
+<p>Supprime les images de prévisualisation pour les comptes externes. Voir <a href="/optional_features.html">Optional Features : Supprimer les images de prévisualisation pour les comptes externes</a></p>
 <h3>generate_thumbnails</h3>
-<p>Génère des vignettes pour les couvertures des livres.</p>
+<p>Génère les miniatures pour les couvertures de livres.</p>
 <h3>populate_streams args</h3>
-<p>Rafraîchit les flux Redis. Vous n’aurez généralement pas besoin de ceci à moins qu’une erreur efface votre flux Redis. Vous pouvez spécifier quel flux en utilisant l’argument <code>--stream</code>.</p>
+<p>Rafraîchit les flux Redis (flux utilisateurs). Vous n'aurez généralement pas besoin d'exécuter cela à moins qu'une erreur n'efface vos flux utilisateurs pour une raison ou une autre. Vous pouvez préciser quel flux en particulier en utilisant l'argument <code>--stream</code>.</p>
 <h3>populate_list_streams</h3>
-<p>Rafraîchit le cache Redis des listes. Vous n’aurez généralement pas besoin de ceci à moins qu’une erreur efface vos listes.</p>
+<p>Rafraîchit le cache Redis des listes. Vous n'aurez généralement pas besoin d'exécuter cela à moins qu'une erreur n'efface les listes de vos utilisateur-ice-s pour une raison ou une autre.</p>
 <h3>populate_suggestions</h3>
-<p>Rafraîchir la liste de personnes recommandées pour tout le monde. Vous pouvez exécuter cela manuellement pour actualiser les suggestions.</p>
+<p>Rafraîchit la liste des comptes suggérés pour tous-tes les utilisateur-ice-s. Vous pouvez exécuter cela afin d'actualiser les suggestions.</p>
 <h3>restart_celery</h3>
 <p>Redémarre le conteneur Docker <code>celery_worker</code>.</p>
-<h3>mise à jour</h3>
-<p>Lors de changements sur la branche <code>production</code>, vous pouvez mettre à jour votre instance sans temps d’arrêt.</p>
+<h3>update</h3>
+<p>Lors de changements sur la branche <code>production</code>, vous pouvez mettre à jour votre instance sans la rendre indisponible.</p>
 <p>Cette commande <code>git pull</code> les dernières mises à jour de la branche <code>production</code> , construit des images docker si nécessaire, exécute les migrations Django, met à jour les fichiers statiques et redémarre tous les conteneurs Docker.</p>
 <h3>admin_code</h3>
 <p>Récupère le code admin utilisé pour enregistrer l'admin initial sur une nouvelle instance BookWyrm.</p>
-<h2>Configuration du stockage S3 compatible</h2>
-<p>Par défaut, BookWyrm stocke localement les fichiers statiques (favicon, avatar par défaut, etc.) et les médias (avatars, couvertures de livres, etc.), mais vous pouvez utiliser un service de stockage externe. BookWyrm utilise django-storages pour gérer le stockage externe, comme les services compatibles S3, Apache Libcloud ou SFTP.</p>
-<p>Voir <a href="/external-storage.html">Stockage externe</a> pour plus d'informations.</p>
+<h2>Configuration du stockage compatible S3</h2>
+<p>Par défaut, BookWyrm stocke localement les ressources statiques (favicon, avatar par défaut, etc.) et les médias (avatars, couvertures de livres, etc.), mais vous pouvez utiliser un service de stockage externe pour ces fichiers. BookWyrm utilise django-storages pour gérer le stockage externe, tel que les services compatibles S3, Apache Libcloud ou SFTP.</p>
+<p>Voir <a href="/external-storage.html">External Storage</a> pour plus d'informations.</p>
 <h3>copy_media_to_s3</h3>
-<p>Migrer tous les médias téléversés depuis une installation existante de Bookwrym vers un « seau » S3 compatible. Utiliser pour l'envoi initial vers un seau vide.</p>
+<p>Migre tous les médias téléchargés d'une instance Bookwyrm existante vers un compartiment compatible S3. À utiliser pour un premier téléchargement vers un compartiment vide.</p>
 <h3>sync_media_to_s3</h3>
-<p>Synchroniser les médias téléversés neufs ou modifiés depuis une installation existante de Bookwrym vers un « seau » S3 compatible. À utiliser pour s’assurer que tous les fichiers locaux soient téléversés dans un seau existant.</p>
+<p>Syncronise les médias nouvellement créés ou modifiés d'une instance Bookwyrm existante vers un compartiment compatible S3. À utiliser pour s'assurer que tous les fichiers locaux ont été téléchargés vers un compartiment existant.</p>
 <h3>set_cors_to_s3 filename</h3>
-<p>Copiez un fichier JSON de règles CORS dans votre seau S3, où <code>filename</code> est le nom de votre fichier JSON (ex : <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
+<p>Copie un fichier JSON de règles CORS vers un compartiment S3, où <code>filename</code> est le nom de votre fichier JSON (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
 <h2>Développement et test</h2>
-<p><em>Ces commandes ne sont pas disponibles sur la branche de <code>production</code></em>.</p>
+<p><em>Ces commandes ne sont pas disponibles sur la branche <code>production</code></em>.</p>
 <h3>black</h3>
-<p>BookWyrm utilise le formateur de code <a href="https://github.com/psf/black">Black</a> pour assurer la cohérence du code Python. Exécutez <code>black</code> avant de valider vos modifications afin que la tâche <code>pylint</code> n’échoue pas pour votre pull request et vous rend triste.</p>
+<p>BookWyrm utilise le formateur de code <a href="https://github.com/psf/black">Black</a> pour assurer la cohérence du code Python. Exécutez <code>black</code> avant de valider vos modifications afin d'éviter que la tâche <code>pylint</code> pour votre pull request n'échoue et ne vous rende triste.</p>
 <h3>prettier</h3>
-<p>BookWyrm utilise <a href="https://prettier.io/">Prettier</a> pour assurer la cohérence du code JavaScript. Exécutez <code>prettier</code> avant de valider les modifications aux scripts pour formater automatiquement votre code.</p>
+<p>BookWyrm utilise <a href="https://prettier.io/">Prettier</a> pour assurer la cohérence du code JavaScript. Exécutez <code>prettier</code> avant de valider vos modifications de scripts afin de formater automatiquement votre code.</p>
 <h3>stylelint</h3>
-<p>BookWyrm utilise <a href="uhttps://stylelint.io/">Stylelint</a> pour assurer la cohérence des fichiers CSS. Exécutez <code>stylelintprettier</code> avant de valider les modifications aux scripts pour formater automatiquement votre code.</p>
+<p>BookWyrm utilise <a href="uhttps://stylelint.io/">Stylelint</a> pour assurer la cohérence des fichiers CSS. Exécutez <code>stylelintprettier</code> avant de valider vos modifications de scripts afin de formater automatiquement votre code.</p>
 <h3>formatters</h3>
-<p>Cette commande exécute tous les formateurs de code (<code>black</code>, <code>prettier</code>, et <code>stylelint</code>) en une seule fois.</p>
+<p>Cette commande exécute tous les formateurs de code (<code>black</code>, <code>prettier</code>, et <code>stylelint</code>) à la suite.</p>
 <h3>clean</h3>
-<p>Supprimer tous les conteneurs Docker arrêtés.</p>
-<p>Équivalent de :</p>
+<p>Supprime tous les conteneurs Docker arrêtés.</p>
+<p>Correspond à :</p>
 <pre><code class="language-shell">docker-compose stop
 docker-compose rm -f
 </code></pre>
 <h3>makemessages</h3>
-<p>Crée des fichiers de messages pour tous les segments de traduction. Après avoir exécuté <code>makemessages</code> , vous devez exécuter <code>compilemessages</code> pour compiler les traductions. Voir <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">les makemessages Django</a>.</p>
+<p>Génère les fichiers de messages pour toutes les chaînes de traduction. Après avoir exécuté <code>makemessages</code>, vous devez exécuter <code>compilemessages</code> pour compiler les traductions. Voir <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">makemessages dans Django</a>.</p>
 <h3>compilemessages</h3>
-<p>Compile les fichiers de traduction. Voir <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">la doc de Django pour compilemessages</a>.</p>
-<h3>Arguments de pytest</h3>
-<p>Exécutez des tests avec <code>pytest</code>.</p>
+<p>Compile les fichiers de traduction. Voir <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">compilemessages dans Django</a>.</p>
+<h3>pytest args</h3>
+<p>Exécute les tests avec <code>pytest</code>.</p>
+<h3>deactivate_2fa</h3>
+<p>Désactive l'authentification à deux facteurs pour un utilisateur donné.</p>
+<h3>manual_confirm</h3>
+<p>Confirme l'adresse e-mail d'un-e utilisateur-ice et l'active.</p>
 </section>
 
         </div>

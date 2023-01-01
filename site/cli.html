@@ -215,10 +215,14 @@ Command Line Tool
 <p><em>This command is not available on the <code>production</code> branch</em>.</p>
 <p>Resets the database. <strong>This command will delete your entire Bookwyrm database</strong>, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, <em>before</em> running <code>resetdb</code>.</p>
 <h2>Managing a Bookwyrm instance</h2>
+<h3>compile_themes</h3>
+<p>Compiles all BookWyrm themes, which are <code>*.scss</code> files listed in <code>bookwyrm/static/css/themes</code>.</p>
 <h3>collectstatic</h3>
 <p>Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.</p>
 <h3>generate_preview_images</h3>
-<p>Generate preview images for site, users, and books. This can take a while if you have a large database.</p>
+<p>Generate preview images for site, users, and books. This can take a while if you have a large database. See <a href="/optional_features.html">Optional Features: Generating preview images</a></p>
+<h3>remove_remote_user_preview_images</h3>
+<p>Remove generated preview images for remote users. See <a href="/optional_features.html">Optional Features: Removing preview images for remote users</a></p>
 <h3>generate_thumbnails</h3>
 <p>Generates thumbnail images for book covers.</p>
 <h3>populate_streams args</h3>
@@ -238,7 +242,7 @@ Command Line Tool
 <p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
 <p>See <a href="/external-storage.html">External Storage</a> for more information.</p>
 <h3>copy_media_to_s3</h3>
-<p>Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
+<p>Migrate all uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
 <h3>sync_media_to_s3</h3>
 <p>Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
 <h3>set_cors_to_s3 filename</h3>
@@ -265,6 +269,10 @@ docker-compose rm -f
 <p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
 <h3>pytest args</h3>
 <p>Run tests with <code>pytest</code>.</p>
+<h3>deactivate_2fa</h3>
+<p>Deactivates two factor authentication for a given user.</p>
+<h3>manual_confirm</h3>
+<p>Confirms a users email, sets the user to active.</p>
 </section>
 
         </div>

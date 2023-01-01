@@ -30,7 +30,7 @@ cp nginx/development nginx/default.conf
 ```
 - Una volta completato il build, puoi accedere all'istanza su `http://localhost:1333` e creare un utente amministratore.
 
-If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` li raccoglie in un unico posto comune per comodità. Eseguilo senza argomenti per ottenere un elenco dei comandi disponibili, leggi la [pagina di documentazione](/command-line-tool.html) o aprilo e guardati intorno per vedere esattamente cosa fa ogni comando!
+Se sei curioso: il comando `./bw-dev` è un semplice script di shell esegue vari altri strumenti: puoi comunque eseguire `docker-compose build` o `docker-compose` direttamente se preferisci. `./bw-dev` li raccoglie in un unico posto comune per comodità. Eseguilo senza argomenti per ottenere un elenco dei comandi disponibili, leggi la [pagina di documentazione](/command-line-tool.html) o aprilo e guardati intorno per vedere esattamente cosa fa ogni comando!
 
 ### Modifica o crea dei modelli
 

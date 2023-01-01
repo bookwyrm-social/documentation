@@ -112,7 +112,7 @@ Optionale Funktionen
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Aktualisieren Ihrer Instanz</a>
+                    <a href="/de/updating.html" >Ihre Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -124,7 +124,7 @@ Optionale Funktionen
                 </li>
                 
                 <li>
-                    <a href="/de/monitoring-queue.html" >Monitoring Queue</a>
+                    <a href="/de/monitoring-queue.html" >Überwachungswarteschlange</a>
                 </li>
                 
                 <li>
@@ -214,6 +214,11 @@ Optionale Funktionen
 <li><code>PREVIEW_DEFAULT_COVER_COLOR</code> legt die Farbe für Bücher ohne Cover fest.</li>
 </ul>
 <p>Alle Farbvariablen akzeptieren Werte, die im Modul <code>ImageColor</code> von Pillow als Farben erkannt werden können: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Erfahren Sie mehr über Farben von Pillow</a>.</p>
+<h3>Removing preview images for remote users</h3>
+<p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:</p>
+<pre><code class="language-sh">./bw-dev remove_remote_user_preview_images
+</code></pre>
+<p>That command will empty the <code>user.preview_image</code> property in the database for remote users, and delete the file in storage.</p>
 </section>
 
         </div>

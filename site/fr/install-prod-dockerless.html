@@ -104,10 +104,6 @@ Installation sans Docker
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/fr/updating.html" ></a>
-                </li>
-                
-                <li>
                     <a href="/fr/reverse-proxy.html" ></a>
                 </li>
                 
@@ -116,7 +112,7 @@ Installation sans Docker
                 </li>
                 
                 <li>
-                    <a href="/fr/install-prod.html" >Installing in Production</a>
+                    <a href="/fr/install-prod.html" >Installation en Production</a>
                 </li>
                 
                 <li>
@@ -124,15 +120,19 @@ Installation sans Docker
                 </li>
                 
                 <li>
+                    <a href="/fr/updating.html" >Mise à jour de votre instance</a>
+                </li>
+                
+                <li>
                     <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/external-storage.html" >External Storage</a>
+                    <a href="/fr/external-storage.html" >Stockage Externe</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/optional_features.html" >Optional features</a>
+                    <a href="/fr/optional_features.html" >Fonctionnalités optionnelles</a>
                 </li>
                 
                 <li>
@@ -190,7 +190,7 @@ Installation sans Docker
 <li>Obtenez un nom de domaine et configurez le DNS pour votre serveur. Vous devez faire pointer les serveurs de noms de domaine de votre fournisseur DNS vers le serveur où vous allez héberger BookWyrm. Voici les instructions pour <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Configurez votre serveur avec des pare-feu appropriés pour l'exécution d'une application web (ces instructions ont été testées avec Ubuntu 20.04). Voici les instructions pour <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Configurez un service de messagerie (tel que <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) et les paramètres SMTP/DNS appropriés. Utilisez la documentation du service pour la configuration de votre DNS</li>
-<li>Installez les dépendances. Sur debian, cela pourrait ressembler à <code>apt install postgresql redis nginx python3-venv libpq-dev</code></li>
+<li>Installez les dépendances. Sous debian, cela pourrait ressembler à <code>apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev</code></li>
 </ul>
 <h2>Installez et configurez BookWyrm</h2>
 <p>La branche <code>production</code> de BookWyrm contient un certain nombre d'outils qui ne sont pas sur la branche <code>main</code>, prévus pour fonctionner en production, tels que des modifications de <code>docker-compose</code> pour mettre à jour les commandes par défaut ou la configuration des conteneurs, ou des modifications spécifiques à des containers pour activer des fonctionnalités telles que SSL ou des sauvegardes régulières. Tous ces changements n'ont pas nécessairement un impact sur l'installation sans docker, mais la branche <code>production</code> est néanmoins recommandée</p>
@@ -220,7 +220,7 @@ Installation sans Docker
 <li>Mettez à jour le fichier <code>bookwyrm.conf</code> de nginx :<ul>
 <li>Remplacez <code>your-domain.com</code> par votre nom de domaine partout dans le fichier (y compris dans les lignes qui sont pour l'instant commentées)</li>
 <li>Remplacez <code>/app/</code> avec votre chemin d'installation <code>/opt/bookwyrm/</code> partout dans le fichier (y compris dans les commentaires)</li>
-<li>Décommentez les lignes 18 à 50 pour permettre la redirection vers HTTPS. Vous devriez avoir deux blocs <code>server</code> actifs</li>
+<li>Décommentez les lignes 18 à 67 pour activer la redirection vers HTTPS. Vous devriez avoir deux blocs <code>server</code> actifs</li>
 <li>Remplacez les chemins de <code>ssl_certificate</code> et <code>ssl_certificate_key</code> par ceux de votre fullchain et privkey</li>
 <li>Modifiez la ligne 4 en <code>server localhost:8000</code>. Vous pouvez choisir un port différent si vous le souhaitez</li>
 <li>Si vous exécutez un autre serveur web sur votre machine hôte, vous devrez suivre <a href="/reverse-proxy.html">les instructions pour serveur mandataire inverse</a></li>
@@ -318,6 +318,7 @@ WorkingDirectory=/opt/bookwyrm/
 [Install]
 WantedBy=multi-user.target
 </code></pre>
+<p>Vous devrez configurer une tâche Cron pour que le service démarre automatiquement au redémarrage du serveur.</p>
 <p>Félicitations ! Vous y êtes arrivé !! Configurez votre instance comme vous le souhaitez.</p>
 <h2>Participer</h2>
 <p>Voir <a href="https://joinbookwyrm.com/get-involved/">Participer</a> pour plus de détails.</p>

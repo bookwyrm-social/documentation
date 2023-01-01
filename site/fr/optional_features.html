@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Optional features
+Fonctionnalités optionnelles
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@ Optional features
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Optional features</h1>
+<h1 class="title is-1">Fonctionnalités optionnelles</h1>
 
     </header>
     <div class="columns">
@@ -104,10 +104,6 @@ Optional features
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/fr/updating.html" ></a>
-                </li>
-                
-                <li>
                     <a href="/fr/reverse-proxy.html" ></a>
                 </li>
                 
@@ -116,7 +112,7 @@ Optional features
                 </li>
                 
                 <li>
-                    <a href="/fr/install-prod.html" >Installing in Production</a>
+                    <a href="/fr/install-prod.html" >Installation en Production</a>
                 </li>
                 
                 <li>
@@ -124,15 +120,19 @@ Optional features
                 </li>
                 
                 <li>
+                    <a href="/fr/updating.html" >Mise à jour de votre instance</a>
+                </li>
+                
+                <li>
                     <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/external-storage.html" >External Storage</a>
+                    <a href="/fr/external-storage.html" >Stockage Externe</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/optional_features.html" class="is-active">Optional features</a>
+                    <a href="/fr/optional_features.html" class="is-active">Fonctionnalités optionnelles</a>
                 </li>
                 
                 <li>
@@ -214,6 +214,11 @@ Optional features
 <li><code>PREVIEW_DEFAULT_COVER_COLOR</code> définit la couleur des livres sans couvertures.</li>
 </ul>
 <p>Toutes les variables de couleur acceptent des valeurs reconnues par le module <code>ImageColor</code> de Pillow : <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">En apprendre plus sur les noms de couleurs dans Pillow</a>.</p>
+<h3>Supprimer les images de prévisualisation pour les comptes externes</h3>
+<p>Avant BookWyrm 0.5.4, des images de prévisualisation étaient générées pour les comptes externes. Comme cela était couteux en termes d'espace disque et de puissance de calcul, cela a été interrompu. Si vous souhaitez supprimer en masse toutes les images précédemment générées pour les comptes distants, une nouvelle commande a été ajoutée :</p>
+<pre><code class="language-sh">./bw-dev remove_remote_user_preview_images
+</code></pre>
+<p>Cette commande va retirer dans la base de données la valeur de la propriété <code>user.preview_image</code> pour les comptes externes et supprimer le fichier associé.</p>
 </section>
 
         </div>

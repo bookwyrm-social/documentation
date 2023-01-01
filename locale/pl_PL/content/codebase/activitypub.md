@@ -21,9 +21,9 @@ Interakcje stosunków między użytkownikami są zgodne ze specyfikacją Activit
 #### Typy obiektów
 
 - `Notatka`: W usługach takich jak Mastodon, `Notatki` są podstawowym typem statusów. Zawierają treść wiadomości, załączniki, wzmianki o użytkownikach oraz są odpowiedziami na inne statusy dowolnego typu. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Recenzja`: jest to status w odpowiedzi na książkę (wskazaną przez pole `inReplyToBook`), który zawiera tytuł, treść oraz ocenę liczbową od 0 (bez oceny) do 5.
+- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
 - `Komentarz`: komentarz do książki wspomina o książce i zawiera treść.
-- `Cytat`: zawiera treść, fragment książki oraz wspomina o książce
+- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
 
 
 #### Aktywności

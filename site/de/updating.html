@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Aktualisieren Ihrer Instanz
+Ihre Instanz updaten
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@ Aktualisieren Ihrer Instanz
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Aktualisieren Ihrer Instanz</h1>
+<h1 class="title is-1">Ihre Instanz updaten</h1>
 
     </header>
     <div class="columns">
@@ -112,7 +112,7 @@ Aktualisieren Ihrer Instanz
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" class="is-active">Aktualisieren Ihrer Instanz</a>
+                    <a href="/de/updating.html" class="is-active">Ihre Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -124,7 +124,7 @@ Aktualisieren Ihrer Instanz
                 </li>
                 
                 <li>
-                    <a href="/de/monitoring-queue.html" >Monitoring Queue</a>
+                    <a href="/de/monitoring-queue.html" >Überwachungswarteschlange</a>
                 </li>
                 
                 <li>
@@ -188,9 +188,9 @@ Aktualisieren Ihrer Instanz
 <ul>
 <li><code>git pull</code> holt den aktualisierten Code aus dem git Repository. Wenn es Konflikte gibt, müssen Sie möglicherweise <code>git pull</code> separat ausführen und die Konflikte lösen, bevor Sie das <code>./bw-dev update</code>-Skript erneut probieren.</li>
 <li><code>docker-compose build</code> baut die Images neu auf, was sicherstellt, dass die richtigen Pakete installiert sind. Dieser Schritt dauert lange und wird nur benötigt, wenn die Abhängigkeiten (einschließlich pip <code>requirements.txt</code> Pakete) geändert wurden, daher können Sie es auskommentieren, wenn Sie einen schnelleren Updatepfad haben möchten und es nicht stört, ihn bei Bedarf zu kommentieren.</li>
-<li><code>docker-compose exec web python manage.py migrate</code> führt Datenbankmigrationen in Django aus</li>
-<li><code>docker-compose exec web python manage.py collectstatic --no-input</code> lädt alle aktualisierten statischen Dateien (wie JavaScript und CSS)</li>
-<li><code>docker-compose restart</code> lädt die Docker-Container neu</li>
+<li><code>docker-compose run --rm web python manage.py migrate</code> startet die Django-Datenbankmigrationund verwendet die neu gebrauten Docker Images.</li>
+<li><code>Docker-Compose führen --rm web python manage.py collectstatic --no-input</code> lädt alle aktualisierten statischen Dateien (wie JavaScript und CSS)</li>
+<li><code>Docker komponieren; docker-compose up -d</code> startet alle Docker Container neu und nutzt die neu erstellten Images (Achtung: Ausfallzeit beim Neustart)</li>
 </ul>
 <h2>Aktivitätsstreams neu erstellen</h2>
 <p>Feeds für jeden Benutzer werden in Redis gespeichert. Um einen Stream erneut zu befüllen, benutzen Sie den Verwaltungsbefehl:</p>

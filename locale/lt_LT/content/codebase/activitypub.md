@@ -6,55 +6,55 @@ BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and 
 
 ## Activities and Objects
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Nariai ir santykiai
+Narių santykių sąveika atitinka standartinę „ActivityPub“ specifikaciją.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Sekti`: užklausa gauti nario būsenas ir peržiūrėti tas, kurios turi tik stebėtojų privatumą
+- `Patvirtinti`: patvirtina kvietimą `Sekti` ir finalizuoja santykį
+- `Atmesti`: atmeta prašymą `Sekti`
+- `Blokuoti`: neleisti nariams matyti vienas kito būsenų ir neleisti užblokuotam nariui matyti profilio
+- `Atnaujinti`: atnaujina nario paskyrą ir nustatymus
+- `Ištrinti`: išaktyvuoja narį
+- `Grąžinti į pradinę būseną`: pakeičia `Sekimo` arba `Blokavimo` būseną
 
-### Statuses
-#### Object types
+### Būsenos
+#### Objekto tipai
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
-
-
-#### Activities
-
-- `Create`: saves a new status in the database.
-
-   **Note**: BookWyrm only accepts `Create` activities if they are:
-
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
-
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
-
-#### Objects
-
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
-
-#### Activities
-
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Užrašas`: tokiose paslaugose, kaip „Mastodon“, `Užrašas` yra pirminis būsenos tipas. Juose yra žinutė, prisegtukai, galima minėti narius arba atsakyti į bet kokio tipo būsenas. „BookWyrm“ `Užrašus` galima sukurti kaip tiesiogines žinutes arba atsakymus į kitas būsenas.
+- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
+- `Komentaras`: knygos komentare minima knyga ir yra pranešimo tekstas.
+- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+#### Veiklos
+
+- `Sukurti`: išsaugo naują būseną duomenų bazėje.
+
+   **Užrašas**: „BookWyrm“ priima tik `Sukūrimo` veiklas, jei jos:
+
+   - Tiesioginės žinutės (pvz., `Užrašas`, kurio privatumo lygis `tiesioginis` ir minintis vietos narį);
+   - Susiję su knyga (būsenos tipas, kuriame yra laukelis `inReplyToBook`);
+   - Atsako į duomenų bazėje išsaugotas būsenas
+- `Ištrinti`: ištrina būseną
+- `Patinka`: pažymi, kad būsena patinka
+- `Pranešimas`: iškelia būseną į laiko juostą
+- `Grąžinti į pradinę būseną`: pakeičia `Patinka` arba `Pranešimo` būseną
+
+### Kolekcijos
+Naudotojo knygas ir sąrašus reprezentuoja [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+
+#### Objektai
+
+- `Lentyna`: nario knygų kolekcija. Kiekvienas naudotojas turi lentynas `perskaityti`, `skaitoma` ir `perskaityta`, kurios padeda sekti progresą.
+- `Sąrašas`: knygų rinkinys, kuriame gali būti kitų narių knygų, o ne tik sąrašą sukūrusių narių.
+
+#### Veiklos
+
+- `Sukurti`: prideda lentyną arba sąrašą į duomenų bazę.
+- `Ištrinti`: pašalina lentyną arba sąrašą.
+- `Pridėti`: prideda knygą į lentyną arba sąrašą.
+- `Pašalinti`: pašalina knygą iš lentynos arba sąrašo.
+
+
+## Alternatyvus serializavimas
+Kadangi „BookWyrm“ naudoja pasirinktinius objektų tipus (`Apžvalga`, `Komentaras`, `Citavimas`), kurių „ActivityPub“ nepalaiko, siunčiamos būsenos transformuojamos į standartinius tipus, kai siunčia arba peržiūri ne „BookWyrm“. `Apžvalga` paverčiama `Straipsniu`, o `Komentaras` ir `Citavimas` paverčiami `Užrašu` su nuoroda į knygą ir prisegtą viršelio nuotrauką.

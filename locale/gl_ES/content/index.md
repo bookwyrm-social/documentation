@@ -1,33 +1,33 @@
 - - -
-Title: Welcome Date: 2021-04-13
+Title: Ben vida Date: 2021-04-13
 - - -
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+BookWyrm é unha rede social para rexistrar as túas lecturas, falar acerca dos libros, escribir recensións e descubrir novos libros para ler. A Federación permítelle ás persoas usuarias de BookWyrm unirse en pequenas comunidades de confianza que poden conectarse unhas con outras e con outros servizos ActivityPub como Mastodon ou Pleroma.
 
-## Features
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+## Características
+Como o proxecto aínda está nos seus primeiros pasos, o número de funcións dispoñibles aumenta cada día, e hai moito espazo para ideas e suxestións. Abre un [issue](https://github.com/bookwyrm-social/bookwyrm/issues) para continuar a conversa!
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
-        - Comments on a book
-        - Quotes or excerpts
-    - Reply to statuses
-    - View aggregate reviews of a book across connected BookWyrm instances
-    - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
-    - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
-    - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
-- Federation with ActivityPub
-    - Broadcast and receive user statuses and activity
-    - Share book data between instances to create a networked database of metadata
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
-    - Option for users to manually approve followers
-    - Allow blocking and flagging for moderation
+- Publicar sobre libros
+    - Escribe recensións, con ou sen valoracións, que serán engadidas á páxina do libro
+    - Escribe outros tipos de estados acerca dos libros, como:
+        - Comentarios nun libro
+        - Citas e extractos
+    - Responder a estados
+    - Ver recensións agregadas entre instancias BookWyrm que estén conectadas
+    - Diferenciar na túa cronoloxía entre recensións e valoracións locais e federadas
+- Seguir a actividade lectora
+    - Coloca os libros nos estantes por defecto "Pendentes", "Lectura actual" e "Lidos"
+    - Crea estantes personais
+    - Garda as datas de comezo/remate da lectura, así como actualizacións do progreso durante a mesma
+    - Pon ao día ás tuas seguidoras acerca do que les (optativo, e con controis de privacidade detallados)
+    - Crea listas de libros que podes abrir a suxestións de outras persoas, xestionadas e editadas só por ti
+- Federación con ActivityPub
+    - Emite e recibe estados e actividades de outras usuarias
+    - Comparte os datos do libro entre instancias para crear unha base de datos distribuída de metadatos
+    - Identifica libros compartidos entre instancias e engade contido relacionado
+    - Sigue e interactúa con usuarias de outras instancias BookWyrm
+    - Interactúa con outros servizos ActivityPub alleos a BookWyrm (actualmente con soporte para Mastodon)
+- Controis de privacidade detallados
+    - Privado, só para seguidoras e público son os niveis de privacidade para publicacións, estantes e listas
+    - Opción para as usuarias para aprobar manualmente as solicitudes de seguimento
+    - Permite bloquear e marcar para moderación

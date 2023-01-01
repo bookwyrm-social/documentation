@@ -188,9 +188,9 @@ Updating Your Instance
 <ul>
 <li><code>git pull</code> gets the updated code from the git repository. If there are conflicts, you may need to run <code>git pull</code> separately and resolve the conflicts before trying the <code>./bw-dev update</code> script again.</li>
 <li><code>docker-compose build</code> rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip <code>requirements.txt</code> packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.</li>
-<li><code>docker-compose exec web python manage.py migrate</code> runs the database migrations in Django</li>
-<li><code>docker-compose exec web python manage.py collectstatic --no-input</code> loads any updated static files (such as the JavaScript and CSS)</li>
-<li><code>docker-compose restart</code> reloads the docker containers</li>
+<li><code>docker-compose run --rm web python manage.py migrate</code> runs the database migrations in Django using the newly built Docker images</li>
+<li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> loads any updated static files (such as the JavaScript and CSS)</li>
+<li><code>docker-compose down; docker-compose up -d</code> will restart all the docker containers and make use of the newly built images (Attention: downtime during the restart)</li>
 </ul>
 <h2>Re-building activity streams</h2>
 <p>Feeds for each user are stored in Redis. To re-populate a stream, use the management command:</p>

@@ -104,10 +104,6 @@ ActivityPub
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/fr/updating.html" ></a>
-                </li>
-                
-                <li>
                     <a href="/fr/reverse-proxy.html" ></a>
                 </li>
                 
@@ -116,7 +112,7 @@ ActivityPub
                 </li>
                 
                 <li>
-                    <a href="/fr/install-prod.html" >Installing in Production</a>
+                    <a href="/fr/install-prod.html" >Installation en Production</a>
                 </li>
                 
                 <li>
@@ -124,15 +120,19 @@ ActivityPub
                 </li>
                 
                 <li>
+                    <a href="/fr/updating.html" >Mise à jour de votre instance</a>
+                </li>
+                
+                <li>
                     <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/external-storage.html" >External Storage</a>
+                    <a href="/fr/external-storage.html" >Stockage Externe</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/optional_features.html" >Optional features</a>
+                    <a href="/fr/optional_features.html" >Fonctionnalités optionnelles</a>
                 </li>
                 
                 <li>
@@ -201,9 +201,9 @@ ActivityPub
 <h4>Types d'Object</h4>
 <ul>
 <li><code>Note</code> : Sur les services comme Mastodon, les <code>Note</code>s sont le type principal de statut. Ils contiennent un corps de message, des pièces jointes, peuvent mentionner les utilisateurs et être des réponses à des statuts de n'importe quel type. Dans BookWyrm, les <code>Note</code>s ne peuvent être créés qu'en tant que messages directs ou en tant que réponses à d'autres statuts.</li>
-<li><code>Review</code> : Une critique est un statut en réponse à un livre (indiqué par le champ <code>inReplyToBook</code> ), qui a un titre, un corps et une note numérique entre 0 (non évalué) et 5.</li>
+<li><code>Critique</code> : Une critique est un statut en réponse à un livre (indiqué par le champ <code>inReplyToBook</code>), qui a un titre, un corps et une évaluation numérique entre 0 (non évalué) et 5.</li>
 <li><code>Comment</code> : Un commentaire sur un livre mentionne un livre et a un corps de message.</li>
-<li><code>Quotation</code> : Une citation a un corps de message, un extrait d'un livre et mentionne un livre</li>
+<li><code>Citation</code> : Une citation a un corps de message, un extrait d'un livre et mentionne un livre.</li>
 </ul>
 <h4>Activities</h4>
 <ul>

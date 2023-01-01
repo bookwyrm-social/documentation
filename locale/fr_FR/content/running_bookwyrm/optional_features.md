@@ -1,5 +1,5 @@
 - - -
-Title: Optional features Date: 2021-08-02 Order: 8
+Title: Fonctionnalités optionnelles Date: 2021-08-02 Order: 8
 - - -
 
 Certaines fonctionnalités de BookWyrm doivent être activées pour fonctionner.
@@ -42,3 +42,13 @@ Alors comme ça vous voulez personnaliser vos images de prévisualisation ? Voic
 - `PREVIEW_DEFAULT_COVER_COLOR` définit la couleur des livres sans couvertures.
 
 Toutes les variables de couleur acceptent des valeurs reconnues par le module `ImageColor` de Pillow : [En apprendre plus sur les noms de couleurs dans Pillow](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
+
+### Supprimer les images de prévisualisation pour les comptes externes
+
+Avant BookWyrm 0.5.4, des images de prévisualisation étaient générées pour les comptes externes. Comme cela était couteux en termes d'espace disque et de puissance de calcul, cela a été interrompu. Si vous souhaitez supprimer en masse toutes les images précédemment générées pour les comptes distants, une nouvelle commande a été ajoutée :
+
+```sh
+./bw-dev remove_remote_user_preview_images
+```
+
+Cette commande va retirer dans la base de données la valeur de la propriété `user.preview_image` pour les comptes externes et supprimer le fichier associé.

@@ -112,7 +112,7 @@ Installation ohne Docker
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Aktualisieren Ihrer Instanz</a>
+                    <a href="/de/updating.html" >Ihre Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -124,7 +124,7 @@ Installation ohne Docker
                 </li>
                 
                 <li>
-                    <a href="/de/monitoring-queue.html" >Monitoring Queue</a>
+                    <a href="/de/monitoring-queue.html" >Überwachungswarteschlange</a>
                 </li>
                 
                 <li>
@@ -184,43 +184,43 @@ Installation ohne Docker
         <div class="column">
             
 <section class="block content">
-    <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production. This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended This install method assumes you already have ssl configured with certificates available</p>
+    <p>Dieses Projekt ist noch jung und, im Moment, nicht sehr stabil. Bitte verwende es nur mit Vorsicht in Produktion. Diese Methode der Installation benötigt mehr Können und ist daher für erfahrene Administrator*innen. Docker Installation wird empfohlen Diese Installationsmethode geht davon aus, dass Du bereits SSL mit verfügbaren Zertifikaten konfiguriert hast</p>
 <h2>Servereinrichtung</h2>
 <ul>
-<li>Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
-<li>Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
-<li>Set up an email service (such as <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS</li>
-<li>Install dependencies. On debian this could look like <code>apt install postgresql redis nginx python3-venv libpq-dev</code></li>
+<li>Holen Dir eine Domain und konfiguriere DNS für Deinen Server. Du musst die Nameserver Deiner Domain bei Deinem DNS-Provider auf den Server verweisen, auf dem Du BookWyrm betreibst. Hier sind Anweisungen für <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
+<li>Setze Deiner Server mit geeigneter Firewall für den Betrieb einer Web-Anwendung auf (dieser Befehlssatz ist mit Ubuntu 20.04 getestet). Hier ist eine Anleitung für <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
+<li>Richte einen E-Mail-Dienst (wie <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutze die Dokumentation des Dienstes für die Konfiguration Deines DNS</li>
+<li>Abhängigkeiten installieren. Auf Debian könnte das wie <code>apt install postgresql redis nginx python3-venv libpq-dev</code> aussehen.</li>
 </ul>
-<h2>Install and configure BookWyrm</h2>
-<p>The <code>production</code> branch of BookWyrm contains a number of tools not on the <code>main</code> branch that are suited for running in production, such as <code>docker-compose</code> changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the <code>production</code> branch is still recommended</p>
-<p>Instructions for running BookWyrm in production without Docker:</p>
+<h2>BookWyrm installieren und konfigurieren</h2>
+<p>Die <code>-Produktion</code> Zweig von BookWyrm enthält eine Reihe von Werkzeugen die nicht auf dem <code>Haupt-</code> -Zweig sind, die für den Betrieb in der Produktion geeignet sind zum Beispiel <code>docker-compose</code> Änderungen, um die Standardbefehle oder die Konfiguration von Containern zu aktualisieren und individuelle Änderungen an der Container-Konfiguration, um Dinge wie SSL oder regelmäßige Sicherungen zu aktivieren. Nicht alle diese Änderungen wirken sich auf die Installation ohne Docker aus, aber der <code>-production</code>-Zweig wird immer noch empfohlen</p>
+<p>Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:</p>
 <ul>
-<li>Make and enter directory you want to install bookwyrm too. For example <code>/opt/bookwyrm</code>: <code>mkdir /opt/bookwyrm &amp;&amp; cd /opt/bookwyrm</code></li>
-<li>Get the application code: <code>git clone git@github.com:bookwyrm-social/bookwyrm.git ./</code></li>
-<li>Switch to the <code>production</code> branch: <code>git checkout production</code></li>
+<li>Erstelle und betrete das Verzeichnis, in das Du  BookWyrm installieren willst. Für das Beispiel: <code>/opt/bookwyrm</code>: <code>mkdir /opt/bookwyrm &amp;&amp; cd /opt/bookwyrm</code></li>
+<li>Hole den Quelltext: <code>git clone git@github.com:bookwyrm-social/bookwyrm.git ./</code></li>
+<li>Wechsel in den <code>production</code>-zweig: <code>git checkout production</code></li>
 <li>Create your environment variables file, <code>cp .env.example .env</code>, and update the following:<ul>
-<li><code>SECRET_KEY</code> | A difficult to guess, secret string of characters</li>
-<li><code>DOMAIN</code> | Your web domain</li>
-<li><code>POSTGRES_PASSWORD</code> | Set a secure password for the database</li>
-<li><code>POSTGRES_HOST</code> | Set to <code>localhost</code> (the machine running your db)</li>
-<li><code>POSTGRES_USER</code> | Set to <code>bookwyrm</code> (recommended) or something custom (configured later)</li>
-<li><code>POSTGRES_DB</code> | Set to <code>bookwyrm</code></li>
-<li><code>REDIS_ACTIVITY_PASSWORD</code> | Set to nothing (fine on a local machine with a firewall)</li>
-<li><code>REDIS_ACTIVITY_HOST</code> | Set to <code>localhost</code> (the machine running redis)</li>
-<li><code>REDIS_BROKER_PASSWORD</code> | Set to nothing (fine on a local machine with a firewall)</li>
-<li><code>REDIS_BROKER_HOST</code> | Set to <code>localhost</code> (the machine running redis)</li>
-<li><code>EMAIL_HOST_USER</code> | The "from" address that your app will use when sending email</li>
-<li><code>EMAIL_HOST_PASSWORD</code> | The password provided by your email service</li>
+<li><code>SECRET_KEY</code> | Eine schwer zu erratende geheime Zeichenfolge</li>
+<li><code>DOMAIN</code> | Deine Web-Domain</li>
+<li><code>POSTGRES_PASSWORD</code> | Setze ein sicheres Passwort für die Datenbank</li>
+<li><code>POSTGRES_HOST</code> | Auf <code>localhost</code> (setzen die Maschine auf der Deine Datenbank läuft)</li>
+<li><code>POSTGRES_USER</code> | Auf <code>bookwyrm</code> setzen (empfohlen) oder etwas Eigenes. (später konfiguriert)</li>
+<li><code>POSTGRES_DB</code> | Auf <code>Bookwyrm</code> setzen</li>
+<li><code>REDIS_ACTIVITY_PASSWORD</code> | Auf nichts setzen (auf einem lokalen Rechner mit einer Firewall)</li>
+<li><code>REDIS_ACTIVITY_HOST</code> | Auf  <code>localhost</code> setzen (die Maschine, auf der  redis läuft)</li>
+<li><code>REDIS_BROKER_PASSWORD</code> | Auf nichts setzen (auf einem lokalen Rechner mit einer Firewall)</li>
+<li><code>REDIS_BROKER_HOST</code> | Auf  <code>localhost</code> setzen (die Maschine, auf der  redis läuft)</li>
+<li><code>EMAIL_HOST_USER</code> | Die "von"-Adresse, die Deine App beim Senden von E-Mails verwendet</li>
+<li><code>EMAIL_HOST_PASSWORD</code> | Das Passwort von Deinem E-Mail-Dienst</li>
 </ul>
 </li>
-<li>Configure nginx<ul>
+<li>Nginx konfigurieren<ul>
 <li>Copy the server_config to nginx's conf.d: <code>cp nginx/server_config /etc/nginx/conf.d/server_config</code></li>
 <li>Make a copy of the production template config and set it for use in nginx: <code>cp nginx/production /etc/nginx/sites-available/bookwyrm.conf</code></li>
-<li>Update nginx <code>bookwyrm.conf</code>:<ul>
+<li>Aktualisiere nginx <code>bookwyrm.conf</code>:<ul>
 <li>Replace <code>your-domain.com</code> with your domain name everywhere in the file (including the lines that are currently commented out)</li>
 <li>Replace <code>/app/</code> with your install directory <code>/opt/bookwyrm/</code> everywhere in the file (including commented out)</li>
-<li>Uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two <code>server</code> blocks enabled</li>
+<li>Zeilen 18 bis 67 entkommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two <code>server</code> blocks enabled</li>
 <li>Change the <code>ssl_certificate</code> and <code>ssl_certificate_key</code> paths to your fullchain and privkey locations</li>
 <li>Change line 4 so that it says <code>server localhost:8000</code>. Sie können hier einen anderen Port wählen, wenn Sie möchten</li>
 <li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
@@ -293,13 +293,13 @@ set -e
 # /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &amp;
 </code></pre>
 <pre><code>- Replace `/opt/bookwyrm` with your install dir
-- Change `8000` to your custom port number
-- Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
+- Ändere `8000` auf deine eigene Portnummer
+- Flower wurde hier deaktiviert, da es nicht automatisch mit dem Passwort in der `.env` Datei konfiguriert ist
 </code></pre>
 <ul>
 <li>You can now run BookWyrm with: <code>sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh</code></li>
 <li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
-<li>You may want to configure BookWyrm to autorun with a systemd service. Here is an example:</li>
+<li>You may want to configure BookWyrm to autorun with a systemd service. Hier ist ein Beispiel:</li>
 </ul>
 <pre><code># /etc/systemd/system/bookwyrm.service
 [Unit]
@@ -318,9 +318,10 @@ WorkingDirectory=/opt/bookwyrm/
 [Install]
 WantedBy=multi-user.target
 </code></pre>
-<p>Congrats! You did it!! Configure your instance however you'd like.</p>
-<h2>Get Involved</h2>
-<p>See <a href="https://joinbookwyrm.com/get-involved/">Get Involved</a> for details.</p>
+<p>Du musst einen Cron-Job einrichten, damit der Dienst beim Neustart automatisch starten kann.</p>
+<p>Glückwunsch! Du hast es geschafft!! Configure your instance however you'd like.</p>
+<h2>Mitmachen</h2>
+<p>Siehe <a href="https://joinbookwyrm.com/get-involved/">Mitmachen</a> für Details.</p>
 </section>
 
         </div>

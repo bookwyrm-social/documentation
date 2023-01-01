@@ -21,9 +21,9 @@ Interacțiunile dintre relațiile utilizatorilor respectă specificația Activit
 #### Tipuri de obiecte
 
 - `Notă`: pe servicii precum Mastodon, `Notele` sunt tipul principal de stare. Ele conțin corpul mesajului, atașamentele, pot menționa utilizatori și pot fi răspunsuri la stări de orice tip. În cadrul BookWyrm, `notele` pot fi create ca mesaje directe sau ca răspunsuri la alte stări.
-- `Recenzie`: o recenzie este o stare ca răspuns unei cărți (indicat de câmpul `inReplyToBook`), care are un titlu, un corp și o evaluare numerică între 0 (fără evaluare) și 5.
+- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
 - `Comentariu`: un comentariu despre o carte menționează cartea respectivă și are un corp de mesaj.
-- `Citat`: un citat are un corp de mesaj, un extras dintr-o carte pe care o menționează
+- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
 
 
 #### Activități

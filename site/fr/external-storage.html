@@ -3,7 +3,7 @@
 <head>
     <title>
         
-External Storage
+Stockage Externe
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@ External Storage
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">External Storage</h1>
+<h1 class="title is-1">Stockage Externe</h1>
 
     </header>
     <div class="columns">
@@ -104,10 +104,6 @@ External Storage
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/fr/updating.html" ></a>
-                </li>
-                
-                <li>
                     <a href="/fr/reverse-proxy.html" ></a>
                 </li>
                 
@@ -116,7 +112,7 @@ External Storage
                 </li>
                 
                 <li>
-                    <a href="/fr/install-prod.html" >Installing in Production</a>
+                    <a href="/fr/install-prod.html" >Installation en Production</a>
                 </li>
                 
                 <li>
@@ -124,15 +120,19 @@ External Storage
                 </li>
                 
                 <li>
+                    <a href="/fr/updating.html" >Mise à jour de votre instance</a>
+                </li>
+                
+                <li>
                     <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/external-storage.html" class="is-active">External Storage</a>
+                    <a href="/fr/external-storage.html" class="is-active">Stockage Externe</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/optional_features.html" >Optional features</a>
+                    <a href="/fr/optional_features.html" >Fonctionnalités optionnelles</a>
                 </li>
                 
                 <li>
@@ -266,7 +266,7 @@ External Storage
 </code></pre>
 <p>Remplacez <code>MY_DOMAIN_NAME</code> par votre nom de domaine de l'instance, <code>BUCKET_URL</code> avec l'URL de votre compartiment, et le chemin du fichier par n'importe quel autre chemin valide sur votre compartiment.</p>
 <p>Si vous voyez un message, en particulier un message commençant par <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, cela n'a pas fonctionné. Si vous ne voyez aucun message, cela a fonctionné.</p>
-<p>Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe, et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe après avoir basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe :</p>
+<p>Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe une fois basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe :</p>
 <pre><code class="language-bash">./bw-dev sync_media_to_s3
 </code></pre>
 <h3>Mise à jour du connecteur de l'instance</h3>

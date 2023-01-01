@@ -64,87 +64,95 @@ Reinicia o banco de dados. **Este comando vai excluir todo o banco de dados da B
 
 ## Gerenciando uma instância BookWyrm
 
+### compile_themes
+
+Compiles all BookWyrm themes, which are `*.scss` files listed in `bookwyrm/static/css/themes`.
+
 ### collectstatic
 
-Migra os arquivos estáticos para um container Docker ou para um "bucket" compatível com S3, dependendo do contexto.
+Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
 
 ### generate_preview_images
 
-Gera imagens de pré-visualização de sites, usuários e livros. Isso pode demorar algum tempo se você tiver um banco de dados grande.
+Generate preview images for site, users, and books. This can take a while if you have a large database. See [Optional Features: Generating preview images](/optional_features.html)
+
+### remove_remote_user_preview_images
+
+Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
 
 ### generate_thumbnails
 
-Gera miniaturas das capas dos livros.
+Generates thumbnail images for book covers.
 
 ### populate_streams args
 
-Preenche novamente os streams do Redis (feeds dos usuários). Você geralmente não vai precisar rodar isto a não ser que haja algum erro que apague seus feeds de usuários por algum motivo. Você pode escpecificar o stream utilizando o argumento `--stream`.
+Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
 
 ### populate_list_streams
 
-Preenche novamente o cache de listas do Redis. Você geralmente não vai precisar executar isso a não ser que haja um erro que apaguei as listas dos usuários por algum motivo.
+Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
 
 ### populate_suggestions
 
-Gera sugestões de usuários para todos os usuários. Você pode executar isso manualmente para atualizar as sugestões.
+Populate suggested users for all users. You may want to run this manually to refresh suggestions.
 
 ### restart_celery
 
-Reinicia o container Docker do `celery_worker`.
+Restarts the `celery_worker` Docker container.
 
 ### update
 
-Quando há alterações no branch `produção (production)`, você pode atualizar sua instância sem ficar fora do ar.
+When there are changes to the `production` branch, you can update your instance without downtime.
 
-Este comando faz o `git pull` das últimas atualizações do branch `produção (production)`, constroi a imagem Docker, se for necessário, executa as migrações do Django, atualiza os arquivos estáticos e reinicia todos os containers do Docker.
+This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
 
 ### admin_code
 
-Obtem o código secreto da administração para registrar o usuário administrador inicial em uma nova instância BookWyrm.
+Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
 
 ## Configurando um armazenamento compatível com S3
 
-Por padrão, a BookWyrm usa o armazenamento local para os arquivos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o django-storages para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.
+By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
 
-Veja [Armazenamento externo](/external-storage.html) para mais informações.
+See [External Storage](/external-storage.html) for more information.
 
 ### copy_media_to_s3
 
-Migra todas as mídias enviadas de uma instalação BookWyrm para um "bucket" compatível com S3. Utilizar para fazer o upload inicial para um "bucket" vazio.
+Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
 
 ### sync_media_to_s3
 
-Sincroniza as mídias enviadas, novas ou alteradas, de uma instância BookWyrm para um "bucket" compatível com S3. Utilizar para garantir que todos os arquivos locais sejam enviados a um "bucket" existente.
+Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
 
-### set_cors_to_s3 nomedoarquivo
+### set_cors_to_s3 filename
 
-Copia um arquivo JSON com as regras CORS para o seu bucket S3, onde `nomedoarquivo` é o nome de seu arquivo JSON (p. ex: `/bw-dev set_cors_to_s3 cors.json`)
+Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of your JSON file (e.g. `./bw-dev set_cors_to_s3 cors.json`)
 
 ## Desenvolvimento e teste
 
-_Estes comandos estão disponíveis no branch `produção (production)`_.
+_These commands are not available on the `production` branch_.
 
 ### black
 
-A BookWyrm usa o formatador de código [Black](https://github.com/psf/black) pra manter o código Python com um estilo consistente. Execute o `black` antes de enviar/comitar suas alterações para que a tarefa `pylint` não gere erros no seu pull request e te entristeça.
+BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. Run `black` before committing your changes so the `pylint` task does not fail for your pull request and make you sad.
 
 ### prettier
 
-A BookWyrm usa o [Prettier](https://prettier.io/) para manter os códigos JavaScript com um estilo consistente. Execute o `prettier` antes de enviar suas alterações nos scripts para formatar seu código automaticamente.
+BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase consistently styled. Run `prettier` before committing changes to scripts to automatically format your code.
 
 ### stylelint
 
-A BookWyrm usa o [Stylelint](uhttps://stylelint.io/) para manter o estilo dos arquivos CSS consistentes. Execute o `stylelintprettier` antes de enviar/comitar alterações nos scripts para formatar seu código automaticamente.
+BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
 
 ### formatters
 
-Este comando executa todos os formatadores de estilo (`black`, `prettier`, and `stylelint`) de uma vez.
+This command runs all code formatters (`black`, `prettier`, and `stylelint`) in one go.
 
 ### clean
 
-Remove todos os containers do Docker parados.
+Remove all stopped Docker containers.
 
-Equivalente a:
+Equivalent to:
 
 ```shell
 docker-compose stop
@@ -153,12 +161,20 @@ docker-compose rm -f
 
 ### makemessages
 
-Cria arquivo de mensagens para todas as strings de tradução. Depois de executar `makemessages` você deve executar `compilemessages` para compilar as traduções. Veja o [makemessages do Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
+Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages).
 
 ### compilemessages
 
-Compila os arquivos de tradução. Veja o [compilemessages do Django](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Executa testes com o `pytest`.
+Run tests with `pytest`.
+
+### deactivate_2fa
+
+Deactivates two factor authentication for a given user.
+
+### manual_confirm
+
+Confirms a users email, sets the user to active.

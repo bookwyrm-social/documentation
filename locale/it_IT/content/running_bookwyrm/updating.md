@@ -1,27 +1,27 @@
 - - -
-Title: Updating Your Instance Date: 2021-04-13 Order: 3
+Titolo: Aggiornare la tua istanza Data: 2022-11-17 Ordine: 3
 - - -
 
-When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. This does a number of things:
+Quando ci sono cambiamenti disponibili nel ramo di produzione, è possibile installare e farli funzionare sulla vostra istanza utilizzando il comando `. aggiornamento bw-dev`. Questo fa un certo numero di cose:
 
-- `git pull` gets the updated code from the git repository. If there are conflicts, you may need to run `git pull` separately and resolve the conflicts before trying the `./bw-dev update` script again.
-- `docker-compose build` rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip `requirements.txt` packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.
-- `docker-compose exec web python manage.py migrate` runs the database migrations in Django
-- `docker-compose exec web python manage.py collectstatic --no-input` loads any updated static files (such as the JavaScript and CSS)
-- `docker-compose restart` reloads the docker containers
+- `git pull` ottiene il codice aggiornato dal repository Git. Se si verificano conflitti, potrebbe essere necessario eseguire `git pull` separatamente e risolvere i conflitti prima di provare `. bw-dev aggiornamento` di nuovo script.
+- `docker-compose build` ricostruisce le immagini, garantendo che i pacchetti corretti siano installati. Questo passaggio richiede molto tempo ed è necessario solo quando le dipendenze (compresi i requisiti pip `. xt` pacchetti) sono cambiate, in modo da poter commentare fuori se si desidera un percorso di aggiornamento più rapido e non dispiacere-commentare se necessario.
+- `docker-compose run --rm web python manage.py migrate` esegue le migrazioni del database in Django utilizzando le immagini Docker appena create
+- `docker-compose run --rm web python manage.py collectstatic --no-input` carica qualsiasi file statico aggiornato (come JavaScript e CSS)
+- `docker-compose giù: docker-compose up -d` riavvierà tutti i contenitori docker e userà le immagini di nuova costruzione (attenzione: tempi di fermo durante il riavvio)
 
-## Re-building activity streams
+## Ricostruisci flussi attività
 
-Feeds for each user are stored in Redis. To re-populate a stream, use the management command:
+I feed di ogni utente sono memorizzati in Redis. Per ripopolare un flusso, utilizzare il comando gestione:
 
 ``` { .sh }
 ./bw-dev populate_streams
-# Or use docker-compose directly
+# O utilizza docker-compose direttamente
 docker-compose run --rm web python manage.py populate_streams
 ```
 
-If something has gone terribly awry, the stream data can be deleted.
+Se qualcosa è andato terribilmente male, i dati del flusso possono essere cancellati.
 
 ``` { .sh }
-docker-compose run --rm web python manage.py erase_streams
+docker-compose esegui --rm web python manage.py erase_stream
 ```

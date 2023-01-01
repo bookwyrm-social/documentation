@@ -3,7 +3,7 @@
 <head>
     <title>
         
-
+Mise à jour de votre instance
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1"></h1>
+<h1 class="title is-1">Mise à jour de votre instance</h1>
 
     </header>
     <div class="columns">
@@ -104,10 +104,6 @@
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/fr/updating.html" class="is-active"></a>
-                </li>
-                
-                <li>
                     <a href="/fr/reverse-proxy.html" ></a>
                 </li>
                 
@@ -116,7 +112,7 @@
                 </li>
                 
                 <li>
-                    <a href="/fr/install-prod.html" >Installing in Production</a>
+                    <a href="/fr/install-prod.html" >Installation en Production</a>
                 </li>
                 
                 <li>
@@ -124,15 +120,19 @@
                 </li>
                 
                 <li>
+                    <a href="/fr/updating.html" class="is-active">Mise à jour de votre instance</a>
+                </li>
+                
+                <li>
                     <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/external-storage.html" >External Storage</a>
+                    <a href="/fr/external-storage.html" >Stockage Externe</a>
                 </li>
                 
                 <li>
-                    <a href="/fr/optional_features.html" >Optional features</a>
+                    <a href="/fr/optional_features.html" >Fonctionnalités optionnelles</a>
                 </li>
                 
                 <li>
@@ -188,9 +188,9 @@
 <ul>
 <li><code>git pull</code> récupère le code à jour depuis le dépôt git. S'il y a des conflits, vous pourriez avoir besoin de lancer <code>git pull</code> indépendamment et résoudre les conflits avant d'essayer le script <code>./bw-dev update</code> à nouveau.</li>
 <li><code>docker-compose build</code> reconstruit les images, ce qui permet de s'assurer que les bons paquets sont installés. Cette étape prend beaucoup de temps et est nécessaire uniquement lorsque les dépendances (incluant les paquets pip <code>requirements.txt</code>) ont changées, il est donc possible de la commenter si on souhaite une mise à jour plus rapide et ne pas être gêné de la décommenter si nécessaire.</li>
-<li><code>docker-compose exec web python manage.py migrate</code> lance la migration de la base de données dans Django</li>
-<li><code>docker-compose exec web python manage.py collectstatic --no-input</code> charge tous les fichiers statiques mis à jour (comme les fichiers JavaScript et CSS)</li>
-<li><code>docker-compose restart</code> relance les conteneurs docker</li>
+<li><code>docker-compose run --rm web python manage.py migrate</code> exécute les migrations de base de données dans Django en utilisant les images Docker nouvellement créées</li>
+<li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> charge tous les fichiers statiques mis à jour (comme les fichiers JavaScript et CSS)</li>
+<li><code>docker-compose down; docker-compose up -d</code> redémarrera tous les conteneurs docker et utilisera les images nouvellement construites (attention : l'instance sera inaccessible pendant son redémarrage)</li>
 </ul>
 <h2>Reconstruire les flux d'activité</h2>
 <p>Les flux de chaque utilisateur·ice sont stockés dans Redis. Pour repeupler un flux, il faut utiliser la commande de gestion :</p>

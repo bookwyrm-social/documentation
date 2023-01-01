@@ -21,9 +21,9 @@ User relationship interactions follow the standard ActivityPub spec.
 #### Object types
 
 - `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in repsonse to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
+- `Recensión`: unha recensión é un estado en resposta a un libro (presente no campo `enRespostaAoLibro`), que ten un título, corpo e puntuación numérica entre 0 (sen valorar) e 5.
 - `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book
+- `Cita`: unha cita é unha mensaxe con corpo, fragmento do libro e menciona ao libro.
 
 
 #### Activities
@@ -45,15 +45,15 @@ User's books and lists are represented by [`OrderedCollection`](https://www.w3.o
 
 #### Objects
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
+- `Estante`: Unha colección de libros da usuaria. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
 - `List`: A collection of books that may have items contributed by users other than the one who created the list.
 
 #### Activities
 
 - `Create`: Adds a shelf or list to the database.
 - `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Engadir`: Engade o libro a un estante ou lista.
+- `Eliminar`: Retira un libro dun estante ou lista.
 
 
 ## Alternative Serialization

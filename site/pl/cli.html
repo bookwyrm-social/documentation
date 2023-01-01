@@ -215,12 +215,16 @@ Command Line Tool
 <p><em>To polecenie nie jest dostępne w gałęzi <code>production</code></em>.</p>
 <p>Zeruje bazę danych. <strong>To polecenie spowoduje usunięcie całej Twojej bazy danych BookWyrm</strong> oraz zainicjuje świeżą bazę danych i wykona wszystkie migracje. Należy usunąć wszystkie najnowsze pliki migracji, których nie chcesz użyć <em>przed</em> wykonaniem <code>resetdb</code>.</p>
 <h2>Zarządzanie instancją BookWyrm</h2>
+<h3>compile_themes</h3>
+<p>Compiles all BookWyrm themes, which are <code>*.scss</code> files listed in <code>bookwyrm/static/css/themes</code>.</p>
 <h3>collectstatic</h3>
-<p>Migruje statyczne zasoby do kontenera Docker lub zgodnego z S3 "wiadra" w zależności od kontekstu.</p>
+<p>Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.</p>
 <h3>generate_preview_images</h3>
-<p>Generuje obrazy podglądu dla witryny, użytkowników oraz książek. Może to chwilę potrwać, jeśli posiadasz dużą bazę danych.</p>
+<p>Generate preview images for site, users, and books. This can take a while if you have a large database. See <a href="/optional_features.html">Optional Features: Generating preview images</a></p>
+<h3>remove_remote_user_preview_images</h3>
+<p>Remove generated preview images for remote users. See <a href="/optional_features.html">Optional Features: Removing preview images for remote users</a></p>
 <h3>generate_thumbnails</h3>
-<p>Generuje miniatury dla okładek książek.</p>
+<p>Generates thumbnail images for book covers.</p>
 <h3>populate_streams args</h3>
 <p>Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the <code>--stream</code> argument.</p>
 <h3>populate_list_streams</h3>
@@ -265,6 +269,10 @@ docker-compose rm -f
 <p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
 <h3>pytest args</h3>
 <p>Run tests with <code>pytest</code>.</p>
+<h3>deactivate_2fa</h3>
+<p>Deactivates two factor authentication for a given user.</p>
+<h3>manual_confirm</h3>
+<p>Confirms a users email, sets the user to active.</p>
 </section>
 
         </div>

@@ -215,56 +215,64 @@ Command Line Tool
 <p><em>Această comandă nu este disponibilă în ramura de <code>producție</code></em>.</p>
 <p>Resetează baza de date. <strong>Această comandă va șterge întreaga bază de date BookWyrm</strong>, iar apoi va iniția o bază de date nouă și rula toate migrațiile. Va trebui să ștergeți orice fișier de migrație recent pe care nu vreți să-l rulați <em>înainte</em> de a rula <code>resetdb</code>.</p>
 <h2>Gestionarea unei instanțe BookWyrm</h2>
+<h3>compile_themes</h3>
+<p>Compiles all BookWyrm themes, which are <code>*.scss</code> files listed in <code>bookwyrm/static/css/themes</code>.</p>
 <h3>collectstatic</h3>
-<p>Migrează modulele statice fie către un container web, fie către un „bucket” S3 compatibil, depinzând de context.</p>
+<p>Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.</p>
 <h3>generate_preview_images</h3>
-<p>Generează imagini de previzualizare pentru site, utilizatori și cărți. Acest lucru poate dura ceva timp dacă aveți o bază de date mare.</p>
+<p>Generate preview images for site, users, and books. This can take a while if you have a large database. See <a href="/optional_features.html">Optional Features: Generating preview images</a></p>
+<h3>remove_remote_user_preview_images</h3>
+<p>Remove generated preview images for remote users. See <a href="/optional_features.html">Optional Features: Removing preview images for remote users</a></p>
 <h3>generate_thumbnails</h3>
-<p>Generează miniaturi pentru coperțile cărților.</p>
+<p>Generates thumbnail images for book covers.</p>
 <h3>populate_streams args</h3>
-<p>Repopulează fluxurile Redis (fluxurile utilizatorilor). De obicei nu veți avea nevoie să o rulați numai dacă o eroare șterge toate fluxurile de utilizator ale dvs. pentru un motiv sau altul. Puteți specifica fluxul folosind argumentul <code>--stream</code>.</p>
+<p>Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the <code>--stream</code> argument.</p>
 <h3>populate_list_streams</h3>
-<p>Repopulează cache-ul Redis de liste. De obicei nu veți avea nevoie să o rulați numai dacă o eroare șterge toate listele de utilizator ale dvs. dintr-un motiv sau altul.</p>
+<p>Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.</p>
 <h3>populate_suggestions</h3>
-<p>Populează utilizatorii sugerați pentru toți utilizatorii. S-ar putea să doriți să o rulați manual pentru a reîmprospăta sugestiile.</p>
+<p>Populate suggested users for all users. You may want to run this manually to refresh suggestions.</p>
 <h3>restart_celery</h3>
-<p>Repornește containerul Docker <code>celery_worker</code>.</p>
+<p>Restarts the <code>celery_worker</code> Docker container.</p>
 <h3>update</h3>
-<p>Când există schimbări pentru ramura de <code>producție</code>, puteți actualiza instanța dvs. fără timp de oprire.</p>
-<p>Această comandă extrage cele mai recente actualizări ale ramurii de <code>producție</code> prin <code>git pull</code>, construiește imaginile docker dacă este necesar, rulează migrările Django, actualizează fișierele statice și repornește toate containerele Docker.</p>
-<h3>admid_code</h3>
-<p>Obține codul secret de admin folosit pentru a înscrie utilizatorul admin inițial pe o instanță BookWyrm nouă.</p>
+<p>When there are changes to the <code>production</code> branch, you can update your instance without downtime.</p>
+<p>This command <code>git pull</code>s the latest <code>production</code> branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.</p>
+<h3>admin_code</h3>
+<p>Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.</p>
 <h2>Configurați stocare S3 compatibilă</h2>
-<p>În mod implicit, BookWyrm folosește stocarea locală pentru modelele statice (favicon, avatarul de bază etc.) și media (avatarurile utilizatorilor, coperțile cărților etc.), dar puteți folosi un serviciu de stocare extern pentru a deservi aceste fișiere. BookWyrm folosește stocare Django pentru a manipula stocarea externă, precum servicii S3 compatibile, Apache Libcloud sau SFTP.</p>
-<p>Vedeți <a href="/external-storage.html">Stocare externă</a> pentru mai multe detalii.</p>
+<p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
+<p>See <a href="/external-storage.html">External Storage</a> for more information.</p>
 <h3>copy_media_to_s3</h3>
-<p>Migrează toate fișierele media încărcate de pe o instalație BookWyrm către un serviciu „bucket” S3 compatibil. Utilizați pentru o încărcare inițială către un „bucket” gol.</p>
+<p>Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
 <h3>sync_media_to_s3</h3>
-<p>Sincronizează fișiere media noi sau schimbate de pe o instalație BookWyrm către un „bucket” S3 compatibil. Folosiți pentru a asigura că toate fișierele locale sunt încărcate către un „bucket” existent.</p>
+<p>Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
 <h3>set_cors_to_s3 filename</h3>
-<p>Copiază un fișier JSON cu reguli CORS către „găleata” dvs. S3, unde <code>filename</code> este numele fișierului dvs. JSON (de ex. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
+<p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
 <h2>Dezvoltare și testare</h2>
-<p><em>Aceste comenzi nu sunt disponibile în ramura de <code>producție</code></em>.</p>
+<p><em>These commands are not available on the <code>production</code> branch</em>.</p>
 <h3>black</h3>
-<p>BookWyrm folosește formatorul de cod <a href="https://github.com/psf/black">Black</a> pentru a menține stilul codului consistent. Rulați <code>black</code> înainte de a trimite schimbările dvs. pentru ca sarcina <code>pylint</code> să nu eșueze pentru cererea dvs. de extracție și să vă facă trist.</p>
+<p>BookWyrm uses the <a href="https://github.com/psf/black">Black</a> code formatter to keep the Python codebase consistent styled. Run <code>black</code> before committing your changes so the <code>pylint</code> task does not fail for your pull request and make you sad.</p>
 <h3>prettier</h3>
-<p>BookWyrm folosește <a href="https://prettier.io/">Prettier</a> pentru a păstra stilul codului JavaScript consistent. Executați <code>prettier</code> înainte de a trimite schimbările dvs. scripturilor pentru a formata automat codul dvs.</p>
+<p>BookWyrm uses <a href="https://prettier.io/">Prettier</a> to keep the JavaScript codebase consistently styled. Run <code>prettier</code> before committing changes to scripts to automatically format your code.</p>
 <h3>stylelint</h3>
-<p>BookWyrm folosește <a href="uhttps://stylelint.io/">Stylelint</a> pentru a păstra stilul fișierelor CSS consistent. Executați <code>stylelintprettier</code> înainte de a trimite schimbările scripturilor pentru a formata automat codul dvs.</p>
+<p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelintprettier</code> before committing changes to scripts to automatically format your code.</p>
 <h3>formatters</h3>
-<p>Această comandă rulează toate formatoarele (<code>black</code>, <code>prettier</code> și <code>stylelint</code>) într-o singură etapă.</p>
+<p>This command runs all code formatters (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) in one go.</p>
 <h3>clean</h3>
-<p>Elimină toate containerele Docker oprite.</p>
-<p>Echivalent cu:</p>
+<p>Remove all stopped Docker containers.</p>
+<p>Equivalent to:</p>
 <pre><code class="language-shell">docker-compose stop
 docker-compose rm -f
 </code></pre>
 <h3>makemessages</h3>
-<p>Creează fișiere mesaj pentru toate șirurile de caractere de tradus. După ce ați rulat <code>makemessages</code> trebuie să rulați <code>compilemessages</code> pentru a compila traducerile. Vedeți <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">makemessages Django</a>.</p>
+<p>Creates message files for all translation strings. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Django's makemessages</a>.</p>
 <h3>compilemessages</h3>
-<p>Compilează fișierele de traducere. Vedeți <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">compilemessages Django</a>.</p>
+<p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
 <h3>pytest args</h3>
-<p>Rulează testele cu <code>pytest</code>.</p>
+<p>Run tests with <code>pytest</code>.</p>
+<h3>deactivate_2fa</h3>
+<p>Deactivates two factor authentication for a given user.</p>
+<h3>manual_confirm</h3>
+<p>Confirms a users email, sets the user to active.</p>
 </section>
 
         </div>

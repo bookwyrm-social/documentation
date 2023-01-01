@@ -188,9 +188,9 @@ Updating Your Instance
 <ul>
 <li><code>git pull</code> obține codul actualizat de pe depozitul git. Dacă sunt conflicte, s-ar putea să aveți nevoie să rulați <code>git pull</code> separat și să rezolvați conflictele înainte de a reîncerca scriptul <code>./bw-dev update</code>.</li>
 <li><code>docker-compose build</code> recompilează imaginile, ceea ce asigură că pachetele corecte au fost instalate. Acest pas durează mult timp și este necesar numai dacă dependențele (inclusiv pachetele pip <code>requirements.txt</code>) s-au schimbat, deci puteți să-l comentați dacă vreți o cale de actualizare mai rapidă și nu vă deranjează să-l decomentați când este necesar.</li>
-<li><code>docker-compose exec web python manage.py migrate</code> rulează migrările bazei de date în Django</li>
-<li><code>docker-compose exec web python manage.py collectstatic --no-input</code> încarcă orice fișier static actualizat (precum JavaScript și CSS)</li>
-<li><code>docker-compose restart</code> reîncarcă containerele Docker</li>
+<li><code>docker-compose run --rm web python manage.py migrate</code> runs the database migrations in Django using the newly built Docker images</li>
+<li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> loads any updated static files (such as the JavaScript and CSS)</li>
+<li><code>docker-compose down; docker-compose up -d</code> will restart all the docker containers and make use of the newly built images (Attention: downtime during the restart)</li>
 </ul>
 <h2>Recompilați fluxurile de activitate</h2>
 <p>Fluxurile pentru fiecare utilizator sunt stocate în Redis. Pentru a repopula un flux, folosiți comanda de gestionare:</p>

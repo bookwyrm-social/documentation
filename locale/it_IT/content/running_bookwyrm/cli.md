@@ -1,5 +1,5 @@
 - - -
-Title: Command Line Tool Date: 2021-11-11 Order: 9
+Titolo: Strumento linea di comando Data: 2021-11-11 Ordine: 9
 - - -
 
 Gli sviluppatori e i gestori di istanze di Bookwyrm possono utilizzare lo script `bw-dev` per le attività comuni. Questo può rendere i tuoi comandi più brevi, più facile da ricordare, e più difficile da sbagliare.
@@ -22,39 +22,39 @@ Apri una shell interattiva per il database Postgres. Spero che tu sappia cosa st
 
 ### runweb args
 
-Run an arbitrary command (represented above by `args`) in the `web` container.
+Esegue un comando arbitrario (rappresentato da `args`) nel contenitore `web`.
 
-Equivalent to `docker-compose run --rm web`.
+Equivalente a `docker-compose run --rm web`.
 
 ### service_ports_web args
 
-Run an arbitrary command in the `web` container (represented above by `args`) with ports exposed. This is useful if you want to run `pdb` tests because `runweb` will not expose the `pdb` prompt.
+Esegue un comando arbitrario nel contenitore `web` (rappresentato sopra da `args`) con porte esposte. Questo è utile se vuoi eseguire `test pdb` perché `runweb` non esporrà il prompt `pdb`.
 
-Equivalent to `docker-compose run --rm --service-ports web`.
+Equivalente a `docker-compose run --rm --service-ports web`.
 
 ### shell
 
-Open an interactive Django shell inside the docker `web` container. You would use this if you want to run Django shell commands directly.
+Apri una shell interattiva di Django all'interno del contenitore docker `web`. Puoi usarlo se vuoi eseguire direttamente i comandi della shell Django.
 
 ### up [args]
 
-Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
+Avvia o riavvia i contenitori Docker, opzionalmente includi gli argomenti (rappresentati da `args`). Equivalente a `docker-compose up --build [args]`
 
-## Managing the database
+## Gestione del database
 
 ### initdb
 
-Initialize a database.
+Inizializza un database.
 
 ### makemigrations [appname migration number]
 
 _This command is not available on the `production` branch_.
 
-Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`
+Esegue il comando `makemigrations` di Django all'interno del contenitore Docker. Se hai cambiato la struttura del database in un ramo di sviluppo, dovrai eseguirlo così che le modifiche abbiano effetto. Facoltativamente, puoi specificare una migrazione specifica da eseguire, ad esempio `./bw-dev makemigrations bookwyrm 0108`
 
 ### migrate
 
-Runs Django's `migrate` command inside your Docker container. You always need to run this after `makemigrations`.
+Esegue il comando `migrate` di Django all'interno del contenitore Docker. È sempre necessario eseguire questo dopo `makemigrations`.
 
 ### resetdb
 
@@ -64,57 +64,65 @@ Resetta il database. **Questo comando eliminerà l'intero database di Bookwyrm**
 
 ## Gestione di un'istanza Bookwyrm
 
+### compile_themes
+
+Compila tutti i temi di BookWyrm, che sono file `*.scss` in `bookwyrm/static/css/themes`.
+
 ### collectstatic
 
-Migrare risorse statiche a un contenitore Docker o a un "bucket" compatibile con S3, a seconda del contesto.
+Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.
 
 ### generate_preview_images
 
-Genera immagini di anteprima per sito, utenti e libri. Questo può richiedere un po' di tempo se il database è molto grande.
+Genera un'anteprima per siti, utenti e libri. Può richiedere un po' di tempo se il database è molto grande. See [Optional Features: Generating preview images](/optional_features.html)
+
+### remove_remote_user_preview_images
+
+Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
 
 ### generate_thumbnails
 
-Genera le miniature per le copertine dei libri.
+Genera le thumbnail per le copertine dei libri.
 
 ### populate_streams args
 
-Ripopolare i flussi Redis (feed utente). Di solito non è necessario eseguire questo a meno che non vi sia un errore che cancella i tuoi feed utente per qualche motivo. Puoi specificare quale stream usando l'argomento `--stream`.
+Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
 
 ### populate_list_streams
 
-Ripopola la cache Redis delle liste. Di solito non è necessario eseguire questo a meno che non vi sia un errore che cancella le tue liste per qualche motivo.
+Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
 
 ### populate_suggestions
 
-Popolare utenti suggeriti per tutti gli utenti. Potresti voler eseguire manualmente questa operazione per aggiornare i suggerimenti.
+Populate suggested users for all users. You may want to run this manually to refresh suggestions.
 
 ### restart_celery
 
 Riavvia il contenitore Docker `celery_worker`.
 
-### aggiorna
+### update
 
-When there are changes to the `production` branch, you can update your instance without downtime.
+Quando ci sono cambiamenti in `production`, puoi aggiornare la tua istanza senza tempo fuori servizio.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Questo comando fa `git pull` degli ultimi aggiornamenti sul branch `production`, genera immagini docker se necessario, esegue migrazioni Django, aggiorna i file statici e riavvia tutti i contenitori Docker.
 
 ### admin_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Ottiene il codice amministratore segreto utilizzato per registrare l'utente amministratore iniziale su una nuova istanza di BookWyrm.
 
 ## Impostazione dello storage compatibile con S3
 
-Per impostazione predefinita, BookWyrm utilizza la memoria locale per le risorse statiche (favicon, avatar predefinito, ecc...) e supporti (avatar utente, copertine di libri, ecc.), ma è possibile utilizzare un servizio di archiviazione esterno per questi file. BookWyrm utilizza django-storages per gestire l'archiviazione esterna come ad esempio servizi compatibili con S3, Apache Libcloud o SFTP.
+By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
 
 See [External Storage](/external-storage.html) for more information.
 
 ### copy_media_to_s3
 
-Migrare tutti i media caricati da un'installazione di Bookwrym esistente a un "bucket" compatibile con S3. Use for initial upload to an empty bucket.
+Migrate all uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
 
 ### sync_media_to_s3
 
-Sincronizza i media caricati, nuovi o modificati da un'installazione di Bookwrym esistente a un "bucket" compatibile con S3. Utilizzare per garantire che tutti i file locali siano caricati su un bucket esistente.
+Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
 
 ### set_cors_to_s3 filename
 
@@ -157,8 +165,16 @@ Creates message files for all translation strings. After you have run `makemessa
 
 ### compilemessages
 
-Compiles translation files. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
+Compila file di traduzione. See [Django's compilemessages](https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages).
 
 ### pytest args
 
-Run tests with `pytest`.
+Esegui test con `pytest`.
+
+### deactivate_2fa
+
+Disattiva l'autenticazione a due fattori per un determinato utente.
+
+### manual_confirm
+
+Conferma l'email degli utenti, imposta l'utente a attivare.

@@ -211,7 +211,7 @@ External Storage
 <li><code>AWS_ACCESS_KEY_ID</code>: your access key ID</li>
 <li><code>AWS_SECRET_ACCESS_KEY</code>: your secret access key</li>
 <li><code>AWS_STORAGE_BUCKET_NAME</code>: your bucket name</li>
-<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway or <code>"nyc3"</code> for Digital Ocean </li>
+<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway or <code>"nyc3"</code> for Digital Ocean</li>
 </ul>
 <p>If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:</p>
 <ul>
@@ -231,8 +231,9 @@ External Storage
 <pre><code>USE_HTTPS=true
 </code></pre>
 <h4>Static assets</h4>
-<p>Then, you will need to run the following command, to copy the static assets to your S3 bucket:</p>
-<pre><code class="language-bash">./bw-dev collectstatic
+<p>Then, you will need to run the following commands to compile the themes and copy all static assets to your S3 bucket:</p>
+<pre><code class="language-bash">./bw-dev compile_themes
+./bw-dev collectstatic
 </code></pre>
 <h4>CORS settings</h4>
 <p>Once the static assets are collected, you will need to set up CORS for your bucket.</p>
