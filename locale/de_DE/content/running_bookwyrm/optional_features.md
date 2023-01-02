@@ -43,9 +43,9 @@ Sie möchten Ihre Vorschaubilder anpassen? Hier sind die Optionen:
 
 Alle Farbvariablen akzeptieren Werte, die im Modul `ImageColor` von Pillow als Farben erkannt werden können: [Erfahren Sie mehr über Farben von Pillow](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
 
-### Removing preview images for remote users
+### Entferne Vorschaubilder für entfernte Accounts
 
-Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:
+Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. Wenn du alle Bilder löschen möchtest, die zuvor für entfernte Accounts erstellt wurden, wurde ein neuer Befehl hinzugefügt:
 
 ```sh
 ./bw-dev remove_remote_user_preview_images
