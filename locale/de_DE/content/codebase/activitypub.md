@@ -6,15 +6,15 @@ BookWyrm verwendet das [ActivityPub](http://activitypub.rocks/)-Protokoll, um Be
 
 ## Aktivitäten und Objekte
 
-### Benutzer und Beziehungen
-Benutzerbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.
+### Benutzer*innen und Beziehungen
+Benutzer*innenbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.
 
-- `Folgen`: Bitte, um den Status eines Benutzers zu erhalten und anzusehen, die die Privatsphäre auf nur Follower haben
+- `Folgen`: Bitte, um den Status eine*r Benutzer*in zu erhalten und anzusehen, die die Privatsphäre auf nur Follower haben
 - `Akzeptieren`: genehmigt `Folgen` und erstellt die Beziehung
 - `Ablehnen`: verweigert `Folgen`
-- `Blocken`: verhindert, dass Benutzer einander Status ansehen und verhindert, dass der blockierte Benutzer das Profil des Akteurs ansieht
-- `Update`: Aktualisiert das Profil und die Einstellungen eines Benutzers
-- `Löschen`: Deaktiviert einen Benutzer
+- `Blocken`: verhindert, dass Benutzer*innen einander Status ansehen und verhindert, dass der blockierte Benutzer*innen das Profil des Akteurs ansehen
+- `Update`: Aktualisiert das Profil und die Einstellungen eine*r Benutzer*in
+- `Löschen`: Deaktiviert eine*n Benutzer*in
 - `Rückgängig`: Reversiert `Folgen` oder `Blocken`
 
 ### Status
