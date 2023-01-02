@@ -41,15 +41,15 @@ Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
         - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
         - Zeilen 18 bis 67 entkommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two `server` blocks enabled
-        - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
+        - Ändere die `ssl_certificate` und `ssl_certificate_key` Pfade an Ihre volle Kette und Privkey Positionen
         - Change line 4 so that it says `server localhost:8000`. Sie können hier einen anderen Port wählen, wenn Sie möchten
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+        - Wenn du einen anderen Webserver auf deinem Host-Rechner betreibst, musst du den [Reverse-Proxy-Anweisungen](/reverse-proxy.html) folgen
     - Enable the nginx config: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
      - Reload nginx: `systemctl reload nginx`
 - Einrichtung der virtuellen Python-Umgebung
     - Make the python venv directory in your install dir: `mkdir venv` `python3 -m venv ./venv`
     - Install bookwyrm python dependencies with pip: `./venv/bin/pip3 install -r requirements.txt`
-- Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
+- Erstelle die Bookwyrm postgresql Datenbank. Ändere das Passwort zu dem, welches du in der `.env` Konfiguration gesetzt hast:
 
     `sudo -i -u postgres psql`
 
@@ -65,17 +65,17 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 \q
 ```
 
-- Migrate the database schema by running `venv/bin/python3 manage.py migrate`
+- Migriere das Datenbankschema, indem du `venv/bin/python3 manage.py migrierst`
 - Initialize the database by running `venv/bin/python3 manage.py initdb`
-- Create the static by running `venv/bin/python3 manage.py collectstatic --no-input`
-- If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
-- Create and setup your `bookwyrm` user
-    - Make the system bookwyrm user: `useradd bookwyrm -r`
-    - Change the owner of your install directory to bookwyrm: `chown -R bookwyrm:bookwyrm /opt/bookwyrm`
+- Erstelle die Statische durch Ausführen von `venv/bin/python3 manage.py collectstatic --no-input`
+- Wenn du einen externen Speicher für statische Assets und Mediendateien verwenden möchtest (z. B. einen S3-kompatiblen Dienst), [befolge die Anweisungen](/external-storage.html) bis es dir mitteilt, wieder hierherzukommen
+- Erstelle und richte deinen `Bookwyrm` Account ein
+    - Erstelle den System-Bookwyrm-Account: `useradd bookwyrm -r`
+    - Ändere den Eigentümer deines Installationsverzeichnisses auf bookwyrm: `chown -R bookwyrm:bookwyrm /opt/bookwyrm`
     - You should now run bookwyrm related commands as the bookwyrm user: `sudo -u bookwyrm echo I am the $(whoami) user`
 
-- Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
-- You can get your code at any time by re-running that command. Hier ist eine Beispielausgabe:
+- Erstelle den Admin-Code mit `sudo -u bookwyrm venv/bin/python3 manage. y admin_code`, und kopieren Sie den Admin-Code, der beim Erstellen Ihres Admin-Kontos verwendet werden soll.
+- Du kannst deinen Code jederzeit erhalten, indem du diesen Befehl erneut ausführst. Hier ist eine Beispielausgabe:
 
 ``` { .sh }
 *******************************************
@@ -101,12 +101,12 @@ set -e
 /opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &
 # /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &
 ```
-    - Replace `/opt/bookwyrm` with your install dir
+    - Ersetze `/opt/bookwyrm` durch dein Installationsverzeichnis
     - Ändere `8000` auf deine eigene Portnummer
     - Flower wurde hier deaktiviert, da es nicht automatisch mit dem Passwort in der `.env` Datei konfiguriert ist
 - You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
-- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
-- You may want to configure BookWyrm to autorun with a systemd service. Hier ist ein Beispiel:
+- Die Anwendung sollte auf deiner Domain laufen. Wenn du die Domain lädst, siehst du eine Konfigurationsseite, die deine Instanzeinstellungen bestätigt und ein Formular zum Erstellen eines Administratorkontos. Benutze deinen Admin-Code um dich zu registrieren.
+- Möglicherweise möchtest du BookWyrm so konfigurieren, dass es mit einem System-Dienst automatisch ausgeführt wird. Hier ist ein Beispiel:
 ```
 # /etc/systemd/system/bookwyrm.service
 [Unit]
