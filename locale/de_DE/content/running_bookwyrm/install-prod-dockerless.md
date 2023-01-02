@@ -4,12 +4,12 @@ Date: 2022-10-02
 Order: 2
 ---
 
-Dieses Projekt ist noch jung und, im Moment, nicht sehr stabil. Bitte verwende es nur mit Vorsicht in Produktion. Diese Methode der Installation benötigt mehr Können und ist daher für erfahrene Administrator*innen. Docker Installation wird empfohlen Diese Installationsmethode geht davon aus, dass Du bereits SSL mit verfügbaren Zertifikaten konfiguriert hast
+Dieses Projekt ist noch jung und, im Moment, nicht sehr stabil. Bitte verwende es nur mit Vorsicht in Produktion. Diese Methode der Installation benötigt mehr Können und ist daher für erfahrene Administrator*innen. Docker Installation wird empfohlen Diese Installationsmethode geht davon aus, dass du bereits SSL mit verfügbaren Zertifikaten konfiguriert hast
 
 ## Servereinrichtung
-- Holen Dir eine Domain und konfiguriere DNS für Deinen Server. Du musst die Nameserver Deiner Domain bei Deinem DNS-Provider auf den Server verweisen, auf dem Du BookWyrm betreibst. Hier sind Anweisungen für [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
+- Hole dir eine Domain und konfiguriere DNS für deinen Server. Du musst die Nameserver Deiner Domain bei Deinem DNS-Provider auf den Server verweisen, auf dem du BookWyrm betreibst. Hier sind Anweisungen für [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Setze Deiner Server mit geeigneter Firewall für den Betrieb einer Web-Anwendung auf (dieser Befehlssatz ist mit Ubuntu 20.04 getestet). Hier ist eine Anleitung für [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
-- Richte einen E-Mail-Dienst (wie [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutze die Dokumentation des Dienstes für die Konfiguration Deines DNS
+- Richte einen E-Mail-Dienst (wie [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutze die Dokumentation des Dienstes für die Konfiguration deines DNS
 - Abhängigkeiten installieren. Auf Debian könnte das wie `apt install postgresql redis nginx python3-venv libpq-dev` aussehen.
 
 ## BookWyrm installieren und konfigurieren
@@ -32,17 +32,17 @@ Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:
     - `REDIS_ACTIVITY_HOST` | Auf  `localhost` setzen (die Maschine, auf der  redis läuft)
     - `REDIS_BROKER_PASSWORD` | Auf nichts setzen (auf einem lokalen Rechner mit einer Firewall)
     - `REDIS_BROKER_HOST` | Auf  `localhost` setzen (die Maschine, auf der  redis läuft)
-    - `EMAIL_HOST_USER` | Die "von"-Adresse, die Deine App beim Senden von E-Mails verwendet
-    - `EMAIL_HOST_PASSWORD` | Das Passwort von Deinem E-Mail-Dienst
+    - `EMAIL_HOST_USER` | Die "von"-Adresse, die deine App beim Senden von E-Mails verwendet
+    - `EMAIL_HOST_PASSWORD` | Das Passwort von deinem E-Mail-Dienst
 - Nginx konfigurieren
     - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
     - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
     - Aktualisiere nginx `bookwyrm.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
         - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
-        - Zeilen 18 bis 67 entkommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two `server` blocks enabled
+        - Zeilen 18 bis 67 auskommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two `server` blocks enabled
         - Ändere die `ssl_certificate` und `ssl_certificate_key` Pfade an Ihre volle Kette und Privkey Positionen
-        - Change line 4 so that it says `server localhost:8000`. Sie können hier einen anderen Port wählen, wenn Sie möchten
+        - Change line 4 so that it says `server localhost:8000`. Du kannst hier einen anderen Port wählen, wenn du magst
         - Wenn du einen anderen Webserver auf deinem Host-Rechner betreibst, musst du den [Reverse-Proxy-Anweisungen](/reverse-proxy.html) folgen
     - Enable the nginx config: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
      - Reload nginx: `systemctl reload nginx`
