@@ -4,7 +4,7 @@ Title: Befehlszeilenwerkzeug Date: 2021-11-11 Order: 9
 
 Bookwyrm-Entwickler und Instanz-Manager können das `bw-dev`-Skript für gemeinsame Aufgaben verwenden. Dies macht deine Befehle kürzer, leichter zu merken und schwieriger durcheinander zu bringen.
 
-Sobald Sie Bookwyrm [in Produktion](installing-in-production.html) oder [in Entwicklung](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment)installiert haben, können Sie das Skript von der Kommandozeile aus mit `./bw-dev` ausführen, gefolgt von dem Unterbefehl, den Sie ausführen wollen.
+Sobald du Bookwyrm [in Produktion](installing-in-production.html) oder [in Entwicklung](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment)installiert hast, kannst du das Skript von der Kommandozeile aus mit `./bw-dev` ausführen, gefolgt von dem Unterbefehl, den du ausführen willst.
 
 ## Docker Kurzbefehle
 
@@ -18,7 +18,7 @@ Sobald Sie Bookwyrm [in Produktion](installing-in-production.html) oder [in Entw
 
 ### dbshell
 
-Öffnen Sie eine interaktive Postgres-Datenbank-Shell. Ich hoffe, Sie wissen, was Sie tun.
+Öffnen Sie eine interaktive Postgres-Datenbank-Shell. Ich hoffe, du weißst, was du tust.
 
 ### runweb args
 
@@ -28,13 +28,13 @@ Führe einen beliebigen Befehl (oben durch `args` repräsentiert) im `web`-Conta
 
 ### service_ports_web args
 
-Führen Sie einen beliebigen Befehl im `Web`-Container (oben dargestellt durch `args`) mit exponierten Ports aus. Dies ist nützlich, wenn du `pdb`-Tests ausführen möchtest, da `runweb` nicht die `pdb`-Prompt freigibt.
+Führe einen beliebigen Befehl im `Web`-Container (oben dargestellt durch `args`) mit exponierten Ports aus. Dies ist nützlich, wenn du `pdb`-Tests ausführen möchtest, da `runweb` nicht die `pdb`-Prompt freigibt.
 
 Äquivalent zu `docker-compose run --rm --service-ports web`.
 
 ### shell
 
-Öffne eine interaktive Django-Shell im Docker-`Web`-Container. Sie würden dies verwenden, wenn Sie Django Shell-Befehle direkt ausführen möchten.
+Öffne eine interaktive Django-Shell im Docker-`Web`-Container. Du würdest das verwenden, wenn du Django Shell-Befehle direkt ausführen möchtest.
 
 ### up [args]
 
@@ -50,17 +50,17 @@ Eine Datenbank initialisieren.
 
 _Dieser Befehl ist nicht verfügbar im `Produktion`szweig_.
 
-Führt Djangos `makemigrations`-Befehl im Docker-Container aus. Wenn Sie die Datenbankstruktur in einem Entwicklungszweig geändert haben, müssen Sie dies ausführen, damit Ihre Änderungen wirksam werden. Optional können Sie eine bestimmte Migration angeben, z.B. `./bw-dev makemigrations bookwyrm 0108`
+Führt Djangos `makemigrations`-Befehl im Docker-Container aus. Wenn du die Datenbankstruktur in einem Entwicklungszweig geändert hast, musst du dies ausführen, damit deine Änderungen wirksam werden. Optional kannst du eine bestimmte Migration angeben, z.B. `./bw-dev makemigrations bookwyrm 0108`
 
 ### migrate
 
-Führt Djangos `migrate`-Kommando im Docker-Container aus. Sie müssen dies immer nach `makemigrations` ausführen.
+Führt Djangos `migrate`-Kommando im Docker-Container aus. Du musst dies immer nach `makemigrations` ausführen.
 
 ### resetdb
 
 _Dieser Befehl ist nicht verfügbar im `Produktion`szweig_.
 
-Setzt die Datenbank zurück. **Dieser Befehl löscht Ihre gesamte Bookwyrm-Datenbank**und initiiert dann eine neue Datenbank und führt alle Migrationen aus. Sie sollten alle aktuellen Migrationsdateien löschen, die Sie nicht ausführen möchten, _bevor_ das `resetdb` ausgeführt wird.
+Setzt die Datenbank zurück. **Dieser Befehl löscht deine gesamte Bookwyrm-Datenbank**und initiiert dann eine neue Datenbank und führt alle Migrationen aus. Du solltest alle aktuellen Migrationsdateien löschen, die du nicht ausführen möchtest, _bevor_ das `resetdb` ausgeführt wird.
 
 ## Eine Bookwyrm-Instanz verwalten
 
