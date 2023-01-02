@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2023-01-02 10:55\n"
+"PO-Revision-Date: 2023-01-02 13:53\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -23,11 +23,11 @@ msgstr "BookWyrm Dokumentation"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
-msgstr "Ihre Anleitung BookWyrm zu nutzen und dazu beizutragen"
+msgstr "Deine Anleitung BookWyrm zu nutzen und dazu beizutragen"
 
 #: templates/index.html:6
 msgid "How to Use and Contribute"
-msgstr "Benutzung und Weiterentwicklung"
+msgstr "Wie man es nutzt und beiträgt"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
