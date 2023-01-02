@@ -78,7 +78,7 @@ Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. Es kann eine 
 
 ### remove_remote_user_preview_images
 
-Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
+Remove generated preview images for remote users. Siehe [Optionale Funktionen: Vorschaubilder für entfernte Accounts entfernen](/optional_features.html)
 
 ### generate_thumbnails
 
@@ -86,15 +86,15 @@ Generates thumbnail images for book covers.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Re-populates Redis streams (user feeds). Normalerweise musst du das nicht ausführen, außer es gibt einen Fehler, der die Feeds deiner Benutzer*innen aus irgendeinem Grund löscht. You can specify which stream using the `--stream` argument.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
+Re-populates Redis cache of lists. Du musst das normalerweise nicht ausführen, es sei denn, es gibt einen Fehler, der die Listen deiner Benutzer*innen aus irgendeinem Grund löscht.
 
 ### populate_suggestions
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Empfohlene Benutzer*innen für alle anzeigen. You may want to run this manually to refresh suggestions.
 
 ### restart_celery
 
@@ -112,7 +112,7 @@ Gets the secret admin code used to register the inital admin user on a new BookW
 
 ## S3 kompatiblen Speicher einrichten
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm verwendet django-storages, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.
+Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favicon, Standard-Avatar, etc.) und Medien (Benutzer-Avatare, Buchtitelbilder usw.), aber du kannst einen externen Speicherdienst verwenden, um diese Dateien zu bereitzustellen. BookWyrm verwendet django-storages, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.
 
 Siehe [Externer Speicher](/external-storage.html) für weitere Informationen.
 
