@@ -1,60 +1,60 @@
 - - -
-Title: ActivityPub Date: 2021-04-20 Order: 1
+Titel: ActivityPub Datum: 2021-04-20 Volgorde: 1
 - - -
 
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm maakt gebruik van het [ActivityPub](http://activitypub.rocks/) protocol voor het verzenden en ontvangen van gebruikersactiviteit tussen andere BookWyrm instanties en andere diensten die ActivityPub implementeren zoals [Mastodon](https://joinmastodon.org/). Om gegevens van boeken te verwerken heeft BookWyrm een handvol uitgebreide activiteitstypen die niet deel zijn van de standaard, maar leesbaar zijn voor andere BookWyrm instanties.
 
-## Activities and Objects
+## Activiteiten en Objecten
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Gebruikers en relaties
+Gebruikersrelatie interacties volgen de standaard ActivityPub specificatie.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Follow`: verzoek om statussen van een gebruiker te ontvangen en hun statussen met alleen volgers-only privacy te bekijken
+- `Accept`: keurt een `Follow` goed en voltooit de relatie
+- `Reject`: weigert een `Follow`
+- `Block`: voorkomen dat gebruikers elkaars statussen zien, en voorkomt dat de geblokkeerde gebruiker het profiel van de speler bekijkt
+- `Update`: updates het profiel en instellingen van een gebruiker
+- `Delete`: deactiveert een gebruiker
+- `Undo`: draait een `Follow` of `Block` terug
 
-### Statuses
-#### Object types
+### Statussen
+#### Objecttypes
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
-
-
-#### Activities
-
-- `Create`: saves a new status in the database.
-
-   **Note**: BookWyrm only accepts `Create` activities if they are:
-
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
-
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
-
-#### Objects
-
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
-
-#### Activities
-
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Note`: Voor diensten zoals Mastodon, `Note`s zijn het primaire status type. Ze bevatten een bericht, bijlagen, kunnen gebruikers vermelden en zijn antwoorden op statussen van elk type. Binnen BookWyrm kan `Note`s alleen worden gemaakt als directe berichten of als antwoord op andere statussen.
+- `Review`: Een recensie is een status in reactie op een boek (aangegeven door het `inReplyToBook` veld) die een titel, lichaam en numerieke beoordeling tussen 0 (niet beoordeeld) en 5 heeft.
+- `Comment`: Een reactie op een boek vermeldt een boek en bevat een bericht.
+- `Quotation`: Een citaat heeft een bericht, een extract uit een boek en vermeldt een boek.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+#### Activiteiten
+
+- `Create`: slaat een nieuwe status op in de database.
+
+   **Let op**: BookWyrm accepteert alleen `Create` activiteiten als ze zijn:
+
+   - Directe berichten (d.w.z. `Note`met het privacyniveau `direct`, die een lokale gebruiker vermeldt),
+   - Gerelateerd aan een boek (van een aangepast statustype dat het veld `inReplyToBook` bevat),
+   - Antwoorden op bestaande statussen opgeslagen in de database
+- `Delete`: Verwijdert een status
+- `Like`: Maakt een favoriet aan op de status
+- `Announce`: Vergroot de status in de tijdlijn van de speler
+- `Undo`: draait een `Like` of `Announce` terug
+
+### Verzamelingen
+De boeken en lijsten van gebruikers worden vertegenwoordigd door [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+
+#### Objecten
+
+- `Shelf`: Een boekverzameling van gebruikers. Standaard heeft elke gebruiker een `om te lezen`, `lezen`, en `gelezen` plank die gebruikt worden om de leesvoortgang bij te houden.
+- `List`: Een verzameling boeken waarbij items kunnen worden bijgedragen door andere gebruikers dan degene die de lijst hebben gemaakt.
+
+#### Activiteiten
+
+- `Aanmaken`: Voegt een plank of een lijst toe aan de database.
+- `Delete`: Verwijdert een plank of lijst.
+- `Add`: Voegt een boek toe aan een plank of lijst.
+- `Remove`: Verwijdert een boek van een plank of lijst.
+
+
+## Alternatieve serialisatie
+Omdat BookWyrm gebruikmaakt van aangepaste objecttypes (`Review`, `Comment`, `Quotation`) die niet worden ondersteund door ActivityPub, worden statussen omgezet in standaard types wanneer ze worden verzonden naar of bekeken door niet-BookWyrm diensten. `Review`s worden omgezet in `Article`s, en `Comment`s en `Quotation`s worden omgezet in `Note`s, met een koppeling naar het boek en de bijgevoegde omslagafbeelding.
