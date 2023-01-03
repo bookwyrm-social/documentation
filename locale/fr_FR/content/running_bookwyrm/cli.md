@@ -122,7 +122,7 @@ Migre tous les médias téléchargés d'une instance BookWyrm existante vers un 
 
 ### sync_media_to_s3
 
-Syncronise les médias nouvellement créés ou modifiés d'une instance Bookwyrm existante vers un compartiment compatible S3. À utiliser pour s'assurer que tous les fichiers locaux ont été téléchargés vers un compartiment existant.
+Sync new or changed uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". À utiliser pour s'assurer que tous les fichiers locaux ont été téléchargés vers un compartiment existant.
 
 ### set_cors_to_s3 filename
 
