@@ -4,7 +4,7 @@ Date: 2022-11-23
 Order: 6
 ---
 
-Es kann passieren, dass Deine Instanz langsam ist. Eine Option wäre die Warteschlange zu inspizieren, um zu sehen, ob einige Jobs hängen. Lie weiter, um zu erfahren, wie.
+Es kann passieren, dass deine Instanz langsam ist. Eine Option wäre die Warteschlange zu inspizieren, um zu sehen, ob einige Jobs hängen. Lies weiter, um zu erfahren, wie.
 
 ## Celery
 

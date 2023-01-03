@@ -4,7 +4,7 @@ Title: Befehlszeilenwerkzeug Date: 2021-11-11 Order: 9
 
 Bookwyrm-Entwickler und Instanz-Manager können das `bw-dev`-Skript für gemeinsame Aufgaben verwenden. Dies macht deine Befehle kürzer, leichter zu merken und schwieriger durcheinander zu bringen.
 
-Sobald Sie Bookwyrm [in Produktion](installing-in-production.html) oder [in Entwicklung](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment)installiert haben, können Sie das Skript von der Kommandozeile aus mit `./bw-dev` ausführen, gefolgt von dem Unterbefehl, den Sie ausführen wollen.
+Sobald du Bookwyrm [in Produktion](installing-in-production.html) oder [in Entwicklung](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment)installiert hast, kannst du das Skript von der Kommandozeile aus mit `./bw-dev` ausführen, gefolgt von dem Unterbefehl, den du ausführen willst.
 
 ## Docker Kurzbefehle
 
@@ -18,7 +18,7 @@ Sobald Sie Bookwyrm [in Produktion](installing-in-production.html) oder [in Entw
 
 ### dbshell
 
-Öffnen Sie eine interaktive Postgres-Datenbank-Shell. Ich hoffe, Sie wissen, was Sie tun.
+Öffnen Sie eine interaktive Postgres-Datenbank-Shell. Ich hoffe, du weißst, was du tust.
 
 ### runweb args
 
@@ -28,13 +28,13 @@ Führe einen beliebigen Befehl (oben durch `args` repräsentiert) im `web`-Conta
 
 ### service_ports_web args
 
-Führen Sie einen beliebigen Befehl im `Web`-Container (oben dargestellt durch `args`) mit exponierten Ports aus. Dies ist nützlich, wenn du `pdb`-Tests ausführen möchtest, da `runweb` nicht die `pdb`-Prompt freigibt.
+Führe einen beliebigen Befehl im `Web`-Container (oben dargestellt durch `args`) mit exponierten Ports aus. Dies ist nützlich, wenn du `pdb`-Tests ausführen möchtest, da `runweb` nicht die `pdb`-Prompt freigibt.
 
 Äquivalent zu `docker-compose run --rm --service-ports web`.
 
 ### shell
 
-Öffne eine interaktive Django-Shell im Docker-`Web`-Container. Sie würden dies verwenden, wenn Sie Django Shell-Befehle direkt ausführen möchten.
+Öffne eine interaktive Django-Shell im Docker-`Web`-Container. Du würdest das verwenden, wenn du Django Shell-Befehle direkt ausführen möchtest.
 
 ### up [args]
 
@@ -50,17 +50,17 @@ Eine Datenbank initialisieren.
 
 _Dieser Befehl ist nicht verfügbar im `Produktion`szweig_.
 
-Führt Djangos `makemigrations`-Befehl im Docker-Container aus. Wenn Sie die Datenbankstruktur in einem Entwicklungszweig geändert haben, müssen Sie dies ausführen, damit Ihre Änderungen wirksam werden. Optional können Sie eine bestimmte Migration angeben, z.B. `./bw-dev makemigrations bookwyrm 0108`
+Führt Djangos `makemigrations`-Befehl im Docker-Container aus. Wenn du die Datenbankstruktur in einem Entwicklungszweig geändert hast, musst du dies ausführen, damit deine Änderungen wirksam werden. Optional kannst du eine bestimmte Migration angeben, z.B. `./bw-dev makemigrations bookwyrm 0108`
 
 ### migrate
 
-Führt Djangos `migrate`-Kommando im Docker-Container aus. Sie müssen dies immer nach `makemigrations` ausführen.
+Führt Djangos `migrate`-Kommando im Docker-Container aus. Du musst dies immer nach `makemigrations` ausführen.
 
 ### resetdb
 
 _Dieser Befehl ist nicht verfügbar im `Produktion`szweig_.
 
-Setzt die Datenbank zurück. **Dieser Befehl löscht Ihre gesamte Bookwyrm-Datenbank**und initiiert dann eine neue Datenbank und führt alle Migrationen aus. Sie sollten alle aktuellen Migrationsdateien löschen, die Sie nicht ausführen möchten, _bevor_ das `resetdb` ausgeführt wird.
+Setzt die Datenbank zurück. **Dieser Befehl löscht deine gesamte Bookwyrm-Datenbank**und initiiert dann eine neue Datenbank und führt alle Migrationen aus. Du solltest alle aktuellen Migrationsdateien löschen, die du nicht ausführen möchtest, _bevor_ das `resetdb` ausgeführt wird.
 
 ## Eine Bookwyrm-Instanz verwalten
 
@@ -78,7 +78,7 @@ Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. Es kann eine 
 
 ### remove_remote_user_preview_images
 
-Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
+Remove generated preview images for remote users. Siehe [Optionale Funktionen: Vorschaubilder für entfernte Accounts entfernen](/optional_features.html)
 
 ### generate_thumbnails
 
@@ -86,15 +86,15 @@ Generates thumbnail images for book covers.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the `--stream` argument.
+Re-populates Redis streams (user feeds). Normalerweise musst du das nicht ausführen, außer es gibt einen Fehler, der die Feeds deiner Benutzer*innen aus irgendeinem Grund löscht. You can specify which stream using the `--stream` argument.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.
+Re-populates Redis cache of lists. Du musst das normalerweise nicht ausführen, es sei denn, es gibt einen Fehler, der die Listen deiner Benutzer*innen aus irgendeinem Grund löscht.
 
 ### populate_suggestions
 
-Populate suggested users for all users. You may want to run this manually to refresh suggestions.
+Empfohlene Benutzer*innen für alle anzeigen. You may want to run this manually to refresh suggestions.
 
 ### restart_celery
 
@@ -112,13 +112,13 @@ Gets the secret admin code used to register the inital admin user on a new BookW
 
 ## S3 kompatiblen Speicher einrichten
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm verwendet django-storages, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.
+Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favicon, Standard-Avatar, etc.) und Medien (Benutzer-Avatare, Buchtitelbilder usw.), aber du kannst einen externen Speicherdienst verwenden, um diese Dateien zu bereitzustellen. BookWyrm verwendet django-storages, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.
 
 Siehe [Externer Speicher](/external-storage.html) für weitere Informationen.
 
 ### copy_media_to_s3
 
-Migriere alle hochgeladenen Medien von einer bestehenden Bookwrym-Installation in einen S3-kompatiblen "Bucket". Use for initial upload to an empty bucket.
+Migriere alle hochgeladenen Medien von einer bestehenden BookWyrm Installation in einen S3-kompatiblen "Bucket". Use for initial upload to an empty bucket.
 
 ### sync_media_to_s3
 
