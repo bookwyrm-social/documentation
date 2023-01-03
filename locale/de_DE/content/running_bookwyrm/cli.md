@@ -122,7 +122,7 @@ Migriere alle hochgeladenen Medien von einer bestehenden BookWyrm Installation i
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
+Synchronisiere neue oder geänderte Medien von einer existierenden Bookwrym-Installation zu einem S3-kompatiblen "Bucket". Use to ensure all local files are uploaded to an existing bucket.
 
 ### set_cors_to_s3 filename
 
