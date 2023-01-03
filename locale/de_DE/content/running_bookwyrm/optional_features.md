@@ -45,7 +45,7 @@ Alle Farbvariablen akzeptieren Werte, die im Modul `ImageColor` von Pillow als F
 
 ### Entferne Vorschaubilder für entfernte Accounts
 
-Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in terms of disk space and computing power, that generation has been stopped. Wenn du alle Bilder löschen möchtest, die zuvor für entfernte Accounts erstellt wurden, wurde ein neuer Befehl hinzugefügt:
+Prior to BookWyrm 0.5.4, preview images were generated for remote users. Da es in Hinblick auf Speicherplatz und Rechenleistung verschwenderisch war, wurde diese Generation gestoppt. Wenn du alle Bilder löschen möchtest, die zuvor für entfernte Accounts erstellt wurden, wurde ein neuer Befehl hinzugefügt:
 
 ```sh
 ./bw-dev remove_remote_user_preview_images
