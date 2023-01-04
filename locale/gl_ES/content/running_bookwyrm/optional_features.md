@@ -45,7 +45,7 @@ All the color variables accept values that can be recognized as colors by Pillow
 
 ### Removing preview images for remote users
 
-Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in terms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:
+Prior to BookWyrm 0.5.4, preview images were generated for remote users. Como era un gasto inútil en termos de espazo en disco e capacidade de computación, detívose a creación. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:
 
 ```sh
 ./bw-dev remove_remote_user_preview_images
