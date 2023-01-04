@@ -118,11 +118,11 @@ See [External Storage](/external-storage.html) for more information.
 
 ### copy_media_to_s3
 
-Migrate all uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.
+Migrar todo o multimedia subido desde unha instalación BookWyrm existente a un "bucket" S3-compatible. Use for initial upload to an empty bucket.
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
+Sincronizar o multimedia novo ou que cambiase desde unha instalación BookWyrm existente a un "bucket" S3-compatible. Use to ensure all local files are uploaded to an existing bucket.
 
 ### set_cors_to_s3 filename
 
