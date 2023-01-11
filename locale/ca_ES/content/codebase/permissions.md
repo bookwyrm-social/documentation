@@ -1,21 +1,21 @@
 - - -
-Title: Permissions Date: 2021-04-18 Order: 2
+Títol: Permisos Data: 2021-04-18 Ordre: 2
 - - -
 
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+L'accés de l'usuari a les diferents funcionalitats és controlat mitjançant el [sistema d'autenticació](https://docs.djangoproject.com/en/3.2/topics/auth/default/) de Django. Quan es crea una instància, l'script `initdb` crea una sèrie de permisos, els quals són assignats a grups. Per defecte, tots els usuaris nous són assignats al grup `editor` , el qual els hi permet editar les metadades dels llibres.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+La instància d'administrador ha de disposar de l'estat `superusuari` , el qual li dona accés a l'administració de Django (`/admin`) i li otorga tots els permisos a l'usuari.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Permisos i grups
+Aquesta taula mostra els quatre grups (administrador, moderador, editor i usuari) i quins permisos tenen els usuaris en aquell grup:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                                        | administrador | moderador | editor | usuari |
+| -------------------------------------- | ------------- | --------- | ------ | ------ |
+| editar la configuració de la instància | ✔️            | -         | -      | -      |
+| modificar el nivell de l'usuari        | ✔️            | -         | -      | -      |
+| gestionar federació                    | ✔️            | ✔️        | -      | -      |
+| convidar                               | ✔️            | ✔️        | -      | -      |
+| desactivar usuaris                     | ✔️            | ✔️        | -      | -      |
+| eliminar publicacions                  | ✔️            | ✔️        | -      | -      |
+| editar llibres                         | ✔️            | ✔️        | ✔️     | -      |
+ pujar portades            |  ✔️    |     ✔️       |   ✔️     |  ✔️
