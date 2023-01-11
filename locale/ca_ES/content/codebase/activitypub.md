@@ -40,21 +40,21 @@ User relationship interactions follow the standard ActivityPub spec.
 - `Announce`: Boosts the status into the actor's timeline
 - `Undo`: Reverses a `Like` or `Announce`
 
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+### Col·leccions
+Els llibres i llistats de l'usuari son representats per [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
-#### Objects
+#### Objectes
 
 - `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
 - `List`: A collection of books that may have items contributed by users other than the one who created the list.
 
-#### Activities
+#### Activitats
 
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Create`: Afegeix un prestatge o llista a la base de dades.
+- `Delete`: Elimina un prestatge o llista.
+- `Add`: Afegeix un llibre al prestatge o llista.
+- `Remove`: Elimina un llibre del prestatge o llista.
 
 
-## Alternative Serialization
+## Serialitzacions alternatives
 Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
