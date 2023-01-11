@@ -1,20 +1,20 @@
 ---
-Title: Adding Books
+Title: Afegir llibres
 Date: 2022-07-29
 Order: 2
 ---
 
-There are a few different ways to add books to your BookWyrm instance! When you can't find the book you're looking for, try these options in order -- it's better to import a book than to create one from scratch.
+Hi ha diferents vies per tal d'afegir llibres a la teva instància de BookWyrm! Quan no trobis el llibre que estàs cercant, prova aquestes opcions per ordre -- és millor fer una importació que crear un des de zero.
 
-## Loading books from other catalogs
+## Carregar llibres d'altres catàlegs
 
-If the book you're looking for isn't available on your instance, there are a few different ways to add it. The best way is to import it from an outside source -- your instance can load books from other BookWyrm instances, as well as [OpenLibrary](http://openlibrary.org/) and [Inventaire](http://inventaire.io/). If there are no search results for your query, these sources will automatically be queried, and will show up with a button to "**Import book**". If there are local search results that aren't what you're looking for, you can click the "**Load results from other catalogues**" link to load more results.
+Si el llibre que estàs cercant no es troba disponible a la teva instància, hi ha diferents vies per tal d'afegir-lo. La millor via és important-lo des d'una font externa -- la teva instància pot carregar llibres d'altres instàncies de BookWyrm, com també d'[OpenLibrary](http://openlibrary.org/) i d'[Inventaire](http://inventaire.io/). Si no hi ha resultats per a la teva cerca, aquestes fonts seran automàticament consultades i, se't mostrarà un botó per "**Importar llibre**". Si hi han resultats locals no desitjats, pots pitjar l'enllaç "**Carregar resultats d'altres catàlegs**" per carregar més resultats.
 
 
-## Adding another edition
+## Afegir una altra edició
 
-If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
+Si trobes el llibre desitjat, però no l'edició correcta, pots afegir una edició diferent des del llistat d'edicions. Pitja l'enllaç situat sota la descripció on es mostra el número d'edicions que hi ha (per exemple "**4 edicions**"). Al final de la llista d'edicions, hi trobaràs el botó "**Afegir una altra edició**".
 
-## Add a completely new book
+## Afegir un llibre completament nou
 
-Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. The link to manually add a book is at the bottom of the search page when external catalogs are shown. You can also navigate direclty to `/create-book` on your instance.
+Un cop has provat de cercar el llibre, importar-lo d'un altre catàleg i, comprovar altres edicions, pots afegir un nou llibre manualment. L'enllaç per a afegir manualment el llibre es troba al final de la pàgina de cerca quan es mostren catàlegs externs. També pots navegar directament a `/create-book` a la teva instància.
