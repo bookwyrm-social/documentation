@@ -56,5 +56,5 @@ Los libros y listas de une usuarie están representados por [`OrderedCollection`
 - `Eliminar`: quita un libro de una estantería o lista.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+## Serialización alternativa
+Puesto que BookWyrm emplea tipos de objetos personalizados (`Reseña`, `Comentario`, `Cita`) que no son compatibles con ActivityPub, los estados son transformados en tipos estándar cuando se envían a o se ven desde servicios diferentes a BookWyrm. Las `Reseñas`s se convierten en `Artículo`s y los `Comentario`s y las `Cita`s se convierten en `Nota`s, con un enlace al libro y una imagen de portada adjunta.
