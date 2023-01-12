@@ -1,15 +1,15 @@
 - - -
-Title: Developer Environment Date: 2021-04-12 Order: 3
+Títol: Entorn de desenvolupament Data: 2021-04-12 Ordre: 3
 - - -
 
-## Prerequisites
+## Requisits previs
 
-These instructions assume you are developing BookWyrm using Docker. You'll need to [install Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to get started.
+Aquestes instruccions assumeixen que estàs desenvolupant BookWyrm mitjançant Docker. Necessitaràs [instal·lar Docker](https://docs.docker.com/engine/install/) i [docker-compose](https://docs.docker.com/compose/install/) per començar.
 
-## Setting up the developer environment
+## Configuració de l'entorn de desenvolupament
 
-- Get a copy of [the BookWyrm codebase from GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
-- Go to the directory which contains the code on your computer, you'll be working from there from here on out.
+- Aconsegueix una còpia del [codi base de BookWyrm a GitHub](https://github.com/bookwyrm-social/bookwyrm). Pots [crear una derivació](https://docs.github.com/en/get-started/quickstart/fork-a-repo) del repositori i, llavors [utilitzar `git clone` per descarregar el codi](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) a l'ordinador.
+- Ves al directori que conté el codi al teu ordinador, treballaràs des d'aquí d'ara en endavant.
 - Set up your development environment variables file by copying the example environment file (`.env.example`) into a new file named `.env`. In the command line, you can do this with:
 ``` { .sh }
 cp .env.example .env
