@@ -1,8 +1,8 @@
 - - -
-Title: Updating Your Instance Date: 2022-11-17 Order: 3
+Títol: Actualitzant la teva instància Data: 2022-11-17 Ordre: 3
 - - -
 
-When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. This does a number of things:
+Quan hi ha canvis disponibles a la branca de producció, els pots instal·lar i fer funcionar a la teva instància mitjançant la comanda `./bw-dev update`. This does a number of things:
 
 - `git pull` gets the updated code from the git repository. If there are conflicts, you may need to run `git pull` separately and resolve the conflicts before trying the `./bw-dev update` script again.
 - `docker-compose build` rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip `requirements.txt` packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.
