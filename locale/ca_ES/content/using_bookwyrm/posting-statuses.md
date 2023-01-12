@@ -6,35 +6,35 @@ Posting on BookWyrm starts with a book. Users can comment on in-progress or rece
 
 If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
 
-## Types of statuses
+## Tipus d'estats
 
-### User commentary
+### Comentari d'usuari
 
 There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
 
-| Component     | Review | Comment | Quote | Reply |
-| ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
-| Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
-| Quote         |        |         | ✔     |       |
-| Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| Component                | Review | Comment | Quote | Reply |
+| ------------------------ | ------ | ------- | ----- | ----- |
+| Camp de text             | ✔      | ✔       | ✔     | ✔     |
+| Revela parts de la trama | ✔      | ✔       | ✔     | ✔     |
+| Número de pàgina         |        | ✔       | ✔     |       |
+| Cita                     |        |         | ✔     |       |
+| Valoració                | ✔      |         |       |       |
+| Camp de títol            | ✔      |         |       |       |
 
 
-### Reading status updates
+### Actualitzacions d'estats de lectura
 
-Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
+Els estats són generats quan un usuari indica que vol llegir, ha començat a llegir o ha acabat de llegir un llibre.
 
 ## Text
-Text can include:
+El text pot incloure:
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+- Mencions (@usuari)
+- URLs (`http(s)://` no es mostra)
+- Algunes [opcions de format](https://www.markdownguide.org/cheat-sheet/)
+  - negreta
+  - cursiva
+  - cometes
+  - llista amb boletes
+  - enllaços
 
