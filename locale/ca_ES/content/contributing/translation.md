@@ -1,10 +1,10 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Títol: Traduccions Data: 2021-10-20 Ordre: 2
 - - -
 
-## Contributing to translations
+## Contribueix a les traduccions
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Pots unir-te al projecte de traduccions de BookWyrm a [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
 ## Gender-neutral language
 
