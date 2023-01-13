@@ -1,42 +1,42 @@
 - - -
-Title: External Storage Date: 2021-06-07 Order: 7
+Títol: Emmagatzematge Extern Data: 2021-06-07 Ordre: 7
 - - -
 
-By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses `django-storages` to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
+Per defecte, BookWyrm fa ús d'emmagatzematge local per a elements estàtics (favicon, avatar per defecte, etc.) i mitjans visuals (avatars d'usuaris, portades de llibres, etc.), però pots utilitzar emmagatzematge extern per nodrir aquests arxius. BookWyrm utilitza `django-storages` per gestionar emmagatzematge extern, com serveis compatibles S3, Apache Libcloud o SFTP.
 
-## S3-compatible Services
+## Serveis compatibles S3
 
-### Setup
+### Configuració
 
 Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) or [MinIO](https://min.io/) (GNU AGPL v3.0), or commercial ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
 
 This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
 
-### What awaits you
+### Què t'espera?
 
-If you are starting a new BookWyrm instance, the process will be:
+Si inicies una nova instància BookWyrm, el procés és el següent:
 
-- Set up your external storage service
-- Enable external storage on BookWyrm
-- Start your BookWyrm instance
-- Update the instance connector
+- Configurar el teu servei d'emmagatzematge extern
+- Habilitar l'emmagatzematge extern a BookWyrm
+- Iniciar la teva instància BookWyrm
+- Actualitzar el connector de la instància
 
-If you already started your instance, and images have been uploaded to local storage, the process will be:
+Si ja has iniciat la teva instància i, les imatges han sigut carregades a l'emmagatzematge local, el procés és el següent:
 
-- Set up your external storage service
-- Copy your local media to external storage
-- Enable external storage on BookWyrm
-- Restart your BookWyrm instance
-- Update the instance connector
+- Configurar el teu servei d'emmagatzematge extern
+- Copiar els teus mitjans visuals locals a l'emmagatzematge extern
+- Habilitar l'emmagatzematge extern a BookWyrm
+- Reiniciar la teva instància BookWyrm
+- Actualitzar el connector de la instància
 
-### BookWyrm Settings
+### Paràmetres de BookWyrm
 
-Edit your `.env` file by uncommenting the following lines:
+Edita el teu fitxer `.env` no comentant les següents línies:
 
-- `AWS_ACCESS_KEY_ID`: your access key ID
-- `AWS_SECRET_ACCESS_KEY`: your secret access key
-- `AWS_STORAGE_BUCKET_NAME`: your bucket name
-- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` for AWS, `"fr-par"` for Scaleway or `"nyc3"` for Digital Ocean
+- `AWS_ACCESS_KEY_ID`: la teva clau ID d'accés
+- `AWS_SECRET_ACCESS_KEY`: la teva clau d'accés secreta
+- `AWS_STORAGE_BUCKET_NAME`: el nom del teu contenidor
+- `AWS_S3_REGION_NAME`: per exemple `"eu-west-1"` per a AWS, `"fr-par"` per a Scaleway o `"nyc3"` per a Digital Ocean
 
 If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll have to uncomment the following lines:
 
