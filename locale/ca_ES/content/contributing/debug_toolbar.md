@@ -1,8 +1,8 @@
 - - -
-Title: Django Debug Toolbar Date: 2022-05-16 Order: 5
+Títol: Barra d'eines de depuració de Django Data: 2022-05-16 Ordre: 5
 - - -
 
-BookWyrm has a branch that is configured to run [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/). This branch will never get merged into `main` and has a few tweaks that make it work with the toolbar, but unsafe to use in anything resembling a production environment. To use this branch, you will need to go through a few steps to get it running.
+BookWyrm té una branca configurada per executar la [Barra d'Eines de Depuració de Django](https://django-debug-toolbar.readthedocs.io/en/latest/). Aquesta branca no serà mai unida a `main` i té alguns retocs que li permet treballar amb la barra d'eines però, no és segur fer-ne ús en un entorn destinat a producció. To use this branch, you will need to go through a few steps to get it running.
 
 ## Set up
 
