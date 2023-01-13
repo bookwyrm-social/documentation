@@ -18,27 +18,27 @@ User relationship interactions follow the standard ActivityPub spec.
 - `Undo`: reverses a `Follow` or `Block`
 
 ### Statuses
-#### Object types
+#### Tipus d'objecte
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
+- `Nota`: En serveis com Mastodon, les `Notes` són el tipus principal d'estat. Contenen un cos del missatge, adjunts, poden fer menció a usuaris i, ser respostes altres tipus d'estat. Dins de BookWyrm, les `Notes` només poden ser creades com a missatges directes o com a respostes a altres estats.
+- `Ressenya`: Una ressenya és un estat en resposta a un llibre (indicat pel camp `inReplyToBook`), el qual conté títol, cos i, una valoració numèrica entre 0 (no valorat) i 5.
+- `Comentari`: Un comentari en un llibre fa referència a un llibre i té un cos del missatge.
+- `Cita`: Una cita té un cos del missatge, un extracte d'un llibre i, menciona un llibre.
 
 
-#### Activities
+#### Activitats
 
-- `Create`: saves a new status in the database.
+- `Crear`: guarda un nou estat a la base de dades.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Nota**: BookWyrm nomès accepta activitats de `Crear` si són:
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
+   - Missatges directes (per exemple `Notes` amb el nivell de privacitat `directe`, el qual menciona a un usuari local),
+   - Relacionat amb un llibre (amb un estat personalitzat que inclogui el camp `inReplyToBook`),
+   - Respostes a estats ja existents guardats a la base de dades
+- `Eliminar`: Elimina un estat
+- `M'agrada`: Crea un favorit a l'estat
+- `Anunci`: Destaca l'estat a la línia de temps de l'actor
+- `Desfer`: Desfà un `M'agrada` o un `Anunci`
 
 ### Col·leccions
 Els llibres i llistats de l'usuari son representats per [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
