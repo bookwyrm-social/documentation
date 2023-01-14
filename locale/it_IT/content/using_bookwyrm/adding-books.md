@@ -1,14 +1,14 @@
 ---
-Title: Aggiunta del libro %s in corso
+Title: Aggiungere libri
 Date: 2022-07-29
 Order: 2
 ---
 
-Ci sono alcuni modi diversi per aggiungere libri alla vostra istanza BookWyrm! Quando non trovi il libro che stai cercando, provare queste opzioni in modo -- è meglio importare un libro che crearne uno da zero.
+Ci sono alcuni modi diversi per aggiungere libri alla vostra istanza BookWyrm! Quando non trovi il libro che stai cercando, provare queste opzioni in ordine -- è meglio importare un libro che crearne uno da zero.
 
-## Caricando libri da altri cataloghi
+## Carica libri da altri cataloghi
 
-Se il libro che stai cercando non è disponibile sul tuo esempio, ci sono alcuni modi diversi per aggiungerlo. Il modo migliore è quello di importare da una fonte esterna -- la tua istanza può caricare libri da altre istanze di BookWyrm, così come [OpenLibrary](http://openlibrary.org/) e [Inventaire](http://inventaire.io/). Se non ci sono risultati di ricerca per la tua query, queste sorgenti verranno automaticamente interrogate, e verrà visualizzato con un pulsante per "**Importa libro**". Se ci sono i risultati di ricerca locali che non sono quello che stai cercando, è possibile cliccare sul link "**Carica i risultati da altri cataloghi**" per caricare più risultati.
+Se il libro che stai cercando non è disponibile sulla tua istanza, ci sono diversi modi per aggiungerlo. Il modo migliore è quello di importarlo da una fonte esterna -- la tua istanza può importare libri da altre istanze di BookWyrm, così come [OpenLibrary](http://openlibrary.org/) e [Inventaire](http://inventaire.io/). Se non ci sono risultati per la tua ricerca, queste fonti verranno automaticamente interrogate, e verrà visualizzate con un pulsante "**Importa libro**". Se ci sono i risultati di ricerca locali che non sono quello che stai cercando, è possibile cliccare sul link "**Carica i risultati da altri cataloghi**" per caricare più risultati.
 
 
 ## Aggiungere un'altra versione
