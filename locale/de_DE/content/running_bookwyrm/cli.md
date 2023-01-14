@@ -74,27 +74,27 @@ Migrier statische Assets in einen Docker-Container oder in einen S3-kompatiblen 
 
 ### generate_preview_images
 
-Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. Es kann eine Weile dauern, wenn du viele Bücher hast. See [Optional Features: Generating preview images](/optional_features.html)
+Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. Es kann eine Weile dauern, wenn du viele Bücher hast. Siehe auch [Optionale Funktionen: Generiere Vorschaubilder](/optional_features.html)
 
 ### remove_remote_user_preview_images
 
-Remove generated preview images for remote users. Siehe [Optionale Funktionen: Vorschaubilder für entfernte Accounts entfernen](/optional_features.html)
+Entferne für entfernte Benutzer generierte Vorschaubilder. Siehe [Optionale Funktionen: Vorschaubilder für entfernte Accounts entfernen](/optional_features.html)
 
 ### generate_thumbnails
 
-Generates thumbnail images for book covers.
+Generiert Vorschaubilder für Bücher.
 
 ### populate_streams args
 
-Re-populates Redis streams (user feeds). Normalerweise musst du das nicht ausführen, außer es gibt einen Fehler, der die Feeds deiner Benutzer*innen aus irgendeinem Grund löscht. You can specify which stream using the `--stream` argument.
+Redis-Streams (Benutzer-Feeds) werden wieder aufgebaut. Normalerweise giibt es keinen Grund diesen Befehl auszuführen, außer es gibt einen Fehler, der die Feeds deiner Benutzer*innen aus irgendeinem Grund löscht. Du kannst den entsprechenden Feed mit dem `--stream` Argument angeben.
 
 ### populate_list_streams
 
-Re-populates Redis cache of lists. Du musst das normalerweise nicht ausführen, es sei denn, es gibt einen Fehler, der die Listen deiner Benutzer*innen aus irgendeinem Grund löscht.
+Redis-Cache der Listen wieder auffüllen. Du musst das normalerweise nicht ausführen, es sei denn, es gibt einen Fehler, der die Listen deiner Benutzer*innen aus irgendeinem Grund löscht.
 
 ### populate_suggestions
 
-Empfohlene Benutzer*innen für alle anzeigen. You may want to run this manually to refresh suggestions.
+Empfohlene Benutzer*innen für alle anzeigen. Möglicherweise möchten Sie dies manuell ausführen, um Vorschläge zu aktualisieren.
 
 ### restart_celery
 
@@ -104,11 +104,11 @@ Startet den `celery_worker`-Docker-Container neu.
 
 Wenn es Änderungen im `-Produktions`-Zweig gibt, kannst Du Deine Instanz ohne Ausfallzeit aktualisieren.
 
-This command `git pull`s the latest `production` branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.
+Dieser Befehl verwendet `git pull` um die neusten Aktualisierungen aus dem `production`-Zweig herunterzuladen, baut Docker-Images falls nötig, führt Django-Migrationen aus, aktualisiert statische Dateien und startet alle Docker-Container neu.
 
 ### admin_code
 
-Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.
+Ruft den geheimen Admin-Code ab, der verwendet wird, um den initalen Admin-Benutzer in einer neuen BookWyrm-Instanz zu registrieren.
 
 ## S3 kompatiblen Speicher einrichten
 
@@ -118,11 +118,11 @@ Siehe [Externer Speicher](/external-storage.html) für weitere Informationen.
 
 ### copy_media_to_s3
 
-Migriere alle hochgeladenen Medien von einer bestehenden BookWyrm Installation in einen S3-kompatiblen "Bucket". Use for initial upload to an empty bucket.
+Migriere alle hochgeladenen Medien von einer bestehenden BookWyrm Installation in einen S3-kompatiblen "Bucket". Verwende dies für den initialen Upload in einen leeren Bucket.
 
 ### sync_media_to_s3
 
-Synchronisiere neue oder geänderte Medien von einer existierenden Bookwrym-Installation zu einem S3-kompatiblen "Bucket". Use to ensure all local files are uploaded to an existing bucket.
+Synchronisiere neue oder geänderte Medien von einer existierenden Bookwrym-Installation zu einem S3-kompatiblen "Bucket". Verwende diesen Befehl, um sicherzustellen, dass alle lokalen Dateien in einen existierenden Bucket hochgeladen werden.
 
 ### set_cors_to_s3 filename
 
@@ -130,7 +130,7 @@ Copy a CORS rules JSON file to your S3 bucket, where `filename` is the name of y
 
 ## Entwicklung und Test
 
-_These commands are not available on the `production` branch_.
+Diese Befehle sind zurzeit noch nicht im `production`-Zweig verfügbar.
 
 ### black
 
