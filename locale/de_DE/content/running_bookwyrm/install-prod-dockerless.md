@@ -39,12 +39,12 @@ Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:
     - Erstelle eine Kopie der Konfiguration der Produktionsvorlage und setze sie für die Verwendung in nginx `cp nginx/production nginx/bookwyrm.conf`
     - Aktualisiere nginx `bookwyrm.conf`:
         - Ersetze `your-domain.com` mit deinem Domainnamen überall in der Datei (inklusive der aktuell auskommentierten Zeilen)
-        - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
-        - Zeilen 18 bis 67 auskommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two `server` blocks enabled
+        - Ersetze in der Datei überall (inklusive der auskommentierten Zeilen) `/app/` mit deinem Installationsverzeichnis `/opt/bookwyrm/`
+        - Zeilen 18 bis 67 auskommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. Du solltest zwei `Server`-Blöcke aktiviert haben
         - Ändere die `ssl_certificate` und `ssl_certificate_key` Pfade an Ihre volle Kette und Privkey Positionen
-        - Change line 4 so that it says `server localhost:8000`. Du kannst hier einen anderen Port wählen, wenn du magst
+        - Ändere die Zeile 4 zu folgendem Inhalt: `server localhost:8000`. Du kannst hier einen anderen Port wählen, wenn du magst
         - Wenn du einen anderen Webserver auf deinem Host-Rechner betreibst, musst du den [Reverse-Proxy-Anweisungen](/reverse-proxy.html) folgen
-    - Enable the nginx config: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
+    - Aktiviere die nginx-Konfigurationsdatei mit folgendem Befehl: `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
      - Lade Nginx neu: `systemctl reload nginx`
 - Einrichtung der virtuellen Python-Umgebung
     - Erstelle den Python venv-Ordner in deinem Installationsverzeichnis: `mkdir venv` `python3 -m venv ./venv`
