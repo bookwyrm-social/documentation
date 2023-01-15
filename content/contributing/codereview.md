@@ -12,7 +12,7 @@ BookWyrm uses a handful of [code validators](style_guide.html) that lint and val
 
 ## Code Review
 
-When you're code is ready for review, a contributor will take a look at what you've written. They will be looking for a few things:
+When your code is ready for review, a contributor will take a look at what you've written. They will be looking for a few things:
 
  - Is your proposed change in line with the projects goals?
  - Does your code work as expected?
