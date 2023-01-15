@@ -14,7 +14,7 @@ BookWyrm uses a handful of [code validators](style_guide.html) that lint and val
 
 When your code is ready for review, a contributor will take a look at what you've written. They will be looking for a few things:
 
- - Is your proposed change in line with the projects goals?
+ - Is your proposed change in line with the project's goals?
  - Does your code work as expected?
  - Are there different or more efficient approaches you could have taken?
  - Are there edge cases you may have overlooked?
