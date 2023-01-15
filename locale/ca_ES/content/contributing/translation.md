@@ -6,11 +6,11 @@ Títol: Traduccions Data: 2021-10-20 Ordre: 2
 
 Pots unir-te al projecte de traduccions de BookWyrm a [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Llenguatge de gènere neutre
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Sempre que sigui possible, les traduccions de BookWyrm hauran d'utilitzar llenguatge de gènere neutre. Això aplica tant si la llengua té per defecte el gènere masculí com a neutre o si utilitza quelcom similar a "ell/ella". És important per a les traduccions ser clar, concís i comprensible de cara al lector i, alguns cops aquests objectius es troben en conflicte; no hi ha una solució única o perfecta, depèn del mateix idioma.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Com a principi, intenta donar un valor alt al llenguatge inclusiu i de gènere neutre que a formes respectuoses o guies d'estil oficials. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
 
 If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
 
