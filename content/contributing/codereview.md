@@ -6,7 +6,7 @@ Order: 6
 
 You opened a pull request! Thank you so much. Here's what happens next. Long story short, another contributor will look over your code, try it out, and give feedback until it's ready to merge. Here's some more detail on the process:
 
-## Automated checks
+## Automated Checks
 
 BookWyrm uses a handful of [code validators](style_guide.html) that lint and validate code, and run the unit tests. All of these need to pass for your code to be ready to merge. There are usually hints about how you can fix any checks that don't pass, but if you aren't sure how to proceed, just comment on the issue and someone can help you out.
 
