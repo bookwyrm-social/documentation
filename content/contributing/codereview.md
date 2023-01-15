@@ -4,7 +4,7 @@ Date: 2023-01-11
 Order: 6
 ---
 
-You opened a pull request! Thank you so much. Here's what happens next. Long story short, another contributor will look over your code, try it out, and give feedback until its ready to merge. Here's some more detail on the process:
+You opened a pull request! Thank you so much. Here's what happens next. Long story short, another contributor will look over your code, try it out, and give feedback until it's ready to merge. Here's some more detail on the process:
 
 ## Automated checks
 
