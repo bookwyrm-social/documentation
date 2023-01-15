@@ -39,7 +39,7 @@ Optionale Funktionen
                 <span class="button is-success">Beitreten</span>
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Machen Sie mit
+                Mach mit
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -112,7 +112,7 @@ Optionale Funktionen
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Ihre Instanz updaten</a>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -186,36 +186,36 @@ Optionale Funktionen
 <section class="block content">
     <p>Einige Funktionen von BookWyrm müssen aktiviert werden, um zu funktionieren.</p>
 <h2>Vorschaubilderzeugung</h2>
-<p>Standardmäßig verwendet BookWyrm das Logo der Instanz (oder das Standardlogo) als OpenGraph Vorschaubild. Alternativ können Sie die Erstellung von Vorschaubildern für Bücher, Benutzer und die Website aktivieren.</p>
+<p>Standardmäßig verwendet BookWyrm das Logo der Instanz (oder das Standardlogo) als OpenGraph Vorschaubild. Alternativ kannst du die Erstellung von Vorschaubildern für Bücher, Benutzer und die Website aktivieren.</p>
 <p>Die Vorschaubilder werden für große OpenGraph Bilder vergrößert (verwendet von Twitter unter dem Namen <code>summary_large_image</code>). Abhängig von der Art des Bildes wird der Inhalt sein:</p>
 <ul>
 <li>das Standardinstanzbild zeigt das große Logo an, zusammen mit dem Namen der Instanz und ihrer Url</li>
-<li>das Benutzerbild zeigt sein Avatar, den Anzeigenamen an (in Form von Benutzername@Instanz)</li>
+<li>Das Profilbild zeigt den Avatar und den Anzeigenamen an (in Form von name@instanz)</li>
 <li>das Buchbild zeigt sein Titelbild, Titel, Untertitel (falls vorhanden), Autor und Bewertung (falls vorhanden) an</li>
 </ul>
 <p>Diese Bilder werden an verschiedenen Stellen aktualisiert:</p>
 <ul>
 <li>Instanzbild: wenn der Instanzname oder das große Logo geändert werden</li>
-<li>Benutzerbild: wenn der Anzeigename oder das Avatar geändert wird</li>
+<li>Profilbild: wenn der Anzeigename oder das Avatar geändert wird</li>
 <li>Buchbild: wenn der Titel, Autor oder das Cover geändert oder wenn eine neue Bewertung hinzugefügt wird</li>
 </ul>
 <h3>Vorschaubilder aktivieren</h3>
 <p>Um die Funktion mit den Standardeinstellungen zu aktivieren, Sie müssen die Zeile <code>ENABLE_PREVIEW_IMAGES=true</code> in Ihrer <code>.env</code> Datei auskommentieren (entfernen Sie das Zeichen <code>#</code> am Anfang). Alle neuen Aktualisierungstermine führen zur Erzeugung des entsprechenden Bildes.</p>
 <p>Beispiele für diese Bilder können in der <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">Beschreibung der Funktions-Pull-Anfrage</a> angesehen werden.</p>
 <h3>Vorschaubilder erzeugen</h3>
-<p>Wenn Sie diese Einstellung aktivieren, nachdem Ihre Instanz gestartet wurde, wurden einige Bilder möglicherweise nicht generiert. Ein Befehl wurde hinzugefügt, um die Bildgenerierung zu automatisieren. Um eine Ressourcenüberlastung zu verhindern, wenn Sie <strong>EINE MENGE</strong> Bilder erzeugen, müssen Sie das Argument <code>--all</code> (oder <code>-a</code>) übergeben, um die Erzeugung der Vorschaubilder für alle Benutzer und Bücher zu starten. Ohne dieses Argument wird nur die Seitenvorschau generiert.</p>
-<p>Benutzer- und Buchvorschaubilder werden asynchron erzeugt: Die Aufgabe wird an Flower gesendet. Etwas Zeit kann benötigt werden, bevor alle Bücher und Benutzer ein funktionierendes Vorschaubild haben. Wenn Sie ein gutes Buch haben 📖, ein Kätzchen 🐱 oder einen Kuchen 🍰, ist dies der perfekte Zeitpunkt, um ihnen Aufmerksamkeit 💖 zu schenken.</p>
+<p>Wenn du diese Einstellung aktivierst, nachdem die Instanz gestartet wurde, wurden einige Bilder möglicherweise nicht generiert. Ein Befehl wurde hinzugefügt, um die Bildgenerierung zu automatisieren. Um eine Ressourcenüberlastung zu verhindern, wenn Sie <strong>EINE MENGE</strong> Bilder erzeugen, müssen Sie das Argument <code>--all</code> (oder <code>-a</code>) übergeben, um die Erzeugung der Vorschaubilder für alle Benutzer und Bücher zu starten. Ohne dieses Argument wird nur die Seitenvorschau generiert.</p>
+<p>Benutzer- und Buchvorschaubilder werden asynchron erzeugt: Die Aufgabe wird an Flower gesendet. Etwas Zeit kann benötigt werden, bevor alle Bücher und Benutzer*innen ein funktionierendes Vorschaubild haben. Wenn du ein gutes Buch 📖, ein Kätzchen 🐱 oder einen Kuchen 🍰 hast, ist dies der perfekte Zeitpunkt, um ihnen Aufmerksamkeit 💖 zu schenken.</p>
 <h3>Optionale Einstellungen</h3>
-<p>Sie möchten Ihre Vorschaubilder anpassen? Hier sind die Optionen:</p>
+<p>Du möchstest deine Vorschaubilder anpassen? Hier sind die Optionen:</p>
 <ul>
-<li><code>PREVIEW_BG_COLOR</code> legt die Farbe für den Vorschauhintergrund fest. Sie können einen Farbwert angeben, wie <code>#b00cc0</code> oder die folgenden Werte <code>use_dominant_color_light</code> oder <code>use_dominant_color_dark</code>. Diese extrahieren eine dominante Farbe aus dem Buchcover und verwenden es in einem hellen bzw. dunklen Thema.</li>
-<li><code>PREVIEW_TEXT_COLOR</code> legt die Farbe für den Text fest. Abhängig von der Auswahl für die Hintergrundfarbe sollten Sie einen Wert finden, der einen ausreichenden Kontrast hat, um das Bild zugänglich zu machen. Ein Kontrastverhältnis von 1:4.5 wird empfohlen.</li>
+<li><code>PREVIEW_BG_COLOR</code> legt die Farbe für den Vorschauhintergrund fest. Du kannst einen Farbwert angeben, wie <code>#b00cc0</code> oder die folgenden Werte <code>use_dominant_color_light</code> oder <code>use_dominant_color_dark</code>. Diese extrahieren eine dominante Farbe aus dem Buchcover und verwenden es in einem hellen bzw. dunklen Thema.</li>
+<li><code>PREVIEW_TEXT_COLOR</code> legt die Farbe für den Text fest. Abhängig von der Auswahl für die Hintergrundfarbe solltest du einen Wert finden, der einen ausreichenden Kontrast hat, um das Bild zugänglich zu machen. Ein Kontrastverhältnis von 1:4.5 wird empfohlen.</li>
 <li><code>PREVIEW_IMG_WIDTH</code> und <code>PREVIEW_IMG_HEIGHT</code> werden die Dimensionen des Bildes einstellen. Momentan funktioniert das System am besten mit Bildern mit horizontaler Ausrichtung.</li>
 <li><code>PREVIEW_DEFAULT_COVER_COLOR</code> legt die Farbe für Bücher ohne Cover fest.</li>
 </ul>
 <p>Alle Farbvariablen akzeptieren Werte, die im Modul <code>ImageColor</code> von Pillow als Farben erkannt werden können: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Erfahren Sie mehr über Farben von Pillow</a>.</p>
-<h3>Removing preview images for remote users</h3>
-<p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:</p>
+<h3>Entferne Vorschaubilder für entfernte Accounts</h3>
+<p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. Wenn du alle Bilder löschen möchtest, die zuvor für entfernte Accounts erstellt wurden, wurde ein neuer Befehl hinzugefügt:</p>
 <pre><code class="language-sh">./bw-dev remove_remote_user_preview_images
 </code></pre>
 <p>That command will empty the <code>user.preview_image</code> property in the database for remote users, and delete the file in storage.</p>

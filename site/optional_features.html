@@ -164,6 +164,10 @@ Optional features
                     <a href="/debug_toolbar.html" >Django Debug Toolbar</a>
                 </li>
                 
+                <li>
+                    <a href="/codereview.html" >Code Review</a>
+                </li>
+                
             </ul>
             
             <h2 class="menu-label">Codebase</h2>
@@ -215,7 +219,7 @@ Optional features
 </ul>
 <p>All the color variables accept values that can be recognized as colors by Pillow’s <code>ImageColor</code> module: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Learn more about Pillow color names</a>.</p>
 <h3>Removing preview images for remote users</h3>
-<p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:</p>
+<p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in terms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:</p>
 <pre><code class="language-sh">./bw-dev remove_remote_user_preview_images
 </code></pre>
 <p>That command will empty the <code>user.preview_image</code> property in the database for remote users, and delete the file in storage.</p>
