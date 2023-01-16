@@ -6,7 +6,7 @@ Els desenvolupadors i gestors d'instàncies de BookWyrm poden fer ús de l'scrip
 
 Un cop ja has instal·lat Bookwyrm en un entorn de [producció](installing-in-production.html) o [desenvolupament](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), pots trucar l'script des de la línia de comandes mitjançant `./bw-dev` seguit de la subcomanda que vols executar.
 
-## Docker shortcuts
+## Dreceres de Docker
 
 ### bash
 
@@ -40,7 +40,7 @@ Open an interactive Django shell inside the docker `web` container. You would us
 
 Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
 
-## Managing the database
+## Gestionar la base de dades
 
 ### initdb
 
@@ -62,7 +62,7 @@ _This command is not available on the `production` branch_.
 
 Resets the database. **This command will delete your entire Bookwyrm database**, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, _before_ running `resetdb`.
 
-## Managing a Bookwyrm instance
+## Gestionar una instància de BookWyrm
 
 ### compile_themes
 
