@@ -2,9 +2,9 @@
 Títol: Eina de Línia de Comandes Data: 2021-11-11 Ordre: 9
 - - -
 
-Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
+Els desenvolupadors i gestors d'instàncies de BookWyrm poden fer ús de l'script `bw-dev` per a tasques habituals. Això pot fer que les teves comandes siguin més curtes, fàcils de recordar i, més difícil cometre erros.
 
-Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
+Un cop ja has instal·lat Bookwyrm en un entorn de [producció](installing-in-production.html) o [desenvolupament](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), pots trucar l'script des de la línia de comandes mitjançant `./bw-dev` seguit de la subcomanda que vols executar.
 
 ## Docker shortcuts
 
