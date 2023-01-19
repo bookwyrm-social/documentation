@@ -39,7 +39,7 @@ Externer Speicher
                 <span class="button is-success">Beitreten</span>
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Machen Sie mit
+                Mach mit
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -112,7 +112,7 @@ Externer Speicher
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Ihre Instanz updaten</a>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -189,37 +189,37 @@ Externer Speicher
 <h3>Einrichtung</h3>
 <p>Erstellen Sie einen Bucket in Ihrem S3-kompatiblen Dienst der Wahl, zusammen mit einer Zugangsschlüssel-ID und einem geheimen Zugriffsschlüssel. Diese können selbst gehostet sein, wie <a href="https://ceph.io/en/">Ceph</a> (LGPL 2.1/3.0) oder <a href="https://min.io/">MinIO</a> (GNU AGPL v3.0) oder kommerziell (<a href="https://www.scaleway.com/en/docs/object-storage-feature/">Scaleway</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key">Digital Ocean</a>…).</p>
 <p>Diese Anleitung wurde mit Scaleway Object Storage getestet. Wenn Sie einen anderen Dienst verwenden, teilen Sie bitte Ihre Erfahrungen (insbesondere wenn Sie andere Schritte unternehmen mussten), indem Sie einen Problembericht im <a href="https://github.com/bookwyrm-social/documentation">BookWyrm Dokumentations</a>-Repository einreichen.</p>
-<h3>Was erwartet Sie</h3>
-<p>Wenn Sie eine neue BookWyrm-Instanz starten, wird der Prozess sein:</p>
+<h3>Was erwartet dich</h3>
+<p>Wenn du eine neue BookWyrm-Instanz startest, wird der Prozess sein:</p>
 <ul>
-<li>Richten Sie Ihren externen Speicherservice ein</li>
+<li>Richte deinen externen Speicherservice ein</li>
 <li>Aktiviere externen Speicher auf BookWyrm</li>
-<li>Starten Sie Ihre BookWyrm-Instanz</li>
+<li>Starte deine BookWyrm-Instanz</li>
 <li>Instanz Konnektor aktualisieren</li>
 </ul>
-<p>Wenn Sie Ihre Instanz bereits gestartet haben und Bilder auf den lokalen Speicher hochgeladen wurden, wird der Prozess sein:</p>
+<p>Wenn du deine Instanz bereits gestartet hast und Bilder auf den lokalen Speicher hochgeladen wurden, wird der Prozess sein:</p>
 <ul>
-<li>Richten Sie Ihren externen Speicherdienst ein</li>
-<li>Kopieren Sie Ihre lokalen Medien auf externen Speicher</li>
+<li>Richte den externen Speicherdienst ein</li>
+<li>Kopiere die lokalen Medien auf externen Speicher</li>
 <li>Aktiviere externen Speicher auf BookWyrm</li>
-<li>Starten Sie Ihre BookWyrm-Instanz neu</li>
+<li>Starte die BookWyrm-Instanz neu</li>
 <li>Instanz-Konnektor aktualisieren</li>
 </ul>
 <h3>BookWyrm-Einstellungen</h3>
-<p>Bearbeiten Sie Ihre <code>.env</code>-Datei, indem Sie die folgenden Zeilen auskommentieren:</p>
+<p>Bearbeite die <code>.env</code>-Datei, indem du die folgenden Zeilen auskommentierst:</p>
 <ul>
 <li><code>AWS_ACCESS_KEY_ID</code>: Ihre Zugangsschlüssel-ID</li>
 <li><code>AWS_SECRET_ACCESS_KEY</code>: Ihr geheimer Zugangsschlüssel</li>
 <li><code>AWS_STORAGE_BUCKET_NAME</code>: Ihr Bucket Name</li>
 <li><code>AWS_S3_REGION_NAME</code>: z.B. <code>"eu-west-1"</code> für AWS, <code>"fr-par"</code> für Scaleway oder <code>"nyc3"</code> für Digital Ocean</li>
 </ul>
-<p>Wenn Ihr S3-kompatibler Dienst Amazon AWS ist, sollten Sie startklar sein. Wenn nicht, müssen Sie die folgenden Zeilen wieder kommentieren:</p>
+<p>Wenn dein S3-kompatibler Dienst Amazon AWS ist, solltest du startklar sein. Wenn nicht, musst du folgende Zeilen wieder kommentieren:</p>
 <ul>
 <li><code>AWS_S3_CUSTOM_DOMAIN</code>: die Domain, die die Assets bereitstellen soll, z.B. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code> oder <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
 <li><code>AWS_S3_ENDPOINT_URL</code>: der S3-API-Endpunkt, z.B. <code>"https://s3.fr-par.scw.cloud"</code> oder <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
 </ul>
 <h3>Kopieren lokaler Medien auf externen Speicher</h3>
-<p>Wenn Ihre BookWyrm-Instanz bereits läuft und Medien hochgeladen wurden (Benutzer-Avatare, Buchtitelbilder…), müssen Sie hochgeladene Medien in Ihren Bucket migrieren.</p>
+<p>Wenn die BookWyrm-Instanz bereits läuft und Medien hochgeladen wurden (Benutzer-Avatare, Buchtitelbilder…), musst du hochgeladene Medien in deinen Bucket migrieren.</p>
 <p>Diese Aufgabe wird mit dem Befehl erledigt:</p>
 <pre><code class="language-bash">./bw-dev copy_media_to_s3
 </code></pre>
@@ -227,17 +227,17 @@ Externer Speicher
 <p>Um den S3-kompatiblen externen Speicher zu aktivieren, müssen Sie Ihre <code>.env</code>-Datei bearbeiten, indem der Eigenschaftswert für <code>USE_S3</code> von <code>false</code> zu <code>true</code> geändert wird:</p>
 <pre><code>USE_S3=true
 </code></pre>
-<p>Wenn Ihr externer Speicher über HTTPS ausgeliefert wird (was die meisten dieser Tage sind), müssen Sie auch sicherstellen, dass <code>USE_HTTPS</code> auf <code>true gesetzt ist</code>, damit Bilder über HTTPS geladen werden:</p>
+<p>Wenn der externe Speicher über HTTPS ausgeliefert wird (was die meisten dieser Tage sind), musst du auch sicherstellen, dass <code>USE_HTTPS</code> auf <code>true gesetzt ist</code>, damit Bilder über HTTPS geladen werden:</p>
 <pre><code>USE_HTTPS=true
 </code></pre>
 <h4>Statische Assets</h4>
-<p>Danach müssen Sie den folgenden Befehl ausführen, um die statischen Assets in Ihren S3-Bucket zu kopieren:</p>
+<p>Danach musst du folgenden Befehl ausführen, um die statischen Assets in deinen S3-Bucket zu kopieren:</p>
 <pre><code class="language-bash">./bw-dev collectstatic
 </code></pre>
 <h4>CORS-Einstellungen</h4>
-<p>Sobald die statischen Assets gesammelt sind, müssen Sie CORS für Ihren Bucket einrichten.</p>
+<p>Sobald die statischen Assets gesammelt sind, musst du Sie CORS für deinen Bucket einrichten.</p>
 <p>Einige Dienste wie Digital Ocean bieten eine Schnittstelle, um es einzurichten, siehe <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: Wie man CORS konfiguriert</a>.</p>
-<p>Wenn Ihr Dienst keine Schnittstelle zur Verfügung stellt, können Sie CORS trotzdem mit der Befehlszeile einrichten.</p>
+<p>Wenn dein Dienst keine Schnittstelle zur Verfügung stellt, kannst du CORS trotzdem mit der Befehlszeile einrichten.</p>
 <p>Erstelle eine Datei namens <code>cors.json</code> mit folgendem Inhalt:</p>
 <pre><code class="language-json">{
   &quot;CORSRules&quot;: [
@@ -252,29 +252,29 @@ Externer Speicher
 }
 </code></pre>
 <p>Ersetzen Sie <code>MY_DOMAIN_NAME</code> durch den/die Domainname(n) Ihrer Instanz.</p>
-<p>Führen Sie dann den folgenden Befehl aus:</p>
+<p>Führe dann den folgenden Befehl aus:</p>
 <pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
 </code></pre>
 <p>Keine Ausgabe bedeutet, dass es gut sein sollte.</p>
-<p>Wenn Sie eine neue BookWyrm-Instanz starten, können Sie sofort zu den Installationsanweisungen zurückkehren. Wenn nicht, lesen Sie weiter.</p>
-<h3>Aktualisiere deine Instanz</h3>
-<p>Sobald die Medienmigration abgeschlossen und die statischen Assets gesammelt wurden, können Sie die neue <code>.env</code>-Konfiguration laden und Ihre Instanz neustarten mit:</p>
+<p>Wenn du eine neue BookWyrm-Instanz startest, kannst du sofort zu den Installationsanweisungen zurückkehren. Wenn nicht, lese weiter.</p>
+<h3>Starte deine Instanz neu</h3>
+<p>Sobald die Medienmigration abgeschlossen und die statischen Assets gesammelt wurden, kannst du die neue <code>.env</code>-Konfiguration laden und die Instanz neustarten mit:</p>
 <pre><code class="language-bash">./bw-dev up -d
 </code></pre>
-<p>Wenn alles gut geht, wurde Ihr Speicher ohne Serverausfall geändert. Wenn einige Schriftarten fehlen (und Ihre Browser-JS-Konsole mit Warnung über CORS aufwartet), schlug etwas <a href="#cors-settings">hier</a> fehl. In diesem Fall kann es gut sein, die Header einer HTTP-Anfrage auf eine Datei in Ihrem Bucket zu überprüfen:</p>
+<p>Wenn alles gut geht, wurde dein Speicher ohne Serverausfall geändert. Wenn einige Schriftarten fehlen (und die Browser-JS-Konsole mit Warnung über CORS aufwartet), schlug etwas <a href="#cors-settings">hier</a> fehl. In diesem Fall kann es gut sein, die Header einer HTTP-Anfrage auf eine Datei in deinem Bucket zu überprüfen:</p>
 <pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
 </code></pre>
-<p>Ersetzen Sie <code>MY_DOMAIN_NAME</code> durch Ihren Domain-Namen, <code>BUCKET_URL</code> mit der URL für Ihren Bucket, Sie können den Dateipfad durch jeden anderen gültigen Pfad in Ihrem Bucket ersetzen.</p>
-<p>Wenn Sie eine Nachricht sehen, insbesondere eine Nachricht, die mit <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code> beginnt, funktionierte sie nicht. Wenn Sie keine Nachricht sehen, funktionierte es.</p>
-<p>Für eine aktive Instanz kann es eine Handvoll Dateien geben, die während der Zeit zwischen der Migration der Dateien auf den externen Speicher lokal erstellt wurden und ein Neustarten der App nutzt den externen Speicher. Um sicherzustellen, dass alle noch verbleibenden Dateien nach dem Umschalten auf den externen Speicher hochgeladen werden, können Sie den folgenden Befehl verwenden, der nur Dateien hochlädt, die nicht bereits im externen Speicher vorhanden sind:</p>
+<p>Ersetze <code>MY_DOMAIN_NAME</code> durch deinen Domain-Namen, <code>BUCKET_URL</code> mit der URL für deinen Bucket, du kannst den Dateipfad durch jeden anderen gültigen Pfad in deinem Bucket ersetzen.</p>
+<p>Wenn du eine Nachricht siehst, insbesondere eine Nachricht, die mit <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code> beginnt, funktionierte sie nicht. Wenn du keine Nachricht siehst, funktioniert es.</p>
+<p>Für eine aktive Instanz kann es eine Handvoll Dateien geben, die während der Zeit zwischen der Migration der Dateien auf den externen Speicher lokal erstellt wurden und ein Neustarten der App nutzt den externen Speicher. Um sicherzustellen, dass alle noch verbleibenden Dateien nach dem Umschalten auf den externen Speicher hochgeladen werden, kannst du folgenden Befehl verwenden, der nur Dateien hochlädt, die nicht bereits im externen Speicher vorhanden sind:</p>
 <pre><code class="language-bash">./bw-dev sync_media_to_s3
 </code></pre>
 <h3>Instanz-Konnektor aktualisieren</h3>
-<p><em>Hinweis: Sie können diesen Schritt überspringen, wenn Sie eine aktualisierte Version von BookWyrm verwenden; im September 2021 wurde der "Selbst-Steckverbinder" in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a> entfernt</em></p>
+<p><em>Hinweis: Du kannst diesen Schritt überspringen, wenn du eine aktualisierte Version von BookWyrm verwendest; im September 2021 wurde der "Selbst-Steckverbinder" in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a> entfernt</em></p>
 <p>Damit die richtige URL für die Anzeige lokaler Buchsuchergebnisse verwendet wird, müssen wir den Wert für die URL-Basis der Titelbilder ändern.</p>
-<p>Konnektor-Daten können über die Django-Admin-Schnittstelle unter der URL <code>http://MY_DOMAIN_NAME/admin</code> aufgerufen werden. Der Konnektor für Ihre eigene Instanz ist der erste Datensatz in der Datenbank, damit Sie auf den Konnektor mit dieser URL zugreifen können: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
-<p>Das Feld <em>Covers url</em> ist standardmäßig als <code>https://MY_DOMAIN_NAME/images</code>definiert, Sie müssen es auf <code>https://S3_STORAGE_URL/images</code> ändern. Klicken Sie dann auf <em>Speichern</em> und voilà!</p>
-<p>Sie müssen den Wert für die <em>Covers Url</em> jedes Mal aktualisieren, wenn Sie die URL für Ihren Speicher ändern.</p>
+<p>Konnektor-Daten können über die Django-Admin-Schnittstelle unter der URL <code>http://MY_DOMAIN_NAME/admin</code> aufgerufen werden. Der Konnektor für deine eigene Instanz ist der erste Datensatz in der Datenbank, damit du auf den Konnektor mit dieser URL zugreifen kannst: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
+<p>Das Feld <em>Covers url</em> ist standardmäßig als <code>https://MY_DOMAIN_NAME/images</code>definiert, Sie müssen es auf <code>https://S3_STORAGE_URL/images</code> ändern. Klicke auf <em>Speichern</em> und voilà!</p>
+<p>Du musst den Wert für die <em>Covers Url</em> jedes Mal aktualisieren, wenn du die URL für deinen Speicher änderst.</p>
 </section>
 
         </div>

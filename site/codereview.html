@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Moderation
+Code Review
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@ Moderation
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Bookwyrm Documentation">
-    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:title" content="BookWyrm Documentation">
+    <meta name="og:title" content="BookWyrm Documentation">
     <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
     <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
 
@@ -80,7 +80,7 @@ Moderation
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Moderation</h1>
+<h1 class="title is-1">Code Review</h1>
 
     </header>
     <div class="columns">
@@ -91,7 +91,7 @@ Moderation
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/posting-statuses.html" >Posting statuses</a>
+                    <a href="/posting-statuses.html" >Posting Statuses</a>
                 </li>
                 
                 <li>
@@ -120,7 +120,7 @@ Moderation
                 </li>
                 
                 <li>
-                    <a href="/moderation.html" class="is-active">Moderation</a>
+                    <a href="/moderation.html" >Moderation</a>
                 </li>
                 
                 <li>
@@ -132,7 +132,7 @@ Moderation
                 </li>
                 
                 <li>
-                    <a href="/optional_features.html" >Optional features</a>
+                    <a href="/optional_features.html" >Optional Features</a>
                 </li>
                 
                 <li>
@@ -165,7 +165,7 @@ Moderation
                 </li>
                 
                 <li>
-                    <a href="/codereview.html" >Code Review</a>
+                    <a href="/codereview.html" class="is-active">Code Review</a>
                 </li>
                 
             </ul>
@@ -188,18 +188,22 @@ Moderation
         <div class="column">
             
 <section class="block content">
-    <h2>Blocking</h2>
-<p>Users have the option to block other users on their own, without a moderator intervening. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.</p>
-<h2>Reports</h2>
-<p>Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.</p>
-<p>When a report is made, there are a few options how the moderator can respond.
-- Send a direct message to the reported user.
-- Delete the reported status.
-- Deactivate the user. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.</p>
-<h2>Instance-level moderation</h2>
-<p>Moderators can block entire instances. This will prevent any activities from coming in from that instance, and deactivate all accounts from that instance locally.</p>
-<p>If the instance is un-blocked, all the users who were deactivated by the block will be re-activated.</p>
-<p>Moderators can also upload blocklists to block servers in bulk.</p>
+    <p>You opened a pull request! Thank you so much. Here's what happens next. Long story short, another contributor will look over your code, try it out, and give feedback until it's ready to merge. Here's some more detail on the process:</p>
+<h2>Automated Checks</h2>
+<p>BookWyrm uses a handful of <a href="style_guide.html">code validators</a> that lint and validate code, and run the unit tests. All of these need to pass for your code to be ready to merge. There are usually hints about how you can fix any checks that don't pass, but if you aren't sure how to proceed, just comment on the issue and someone can help you out.</p>
+<h2>Code Review</h2>
+<p>When your code is ready for review, a contributor will take a look at what you've written. They will be looking for a few things:</p>
+<ul>
+<li>Is your proposed change in line with the project's goals?</li>
+<li>Does your code work as expected?</li>
+<li>Are there different or more efficient approaches you could have taken?</li>
+<li>Are there edge cases you may have overlooked?</li>
+<li>If you added any text, is it <a href="translation.html">correctly internationalized</a>?</li>
+<li>If you made UI changes, are they clearly navigable with a screen reader?</li>
+</ul>
+<p>This is also a chance for other contributors to ask you questions about anything they don't understand or are curious about in your code.</p>
+<h2>Merging</h2>
+<p>Once you and the reviewer feel good about your code, the reviewer will merge it. It won't be immediately available in production, but will go into the next release.</p>
 </section>
 
         </div>

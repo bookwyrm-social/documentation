@@ -39,7 +39,7 @@ Installation ohne Docker
                 <span class="button is-success">Beitreten</span>
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Machen Sie mit
+                Mach mit
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -112,7 +112,7 @@ Installation ohne Docker
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Ihre Instanz updaten</a>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -184,12 +184,12 @@ Installation ohne Docker
         <div class="column">
             
 <section class="block content">
-    <p>Dieses Projekt ist noch jung und, im Moment, nicht sehr stabil. Bitte verwende es nur mit Vorsicht in Produktion. Diese Methode der Installation benötigt mehr Können und ist daher für erfahrene Administrator*innen. Docker Installation wird empfohlen Diese Installationsmethode geht davon aus, dass Du bereits SSL mit verfügbaren Zertifikaten konfiguriert hast</p>
+    <p>Dieses Projekt ist noch jung und, im Moment, nicht sehr stabil. Bitte verwende es nur mit Vorsicht in Produktion. Diese Methode der Installation benötigt mehr Können und ist daher für erfahrene Administrator*innen. Docker Installation wird empfohlen Diese Installationsmethode geht davon aus, dass du bereits SSL mit verfügbaren Zertifikaten konfiguriert hast</p>
 <h2>Servereinrichtung</h2>
 <ul>
-<li>Holen Dir eine Domain und konfiguriere DNS für Deinen Server. Du musst die Nameserver Deiner Domain bei Deinem DNS-Provider auf den Server verweisen, auf dem Du BookWyrm betreibst. Hier sind Anweisungen für <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
+<li>Hole dir eine Domain und konfiguriere DNS für deinen Server. Du musst die Nameserver Deiner Domain bei Deinem DNS-Provider auf den Server verweisen, auf dem du BookWyrm betreibst. Hier sind Anweisungen für <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Setze Deiner Server mit geeigneter Firewall für den Betrieb einer Web-Anwendung auf (dieser Befehlssatz ist mit Ubuntu 20.04 getestet). Hier ist eine Anleitung für <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
-<li>Richte einen E-Mail-Dienst (wie <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutze die Dokumentation des Dienstes für die Konfiguration Deines DNS</li>
+<li>Richte einen E-Mail-Dienst (wie <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutze die Dokumentation des Dienstes für die Konfiguration deines DNS</li>
 <li>Abhängigkeiten installieren. Auf Debian könnte das wie <code>apt install postgresql redis nginx python3-venv libpq-dev</code> aussehen.</li>
 </ul>
 <h2>BookWyrm installieren und konfigurieren</h2>
@@ -210,8 +210,8 @@ Installation ohne Docker
 <li><code>REDIS_ACTIVITY_HOST</code> | Auf  <code>localhost</code> setzen (die Maschine, auf der  redis läuft)</li>
 <li><code>REDIS_BROKER_PASSWORD</code> | Auf nichts setzen (auf einem lokalen Rechner mit einer Firewall)</li>
 <li><code>REDIS_BROKER_HOST</code> | Auf  <code>localhost</code> setzen (die Maschine, auf der  redis läuft)</li>
-<li><code>EMAIL_HOST_USER</code> | Die "von"-Adresse, die Deine App beim Senden von E-Mails verwendet</li>
-<li><code>EMAIL_HOST_PASSWORD</code> | Das Passwort von Deinem E-Mail-Dienst</li>
+<li><code>EMAIL_HOST_USER</code> | Die "von"-Adresse, die deine App beim Senden von E-Mails verwendet</li>
+<li><code>EMAIL_HOST_PASSWORD</code> | Das Passwort von deinem E-Mail-Dienst</li>
 </ul>
 </li>
 <li>Nginx konfigurieren<ul>
@@ -220,10 +220,10 @@ Installation ohne Docker
 <li>Aktualisiere nginx <code>bookwyrm.conf</code>:<ul>
 <li>Replace <code>your-domain.com</code> with your domain name everywhere in the file (including the lines that are currently commented out)</li>
 <li>Replace <code>/app/</code> with your install directory <code>/opt/bookwyrm/</code> everywhere in the file (including commented out)</li>
-<li>Zeilen 18 bis 67 entkommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two <code>server</code> blocks enabled</li>
-<li>Change the <code>ssl_certificate</code> and <code>ssl_certificate_key</code> paths to your fullchain and privkey locations</li>
-<li>Change line 4 so that it says <code>server localhost:8000</code>. Sie können hier einen anderen Port wählen, wenn Sie möchten</li>
-<li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
+<li>Zeilen 18 bis 67 auskommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two <code>server</code> blocks enabled</li>
+<li>Ändere die <code>ssl_certificate</code> und <code>ssl_certificate_key</code> Pfade an Ihre volle Kette und Privkey Positionen</li>
+<li>Change line 4 so that it says <code>server localhost:8000</code>. Du kannst hier einen anderen Port wählen, wenn du magst</li>
+<li>Wenn du einen anderen Webserver auf deinem Host-Rechner betreibst, musst du den <a href="/reverse-proxy.html">Reverse-Proxy-Anweisungen</a> folgen</li>
 </ul>
 </li>
 <li>Enable the nginx config: <code>ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf</code></li>
@@ -236,7 +236,7 @@ Installation ohne Docker
 </ul>
 </li>
 <li>
-<p>Make the bookwyrm postgresql database. Make sure to change the password to what you set in the <code>.env</code> config:</p>
+<p>Erstelle die Bookwyrm postgresql Datenbank. Ändere das Passwort zu dem, welches du in der <code>.env</code> Konfiguration gesetzt hast:</p>
 <p><code>sudo -i -u postgres psql</code></p>
 </li>
 </ul>
@@ -251,22 +251,22 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 \q
 </code></pre>
 <ul>
-<li>Migrate the database schema by running <code>venv/bin/python3 manage.py migrate</code></li>
+<li>Migriere das Datenbankschema, indem du <code>venv/bin/python3 manage.py migrierst</code></li>
 <li>Initialize the database by running <code>venv/bin/python3 manage.py initdb</code></li>
-<li>Create the static by running <code>venv/bin/python3 manage.py collectstatic --no-input</code></li>
-<li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
+<li>Erstelle die Statische durch Ausführen von <code>venv/bin/python3 manage.py collectstatic --no-input</code></li>
+<li>Wenn du einen externen Speicher für statische Assets und Mediendateien verwenden möchtest (z. B. einen S3-kompatiblen Dienst), <a href="/external-storage.html">befolge die Anweisungen</a> bis es dir mitteilt, wieder hierherzukommen</li>
 <li>
-<p>Create and setup your <code>bookwyrm</code> user</p>
+<p>Erstelle und richte deinen <code>Bookwyrm</code> Account ein</p>
 <ul>
-<li>Make the system bookwyrm user: <code>useradd bookwyrm -r</code></li>
-<li>Change the owner of your install directory to bookwyrm: <code>chown -R bookwyrm:bookwyrm /opt/bookwyrm</code></li>
+<li>Erstelle den System-Bookwyrm-Account: <code>useradd bookwyrm -r</code></li>
+<li>Ändere den Eigentümer deines Installationsverzeichnisses auf bookwyrm: <code>chown -R bookwyrm:bookwyrm /opt/bookwyrm</code></li>
 <li>You should now run bookwyrm related commands as the bookwyrm user: <code>sudo -u bookwyrm echo I am the $(whoami) user</code></li>
 </ul>
 </li>
 <li>
-<p>Generate the admin code with <code>sudo -u bookwyrm venv/bin/python3 manage.py admin_code</code>, and copy the admin code to use when you create your admin account.</p>
+<p>Erstelle den Admin-Code mit <code>sudo -u bookwyrm venv/bin/python3 manage. y admin_code</code>, und kopieren Sie den Admin-Code, der beim Erstellen Ihres Admin-Kontos verwendet werden soll.</p>
 </li>
-<li>You can get your code at any time by re-running that command. Hier ist eine Beispielausgabe:</li>
+<li>Du kannst deinen Code jederzeit erhalten, indem du diesen Befehl erneut ausführst. Hier ist eine Beispielausgabe:</li>
 </ul>
 <pre><code class="language-sh">*******************************************
 Use this code to create your admin account:
@@ -292,14 +292,14 @@ set -e
 /opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &amp;
 # /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &amp;
 </code></pre>
-<pre><code>- Replace `/opt/bookwyrm` with your install dir
+<pre><code>- Ersetze `/opt/bookwyrm` durch dein Installationsverzeichnis
 - Ändere `8000` auf deine eigene Portnummer
 - Flower wurde hier deaktiviert, da es nicht automatisch mit dem Passwort in der `.env` Datei konfiguriert ist
 </code></pre>
 <ul>
 <li>You can now run BookWyrm with: <code>sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh</code></li>
-<li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
-<li>You may want to configure BookWyrm to autorun with a systemd service. Hier ist ein Beispiel:</li>
+<li>Die Anwendung sollte auf deiner Domain laufen. Wenn du die Domain lädst, siehst du eine Konfigurationsseite, die deine Instanzeinstellungen bestätigt und ein Formular zum Erstellen eines Administratorkontos. Benutze deinen Admin-Code um dich zu registrieren.</li>
+<li>Möglicherweise möchtest du BookWyrm so konfigurieren, dass es mit einem System-Dienst automatisch ausgeführt wird. Hier ist ein Beispiel:</li>
 </ul>
 <pre><code># /etc/systemd/system/bookwyrm.service
 [Unit]

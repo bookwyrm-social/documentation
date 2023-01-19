@@ -1,5 +1,7 @@
 - - -
-Title: Deine Instanz updaten Date: 2022-11-17 Order: 3 CONTEXTREQUEST
+Title: Deine Instanz updaten
+Date: 2022-11-17
+Order: 3
 - - -
 
 Wenn Änderungen im Produktionszweig verfügbar sind, kannst du sie mit dem Befehl `./bw-dev update` installieren und auf deine Instanz übertragen. Das macht eine Reihe von Dingen:

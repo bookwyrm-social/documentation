@@ -39,7 +39,7 @@ Stilleitfaden
                 <span class="button is-success">Beitreten</span>
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Machen Sie mit
+                Mach mit
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -112,7 +112,7 @@ Stilleitfaden
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Ihre Instanz updaten</a>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -184,35 +184,35 @@ Stilleitfaden
         <div class="column">
             
 <section class="block content">
-    <h2>Pull-Anfragen</h2>
-<p>Also möchten Sie Code zu BookWyrm hinzufügen: Das klingt super! Wenn es ein offenes Problem gibt, das Sie beheben möchten, ist es hilfreich, das Problem zu kommentieren, damit die Arbeit nicht dupliziert wird. Versuchen Sie den Umfang der Pull-Anfragen klein zu halten und konzentrieren Sie sich auf ein einzelnes Thema. Auf diese Weise ist es einfacher zu überprüfen und wenn ein Teil Änderungen braucht, wird er die anderen Teile nicht aufhalten.</p>
-<p>Wenn Sie sich nicht sicher sind, wie Sie etwas reparieren können, oder nicht in der Lage sind, es zu erledigen, ist das völlig okay, hinterlassen Sie nur einen Kommentar zu der Pull-Anfrage und wir werden es herausfinden 💖.</p>
+    <h2>Pull Requests</h2>
+<p>Du möchstest also Code zu BookWyrm hinzufügen: Das ist klasse! Wenn es ein offenes Problem gibt, dass du beheben möchtest, ist es hilfreich, das Problem zu kommentieren, damit die Arbeit nicht dupliziert wird. Versuche den Umfang von Pull Requests kleinzuhalten und konzentriere dich auf ein einzelnes Thema. Auf diese Weise ist es einfacher zu überprüfen und wenn ein Teil Änderungen braucht, wird er die anderen Teile nicht aufhalten.</p>
+<p>Wenn du nicht weißt, wie man etwas fixt oder etwas nicht schaffst: Kein Problem. Hinterlasse einen Kommentar im Pull Request und wir versuchen es, herauszufinden 💖.</p>
 <p>Pull-Anfragen müssen alle automatisierten Prüfungen bestehen, bevor sie übernommen werden können - dazu gehören Stil-Prüfungen, globale Linter, eine Sicherheitsprüfung und Unit-Tests.</p>
 <h2>Linten</h2>
 <h3>Global</h3>
 <p>Wir verwenden <a href="https://editorconfig.org">EditorConfig</a>, um konsistente Einrückungen und Zeilenenden zu erhalten.</p>
 <h3>Python</h3>
-<p>BookWyrm verwendet den <a href="https://github.com/psf/black">Black</a> Code-Formatierer, um die Python Codebasis konsistent zu gestalten. Alle neuen Pull-Anfragen werden mit GitHub-Aktionen überprüft und Sie können Code-Stilprobleme automatisch beheben, indem Sie <code>./bw-dev black</code> ausführen</p>
-<p>Code wird auch mit Pylint mittels GitHub-Aktionen überprüft. Pylint-Warnungen müssen bearbeitet werden, bevor Pull-Anfragen übernommen werden, aber es liegt im Ermessen, ob der Vorschlag verwendet werden oder die Warnung unterdrückt werden sollte. Um eine Warnung zu unterdrücken, fügen Sie einen Kommentar am Ende oder über der Zeile mit der Warnung hinzu: <code># pylint: disable=Name-der-Warnung</code></p>
+<p>BookWyrm verwendet den <a href="https://github.com/psf/black">Black</a> Code-Formatierer, um die Python Codebasis konsistent zu gestalten. Alle neuen Pull-Requests werden mit GitHub-Aktionen überprüft und Sie können Code-Stilprobleme automatisch beheben, indem du <code>./bw-dev black</code> ausführst</p>
+<p>Code wird auch mit Pylint mittels GitHub-Aktionen überprüft. Pylint-Warnungen müssen bearbeitet werden, bevor Pull-Anfragen übernommen werden, aber es liegt im Ermessen, ob der Vorschlag verwendet werden oder die Warnung unterdrückt werden sollte. Um eine Warnung zu unterdrücken, füge einen Kommentar am Ende oder über der Zeile mit der Warnung hinzu: <code># pylint: disable=Name-der-Warnung</code></p>
 <h3>Vorlagen (HTML)</h3>
-<p>Ihre Pull-Anfrage wird auch durch den <a href="https://www.curlylint.org">curlylint</a>-Linter für Django-Templates überprüft.</p>
+<p>Dein Pull-Request wird auch durch den <a href="https://www.curlylint.org">curlylint</a>-Linter für Django-Templates überprüft.</p>
 <h3>CSS</h3>
 <p>Wir verwenden <a href="https://stylelint.io">stylelint</a>, um alle CSS-Regeln zu überprüfen. Wie bei Pylint <a href="https://stylelint.io/user-guide/ignore-code">kannst du styelint</a> für eine bestimmte Regel deaktivieren, aber du benötigst dafür eine gute Rechtfertigung.</p>
 <h3>JavaScript</h3>
-<p><a href="https://eslint.org">ESLint</a> überprüft alle von Ihnen vorgenommenen JavaScript-Änderungen. Falls ESLint Ihr funktionierendes JavaScript nicht mag, überprüfen Sie die Linter-Meldung auf das genaue Problem.</p>
+<p><a href="https://eslint.org">ESLint</a> überprüft alle von Ihnen vorgenommenen JavaScript-Änderungen. Falls ESLint dein funktionierendes JavaScript nicht mag, überprüfe die Linter-Meldung auf das genaue Problem.</p>
 <h2>Inklusives Design</h2>
 <p>Bookwyrm hat zum Ziel, so umfassend und zugänglich wie möglich zu sein.</p>
-<p>Überprüfen Sie die <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">Checkliste für inklusives Web Design</a> bevor Sie Ihre Pull-Anforderung einreichen. Für Barrierefreiheit ist <a href="https://www.a11y-101.com/development">A11Y-101</a> ebenfalls eine nützliche Quelle. Weitere Informationen darüber, wie Sie Ihre Seitenvorlagen mehrsprachig erstellen, finden Sie im <a href="/translations.html">Abschnitt Übersetzungen</a>.</p>
+<p>Überprüfen Sie die <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">Checkliste für inklusives Web Design</a> bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist <a href="https://www.a11y-101.com/development">A11Y-101</a> ebenfalls eine nützliche Quelle. Weitere Informationen darüber, wie du deine Seitenvorlagen mehrsprachig erstellst, findest du im <a href="/translations.html">Abschnitt Übersetzungen</a>.</p>
 <p>Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, sind:</p>
 <h3>Formulare</h3>
 <ul>
 <li>Verwende nur <code>input[type="checkbox"]</code> oder <code>input[type="radio"]</code> in <code>&lt;label&gt;</code></li>
-<li>Wenn Sie die Checkboxen und die Radiobuttons nicht innerhalb des <code>&lt;label&gt;</code>platzieren, sollte das <code>&lt;label&gt;</code> <em>nach</em> dem Element platziert werden, auf das es sich bezieht</li>
+<li>Wenn du die Checkboxen und die Radiobuttons nicht innerhalb des <code>&lt;label&gt;</code>platzierst, sollte das <code>&lt;label&gt;</code> <em>nach</em> dem Element platziert werden, auf das es sich bezieht</li>
 </ul>
 <h3>Buttons und Links</h3>
 <ul>
-<li>Verwenden Sie ein <code>&lt;button&gt;</code> Element für alles, was existiert, um eine JavaScript-Aktion auszulösen (z.B. ein Formular verstecken oder enthüllen) oder eine <code>POST</code>-Anfrage senden (z.B. ein Formular übermitteln)</li>
-<li>Verwenden Sie ein <code>&lt;a&gt;</code>-Element für alles, was eine <code>GET</code>-Anfrage auslöst. Normalerweise sollte ein Ankerelement (<code>&lt;a&gt;</code>) nicht als Button (<code>class="button"</code>) dargestellt werden, obwohl es einige Ausnahmen gibt, wie z. B. "Abbrechen"-Buttons. Falls Sie Zweifel haben, fragen Sie in Ihrer Pull-Anfrage um Rat</li>
+<li>Verwende ein <code>&lt;button&gt;</code> Element für alles, was existiert, um eine JavaScript-Aktion auszulösen (z.B. ein Formular verstecken oder enthüllen) oder eine <code>POST</code>-Anfrage senden (z.B. ein Formular übermitteln)</li>
+<li>Verwende ein <code>&lt;a&gt;</code>-Element für alles, was eine <code>GET</code>-Anfrage auslöst. Normalerweise sollte ein Ankerelement (<code>&lt;a&gt;</code>) nicht als Button (<code>class="button"</code>) dargestellt werden, obwohl es einige Ausnahmen gibt, wie z. B. "Abbrechen"-Buttons. Falls Sie Zweifel haben, fragen Sie in Ihrer Pull-Anfrage um Rat</li>
 </ul>
 </section>
 

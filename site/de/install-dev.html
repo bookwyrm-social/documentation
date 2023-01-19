@@ -39,7 +39,7 @@ Entwicklungsumgebung
                 <span class="button is-success">Beitreten</span>
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Machen Sie mit
+                Mach mit
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -112,7 +112,7 @@ Entwicklungsumgebung
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Ihre Instanz updaten</a>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -185,47 +185,47 @@ Entwicklungsumgebung
             
 <section class="block content">
     <h2>Voraussetzungen</h2>
-<p>Diese Anweisungen gehen davon aus, dass Sie BookWyrm mit Docker entwickeln. Sie müssen <a href="https://docs.docker.com/engine/install/">Docker</a> und <a href="https://docs.docker.com/compose/install/">docker-compose</a> installieren, um loszulegen.</p>
+<p>Diese Anweisungen gehen davon aus, dass du BookWyrm mit Docker entwickelst. Du musst <a href="https://docs.docker.com/engine/install/">Docker</a> und <a href="https://docs.docker.com/compose/install/">docker-compose</a> installieren, um loszulegen.</p>
 <h2>Entwicklungsumgebung einrichten</h2>
 <ul>
-<li>Holen Sie sich eine Kopie von <a href="https://github.com/bookwyrm-social/bookwyrm">der BookWyrm-Codebasis von GitHub</a>. Sie können <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">einen Fork</a> des Projekts erstellen und dann <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">verwenden Sie <code>git clone</code>, um den Code</a> auf Ihren Computer herunterzuladen.</li>
-<li>Gehen Sie in das Verzeichnis, das den Code auf Ihrem Computer enthält, Sie arbeiten von hier aus.</li>
-<li>Richten Sie Ihre Datei für Entwicklungsumgebungsvariablen durch Kopieren der Beispielumgebungsdatei (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. In der Kommandozeile können Sie dies tun mit:</li>
+<li>Kopiere die <a href="https://github.com/bookwyrm-social/bookwyrm">der BookWyrm-Codebasis von GitHub</a>. Du kannst <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">einen Fork</a> des Projekts erstellen und <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">verwende dann <code>git clone</code>, um den Code</a> auf deinen Computer herunterzuladen.</li>
+<li>Gehe in das Verzeichnis, das den Code auf Ihrem Computer enthält. Du arbeitest von hier aus.</li>
+<li>Richte deine Datei für Entwicklungsumgebungsvariablen durch Kopieren der Beispielumgebungsdatei (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. In der Kommandozeile kannst du das wie folgt tun:</li>
 </ul>
 <pre><code class="language-sh">cp .env.example .env
 </code></pre>
 <ul>
-<li>In <code>.env</code>ändern Sie <code>DEBUG</code> zu <code>true</code></li>
+<li>In <code>.env</code>ändere <code>DEBUG</code> zu <code>true</code></li>
 <li>
-<p>Optional können Sie einen Dienst wie <a href="https://ngrok.com/">ngrok</a> verwenden, um eine Domain einzurichten und setzen Sie die <code>DOMAIN</code>-Variable in Ihrer <code>.env</code>-Datei auf den von ngrok-generierten Domainnamen.</p>
+<p>Optional kannst du einen Dienst wie <a href="https://ngrok.com/">ngrok</a> verwenden, um eine Domain einzurichten und setze die <code>DOMAIN</code>-Variable in Ihrer <code>.env</code>-Datei auf den von ngrok-generierten Domainnamen.</p>
 </li>
 <li>
-<p>Richten Sie nginx für die Entwicklung ein, indem Sie die Entwicklerkonfigurationsdatei für nginx (<code>nginx/development</code>) in eine neue Datei mit dem Namen <code>nginx/default.conf</code> kopieren:</p>
+<p>Richte nginx für die Entwicklung ein, indem du die Entwicklerkonfigurationsdatei für nginx (<code>nginx/development</code>) in eine neue Datei mit dem Namen <code>nginx/default.conf</code> kopierst:</p>
 </li>
 </ul>
 <pre><code class="language-sh">cp nginx/development nginx/default.conf
 </code></pre>
 <ul>
-<li>Starte die Applikation. Führen sie folgendes über die Kommandozeile aus:</li>
+<li>Starte die Applikation. Führe Folgendes über die Kommandozeile aus:</li>
 </ul>
 <pre><code class="language-sh">./bw-dev build            # Baut die Docker-Images
 ./bw-dev setup            # Initialisiert die Datenbank und führt die Migrationen aus
 ./bw-dev up               # Start die Docker-Container
 </code></pre>
 <ul>
-<li>Sobald die Erstellung abgeschlossen ist, können Sie auf die Instanz unter <code>http://localhost:1333</code> zugreifen und einen Administrator erstellen.</li>
+<li>Sobald die Erstellung abgeschlossen ist, kannst du auf die Instanz unter <code>http://localhost:1333</code> zugreifen und einen Admin erstellen.</li>
 </ul>
-<p>Wenn du neugierig bist: das <code>./bw-dev</code> Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk <code>docker-compose build</code> oder <code>docker-compose up</code> laufen lassen, wenn du magst. <code>./bw-dev</code> sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Führen Sie es ohne Argumente aus, um eine Liste der verfügbaren Befehle zu erhalten, lesen Sie die <a href="/command-line-tool.html">Dokumentationsseite</a> dafür oder öffnen Sie es und schauen Sie sich um, um genau zu sehen, was jeder Befehl tut!</p>
+<p>Wenn du neugierig bist: das <code>./bw-dev</code> Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk <code>docker-compose build</code> oder <code>docker-compose up</code> laufen lassen, wenn du magst. <code>./bw-dev</code> sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Führe es ohne Argumente aus, um eine Liste der verfügbaren Befehle zu erhalten, lese die <a href="/command-line-tool.html">Dokumentationsseite</a> dafür oder öffne es und schaue dich um, um genau zu sehen, was jeder Befehl tut!</p>
 <h3>Modelle editieren oder erstellen</h3>
-<p>Wenn Sie ein Modell ändern oder erstellen, werden Sie wahrscheinlich die Datenbankstruktur ändern. Damit diese Änderungen wirksam werden, müssen Sie Djangos <code>makemigrations</code>-Befehl ausführen, um eine neue <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django Migrationsdatei</a>zu erstellen und dann diese <code>migrieren</code>:</p>
+<p>Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenbankstruktur ändern. Damit diese Änderungen wirksam werden, musst du Djangos <code>makemigrations</code>-Befehl ausführen, um eine neue <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django Migrationsdatei</a>zu erstellen und dann diese <code>migrieren</code>:</p>
 <pre><code class="language-sh">./bw-dev makemigrations
 ./bw-dev migrate
 </code></pre>
 <h3>Statische Dateien editieren</h3>
-<p>Jedes Mal, wenn Sie CSS oder JavaScript bearbeiten, müssen Sie Djangos <code>collectstatic</code>-Befehl erneut ausführen, damit Ihre Änderungen wirksam werden:</p>
+<p>Jedes Mal, wenn du CSS oder JavaScript bearbeitest, musst du Djangos <code>collectstatic</code>-Befehl erneut ausführen, damit deine Änderungen wirksam werden:</p>
 <pre><code class="language-sh">./bw-dev collectstatic
 </code></pre>
-<p>Wenn Sie <a href="https://yarnpkg.com/getting-started/install">yarn installiert</a> haben, können Sie <code>yarn watch:static</code> ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis <code>bookwyrm/static</code> auszuführen.</p>
+<p>Wenn du <a href="https://yarnpkg.com/getting-started/install">yarn installierstt</a> haben, kannst du <code>yarn watch:static</code> ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis <code>bookwyrm/static</code> auszuführen.</p>
 </section>
 
         </div>

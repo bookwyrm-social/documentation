@@ -39,7 +39,7 @@ Verwenden eines Reverse-Proxy
                 <span class="button is-success">Beitreten</span>
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Machen Sie mit
+                Mach mit
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -112,7 +112,7 @@ Verwenden eines Reverse-Proxy
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Ihre Instanz updaten</a>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
                 </li>
                 
                 <li>
@@ -185,31 +185,31 @@ Verwenden eines Reverse-Proxy
             
 <section class="block content">
     <h2>BookWyrm hinter einem Reverse-Proxy ausführen</h2>
-<p>Wenn Sie einen anderen Webserver auf Ihrem Rechner betreiben, sollten Sie ihn als Proxy für Web-Anfragen an BookWyrm einrichten.</p>
+<p>Wenn du einen anderen Webserver auf Ihrem Rechner betreibst, solltest du ihn als Proxy für Web-Anfragen an BookWyrm einrichten.</p>
 <p>Die Standardkonfiguration von BookWyrm hat bereits einen nginx-Server, der Anfragen an die Django-App weiterleitet, die SSL verarbeitet und statische Dateien direkt bedient. Die statischen Dateien werden in einem Docker Volume gespeichert, auf das mehrere BookWyrm Dienste zugreifen, daher wird es nicht empfohlen, diesen Server komplett zu entfernen.</p>
-<p>Um BookWyrm hinter einem Reverse-Proxy auszuführen, führen Sie folgende Änderungen aus:</p>
+<p>Um BookWyrm hinter einem Reverse-Proxy auszuführen, führe folgende Änderungen aus:</p>
 <ul>
 <li>In <code>nginx/default.conf</code>:<ul>
-<li>Kommentieren Sie die zwei Standardserver</li>
-<li>Kommentieren Sie den Server beschrift als Reverse-Proxy Server aus</li>
-<li>Ersetzen Sie <code>your-domain.com</code> durch Ihren Domain-Namen</li>
+<li>Kommentiere die zwei Standardserver aus</li>
+<li>Kommentiere den Server beschrift als Reverse-Proxy Server aus</li>
+<li>Ersetze <code>your-domain.com</code> durch deinen Domain-Namen</li>
 </ul>
 </li>
 <li>In <code>docker-compose.yml</code>:<ul>
-<li>In <code>-services</code> -&gt; <code>nginx</code> -&gt; <code>ports</code>, kommentieren Sie die Standard-Ports und fügen Sie <code>- 8001:8001</code> hinzu</li>
-<li>In <code>services</code> -&gt; <code>nginx</code> -&gt; <code>volumes</code> kommentieren Sie die beiden Volumes, die mit <code>./certbot/</code> beginnen</li>
-<li>In <code>services</code> kommentieren Sie den <code>certbot</code> Dienst</li>
+<li>In <code>-services</code> -&gt; <code>nginx</code> -&gt; <code>ports</code>, kommentiere die Standard-Ports aus und füge <code>- 8001:8001</code> hinzu</li>
+<li>In <code>services</code> -&gt; <code>nginx</code> -&gt; <code>volumes</code> kommentiere die beiden Volumes aus, die mit <code>./certbot/</code> beginnen</li>
+<li>In <code>services</code> kommentiere den <code>certbot</code> Dienst aus</li>
 </ul>
 </li>
 </ul>
-<p>An dieser Stelle folgen Sie den Anweisungen <a href="#server-setup">Setup</a> wie aufgeführt. Sobald Docker läuft, können Sie auf Ihre BookWyrm-Instanz zugreifen unter <code>http://localhost:8001</code> (<strong>HINWEIS:</strong> Ihr Server ist nicht über <code>https</code>).</p>
+<p>An dieser Stelle folge den Anweisungen <a href="#server-setup">Setup</a> wie aufgeführt. Sobald Docker läuft, kannst du auf deine BookWyrm-Instanz zugreifen unter <code>http://localhost:8001</code> (<strong>HINWEIS:</strong> Dein Server ist nicht über <code>https</code> erreichbar).</p>
 <p>Schritte zum Einrichten eines Reverse-Proxys sind vom Server abhängig.</p>
 <h4>Nginx</h4>
-<p>Bevor Sie nginx einrichten können, müssen Sie Ihr nginx-Konfigurationsverzeichnis finden, das von Ihrer Plattform abhängt und wie Sie nginx installiert haben. Weitere Informationen finden Sie im <a href="http://nginx.org/en/docs/beginners_guide.html">nginx Guide</a>.</p>
-<p>Um Ihren Server einzurichten:</p>
+<p>Bevor du nginx einrichten kannst, musst du Ihr nginx-Konfigurationsverzeichnis finden, das abhängig von deiner Plattform und nginx-Installation ist. Weitere Informationen findest du im <a href="http://nginx.org/en/docs/beginners_guide.html">nginx Guide</a>.</p>
+<p>Um deinen Server einzurichten:</p>
 <ul>
-<li>In Ihrer <code>nginx.conf</code>-Datei stellen Sie sicher, dass <code>include servers/*;</code> nicht auskommentiert ist.</li>
-<li>Erstellen Sie in Ihrem nginx-<code>Server</code>-Verzeichnis eine neue Datei, die nach deiner Domain benannt ist und die folgende Informationen enthält:</li>
+<li>Stelle in deiner <code>nginx.conf</code>-Datei sicher, dass <code>include servers/*;</code> nicht auskommentiert ist.</li>
+<li>Erstelle im nginx-<code>Server</code>-Verzeichnis eine neue Datei, die nach deiner Domain benannt ist und die folgenden Informationen enthält:</li>
 </ul>
 <pre><code class="language-nginx">server {
     server_name your-domain.com www.your-domain.com;
@@ -277,11 +277,11 @@ server {
 }
 </code></pre>
 <ul>
-<li>führen Sie <code>sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com</code> aus</li>
+<li>führe <code>sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com</code> aus</li>
 <li>nginx neustarten</li>
 </ul>
-<p>Wenn alles richtig funktioniert hat, sollte Ihre BookWyrm-Instanz nun extern zugänglich sein.</p>
-<p><em>Hinweis: Der <code>proxy_set_header Host $host;</code> ist unerlässlich; wenn Sie ihn nicht einbinden, werden eingehende Nachrichten von föderierten Servern abgelehnt.</em></p>
+<p>Wenn alles richtig funktioniert hat, sollte deine BookWyrm-Instanz nun extern zugänglich sein.</p>
+<p><em>Hinweis: Der <code>proxy_set_header Host $host;</code> ist unerlässlich; wenn du ihn nicht einbindest, werden eingehende Nachrichten von föderierten Servern abgelehnt.</em></p>
 <p><em>Hinweis: Der Pfad der SSL Zertifikate kann je nach Betriebssystem Ihres Servers variieren</em></p>
 </section>
 
