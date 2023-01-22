@@ -38,7 +38,7 @@ Folosim [stylelint](https://stylelint.io) pentru a verifica toate regulile CSS. 
 
 BookWyrm dorește să fie cât mai inclusiv și accesibil posibil.
 
-Când contribuiți la cod, verificați [lista Design Web Inclusiv](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) înainte de a depune cererea dvs. de extragere. Pentru sfaturi de accesibilitate, [A11Y-101](https://www.a11y-101.com/development) este de asemenea o resursă utilă. Pentru informații despre cum să faceți șablonul de pagină bilingv, consultați [secțiunea de Traduceri](/translations.html).
+Când contribuiți la cod, verificați [lista Design Web Inclusiv](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) înainte de a depune cererea dvs. de extragere. Pentru sfaturi de accesibilitate, [A11Y-101](https://www.a11y-101.com/development) este de asemenea o resursă utilă. Pentru informații despre cum să faceți șablonul de pagină bilingv, consultați [secțiunea de Traduceri](/translation.html).
 
 Câteva lucruri care li s-au părut contribuitorilor BookWyrm util de reținut sunt:
 

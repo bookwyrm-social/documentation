@@ -38,7 +38,7 @@ Wir verwenden [stylelint](https://stylelint.io), um alle CSS-Regeln zu überprü
 
 Bookwyrm hat zum Ziel, so umfassend und zugänglich wie möglich zu sein.
 
-Überprüfen Sie die [Checkliste für inklusives Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist [A11Y-101](https://www.a11y-101.com/development) ebenfalls eine nützliche Quelle. Weitere Informationen darüber, wie du deine Seitenvorlagen mehrsprachig erstellst, findest du im [Abschnitt Übersetzungen](/translations.html).
+Überprüfen Sie die [Checkliste für inklusives Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist [A11Y-101](https://www.a11y-101.com/development) ebenfalls eine nützliche Quelle. Weitere Informationen darüber, wie du deine Seitenvorlagen mehrsprachig erstellst, findest du im [Abschnitt Übersetzungen](/translation.html).
 
 Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, sind:
 

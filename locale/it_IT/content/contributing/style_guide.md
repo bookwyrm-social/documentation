@@ -38,7 +38,7 @@ Usiamo [stylelint](https://stylelint.io) per controllare tutte le regole CSS. Co
 
 Bookwyrm mira a essere il più completo e accessibile possibile.
 
-Quando si contribuisce con il codice, controllare la checklist [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) prima di archiviare la tua richiesta pull. Per la consulenza in materia di accessibilità, [A11Y-101](https://www.a11y-101.com/development) è anche una fonte utile. Per informazioni su come rendere i modelli di pagina multilingue, vedere la [sezione Traduzioni](/translations.html).
+Quando si contribuisce con il codice, controllare la checklist [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) prima di archiviare la tua richiesta pull. Per la consulenza in materia di accessibilità, [A11Y-101](https://www.a11y-101.com/development) è anche una fonte utile. Per informazioni su come rendere i modelli di pagina multilingue, vedere la [sezione Traduzioni](/translation.html).
 
 Alcune cose particolari che i contributori di Bookwyrm hanno trovato utili per ricordare sono:
 
