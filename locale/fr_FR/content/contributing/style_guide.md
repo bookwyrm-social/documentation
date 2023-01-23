@@ -38,7 +38,7 @@ Nous utilisons [stylelint](https://stylelint.io) pour vérifier toutes les règl
 
 BookWyrm aspire à être aussi inclusif et accessible que possible.
 
-Lorsque vous contribuez du code, vérifiez la [checklist Inclusive Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) avant de proposer votre pull request. Pour des conseils sur l'accessibilité, [A11Y-101](https://www.a11y-101.com/development) est également une ressource utile. Pour plus d'informations sur la manière de rendre vos gabarits de page multilingues, voir [la section Traductions](/translations.html).
+Lorsque vous contribuez du code, vérifiez la [checklist Inclusive Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) avant de proposer votre pull request. Pour des conseils sur l'accessibilité, [A11Y-101](https://www.a11y-101.com/development) est également une ressource utile. Pour plus d'informations sur la manière de rendre vos gabarits de page multilingues, voir [la section Traductions](/translation.html).
 
 Quelques particularités à garder en tête pour la contribution au code de BookWyrm :
 
