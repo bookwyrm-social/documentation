@@ -102,6 +102,27 @@ c6c35779-af3a-4091-b330-c026610920d6
 
 Congrats! You did it!! Configure your instance however you'd like.
 
+## Finding log files
+
+Like all software, BookWyrm can contain bugs, and often these bugs are in the Python code and easiest to reproduce by getting more context from the logs.
+
+If you use the provided `systemd` service configurations from `contrib/systemd` you will be able to read the logs with `journalctl`:
+
+``` { .sh}
+# viewing logs of the web process
+journalctl -u bookwyrm
+
+# viewing logs of the worker process
+journalctl -u bookwyrm-worker
+
+# viewing logs of the scheduler process
+journalctl -u bookwyrm-scheduler
+```
+Feel free to explore additional ways of slicing and dicing logs with flags documented in `journalctl --help`.
+
+While BookWyrm's application logs will most often be enough, you can find logs for other services like Nginx,
+PostgreSQL, or Redis are usually in `.log` files located somewhere in `/var/logs`.
+
 ## Get Involved
 
 See [Get Involved](https://joinbookwyrm.com/get-involved/) for details.
