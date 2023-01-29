@@ -54,15 +54,14 @@ Instructions for running BookWyrm in production without Docker:
      - Reload nginx: `systemctl reload nginx`
 - Setup the python virtual enviroment
     - Make the python venv directory in your install dir:
-        `mkdir venv`
         `python3 -m venv ./venv`
     - Install bookwyrm python dependencies with pip:
         `./venv/bin/pip3 install -r requirements.txt`
 - Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
-
     `sudo -i -u postgres psql`
 
-```
+``` { .sql }
+-- make sure to replace the password with your POSTGRES_PASSWORD .env setting
 CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
 
 CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
@@ -86,6 +85,9 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
         `chown -R bookwyrm:bookwyrm /opt/bookwyrm`
     - You should now run bookwyrm related commands as the bookwyrm user:
         `sudo -u bookwyrm echo I am the $(whoami) user`
+- Configure, enable, and start BookWyrm's `systemd` services:
+    - Copy the service configurations by running `cp contrib/systemd/*.service /etc/systemd/system/`
+    - Enable and start the services with `systemctl enable bookwyrm bookwyrm-worker bookwyrm-scheduler`
 
 - Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
 - You can get your code at any time by re-running that command. Here's an example output:
@@ -96,49 +98,7 @@ Use this code to create your admin account:
 c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
 ```
-
-- Make and configure the run script
-    - Make a file called dockerless-run.sh and fill it with the following contents
-
-``` { .sh }
-#!/bin/bash
-
-# stop if one process fails
-set -e
-
-# bookwyrm
-/opt/bookwyrm/venv/bin/gunicorn bookwyrm.wsgi:application --bind 0.0.0.0:8000 &
-
-# celery
-/opt/bookwyrm/venv/bin/celery -A celerywyrm worker -l info -Q high_priority,medium_priority,low_priority,imports &
-/opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &
-# /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &
-```
-    - Replace `/opt/bookwyrm` with your install dir
-    - Change `8000` to your custom port number
-    - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
-- You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
-- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
-- You may want to configure BookWyrm to autorun with a systemd service. Here is an example:
-```
-# /etc/systemd/system/bookwyrm.service
-[Unit]
-Description=Bookwyrm Server
-After=network.target
-After=systemd-user-sessions.service
-After=network-online.target
-
-[Service]
-User=bookwyrm
-Type=simple
-Restart=always
-ExecStart=/bin/bash /opt/bookwyrm/dockerless-run.sh
-WorkingDirectory=/opt/bookwyrm/
-
-[Install]
-WantedBy=multi-user.target
-```
-You will need to set up a Cron job for the service to start automatically on a server restart.
+- The application should now be running at your domain. When you load the domain, you should get a configuration page to confirm your instance settings, and a form to create an admin account. Use your admin code to register.
 
 Congrats! You did it!! Configure your instance however you'd like.
 
