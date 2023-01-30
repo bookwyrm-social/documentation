@@ -142,7 +142,7 @@ BookWyrm utilise [Prettier](https://prettier.io/) pour assurer la cohérence du 
 
 ### stylelint
 
-BookWyrm utilise [Stylelint](uhttps://stylelint.io/) pour assurer la cohérence des fichiers CSS. Exécutez `stylelintprettier` avant de valider vos modifications de scripts afin de formater automatiquement votre code.
+BookWyrm utilise [Stylelint](uhttps://stylelint.io/) pour assurer la cohérence des fichiers CSS. Exécutez `stylelint` avant de valider vos modifications de scripts afin de formater automatiquement votre code.
 
 ### formatters
 

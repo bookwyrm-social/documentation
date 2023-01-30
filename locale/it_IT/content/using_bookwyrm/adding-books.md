@@ -17,4 +17,4 @@ Se hai trovato il libro che vuoi, ma non la giusta edizione, puoi aggiungere un'
 
 ## Aggiunge un libro nuovo
 
-Una volta che hai provato a cercare il tuo libro, importandolo da un altro catalogo e trovare altre edizioni del libro, puoi aggiungere un nuovo libro manualmente. Il link per aggiungere manualmente un libro è nella parte inferiore della pagina di ricerca quando vengono visualizzati cataloghi esterni. È inoltre possibile navigare direclty a `/create-book` sulla tua istanza.
+Una volta che hai provato a cercare il tuo libro, importandolo da un altro catalogo e trovare altre edizioni del libro, puoi aggiungere un nuovo libro manualmente. Il link per aggiungere manualmente un libro è nella parte inferiore della pagina di ricerca quando vengono visualizzati cataloghi esterni. È inoltre possibile navigare directly a `/create-book` sulla tua istanza.
