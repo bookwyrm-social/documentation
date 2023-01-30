@@ -142,7 +142,7 @@ BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase c
 
 ### stylelint
 
-BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
+BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelint` before committing changes to scripts to automatically format your code.
 
 ### formatters
 
