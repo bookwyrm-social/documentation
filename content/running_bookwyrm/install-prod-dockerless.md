@@ -22,10 +22,8 @@ Instructions for running BookWyrm in production without Docker:
 
 - Make and enter directory you want to install bookwyrm too. For example `/opt/bookwyrm`:
 	`mkdir /opt/bookwyrm && cd /opt/bookwyrm`
-- Get the application code:
-    `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
-- Switch to the `production` branch:
-    `git checkout production`
+- Get the application code, note that this only clones the `production` branch:
+    `git clone https://github.com/bookwyrm-social/bookwyrm.git --branch production --single-branch ./`
 - Create your environment variables file, `cp .env.example .env`, and update the following:
     - `SECRET_KEY` | A difficult to guess, secret string of characters
     - `DOMAIN` | Your web domain
@@ -44,10 +42,12 @@ Instructions for running BookWyrm in production without Docker:
     - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
     - Update nginx `bookwyrm.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
-        - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
-        - Uncomment lines 18 to 67 to enable forwarding to HTTPS. You should have two `server` blocks enabled
+        - Replace `/app` with your install directory `/opt/bookwyrm` everywhere in the file (including commented out)
+        - Uncomment [lines 23 to 111](https://github.com/bookwyrm-social/bookwyrm/blob/production/nginx/production#L23-L111) to enable
+            forwarding to HTTPS. You should have two `server` blocks enabled
         - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
-        - Change line 4 so that it says `server localhost:8000`. You may choose a different port here if you wish
+        - Change [line 4](https://github.com/chdorner/secretbearlibrary/blob/main/bookwyrm/bookwyrm-nginx.conf#L4) so that it says
+            `server localhost:8000`. You may choose a different port here if you wish
         - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
     - Enable the nginx config:
         `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
