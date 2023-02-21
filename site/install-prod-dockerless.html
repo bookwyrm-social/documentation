@@ -116,6 +116,10 @@ Installing Without Docker
                 </li>
                 
                 <li>
+                    <a href="/updating-dockerless.html" >Updating Without Docker</a>
+                </li>
+                
+                <li>
                     <a href="/reverse-proxy.html" >Using a Reverse-Proxy</a>
                 </li>
                 
@@ -204,10 +208,8 @@ This install method assumes you already have ssl configured with certificates av
 <ul>
 <li>Make and enter directory you want to install bookwyrm too. For example <code>/opt/bookwyrm</code>:
     <code>mkdir /opt/bookwyrm &amp;&amp; cd /opt/bookwyrm</code></li>
-<li>Get the application code:
-    <code>git clone git@github.com:bookwyrm-social/bookwyrm.git ./</code></li>
-<li>Switch to the <code>production</code> branch:
-    <code>git checkout production</code></li>
+<li>Get the application code, note that this only clones the <code>production</code> branch:
+    <code>git clone https://github.com/bookwyrm-social/bookwyrm.git --branch production --single-branch ./</code></li>
 <li>Create your environment variables file, <code>cp .env.example .env</code>, and update the following:<ul>
 <li><code>SECRET_KEY</code> | A difficult to guess, secret string of characters</li>
 <li><code>DOMAIN</code> | Your web domain</li>
@@ -228,10 +230,12 @@ This install method assumes you already have ssl configured with certificates av
 <li>Make a copy of the production template config and set it for use in nginx: <code>cp nginx/production /etc/nginx/sites-available/bookwyrm.conf</code></li>
 <li>Update nginx <code>bookwyrm.conf</code>:<ul>
 <li>Replace <code>your-domain.com</code> with your domain name everywhere in the file (including the lines that are currently commented out)</li>
-<li>Replace <code>/app/</code> with your install directory <code>/opt/bookwyrm/</code> everywhere in the file (including commented out)</li>
-<li>Uncomment lines 18 to 67 to enable forwarding to HTTPS. You should have two <code>server</code> blocks enabled</li>
+<li>Replace <code>/app</code> with your install directory <code>/opt/bookwyrm</code> everywhere in the file (including commented out)</li>
+<li>Uncomment <a href="https://github.com/bookwyrm-social/bookwyrm/blob/production/nginx/production#L23-L111">lines 23 to 111</a> to enable
+    forwarding to HTTPS. You should have two <code>server</code> blocks enabled</li>
 <li>Change the <code>ssl_certificate</code> and <code>ssl_certificate_key</code> paths to your fullchain and privkey locations</li>
-<li>Change line 4 so that it says <code>server localhost:8000</code>. You may choose a different port here if you wish</li>
+<li>Change <a href="https://github.com/chdorner/secretbearlibrary/blob/main/bookwyrm/bookwyrm-nginx.conf#L4">line 4</a> so that it says
+    <code>server localhost:8000</code>. You may choose a different port here if you wish</li>
 <li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
 </ul>
 </li>
@@ -242,18 +246,16 @@ This install method assumes you already have ssl configured with certificates av
 </li>
 <li>Setup the python virtual enviroment<ul>
 <li>Make the python venv directory in your install dir:
-    <code>mkdir venv</code>
     <code>python3 -m venv ./venv</code></li>
 <li>Install bookwyrm python dependencies with pip:
     <code>./venv/bin/pip3 install -r requirements.txt</code></li>
 </ul>
 </li>
-<li>
-<p>Make the bookwyrm postgresql database. Make sure to change the password to what you set in the <code>.env</code> config:</p>
-<p><code>sudo -i -u postgres psql</code></p>
-</li>
+<li>Make the bookwyrm postgresql database. Make sure to change the password to what you set in the <code>.env</code> config:
+    <code>sudo -i -u postgres psql</code></li>
 </ul>
-<pre><code>CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
+<pre><code class="language-sql">-- make sure to replace the password with your POSTGRES_PASSWORD .env setting
+CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
 
 CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
 
@@ -269,15 +271,20 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 <li>Compile the themes by running <code>venv/bin/python3 manage.py compile_themes</code></li>
 <li>Create the static files by running <code>venv/bin/python3 manage.py collectstatic --no-input</code></li>
 <li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
-<li>
-<p>Create and setup your <code>bookwyrm</code> user</p>
-<ul>
+<li>Create and setup your <code>bookwyrm</code> user<ul>
 <li>Make the system bookwyrm user:
     <code>useradd bookwyrm -r</code></li>
 <li>Change the owner of your install directory to bookwyrm:
     <code>chown -R bookwyrm:bookwyrm /opt/bookwyrm</code></li>
 <li>You should now run bookwyrm related commands as the bookwyrm user:
     <code>sudo -u bookwyrm echo I am the $(whoami) user</code></li>
+</ul>
+</li>
+<li>
+<p>Configure, enable, and start BookWyrm's <code>systemd</code> services:</p>
+<ul>
+<li>Copy the service configurations by running <code>cp contrib/systemd/*.service /etc/systemd/system/</code></li>
+<li>Enable and start the services with <code>systemctl enable bookwyrm bookwyrm-worker bookwyrm-scheduler</code></li>
 </ul>
 </li>
 <li>
@@ -291,52 +298,24 @@ c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
 </code></pre>
 <ul>
-<li>Make and configure the run script<ul>
-<li>Make a file called dockerless-run.sh and fill it with the following contents</li>
+<li>The application should now be running at your domain. When you load the domain, you should get a configuration page to confirm your instance settings, and a form to create an admin account. Use your admin code to register.</li>
 </ul>
-</li>
-</ul>
-<pre><code class="language-sh">#!/bin/bash
-
-# stop if one process fails
-set -e
-
-# bookwyrm
-/opt/bookwyrm/venv/bin/gunicorn bookwyrm.wsgi:application --bind 0.0.0.0:8000 &amp;
-
-# celery
-/opt/bookwyrm/venv/bin/celery -A celerywyrm worker -l info -Q high_priority,medium_priority,low_priority,imports &amp;
-/opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &amp;
-# /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &amp;
-</code></pre>
-<pre><code>- Replace `/opt/bookwyrm` with your install dir
-- Change `8000` to your custom port number
-- Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
-</code></pre>
-<ul>
-<li>You can now run BookWyrm with: <code>sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh</code></li>
-<li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
-<li>You may want to configure BookWyrm to autorun with a systemd service. Here is an example:</li>
-</ul>
-<pre><code># /etc/systemd/system/bookwyrm.service
-[Unit]
-Description=Bookwyrm Server
-After=network.target
-After=systemd-user-sessions.service
-After=network-online.target
-
-[Service]
-User=bookwyrm
-Type=simple
-Restart=always
-ExecStart=/bin/bash /opt/bookwyrm/dockerless-run.sh
-WorkingDirectory=/opt/bookwyrm/
-
-[Install]
-WantedBy=multi-user.target
-</code></pre>
-<p>You will need to set up a Cron job for the service to start automatically on a server restart.</p>
 <p>Congrats! You did it!! Configure your instance however you'd like.</p>
+<h2>Finding log files</h2>
+<p>Like all software, BookWyrm can contain bugs, and often these bugs are in the Python code and easiest to reproduce by getting more context from the logs.</p>
+<p>If you use the provided <code>systemd</code> service configurations from <code>contrib/systemd</code> you will be able to read the logs with <code>journalctl</code>:</p>
+<pre><code class="language-sh"># viewing logs of the web process
+journalctl -u bookwyrm
+
+# viewing logs of the worker process
+journalctl -u bookwyrm-worker
+
+# viewing logs of the scheduler process
+journalctl -u bookwyrm-scheduler
+</code></pre>
+<p>Feel free to explore additional ways of slicing and dicing logs with flags documented in <code>journalctl --help</code>.</p>
+<p>While BookWyrm's application logs will most often be enough, you can find logs for other services like Nginx,
+PostgreSQL, or Redis are usually in <code>.log</code> files located somewhere in <code>/var/logs</code>.</p>
 <h2>Get Involved</h2>
 <p>See <a href="https://joinbookwyrm.com/get-involved/">Get Involved</a> for details.</p>
 </section>

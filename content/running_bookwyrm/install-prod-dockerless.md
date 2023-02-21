@@ -22,10 +22,8 @@ Instructions for running BookWyrm in production without Docker:
 
 - Make and enter directory you want to install bookwyrm too. For example `/opt/bookwyrm`:
 	`mkdir /opt/bookwyrm && cd /opt/bookwyrm`
-- Get the application code:
-    `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
-- Switch to the `production` branch:
-    `git checkout production`
+- Get the application code, note that this only clones the `production` branch:
+    `git clone https://github.com/bookwyrm-social/bookwyrm.git --branch production --single-branch ./`
 - Create your environment variables file, `cp .env.example .env`, and update the following:
     - `SECRET_KEY` | A difficult to guess, secret string of characters
     - `DOMAIN` | Your web domain
@@ -44,25 +42,26 @@ Instructions for running BookWyrm in production without Docker:
     - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
     - Update nginx `bookwyrm.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
-        - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
-        - Uncomment lines 18 to 67 to enable forwarding to HTTPS. You should have two `server` blocks enabled
+        - Replace `/app` with your install directory `/opt/bookwyrm` everywhere in the file (including commented out)
+        - Uncomment [lines 23 to 111](https://github.com/bookwyrm-social/bookwyrm/blob/production/nginx/production#L23-L111) to enable
+            forwarding to HTTPS. You should have two `server` blocks enabled
         - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
-        - Change line 4 so that it says `server localhost:8000`. You may choose a different port here if you wish
+        - Change [line 4](https://github.com/chdorner/secretbearlibrary/blob/main/bookwyrm/bookwyrm-nginx.conf#L4) so that it says
+            `server localhost:8000`. You may choose a different port here if you wish
         - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
     - Enable the nginx config:
         `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
      - Reload nginx: `systemctl reload nginx`
 - Setup the python virtual enviroment
     - Make the python venv directory in your install dir:
-        `mkdir venv`
         `python3 -m venv ./venv`
     - Install bookwyrm python dependencies with pip:
         `./venv/bin/pip3 install -r requirements.txt`
 - Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
-
     `sudo -i -u postgres psql`
 
-```
+``` { .sql }
+-- make sure to replace the password with your POSTGRES_PASSWORD .env setting
 CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
 
 CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
@@ -86,6 +85,9 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
         `chown -R bookwyrm:bookwyrm /opt/bookwyrm`
     - You should now run bookwyrm related commands as the bookwyrm user:
         `sudo -u bookwyrm echo I am the $(whoami) user`
+- Configure, enable, and start BookWyrm's `systemd` services:
+    - Copy the service configurations by running `cp contrib/systemd/*.service /etc/systemd/system/`
+    - Enable and start the services with `systemctl enable bookwyrm bookwyrm-worker bookwyrm-scheduler`
 
 - Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
 - You can get your code at any time by re-running that command. Here's an example output:
@@ -96,51 +98,30 @@ Use this code to create your admin account:
 c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
 ```
-
-- Make and configure the run script
-    - Make a file called dockerless-run.sh and fill it with the following contents
-
-``` { .sh }
-#!/bin/bash
-
-# stop if one process fails
-set -e
-
-# bookwyrm
-/opt/bookwyrm/venv/bin/gunicorn bookwyrm.wsgi:application --bind 0.0.0.0:8000 &
-
-# celery
-/opt/bookwyrm/venv/bin/celery -A celerywyrm worker -l info -Q high_priority,medium_priority,low_priority,imports &
-/opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &
-# /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &
-```
-    - Replace `/opt/bookwyrm` with your install dir
-    - Change `8000` to your custom port number
-    - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
-- You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
-- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
-- You may want to configure BookWyrm to autorun with a systemd service. Here is an example:
-```
-# /etc/systemd/system/bookwyrm.service
-[Unit]
-Description=Bookwyrm Server
-After=network.target
-After=systemd-user-sessions.service
-After=network-online.target
-
-[Service]
-User=bookwyrm
-Type=simple
-Restart=always
-ExecStart=/bin/bash /opt/bookwyrm/dockerless-run.sh
-WorkingDirectory=/opt/bookwyrm/
-
-[Install]
-WantedBy=multi-user.target
-```
-You will need to set up a Cron job for the service to start automatically on a server restart.
+- The application should now be running at your domain. When you load the domain, you should get a configuration page to confirm your instance settings, and a form to create an admin account. Use your admin code to register.
 
 Congrats! You did it!! Configure your instance however you'd like.
+
+## Finding log files
+
+Like all software, BookWyrm can contain bugs, and often these bugs are in the Python code and easiest to reproduce by getting more context from the logs.
+
+If you use the provided `systemd` service configurations from `contrib/systemd` you will be able to read the logs with `journalctl`:
+
+``` { .sh}
+# viewing logs of the web process
+journalctl -u bookwyrm
+
+# viewing logs of the worker process
+journalctl -u bookwyrm-worker
+
+# viewing logs of the scheduler process
+journalctl -u bookwyrm-scheduler
+```
+Feel free to explore additional ways of slicing and dicing logs with flags documented in `journalctl --help`.
+
+While BookWyrm's application logs will most often be enough, you can find logs for other services like Nginx,
+PostgreSQL, or Redis are usually in `.log` files located somewhere in `/var/logs`.
 
 ## Get Involved
 
