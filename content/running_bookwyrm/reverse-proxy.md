@@ -112,3 +112,20 @@ If everything worked correctly, your BookWyrm instance should now be externally 
 *Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
 
 *Note: the location of the ssl certificates may vary depending on the OS of your server*
+
+
+#### Caddy
+
+- Add an email address in the global section of your `Caddyfile` and Caddy will automatically obtain https certificates from LetsEncrypt. ,
+- Add the three endpoints for your BookWyrm domain:
+```Caddyfile
+{
+    email   email@your.domain
+}
+your.domain {
+    reverse_proxy /images/* localhost:8001
+    reverse_proxy /static/* localhost:8001
+    reverse_proxy localhost:8000
+}
+```
+Caddy will set the headers needed by default for you.
