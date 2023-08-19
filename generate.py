@@ -99,10 +99,14 @@ def format_markdown(file_path):
                     header_block_open = not header_block_open
                 elif not header_block_open:
                     headerless.append(line)
-            return markdown("".join(headerless), extensions=["tables", "fenced_code"])
+            return markdown("".join(headerless), 
+            extensions=["tables", "fenced_code", "codehilite"],
+            extension_configs={"codehilite": {"css_class": "highlight"}}
+            )
         return markdown(
             "".join(markdown_content.readlines()[3:]),
-            extensions=["tables", "fenced_code"],
+            extensions=["tables", "fenced_code", "codehilite"],
+            extension_configs={"codehilite": {"css_class": "highlight"}}
         )
 
 
