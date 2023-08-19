@@ -40,7 +40,7 @@ Instructions for running BookWyrm in production without Docker:
     - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
     - `EMAIL_HOST_PASSWORD` | The password provided by your email service
 - If you are on Debian and some other operating systems, you may need to create the `/var/cache/nginx` directory:
-```shell
+``` { .sh }
 mkdir /var/cache/nginx
 chown www-data:www-data /var/cache/nginx
 ```
@@ -67,7 +67,7 @@ chown www-data:www-data /var/cache/nginx
 - Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
     `sudo -i -u postgres psql`
 
-```sql
+``` { .sql }
 CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
 
 CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
@@ -98,7 +98,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 - Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
 - You can get your code at any time by re-running that command. Here's an example output:
 
-```
+```  { .sh }
 *******************************************
 Use this code to create your admin account:
 c6c35779-af3a-4091-b330-c026610920d6
@@ -114,7 +114,7 @@ Like all software, BookWyrm can contain bugs, and often these bugs are in the Py
 
 If you use the provided `systemd` service configurations from `contrib/systemd` you will be able to read the logs with `journalctl`:
 
-```shell
+``` { .sh }
 # viewing logs of the web process
 journalctl -u bookwyrm
 
