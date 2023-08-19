@@ -1,18 +1,20 @@
 ---
 Title: Installing Without Docker
-Date: 2022-10-02
+Date: 2023-8-19
 Order: 2
 ---
 
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
-This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended
-This install method assumes you already have ssl configured with certificates available
+
+This method of installation is more involved, and therefore is for more experienced admins. **Docker install is the recommended method** as there may not be much support available for Dockerless installation. If you have expertise in this area, we would love your help to improve this documentation!
+
+This install method assumes you already have ssl configured with certificates available.
 
 ## Server setup
 - Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev`
+- Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev gunicorn`
 
 ## Install and configure BookWyrm
 
@@ -24,8 +26,8 @@ Instructions for running BookWyrm in production without Docker:
 	`mkdir /opt/bookwyrm && cd /opt/bookwyrm`
 - Get the application code, note that this only clones the `production` branch:
     `git clone https://github.com/bookwyrm-social/bookwyrm.git --branch production --single-branch ./`
-- Create your environment variables file, `cp .env.example .env`, and update the following:
-    - `SECRET_KEY` | A difficult to guess, secret string of characters
+- Create your environment variables file, `cp .env.example .env`, and update the following. Passwords should generally be enclosed in "quotation marks":
+    - `SECRET_KEY` | A difficult to guess, secret string of characters.
     - `DOMAIN` | Your web domain
     - `POSTGRES_PASSWORD` | Set a secure password for the database
     - `POSTGRES_HOST` | Set to `localhost` (the machine running your db)
@@ -37,6 +39,11 @@ Instructions for running BookWyrm in production without Docker:
     - `REDIS_BROKER_HOST` | Set to `localhost` (the machine running redis)
     - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
     - `EMAIL_HOST_PASSWORD` | The password provided by your email service
+- If you are on Debian and some other operating systems, you may need to create the `/var/cache/nginx` directory:
+```shell
+mkdir /var/cache/nginx
+chown www-data:www-data /var/cache/nginx
+```
 - Configure nginx
     - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
     - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
@@ -60,8 +67,7 @@ Instructions for running BookWyrm in production without Docker:
 - Make the bookwyrm postgresql database. Make sure to change the password to what you set in the `.env` config:
     `sudo -i -u postgres psql`
 
-``` { .sql }
--- make sure to replace the password with your POSTGRES_PASSWORD .env setting
+```sql
 CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
 
 CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
@@ -92,7 +98,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 - Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
 - You can get your code at any time by re-running that command. Here's an example output:
 
-``` { .sh }
+```
 *******************************************
 Use this code to create your admin account:
 c6c35779-af3a-4091-b330-c026610920d6
@@ -108,7 +114,7 @@ Like all software, BookWyrm can contain bugs, and often these bugs are in the Py
 
 If you use the provided `systemd` service configurations from `contrib/systemd` you will be able to read the logs with `journalctl`:
 
-``` { .sh}
+```shell
 # viewing logs of the web process
 journalctl -u bookwyrm
 
