@@ -173,10 +173,10 @@ Compiles translation files. See [Django's compilemessages](https://docs.djangopr
 
 Run tests with `pytest`.
 
-### deactivate_2fa
+### remove_2fa
 
 Deactivates two factor authentication for a given user.
 
-### manual_confirm
+### confirm_email
 
 Confirms a users email, sets the user to active.
