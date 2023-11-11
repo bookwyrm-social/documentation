@@ -1,4 +1,4 @@
-name: Deploy
+name: Compile and Deploy
 
 on:
   push:
@@ -6,20 +6,49 @@ on:
       - main
 
 jobs:
-  build:
 
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out code
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Process translations
+        run: |
+          ./bw-dev messages:update
+
+      - name: Compile site
+        run: |
+          python generate.py
+
+  deploy:
+    needs: compile
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy to server
-      id: deploy
-      uses: Pendect/action-rsyncer@v1.1.0
-      env:
-        DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
-      with:
-        flags: '-avzr --delete'
-        options: ''
-        ssh_options: ''
-        src: 'site/'
-        dest: 'mouse@docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html'
+
+      - name: Checkout code
+      - uses: actions/checkout@v2
+
+      - name: Deploy to server
+        id: deploy
+        uses: Pendect/action-rsyncer@v2.0.0
+        env:
+          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
+        with:
+          flags: '-avzr --delete'
+          options: ''
+          ssh_options: ''
+          src: 'site/'
+          dest: 'mouse@docs.joinbookwyrm.com:/var/www/docs-bookwyrm/html'
