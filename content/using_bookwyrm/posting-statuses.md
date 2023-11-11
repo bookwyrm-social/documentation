@@ -37,9 +37,9 @@ Text can include:
 - Mentions (@user)
 - URLs (`http(s)://` is not displayed)
 - Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+    - bold
+    - italics
+    - block quotes
+    - bullet lists
+    - links
 
