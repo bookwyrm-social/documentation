@@ -19,7 +19,11 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Install Dependencies
+      - name: Install Dev Dependencies
+        run: |
+          apt-get install gettext
+
+      - name: Install Python Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
