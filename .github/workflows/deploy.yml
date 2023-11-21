@@ -21,7 +21,7 @@ jobs:
 
       - name: Install Dev Dependencies
         run: |
-          apt-get install gettext
+          sudo apt-get install gettext
 
       - name: Install Python Dependencies
         run: |
