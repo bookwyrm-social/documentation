@@ -9,6 +9,7 @@ External Storage
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -221,54 +222,63 @@ External Storage
 <h3>Copiați fișierele media locale pe stocarea externă</h3>
 <p>Dacă instanța dvs. BookWyrm rulează deja și fișierele media au fost încărcate (avatare de utilizator, coperți de cărți…), va trebui să migrați fișierele media încărcate pe „găleata” (bucket) dvs.</p>
 <p>Această sarcină este realizată de comanda:</p>
-<pre><code class="language-bash">./bw-dev copy_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>copy_media_to_s3
+</code></pre></div>
+
 <h3>Activați stocarea externă pentru BookWyrm</h3>
 <p>Pentru a activa stocarea externă S3 compatibiliă, va trebui să editați fișierul dvs. <code>.env</code> schimbând valoarea proprietății pentru <code>USE_S3</code> din <code>false</code> în <code>true</code>:</p>
-<pre><code>USE_S3=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_S3=true
+</code></pre></div>
+
 <p>Dacă stocarea externă a dvs. este deservită prin HTTPS (cel mai des în prezent), veți avea nevoie de asemenea să vă asigurați că <code>USE_HTTPS</code> este setat la <code>true</code>, în așa fel încât imaginile vor fi încărcate prin HTTPS:</p>
-<pre><code>USE_HTTPS=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_HTTPS=true
+</code></pre></div>
+
 <h4>Modele statice</h4>
 <p>Apoi, veți avea nevoie să rulați următoarea comandă pentru a copia modelele statice către „găleata” dvs. S3:</p>
-<pre><code class="language-bash">./bw-dev collectstatic
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+</code></pre></div>
+
 <h4>Setări CORS</h4>
 <p>Odată ce modelele statice au fost colectate, veți avea nevoie să configurați CORS pentru găleata dvs.</p>
 <p>Unele servicii precum Digital Ocean oferă o interfață de configurare, vedeți <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
 <p>Dacă serviciul dvs. nu oferă o interfață, încă puteți configura CORS în linia de comandă.</p>
 <p>Creați un fișier numit <code>cors.json</code> cu conținutul următor:</p>
-<pre><code class="language-json">{
-  &quot;CORSRules&quot;: [
-    {
-      &quot;AllowedOrigins&quot;: [&quot;https://MY_DOMAIN_NAME&quot;, &quot;https://www.MY_DOMAIN_NAME&quot;],
-      &quot;AllowedHeaders&quot;: [&quot;*&quot;],
-      &quot;AllowedMethods&quot;: [&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;],
-      &quot;MaxAgeSeconds&quot;: 3000,
-      &quot;ExposeHeaders&quot;: [&quot;Etag&quot;]
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;CORSRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;AllowedOrigins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://MY_DOMAIN_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://www.MY_DOMAIN_NAME&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedMethods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELETE&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;MaxAgeSeconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExposeHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Etag&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>Înlocuiți <code>MY_DOMAIN_NAME</code> cu numele domeniului/domeniilor ale instanței dvs.</p>
 <p>Apoi rulați următoarea comandă:</p>
-<pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>set_cors_to_s3<span class="w"> </span>cors.json
+</code></pre></div>
+
 <p>Dacă nu afișează nimic este de bine.</p>
 <p>Dacă începeți o instanță nouă BookWyrm, puteți reveni la instrucțiunile de configurare acum. Dacă nu, continuați să citiți.</p>
 <h3>Reporniți instanța dvs.</h3>
 <p>Odată ce migrarea fișierelor media a fost făcută și modelele statice colectate, puteți încărca noua configurare <code>.env</code> și reporni instanța cu:</p>
-<pre><code class="language-bash">./bw-dev up -d
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+
 <p>Dacă totul decurge cum trebuie, stocarea dvs. a fost schimbată fără timp de oprire. Dacă unele fonturi lipsesc (și consola JS a navigatorului dvs. vă arată alerte CORS), atunci ceva a mers greșit <a href="#cors-settings">here</a>. În acest caz, ar fi bine să verificați antetele unei cereri HTTP cu un fișier al „găleții” dvs:</p>
-<pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>OPTIONS<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Origin: http://MY_DOMAIN_NAME&#39;</span><span class="w"> </span>http://BUCKET_URL/static/images/logo-small.png<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Access-Control-Request-Method: GET&quot;</span>
+</code></pre></div>
+
 <p>Înlocuiți <code>MY_DOMAIN_NAME</code> cu numele domeniului instanței dvs., <code>BUCKET_URL</code> cu URL-ul pentru găleata dvs. Puteți înlocui calea fișierului co orice altă cale validă pentru găleata dvs.</p>
 <p>Dacă vedeți vrun mesaj, în special un mesaj începând cu <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, nu a funcționat. Dacă nu vedeți niciun mesaj, atunci a mers.</p>
 <p>Pentru o instanță activă, s-ar putea să fie câteva fișiere care au fost create local în timpul migrării fișierelor pe stocarea externă. Reporniți aplicația pentru a folosi stocarea externă. Pentru a vă asigura că orice fișier rămas este încărcat pe stocarea externă după schimbare, puteți folosi comanda următoare, care va încărca numai fișierele care nu sunt prezente pe stocarea externă:</p>
-<pre><code class="language-bash">./bw-dev sync_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>sync_media_to_s3
+</code></pre></div>
+
 <h3>Actualizați conectorul instanței</h3>
 <p><em>Notă: puteți sări acest pas dacă rulați o versiune actualizată de BookWyrm. În septembrie 2021, „conectorul de raft” a fost înlăturat în <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
 <p>Pentru ca URL-ul corect să fie utilizat la afișarea rezultatelor de căutare pentru cărțile locale, va trebui să modificați valoarea pentru URL de bază a imaginilor de copertă.</p>

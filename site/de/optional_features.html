@@ -9,6 +9,7 @@ Optionale Funktionen
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -215,10 +216,11 @@ Optionale Funktionen
 </ul>
 <p>Alle Farbvariablen akzeptieren Werte, die im Modul <code>ImageColor</code> von Pillow als Farben erkannt werden können: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Erfahren Sie mehr über Farben von Pillow</a>.</p>
 <h3>Entferne Vorschaubilder für entfernte Accounts</h3>
-<p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. Wenn du alle Bilder löschen möchtest, die zuvor für entfernte Accounts erstellt wurden, wurde ein neuer Befehl hinzugefügt:</p>
-<pre><code class="language-sh">./bw-dev remove_remote_user_preview_images
-</code></pre>
-<p>That command will empty the <code>user.preview_image</code> property in the database for remote users, and delete the file in storage.</p>
+<p>Vor Bookwyrmversion 0.5.4 wurden auch Vorschaubilder für entfernte Nutzer erstellt. Da es in Hinblick auf Speicherplatz und Rechenleistung verschwenderisch war, wurde diese Generation gestoppt. Wenn du alle Bilder löschen möchtest, die zuvor für entfernte Accounts erstellt wurden, wurde ein neuer Befehl hinzugefügt:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>remove_remote_user_preview_images
+</code></pre></div>
+
+<p>Dieser Befehl wird die Eigenschaft <code>user.preview_image</code> in der Datenbank für entfernte Benutzer leeren und die entsprechenden Dateien löschen.</p>
 </section>
 
         </div>

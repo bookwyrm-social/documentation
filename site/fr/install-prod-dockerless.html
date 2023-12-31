@@ -9,6 +9,7 @@ Installation sans Docker
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -240,16 +241,17 @@ Installation sans Docker
 <p><code>sudo -i -u postgres psql</code></p>
 </li>
 </ul>
-<pre><code>CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
+<div class="highlight"><pre><span></span><code>CREATE USER bookwyrm WITH PASSWORD &#39;securedbypassword123&#39;;
 
-CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
+CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING &#39;UNICODE&#39;;
 
 ALTER DATABASE bookwyrm OWNER TO bookwyrm;
 
 GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 
 \q
-</code></pre>
+</code></pre></div>
+
 <ul>
 <li>Migrer le schéma de la base de données en exécutant <code>venv/bin/python3 manage.py migrate</code></li>
 <li>Initialisez la base de données en exécutant <code>venv/bin/python3 manage.py initdb</code></li>
@@ -268,56 +270,60 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 </li>
 <li>Vous pouvez obtenir ce code à n'importe quel moment en ré-exécutant la commande. Voici un exemple de sortie :</li>
 </ul>
-<pre><code class="language-sh">*******************************************
-Use this code to create your admin account:
+<div class="highlight"><pre><span></span><code>*******************************************
+Use<span class="w"> </span>this<span class="w"> </span>code<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>your<span class="w"> </span>admin<span class="w"> </span>account:
 c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
-</code></pre>
+</code></pre></div>
+
 <ul>
 <li>Créez et configurez le script d'exécution<ul>
 <li>Créez un fichier nommé dockerless-run.sh et remplissez le avec le contenu suivant</li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-sh">#!/bin/bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-# stop if one process fails
-set -e
+<span class="c1"># stop if one process fails</span>
+<span class="nb">set</span><span class="w"> </span>-e
 
-# bookwyrm
-/opt/bookwyrm/venv/bin/gunicorn bookwyrm.wsgi:application --bind 0.0.0.0:8000 &amp;
+<span class="c1"># bookwyrm</span>
+/opt/bookwyrm/venv/bin/gunicorn<span class="w"> </span>bookwyrm.wsgi:application<span class="w"> </span>--bind<span class="w"> </span><span class="m">0</span>.0.0.0:8000<span class="w"> </span><span class="p">&amp;</span>
 
-# celery
-/opt/bookwyrm/venv/bin/celery -A celerywyrm worker -l info -Q high_priority,medium_priority,low_priority &amp;
-/opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &amp;
-# /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &amp;
-</code></pre>
-<pre><code>- Remplacez `/opt/bookwyrm` par votre répertoire d'installation
+<span class="c1"># celery</span>
+/opt/bookwyrm/venv/bin/celery<span class="w"> </span>-A<span class="w"> </span>celerywyrm<span class="w"> </span>worker<span class="w"> </span>-l<span class="w"> </span>info<span class="w"> </span>-Q<span class="w"> </span>high_priority,medium_priority,low_priority<span class="w"> </span><span class="p">&amp;</span>
+/opt/bookwyrm/venv/bin/celery<span class="w"> </span>-A<span class="w"> </span>celerywyrm<span class="w"> </span>beat<span class="w"> </span>-l<span class="w"> </span>INFO<span class="w"> </span>--scheduler<span class="w"> </span>django_celery_beat.schedulers:DatabaseScheduler<span class="w"> </span><span class="p">&amp;</span>
+<span class="c1"># /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &amp;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>- Remplacez `/opt/bookwyrm` par votre répertoire d&#39;installation
 - Remplacez `8000` par votre numéro de port personnalisé
-- Flower a été ici désactivé parce qu'il n'est pas configuré automatiquement avec le mot de passe défini dans le fichier `.env`
-</code></pre>
+- Flower a été ici désactivé parce qu&#39;il n&#39;est pas configuré automatiquement avec le mot de passe défini dans le fichier `.env`
+</code></pre></div>
+
 <ul>
 <li>Vous pouvez à présent exécuter BookWyrm avec&nbsp;: <code>sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh</code></li>
 <li>L'application devrait s'exécuter sur votre domaine. Lorsque vous chargez le domaine, vous devriez obtenir une page de configuration qui confirme vos paramètres d'instance, ainsi qu'un formulaire pour créer un compte d'administrateur. Utilisez votre code d'administration pour vous inscrire.</li>
 <li>Vous pouvez configurer BookWyrm pour qu'il s'exécute automatique à l'aide d'un service systemd. Voici un exemple :</li>
 </ul>
-<pre><code># /etc/systemd/system/bookwyrm.service
-[Unit]
-Description=Bookwyrm Server
-After=network.target
-After=systemd-user-sessions.service
-After=network-online.target
+<div class="highlight"><pre><span></span><code><span class="c1"># /etc/systemd/system/bookwyrm.service</span>
+<span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Bookwyrm Server</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+<span class="na">After</span><span class="o">=</span><span class="s">systemd-user-sessions.service</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
 
-[Service]
-User=bookwyrm
-Type=simple
-Restart=always
-ExecStart=/bin/bash /opt/bookwyrm/dockerless-run.sh
-WorkingDirectory=/opt/bookwyrm/
+<span class="k">[Service]</span>
+<span class="na">User</span><span class="o">=</span><span class="s">bookwyrm</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/bin/bash /opt/bookwyrm/dockerless-run.sh</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/opt/bookwyrm/</span>
 
-[Install]
-WantedBy=multi-user.target
-</code></pre>
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+
 <p>Vous devrez configurer une tâche Cron pour que le service démarre automatiquement au redémarrage du serveur.</p>
 <p>Félicitations ! Vous y êtes arrivé !! Configurez votre instance comme vous le souhaitez.</p>
 <h2>Participer</h2>

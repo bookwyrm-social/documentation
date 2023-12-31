@@ -15,46 +15,46 @@ Las interacciones de las relaciones de usuario siguen la especificación estánd
 - `Bloquear`: evita que los usuarios vean los estados de los demás, y evita que el usuario bloqueado vea el perfil del actor
 - `Actualizar`: actualiza el perfil y la configuración de un usuario
 - `Eliminar`: desactiva un usuario
-- `Undo`: reverses a `Follow` or `Block`
+- `Deshacer`: deshace un `Seguir` o un `Bloquear`
 
-### Statuses
-#### Object types
+### Estados
+#### Tipos de objetos
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
-
-
-#### Activities
-
-- `Create`: saves a new status in the database.
-
-   **Note**: BookWyrm only accepts `Create` activities if they are:
-
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
-
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
-
-#### Objects
-
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
-
-#### Activities
-
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Nota`: en servicios como Mastodon, las `Nota`s son el tipo de estado principal. Contienen el cuerpo de un mensaje, pueden tener archivos adjuntos, mencionar a otres usuaries y ser una respuesta a cualquier tipo de estado. En BookWyrm, las `Nota`s pueden crearse únicamente como mensajes directos o como respuestas a otros estados.
+- `Reseña`: una reseña es un estado relacionado con un libro (indicado por el campo `inReplyToBook`) que posee un título, un cuerpo y una valoración numérica entre 0 (no valorado) y 5.
+- `Comentario`: un comentario sobre un libro menciona al libro y tiene un cuerpo del mensaje.
+- `Cita`: Una cita posee un cuerpo del mensaje, un extracto de un libro y menciona al libro.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+#### Actividad
+
+- `Crear`: guarda un nuevo estado en la base de datos.
+
+   **Observación**: BookWyrm solo acepta `Crear` una actividad si:
+
+   - Es un mensaje directo (como `Nota`s con `directo` como nivel de privacidad, que menciona a une usuarie local),
+   - Está relacionado con un libro (es un tipo de estado personalizado que incluye el campo `inReplyToBook`),
+   - Responde a estados existentes guardados en la base de datos
+- `Eliminar`: suprime un estado
+- `Me gusta`: marca el estado como favorito
+- `Difundir`: impulsa el estado en la línea de tiempo de quien realiza la acción
+- `Deshacer`: deshacer el `Me gusta` o el `Difundir`
+
+### Colecciones
+Los libros y listas de une usuarie están representados por [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+
+#### Objetos
+
+- `Estantería`: la colección de libros de une usuarie. Por defecto, cada usuarie tiene las estanterías `para leer`, `leyendo actualmente` y `leído`, las cuales sirven para llevar un registro del progreso de lectura.
+- `Lista`: una colección de libros a la que pueden contribuir otres usuaries aunque no sean quienes han creado la lista.
+
+#### Actividad
+
+- `Crear`: añade una estantería o una lista a la base de datos.
+- `Eliminar`: suprime una estantería o una lista.
+- `Añadir`: añade un libro a una estantería o lista.
+- `Eliminar`: quita un libro de una estantería o lista.
+
+
+## Serialización alternativa
+Puesto que BookWyrm emplea tipos de objetos personalizados (`Reseña`, `Comentario`, `Cita`) que no son compatibles con ActivityPub, los estados son transformados en tipos estándar cuando se envían a o se ven desde servicios diferentes a BookWyrm. Las `Reseñas`s se convierten en `Artículo`s y los `Comentario`s y las `Cita`s se convierten en `Nota`s, con un enlace al libro y una imagen de portada adjunta.

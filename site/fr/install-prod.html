@@ -9,6 +9,7 @@ Installation en Production
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -243,11 +244,12 @@ Installation en Production
 </ul>
 </li>
 </ul>
-<pre><code class="language-sh">*******************************************
-Use this code to create your admin account:
+<div class="highlight"><pre><span></span><code>*******************************************
+Use<span class="w"> </span>this<span class="w"> </span>code<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>your<span class="w"> </span>admin<span class="w"> </span>account:
 c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
-</code></pre>
+</code></pre></div>
+
 <ul>
 <li>Lancez docker-compose en arrière-plan avec : <code>docker-compose up -d</code></li>
 <li>L'application devrait fonctionner sur votre nom de domaine. Quand vous chargez le nom de domaine, vous devriez arriver sur une page de configuration pour confirmer les paramètres de votre instance et un formulaire pour créer un compte admin. Utilisez votre code admin pour vous enregistrer.</li>

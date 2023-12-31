@@ -9,6 +9,7 @@ Entwicklungsumgebung
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -192,8 +193,9 @@ Entwicklungsumgebung
 <li>Gehe in das Verzeichnis, das den Code auf Ihrem Computer enthält. Du arbeitest von hier aus.</li>
 <li>Richte deine Datei für Entwicklungsumgebungsvariablen durch Kopieren der Beispielumgebungsdatei (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. In der Kommandozeile kannst du das wie folgt tun:</li>
 </ul>
-<pre><code class="language-sh">cp .env.example .env
-</code></pre>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
+</code></pre></div>
+
 <ul>
 <li>In <code>.env</code>ändere <code>DEBUG</code> zu <code>true</code></li>
 <li>
@@ -203,28 +205,32 @@ Entwicklungsumgebung
 <p>Richte nginx für die Entwicklung ein, indem du die Entwicklerkonfigurationsdatei für nginx (<code>nginx/development</code>) in eine neue Datei mit dem Namen <code>nginx/default.conf</code> kopierst:</p>
 </li>
 </ul>
-<pre><code class="language-sh">cp nginx/development nginx/default.conf
-</code></pre>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>nginx/development<span class="w"> </span>nginx/default.conf
+</code></pre></div>
+
 <ul>
 <li>Starte die Applikation. Führe Folgendes über die Kommandozeile aus:</li>
 </ul>
-<pre><code class="language-sh">./bw-dev build            # Baut die Docker-Images
-./bw-dev setup            # Initialisiert die Datenbank und führt die Migrationen aus
-./bw-dev up               # Start die Docker-Container
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Baut die Docker-Images</span>
+./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialisiert die Datenbank und führt die Migrationen aus</span>
+./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start die Docker-Container</span>
+</code></pre></div>
+
 <ul>
 <li>Sobald die Erstellung abgeschlossen ist, kannst du auf die Instanz unter <code>http://localhost:1333</code> zugreifen und einen Admin erstellen.</li>
 </ul>
 <p>Wenn du neugierig bist: das <code>./bw-dev</code> Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk <code>docker-compose build</code> oder <code>docker-compose up</code> laufen lassen, wenn du magst. <code>./bw-dev</code> sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Führe es ohne Argumente aus, um eine Liste der verfügbaren Befehle zu erhalten, lese die <a href="/command-line-tool.html">Dokumentationsseite</a> dafür oder öffne es und schaue dich um, um genau zu sehen, was jeder Befehl tut!</p>
 <h3>Modelle editieren oder erstellen</h3>
 <p>Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenbankstruktur ändern. Damit diese Änderungen wirksam werden, musst du Djangos <code>makemigrations</code>-Befehl ausführen, um eine neue <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django Migrationsdatei</a>zu erstellen und dann diese <code>migrieren</code>:</p>
-<pre><code class="language-sh">./bw-dev makemigrations
-./bw-dev migrate
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
+./bw-dev<span class="w"> </span>migrate
+</code></pre></div>
+
 <h3>Statische Dateien editieren</h3>
 <p>Jedes Mal, wenn du CSS oder JavaScript bearbeitest, musst du Djangos <code>collectstatic</code>-Befehl erneut ausführen, damit deine Änderungen wirksam werden:</p>
-<pre><code class="language-sh">./bw-dev collectstatic
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+</code></pre></div>
+
 <p>Wenn du <a href="https://yarnpkg.com/getting-started/install">yarn installierstt</a> haben, kannst du <code>yarn watch:static</code> ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis <code>bookwyrm/static</code> auszuführen.</p>
 </section>
 

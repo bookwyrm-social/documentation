@@ -9,6 +9,7 @@ External Storage
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -221,54 +222,63 @@ External Storage
 <h3>Copiando a mídia local para o armazenamento externo</h3>
 <p>Se sua instância BookWyrm já está rodando e já recebeu mídias (avatares de usuários, capas de livros…), você precisará migrar essa mídia enviada para seu bucket.</p>
 <p>Essa tarefá é feita com o comando:</p>
-<pre><code class="language-bash">./bw-dev copy_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>copy_media_to_s3
+</code></pre></div>
+
 <h3>Habilitando o armazenamento externo na BookWyrm</h3>
 <p>Para habilitar o armazenamento externo compatível com S3, você deverá editar seu arquivo <code>.env</code> e mudar a propriedade da variável <code>USE_S3</code> de <code>false</code> para <code>true</code>:</p>
-<pre><code>USE_S3=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_S3=true
+</code></pre></div>
+
 <p>Se seu armazenamento externo está servindo via HTTPS (como a maioria hoje em dia), você também precisará se certificar de que <code>USE_HTTPS</code> seja <code>true</code> para que as imagens carreguem via HTTPS:</p>
-<pre><code>USE_HTTPS=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_HTTPS=true
+</code></pre></div>
+
 <h4>Arquivos estáticos</h4>
 <p>Então, para copiar os arquivos estáticos para o seu bucket S3 você precisará executar o seguinte comando:</p>
-<pre><code class="language-bash">./bw-dev collectstatic
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+</code></pre></div>
+
 <h4>Configurações do CORS</h4>
 <p>Once the static assets are collected, you will need to set up CORS for your bucket.</p>
 <p>Some services like Digital Ocean provide an interface to set it up, see <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
 <p>If your service doesn’t provide an interface, you can still set up CORS with the command line.</p>
 <p>Create a file called <code>cors.json</code>, with the following content:</p>
-<pre><code class="language-json">{
-  &quot;CORSRules&quot;: [
-    {
-      &quot;AllowedOrigins&quot;: [&quot;https://MY_DOMAIN_NAME&quot;, &quot;https://www.MY_DOMAIN_NAME&quot;],
-      &quot;AllowedHeaders&quot;: [&quot;*&quot;],
-      &quot;AllowedMethods&quot;: [&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;],
-      &quot;MaxAgeSeconds&quot;: 3000,
-      &quot;ExposeHeaders&quot;: [&quot;Etag&quot;]
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;CORSRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;AllowedOrigins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://MY_DOMAIN_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://www.MY_DOMAIN_NAME&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedMethods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELETE&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;MaxAgeSeconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExposeHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Etag&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>Replace <code>MY_DOMAIN_NAME</code> with the domain name(s) of your instance.</p>
 <p>Then, run the following command:</p>
-<pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>set_cors_to_s3<span class="w"> </span>cors.json
+</code></pre></div>
+
 <p>No output means it should be good.</p>
 <p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.</p>
 <h3>Restarting your instance</h3>
 <p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
-<pre><code class="language-bash">./bw-dev up -d
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+
 <p>If all goes well, your storage has been changed without server downtime. Se algumas fontes não aparecem (e o console JS do seu navegador alerta sobre o CORS), algo deu errado <a href="#cors-settings">aqui</a>. Nesse caso pode ser bom conferir os headers da solicitação HTTP em algum arquivo no seu bucket:</p>
-<pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MEU_DOMINIO' http://ENDEREÇO_DO_BUCKET/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>OPTIONS<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Origin: http://MEU_DOMINIO&#39;</span><span class="w"> </span>http://ENDEREÇO_DO_BUCKET/static/images/logo-small.png<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Access-Control-Request-Method: GET&quot;</span>
+</code></pre></div>
+
 <p>Substitua <code>MEU_DOMINIO</code> com o domínio da sua instância e <code>ENDEREÇO_DO_BUCKET</code> com o endereço de seu bucket. Você pode substituir o caminho dos arquivos para algum que seja válido em seu bucket.</p>
 <p>Se você ver alguma mensagem, especialmente alguma que comece com <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, não deu certo. Se você não ver mensagem alguma, funcionou.</p>
 <p>Em uma instância ativa pode haver vários arquivos criados localmente durante a migração para o armazenamento externo, e reiniciar a aplicação pode fazê-la utilizar o armazenamento externo. Para garantir que os arquivos restantes sejam enviados ao armazenamento externo depois de alterar, você pode usar o seguinte comando, que irá enviar apenas arquivos que ainda não estejam no armazenamento externo:</p>
-<pre><code class="language-bash">./bw-dev sync_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>sync_media_to_s3
+</code></pre></div>
+
 <h3>Atualizando o conector da instância</h3>
 <p><em>Aviso: você pode pular este passo se está utilizando uma versão atualizada da BookWyrm; em setembro de 2021, o "self connector" foi removido no <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
 <p>Para que o endereço correto seja utilizado ao mostrar resultados da pesquisa de livros locais, temos que alterar o valor da base do URL das imagens de capa.</p>

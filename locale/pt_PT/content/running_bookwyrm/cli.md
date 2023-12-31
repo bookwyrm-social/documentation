@@ -122,7 +122,7 @@ Migrar todas as mídias enviadas de uma instalação existente do BookWyrm para 
 
 ### sync_media_to_s3
 
-Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.
+Migrar todas as mídias enviadas de uma instalação existente do BookWyrm para um "bucket" compatível com S3. Use to ensure all local files are uploaded to an existing bucket.
 
 ### set_cors_to_s3 filename
 
@@ -142,7 +142,7 @@ BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase c
 
 ### stylelint
 
-BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelint` before committing changes to scripts to automatically format your code.
+BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
 
 ### formatters
 

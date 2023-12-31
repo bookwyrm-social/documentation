@@ -9,6 +9,7 @@ Tłumaczenia
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -199,14 +200,14 @@ Tłumaczenia
 <li>Jeśli blok tekstu zawiera zmiennie, należy użyć pary znaczników <code>{% blocktrans %}</code> oraz <code>{% endblocktrans %}</code>. If you are including padding whitespace or line breaks, use <code>trimmed</code> to automatically remove it when the locale file is generated: <code>{% blocktrans trimmed %}</code></li>
 </ul>
 <h3>Przykłady</h3>
-<pre><code class="language-html">&lt;p&gt;{% trans &quot;This list is currently empty&quot; %}&lt;/p&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-&lt;p&gt;
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Dodane przez &lt;a href=&quot;{{ user_path }}&quot;&gt;{{ username }}&lt;/a&gt;
+    Dodane przez <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ user_path }}&quot;</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     {% endblocktrans %}
-&lt;/p&gt;
-</code></pre>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
 </section>
 
         </div>

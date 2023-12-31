@@ -9,6 +9,7 @@ Fonctionnalités optionnelles
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -215,9 +216,10 @@ Fonctionnalités optionnelles
 </ul>
 <p>Toutes les variables de couleur acceptent des valeurs reconnues par le module <code>ImageColor</code> de Pillow : <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">En apprendre plus sur les noms de couleurs dans Pillow</a>.</p>
 <h3>Supprimer les images de prévisualisation pour les comptes externes</h3>
-<p>Avant BookWyrm 0.5.4, des images de prévisualisation étaient générées pour les comptes externes. Comme cela était couteux en termes d'espace disque et de puissance de calcul, cela a été interrompu. Si vous souhaitez supprimer en masse toutes les images précédemment générées pour les comptes distants, une nouvelle commande a été ajoutée :</p>
-<pre><code class="language-sh">./bw-dev remove_remote_user_preview_images
-</code></pre>
+<p>Avant BookWyrm 0.5.4, des images de prévisualisation étaient générées pour les comptes externes. Comme c'était couteux en termes d'espace disque et de puissance de calcul, cela a été interrompu. Si vous souhaitez supprimer en masse toutes les images précédemment générées pour les comptes distants, une nouvelle commande a été ajoutée :</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>remove_remote_user_preview_images
+</code></pre></div>
+
 <p>Cette commande va retirer dans la base de données la valeur de la propriété <code>user.preview_image</code> pour les comptes externes et supprimer le fichier associé.</p>
 </section>
 

@@ -9,6 +9,7 @@ Stockage Externe
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -221,54 +222,63 @@ Stockage Externe
 <h3>Copie de vos médias locaux sur le stockage externe</h3>
 <p>Si votre instance BookWyrm est déjà en cours d'exécution et que des fichiers médias ont été téléchargés (avatars d'utilisateur, couvertures de livres…), vous devrez copier les médias téléchargés sur votre compartiment.</p>
 <p>Cette tâche est effectuée avec la commande :</p>
-<pre><code class="language-bash">./bw-dev copy_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>copy_media_to_s3
+</code></pre></div>
+
 <h3>Activation du stockage externe sur BookWyrm</h3>
 <p>Pour activer le stockage externe compatible S3, vous devrez modifier votre fichier <code>.env</code> en changeant la valeur de la propriété <code>USE_S3</code> de <code>false</code> à <code>true</code>:</p>
-<pre><code>USE_S3=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_S3=true
+</code></pre></div>
+
 <p>Si votre stockage externe est accessible via HTTPS (la plupart le sont actuellement), vous devrez également vous assurer que <code>USE_HTTPS</code> est défini à <code>true</code>, afin que les images soient téléchargées via HTTPS :</p>
-<pre><code>USE_HTTPS=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_HTTPS=true
+</code></pre></div>
+
 <h4>Ressources statiques</h4>
 <p>Vous devrez ensuite exécuter la commande suivante, afin de copier les ressources statiques vers votre compartiment S3 :</p>
-<pre><code class="language-bash">./bw-dev collectstatic
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+</code></pre></div>
+
 <h4>Paramètres CORS</h4>
 <p>Une fois que les ressources statiques ont été recueillies, vous devrez configurer CORS pour votre compartiment.</p>
 <p>Certains services tels que Digital Ocean mettent à disposition une interface pour cette étape, voir <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Documentation de Digital Ocean: Comment configurer CORS</a>.</p>
 <p>Si votre service ne met pas d'interface à disposition, vous pouvez tout de même configurer CORS via la ligne de commande.</p>
 <p>Créez un fichier nommé <code>cors.json</code> avec le contenu suivant :</p>
-<pre><code class="language-json">{
-  &quot;CORSRules&quot;: [
-    {
-      &quot;AllowedOrigins&quot;: [&quot;https://MY_DOMAIN_NAME&quot;, &quot;https://www.MY_DOMAIN_NAME&quot;],
-      &quot;AllowedHeaders&quot;: [&quot;*&quot;],
-      &quot;AllowedMethods&quot;: [&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;],
-      &quot;MaxAgeSeconds&quot;: 3000,
-      &quot;ExposeHeaders&quot;: [&quot;Etag&quot;]
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;CORSRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;AllowedOrigins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://MY_DOMAIN_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://www.MY_DOMAIN_NAME&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedMethods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELETE&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;MaxAgeSeconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExposeHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Etag&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>Remplacez <code>MY_DOMAIN_NAME</code> par le(s) nom(s) de domaine de votre instance.</p>
 <p>Exécutez alors la commande suivante :</p>
-<pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>set_cors_to_s3<span class="w"> </span>cors.json
+</code></pre></div>
+
 <p>Une absence de retour signifie que cela a fonctionné.</p>
 <p>Si vous installez une nouvelle instance de BookWyrm, vous pouvez retourner aux instructions de configuration dès maintenant. Dans le cas contraire, continuez à lire.</p>
 <h3>Redémarrage de votre instance</h3>
 <p>Une fois la copie des fichiers médias effectuée et les ressources statiques recueillies, vous pouvez charger la nouvelle configuration <code>.env</code> et redémarrer votre instance avec la commande :</p>
-<pre><code class="language-bash">./bw-dev up -d
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+
 <p>Si tout se passe bien, votre stockage a été modifié sans arrêt du serveur. Si des polices sont manquantes (et que la console JS de votre navigateur génère des alertes à propos de CORS), quelque chose s'est mal passé <a href="#cors-settings">à cette étape</a>. Dans ce cas, il peut être bon de vérifier les en-têtes d'une requête HTTP pour un fichier sur votre compartiment :</p>
-<pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>OPTIONS<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Origin: http://MY_DOMAIN_NAME&#39;</span><span class="w"> </span>http://BUCKET_URL/static/images/logo-small.png<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Access-Control-Request-Method: GET&quot;</span>
+</code></pre></div>
+
 <p>Remplacez <code>MY_DOMAIN_NAME</code> par votre nom de domaine de l'instance, <code>BUCKET_URL</code> avec l'URL de votre compartiment, et le chemin du fichier par n'importe quel autre chemin valide sur votre compartiment.</p>
 <p>Si vous voyez un message, en particulier un message commençant par <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, cela n'a pas fonctionné. Si vous ne voyez aucun message, cela a fonctionné.</p>
 <p>Pour une instance en cours d'utilisation, il peut y avoir quelques fichiers qui ont été créés localement pendant l'intervalle entre la migration des fichiers vers le stockage externe et le redémarrage de l'application. Pour s'assurer que tous les fichiers restants sont téléchargés sur le stockage externe une fois basculé dessus, vous pouvez utiliser la commande suivante, qui copiera uniquement les fichiers qui ne sont pas déjà présents sur le stockage externe :</p>
-<pre><code class="language-bash">./bw-dev sync_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>sync_media_to_s3
+</code></pre></div>
+
 <h3>Mise à jour du connecteur de l'instance</h3>
 <p><em>Remarque : Vous pouvez sauter cette étape si vous utilisez une version à jour de BookWyrm; en septembre 2021 le « self connector » a été retiré dans <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
 <p>Afin que la bonne URL soit utilisée lors de l'affichage des résultats de recherche locale de livres, nous devons modifier la valeur de la racine d'URL des images de couverture.</p>

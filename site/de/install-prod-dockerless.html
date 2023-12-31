@@ -9,6 +9,7 @@ Installation ohne Docker
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -199,7 +200,7 @@ Installation ohne Docker
 <li>Erstelle und betrete das Verzeichnis, in das Du  BookWyrm installieren willst. Für das Beispiel: <code>/opt/bookwyrm</code>: <code>mkdir /opt/bookwyrm &amp;&amp; cd /opt/bookwyrm</code></li>
 <li>Hole den Quelltext: <code>git clone git@github.com:bookwyrm-social/bookwyrm.git ./</code></li>
 <li>Wechsel in den <code>production</code>-zweig: <code>git checkout production</code></li>
-<li>Create your environment variables file, <code>cp .env.example .env</code>, and update the following:<ul>
+<li>Erstelle deine Umgebungsvariablendatei <code>cp .env.example .env</code> und aktualisiere Folgendes:<ul>
 <li><code>SECRET_KEY</code> | Eine schwer zu erratende geheime Zeichenfolge</li>
 <li><code>DOMAIN</code> | Deine Web-Domain</li>
 <li><code>POSTGRES_PASSWORD</code> | Setze ein sicheres Passwort für die Datenbank</li>
@@ -215,24 +216,24 @@ Installation ohne Docker
 </ul>
 </li>
 <li>Nginx konfigurieren<ul>
-<li>Copy the server_config to nginx's conf.d: <code>cp nginx/server_config /etc/nginx/conf.d/server_config</code></li>
-<li>Make a copy of the production template config and set it for use in nginx: <code>cp nginx/production /etc/nginx/sites-available/bookwyrm.conf</code></li>
+<li>Kopiere die server_config nach nginx's conf.d: <code>cp nginx/server_config /etc/nginx/conf.d/server_config</code></li>
+<li>Erstelle eine Kopie der Konfiguration der Produktionsvorlage und setze sie für die Verwendung in nginx <code>cp nginx/production nginx/bookwyrm.conf</code></li>
 <li>Aktualisiere nginx <code>bookwyrm.conf</code>:<ul>
-<li>Replace <code>your-domain.com</code> with your domain name everywhere in the file (including the lines that are currently commented out)</li>
-<li>Replace <code>/app/</code> with your install directory <code>/opt/bookwyrm/</code> everywhere in the file (including commented out)</li>
-<li>Zeilen 18 bis 67 auskommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. You should have two <code>server</code> blocks enabled</li>
+<li>Ersetze <code>your-domain.com</code> mit deinem Domainnamen überall in der Datei (inklusive der aktuell auskommentierten Zeilen)</li>
+<li>Ersetze in der Datei überall (inklusive der auskommentierten Zeilen) <code>/app/</code> mit deinem Installationsverzeichnis <code>/opt/bookwyrm/</code></li>
+<li>Zeilen 18 bis 67 auskommentieren, um die Weiterleitung zu HTTPS zu ermöglichen. Du solltest zwei <code>Server</code>-Blöcke aktiviert haben</li>
 <li>Ändere die <code>ssl_certificate</code> und <code>ssl_certificate_key</code> Pfade an Ihre volle Kette und Privkey Positionen</li>
-<li>Change line 4 so that it says <code>server localhost:8000</code>. Du kannst hier einen anderen Port wählen, wenn du magst</li>
+<li>Ändere die Zeile 4 zu folgendem Inhalt: <code>server localhost:8000</code>. Du kannst hier einen anderen Port wählen, wenn du magst</li>
 <li>Wenn du einen anderen Webserver auf deinem Host-Rechner betreibst, musst du den <a href="/reverse-proxy.html">Reverse-Proxy-Anweisungen</a> folgen</li>
 </ul>
 </li>
-<li>Enable the nginx config: <code>ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf</code></li>
-<li>Reload nginx: <code>systemctl reload nginx</code></li>
+<li>Aktiviere die nginx-Konfigurationsdatei mit folgendem Befehl: <code>ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf</code></li>
+<li>Lade Nginx neu: <code>systemctl reload nginx</code></li>
 </ul>
 </li>
 <li>Einrichtung der virtuellen Python-Umgebung<ul>
-<li>Make the python venv directory in your install dir: <code>mkdir venv</code> <code>python3 -m venv ./venv</code></li>
-<li>Install bookwyrm python dependencies with pip: <code>./venv/bin/pip3 install -r requirements.txt</code></li>
+<li>Erstelle den Python venv-Ordner in deinem Installationsverzeichnis: <code>mkdir venv</code> <code>python3 -m venv ./venv</code></li>
+<li>Installiere die Python-Abhängigkeiten für Bookwyrm via pip mit folgendem Befehl: <code>./venv/bin/pip3 install -r requirements.txt</code></li>
 </ul>
 </li>
 <li>
@@ -240,19 +241,20 @@ Installation ohne Docker
 <p><code>sudo -i -u postgres psql</code></p>
 </li>
 </ul>
-<pre><code>CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
+<div class="highlight"><pre><span></span><code>CREATE USER bookwyrm WITH PASSWORD &#39;securedbypassword123&#39;;
 
-CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
+CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING &#39;UNICODE&#39;;
 
 ALTER DATABASE bookwyrm OWNER TO bookwyrm;
 
 GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 
 \q
-</code></pre>
+</code></pre></div>
+
 <ul>
-<li>Migriere das Datenbankschema, indem du <code>venv/bin/python3 manage.py migrierst</code></li>
-<li>Initialize the database by running <code>venv/bin/python3 manage.py initdb</code></li>
+<li>Migriere das Datenbankschema, indem du <code>venv/bin/python3 manage.py migrate</code></li>
+<li>Initialisiere die Datenbank, indem du folgenden Befehl ausführst <code>venv/bin/python3 manage.py initdb</code></li>
 <li>Erstelle die Statische durch Ausführen von <code>venv/bin/python3 manage.py collectstatic --no-input</code></li>
 <li>Wenn du einen externen Speicher für statische Assets und Mediendateien verwenden möchtest (z. B. einen S3-kompatiblen Dienst), <a href="/external-storage.html">befolge die Anweisungen</a> bis es dir mitteilt, wieder hierherzukommen</li>
 <li>
@@ -260,7 +262,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 <ul>
 <li>Erstelle den System-Bookwyrm-Account: <code>useradd bookwyrm -r</code></li>
 <li>Ändere den Eigentümer deines Installationsverzeichnisses auf bookwyrm: <code>chown -R bookwyrm:bookwyrm /opt/bookwyrm</code></li>
-<li>You should now run bookwyrm related commands as the bookwyrm user: <code>sudo -u bookwyrm echo I am the $(whoami) user</code></li>
+<li>Du solltest nun die Befehle welche mit Bookwyrm zu tun haben mit dem Bookwyrm-Benutzer ausführen:   <code>sudo -u bookwyrm echo I am the $(whoami) user</code></li>
 </ul>
 </li>
 <li>
@@ -268,58 +270,62 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 </li>
 <li>Du kannst deinen Code jederzeit erhalten, indem du diesen Befehl erneut ausführst. Hier ist eine Beispielausgabe:</li>
 </ul>
-<pre><code class="language-sh">*******************************************
-Use this code to create your admin account:
+<div class="highlight"><pre><span></span><code>*******************************************
+Verwende<span class="w"> </span>diesen<span class="w"> </span>Code<span class="w"> </span>um<span class="w"> </span>deinen<span class="w"> </span>Administratoraccount<span class="w"> </span>zu<span class="w"> </span>erstellen:
 c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
-</code></pre>
+</code></pre></div>
+
 <ul>
-<li>Make and configure the run script<ul>
-<li>Make a file called dockerless-run.sh and fill it with the following contents</li>
+<li>Erstelle und konfiguriere das Startskript<ul>
+<li>Erstelle eine Datei mit dem Namen dockerless-run.sh und füge die folgenden Inhalte ein</li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-sh">#!/bin/bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-# stop if one process fails
-set -e
+<span class="c1"># Stoppen falls ein Prozess fehlschlägt.</span>
+<span class="nb">set</span><span class="w"> </span>-e
 
-# bookwyrm
-/opt/bookwyrm/venv/bin/gunicorn bookwyrm.wsgi:application --bind 0.0.0.0:8000 &amp;
+<span class="c1"># bookwyrm</span>
+/opt/bookwyrm/venv/bin/gunicorn<span class="w"> </span>bookwyrm.wsgi:application<span class="w"> </span>--bind<span class="w"> </span><span class="m">0</span>.0.0.0:8000<span class="w"> </span><span class="p">&amp;</span>
 
-# celery
-/opt/bookwyrm/venv/bin/celery -A celerywyrm worker -l info -Q high_priority,medium_priority,low_priority &amp;
-/opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &amp;
-# /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &amp;
-</code></pre>
-<pre><code>- Ersetze `/opt/bookwyrm` durch dein Installationsverzeichnis
+<span class="c1"># celery</span>
+/opt/bookwyrm/venv/bin/celery<span class="w"> </span>-A<span class="w"> </span>celerywyrm<span class="w"> </span>worker<span class="w"> </span>-l<span class="w"> </span>info<span class="w"> </span>-Q<span class="w"> </span>high_priority,medium_priority,low_priority<span class="w"> </span><span class="p">&amp;</span>
+/opt/bookwyrm/venv/bin/celery<span class="w"> </span>-A<span class="w"> </span>celerywyrm<span class="w"> </span>beat<span class="w"> </span>-l<span class="w"> </span>INFO<span class="w"> </span>--scheduler<span class="w"> </span>django_celery_beat.schedulers:DatabaseScheduler<span class="w"> </span><span class="p">&amp;</span>
+<span class="c1"># /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &amp;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>- Ersetze `/opt/bookwyrm` durch dein Installationsverzeichnis
 - Ändere `8000` auf deine eigene Portnummer
 - Flower wurde hier deaktiviert, da es nicht automatisch mit dem Passwort in der `.env` Datei konfiguriert ist
-</code></pre>
+</code></pre></div>
+
 <ul>
-<li>You can now run BookWyrm with: <code>sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh</code></li>
+<li>Du kannst nun BookWyrm mit folgendem Befehl ausführen: <code>sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh</code></li>
 <li>Die Anwendung sollte auf deiner Domain laufen. Wenn du die Domain lädst, siehst du eine Konfigurationsseite, die deine Instanzeinstellungen bestätigt und ein Formular zum Erstellen eines Administratorkontos. Benutze deinen Admin-Code um dich zu registrieren.</li>
 <li>Möglicherweise möchtest du BookWyrm so konfigurieren, dass es mit einem System-Dienst automatisch ausgeführt wird. Hier ist ein Beispiel:</li>
 </ul>
-<pre><code># /etc/systemd/system/bookwyrm.service
-[Unit]
-Description=Bookwyrm Server
-After=network.target
-After=systemd-user-sessions.service
-After=network-online.target
+<div class="highlight"><pre><span></span><code><span class="c1"># /etc/systemd/system/bookwyrm.service</span>
+<span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Bookwyrm Server</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+<span class="na">After</span><span class="o">=</span><span class="s">systemd-user-sessions.service</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network-online.target</span>
 
-[Service]
-User=bookwyrm
-Type=simple
-Restart=always
-ExecStart=/bin/bash /opt/bookwyrm/dockerless-run.sh
-WorkingDirectory=/opt/bookwyrm/
+<span class="k">[Service]</span>
+<span class="na">User</span><span class="o">=</span><span class="s">bookwyrm</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/bin/bash /opt/bookwyrm/dockerless-run.sh</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/opt/bookwyrm/</span>
 
-[Install]
-WantedBy=multi-user.target
-</code></pre>
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+
 <p>Du musst einen Cron-Job einrichten, damit der Dienst beim Neustart automatisch starten kann.</p>
-<p>Glückwunsch! Du hast es geschafft!! Configure your instance however you'd like.</p>
+<p>Glückwunsch! Du hast es geschafft!! Konfigure deine Instanz wie es dir gefällt.</p>
 <h2>Mitmachen</h2>
 <p>Siehe <a href="https://joinbookwyrm.com/get-involved/">Mitmachen</a> für Details.</p>
 </section>

@@ -9,6 +9,7 @@ Outils en ligne de commande
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -244,7 +245,7 @@ Outils en ligne de commande
 <h3>copy_media_to_s3</h3>
 <p>Migre tous les médias téléchargés d'une instance BookWyrm existante vers un compartiment compatible S3. À utiliser pour un premier téléchargement vers un compartiment vide.</p>
 <h3>sync_media_to_s3</h3>
-<p>Syncronise les médias nouvellement créés ou modifiés d'une instance Bookwyrm existante vers un compartiment compatible S3. À utiliser pour s'assurer que tous les fichiers locaux ont été téléchargés vers un compartiment existant.</p>
+<p>Synchronise les médias nouvellement créés ou modifiés d'une instance BookWyrm existante vers un compartiment compatible S3. À utiliser pour s'assurer que tous les fichiers locaux ont été téléchargés vers un compartiment existant.</p>
 <h3>set_cors_to_s3 filename</h3>
 <p>Copie un fichier JSON de règles CORS vers un compartiment S3, où <code>filename</code> est le nom de votre fichier JSON (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
 <h2>Développement et test</h2>
@@ -254,15 +255,16 @@ Outils en ligne de commande
 <h3>prettier</h3>
 <p>BookWyrm utilise <a href="https://prettier.io/">Prettier</a> pour assurer la cohérence du code JavaScript. Exécutez <code>prettier</code> avant de valider vos modifications de scripts afin de formater automatiquement votre code.</p>
 <h3>stylelint</h3>
-<p>BookWyrm utilise <a href="uhttps://stylelint.io/">Stylelint</a> pour assurer la cohérence des fichiers CSS. Exécutez <code>stylelint</code> avant de valider vos modifications de scripts afin de formater automatiquement votre code.</p>
+<p>BookWyrm utilise <a href="uhttps://stylelint.io/">Stylelint</a> pour assurer la cohérence des fichiers CSS. Exécutez <code>stylelintprettier</code> avant de valider vos modifications de scripts afin de formater automatiquement votre code.</p>
 <h3>formatters</h3>
 <p>Cette commande exécute tous les formateurs de code (<code>black</code>, <code>prettier</code>, et <code>stylelint</code>) à la suite.</p>
 <h3>clean</h3>
 <p>Supprime tous les conteneurs Docker arrêtés.</p>
 <p>Correspond à :</p>
-<pre><code class="language-shell">docker-compose stop
-docker-compose rm -f
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
+docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
+</code></pre></div>
+
 <h3>makemessages</h3>
 <p>Génère les fichiers de messages pour toutes les chaînes de traduction. Après avoir exécuté <code>makemessages</code>, vous devez exécuter <code>compilemessages</code> pour compiler les traductions. Voir <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">makemessages dans Django</a>.</p>
 <h3>compilemessages</h3>

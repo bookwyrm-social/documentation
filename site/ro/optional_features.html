@@ -9,6 +9,7 @@ Optional features
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -215,9 +216,10 @@ Optional features
 </ul>
 <p>Toate variabilele de culoare acceptă valori care pot fi recunoscute ca atare de modulul <code>ImageColor</code> a lui Pillow: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Aflați mai multe despre numele de culori Pillow</a>.</p>
 <h3>Removing preview images for remote users</h3>
-<p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in therms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:</p>
-<pre><code class="language-sh">./bw-dev remove_remote_user_preview_images
-</code></pre>
+<p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in terms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>remove_remote_user_preview_images
+</code></pre></div>
+
 <p>That command will empty the <code>user.preview_image</code> property in the database for remote users, and delete the file in storage.</p>
 </section>
 

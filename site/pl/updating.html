@@ -9,6 +9,7 @@ Aktualizowanie instancji
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -194,13 +195,14 @@ Aktualizowanie instancji
 </ul>
 <h2>Re-building activity streams</h2>
 <p>Feeds for each user are stored in Redis. To re-populate a stream, use the management command:</p>
-<pre><code class="language-sh">./bw-dev populate_streams
-# Or use docker-compose directly
-docker-compose run --rm web python manage.py populate_streams
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>populate_streams
+<span class="c1"># Or use docker-compose directly</span>
+docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>web<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>populate_streams
+</code></pre></div>
+
 <p>If something has gone terribly awry, the stream data can be deleted.</p>
-<pre><code class="language-sh">docker-compose run --rm web python manage.py erase_streams
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>web<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>erase_streams
+</code></pre></div>
 </section>
 
         </div>
