@@ -41,15 +41,6 @@ jobs:
           commit_message: build site
           commit_author: BookWyrm Bot <joinbookwyrm@users.noreply>
 
-  deploy:
-    needs: compile
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Deploy to server
         id: deploy
         uses: Pendect/action-rsyncer@v2.0.0
