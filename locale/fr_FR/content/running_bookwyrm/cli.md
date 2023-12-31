@@ -122,7 +122,7 @@ Migre tous les médias téléchargés d'une instance BookWyrm existante vers un 
 
 ### sync_media_to_s3
 
-Syncronise les médias nouvellement créés ou modifiés d'une instance Bookwyrm existante vers un compartiment compatible S3. À utiliser pour s'assurer que tous les fichiers locaux ont été téléchargés vers un compartiment existant.
+Synchronise les médias nouvellement créés ou modifiés d'une instance BookWyrm existante vers un compartiment compatible S3. À utiliser pour s'assurer que tous les fichiers locaux ont été téléchargés vers un compartiment existant.
 
 ### set_cors_to_s3 filename
 
@@ -142,7 +142,7 @@ BookWyrm utilise [Prettier](https://prettier.io/) pour assurer la cohérence du 
 
 ### stylelint
 
-BookWyrm utilise [Stylelint](uhttps://stylelint.io/) pour assurer la cohérence des fichiers CSS. Exécutez `stylelint` avant de valider vos modifications de scripts afin de formater automatiquement votre code.
+BookWyrm utilise [Stylelint](uhttps://stylelint.io/) pour assurer la cohérence des fichiers CSS. Exécutez `stylelintprettier` avant de valider vos modifications de scripts afin de formater automatiquement votre code.
 
 ### formatters
 

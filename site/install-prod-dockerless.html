@@ -9,6 +9,7 @@ Installing Without Docker
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -143,6 +144,10 @@ Installing Without Docker
                     <a href="/cli.html" >Command Line Tool</a>
                 </li>
                 
+                <li>
+                    <a href="/management-commands.html" >Management Commands</a>
+                </li>
+                
             </ul>
             
             <h2 class="menu-label">Contributing</h2>
@@ -192,15 +197,15 @@ Installing Without Docker
         <div class="column">
             
 <section class="block content">
-    <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
-This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended
-This install method assumes you already have ssl configured with certificates available</p>
+    <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.</p>
+<p>This method of installation is more involved, and therefore is for more experienced admins. <strong>Docker install is the recommended method</strong> as there may not be much support available for Dockerless installation. If you have expertise in this area, we would love your help to improve this documentation!</p>
+<p>This install method assumes you already have ssl configured with certificates available.</p>
 <h2>Server setup</h2>
 <ul>
 <li>Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Set up an email service (such as <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS</li>
-<li>Install dependencies. On debian this could look like <code>apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev</code></li>
+<li>Install dependencies. On debian this could look like <code>apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev gunicorn</code></li>
 </ul>
 <h2>Install and configure BookWyrm</h2>
 <p>The <code>production</code> branch of BookWyrm contains a number of tools not on the <code>main</code> branch that are suited for running in production, such as <code>docker-compose</code> changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the <code>production</code> branch is still recommended</p>
@@ -210,8 +215,8 @@ This install method assumes you already have ssl configured with certificates av
     <code>mkdir /opt/bookwyrm &amp;&amp; cd /opt/bookwyrm</code></li>
 <li>Get the application code, note that this only clones the <code>production</code> branch:
     <code>git clone https://github.com/bookwyrm-social/bookwyrm.git --branch production --single-branch ./</code></li>
-<li>Create your environment variables file, <code>cp .env.example .env</code>, and update the following:<ul>
-<li><code>SECRET_KEY</code> | A difficult to guess, secret string of characters</li>
+<li>Create your environment variables file, <code>cp .env.example .env</code>, and update the following. Passwords should generally be enclosed in "quotation marks":<ul>
+<li><code>SECRET_KEY</code> | A difficult to guess, secret string of characters.</li>
 <li><code>DOMAIN</code> | Your web domain</li>
 <li><code>POSTGRES_PASSWORD</code> | Set a secure password for the database</li>
 <li><code>POSTGRES_HOST</code> | Set to <code>localhost</code> (the machine running your db)</li>
@@ -225,6 +230,13 @@ This install method assumes you already have ssl configured with certificates av
 <li><code>EMAIL_HOST_PASSWORD</code> | The password provided by your email service</li>
 </ul>
 </li>
+<li>If you are on Debian and some other operating systems, you may need to create the <code>/var/cache/nginx</code> directory:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/var/cache/nginx
+chown<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/cache/nginx
+</code></pre></div>
+
+<ul>
 <li>Configure nginx<ul>
 <li>Copy the server_config to nginx's conf.d: <code>cp nginx/server_config /etc/nginx/conf.d/server_config</code></li>
 <li>Make a copy of the production template config and set it for use in nginx: <code>cp nginx/production /etc/nginx/sites-available/bookwyrm.conf</code></li>
@@ -254,17 +266,17 @@ This install method assumes you already have ssl configured with certificates av
 <li>Make the bookwyrm postgresql database. Make sure to change the password to what you set in the <code>.env</code> config:
     <code>sudo -i -u postgres psql</code></li>
 </ul>
-<pre><code class="language-sql">-- make sure to replace the password with your POSTGRES_PASSWORD .env setting
-CREATE USER bookwyrm WITH PASSWORD 'securedbypassword123';
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;securedbypassword123&#39;</span><span class="p">;</span>
 
-CREATE DATABASE bookwyrm TEMPLATE template0 ENCODING 'UNICODE';
+<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">TEMPLATE</span><span class="w"> </span><span class="n">template0</span><span class="w"> </span><span class="k">ENCODING</span><span class="w"> </span><span class="s1">&#39;UNICODE&#39;</span><span class="p">;</span>
 
-ALTER DATABASE bookwyrm OWNER TO bookwyrm;
+<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">OWNER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">bookwyrm</span><span class="p">;</span>
 
-GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
+<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">bookwyrm</span><span class="p">;</span>
 
-\q
-</code></pre>
+<span class="err">\</span><span class="n">q</span>
+</code></pre></div>
+
 <ul>
 <li>Migrate the database schema by running <code>venv/bin/python3 manage.py migrate</code></li>
 <li>Initialize the database by running <code>venv/bin/python3 manage.py initdb</code></li>
@@ -292,11 +304,12 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 </li>
 <li>You can get your code at any time by re-running that command. Here's an example output:</li>
 </ul>
-<pre><code class="language-sh">*******************************************
-Use this code to create your admin account:
+<div class="highlight"><pre><span></span><code>*******************************************
+Use<span class="w"> </span>this<span class="w"> </span>code<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>your<span class="w"> </span>admin<span class="w"> </span>account:
 c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
-</code></pre>
+</code></pre></div>
+
 <ul>
 <li>The application should now be running at your domain. When you load the domain, you should get a configuration page to confirm your instance settings, and a form to create an admin account. Use your admin code to register.</li>
 </ul>
@@ -304,15 +317,16 @@ c6c35779-af3a-4091-b330-c026610920d6
 <h2>Finding log files</h2>
 <p>Like all software, BookWyrm can contain bugs, and often these bugs are in the Python code and easiest to reproduce by getting more context from the logs.</p>
 <p>If you use the provided <code>systemd</code> service configurations from <code>contrib/systemd</code> you will be able to read the logs with <code>journalctl</code>:</p>
-<pre><code class="language-sh"># viewing logs of the web process
-journalctl -u bookwyrm
+<div class="highlight"><pre><span></span><code><span class="c1"># viewing logs of the web process</span>
+journalctl<span class="w"> </span>-u<span class="w"> </span>bookwyrm
 
-# viewing logs of the worker process
-journalctl -u bookwyrm-worker
+<span class="c1"># viewing logs of the worker process</span>
+journalctl<span class="w"> </span>-u<span class="w"> </span>bookwyrm-worker
 
-# viewing logs of the scheduler process
-journalctl -u bookwyrm-scheduler
-</code></pre>
+<span class="c1"># viewing logs of the scheduler process</span>
+journalctl<span class="w"> </span>-u<span class="w"> </span>bookwyrm-scheduler
+</code></pre></div>
+
 <p>Feel free to explore additional ways of slicing and dicing logs with flags documented in <code>journalctl --help</code>.</p>
 <p>While BookWyrm's application logs will most often be enough, you can find logs for other services like Nginx,
 PostgreSQL, or Redis are usually in <code>.log</code> files located somewhere in <code>/var/logs</code>.</p>

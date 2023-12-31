@@ -9,6 +9,7 @@ Command Line Tool
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -244,7 +245,7 @@ Command Line Tool
 <h3>copy_media_to_s3</h3>
 <p>Migrate all uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
 <h3>sync_media_to_s3</h3>
-<p>Sync new or changed uploaded media from an existing Bookwrym installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
+<p>Sync new or changed uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
 <h3>set_cors_to_s3 filename</h3>
 <p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
 <h2>Desenvolvimento e teste</h2>
@@ -254,15 +255,16 @@ Command Line Tool
 <h3>prettier</h3>
 <p>BookWyrm uses <a href="https://prettier.io/">Prettier</a> to keep the JavaScript codebase consistently styled. Run <code>prettier</code> before committing changes to scripts to automatically format your code.</p>
 <h3>stylelint</h3>
-<p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelint</code> before committing changes to scripts to automatically format your code.</p>
+<p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelintprettier</code> before committing changes to scripts to automatically format your code.</p>
 <h3>formatters</h3>
 <p>This command runs all code formatters (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) in one go.</p>
 <h3>clean</h3>
 <p>Remove all stopped Docker containers.</p>
 <p>Equivalent to:</p>
-<pre><code class="language-shell">docker-compose stop
-docker-compose rm -f
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
+docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
+</code></pre></div>
+
 <h3>makemessages</h3>
 <p>Creates message files for all translation strings. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Django's makemessages</a>.</p>
 <h3>compilemessages</h3>

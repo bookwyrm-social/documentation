@@ -17,4 +17,4 @@ Jei radote norimą knygą, tačiau nerandate norimo šios knygos leidimo, galite
 
 ## Add a completely new book
 
-Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. Nuoroda manualiai pridėti knygą yra paieškos puslapio apačioje, kai rodomi išoriniai katalogai. You can also navigate directly to `/create-book` on your instance.
+Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. Nuoroda manualiai pridėti knygą yra paieškos puslapio apačioje, kai rodomi išoriniai katalogai. You can also navigate direclty to `/create-book` on your instance.

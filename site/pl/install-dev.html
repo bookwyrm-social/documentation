@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -192,8 +193,9 @@
 <li>Katalog, na którym znajduje się kod na Twoim komputerze to miejsce, z którego od teraz będziesz pracować.</li>
 <li>Skonfiguruj plik zmiennych środowiskowych swojego środowiska programistycznego kopiując przykładowy plik (<code>.env.example</code>) do nowego pliku o nazwie <code>.env</code>. W wierszu polecenia można to zrobić następująco:</li>
 </ul>
-<pre><code class="language-sh">cp .env.example .env
-</code></pre>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
+</code></pre></div>
+
 <ul>
 <li>W pliku <code>.env</code> zmień <code>DEBUG</code> na <code>true</code></li>
 <li>
@@ -203,28 +205,32 @@
 <p>Skonfiguruj nginx w celu programowania kopiując plik konfiguracyjny nginx (<code>nginx/development</code>) do nowego pliku o nazwie <code>nginx/default.conf</code>:</p>
 </li>
 </ul>
-<pre><code class="language-sh">cp nginx/development nginx/default.conf
-</code></pre>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>nginx/development<span class="w"> </span>nginx/default.conf
+</code></pre></div>
+
 <ul>
 <li>Uruchom aplikację. W wierszu polecenia wykonaj:</li>
 </ul>
-<pre><code class="language-sh">./bw-dev build            # Kompiluje obraz docker
-./bw-dev setup            # Inicjuje bazę danych i uruchamia migracje
-./bw-dev up               # Uruchamia kontenery docker
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Kompiluje obraz docker</span>
+./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Inicjuje bazę danych i uruchamia migracje</span>
+./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Uruchamia kontenery docker</span>
+</code></pre></div>
+
 <ul>
 <li>Po zakończeniu kompilacji możesz uzyskać dostęp pod <code>ttp://localhost:1333</code> i utworzyć konto administratora.</li>
 </ul>
 <p>Dla ciekawskich: polecenie <code>./bw-dev</code> to prosty skrypt uruchamiający wiele różnych narzędzi: powyżej możesz pominąć je i wykonać <code>docker-compose build</code> lub <code>docker-compose up</code> bezpośrednio, jeśli chcesz. <code>./bw-dev</code> po prostu gromadzi je wszystkie w jednym miejscu. Uruchom polecenia bez argumentów, aby uzyskać listę dostępnych poleceń, odczytać <a href="/command-line-tool.html">stronę dokumentacji</a> dla niego lub otwórz ją i rozejrzyj się, aby sprawdzić, co dokładnie robi dane polecenie!</p>
 <h3>Edytowanie lub tworzenie modeli</h3>
 <p>Zmieniając lub tworząc model prawdopodobnie ulegnie zmianie struktura bazy danych. Aby te zmiany zostały zastosowane, należy uruchomić polecenie Django <code>makemigrations</code>, aby utworzyć nowy <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">plik migracji Django</a>, a następnie przenieść go (<code>migrate</code>):</p>
-<pre><code class="language-sh">./bw-dev makemigrations
-./bw-dev migrate
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
+./bw-dev<span class="w"> </span>migrate
+</code></pre></div>
+
 <h3>Edytowanie plików statycznych</h3>
 <p>Za każdym razem, gdy edytujesz CSS lub JavaScript, należy ponownie uruchomić polecenie Django <code>collectstatic</code>, aby miany zostały zastosowane:</p>
-<pre><code class="language-sh">./bw-dev collectstatic
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+</code></pre></div>
+
 <p>Jeśli <a href="https://yarnpkg.com/getting-started/install">zainstalowano yarn</a>, możesz wykonać <code>yarn watch:static</code>, aby automatycznie wykonać poprzedni skrypt za każdym razem, gdy zajdzie zmiana w katalogu <code>bookwyrm/static</code>.</p>
 </section>
 

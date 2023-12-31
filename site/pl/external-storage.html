@@ -9,6 +9,7 @@ External Storage
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -221,54 +222,63 @@ External Storage
 <h3>Copying local media to external storage</h3>
 <p>If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.</p>
 <p>To zadanie wykonywane jest poleceniem:</p>
-<pre><code class="language-bash">./bw-dev copy_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>copy_media_to_s3
+</code></pre></div>
+
 <h3>Aktywowanie pamięci zewnętrznej dla BookWyrm</h3>
 <p>To enable the S3-compatible external storage, you will have to edit your <code>.env</code> file by changing the property value for <code>USE_S3</code> from <code>false</code> to <code>true</code>:</p>
-<pre><code>USE_S3=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_S3=true
+</code></pre></div>
+
 <p>If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that <code>USE_HTTPS</code> is set to <code>true</code>, so images will be loaded over HTTPS:</p>
-<pre><code>USE_HTTPS=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_HTTPS=true
+</code></pre></div>
+
 <h4>Static assets</h4>
 <p>Then, you will need to run the following command, to copy the static assets to your S3 bucket:</p>
-<pre><code class="language-bash">./bw-dev collectstatic
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+</code></pre></div>
+
 <h4>CORS settings</h4>
 <p>Once the static assets are collected, you will need to set up CORS for your bucket.</p>
 <p>Some services like Digital Ocean provide an interface to set it up, see <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
 <p>If your service doesn’t provide an interface, you can still set up CORS with the command line.</p>
 <p>Create a file called <code>cors.json</code>, with the following content:</p>
-<pre><code class="language-json">{
-  &quot;CORSRules&quot;: [
-    {
-      &quot;AllowedOrigins&quot;: [&quot;https://MY_DOMAIN_NAME&quot;, &quot;https://www.MY_DOMAIN_NAME&quot;],
-      &quot;AllowedHeaders&quot;: [&quot;*&quot;],
-      &quot;AllowedMethods&quot;: [&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;],
-      &quot;MaxAgeSeconds&quot;: 3000,
-      &quot;ExposeHeaders&quot;: [&quot;Etag&quot;]
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;CORSRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;AllowedOrigins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://MY_DOMAIN_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://www.MY_DOMAIN_NAME&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedMethods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELETE&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;MaxAgeSeconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExposeHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Etag&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>Replace <code>MY_DOMAIN_NAME</code> with the domain name(s) of your instance.</p>
 <p>Then, run the following command:</p>
-<pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>set_cors_to_s3<span class="w"> </span>cors.json
+</code></pre></div>
+
 <p>No output means it should be good.</p>
 <p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.</p>
 <h3>Restarting your instance</h3>
 <p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
-<pre><code class="language-bash">./bw-dev up -d
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+
 <p>If all goes well, your storage has been changed without server downtime. If some fonts are missing (and your browser’s JS console lights up with alerts about CORS), something went wrong <a href="#cors-settings">here</a>. In that case it might be good to check the headers of a HTTP request against a file on your bucket:</p>
-<pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>OPTIONS<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Origin: http://MY_DOMAIN_NAME&#39;</span><span class="w"> </span>http://BUCKET_URL/static/images/logo-small.png<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Access-Control-Request-Method: GET&quot;</span>
+</code></pre></div>
+
 <p>Replace <code>MY_DOMAIN_NAME</code> with your instance domain name, <code>BUCKET_URL</code> with the URL for your bucket, you can replace the file path with any other valid path on your bucket.</p>
 <p>If you see any message, especially a message starting with <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code>, it didn’t work. If you see no message, it worked.</p>
 <p>For an active instance, there may be a handful of files that were created locally during the time between migrating the files to external storage, and restarting the app so it uses the external storage. To ensure that any remaining files are uploaded to external storage after switching over, you can use the following command, which will upload only files that aren't already present in the external storage:</p>
-<pre><code class="language-bash">./bw-dev sync_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>sync_media_to_s3
+</code></pre></div>
+
 <h3>Updating the instance connector</h3>
 <p><em>Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
 <p>In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.</p>

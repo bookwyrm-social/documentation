@@ -9,6 +9,7 @@ Deine Instanz updaten
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -184,9 +185,7 @@ Deine Instanz updaten
         <div class="column">
             
 <section class="block content">
-    <p>Order: 3</p>
-<hr />
-<p>Wenn Änderungen im Produktionszweig verfügbar sind, kannst du sie mit dem Befehl <code>./bw-dev update</code> installieren und auf deine Instanz übertragen. Das macht eine Reihe von Dingen:</p>
+    <p>Wenn Änderungen im Produktionszweig verfügbar sind, kannst du sie mit dem Befehl <code>./bw-dev update</code> installieren und auf deine Instanz übertragen. Das macht eine Reihe von Dingen:</p>
 <ul>
 <li><code>git pull</code> holt den aktualisierten Code aus dem git Repository. Wenn es Konflikte gibt, musst du möglicherweise <code>git pull</code> separat ausführen und die Konflikte lösen, bevor du das <code>./bw-dev update</code>-Skript erneut probieren kannst.</li>
 <li><code>docker-compose build</code> baut die Images neu auf, was sicherstellt, dass die richtigen Pakete installiert sind. Dieser Schritt dauert lange und wird nur benötigt, wenn die Abhängigkeiten (einschließlich pip <code>requirements.txt</code> Pakete) geändert wurden, daher kannst du es auskommentieren, wenn du einen schnelleren Updatepfad haben möchten und es nicht stört, ihn bei Bedarf zu kommentieren.</li>
@@ -196,13 +195,14 @@ Deine Instanz updaten
 </ul>
 <h2>Aktivitätsstreams neu erstellen</h2>
 <p>Feeds für alle Benutzer*innen werden in Redis gespeichert. Um einen Stream erneut zu befüllen, benutze den Verwaltungsbefehl:</p>
-<pre><code class="language-sh">./bw-dev populate_streams
-# oder verwenden Sie docker-compose direkt
-docker-compose run --rm web python manage.py populate_streams
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>populate_streams
+<span class="c1"># oder verwenden Sie docker-compose direkt</span>
+docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>web<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>populate_streams
+</code></pre></div>
+
 <p>Wenn etwas furchtbar schief gelaufen ist, können die Streamdaten gelöscht werden.</p>
-<pre><code class="language-sh">docker-compose run --rm web python manage.py erase_streams
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>web<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>erase_streams
+</code></pre></div>
 </section>
 
         </div>

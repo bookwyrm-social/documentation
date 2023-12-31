@@ -9,6 +9,7 @@ Updating Your Instance
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -194,13 +195,14 @@ Updating Your Instance
 </ul>
 <h2>Recompilați fluxurile de activitate</h2>
 <p>Fluxurile pentru fiecare utilizator sunt stocate în Redis. Pentru a repopula un flux, folosiți comanda de gestionare:</p>
-<pre><code class="language-sh">./bw-dev populate_streams
-# Sau folosiți direct docker-compose
-docker-compose run --rm web python manage.py populate_streams
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>populate_streams
+<span class="c1"># Sau folosiți direct docker-compose</span>
+docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>web<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>populate_streams
+</code></pre></div>
+
 <p>Dacă ceva a mers groaznic, datele fluxului pot fi șterse.</p>
-<pre><code class="language-sh">docker-compose run --rm web python manage.py erase_streams
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>web<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>erase_streams
+</code></pre></div>
 </section>
 
         </div>

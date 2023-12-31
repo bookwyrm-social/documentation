@@ -45,7 +45,7 @@ Toutes les variables de couleur acceptent des valeurs reconnues par le module `I
 
 ### Supprimer les images de prévisualisation pour les comptes externes
 
-Avant BookWyrm 0.5.4, des images de prévisualisation étaient générées pour les comptes externes. Comme cela était couteux en termes d'espace disque et de puissance de calcul, cela a été interrompu. Si vous souhaitez supprimer en masse toutes les images précédemment générées pour les comptes distants, une nouvelle commande a été ajoutée :
+Avant BookWyrm 0.5.4, des images de prévisualisation étaient générées pour les comptes externes. Comme c'était couteux en termes d'espace disque et de puissance de calcul, cela a été interrompu. Si vous souhaitez supprimer en masse toutes les images précédemment générées pour les comptes distants, une nouvelle commande a été ajoutée :
 
 ```sh
 ./bw-dev remove_remote_user_preview_images

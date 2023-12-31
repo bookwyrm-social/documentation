@@ -6,9 +6,9 @@ Posting on BookWyrm starts with a book. Users can comment on in-progress or rece
 
 If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
 
-## Types of statuses
+## Tipi di status
 
-### User commentary
+### Commento dell'utente
 
 There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
 

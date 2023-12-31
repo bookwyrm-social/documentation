@@ -9,6 +9,7 @@ Command Line Tool
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -143,6 +144,10 @@ Command Line Tool
                     <a href="/cli.html" class="is-active">Command Line Tool</a>
                 </li>
                 
+                <li>
+                    <a href="/management-commands.html" >Management Commands</a>
+                </li>
+                
             </ul>
             
             <h2 class="menu-label">Contributing</h2>
@@ -268,18 +273,19 @@ Command Line Tool
 <h3>clean</h3>
 <p>Remove all stopped Docker containers.</p>
 <p>Equivalent to:</p>
-<pre><code class="language-shell">docker-compose stop
-docker-compose rm -f
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
+docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
+</code></pre></div>
+
 <h3>makemessages</h3>
 <p>Creates message files for all translation strings. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Django's makemessages</a>.</p>
 <h3>compilemessages</h3>
 <p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
 <h3>pytest args</h3>
 <p>Run tests with <code>pytest</code>.</p>
-<h3>deactivate_2fa</h3>
+<h3>remove_2fa</h3>
 <p>Deactivates two factor authentication for a given user.</p>
-<h3>manual_confirm</h3>
+<h3>confirm_email</h3>
 <p>Confirms a users email, sets the user to active.</p>
 </section>
 

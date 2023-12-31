@@ -9,6 +9,7 @@ Externer Speicher
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/pygment.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
@@ -221,54 +222,63 @@ Externer Speicher
 <h3>Kopieren lokaler Medien auf externen Speicher</h3>
 <p>Wenn die BookWyrm-Instanz bereits läuft und Medien hochgeladen wurden (Benutzer-Avatare, Buchtitelbilder…), musst du hochgeladene Medien in deinen Bucket migrieren.</p>
 <p>Diese Aufgabe wird mit dem Befehl erledigt:</p>
-<pre><code class="language-bash">./bw-dev copy_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>copy_media_to_s3
+</code></pre></div>
+
 <h3>Aktivierung des externen Speichers für BookWyrm</h3>
 <p>Um den S3-kompatiblen externen Speicher zu aktivieren, müssen Sie Ihre <code>.env</code>-Datei bearbeiten, indem der Eigenschaftswert für <code>USE_S3</code> von <code>false</code> zu <code>true</code> geändert wird:</p>
-<pre><code>USE_S3=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_S3=true
+</code></pre></div>
+
 <p>Wenn der externe Speicher über HTTPS ausgeliefert wird (was die meisten dieser Tage sind), musst du auch sicherstellen, dass <code>USE_HTTPS</code> auf <code>true gesetzt ist</code>, damit Bilder über HTTPS geladen werden:</p>
-<pre><code>USE_HTTPS=true
-</code></pre>
+<div class="highlight"><pre><span></span><code>USE_HTTPS=true
+</code></pre></div>
+
 <h4>Statische Assets</h4>
 <p>Danach musst du folgenden Befehl ausführen, um die statischen Assets in deinen S3-Bucket zu kopieren:</p>
-<pre><code class="language-bash">./bw-dev collectstatic
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+</code></pre></div>
+
 <h4>CORS-Einstellungen</h4>
 <p>Sobald die statischen Assets gesammelt sind, musst du Sie CORS für deinen Bucket einrichten.</p>
 <p>Einige Dienste wie Digital Ocean bieten eine Schnittstelle, um es einzurichten, siehe <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: Wie man CORS konfiguriert</a>.</p>
 <p>Wenn dein Dienst keine Schnittstelle zur Verfügung stellt, kannst du CORS trotzdem mit der Befehlszeile einrichten.</p>
 <p>Erstelle eine Datei namens <code>cors.json</code> mit folgendem Inhalt:</p>
-<pre><code class="language-json">{
-  &quot;CORSRules&quot;: [
-    {
-      &quot;AllowedOrigins&quot;: [&quot;https://MY_DOMAIN_NAME&quot;, &quot;https://www.MY_DOMAIN_NAME&quot;],
-      &quot;AllowedHeaders&quot;: [&quot;*&quot;],
-      &quot;AllowedMethods&quot;: [&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;],
-      &quot;MaxAgeSeconds&quot;: 3000,
-      &quot;ExposeHeaders&quot;: [&quot;Etag&quot;]
-    }
-  ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;CORSRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;AllowedOrigins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://MY_DOMAIN_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://www.MY_DOMAIN_NAME&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AllowedMethods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELETE&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;MaxAgeSeconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExposeHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Etag&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <p>Ersetzen Sie <code>MY_DOMAIN_NAME</code> durch den/die Domainname(n) Ihrer Instanz.</p>
 <p>Führe dann den folgenden Befehl aus:</p>
-<pre><code class="language-bash">./bw-dev set_cors_to_s3 cors.json
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>set_cors_to_s3<span class="w"> </span>cors.json
+</code></pre></div>
+
 <p>Keine Ausgabe bedeutet, dass es gut sein sollte.</p>
 <p>Wenn du eine neue BookWyrm-Instanz startest, kannst du sofort zu den Installationsanweisungen zurückkehren. Wenn nicht, lese weiter.</p>
 <h3>Starte deine Instanz neu</h3>
 <p>Sobald die Medienmigration abgeschlossen und die statischen Assets gesammelt wurden, kannst du die neue <code>.env</code>-Konfiguration laden und die Instanz neustarten mit:</p>
-<pre><code class="language-bash">./bw-dev up -d
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+
 <p>Wenn alles gut geht, wurde dein Speicher ohne Serverausfall geändert. Wenn einige Schriftarten fehlen (und die Browser-JS-Konsole mit Warnung über CORS aufwartet), schlug etwas <a href="#cors-settings">hier</a> fehl. In diesem Fall kann es gut sein, die Header einer HTTP-Anfrage auf eine Datei in deinem Bucket zu überprüfen:</p>
-<pre><code class="language-bash">curl -X OPTIONS -H 'Origin: http://MY_DOMAIN_NAME' http://BUCKET_URL/static/images/logo-small.png -H &quot;Access-Control-Request-Method: GET&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>OPTIONS<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Origin: http://MY_DOMAIN_NAME&#39;</span><span class="w"> </span>http://BUCKET_URL/static/images/logo-small.png<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Access-Control-Request-Method: GET&quot;</span>
+</code></pre></div>
+
 <p>Ersetze <code>MY_DOMAIN_NAME</code> durch deinen Domain-Namen, <code>BUCKET_URL</code> mit der URL für deinen Bucket, du kannst den Dateipfad durch jeden anderen gültigen Pfad in deinem Bucket ersetzen.</p>
 <p>Wenn du eine Nachricht siehst, insbesondere eine Nachricht, die mit <code>&lt;Error&gt;&lt;Code&gt;CORSForbidden&lt;/Code&gt;</code> beginnt, funktionierte sie nicht. Wenn du keine Nachricht siehst, funktioniert es.</p>
 <p>Für eine aktive Instanz kann es eine Handvoll Dateien geben, die während der Zeit zwischen der Migration der Dateien auf den externen Speicher lokal erstellt wurden und ein Neustarten der App nutzt den externen Speicher. Um sicherzustellen, dass alle noch verbleibenden Dateien nach dem Umschalten auf den externen Speicher hochgeladen werden, kannst du folgenden Befehl verwenden, der nur Dateien hochlädt, die nicht bereits im externen Speicher vorhanden sind:</p>
-<pre><code class="language-bash">./bw-dev sync_media_to_s3
-</code></pre>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>sync_media_to_s3
+</code></pre></div>
+
 <h3>Instanz-Konnektor aktualisieren</h3>
 <p><em>Hinweis: Du kannst diesen Schritt überspringen, wenn du eine aktualisierte Version von BookWyrm verwendest; im September 2021 wurde der "Selbst-Steckverbinder" in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a> entfernt</em></p>
 <p>Damit die richtige URL für die Anzeige lokaler Buchsuchergebnisse verwendet wird, müssen wir den Wert für die URL-Basis der Titelbilder ändern.</p>
