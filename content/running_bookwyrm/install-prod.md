@@ -49,7 +49,7 @@ Instructions for running BookWyrm in production:
 - When docker has built successfully, stop the process with `CTRL-C`
 - Set up HTTPS redirect
     - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
-    - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
+    - In `nginx/default.conf`, uncomment lines 18 through 111 to enable forwarding to HTTPS. You should have two `server` blocks enabled
 - Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
     - Type `crontab -e` to edit your cron file in the host machine
     - add a line to try renewing once a day:
