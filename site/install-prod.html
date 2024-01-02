@@ -247,7 +247,7 @@ See the <a href="#port_conflicts">troubleshooting guide</a> for advice on resolv
 <li>When docker has built successfully, stop the process with <code>CTRL-C</code></li>
 <li>Set up HTTPS redirect<ul>
 <li>In <code>docker-compose.yml</code>, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.</li>
-<li>In <code>nginx/default.conf</code>, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two <code>server</code> blocks enabled</li>
+<li>In <code>nginx/default.conf</code>, uncomment lines 18 through 111 to enable forwarding to HTTPS. You should have two <code>server</code> blocks enabled</li>
 </ul>
 </li>
 <li>Set up a <code>cron</code> job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)<ul>
