@@ -1,0 +1,50 @@
+- - -
+Títol: Entorn de desenvolupament Data: 2021-04-12 Ordre: 3
+- - -
+
+## Requisits previs
+
+Aquestes instruccions assumeixen que estàs desenvolupant BookWyrm mitjançant Docker. Necessitaràs [instal·lar Docker](https://docs.docker.com/engine/install/) i [docker-compose](https://docs.docker.com/compose/install/) per començar.
+
+## Configuració de l'entorn de desenvolupament
+
+- Aconsegueix una còpia del [codi base de BookWyrm a GitHub](https://github.com/bookwyrm-social/bookwyrm). Pots [crear una derivació](https://docs.github.com/en/get-started/quickstart/fork-a-repo) del repositori i, llavors [utilitzar `git clone` per descarregar el codi](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) a l'ordinador.
+- Ves al directori que conté el codi al teu ordinador, treballaràs des d'aquí d'ara en endavant.
+- Configura el teu fitxer de variables d'entorn de desenvolupament copiant el fitxer d'entorn d'exemple (`.env.example`) a un nou fitxer anomenat `.env`. A la línia de comandes, pots fer-ho mitjançant:
+``` { .sh }
+cp .env.example .env
+```
+- A `.env`, modifica `DEBUG` a `true`
+- Opcionalment, pots utilitzar un servei com [ngrok](https://ngrok.com/) per configurar el nom de domini i, establir la variable `DOMAIN` al teu fitxer `.env` al nom de domini generat per ngrok.
+
+- Set up nginx for development by copying the developer nginx configuration file (`nginx/development`) into a new file named `nginx/default.conf`:
+``` { .sh }
+cp nginx/development nginx/default.conf
+```
+
+- Start the application. In the command line, run:
+``` { .sh }
+./bw-dev build            # Build the docker images
+./bw-dev setup            # Initialize the database and run migrations
+./bw-dev up               # Start the docker containers
+```
+- Once the build is complete, you can access the instance at `http://localhost:1333` and create an admin user.
+
+If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
+
+### Editing or creating Models
+
+If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
+
+``` { .sh }
+./bw-dev makemigrations
+./bw-dev migrate
+```
+
+### Editing static files
+Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
+``` { .sh }
+./bw-dev collectstatic
+```
+
+If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
