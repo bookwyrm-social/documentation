@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Permissions
+RSS Feeds
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,7 +81,7 @@ Permissions
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Permissions</h1>
+<h1 class="title is-1">RSS Feeds</h1>
 
     </header>
     <div class="columns">
@@ -100,7 +100,7 @@ Permissions
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/rss-feeds.html" class="is-active">RSS Feeds</a>
                 </li>
                 
             </ul>
@@ -191,7 +191,7 @@ Permissions
                 </li>
                 
                 <li>
-                    <a href="/permissions.html" class="is-active">Permissions</a>
+                    <a href="/permissions.html" >Permissions</a>
                 </li>
                 
             </ul>
@@ -201,79 +201,25 @@ Permissions
         <div class="column">
             
 <section class="block content">
-    <p>User access to different features is controlled using Django's <a href="https://docs.djangoproject.com/en/3.2/topics/auth/default/">built-in authentication system</a>. When an instance is created, the <code>initdb</code> script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the <code>editor</code> group, which allows them to edit book metadata.</p>
-<p>The instance administrator should have <code>superuser</code> status, which gives them access to Django admin (<code>/admin</code>) and confers all permissions to that user.</p>
-<h2>Permissions and groups</h2>
-<p>This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>admin</th>
-<th>moderator</th>
-<th>editor</th>
-<th>user</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>edit instance settings</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>change user level</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>manage federation</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>issue invites</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>deactivate users</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>delete posts</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>edit books</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>-</td>
-</tr>
-<tr>
-<td>upload covers</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
-</tbody>
-</table>
+    <p>BookWyrm is an <em>open</em> platform and generally it's ok to integrate your books and bookshelves in BookWyrm with other things. We provide some <a href="https://cyber.harvard.edu/rss/rss.html">RSS feeds</a> to help you do that.</p>
+<h2>RSS Locations</h2>
+<p>Currently, all RSS Feeds are relative to a someone's profile on their BookWyrm instance. So if your profile is at https://bookwyrm.social/user/mouse then all the rss feeds will be at a URL based on that.</p>
+<h3>All Activity</h3>
+<p>This is everything someone posts that's publicly visible.</p>
+<p>You can see all the <em>public</em> activity of a user at their profile url /rss. So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all activity at http://bookwyrm.social/user/mouse/rss</p>
+<p>BookWyrm is social - people quote books, chat with each other about books, etc. If you are looking for a more filtered view, the next locations might be useful.</p>
+<h3>Reviews</h3>
+<p>To get an RSS feed of every Review someone posts, add <code>/rss-reviews</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Reviews at http://bookwyrm.social/user/mouse/rss-reviews</p>
+<h3>Quotes</h3>
+<p>To get a feed of every Quote someone posts, add <code>/rss-quotes</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Quotes at http://bookwyrm.social/user/mouse/rss-quotes</p>
+<h3>Comments</h3>
+<p>To get a feed of every Comment someone posts, add <code>/rss-comments</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Comments at http://bookwyrm.social/user/mouse/rss-comments</p>
+<h3>Shelves</h3>
+<p>You might also want to get a feed of books being added to someone's bookshelves. You'll add <code>/rss</code> to the end of that bookshelf's url. </p>
+<p>So for bookshelf https://bookwyrm.social/user/mouse/books/read you can get an RSS feed of all books added at https://bookwyrm.social/user/mouse/books/read/rss</p>
 </section>
 
         </div>
