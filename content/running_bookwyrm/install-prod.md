@@ -1,6 +1,6 @@
 ---
 Title: Installing in Production
-Date: 2021-05-18
+Date: 2025-04-01
 Order: 1
 ---
 
@@ -105,6 +105,6 @@ If you are already running a web-server on your machine, you will need to set up
 
 Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. There are a few ways in get in touch:
 
- - Open an issue or pull request to add your instance to the [official list](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
+ - Open an issue or pull request to add your instance to the [official list](https://joinbookwyrm.com/instances/)
  - Reach out to the project on [Mastodon](https://tech.lgbt/@bookwyrm) or [email the maintainer](mailto:mousereeve@riseup.net) directly with your GitHub username
  - Join the [Matrix](https://matrix.to/#/#bookwyrm:matrix.org) chat room
