@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <title>
         
-Übersetzungen
+RSS Feeds
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,20 +36,20 @@
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
-            <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
-                <span class="button is-success">Beitreten</span>
+            <a href="https://joinbookwyrm.com/instances" class="navbar-item">
+                <span class="button is-success">Join</span>
             </a>
-            <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Mach mit
+            <a href="https://joinbookwyrm.com/get-involved" class="navbar-item">
+                Get involved
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
-                Unterstützung
+                Support
             </a>
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 Code
             </a>
             <a href="#" class="navbar-item is-active">
-                Dokumentation
+                Documentation
             </a>
         </div>
     </div>
@@ -58,9 +58,9 @@
             <div class="select">
                 <select aria-label="Select a language" id="language_selection">
                     
-                    <option value="" >English (US)</option>
+                    <option value="" selected>English (US)</option>
                     
-                    <option value="de/" selected>Deutsch</option>
+                    <option value="de/" >Deutsch</option>
                     
                     <option value="fr/" >Français</option>
                     
@@ -81,22 +81,26 @@
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Übersetzungen</h1>
+<h1 class="title is-1">RSS Feeds</h1>
 
     </header>
     <div class="columns">
 	<nav class="menu column is-one-quarter mt-2">
-            <h2 class="menu-label"><a href="/de/">Welcome</a></h2>
+            <h2 class="menu-label"><a href="/">Welcome</a></h2>
             
             <h2 class="menu-label">Using BookWyrm</h2>
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/posting-statuses.html" >Beitragsstatus</a>
+                    <a href="/posting-statuses.html" >Posting statuses</a>
                 </li>
                 
                 <li>
-                    <a href="/de/adding-books.html" >Bücher hinzufügen</a>
+                    <a href="/adding-books.html" >Adding Books</a>
+                </li>
+                
+                <li>
+                    <a href="/rss-feeds.html" class="is-active">RSS Feeds</a>
                 </li>
                 
             </ul>
@@ -105,39 +109,47 @@
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/install-prod.html" >Installation in Produktion</a>
+                    <a href="/install-prod.html" >Installing in Production</a>
                 </li>
                 
                 <li>
-                    <a href="/de/install-prod-dockerless.html" >Installation ohne Docker</a>
+                    <a href="/install-prod-dockerless.html" >Installing Without Docker</a>
                 </li>
                 
                 <li>
-                    <a href="/de/updating.html" >Deine Instanz updaten</a>
+                    <a href="/updating.html" >Updating Your Instance</a>
                 </li>
                 
                 <li>
-                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
+                    <a href="/updating-dockerless.html" >Updating Without Docker</a>
                 </li>
                 
                 <li>
-                    <a href="/de/moderation.html" >Moderation</a>
+                    <a href="/reverse-proxy.html" >Using a Reverse-Proxy</a>
                 </li>
                 
                 <li>
-                    <a href="/de/monitoring-queue.html" >Überwachungswarteschlange</a>
+                    <a href="/moderation.html" >Moderation</a>
                 </li>
                 
                 <li>
-                    <a href="/de/external-storage.html" >Externer Speicher</a>
+                    <a href="/monitoring-queue.html" >Monitoring Queue</a>
                 </li>
                 
                 <li>
-                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
+                    <a href="/external-storage.html" >External Storage</a>
                 </li>
                 
                 <li>
-                    <a href="/de/cli.html" >Befehlszeilenwerkzeug</a>
+                    <a href="/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/cli.html" >Command Line Tool</a>
+                </li>
+                
+                <li>
+                    <a href="/management-commands.html" >Management Commands</a>
                 </li>
                 
             </ul>
@@ -146,23 +158,27 @@
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/contributing.html" >Wie mitmachen</a>
+                    <a href="/contributing.html" >How to Contribute</a>
                 </li>
                 
                 <li>
-                    <a href="/de/translation.html" class="is-active">Übersetzungen</a>
+                    <a href="/translation.html" >Translations</a>
                 </li>
                 
                 <li>
-                    <a href="/de/install-dev.html" >Entwicklungsumgebung</a>
+                    <a href="/install-dev.html" >Developer Environment</a>
                 </li>
                 
                 <li>
-                    <a href="/de/style_guide.html" >Stilleitfaden</a>
+                    <a href="/style_guide.html" >Style Guide</a>
                 </li>
                 
                 <li>
-                    <a href="/de/debug_toolbar.html" >Django Debug-Symbolleiste</a>
+                    <a href="/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+                <li>
+                    <a href="/codereview.html" >Code Review</a>
                 </li>
                 
             </ul>
@@ -171,11 +187,11 @@
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/de/activitypub.html" >ActivityPub</a>
+                    <a href="/activitypub.html" >ActivityPub</a>
                 </li>
                 
                 <li>
-                    <a href="/de/permissions.html" >Berechtigungen</a>
+                    <a href="/permissions.html" >Permissions</a>
                 </li>
                 
             </ul>
@@ -185,29 +201,25 @@
         <div class="column">
             
 <section class="block content">
-    <h2>Zu Übersetzungen beitragen</h2>
-<p>Du kannst dem BookWyrm Übersetzungsprojekt unter <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a> beitreten.</p>
-<h2>Geschlechtsneutrale Sprache</h2>
-<p>Wo immer möglich, sollten BookWyrm Übersetzungen geschlechtsneutrale Sprache verwenden. Dies gilt auch dann, wenn eine Sprache als neutrales Geschlecht voreingestellt ist oder wenn sie etwas Ähnliches wie "he/she" verwendet. Es ist auch wichtig, dass Übersetzungen klar, präzise und lesbar für einen Screenreader sind und manchmal stehen diese Ziele im Widerspruch zueinander; es gibt nicht die eine perfekte Lösung und diese hängt von der Sprache ab.</p>
-<p>Als Leitfaden versuche, einen höheren Wert auf inklusive und geschlechtsneutrale Sprache zu legen als auf formale Korrektheit oder offiziell anerkannte Stilführer. Im Englischen zum Beispiel benötigen viele formale Leitfäden ein einzelnes "she"- oder "he"-Pronomen, um für eine Person verwendet zu werden, aber es wäre besser, in BookWyrm das geschlechtsneutrale singuläre "they" zu verwenden.</p>
-<p>Wenn du nicht sicher bist, wie du am besten an ein Übersetzungsproblem herangehen kannst, kommentiere die Übersetzung oder öffne ein <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">-Diskussionsthema</a>, um weitergehende Fragen zu stellen.</p>
-<h2>Vorlagen übersetzbar machen</h2>
-<p>Bookwyrm nutzt die Django-Übersetzungsfunktionalität, um den Seiteninhalt je nach der von den Benutzer*innen gewählten Anzeigesprache ändern zu können. Die Django-Dokumentation <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">bietet hilfreiche Erklärungen</a> wie das funktioniert, aber hier ist eine Kurzversion:</p>
-<ul>
-<li>alle Template-Texte sollten Übersetzungstexte enthalten</li>
-<li>füge <code>{% load i18n %}</code> oben an deiner Vorlage hinzu, um Übersetzungen zu aktivieren</li>
-<li>Wenn der Textblock wörtlicher Text ist, kannst du das Template-Tag <code>{% trans %}</code> verwenden</li>
-<li>Wenn der Textblock Variablen enthält, solltest du das Template-Tag-Paar <code>{% blocktrans %}</code> und <code>{% endblocktrans %}</code> verwenden. Wenn du Leerzeichen oder Zeilenumbrüche einbaust, nutze <code>gekürzt</code>, um es automatisch zu entfernen, wenn die Sprachdatei generiert wird: <code>{% blocktrans trimmed %}</code></li>
-</ul>
-<h3>Beispiele</h3>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-    {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    hinzugefügt von <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ user_path }}&quot;</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    {% endblocktrans %}
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
+    <p>BookWyrm is an <em>open</em> platform and generally it's ok to integrate your books and bookshelves in BookWyrm with other things. We provide some <a href="https://cyber.harvard.edu/rss/rss.html">RSS feeds</a> to help you do that.</p>
+<h2>RSS Locations</h2>
+<p>Currently, all RSS Feeds are relative to a someone's profile on their BookWyrm instance. So if your profile is at https://bookwyrm.social/user/mouse then all the rss feeds will be at a URL based on that.</p>
+<h3>All Activity</h3>
+<p>This is everything someone posts that's publicly visible.</p>
+<p>You can see all the <em>public</em> activity of a user at their profile url /rss. So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all activity at http://bookwyrm.social/user/mouse/rss</p>
+<p>BookWyrm is social - people quote books, chat with each other about books, etc. If you are looking for a more filtered view, the next locations might be useful.</p>
+<h3>Reviews</h3>
+<p>To get an RSS feed of every Review someone posts, add <code>/rss-reviews</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Reviews at http://bookwyrm.social/user/mouse/rss-reviews</p>
+<h3>Quotes</h3>
+<p>To get a feed of every Quote someone posts, add <code>/rss-quotes</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Quotes at http://bookwyrm.social/user/mouse/rss-quotes</p>
+<h3>Comments</h3>
+<p>To get a feed of every Comment someone posts, add <code>/rss-comments</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Comments at http://bookwyrm.social/user/mouse/rss-comments</p>
+<h3>Shelves</h3>
+<p>You might also want to get a feed of books being added to someone's bookshelves. You'll add <code>/rss</code> to the end of that bookshelf's url. </p>
+<p>So for bookshelf https://bookwyrm.social/user/mouse/books/read you can get an RSS feed of all books added at https://bookwyrm.social/user/mouse/books/read/rss</p>
 </section>
 
         </div>
@@ -220,19 +232,19 @@
         <div class="columns">
             <div class="column content">
                 <p>
-                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                    <strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
                 </p>
                 <p>
-                    Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                    Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
                 </p>
             </div>
             <div class="column">
-                <h3 class="title is-6">Machen Sie mit</h3>
+                <h3 class="title is-6">Get Involved</h3>
                 <p>
-                    <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation">Zu dieser Seite beitragen</a>
+                    <a href="https://github.com/bookwyrm-social/documentation">Contribute to this page</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">
@@ -247,15 +259,15 @@
                 </p>
             </div>
             <div class="column">
-                <h3 class="title is-6">Mehr erfahren</h3>
+                <h3 class="title is-6">Learn more</h3>
                 <p>
-                    <a href="https://docs.joinbookwyrm.com">Dokumentation</a>
+                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
                 </p>
                 <p>
-                    <a href="mailto:mousereeve@riseup.net">Betreiber*in kontaktieren</a>
+                    <a href="mailto:mousereeve@riseup.net">Contact maintainer</a>
                 </p>
                 <p>
-                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Lizenz</a>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">License</a>
                 </p>
             </div>
         </div>
@@ -266,7 +278,7 @@
     (function() {
         var languageSelector = document.getElementById("language_selection");
         languageSelector.onchange = function(event) {
-            var current_locale = "de/";
+            var current_locale = "";
             var current_location = window.location.pathname;
 
             var locale_index = current_location.indexOf(current_locale);
