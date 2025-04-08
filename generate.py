@@ -1,4 +1,5 @@
 """ generate html files """
+
 from glob import glob
 import os
 
@@ -54,6 +55,12 @@ def get_page_metadata(locale_slug, page):
     except yaml.parser.ParserError:
         header_obj = {}
 
+    length = len(page.split("/")) - 2
+    header_obj["file_path"] = (
+        "/".join(page.split("/")[length:])
+        if page.split("/")[-1] != "index.md"
+        else page.split("/")[-1]
+    )
     path_dir = page.split("/")[-1].replace(".md", ".html")
     header_obj["path"] = f"/{locale_slug}{path_dir}"
     return header_obj
@@ -131,7 +138,7 @@ if __name__ == "__main__":
             LOCALIZED_SITE_PATH = f"site/{SLUG}"
 
         # iterate through template types
-        for (path, content_paths) in paths:
+        for path, content_paths in paths:
             with open(f"templates/{path}", "r", encoding="utf-8") as template_file:
                 template_string = template_file.read()
             template = env.from_string(template_string)
