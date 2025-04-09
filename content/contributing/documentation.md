@@ -36,8 +36,8 @@ If you have never used git or GitHub before, that may sound daunting, but let's 
 
 ### Create a new branch and make your edits
 
-3. [Create a new branch](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) in your fork
-4. Make your edits in the `content` directory and **commit** your changes:
+1. [Create a new branch](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) in your fork
+2. Make your edits in the `content` directory and **commit** your changes:
     * [GitHub web interface](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
     * [GitHub Desktop](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop)
     * On the command line save your changes to the files and run `git commit`
@@ -61,6 +61,22 @@ We welcome all contributions. It would be unusual for a contribution to the docs
 ### Your changes are published
 
 When your pull request is merged, [the documentation](https://docs.joinbookwyrm.com/) is automatically updated. You may need to refresh your browser or use "incognito mode" to see the changes in your browser.
+
+## New pages
+
+If you are adding a new page, you will need to add some metadata and may need to adjust other pages.
+
+At the top of each markdown file is the "frontmatter" in toml format:
+
+```toml
+---
+Title: Documentation
+Date: 2025-04-9
+Order: 4
+---
+```
+
+This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, `Contributing`), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.
 
 ## Building docs locally
 
