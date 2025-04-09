@@ -46,7 +46,7 @@ If you have never used git or GitHub before, that may sound daunting, but let's 
     * [GitHub Desktop](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop)
     * On the command line save your changes to the files and run `git commit`
 
-At this point you might want to see what your changes will look like when published. See "Building docs locally" below for instruction on how to do this.
+At this point you might want to see what your changes will look like when published. See "Building docs locally" below for instruction on how to preview your changes.
 
 ### Create a pull request
 
@@ -72,7 +72,7 @@ When your pull request is merged, [the documentation](https://docs.joinbookwyrm.
 
 If you are adding a new page, you will need to add some metadata and may need to adjust other pages.
 
-At the top of each markdown file is the "frontmatter" in toml format:
+At the top of each markdown file is the "frontmatter" in `toml` format:
 
 ```toml
 ---
