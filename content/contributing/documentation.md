@@ -1,10 +1,14 @@
 ---
 Title: Documentation
-Date: 2025-04-9
+Date: 2025-04-09
 Order: 4
 ---
 
 The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.
+
+## Suggesting an improvement
+
+You can report an **error**, suggest an **improvement** or request an **addition** to the documentation by [creating an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) in [the documentation repository](https://github.com/bookwyrm-social/documentation).
 
 ## How the docs are made
 
@@ -42,6 +46,8 @@ If you have never used git or GitHub before, that may sound daunting, but let's 
     * [GitHub Desktop](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop)
     * On the command line save your changes to the files and run `git commit`
 
+At this point you might want to see what your changes will look like when published. See "Building docs locally" below for instruction on how to do this.
+
 ### Create a pull request
 
 Once you have completed your changes, [make a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to the docs repository.
@@ -71,7 +77,7 @@ At the top of each markdown file is the "frontmatter" in toml format:
 ```toml
 ---
 Title: Documentation
-Date: 2025-04-9
+Date: 2025-04-09
 Order: 4
 ---
 ```
@@ -82,7 +88,7 @@ This example shows that the page is called  "Documentation", should be the fourt
 
 You might want to see what your changes will look like before sending a pull request. The docs repository includes a development script like the main code repository, with the same name: `bw-dev`. You can use this to test what your changes will look like.
 
-Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the requirements, and it is recommended that you [use a virtual environment](https://docs.python.org/3/library/venv.html):
+Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you [use a virtual environment](https://docs.python.org/3/library/venv.html):
 
 ```py
 python -m venv /path/to/new/virtual/environment
