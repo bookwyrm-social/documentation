@@ -1,7 +1,7 @@
 ---
 Title: Developer Environment
 Date: 2021-04-12
-Order: 3
+Order: 5
 ---
 
 ## Prerequisites
@@ -31,7 +31,7 @@ cp nginx/development nginx/default.conf
 ./bw-dev setup            # Initialize the database and run migrations. Note the ADMIN key at the end of this output. You'll need it to register the first admin user.
 ./bw-dev up               # Start the docker containers
 ```
-- Once the build is complete, you can access the instance at `http://localhost:1333` and create an admin user. 
+- Once the build is complete, you can access the instance at `http://localhost:1333` and create an admin user.
 
 If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/cli.html) for it, or open it up and look around to see exactly what each command is doing!
 

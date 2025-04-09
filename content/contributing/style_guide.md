@@ -1,7 +1,7 @@
 ---
 Title: Style Guide
 Date: 2021-10-20
-Order: 4
+Order: 3
 ---
 
 ## Pull requests
