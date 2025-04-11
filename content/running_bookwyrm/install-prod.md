@@ -36,7 +36,7 @@ Instructions for running BookWyrm in production:
     - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
     - `EMAIL_HOST_PASSWORD` | The password provided by your email service
 - Check nginx config if you are not using default <www.$DOMAIN> dns name from `.env`
-    - If you aren't using the `www` subdomain, remove the `www.${DOMAIN}` version of the domain from the `server_name` line in the `nginx/production.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
+    - If you aren't using the `www` subdomain, remove the `www.${DOMAIN}` version of the domain from the `server_name` line in the `nginx/server_name` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
     - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
 - Setup ssl certificate via letsencrypt by running `./bw-dev init_ssl`
 - Initialize the database by running `./bw-dev migrate`
