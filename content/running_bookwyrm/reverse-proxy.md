@@ -12,14 +12,8 @@ The static files are stored in a Docker volume that several BookWyrm services ac
 
 To run BookWyrm behind a reverse-proxy, make the following changes:
 
-- In `nginx/default.conf`:
-    - Comment out the two default servers
-    - Uncomment the server labeled Reverse-Proxy server
-    - Replace `your-domain.com` with your domain name
-- In `docker-compose.yml`:
-    - In `services` -> `nginx` -> `ports`, comment out the default ports and add `- 8001:8001`
-    - In `services` -> `nginx` -> `volumes`, comment out the two volumes that begin `./certbot/`
-    - In `services`, comment out the `certbot` service
+- In `.env`:
+    - change `NGINX_SETUP=reverse_proxy`
 
 At this point, you can follow, the [setup](#server-setup) instructions as listed.
 Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https`).
