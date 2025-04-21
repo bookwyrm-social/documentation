@@ -45,10 +45,6 @@ Instructions for running BookWyrm in production:
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
     See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
-- Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
-    - Type `crontab -e` to edit your cron file in the host machine
-    - add a line to try renewing once a day:
-    `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Initialize the application with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
     - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
