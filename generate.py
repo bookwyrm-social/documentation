@@ -2,6 +2,7 @@
 
 from glob import glob
 import os
+import sys
 
 from jinja2 import Environment, FileSystemLoader
 from markdown import markdown
@@ -125,6 +126,7 @@ def format_markdown(file_path):
 
 
 if __name__ == "__main__":
+    version = sys.argv[1] if len(sys.argv) > 1 else False
     # iterate through each locale
     for locale in i18n.locales_metadata:
         SLUG = locale["slug"]
@@ -135,13 +137,15 @@ if __name__ == "__main__":
 
         i18n.setLocale(locale["code"])
 
-        LOCALIZED_SITE_PATH = "site/"
+        LOCALIZED_SITE_PATH = f"site/{version}/" if version else "site/"
         if locale["code"] != "en_US":
             paths = [
                 ["index.html", f"locale/{locale['code']}/content/index.md"],
                 ["page.html", f"locale/{locale['code']}/content/**/*.md"],
             ]
-            LOCALIZED_SITE_PATH = f"site/{SLUG}"
+            LOCALIZED_SITE_PATH = (
+                f"site/{version}/{SLUG}" if version else f"site/{SLUG}"
+            )
 
         # iterate through template types
         for path, content_paths in paths:
