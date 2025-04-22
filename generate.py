@@ -112,16 +112,16 @@ def format_markdown(file_path):
                 extensions=["tables", "fenced_code", "codehilite", "toc"],
                 extension_configs={
                     "codehilite": {"css_class": "highlight"},
-                    "toc": {"permalink": "#"}
-                    },
+                    "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
+                },
             )
         return markdown(
             "".join(markdown_content.readlines()[3:]),
             extensions=["tables", "fenced_code", "codehilite", "toc"],
             extension_configs={
                 "codehilite": {"css_class": "highlight"},
-                "toc": {"permalink": "#"}
-                },
+                "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
+            },
         )
 
 
