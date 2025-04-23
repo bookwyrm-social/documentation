@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>
+        
+Style Guide
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/ro/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Alăturați-vă</span>
+            </a>
+            <a href="https://joinbookwyrm.com/ro/get-involved" class="navbar-item">
+                Implicați-vă
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Susțineți
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Cod
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentație
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" selected>Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Style Guide</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/ro/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/posting-statuses.html" >Posting statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/adding-books.html" >Adding Books</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/install-prod-dockerless.html" >Installing Without Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/monitoring-queue.html" >Monitoring Queue</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/cli.html" >Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/contributing.html" >How to Contribute</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/style_guide.html" class="is-active">Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/ro/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/ro/permissions.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/ro/activitypub.html" >ActivitatePub</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <h2>Cereri de extragere (pull requests)</h2>
+<p>Deci vreți să contribuiți la codul BookWyrm: super! Dacă există un tichet nerezolvat pe care ați vrea să-l rezolvați, este util să lăsați un comentariu pentru ca munca să nu fie duplicată. Încercați să păstrați obiectivul cererilor de extragere mic și concentrat pe o singură temă. În acest fel este mai ușor de revizuit, iar dacă o parte are nevoie de schimbări, nu le va bloca pe celelalte.</p>
+<p>Dacă nu sunteți sigur de cum să rezolvați ceva sau nu vă descurcați, este complet în regulă. Doar lăsați un comentariu la cererea de extragere și ne vom descurca 💖.</p>
+<p>Cererile de extragere au nevoie de a trece verificările automate înainte de a fi fuzionate. Acestea includ verificări de stil, lintere globale, o verificare de securitate și teste unitare.</p>
+<h2>Linting</h2>
+<h3>Global</h3>
+<p>Folosim <a href="https://editorconfig.org">EditorConfig</a> pentru a menține indentarea și finalul liniilor consecvente.</p>
+<h3>Python</h3>
+<p>BookWyrm folosește formatorul de cod <a href="https://github.com/psf/black">Black</a> pentru a menține stilul codului consistent. Toate cererile noi de extragere sunt verificate cu acțiunile GitHub și puteți regla în modul automat problemele de stil de cod rulând <code>./bw-dev black</code></p>
+<p>Codul este de asemenea verificat cu Pylint folosind acțiunile GitHub. Avertismentele Pylint trebuie abordate înainte ca cererile de extragere să fie fuzionate, dar este un apel de judecată dacă sugestia ar trebui folosită sau suprimată. Pentru a șterge un avertisment, adăugați un comentariu la finalul sau deasupra avertismentului: <code># pylint: disable=warning-name</code></p>
+<h3>Șabloane (HTML)</h3>
+<p>Cererile dumneavoastră de extragere vor fi de asemenea verificate de linterul <a href="https://www.curlylint.org">curlylint</a> pentru șabloanele Django.</p>
+<h3>CSS</h3>
+<p>Folosim <a href="https://stylelint.io">stylelint</a> pentru a verifica toate regulile CSS. Ca și în cazul lui Pylint <a href="https://stylelint.io/user-guide/ignore-code">puteți dezactiva stylelint</a> pentru o regulă particulară, dar veți avea nevoie de o bună justificare pentru a face asta.</p>
+<h3>JavaScript</h3>
+<p><a href="https://eslint.org">ESLint</a> verifică orice modificare JavaScript pe care ați făcut-o. Dacă lui ESLint nu-i place munca dvs. JavaScript, verificați mesajul linterului pentru problema exactă.</p>
+<h2>Design inclusiv</h2>
+<p>BookWyrm dorește să fie cât mai inclusiv și accesibil posibil.</p>
+<p>Când contribuiți la cod, verificați <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">lista Design Web Inclusiv</a> înainte de a depune cererea dvs. de extragere. Pentru sfaturi de accesibilitate, <a href="https://www.a11y-101.com/development">A11Y-101</a> este de asemenea o resursă utilă. Pentru informații despre cum să faceți șablonul de pagină bilingv, consultați <a href="/translations.html">secțiunea de Traduceri</a>.</p>
+<p>Câteva lucruri care li s-au părut contribuitorilor BookWyrm util de reținut sunt:</p>
+<h3>Formulare</h3>
+<ul>
+<li>Folosiți numai <code>input[type="checkbox"]</code> sau <code>input[type="radio"]</code> în interiorul <code>&lt;label&gt;</code></li>
+<li>Dacă nu vă plac casetele de selectare sau butoanele radio în interiorul <code>&lt;label&gt;</code>, <code>&lt;label&gt;</code> ar trebui plasat <em>după</em> elementul la care se referă</li>
+</ul>
+<h3>Butoane și legături</h3>
+<ul>
+<li>Folosiți <code>&lt;button&gt;</code> pentru orice obiect care declanșează o acțiune JavaScript (de exemplu ascunsul sau afișatul unui formular) sau trimisul unei cereri <code>POST</code> (de exemplu trimiterea unui formular)</li>
+<li>Folosiți<code>&lt;a&gt;</code> pentru orice obiect care declanșează o cerere <code>GET</code>. De obicei, un element ancoră (<code>&lt;a&gt;</code>) nu ar trebui stilizat ca un buton (<code>class="button"</code>), deși există unele excepții precum butoanele de "Anulați". Dacă aveți dubii, cereți sfaturi în cererile dvs. de extragere</li>
+</ul>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> este un program colaborativ, anti-corporație, menținut de <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Susțineți BookWyrm pe <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Alăturați-vă</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/contributing/style_guide.md">Contribuiți la această pagină</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Aflați mai multe</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentație</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contactați responsabilul</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licență</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "ro/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

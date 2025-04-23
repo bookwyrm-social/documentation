@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        
+Befehlszeilenwerkzeug
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Beitreten</span>
+            </a>
+            <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
+                Mach mit
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Unterstützung
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" selected>Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Befehlszeilenwerkzeug</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/de/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/posting-statuses.html" >Beitragsstatus</a>
+                </li>
+                
+                <li>
+                    <a href="/de/adding-books.html" >Bücher hinzufügen</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-prod-dockerless.html" >Installation ohne Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
+                </li>
+                
+                <li>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/de/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/de/monitoring-queue.html" >Überwachungswarteschlange</a>
+                </li>
+                
+                <li>
+                    <a href="/de/external-storage.html" >Externer Speicher</a>
+                </li>
+                
+                <li>
+                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/cli.html" class="is-active">Befehlszeilenwerkzeug</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/contributing.html" >Wie mitmachen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/translation.html" >Übersetzungen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-dev.html" >Entwicklungsumgebung</a>
+                </li>
+                
+                <li>
+                    <a href="/de/style_guide.html" >Stilleitfaden</a>
+                </li>
+                
+                <li>
+                    <a href="/de/debug_toolbar.html" >Django Debug-Symbolleiste</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/de/permissions.html" >Berechtigungen</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>Bookwyrm-Entwickler und Instanz-Manager können das <code>bw-dev</code>-Skript für gemeinsame Aufgaben verwenden. Dies macht deine Befehle kürzer, leichter zu merken und schwieriger durcheinander zu bringen.</p>
+<p>Sobald du Bookwyrm <a href="installing-in-production.html">in Produktion</a> oder <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">in Entwicklung</a>installiert hast, kannst du das Skript von der Kommandozeile aus mit <code>./bw-dev</code> ausführen, gefolgt von dem Unterbefehl, den du ausführen willst.</p>
+<h2>Docker Kurzbefehle</h2>
+<h3>bash</h3>
+<p>Öffne eine interaktive <code>bash</code>-Sitzung im Docker-<code>Web</code>-Container.</p>
+<h3>build</h3>
+<p>Äquivalent zu <code>docker-compose build</code>.</p>
+<h3>dbshell</h3>
+<p>Öffnen Sie eine interaktive Postgres-Datenbank-Shell. Ich hoffe, du weißst, was du tust.</p>
+<h3>runweb args</h3>
+<p>Führe einen beliebigen Befehl (oben durch <code>args</code> repräsentiert) im <code>web</code>-Container aus.</p>
+<p>Äquivalent zu <code>docker-compose run --rm web</code>.</p>
+<h3>service_ports_web args</h3>
+<p>Führe einen beliebigen Befehl im <code>Web</code>-Container (oben dargestellt durch <code>args</code>) mit exponierten Ports aus. Dies ist nützlich, wenn du <code>pdb</code>-Tests ausführen möchtest, da <code>runweb</code> nicht die <code>pdb</code>-Prompt freigibt.</p>
+<p>Äquivalent zu <code>docker-compose run --rm --service-ports web</code>.</p>
+<h3>shell</h3>
+<p>Öffne eine interaktive Django-Shell im Docker-<code>Web</code>-Container. Du würdest das verwenden, wenn du Django Shell-Befehle direkt ausführen möchtest.</p>
+<h3>up [args]</h3>
+<p>Docker-Container starten oder neustarten, optional inklusive aller Argumente (oben dargestellt durch <code>args</code>). Äquivalent zu <code>docker-compose up --build [args]</code></p>
+<h2>Datenbank verwalten</h2>
+<h3>initdb</h3>
+<p>Eine Datenbank initialisieren.</p>
+<h3>makemigrations [appname migration number]</h3>
+<p><em>Dieser Befehl ist nicht verfügbar im <code>Produktion</code>szweig</em>.</p>
+<p>Führt Djangos <code>makemigrations</code>-Befehl im Docker-Container aus. Wenn du die Datenbankstruktur in einem Entwicklungszweig geändert hast, musst du dies ausführen, damit deine Änderungen wirksam werden. Optional kannst du eine bestimmte Migration angeben, z.B. <code>./bw-dev makemigrations bookwyrm 0108</code></p>
+<h3>migrate</h3>
+<p>Führt Djangos <code>migrate</code>-Kommando im Docker-Container aus. Du musst dies immer nach <code>makemigrations</code> ausführen.</p>
+<h3>resetdb</h3>
+<p><em>Dieser Befehl ist nicht verfügbar im <code>Produktion</code>szweig</em>.</p>
+<p>Setzt die Datenbank zurück. <strong>Dieser Befehl löscht deine gesamte Bookwyrm-Datenbank</strong>und initiiert dann eine neue Datenbank und führt alle Migrationen aus. Du solltest alle aktuellen Migrationsdateien löschen, die du nicht ausführen möchtest, <em>bevor</em> das <code>resetdb</code> ausgeführt wird.</p>
+<h2>Eine Bookwyrm-Instanz verwalten</h2>
+<h3>compile_themes</h3>
+<p>Kompiliert alle BookWyrm Themes, die <code>*.scss</code> Dateien sind, die in <code>bookwyrm/static/css/themes aufgelistet sind</code>.</p>
+<h3>collectstatic</h3>
+<p>Migrier statische Assets in einen Docker-Container oder in einen S3-kompatiblen "Bucket", abhängig vom Kontext.</p>
+<h3>generate_preview_images</h3>
+<p>Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. Es kann eine Weile dauern, wenn du viele Bücher hast. Siehe auch <a href="/optional_features.html">Optionale Funktionen: Generiere Vorschaubilder</a></p>
+<h3>remove_remote_user_preview_images</h3>
+<p>Entferne für entfernte Benutzer generierte Vorschaubilder. Siehe <a href="/optional_features.html">Optionale Funktionen: Vorschaubilder für entfernte Accounts entfernen</a></p>
+<h3>generate_thumbnails</h3>
+<p>Generiert Vorschaubilder für Bücher.</p>
+<h3>populate_streams args</h3>
+<p>Redis-Streams (Benutzer-Feeds) werden wieder aufgebaut. Normalerweise giibt es keinen Grund diesen Befehl auszuführen, außer es gibt einen Fehler, der die Feeds deiner Benutzer*innen aus irgendeinem Grund löscht. Du kannst den entsprechenden Feed mit dem <code>--stream</code> Argument angeben.</p>
+<h3>populate_list_streams</h3>
+<p>Redis-Cache der Listen wieder auffüllen. Du musst das normalerweise nicht ausführen, es sei denn, es gibt einen Fehler, der die Listen deiner Benutzer*innen aus irgendeinem Grund löscht.</p>
+<h3>populate_suggestions</h3>
+<p>Empfohlene Benutzer*innen für alle anzeigen. Möglicherweise möchten Sie dies manuell ausführen, um Vorschläge zu aktualisieren.</p>
+<h3>restart_celery</h3>
+<p>Startet den <code>celery_worker</code>-Docker-Container neu.</p>
+<h3>update</h3>
+<p>Wenn es Änderungen im <code>-Produktions</code>-Zweig gibt, kannst Du Deine Instanz ohne Ausfallzeit aktualisieren.</p>
+<p>Dieser Befehl verwendet <code>git pull</code> um die neusten Aktualisierungen aus dem <code>production</code>-Zweig herunterzuladen, baut Docker-Images falls nötig, führt Django-Migrationen aus, aktualisiert statische Dateien und startet alle Docker-Container neu.</p>
+<h3>admin_code</h3>
+<p>Ruft den geheimen Admin-Code ab, der verwendet wird, um den initalen Admin-Benutzer in einer neuen BookWyrm-Instanz zu registrieren.</p>
+<h2>S3 kompatiblen Speicher einrichten</h2>
+<p>Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favicon, Standard-Avatar, etc.) und Medien (Benutzer-Avatare, Buchtitelbilder usw.), aber du kannst einen externen Speicherdienst verwenden, um diese Dateien zu bereitzustellen. BookWyrm verwendet django-storages, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.</p>
+<p>Siehe <a href="/external-storage.html">Externer Speicher</a> für weitere Informationen.</p>
+<h3>copy_media_to_s3</h3>
+<p>Migriere alle hochgeladenen Medien von einer bestehenden BookWyrm Installation in einen S3-kompatiblen "Bucket". Verwende dies für den initialen Upload in einen leeren Bucket.</p>
+<h3>sync_media_to_s3</h3>
+<p>Synchronisiere neue oder geänderte Medien von einer existierenden Bookwrym-Installation zu einem S3-kompatiblen "Bucket". Verwende diesen Befehl, um sicherzustellen, dass alle lokalen Dateien in einen existierenden Bucket hochgeladen werden.</p>
+<h3>set_cors_to_s3 filename</h3>
+<p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
+<h2>Entwicklung und Test</h2>
+<p>Diese Befehle sind zurzeit noch nicht im <code>production</code>-Zweig verfügbar.</p>
+<h3>black</h3>
+<p>BookWyrm verwendet den <a href="https://github.com/psf/black">Black</a> Code-Formatierer, um die Python Codebasis konsistent zu gestalten. Run <code>black</code> before committing your changes so the <code>pylint</code> task does not fail for your pull request and make you sad.</p>
+<h3>prettier</h3>
+<p>BookWyrm uses <a href="https://prettier.io/">Prettier</a> to keep the JavaScript codebase consistently styled. Run <code>prettier</code> before committing changes to scripts to automatically format your code.</p>
+<h3>stylelint</h3>
+<p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelintprettier</code> before committing changes to scripts to automatically format your code.</p>
+<h3>formatters</h3>
+<p>This command runs all code formatters (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) in one go.</p>
+<h3>clean</h3>
+<p>Remove all stopped Docker containers.</p>
+<p>Äquivalent zu:</p>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
+docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
+</code></pre></div>
+
+<h3>makemessages</h3>
+<p>Erstellt Nachrichtendateien für alle Übersetzungstexte. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. Siehe <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Djangos makemessages</a>.</p>
+<h3>compilemessages</h3>
+<p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
+<h3>pytest args</h3>
+<p>Run tests with <code>pytest</code>.</p>
+<h3>deactivate_2fa</h3>
+<p>Deactivates two factor authentication for a given user.</p>
+<h3>manual_confirm</h3>
+<p>Confirms a users email, sets the user to active.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                </p>
+                <p>
+                    Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Machen Sie mit</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/running_bookwyrm/cli.md">Zu dieser Seite beitragen</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Mehr erfahren</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Betreiber*in kontaktieren</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Lizenz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "de/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

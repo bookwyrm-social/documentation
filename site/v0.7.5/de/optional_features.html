@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        
+Optionale Funktionen
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Beitreten</span>
+            </a>
+            <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
+                Mach mit
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Unterstützung
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" selected>Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Optionale Funktionen</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/de/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/posting-statuses.html" >Beitragsstatus</a>
+                </li>
+                
+                <li>
+                    <a href="/de/adding-books.html" >Bücher hinzufügen</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-prod-dockerless.html" >Installation ohne Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
+                </li>
+                
+                <li>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/de/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/de/monitoring-queue.html" >Überwachungswarteschlange</a>
+                </li>
+                
+                <li>
+                    <a href="/de/external-storage.html" >Externer Speicher</a>
+                </li>
+                
+                <li>
+                    <a href="/de/optional_features.html" class="is-active">Optionale Funktionen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/cli.html" >Befehlszeilenwerkzeug</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/contributing.html" >Wie mitmachen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/translation.html" >Übersetzungen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-dev.html" >Entwicklungsumgebung</a>
+                </li>
+                
+                <li>
+                    <a href="/de/style_guide.html" >Stilleitfaden</a>
+                </li>
+                
+                <li>
+                    <a href="/de/debug_toolbar.html" >Django Debug-Symbolleiste</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/de/permissions.html" >Berechtigungen</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>Einige Funktionen von BookWyrm müssen aktiviert werden, um zu funktionieren.</p>
+<h2>Vorschaubilderzeugung</h2>
+<p>Standardmäßig verwendet BookWyrm das Logo der Instanz (oder das Standardlogo) als OpenGraph Vorschaubild. Alternativ kannst du die Erstellung von Vorschaubildern für Bücher, Benutzer und die Website aktivieren.</p>
+<p>Die Vorschaubilder werden für große OpenGraph Bilder vergrößert (verwendet von Twitter unter dem Namen <code>summary_large_image</code>). Abhängig von der Art des Bildes wird der Inhalt sein:</p>
+<ul>
+<li>das Standardinstanzbild zeigt das große Logo an, zusammen mit dem Namen der Instanz und ihrer Url</li>
+<li>Das Profilbild zeigt den Avatar und den Anzeigenamen an (in Form von name@instanz)</li>
+<li>das Buchbild zeigt sein Titelbild, Titel, Untertitel (falls vorhanden), Autor und Bewertung (falls vorhanden) an</li>
+</ul>
+<p>Diese Bilder werden an verschiedenen Stellen aktualisiert:</p>
+<ul>
+<li>Instanzbild: wenn der Instanzname oder das große Logo geändert werden</li>
+<li>Profilbild: wenn der Anzeigename oder das Avatar geändert wird</li>
+<li>Buchbild: wenn der Titel, Autor oder das Cover geändert oder wenn eine neue Bewertung hinzugefügt wird</li>
+</ul>
+<h3>Vorschaubilder aktivieren</h3>
+<p>Um die Funktion mit den Standardeinstellungen zu aktivieren, Sie müssen die Zeile <code>ENABLE_PREVIEW_IMAGES=true</code> in Ihrer <code>.env</code> Datei auskommentieren (entfernen Sie das Zeichen <code>#</code> am Anfang). Alle neuen Aktualisierungstermine führen zur Erzeugung des entsprechenden Bildes.</p>
+<p>Beispiele für diese Bilder können in der <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">Beschreibung der Funktions-Pull-Anfrage</a> angesehen werden.</p>
+<h3>Vorschaubilder erzeugen</h3>
+<p>Wenn du diese Einstellung aktivierst, nachdem die Instanz gestartet wurde, wurden einige Bilder möglicherweise nicht generiert. Ein Befehl wurde hinzugefügt, um die Bildgenerierung zu automatisieren. Um eine Ressourcenüberlastung zu verhindern, wenn Sie <strong>EINE MENGE</strong> Bilder erzeugen, müssen Sie das Argument <code>--all</code> (oder <code>-a</code>) übergeben, um die Erzeugung der Vorschaubilder für alle Benutzer und Bücher zu starten. Ohne dieses Argument wird nur die Seitenvorschau generiert.</p>
+<p>Benutzer- und Buchvorschaubilder werden asynchron erzeugt: Die Aufgabe wird an Flower gesendet. Etwas Zeit kann benötigt werden, bevor alle Bücher und Benutzer*innen ein funktionierendes Vorschaubild haben. Wenn du ein gutes Buch 📖, ein Kätzchen 🐱 oder einen Kuchen 🍰 hast, ist dies der perfekte Zeitpunkt, um ihnen Aufmerksamkeit 💖 zu schenken.</p>
+<h3>Optionale Einstellungen</h3>
+<p>Du möchstest deine Vorschaubilder anpassen? Hier sind die Optionen:</p>
+<ul>
+<li><code>PREVIEW_BG_COLOR</code> legt die Farbe für den Vorschauhintergrund fest. Du kannst einen Farbwert angeben, wie <code>#b00cc0</code> oder die folgenden Werte <code>use_dominant_color_light</code> oder <code>use_dominant_color_dark</code>. Diese extrahieren eine dominante Farbe aus dem Buchcover und verwenden es in einem hellen bzw. dunklen Thema.</li>
+<li><code>PREVIEW_TEXT_COLOR</code> legt die Farbe für den Text fest. Abhängig von der Auswahl für die Hintergrundfarbe solltest du einen Wert finden, der einen ausreichenden Kontrast hat, um das Bild zugänglich zu machen. Ein Kontrastverhältnis von 1:4.5 wird empfohlen.</li>
+<li><code>PREVIEW_IMG_WIDTH</code> und <code>PREVIEW_IMG_HEIGHT</code> werden die Dimensionen des Bildes einstellen. Momentan funktioniert das System am besten mit Bildern mit horizontaler Ausrichtung.</li>
+<li><code>PREVIEW_DEFAULT_COVER_COLOR</code> legt die Farbe für Bücher ohne Cover fest.</li>
+</ul>
+<p>Alle Farbvariablen akzeptieren Werte, die im Modul <code>ImageColor</code> von Pillow als Farben erkannt werden können: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Erfahren Sie mehr über Farben von Pillow</a>.</p>
+<h3>Entferne Vorschaubilder für entfernte Accounts</h3>
+<p>Vor Bookwyrmversion 0.5.4 wurden auch Vorschaubilder für entfernte Nutzer erstellt. Da es in Hinblick auf Speicherplatz und Rechenleistung verschwenderisch war, wurde diese Generation gestoppt. Wenn du alle Bilder löschen möchtest, die zuvor für entfernte Accounts erstellt wurden, wurde ein neuer Befehl hinzugefügt:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>remove_remote_user_preview_images
+</code></pre></div>
+
+<p>Dieser Befehl wird die Eigenschaft <code>user.preview_image</code> in der Datenbank für entfernte Benutzer leeren und die entsprechenden Dateien löschen.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                </p>
+                <p>
+                    Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Machen Sie mit</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/running_bookwyrm/optional_features.md">Zu dieser Seite beitragen</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Mehr erfahren</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Betreiber*in kontaktieren</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Lizenz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "de/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

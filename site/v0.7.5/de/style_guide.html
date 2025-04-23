@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        
+Stilleitfaden
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Beitreten</span>
+            </a>
+            <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
+                Mach mit
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Unterstützung
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" selected>Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Stilleitfaden</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/de/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/posting-statuses.html" >Beitragsstatus</a>
+                </li>
+                
+                <li>
+                    <a href="/de/adding-books.html" >Bücher hinzufügen</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-prod-dockerless.html" >Installation ohne Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
+                </li>
+                
+                <li>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/de/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/de/monitoring-queue.html" >Überwachungswarteschlange</a>
+                </li>
+                
+                <li>
+                    <a href="/de/external-storage.html" >Externer Speicher</a>
+                </li>
+                
+                <li>
+                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/cli.html" >Befehlszeilenwerkzeug</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/contributing.html" >Wie mitmachen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/translation.html" >Übersetzungen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-dev.html" >Entwicklungsumgebung</a>
+                </li>
+                
+                <li>
+                    <a href="/de/style_guide.html" class="is-active">Stilleitfaden</a>
+                </li>
+                
+                <li>
+                    <a href="/de/debug_toolbar.html" >Django Debug-Symbolleiste</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/de/permissions.html" >Berechtigungen</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <h2>Pull Requests</h2>
+<p>Du möchstest also Code zu BookWyrm hinzufügen: Das ist klasse! Wenn es ein offenes Problem gibt, dass du beheben möchtest, ist es hilfreich, das Problem zu kommentieren, damit die Arbeit nicht dupliziert wird. Versuche den Umfang von Pull Requests kleinzuhalten und konzentriere dich auf ein einzelnes Thema. Auf diese Weise ist es einfacher zu überprüfen und wenn ein Teil Änderungen braucht, wird er die anderen Teile nicht aufhalten.</p>
+<p>Wenn du nicht weißt, wie man etwas fixt oder etwas nicht schaffst: Kein Problem. Hinterlasse einen Kommentar im Pull Request und wir versuchen es, herauszufinden 💖.</p>
+<p>Pull-Anfragen müssen alle automatisierten Prüfungen bestehen, bevor sie übernommen werden können - dazu gehören Stil-Prüfungen, globale Linter, eine Sicherheitsprüfung und Unit-Tests.</p>
+<h2>Linten</h2>
+<h3>Global</h3>
+<p>Wir verwenden <a href="https://editorconfig.org">EditorConfig</a>, um konsistente Einrückungen und Zeilenenden zu erhalten.</p>
+<h3>Python</h3>
+<p>BookWyrm verwendet den <a href="https://github.com/psf/black">Black</a> Code-Formatierer, um die Python Codebasis konsistent zu gestalten. Alle neuen Pull-Requests werden mit GitHub-Aktionen überprüft und Sie können Code-Stilprobleme automatisch beheben, indem du <code>./bw-dev black</code> ausführst</p>
+<p>Code wird auch mit Pylint mittels GitHub-Aktionen überprüft. Pylint-Warnungen müssen bearbeitet werden, bevor Pull-Anfragen übernommen werden, aber es liegt im Ermessen, ob der Vorschlag verwendet werden oder die Warnung unterdrückt werden sollte. Um eine Warnung zu unterdrücken, füge einen Kommentar am Ende oder über der Zeile mit der Warnung hinzu: <code># pylint: disable=Name-der-Warnung</code></p>
+<h3>Vorlagen (HTML)</h3>
+<p>Dein Pull-Request wird auch durch den <a href="https://www.curlylint.org">curlylint</a>-Linter für Django-Templates überprüft.</p>
+<h3>CSS</h3>
+<p>Wir verwenden <a href="https://stylelint.io">stylelint</a>, um alle CSS-Regeln zu überprüfen. Wie bei Pylint <a href="https://stylelint.io/user-guide/ignore-code">kannst du styelint</a> für eine bestimmte Regel deaktivieren, aber du benötigst dafür eine gute Rechtfertigung.</p>
+<h3>JavaScript</h3>
+<p><a href="https://eslint.org">ESLint</a> überprüft alle von Ihnen vorgenommenen JavaScript-Änderungen. Falls ESLint dein funktionierendes JavaScript nicht mag, überprüfe die Linter-Meldung auf das genaue Problem.</p>
+<h2>Inklusives Design</h2>
+<p>Bookwyrm hat zum Ziel, so umfassend und zugänglich wie möglich zu sein.</p>
+<p>Überprüfen Sie die <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">Checkliste für inklusives Web Design</a> bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist <a href="https://www.a11y-101.com/development">A11Y-101</a> ebenfalls eine nützliche Quelle. Weitere Informationen darüber, wie du deine Seitenvorlagen mehrsprachig erstellst, findest du im <a href="/translations.html">Abschnitt Übersetzungen</a>.</p>
+<p>Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, sind:</p>
+<h3>Formulare</h3>
+<ul>
+<li>Verwende nur <code>input[type="checkbox"]</code> oder <code>input[type="radio"]</code> in <code>&lt;label&gt;</code></li>
+<li>Wenn du die Checkboxen und die Radiobuttons nicht innerhalb des <code>&lt;label&gt;</code>platzierst, sollte das <code>&lt;label&gt;</code> <em>nach</em> dem Element platziert werden, auf das es sich bezieht</li>
+</ul>
+<h3>Buttons und Links</h3>
+<ul>
+<li>Verwende ein <code>&lt;button&gt;</code> Element für alles, was existiert, um eine JavaScript-Aktion auszulösen (z.B. ein Formular verstecken oder enthüllen) oder eine <code>POST</code>-Anfrage senden (z.B. ein Formular übermitteln)</li>
+<li>Verwende ein <code>&lt;a&gt;</code>-Element für alles, was eine <code>GET</code>-Anfrage auslöst. Normalerweise sollte ein Ankerelement (<code>&lt;a&gt;</code>) nicht als Button (<code>class="button"</code>) dargestellt werden, obwohl es einige Ausnahmen gibt, wie z. B. "Abbrechen"-Buttons. Falls Sie Zweifel haben, fragen Sie in Ihrer Pull-Anfrage um Rat</li>
+</ul>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                </p>
+                <p>
+                    Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Machen Sie mit</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/contributing/style_guide.md">Zu dieser Seite beitragen</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Mehr erfahren</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Betreiber*in kontaktieren</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Lizenz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "de/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

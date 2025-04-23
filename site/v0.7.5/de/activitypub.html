@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        
+ActivityPub
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Beitreten</span>
+            </a>
+            <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
+                Mach mit
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Unterstützung
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" selected>Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">ActivityPub</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/de/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/posting-statuses.html" >Beitragsstatus</a>
+                </li>
+                
+                <li>
+                    <a href="/de/adding-books.html" >Bücher hinzufügen</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/install-prod.html" >Installation in Produktion</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-prod-dockerless.html" >Installation ohne Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/de/updating.html" >Deine Instanz updaten</a>
+                </li>
+                
+                <li>
+                    <a href="/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/de/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/de/monitoring-queue.html" >Überwachungswarteschlange</a>
+                </li>
+                
+                <li>
+                    <a href="/de/external-storage.html" >Externer Speicher</a>
+                </li>
+                
+                <li>
+                    <a href="/de/optional_features.html" >Optionale Funktionen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/cli.html" >Befehlszeilenwerkzeug</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/contributing.html" >Wie mitmachen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/translation.html" >Übersetzungen</a>
+                </li>
+                
+                <li>
+                    <a href="/de/install-dev.html" >Entwicklungsumgebung</a>
+                </li>
+                
+                <li>
+                    <a href="/de/style_guide.html" >Stilleitfaden</a>
+                </li>
+                
+                <li>
+                    <a href="/de/debug_toolbar.html" >Django Debug-Symbolleiste</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/de/activitypub.html" class="is-active">ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/de/permissions.html" >Berechtigungen</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>BookWyrm verwendet das <a href="http://activitypub.rocks/">ActivityPub</a>-Protokoll, um Benutzeraktivitäten zwischen anderen BookWyrm-Instanzen und anderen Diensten zu senden und zu empfangen, die ActivityPub implementieren, wie <a href="https://joinmastodon.org/">Mastodon</a>. Um Buchdaten zu behandeln, hat BookWyrm eine Handvoll erweiterter Aktivitätstypen, die nicht zum Standard gehören, aber nur für andere BookWyrm-Instanzen lesbar sind.</p>
+<h2>Aktivitäten und Objekte</h2>
+<h3>Benutzer*innen und Beziehungen</h3>
+<p>Benutzer*innenbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.</p>
+<ul>
+<li><code>Folgen</code>: Bitte, um den Status eine<em>r Benutzer</em>in zu erhalten und anzusehen, die die Privatsphäre auf nur Follower haben</li>
+<li><code>Akzeptieren</code>: genehmigt <code>Folgen</code> und erstellt die Beziehung</li>
+<li><code>Ablehnen</code>: verweigert <code>Folgen</code></li>
+<li><code>Blocken</code>: verhindert, dass Benutzer<em>innen einander Status ansehen und verhindert, dass der blockierte Benutzer</em>innen das Profil des Akteurs ansehen</li>
+<li><code>Update</code>: Aktualisiert das Profil und die Einstellungen eine<em>r Benutzer</em>in</li>
+<li><code>Löschen</code>: Deaktiviert eine<em>n Benutzer</em>in</li>
+<li><code>Rückgängig</code>: Reversiert <code>Folgen</code> oder <code>Blocken</code></li>
+</ul>
+<h3>Status</h3>
+<h4>Objekttypen</h4>
+<ul>
+<li><code>Notiz</code>: Bei Diensten wie Mastodon, ist <code>Notiz</code>en der primäre Typ des Status. Sie enthalten einen Text, Anhänge, können Benutzer erwähnen und Antworten auf Status jeder Art sein. In BookWyrm können <code>Notiz</code>en nur als direkte Nachrichten oder als Antworten auf andere Status erstellt werden.</li>
+<li><code>Rezension</code>: Eine Rezension ist ein Status, der sich auf ein Buch bezieht (angezeigt durch das <code>inReplyToBook</code>-Feld), welches einen Titel, Text sowie die numerische Bewertung auf einer Skala von 0 (keine Bewertung) bis 5 enthält.</li>
+<li><code>Kommentar</code>: Ein Kommentar zu einem Buch erwähnt ein Buch und hat einen Text.</li>
+<li><code>Zitat</code>: Ein Zitat enthält einen Text, einen Auszug aus dem Buch und erwähnt ein Buch.</li>
+</ul>
+<h4>Aktivitäten</h4>
+<ul>
+<li><code>Erstellen</code>: Speichert einen neuen Status in der Datenbank.</li>
+</ul>
+<p><strong>Hinweis</strong>: BookWyrm akzeptiert nur <code>Erstellen</code>-Aktivitäten, wenn sie sind:</p>
+<ul>
+<li>Direktnachrichten (d.h. <code>Hinweis</code>e mit der Datenschutzstufe <code>direkt</code>, welche einen lokalen Benutzer erwähnen),</li>
+<li>Verbunden mit einem Buch (eines benutzerdefinierten Statusstyps, der das Feld <code>inReplyToBook</code> enthält),</li>
+<li>Antworten auf existierende Status in der Datenbank</li>
+<li><code>Löschen</code>: Entfernt einen Status</li>
+<li><code>Gefällt</code>: Erstellt einen Favoriten für den Status</li>
+<li><code>Ankündigung</code>: Teilt den Status in der Zeitleiste des Akteurs</li>
+<li><code>Rückgängig</code>: Reversiert <code>Gefällt</code> oder <code>Ankündigung</code></li>
+</ul>
+<h3>Sammlungen</h3>
+<p>Bücher und Listen von Benutzern werden durch <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection"><code>Sortierte Sammlung</code></a> repräsentiert</p>
+<h4>Objekte</h4>
+<ul>
+<li><code>Regal</code>: Buchsammlung eines Benutzers. Standardmäßig hat jeder Benutzer ein <code>zu lesen</code>, <code>liest</code>, und <code>gelesen</code> Regal, die verwendet werden, um den Lesefortschritt zu verfolgen.</li>
+<li><code>Liste</code>: Eine Sammlung von Büchern, die möglicherweise von anderen Benutzern als derjenige, der die Liste erstellt hat, beigetragen haben.</li>
+</ul>
+<h4>Aktivitäten</h4>
+<ul>
+<li><code>Erstellen</code>: Fügt der Datenbank ein Regal oder eine Liste hinzu.</li>
+<li><code>Löschen</code>: Entfernt ein Regal oder eine Liste.</li>
+<li><code>Hinzufügen</code>: Fügt ein Buch zu einem Regal oder einer Liste hinzu.</li>
+<li><code>Entfernen</code>: Entfernt ein Buch aus einem Regal oder einer Liste.</li>
+</ul>
+<h2>Alternative Serialisierung</h2>
+<p>Weil BookWyrm eigene Objekttypen (<code>Rezension</code>, <code>Kommentar</code>, <code>Zitat</code>) benutzt, die nicht von ActivityPub unterstützt werden, werden Status in Standardtypen umgewandelt, wenn sie an nicht-BookWyrm-Dienste gesendet oder angezeigt werden. <code>Rezension</code>en werden in <code>Artikel</code> umgewandelt und <code>Kommentar</code>s und <code>Zitat</code>s werden in <code>Notiz</code>s konvertiert mit einem Link auf das Buch und das Titelbild wird angehängt.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                </p>
+                <p>
+                    Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Machen Sie mit</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/codebase/activitypub.md">Zu dieser Seite beitragen</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Mehr erfahren</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Betreiber*in kontaktieren</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Lizenz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "de/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

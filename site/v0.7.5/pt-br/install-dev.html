@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>
+        
+Developer Environment
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Join</span>
+            </a>
+            <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
+                Get involved
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Support
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" selected>Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Developer Environment</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/pt-br/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pt-br/posting-statuses.html" >Posting statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/adding-books.html" >Adding Books</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pt-br/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/install-prod-dockerless.html" >Installing Without Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/updating.html" >Updating Your Instance</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/moderation.html" >Moderation</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/monitoring-queue.html" >Monitoring Queue</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/cli.html" >Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pt-br/contributing.html" >How to Contribute</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/translation.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/install-dev.html" class="is-active">Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/pt-br/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/pt-br/permissions.html" >Permissões</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <h2>Pré-requisitos</h2>
+<p>Estas instruções supoem que você esteja rodando a BookWyrm utilizando o Docker. Você vai precisar <a href="https://docs.docker.com/engine/install/">instalar o Docker</a> e o <a href="https://docs.docker.com/compose/install/">docker-compose</a> para começar.</p>
+<h2>Configurando o ambiente de desenvolvimento</h2>
+<ul>
+<li>Faça uma cópia do <a href="https://github.com/bookwyrm-social/bookwyrm">código da BookWyrm no GitHub</a>. Você pode <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">criar uma bifurcação (fork)</a> do repositório e então <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">usar <code>git clone</code> pra baixar o código</a> para seu computador.</li>
+<li>Vá ao diretório onde o código foi baixado no seu computador; você trabalhará a partir dele daqui em diante.</li>
+<li>Configure as variáveis do seu ambiente de trabalho copiando o arquivo de ambiente de exemplo (<code>.env.example</code>) e renomeando o arquivo para <code>.env</code>. Na linha de comando, você pode fazer assim:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
+</code></pre></div>
+
+<ul>
+<li>No <code>.env</code>, altere <code>DEBUG</code> para <code>true</code></li>
+<li>
+<p>Facultativamente, você pode usar algum serviço como o <a href="https://ngrok.com/">ngrok</a> para configurar um domínio e apontar a variável <code>DOMAIN</code> do seu arquivo <code>.env</code> para o domínio gerado pelo ngrok.</p>
+</li>
+<li>
+<p>Configure o nginx para o ambiente de desenvolvimento copiando o arquivo de configuração para desenvolvimento (<code>nginx/development</code>) e renomeando o arquivo para <code>nginx/default.conf</code>:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>nginx/development<span class="w"> </span>nginx/default.conf
+</code></pre></div>
+
+<ul>
+<li>Inicie o aplicativo. In the command line, run:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Gera a imagem docker</span>
+./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Inicializa o banco de dados e executa as migrações</span>
+./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Inicia os containers do docker</span>
+</code></pre></div>
+
+<ul>
+<li>Uma vez completado o build, você pode acessar a instância no endereço <code>http://localhost:1333</code> e criar um usuário administrador.</li>
+</ul>
+<p>Se estiver curiosa: o comando <code>./bw-dev</code> é um shell script simples que executa várias ferramentas: no exemplo acima, você poderia pular o script e executar <code>docker-compose build</code> ou <code>docker-compose up</code> diretamente, se preferir. <code>./bw-dev</code> só junta esses comandos em um só, por conveniência. Execute-o sem argumentos para ver uma lista de comandos disponíveis, leia a <a href="/command-line-tool.html">página da documentação</a> ou abra o arquivo para dar uma olhada no que cada comando faz!</p>
+<h3>Editando e criando Modelos (Models)</h3>
+<p>Se você quiser editar ou criar um modelo, você provavelmente vai alterar a estrutura do banco de dados. Para que essas alterações funcionem, você precisará executar o comando <code>makemigrations</code> do Django para criar um novo <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">arquivo de migrações do Django</a> e então <code>migrá-lo</code>:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
+./bw-dev<span class="w"> </span>migrate
+</code></pre></div>
+
+<h3>Editando arquivos estáticos</h3>
+<p>Toda vez que você alterar o CSS ou o JavaScript, você precisará rodar o comando <code>collectstatic</code>do Django para que as alterações passem a funcionar:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+</code></pre></div>
+
+<p>Se você tiver o <a href="https://yarnpkg.com/getting-started/install">yarn instalado</a>, você pode executar <code>yarn watch:static</code> para executar automaticamente o script toda vez que houver alguma mudança no diretório <code>bookwyrm/static</code>.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Get Involved</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/contributing/install-dev.md">Contribute to this page</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Learn more</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact maintainer</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">License</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "pt-br/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>

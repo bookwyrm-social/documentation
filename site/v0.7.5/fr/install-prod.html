@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>
+        
+Installation en Production
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/fr/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Rejoindre</span>
+            </a>
+            <a href="https://joinbookwyrm.com/fr/get-involved" class="navbar-item">
+                Comment s'impliquer ?
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Soutenir
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" selected>Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Installation en Production</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+            <h2 class="menu-label"><a href="/fr/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/fr/posting-statuses.html" >Publication de statuts</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/adding-books.html" >Ajout de livres</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/fr/moderation.html" >Modération</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/reverse-proxy.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/fr/install-prod.html" class="is-active">Installation en Production</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/install-prod-dockerless.html" >Installation sans Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/updating.html" >Mise à jour de votre instance</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/external-storage.html" >Stockage Externe</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/optional_features.html" >Fonctionnalités optionnelles</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/cli.html" >Outils en ligne de commande</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/fr/contributing.html" >Comment contribuer</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/install-dev.html" >Environnement de développement</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/fr/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/fr/permissions.html" >Permissions</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites preuve de prudence lors de son utilisation en production.</p>
+<h2>Configuration du serveur</h2>
+<ul>
+<li>Obtenez un nom de domaine et configurez le DNS pour votre serveur. Vous devez faire pointer les serveurs de noms de domaine de votre fournisseur DNS vers le serveur où vous allez héberger BookWyrm. Voici les instructions pour <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
+<li>Configurez votre serveur avec un pare-feu approprié pour les applications web (cette page de documentation est testée avec Ubuntu 20.04). Voici les instructions pour <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
+<li>Configurez un service mail (comme <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) et les paramètres SMTP/DNS appropriés. Utilisez la documentation du service pour configurer vos DNS</li>
+<li><a href="https://docs.docker.com/compose/install/">Installez Docker et docker-compose</a></li>
+</ul>
+<h2>Installation et configuration de BookWyrm</h2>
+<p>La branche <code>production</code> de BookWyrm contient nombre d'outils qui ne sont pas sur la branche <code>main</code> prévus pour fonctionner en production. Par exemple des changements dans <code>docker-compose</code> pour mettre à jour les commandes par défaut ou la configuration des conteneurs et des changements individuels à la configuration des conteneurs pour activer des choses comme SSL ou les sauvegardes régulières.</p>
+<p>Instructions pour lancer BookWyrm en production :</p>
+<ul>
+<li>Récupérez le code de l'application : <code>git clone git@github.com:bookwyrm-social/bookwyrm.git</code></li>
+<li>Basculez sur la branche <code>production</code> : <code>git checkout production</code></li>
+<li>Créez votre fichier de variables d'environnement, <code>cp .env.example .env</code>, et mettez à jour les valeurs suivantes :<ul>
+<li><code>SECRET_KEY</code> | Une chaîne de caractères, difficile à deviner</li>
+<li><code>DOMAIN</code> | Votre nom domaine</li>
+<li><code>EMAIL</code> | L'adresse mail qui sera utilisée pour la vérification certbot</li>
+<li><code>POSTGRES_PASSWORD</code> | Un mot de passe sécurisé pour la base de données</li>
+<li><code>REDIS_ACTIVITY_PASSWORD</code> | Un mot de passe sécurisé pour le Redis d'activités</li>
+<li><code>REDIS_BROKER_PASSWORD</code> | Un mot de passe sécurisé pour le Redis de files d'attente</li>
+<li><code>FLOWER_USER</code> | Votre propre nom d'utilisateur·ice pour accéder à la surveillance des files d'attente Flower</li>
+<li><code>FLOWER_PASSWORD</code> | Votre propre mot de passe sécurisé pour accéder à la surveillance des files d'attente Flower</li>
+<li><code>EMAIL_HOST_USER</code> | L'adresse "From" que l'application utilisera pour l'envoi de mail</li>
+<li><code>EMAIL_HOST_PASSWORD</code> | Le mot de passe fourni par votre service mail</li>
+</ul>
+</li>
+<li>Configuration de Nginx<ul>
+<li>Faites une copie du modèle de configuration de production pour nginx <code>cp nginx/production nginx/default.conf</code></li>
+<li>Mettez à jour <code>nginx/default.conf</code> :<ul>
+<li>Remplacez <code>your-domain.com</code> par votre nom de domaine partout dans le fichier (y compris dans les lignes qui sont commentées)</li>
+<li>Si vous n'utilisez pas le sous-domaine <code>www</code>, retirez le domaine www.your-domain.com de la partie <code>server_name</code> dans le premier bloc server de <code>nginx/default.conf</code> et retirez l'argument <code>-d www.${DOMAIN}</code> à la fin de la commande <code>certbot</code> dans <code>docker-compose.yml</code>.</li>
+<li>Si vous faites fonctionner un autre serveur web sur votre machine, vous devez suivre les <a href="/reverse-proxy.html">instructions de proxy inverse</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Initialisez la base de données avec <code>./bw-dev migrate</code></li>
+<li>Lancez l'application (cela devrait aussi créer un certificat SSL avec Certbot pour votre nom de domaine) avec <code>docker-compose up --build</code>, et assurez-vous que toutes les images sont bien construites<ul>
+<li>Si vous faites fonctionner d'autres services sur votre machine, vous pourriez rencontrer des erreurs avec certains services tentant de s'attribuer un port. Consultez le <a href="#port_conflicts">guide de dépannage</a> pour avoir des conseils de résolution à ce sujet.</li>
+</ul>
+</li>
+<li>Une fois que les images docker sont construites avec succès, arrêtez le processus avec <code>CTRL-C</code></li>
+<li>Configurez la redirection HTTPS<ul>
+<li>Dans <code>docker-compose.yml</code>, commentez la commande certbot active, qui installe le certificat, et décommentez la ligne suivante, qui configure le renouvellement automatique.</li>
+<li>Dans <code>nginx/default.conf</code>, décommentez les lignes 18 à 50 pour activer la redirection vers HTTPS. Vous devriez avoir deux blocs <code>server</code> activés</li>
+</ul>
+</li>
+<li>Configurez une tâche <code>cron</code> pour garder le certificat à jour (les certificats Lets Encrypt expire après 90 jours)<ul>
+<li>Tapez <code>crontab -e</code> pour éditer le fichier cron de votre machine</li>
+<li>ajoutez une ligne pour tenter un renouvellement une fois par jour : <code>5 0 * * * cd /path/to/your/bookwyrm &amp;&amp; docker-compose run --rm certbot</code></li>
+</ul>
+</li>
+<li>Si vous souhaitez utiliser un stockage externe pour les fichiers statiques et médias (comme un service compatible S3), <a href="/external-storage.html">suivez les instructions</a> jusqu'à ce que celles-ci indiquent de revenir ici</li>
+<li>Initialisez l'application avec <code>./bw-dev setup</code> et copiez le code admin afin de l'utiliser pour créer votre compte admin.<ul>
+<li>La sortie de <code>./bw-dev setup</code> devrait se terminer par votre code admin. Vous pouvez récupérer votre code à tout moment en lançant <code>./bw-dev admin_code</code> depuis la ligne de commande. Voici un exemple du résultat :</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>*******************************************
+Use<span class="w"> </span>this<span class="w"> </span>code<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>your<span class="w"> </span>admin<span class="w"> </span>account:
+c6c35779-af3a-4091-b330-c026610920d6
+*******************************************
+</code></pre></div>
+
+<ul>
+<li>Lancez docker-compose en arrière-plan avec : <code>docker-compose up -d</code></li>
+<li>L'application devrait fonctionner sur votre nom de domaine. Quand vous chargez le nom de domaine, vous devriez arriver sur une page de configuration pour confirmer les paramètres de votre instance et un formulaire pour créer un compte admin. Utilisez votre code admin pour vous enregistrer.</li>
+</ul>
+<p>Bravo ! Vous avez réussi !! Configurez votre instance comme vous le souhaitez.</p>
+<h2>Sauvegardes</h2>
+<p>Le service db de BookWyrm créer une copie de sauvegarde de sa base de données dans le dossier <code>/backups</code> chaque jour à minuit UTC. Les sauvegardes sont nommées <code>backup__%Y-%m-%d.sql</code>.</p>
+<p>Le service db possède un script optionnel pour nettoyer périodiquement le dossier des sauvegardes afin que les sauvegardes récentes soient conservées ainsi que les sauvegardes mensuelles et hebdomadaires. Pour activer ce script :</p>
+<ul>
+<li>Décommentez la dernière ligne dans <code>postgres-docker/cronfile</code></li>
+<li>Reconstruisez votre instance <code>docker-compose up --build</code></li>
+</ul>
+<p>Vous pouvez copier les sauvegardes depuis le volume de sauvegardes vers votre machine avec <code>docker cp</code> :</p>
+<ul>
+<li>Lancez <code>docker-compose ps</code> pour vérifier le nom du service db (probablement <code>bookwyrm_db_1</code>).</li>
+<li>Lancez <code>docker cp &lt;container_name&gt;:/backups &lt;host machine path&gt;</code></li>
+</ul>
+<h2>Conflits de port</h2>
+<p>BookWyrm a plusieurs services fonctionnant sur leurs ports par défaut. Cela veut dire que, en fonction de ce qui fonctionne sur votre machine, vous pouvez rencontrer des erreurs à la construction et au lancement de BookWyrm lorsque les tentatives d'utiliser ces ports échouent.</p>
+<p>Si cela arrive, vous devrez changer votre configuration pour lancer ces services sur des ports différents. Cela peut demander des modifications dans les fichiers suivants :</p>
+<ul>
+<li><code>docker-compose.yml</code></li>
+<li><code>nginx/default.conf</code></li>
+<li><code>.env</code> (Vous créer ce fichier vous-même durant la configuration)</li>
+</ul>
+<p>Si vous avez déjà un serveur web sur cette machine, vous devrez configurer un proxy inverse.</p>
+<h2>Restez à l'affût</h2>
+<p>BookWyrm étant un projet jeune, nous travaillons toujours pour planifier une version stable et il y a beaucoup de bogues et de changements cassants. Il y a une équipe GitHub qui peut être mentionnée quand quelque chose d'important à propos d'une mise à jour se passe et que vous pouvez rejoindre en partageant votre nom d'utilisateur·ice GitHub. Il y a plusieurs manières d'entrer en contact :</p>
+<ul>
+<li>Ouvrir une issue ou une pull request pour ajouter votre propre instance à la <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md">liste officielle</a></li>
+<li>Contacter le projet sur <a href="https://tech.lgbt/@bookwyrm">Mastodon</a> ou <a href="mailto:mousereeve@riseup.net">envoyer un mail au mainteneur·ice</a> directement avec votre nom d'utilisateur·ice GitHub</li>
+<li>Rejoindre le salon de discussion <a href="https://matrix.to/#/#bookwyrm:matrix.org">Matrix</a></li>
+</ul>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> est un logiciel collaboratif et anti-commercial maintenu par <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Soutenir BookWyrm sur <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Contribuer</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm sur GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/running_bookwyrm/install-prod.md">Contribuer à cette page</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">En savoir plus</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licence</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "fr/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                new_location += current_location.slice(locale_index + current_locale.length);
+            } else {
+                new_location += current_location.slice(1);
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
+</body>
+</html>
