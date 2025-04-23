@@ -71,7 +71,7 @@ jobs:
 
       - name: Deploy latest to server
         if:  ${{ matrix.version == 'main' }}
-        id: deploy-versions
+        id: deploy-latest
         uses: Pendect/action-rsyncer@v2.0.0
         env:
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
