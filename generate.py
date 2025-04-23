@@ -15,7 +15,7 @@ env = Environment(loader=FileSystemLoader("templates/"), extensions=["jinja2.ext
 env.install_gettext_translations(i18n)
 
 
-def get_page_metadata(locale_slug, page, version=False):
+def get_page_metadata(locale_slug, page, version_slug=False):
     """title/order etc for a page
     this is how the markdown file is composed:
 
@@ -65,13 +65,13 @@ def get_page_metadata(locale_slug, page, version=False):
     path_dir = page.split("/")[-1].replace(".md", ".html")
     header_obj["path"] = (
         f"/{locale_slug}{path_dir}"
-        if not version
-        else f"/{version}/{locale_slug}{path_dir}"
+        if not version_slug
+        else f"/{version_slug}/{locale_slug}{path_dir}"
     )
     return header_obj
 
 
-def get_site_data(locale_slug, locale_code, page, version=False):
+def get_site_data(locale_slug, locale_code, page, version_slug=False):
     """this should be a file"""
     category_dirs = glob("content/*/")
     categories = []
@@ -84,14 +84,14 @@ def get_site_data(locale_slug, locale_code, page, version=False):
             f"locale/{locale_code}/{cat_dir}/*.md" if locale_slug else f"{cat_dir}/*.md"
         )
         for subcat in glob(location):
-            subcategories.append(get_page_metadata(locale_slug, subcat, version))
+            subcategories.append(get_page_metadata(locale_slug, subcat, version_slug))
         subcategories.sort(key=lambda v: v.get("Order", -1))
 
         categories.append({**parsed, **{"subcategories": subcategories}})
     categories.sort(key=lambda v: v["order"])
     template_data = {"categories": categories}
 
-    template_data["headers"] = get_page_metadata(locale_slug, page, version)
+    template_data["headers"] = get_page_metadata(locale_slug, page, version_slug)
 
     return template_data
 
@@ -168,7 +168,7 @@ if __name__ == "__main__":
                         if not version
                         else f"/{version}/{SLUG}{output_path}"
                     )
-                    versions=["latest","v0.7.5"]
+                    versions = ["latest", "v0.7.5"]
                     render_file.write(
                         template.render(
                             versions=versions,
