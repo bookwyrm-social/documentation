@@ -36,14 +36,13 @@ jobs:
         run: |
           python generate.py
 
-      - name: Generate and compile versions
+      - name: Process and compile versions
         run: |
-          for tag in $(git branch --list "v*[0-9\.]");
+          for version in $(git branch --list "v*[0-9\.]");
           do
-              git checkout ${tag}
+              git checkout --force ${version}
               ./bw-dev messages:update
-              python generate.py ${tag}
-              git restore .
+              python generate.py ${version}
           done
 
       - uses: stefanzweifel/git-auto-commit-action@v5
