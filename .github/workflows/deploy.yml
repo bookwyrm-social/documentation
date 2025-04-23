@@ -108,7 +108,7 @@ jobs:
 
       - name: Compile site
         run: |
-          python generate.py
+          python generate.py ${{ matrix.version }}
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:

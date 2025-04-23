@@ -73,6 +73,13 @@
     </header>
     <div class="columns">
 	<nav class="menu column is-one-quarter mt-2">
+        <div class="select">
+            <select aria-label="{{ _("Previous versions") }}" id="version_selection">
+                {% for option in versions %}
+                <option value="{{ option }}" {% if option == version %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+        </div>
             <h2 class="menu-label"><a href="/{{ locale['slug'] }}">Welcome</a></h2>
             {% for category in categories %}
             <h2 class="menu-label">{{ category.title }}</h2>
@@ -160,6 +167,31 @@
         }
     })()
 </script>
+<script type="text/javascript">
+    (function() {
+        var versionSelector = document.getElementById("version_selection");
+        versionSelector.onchange = function(event) {
+            var current_version = "{{ version|safe }}";
+            console.log(current_version)
+            var current_location = window.location.pathname;
+            var version_index = current_location.indexOf(current_version);
+            var new_location = "/" + event.target.value;
+
+            console.log(current_location)
+            console.log(new_location)
+
+            if (version_index) {
+                new_location += current_location.slice(version_index + current_version.length) + "/";
+            } else {
+                console.log("no version_index")
+                new_location += `/${current_location.slice(1)}`;
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
 
 </body>
 </html>

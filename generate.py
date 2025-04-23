@@ -15,7 +15,7 @@ env = Environment(loader=FileSystemLoader("templates/"), extensions=["jinja2.ext
 env.install_gettext_translations(i18n)
 
 
-def get_page_metadata(locale_slug, page):
+def get_page_metadata(locale_slug, page, version_slug=False):
     """title/order etc for a page
     this is how the markdown file is composed:
 
@@ -63,11 +63,15 @@ def get_page_metadata(locale_slug, page):
         else page.split("/")[-1]
     )
     path_dir = page.split("/")[-1].replace(".md", ".html")
-    header_obj["path"] = f"/{locale_slug}{path_dir}"
+    header_obj["path"] = (
+        f"/{locale_slug}{path_dir}"
+        if not version_slug
+        else f"/{version_slug}/{locale_slug}{path_dir}"
+    )
     return header_obj
 
 
-def get_site_data(locale_slug, locale_code, page):
+def get_site_data(locale_slug, locale_code, page, version_slug=False):
     """this should be a file"""
     category_dirs = glob("content/*/")
     categories = []
@@ -80,14 +84,14 @@ def get_site_data(locale_slug, locale_code, page):
             f"locale/{locale_code}/{cat_dir}/*.md" if locale_slug else f"{cat_dir}/*.md"
         )
         for subcat in glob(location):
-            subcategories.append(get_page_metadata(locale_slug, subcat))
+            subcategories.append(get_page_metadata(locale_slug, subcat, version_slug))
         subcategories.sort(key=lambda v: v.get("Order", -1))
 
         categories.append({**parsed, **{"subcategories": subcategories}})
     categories.sort(key=lambda v: v["order"])
     template_data = {"categories": categories}
 
-    template_data["headers"] = get_page_metadata(locale_slug, page)
+    template_data["headers"] = get_page_metadata(locale_slug, page, version_slug)
 
     return template_data
 
@@ -120,6 +124,7 @@ def format_markdown(file_path):
 
 
 if __name__ == "__main__":
+    # when we generate for older versions we need to change the page links
     version = sys.argv[1] if len(sys.argv) > 1 else False
     # iterate through each locale
     for locale in i18n.locales_metadata:
@@ -131,15 +136,13 @@ if __name__ == "__main__":
 
         i18n.setLocale(locale["code"])
 
-        LOCALIZED_SITE_PATH = f"site/{version}/" if version else "site/"
+        LOCALIZED_SITE_PATH = "site/"
         if locale["code"] != "en_US":
             paths = [
                 ["index.html", f"locale/{locale['code']}/content/index.md"],
                 ["page.html", f"locale/{locale['code']}/content/**/*.md"],
             ]
-            LOCALIZED_SITE_PATH = (
-                f"site/{version}/{SLUG}" if version else f"site/{SLUG}"
-            )
+            LOCALIZED_SITE_PATH = f"site/{SLUG}"
 
         # iterate through template types
         for path, content_paths in paths:
@@ -158,11 +161,17 @@ if __name__ == "__main__":
                 with open(
                     f"{LOCALIZED_SITE_PATH}{output_path}", "w+", encoding="utf-8"
                 ) as render_file:
-                    data = get_site_data(SLUG, locale["code"], content_path)
+                    data = get_site_data(SLUG, locale["code"], content_path, version)
                     data["content"] = format_markdown(content_path)
-                    data["path"] = f"/{SLUG}{output_path}"
+                    data["path"] = (
+                        f"/{SLUG}{output_path}"
+                        if not version
+                        else f"/{version}/{SLUG}{output_path}"
+                    )
+                    versions = ["latest", "v0.7.5"]
                     render_file.write(
                         template.render(
+                            versions=versions,
                             locale=locale,
                             locales_metadata=i18n.locales_metadata,
                             **data,
