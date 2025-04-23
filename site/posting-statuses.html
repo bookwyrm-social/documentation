@@ -85,6 +85,15 @@ Posting statuses
     </header>
     <div class="columns">
 	<nav class="menu column is-one-quarter mt-2">
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="latest" >latest</option>
+                
+                <option value="v0.7.5" >v0.7.5</option>
+                
+            </select>
+        </div>
             <h2 class="menu-label"><a href="/">Welcome</a></h2>
             
             <h2 class="menu-label">Using BookWyrm</h2>
@@ -361,6 +370,31 @@ BookWyrm posts can include formatting like bold, italics and links using <a href
         }
     })()
 </script>
+<script type="text/javascript">
+    (function() {
+        var versionSelector = document.getElementById("version_selection");
+        versionSelector.onchange = function(event) {
+            var current_version = "";
+            console.log(current_version)
+            var current_location = window.location.pathname;
+            var version_index = current_location.indexOf(current_version);
+            var new_location = "/" + event.target.value;
+
+            console.log(current_location)
+            console.log(new_location)
+
+            if (version_index) {
+                new_location += current_location.slice(version_index + current_version.length) + "/";
+            } else {
+                console.log("no version_index")
+                new_location += `/${current_location.slice(1)}`;
+            }
+
+            window.location = new_location;
+        }
+    })()
+</script>
+
 
 </body>
 </html>
