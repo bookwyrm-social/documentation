@@ -28,9 +28,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Process translations
+        run: |
+          ./bw-dev messages:update
+
       - name: Compile site
         run: |
-          ./create_versions.sh
+          python generate.py
+
+      - name: Process and compile versions
+        run: |
+          for version in $(git branch --list "v*[0-9\.]");
+          do
+              git checkout --force ${version}
+              ./bw-dev messages:update
+              python generate.py ${version}
+          done
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
