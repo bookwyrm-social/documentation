@@ -71,7 +71,7 @@ def get_page_metadata(locale_slug, page, version=False):
     return header_obj
 
 
-def get_site_data(locale_slug, locale_code, page, version):
+def get_site_data(locale_slug, locale_code, page, version=False):
     """this should be a file"""
     category_dirs = glob("content/*/")
     categories = []
@@ -168,8 +168,10 @@ if __name__ == "__main__":
                         if not version
                         else f"/{version}/{SLUG}{output_path}"
                     )
+                    versions=["latest","v0.7.5"]
                     render_file.write(
                         template.render(
+                            versions=versions,
                             locale=locale,
                             locales_metadata=i18n.locales_metadata,
                             **data,
