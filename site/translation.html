@@ -108,11 +108,11 @@ Translations
                 </li>
                 
                 <li>
-                    <a href="/user-migration.html" >User migration and aliases</a>
+                    <a href="/rss-feeds.html" >RSS Feeds</a>
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/user-migration.html" >User migration and aliases</a>
                 </li>
                 
             </ul>
@@ -217,13 +217,13 @@ Translations
         <div class="column">
             
 <section class="block content">
-    <h2>Contributing to translations</h2>
+    <h2 id="contributing-to-translations"><a class="headerlink" href="#contributing-to-translations">Contributing to translations</a></h2>
 <p>You can join the BookWyrm translation project at <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a>.</p>
-<h2>Gender-neutral language</h2>
+<h2 id="gender-neutral-language"><a class="headerlink" href="#gender-neutral-language">Gender-neutral language</a></h2>
 <p>Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.</p>
 <p>As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.</p>
 <p>If you aren't sure how best to approach a translation problem, comment on the translation or open a <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">discussion topic</a> to address broader-scale questions.</p>
-<h2>Making templates translatable</h2>
+<h2 id="making-templates-translatable"><a class="headerlink" href="#making-templates-translatable">Making templates translatable</a></h2>
 <p>Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">provides a helpful explanation</a> of how this works, but here is the short version:</p>
 <ul>
 <li>all template text should include translation template tags</li>
@@ -231,7 +231,7 @@ Translations
 <li>If the text block is literal text, you can use the template tag <code>{% trans %}</code></li>
 <li>If the text block includes variables, you should use the template tag pair <code>{% blocktrans %}</code> and <code>{% endblocktrans %}</code>. If you are including padding whitespace or line breaks, use <code>trimmed</code> to automatically remove it when the locale file is generated: <code>{% blocktrans trimmed %}</code></li>
 </ul>
-<h3>Examples</h3>
+<h3 id="examples"><a class="headerlink" href="#examples">Examples</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>

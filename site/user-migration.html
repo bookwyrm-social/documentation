@@ -108,11 +108,11 @@ User migration and aliases
                 </li>
                 
                 <li>
-                    <a href="/user-migration.html" class="is-active">User migration and aliases</a>
+                    <a href="/rss-feeds.html" >RSS Feeds</a>
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/user-migration.html" class="is-active">User migration and aliases</a>
                 </li>
                 
             </ul>
@@ -218,7 +218,7 @@ User migration and aliases
             
 <section class="block content">
     <p>You can migrate your account between BookWyrm instances, and/or set up an <em>alias</em> between any ActivityPub account and your BookWyrm acccount.</p>
-<h2>Exporting account data</h2>
+<h2 id="exporting-account-data"><a class="headerlink" href="#exporting-account-data">Exporting account data</a></h2>
 <p>You can export your account data at any time, however there will be a limit on how often you can do this, set by your instance admin. When you create an export file a process will run in the background and you will be notified when it is completed and ready for download. Export files are in <code>tar.gz</code> format.</p>
 <p>Account export files include:</p>
 <ul>
@@ -239,14 +239,14 @@ User migration and aliases
 <li>Groups</li>
 <li>Favorites</li>
 </ul>
-<h2>Aliases</h2>
+<h2 id="aliases"><a class="headerlink" href="#aliases">Aliases</a></h2>
 <p>An <em>alias</em> indicates to ActivityPub software that two accounts represent and are controlled by the same person. You can assign any ActivityPub account as an alias of your BookWyrm account by navigating to <code>Settings - Aliases</code>.</p>
 <p>Setting an account as an alias is easily reversible, and is required to migrate accounts.</p>
-<h2>Moving an account</h2>
+<h2 id="moving-an-account"><a class="headerlink" href="#moving-an-account">Moving an account</a></h2>
 <p>You can "move" an account from one to another at <code>Settings - Move Account</code>. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.</p>
 <p>Your old (origin) account will be marked as moved and will not be discoverable or usable unless you undo the move, which you can do at any time, however any followers who have migrated their follow from the old account to the new account will no longer be following your old account.</p>
 <p>You <em>must</em> set the old (source) user as an alias of the new (target) user in the settings of the target account for a <code>Move</code> to work.</p>
-<h2>Importing account data</h2>
+<h2 id="importing-account-data"><a class="headerlink" href="#importing-account-data">Importing account data</a></h2>
 <p>Once you have an export file you can import it into another BookWyrm instance. To do so, you must first set the new (target) account as an alias of the old (source) account, or <code>Move</code> the old account to the new one.</p>
 <p>It is important to read the instructions on the account import page as some data will be overwritten if selected. There is also a limit on how often you can import user data.</p>
 <ul>

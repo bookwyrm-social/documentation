@@ -194,12 +194,12 @@ Suivi de la file d'attente
             
 <section class="block content">
     <p>Il peut arriver que votre instance tourne au ralenti. Une solution est d'inspecter la file d'attente, afin de vérifier si des tâches sont bloquées. Lisez ce qui suit afin de savoir comment.</p>
-<h2>Celery</h2>
+<h2 id="celery"><a class="headerlink" href="#celery">Celery</a></h2>
 <p>BookWyrm utilise <a href="https://docs.celeryq.dev/en/stable/">Celery</a> pour la gestion des tâches en arrière‑plan.</p>
-<h2>Flower</h2>
+<h2 id="flower"><a class="headerlink" href="#flower">Flower</a></h2>
 <p>Pour le suivi en temps réel des tâches de Celery, BookWyrm se repose sur <a href="https://flower.readthedocs.io/en/latest/">Flower</a>.</p>
 <p>Si vous n'avez pas modifié <a href="https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100"><code>docker-compose.yml</code></a> jusque là, vous trouverez ce service sur le <a href="https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45">port 8888</a>. Pour référence : <code>https://MY_DOMAIN_NAME:8888/</code>.</p>
-<h3>Tâches</h3>
+<h3 id="taches"><a class="headerlink" href="#taches">Tâches</a></h3>
 <p>Vous trouverez des tâches <a href="https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task">annotées <code>@app.task</code></a> dans le code source.</p>
 </section>
 

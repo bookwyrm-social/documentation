@@ -193,7 +193,7 @@
         <div class="column">
             
 <section class="block content">
-    <h2>Faire fonctionner BookWyrm derrière un proxy inverse</h2>
+    <h2 id="faire-fonctionner-bookwyrm-derriere-un-proxy-inverse"><a class="headerlink" href="#faire-fonctionner-bookwyrm-derriere-un-proxy-inverse">Faire fonctionner BookWyrm derrière un proxy inverse</a></h2>
 <p>Si un autre serveur web est installé sur la machine, il serait préférable que ce dernier fasse proxy pour les requêtes vers BookWyrm.</p>
 <p>La configuration par défaut de BookWyrm a déjà un serveur Nginx qui sert de proxy pour les requêtes vers l'application Django gérant le SSL et servant directement les fichiers statiques. Les fichiers statiques sont stockés dans un volume Docker accessible par plusieurs services BookWyrm, il est donc déconseillé de complétement retirer ce serveur.</p>
 <p>Pour faire fonctionner BookWyrm derrière un proxy inverse, les changements suivants doivent être faits :</p>
@@ -213,7 +213,7 @@
 </ul>
 <p>À partir de là, il est possible de suivre <a href="#server-setup">les instructions d'installation</a> telles quelles. Une fois Docker lancé, il est possible d'accéder à l'instance BookWyrm à l'adresse <code>http://localhost:8001</code> (<strong>IMPORTANT:</strong> le serveur n'est pas accessible via <code>https</code>).</p>
 <p>Les étapes pour configurer un proxy inverse dépendent du serveur.</p>
-<h4>Nginx</h4>
+<h4 id="nginx"><a class="headerlink" href="#nginx">Nginx</a></h4>
 <p>Avant de pouvoir configurer Nginx, il faudra trouver son dossier de configuration, qui dépend de la plateforme et de la manière dont Nginx a été installé. Voir <a href="http://nginx.org/en/docs/beginners_guide.html">le guide de Nginx</a> pour plus de détails.</p>
 <p>Pour configurer le serveur :</p>
 <ul>

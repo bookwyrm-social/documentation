@@ -193,13 +193,13 @@ Translations
         <div class="column">
             
 <section class="block content">
-    <h2>Contribuer aux traductions</h2>
+    <h2 id="contribuer-aux-traductions"><a class="headerlink" href="#contribuer-aux-traductions">Contribuer aux traductions</a></h2>
 <p>Vous pouvez rejoindre le projet de traduction de BookWyrm à l'adresse <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a>.</p>
-<h2>Langage non-genré / inclusif</h2>
+<h2 id="langage-non-genre-inclusif"><a class="headerlink" href="#langage-non-genre-inclusif">Langage non-genré / inclusif</a></h2>
 <p>Dans la mesure du possible, les traductions de BookWyrm doivent utiliser une langue non-genrée. Cela s'applique même si une langue désigne le masculin comme genre neutre par défaut, ou si elle utilise quelque chose de similaire à "il/elle". Il est également important que les traductions soient claires, concises et lisibles pour un lecteur d'écran, et parfois ces objectifs sont en conflit ; il n'y a pas de réponse parfaite et unique, la solution dépend de la langue.</p>
 <p>En tant que principe directeur, essayez de donner une valeur plus élevée à un langage inclusif et neutre par rapport au langage formel correct ou aux guides de style officiellement approuvés. En anglais par exemple, de nombreux guides de style requièrent qu’un pronom singulier "she" ou "he" soit utilisé en référence à un individu, mais il est préférable dans BookWyrm d'utiliser le pronom singulier non-genré "they" à la place.</p>
 <p>Si vous ne savez pas comment aborder un problème de traduction, commentez la traduction ou ouvrez un <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">sujet de discussion</a> pour répondre aux questions plus larges.</p>
-<h2>Rendre les gabarits traduisibles</h2>
+<h2 id="rendre-les-gabarits-traduisibles"><a class="headerlink" href="#rendre-les-gabarits-traduisibles">Rendre les gabarits traduisibles</a></h2>
 <p>Bookwyrm profite de la fonctionnalité de traduction de Django pour permettre au contenu de la page de changer en fonction de la langue d'affichage préférée du navigateur. La documentation de Django <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">fournit une explication utile</a> du fonctionnement, voilà la version courte :</p>
 <ul>
 <li>tous les textes du gabarit doivent inclure des balises de traduction</li>
@@ -207,7 +207,7 @@ Translations
 <li>si le bloc de texte est du texte littéral, vous pouvez utiliser la balise <code>{% trans %}</code></li>
 <li>Si le bloc de texte inclut des variables, vous devez utiliser la paire de balises <code>{% blocktrans %}</code> et <code>{% endblocktrans %}</code>. Si vous incluez des espaces ou des sauts de ligne, utilisez <code>trimmed</code> pour les supprimer automatiquement lorsque le fichier de langue est généré : <code>{% blocktrans trimmed %}</code></li>
 </ul>
-<h3>Exemples</h3>
+<h3 id="exemples"><a class="headerlink" href="#exemples">Exemples</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>

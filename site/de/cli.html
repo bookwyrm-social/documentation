@@ -195,93 +195,93 @@ Befehlszeilenwerkzeug
 <section class="block content">
     <p>Bookwyrm-Entwickler und Instanz-Manager können das <code>bw-dev</code>-Skript für gemeinsame Aufgaben verwenden. Dies macht deine Befehle kürzer, leichter zu merken und schwieriger durcheinander zu bringen.</p>
 <p>Sobald du Bookwyrm <a href="installing-in-production.html">in Produktion</a> oder <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">in Entwicklung</a>installiert hast, kannst du das Skript von der Kommandozeile aus mit <code>./bw-dev</code> ausführen, gefolgt von dem Unterbefehl, den du ausführen willst.</p>
-<h2>Docker Kurzbefehle</h2>
-<h3>bash</h3>
+<h2 id="docker-kurzbefehle"><a class="headerlink" href="#docker-kurzbefehle">Docker Kurzbefehle</a></h2>
+<h3 id="bash"><a class="headerlink" href="#bash">bash</a></h3>
 <p>Öffne eine interaktive <code>bash</code>-Sitzung im Docker-<code>Web</code>-Container.</p>
-<h3>build</h3>
+<h3 id="build"><a class="headerlink" href="#build">build</a></h3>
 <p>Äquivalent zu <code>docker-compose build</code>.</p>
-<h3>dbshell</h3>
+<h3 id="dbshell"><a class="headerlink" href="#dbshell">dbshell</a></h3>
 <p>Öffnen Sie eine interaktive Postgres-Datenbank-Shell. Ich hoffe, du weißst, was du tust.</p>
-<h3>runweb args</h3>
+<h3 id="runweb-args"><a class="headerlink" href="#runweb-args">runweb args</a></h3>
 <p>Führe einen beliebigen Befehl (oben durch <code>args</code> repräsentiert) im <code>web</code>-Container aus.</p>
 <p>Äquivalent zu <code>docker-compose run --rm web</code>.</p>
-<h3>service_ports_web args</h3>
+<h3 id="service_ports_web-args"><a class="headerlink" href="#service_ports_web-args">service_ports_web args</a></h3>
 <p>Führe einen beliebigen Befehl im <code>Web</code>-Container (oben dargestellt durch <code>args</code>) mit exponierten Ports aus. Dies ist nützlich, wenn du <code>pdb</code>-Tests ausführen möchtest, da <code>runweb</code> nicht die <code>pdb</code>-Prompt freigibt.</p>
 <p>Äquivalent zu <code>docker-compose run --rm --service-ports web</code>.</p>
-<h3>shell</h3>
+<h3 id="shell"><a class="headerlink" href="#shell">shell</a></h3>
 <p>Öffne eine interaktive Django-Shell im Docker-<code>Web</code>-Container. Du würdest das verwenden, wenn du Django Shell-Befehle direkt ausführen möchtest.</p>
-<h3>up [args]</h3>
+<h3 id="up-args"><a class="headerlink" href="#up-args">up [args]</a></h3>
 <p>Docker-Container starten oder neustarten, optional inklusive aller Argumente (oben dargestellt durch <code>args</code>). Äquivalent zu <code>docker-compose up --build [args]</code></p>
-<h2>Datenbank verwalten</h2>
-<h3>initdb</h3>
+<h2 id="datenbank-verwalten"><a class="headerlink" href="#datenbank-verwalten">Datenbank verwalten</a></h2>
+<h3 id="initdb"><a class="headerlink" href="#initdb">initdb</a></h3>
 <p>Eine Datenbank initialisieren.</p>
-<h3>makemigrations [appname migration number]</h3>
+<h3 id="makemigrations-appname-migration-number"><a class="headerlink" href="#makemigrations-appname-migration-number">makemigrations [appname migration number]</a></h3>
 <p><em>Dieser Befehl ist nicht verfügbar im <code>Produktion</code>szweig</em>.</p>
 <p>Führt Djangos <code>makemigrations</code>-Befehl im Docker-Container aus. Wenn du die Datenbankstruktur in einem Entwicklungszweig geändert hast, musst du dies ausführen, damit deine Änderungen wirksam werden. Optional kannst du eine bestimmte Migration angeben, z.B. <code>./bw-dev makemigrations bookwyrm 0108</code></p>
-<h3>migrate</h3>
+<h3 id="migrate"><a class="headerlink" href="#migrate">migrate</a></h3>
 <p>Führt Djangos <code>migrate</code>-Kommando im Docker-Container aus. Du musst dies immer nach <code>makemigrations</code> ausführen.</p>
-<h3>resetdb</h3>
+<h3 id="resetdb"><a class="headerlink" href="#resetdb">resetdb</a></h3>
 <p><em>Dieser Befehl ist nicht verfügbar im <code>Produktion</code>szweig</em>.</p>
 <p>Setzt die Datenbank zurück. <strong>Dieser Befehl löscht deine gesamte Bookwyrm-Datenbank</strong>und initiiert dann eine neue Datenbank und führt alle Migrationen aus. Du solltest alle aktuellen Migrationsdateien löschen, die du nicht ausführen möchtest, <em>bevor</em> das <code>resetdb</code> ausgeführt wird.</p>
-<h2>Eine Bookwyrm-Instanz verwalten</h2>
-<h3>compile_themes</h3>
+<h2 id="eine-bookwyrm-instanz-verwalten"><a class="headerlink" href="#eine-bookwyrm-instanz-verwalten">Eine Bookwyrm-Instanz verwalten</a></h2>
+<h3 id="compile_themes"><a class="headerlink" href="#compile_themes">compile_themes</a></h3>
 <p>Kompiliert alle BookWyrm Themes, die <code>*.scss</code> Dateien sind, die in <code>bookwyrm/static/css/themes aufgelistet sind</code>.</p>
-<h3>collectstatic</h3>
+<h3 id="collectstatic"><a class="headerlink" href="#collectstatic">collectstatic</a></h3>
 <p>Migrier statische Assets in einen Docker-Container oder in einen S3-kompatiblen "Bucket", abhängig vom Kontext.</p>
-<h3>generate_preview_images</h3>
+<h3 id="generate_preview_images"><a class="headerlink" href="#generate_preview_images">generate_preview_images</a></h3>
 <p>Erzeugen von Vorschaubildern für Webseiten, Benutzer und Bücher. Es kann eine Weile dauern, wenn du viele Bücher hast. Siehe auch <a href="/optional_features.html">Optionale Funktionen: Generiere Vorschaubilder</a></p>
-<h3>remove_remote_user_preview_images</h3>
+<h3 id="remove_remote_user_preview_images"><a class="headerlink" href="#remove_remote_user_preview_images">remove_remote_user_preview_images</a></h3>
 <p>Entferne für entfernte Benutzer generierte Vorschaubilder. Siehe <a href="/optional_features.html">Optionale Funktionen: Vorschaubilder für entfernte Accounts entfernen</a></p>
-<h3>generate_thumbnails</h3>
+<h3 id="generate_thumbnails"><a class="headerlink" href="#generate_thumbnails">generate_thumbnails</a></h3>
 <p>Generiert Vorschaubilder für Bücher.</p>
-<h3>populate_streams args</h3>
+<h3 id="populate_streams-args"><a class="headerlink" href="#populate_streams-args">populate_streams args</a></h3>
 <p>Redis-Streams (Benutzer-Feeds) werden wieder aufgebaut. Normalerweise giibt es keinen Grund diesen Befehl auszuführen, außer es gibt einen Fehler, der die Feeds deiner Benutzer*innen aus irgendeinem Grund löscht. Du kannst den entsprechenden Feed mit dem <code>--stream</code> Argument angeben.</p>
-<h3>populate_list_streams</h3>
+<h3 id="populate_list_streams"><a class="headerlink" href="#populate_list_streams">populate_list_streams</a></h3>
 <p>Redis-Cache der Listen wieder auffüllen. Du musst das normalerweise nicht ausführen, es sei denn, es gibt einen Fehler, der die Listen deiner Benutzer*innen aus irgendeinem Grund löscht.</p>
-<h3>populate_suggestions</h3>
+<h3 id="populate_suggestions"><a class="headerlink" href="#populate_suggestions">populate_suggestions</a></h3>
 <p>Empfohlene Benutzer*innen für alle anzeigen. Möglicherweise möchten Sie dies manuell ausführen, um Vorschläge zu aktualisieren.</p>
-<h3>restart_celery</h3>
+<h3 id="restart_celery"><a class="headerlink" href="#restart_celery">restart_celery</a></h3>
 <p>Startet den <code>celery_worker</code>-Docker-Container neu.</p>
-<h3>update</h3>
+<h3 id="update"><a class="headerlink" href="#update">update</a></h3>
 <p>Wenn es Änderungen im <code>-Produktions</code>-Zweig gibt, kannst Du Deine Instanz ohne Ausfallzeit aktualisieren.</p>
 <p>Dieser Befehl verwendet <code>git pull</code> um die neusten Aktualisierungen aus dem <code>production</code>-Zweig herunterzuladen, baut Docker-Images falls nötig, führt Django-Migrationen aus, aktualisiert statische Dateien und startet alle Docker-Container neu.</p>
-<h3>admin_code</h3>
+<h3 id="admin_code"><a class="headerlink" href="#admin_code">admin_code</a></h3>
 <p>Ruft den geheimen Admin-Code ab, der verwendet wird, um den initalen Admin-Benutzer in einer neuen BookWyrm-Instanz zu registrieren.</p>
-<h2>S3 kompatiblen Speicher einrichten</h2>
+<h2 id="s3-kompatiblen-speicher-einrichten"><a class="headerlink" href="#s3-kompatiblen-speicher-einrichten">S3 kompatiblen Speicher einrichten</a></h2>
 <p>Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favicon, Standard-Avatar, etc.) und Medien (Benutzer-Avatare, Buchtitelbilder usw.), aber du kannst einen externen Speicherdienst verwenden, um diese Dateien zu bereitzustellen. BookWyrm verwendet django-storages, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.</p>
 <p>Siehe <a href="/external-storage.html">Externer Speicher</a> für weitere Informationen.</p>
-<h3>copy_media_to_s3</h3>
+<h3 id="copy_media_to_s3"><a class="headerlink" href="#copy_media_to_s3">copy_media_to_s3</a></h3>
 <p>Migriere alle hochgeladenen Medien von einer bestehenden BookWyrm Installation in einen S3-kompatiblen "Bucket". Verwende dies für den initialen Upload in einen leeren Bucket.</p>
-<h3>sync_media_to_s3</h3>
+<h3 id="sync_media_to_s3"><a class="headerlink" href="#sync_media_to_s3">sync_media_to_s3</a></h3>
 <p>Synchronisiere neue oder geänderte Medien von einer existierenden Bookwrym-Installation zu einem S3-kompatiblen "Bucket". Verwende diesen Befehl, um sicherzustellen, dass alle lokalen Dateien in einen existierenden Bucket hochgeladen werden.</p>
-<h3>set_cors_to_s3 filename</h3>
+<h3 id="set_cors_to_s3-filename"><a class="headerlink" href="#set_cors_to_s3-filename">set_cors_to_s3 filename</a></h3>
 <p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
-<h2>Entwicklung und Test</h2>
+<h2 id="entwicklung-und-test"><a class="headerlink" href="#entwicklung-und-test">Entwicklung und Test</a></h2>
 <p>Diese Befehle sind zurzeit noch nicht im <code>production</code>-Zweig verfügbar.</p>
-<h3>black</h3>
+<h3 id="black"><a class="headerlink" href="#black">black</a></h3>
 <p>BookWyrm verwendet den <a href="https://github.com/psf/black">Black</a> Code-Formatierer, um die Python Codebasis konsistent zu gestalten. Run <code>black</code> before committing your changes so the <code>pylint</code> task does not fail for your pull request and make you sad.</p>
-<h3>prettier</h3>
+<h3 id="prettier"><a class="headerlink" href="#prettier">prettier</a></h3>
 <p>BookWyrm uses <a href="https://prettier.io/">Prettier</a> to keep the JavaScript codebase consistently styled. Run <code>prettier</code> before committing changes to scripts to automatically format your code.</p>
-<h3>stylelint</h3>
+<h3 id="stylelint"><a class="headerlink" href="#stylelint">stylelint</a></h3>
 <p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelintprettier</code> before committing changes to scripts to automatically format your code.</p>
-<h3>formatters</h3>
+<h3 id="formatters"><a class="headerlink" href="#formatters">formatters</a></h3>
 <p>This command runs all code formatters (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) in one go.</p>
-<h3>clean</h3>
+<h3 id="clean"><a class="headerlink" href="#clean">clean</a></h3>
 <p>Remove all stopped Docker containers.</p>
 <p>Äquivalent zu:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
 docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
 </code></pre></div>
 
-<h3>makemessages</h3>
+<h3 id="makemessages"><a class="headerlink" href="#makemessages">makemessages</a></h3>
 <p>Erstellt Nachrichtendateien für alle Übersetzungstexte. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. Siehe <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Djangos makemessages</a>.</p>
-<h3>compilemessages</h3>
+<h3 id="compilemessages"><a class="headerlink" href="#compilemessages">compilemessages</a></h3>
 <p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
-<h3>pytest args</h3>
+<h3 id="pytest-args"><a class="headerlink" href="#pytest-args">pytest args</a></h3>
 <p>Run tests with <code>pytest</code>.</p>
-<h3>deactivate_2fa</h3>
+<h3 id="deactivate_2fa"><a class="headerlink" href="#deactivate_2fa">deactivate_2fa</a></h3>
 <p>Deactivates two factor authentication for a given user.</p>
-<h3>manual_confirm</h3>
+<h3 id="manual_confirm"><a class="headerlink" href="#manual_confirm">manual_confirm</a></h3>
 <p>Confirms a users email, sets the user to active.</p>
 </section>
 

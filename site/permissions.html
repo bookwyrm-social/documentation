@@ -108,11 +108,11 @@ Permissions
                 </li>
                 
                 <li>
-                    <a href="/user-migration.html" >User migration and aliases</a>
+                    <a href="/rss-feeds.html" >RSS Feeds</a>
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/user-migration.html" >User migration and aliases</a>
                 </li>
                 
             </ul>
@@ -219,7 +219,7 @@ Permissions
 <section class="block content">
     <p>User access to different features is controlled using Django's <a href="https://docs.djangoproject.com/en/3.2/topics/auth/default/">built-in authentication system</a>. When an instance is created, the <code>initdb</code> script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the <code>editor</code> group, which allows them to edit book metadata.</p>
 <p>The instance administrator should have <code>superuser</code> status, which gives them access to Django admin (<code>/admin</code>) and confers all permissions to that user.</p>
-<h2>Permissions and groups</h2>
+<h2 id="permissions-and-groups"><a class="headerlink" href="#permissions-and-groups">Permissions and groups</a></h2>
 <p>This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:</p>
 <table>
 <thead>

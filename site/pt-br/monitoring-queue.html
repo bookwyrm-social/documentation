@@ -194,12 +194,12 @@ Monitoring Queue
             
 <section class="block content">
     <p>There might be occurences where your instances behaves slowly. One option would be to inspect the queue to see, whether some jobs hang. Read on to learn how.</p>
-<h2>Celery</h2>
+<h2 id="celery"><a class="headerlink" href="#celery">Celery</a></h2>
 <p>BookWyrm is using <a href="https://docs.celeryq.dev/en/stable/">Celery</a> to manage background jobs.</p>
-<h2>Flower</h2>
+<h2 id="flower"><a class="headerlink" href="#flower">Flower</a></h2>
 <p>To watch Celery jobs in real-time BookWyrm uses <a href="https://flower.readthedocs.io/en/latest/">Flower</a>.</p>
 <p>In case you haven't tweaked the <a href="https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100"><code>docker-compose.yml</code></a> you can find the service on <a href="https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45">port 8888</a>. That is: <code>https://MY_DOMAIN_NAME:8888/</code>.</p>
-<h3>Tasks</h3>
+<h3 id="tasks"><a class="headerlink" href="#tasks">Tasks</a></h3>
 <p>You can find <a href="https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task"><code>@app.task</code> annotated</a> tasks in the codebase.</p>
 </section>
 

@@ -193,7 +193,7 @@ Using a Reverse-Proxy
         <div class="column">
             
 <section class="block content">
-    <h2>Running BookWyrm Behind a Reverse-Proxy</h2>
+    <h2 id="running-bookwyrm-behind-a-reverse-proxy"><a class="headerlink" href="#running-bookwyrm-behind-a-reverse-proxy">Running BookWyrm Behind a Reverse-Proxy</a></h2>
 <p>If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.</p>
 <p>The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files. The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.</p>
 <p>To run BookWyrm behind a reverse-proxy, make the following changes:</p>
@@ -213,7 +213,7 @@ Using a Reverse-Proxy
 </ul>
 <p>At this point, you can follow, the <a href="#server-setup">setup</a> instructions as listed. Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code>).</p>
 <p>Steps for setting up a reverse-proxy are server dependent.</p>
-<h4>Nginx</h4>
+<h4 id="nginx"><a class="headerlink" href="#nginx">Nginx</a></h4>
 <p>Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx. See <a href="http://nginx.org/en/docs/beginners_guide.html">nginx's guide</a> for details.</p>
 <p>To set up your server:</p>
 <ul>

@@ -193,32 +193,32 @@ Style Guide
         <div class="column">
             
 <section class="block content">
-    <h2>Cereri de extragere (pull requests)</h2>
+    <h2 id="cereri-de-extragere-pull-requests"><a class="headerlink" href="#cereri-de-extragere-pull-requests">Cereri de extragere (pull requests)</a></h2>
 <p>Deci vreți să contribuiți la codul BookWyrm: super! Dacă există un tichet nerezolvat pe care ați vrea să-l rezolvați, este util să lăsați un comentariu pentru ca munca să nu fie duplicată. Încercați să păstrați obiectivul cererilor de extragere mic și concentrat pe o singură temă. În acest fel este mai ușor de revizuit, iar dacă o parte are nevoie de schimbări, nu le va bloca pe celelalte.</p>
 <p>Dacă nu sunteți sigur de cum să rezolvați ceva sau nu vă descurcați, este complet în regulă. Doar lăsați un comentariu la cererea de extragere și ne vom descurca 💖.</p>
 <p>Cererile de extragere au nevoie de a trece verificările automate înainte de a fi fuzionate. Acestea includ verificări de stil, lintere globale, o verificare de securitate și teste unitare.</p>
-<h2>Linting</h2>
-<h3>Global</h3>
+<h2 id="linting"><a class="headerlink" href="#linting">Linting</a></h2>
+<h3 id="global"><a class="headerlink" href="#global">Global</a></h3>
 <p>Folosim <a href="https://editorconfig.org">EditorConfig</a> pentru a menține indentarea și finalul liniilor consecvente.</p>
-<h3>Python</h3>
+<h3 id="python"><a class="headerlink" href="#python">Python</a></h3>
 <p>BookWyrm folosește formatorul de cod <a href="https://github.com/psf/black">Black</a> pentru a menține stilul codului consistent. Toate cererile noi de extragere sunt verificate cu acțiunile GitHub și puteți regla în modul automat problemele de stil de cod rulând <code>./bw-dev black</code></p>
 <p>Codul este de asemenea verificat cu Pylint folosind acțiunile GitHub. Avertismentele Pylint trebuie abordate înainte ca cererile de extragere să fie fuzionate, dar este un apel de judecată dacă sugestia ar trebui folosită sau suprimată. Pentru a șterge un avertisment, adăugați un comentariu la finalul sau deasupra avertismentului: <code># pylint: disable=warning-name</code></p>
-<h3>Șabloane (HTML)</h3>
+<h3 id="sabloane-html"><a class="headerlink" href="#sabloane-html">Șabloane (HTML)</a></h3>
 <p>Cererile dumneavoastră de extragere vor fi de asemenea verificate de linterul <a href="https://www.curlylint.org">curlylint</a> pentru șabloanele Django.</p>
-<h3>CSS</h3>
+<h3 id="css"><a class="headerlink" href="#css">CSS</a></h3>
 <p>Folosim <a href="https://stylelint.io">stylelint</a> pentru a verifica toate regulile CSS. Ca și în cazul lui Pylint <a href="https://stylelint.io/user-guide/ignore-code">puteți dezactiva stylelint</a> pentru o regulă particulară, dar veți avea nevoie de o bună justificare pentru a face asta.</p>
-<h3>JavaScript</h3>
+<h3 id="javascript"><a class="headerlink" href="#javascript">JavaScript</a></h3>
 <p><a href="https://eslint.org">ESLint</a> verifică orice modificare JavaScript pe care ați făcut-o. Dacă lui ESLint nu-i place munca dvs. JavaScript, verificați mesajul linterului pentru problema exactă.</p>
-<h2>Design inclusiv</h2>
+<h2 id="design-inclusiv"><a class="headerlink" href="#design-inclusiv">Design inclusiv</a></h2>
 <p>BookWyrm dorește să fie cât mai inclusiv și accesibil posibil.</p>
 <p>Când contribuiți la cod, verificați <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">lista Design Web Inclusiv</a> înainte de a depune cererea dvs. de extragere. Pentru sfaturi de accesibilitate, <a href="https://www.a11y-101.com/development">A11Y-101</a> este de asemenea o resursă utilă. Pentru informații despre cum să faceți șablonul de pagină bilingv, consultați <a href="/translations.html">secțiunea de Traduceri</a>.</p>
 <p>Câteva lucruri care li s-au părut contribuitorilor BookWyrm util de reținut sunt:</p>
-<h3>Formulare</h3>
+<h3 id="formulare"><a class="headerlink" href="#formulare">Formulare</a></h3>
 <ul>
 <li>Folosiți numai <code>input[type="checkbox"]</code> sau <code>input[type="radio"]</code> în interiorul <code>&lt;label&gt;</code></li>
 <li>Dacă nu vă plac casetele de selectare sau butoanele radio în interiorul <code>&lt;label&gt;</code>, <code>&lt;label&gt;</code> ar trebui plasat <em>după</em> elementul la care se referă</li>
 </ul>
-<h3>Butoane și legături</h3>
+<h3 id="butoane-si-legaturi"><a class="headerlink" href="#butoane-si-legaturi">Butoane și legături</a></h3>
 <ul>
 <li>Folosiți <code>&lt;button&gt;</code> pentru orice obiect care declanșează o acțiune JavaScript (de exemplu ascunsul sau afișatul unui formular) sau trimisul unei cereri <code>POST</code> (de exemplu trimiterea unui formular)</li>
 <li>Folosiți<code>&lt;a&gt;</code> pentru orice obiect care declanșează o cerere <code>GET</code>. De obicei, un element ancoră (<code>&lt;a&gt;</code>) nu ar trebui stilizat ca un buton (<code>class="button"</code>), deși există unele excepții precum butoanele de "Anulați". Dacă aveți dubii, cereți sfaturi în cererile dvs. de extragere</li>

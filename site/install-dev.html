@@ -108,11 +108,11 @@ Developer Environment
                 </li>
                 
                 <li>
-                    <a href="/user-migration.html" >User migration and aliases</a>
+                    <a href="/rss-feeds.html" >RSS Feeds</a>
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/user-migration.html" >User migration and aliases</a>
                 </li>
                 
             </ul>
@@ -217,9 +217,9 @@ Developer Environment
         <div class="column">
             
 <section class="block content">
-    <h2>Prerequisites</h2>
+    <h2 id="prerequisites"><a class="headerlink" href="#prerequisites">Prerequisites</a></h2>
 <p>These instructions assume you are developing BookWyrm using Docker. You'll need to <a href="https://docs.docker.com/engine/install/">install Docker</a> and <a href="https://docs.docker.com/compose/install/">docker-compose</a> to get started.</p>
-<h2>Setting up the developer environment</h2>
+<h2 id="setting-up-the-developer-environment"><a class="headerlink" href="#setting-up-the-developer-environment">Setting up the developer environment</a></h2>
 <ul>
 <li>Get a copy of <a href="https://github.com/bookwyrm-social/bookwyrm">the BookWyrm codebase from GitHub</a>. You can <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">create a fork</a> of the repository, and then <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">use <code>git clone</code> to download the code</a> to your computer.</li>
 <li>Go to the directory which contains the code on your computer, you'll be working from there from here on out.</li>
@@ -253,13 +253,13 @@ Developer Environment
 <li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code> and create an admin user.</li>
 </ul>
 <p>If you're curious: the <code>./bw-dev</code> command is a simple shell script runs various other tools: above, you could skip it and run <code>docker-compose build</code> or <code>docker-compose up</code> directly if you like. <code>./bw-dev</code> just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
-<h3>Editing or creating Models</h3>
+<h3 id="editing-or-creating-models"><a class="headerlink" href="#editing-or-creating-models">Editing or creating Models</a></h3>
 <p>If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's <code>makemigrations</code> command to create a new <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django migrations file</a>, and then <code>migrate</code> it:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h3>Editing static files</h3>
+<h3 id="editing-static-files"><a class="headerlink" href="#editing-static-files">Editing static files</a></h3>
 <p>Any time you edit the CSS or JavaScript, you will need to run Django's <code>collectstatic</code> command again in order for your changes to have effect:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>

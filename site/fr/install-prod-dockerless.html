@@ -194,14 +194,14 @@ Installation sans Docker
             
 <section class="block content">
     <p>Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites preuve de prudence lors de son utilisation en production. Ce mode d'installation nécessite plus de travail, et est donc à réserver aux administrateurs plus expérimentés. L'installation via docker est recommandée Cette méthode d'installation suppose que vous ayez déjà configuré ssl, avec les certificats à votre disposition</p>
-<h2>Configuration du serveur</h2>
+<h2 id="configuration-du-serveur"><a class="headerlink" href="#configuration-du-serveur">Configuration du serveur</a></h2>
 <ul>
 <li>Obtenez un nom de domaine et configurez le DNS pour votre serveur. Vous devez faire pointer les serveurs de noms de domaine de votre fournisseur DNS vers le serveur où vous allez héberger BookWyrm. Voici les instructions pour <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Configurez votre serveur avec des pare-feu appropriés pour l'exécution d'une application web (ces instructions ont été testées avec Ubuntu 20.04). Voici les instructions pour <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Configurez un service de messagerie (tel que <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) et les paramètres SMTP/DNS appropriés. Utilisez la documentation du service pour la configuration de votre DNS</li>
 <li>Installez les dépendances. Sous debian, cela pourrait ressembler à <code>apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev</code></li>
 </ul>
-<h2>Installez et configurez BookWyrm</h2>
+<h2 id="installez-et-configurez-bookwyrm"><a class="headerlink" href="#installez-et-configurez-bookwyrm">Installez et configurez BookWyrm</a></h2>
 <p>La branche <code>production</code> de BookWyrm contient un certain nombre d'outils qui ne sont pas sur la branche <code>main</code>, prévus pour fonctionner en production, tels que des modifications de <code>docker-compose</code> pour mettre à jour les commandes par défaut ou la configuration des conteneurs, ou des modifications spécifiques à des containers pour activer des fonctionnalités telles que SSL ou des sauvegardes régulières. Tous ces changements n'ont pas nécessairement un impact sur l'installation sans docker, mais la branche <code>production</code> est néanmoins recommandée</p>
 <p>Instructions pour l'exécution de BookWyrm en production sans Docker :</p>
 <ul>
@@ -334,7 +334,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 
 <p>Vous devrez configurer une tâche Cron pour que le service démarre automatiquement au redémarrage du serveur.</p>
 <p>Félicitations ! Vous y êtes arrivé !! Configurez votre instance comme vous le souhaitez.</p>
-<h2>Participer</h2>
+<h2 id="participer"><a class="headerlink" href="#participer">Participer</a></h2>
 <p>Voir <a href="https://joinbookwyrm.com/get-involved/">Participer</a> pour plus de détails.</p>
 </section>
 

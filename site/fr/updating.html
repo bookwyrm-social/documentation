@@ -201,7 +201,7 @@ Mise à jour de votre instance
 <li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> charge tous les fichiers statiques mis à jour (comme les fichiers JavaScript et CSS)</li>
 <li><code>docker-compose down; docker-compose up -d</code> redémarrera tous les conteneurs docker et utilisera les images nouvellement construites (attention : l'instance sera inaccessible pendant son redémarrage)</li>
 </ul>
-<h2>Reconstruire les flux d'activité</h2>
+<h2 id="reconstruire-les-flux-dactivite"><a class="headerlink" href="#reconstruire-les-flux-dactivite">Reconstruire les flux d'activité</a></h2>
 <p>Les flux de chaque utilisateur·ice sont stockés dans Redis. Pour repeupler un flux, il faut utiliser la commande de gestion :</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>populate_streams
 <span class="c1"># Ou en utilisant directement docker-compose</span>

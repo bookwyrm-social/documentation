@@ -108,11 +108,11 @@ Style Guide
                 </li>
                 
                 <li>
-                    <a href="/user-migration.html" >User migration and aliases</a>
+                    <a href="/rss-feeds.html" >RSS Feeds</a>
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/user-migration.html" >User migration and aliases</a>
                 </li>
                 
             </ul>
@@ -217,32 +217,32 @@ Style Guide
         <div class="column">
             
 <section class="block content">
-    <h2>Pull requests</h2>
+    <h2 id="pull-requests"><a class="headerlink" href="#pull-requests">Pull requests</a></h2>
 <p>So you want to contribute code to BookWyrm: that rules! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.</p>
 <p>If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.</p>
 <p>Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.</p>
-<h2>Linting</h2>
-<h3>Global</h3>
+<h2 id="linting"><a class="headerlink" href="#linting">Linting</a></h2>
+<h3 id="global"><a class="headerlink" href="#global">Global</a></h3>
 <p>We use <a href="https://editorconfig.org">EditorConfig</a> to maintain consistent indenting and line endings.</p>
-<h3>Python</h3>
+<h3 id="python"><a class="headerlink" href="#python">Python</a></h3>
 <p>BookWyrm uses the <a href="https://github.com/psf/black">Black</a> code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running <code>./bw-dev black</code></p>
 <p>Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: <code># pylint: disable=warning-name</code></p>
-<h3>Templates (HTML)</h3>
+<h3 id="templates-html"><a class="headerlink" href="#templates-html">Templates (HTML)</a></h3>
 <p>Your pull request will also be checked by the <a href="https://www.curlylint.org">curlylint</a> linter for Django templates.</p>
-<h3>CSS</h3>
+<h3 id="css"><a class="headerlink" href="#css">CSS</a></h3>
 <p>We use <a href="https://stylelint.io">stylelint</a> to check all CSS rules. As with Pylint <a href="https://stylelint.io/user-guide/ignore-code">you can disable stylelint</a> for a particular rule, but you will need a good justification for doing so.</p>
-<h3>JavaScript</h3>
+<h3 id="javascript"><a class="headerlink" href="#javascript">JavaScript</a></h3>
 <p><a href="https://eslint.org">ESLint</a> checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.</p>
-<h2>Inclusive Design</h2>
+<h2 id="inclusive-design"><a class="headerlink" href="#inclusive-design">Inclusive Design</a></h2>
 <p>Bookwyrm aims to be as inclusive and accessible as possible.</p>
 <p>When contributing code, check the <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">Inclusive Web Design Checklist</a> before you file your pull request. For accessibility advice, <a href="https://www.a11y-101.com/development">A11Y-101</a> is also a useful source. For information on how to make your page templates multi-lingual, see the <a href="/translation.html">Translations section</a>.</p>
 <p>Some particular things that Bookwyrm contributors have found useful to remember are:</p>
-<h3>Forms</h3>
+<h3 id="forms"><a class="headerlink" href="#forms">Forms</a></h3>
 <ul>
 <li>Only use <code>input[type="checkbox"]</code> or <code>input[type="radio"]</code> inside <code>&lt;label&gt;</code></li>
 <li>If you do not place checkboxes and radio buttons inside the <code>&lt;label&gt;</code>, the <code>&lt;label&gt;</code> should be placed <em>after</em> the element it relates to</li>
 </ul>
-<h3>Buttons and Links</h3>
+<h3 id="buttons-and-links"><a class="headerlink" href="#buttons-and-links">Buttons and Links</a></h3>
 <ul>
 <li>Use a <code>&lt;button&gt;</code> element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a <code>POST</code> request (e.g. submitting a form)</li>
 <li>Use an <code>&lt;a&gt;</code> element for anything that triggers a <code>GET</code> request. Usually, an anchor (<code>&lt;a&gt;</code>) element should not be styled as a button (<code>class="button"</code>), though there are some exceptions, such as "Cancel" buttons. If in doubt, ask for advice in your pull request</li>

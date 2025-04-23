@@ -201,7 +201,7 @@ Updating Your Instance
 <li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> loads any updated static files (such as the JavaScript and CSS)</li>
 <li><code>docker-compose down; docker-compose up -d</code> will restart all the docker containers and make use of the newly built images (Attention: downtime during the restart)</li>
 </ul>
-<h2>Recompilați fluxurile de activitate</h2>
+<h2 id="recompilati-fluxurile-de-activitate"><a class="headerlink" href="#recompilati-fluxurile-de-activitate">Recompilați fluxurile de activitate</a></h2>
 <p>Fluxurile pentru fiecare utilizator sunt stocate în Redis. Pentru a repopula un flux, folosiți comanda de gestionare:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>populate_streams
 <span class="c1"># Sau folosiți direct docker-compose</span>

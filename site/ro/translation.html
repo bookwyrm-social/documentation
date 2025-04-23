@@ -193,13 +193,13 @@ Translations
         <div class="column">
             
 <section class="block content">
-    <h2>Contribuiți la traducere</h2>
+    <h2 id="contribuiti-la-traducere"><a class="headerlink" href="#contribuiti-la-traducere">Contribuiți la traducere</a></h2>
 <p>Puteți să vă alăturați proiectului de traducere BookWyrm la <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a>.</p>
-<h2>Limbaj neutru de gen</h2>
+<h2 id="limbaj-neutru-de-gen"><a class="headerlink" href="#limbaj-neutru-de-gen">Limbaj neutru de gen</a></h2>
 <p>Ori de câte ori este posibil, traducerile BookWyrm ar trebui să folosească limbaj de gen neutru. Asta se aplică dacă o limbă folosește în mod implicit genul masculin ca gen neutru sau dacă folosește ceva similar precum „el/ea”. Este de asemenea important ca traducerile să fie clare, concise și lizibile pentru un cititor de ecran. Uneori, aceste obiective intră în conflict. Nu există un răspuns perfect, universal valabil. Soluția depinde de limbă.</p>
 <p>Ca directivă principală, încercați să acordați prioritate unui limbaj incluziv și neutru decât unui limbaj formal corect sau aprobat în mod oficial. În engleză, de exemplu, foarte multe recomandări de stil necesită un pronume persoana I „she” sau „he” pentru a se referi la un individ, dar ar fi mai bine ca în BookWyrm să se folosească în schimb „they”, neutru din punct de vedere al genului.</p>
 <p>Dacă nu sunteți siguri despre cum să abordați cel mai bine o problemă de traducere, lăsați un comentariu sau deschideți <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">un subiect de discuție</a> pentru a adresa întrebări la scară mai largă.</p>
-<h2>Traducerea șabloanelor</h2>
+<h2 id="traducerea-sabloanelor"><a class="headerlink" href="#traducerea-sabloanelor">Traducerea șabloanelor</a></h2>
 <p>BookWyrm profită de funcționalitățile de traducere Django pentru a permite conținutului paginii să se schimbe în funcție de limba de afișare aleasă de utilizator. Documentația Django <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">oferă o explicație utilă</a> despre cum funcționează acest proces, dar iată versiunea scurtă:</p>
 <ul>
 <li>toate șabloanele text trebuie să includă taguri de șabloane de traducere</li>
@@ -207,7 +207,7 @@ Translations
 <li>Dacă blocul de text este text literal, puteți folosiți tagul șablon <code>{% trans %}</code></li>
 <li>Dacă blocul de text include variabile, ar trebui să folosiți perechea de taguri șablon <code>{% blocktrans %}</code> și <code>{% endblocktrans %}</code>. Dacă includeți spațiu alb sau treceri la linie nouă, folosiți <code>trimmed</code> pentru a le înlătura automat când fișierul de localizare este generat: <code>{% blocktrans trimmed %}</code></li>
 </ul>
-<h3>Exemple</h3>
+<h3 id="exemple"><a class="headerlink" href="#exemple">Exemple</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>

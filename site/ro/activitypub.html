@@ -194,8 +194,8 @@ ActivitatePub
             
 <section class="block content">
     <p>BookWyrm folosește protocolul <a href="http://activitypub.rocks/">ActivityPub</a> pentru a trimite și primi activitatea utilizatorului între alte instanțe BookWyrm și alte servicii care implementează ActivityPub, precum <a href="https://joinmastodon.org/">Mastodon</a>. Pentru a gestiona datele cărților, BookWyrm are câteva tipuri Activity extinse care nu fac parte din standard, dar înțelese de alte instanțe BookWyrm.</p>
-<h2>Activități și obiecte</h2>
-<h3>Utilizatori și relații</h3>
+<h2 id="activitati-si-obiecte"><a class="headerlink" href="#activitati-si-obiecte">Activități și obiecte</a></h2>
+<h3 id="utilizatori-si-relatii"><a class="headerlink" href="#utilizatori-si-relatii">Utilizatori și relații</a></h3>
 <p>Interacțiunile dintre relațiile utilizatorilor respectă specificația ActivityPub.</p>
 <ul>
 <li><code>Follow</code>: solicitați să primiți stări de la un utilizator și să le vizualizați pe cele cu confidențialitatea „numai urmăritori”</li>
@@ -206,15 +206,15 @@ ActivitatePub
 <li><code>Delete</code>: dezactivează un utilizator</li>
 <li><code>Undo</code>: anulează o <code>cerere de urmărire</code> sau <code>de blocare</code></li>
 </ul>
-<h3>Stări</h3>
-<h4>Tipuri de obiecte</h4>
+<h3 id="stari"><a class="headerlink" href="#stari">Stări</a></h3>
+<h4 id="tipuri-de-obiecte"><a class="headerlink" href="#tipuri-de-obiecte">Tipuri de obiecte</a></h4>
 <ul>
 <li><code>Notă</code>: pe servicii precum Mastodon, <code>Notele</code> sunt tipul principal de stare. Ele conțin corpul mesajului, atașamentele, pot menționa utilizatori și pot fi răspunsuri la stări de orice tip. În cadrul BookWyrm, <code>notele</code> pot fi create ca mesaje directe sau ca răspunsuri la alte stări.</li>
 <li><code>Review</code>: A review is a status in response to a book (indicated by the <code>inReplyToBook</code> field), which has a title, body, and numerical rating between 0 (not rated) and 5.</li>
 <li><code>Comentariu</code>: un comentariu despre o carte menționează cartea respectivă și are un corp de mesaj.</li>
 <li><code>Quotation</code>: A quote has a message body, an excerpt from a book, and mentions a book.</li>
 </ul>
-<h4>Activități</h4>
+<h4 id="activitati"><a class="headerlink" href="#activitati">Activități</a></h4>
 <ul>
 <li><code>Create</code>: salvează o nouă stare în baza de date.</li>
 </ul>
@@ -228,21 +228,21 @@ ActivitatePub
 <li><code>Announce</code>: partajează starea pe fluxul actorului</li>
 <li><code>Undo</code>: anulează <code>Like</code> sau <code>Announce</code></li>
 </ul>
-<h3>Colecții</h3>
+<h3 id="colectii"><a class="headerlink" href="#colectii">Colecții</a></h3>
 <p>Cărțile și listele utilizatorului sunt reprezentate de <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection"><code>OrderedCollection</code></a></p>
-<h4>Obiecte</h4>
+<h4 id="obiecte"><a class="headerlink" href="#obiecte">Obiecte</a></h4>
 <ul>
 <li><code>Shelf</code>: o colecție de cărți a utilizatorului. În mod implicit, fiecare utilizator are un raft „<code>de citit</code>”, „<code>în curs de citire</code>” și „<code>citit</code>” pentru a urmări progresul de lectură.</li>
 <li><code>List</code>: o colecție de cărți care poate avea articole contribuite de alți utilizatori.</li>
 </ul>
-<h4>Activități</h4>
+<h4 id="activitati_1"><a class="headerlink" href="#activitati_1">Activități</a></h4>
 <ul>
 <li><code>Create</code>: adaugă un raft sau o listă în baza de date.</li>
 <li><code>Delete</code>: înlătură un raft sau o listă.</li>
 <li><code>Add</code>: adaugă o carte pe un raft sau într-o listă.</li>
 <li><code>Remove</code>: înlătură o carte de pe un raft sau dintr-o listă.</li>
 </ul>
-<h2>Serializare alternativă</h2>
+<h2 id="serializare-alternativa"><a class="headerlink" href="#serializare-alternativa">Serializare alternativă</a></h2>
 <p>Deoarece BookWyrm folosește propriile tipuri de obiecte (<code>Review</code>, <code>Comment</code>, <code>Quotation</code>) care nu sunt suportate de ActivityPub, stările sunt transformate în tipuri standard când sunt trimise sau vizualizate de servicii din afara BookWyrm. <code>Review</code>s sunt convertite în <code>Article</code>s, iar <code>Comment</code>s și <code>Quotation</code>s sunt convertite în <code>Note</code>s cu o legătură către cartea și imaginea de copertă atașate.</p>
 </section>
 

@@ -108,11 +108,11 @@ Documentation
                 </li>
                 
                 <li>
-                    <a href="/user-migration.html" >User migration and aliases</a>
+                    <a href="/rss-feeds.html" >RSS Feeds</a>
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/user-migration.html" >User migration and aliases</a>
                 </li>
                 
             </ul>
@@ -218,12 +218,12 @@ Documentation
             
 <section class="block content">
     <p>The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.</p>
-<h2>Suggesting an improvement</h2>
+<h2 id="suggesting-an-improvement"><a class="headerlink" href="#suggesting-an-improvement">Suggesting an improvement</a></h2>
 <p>You can report an <strong>error</strong>, suggest an <strong>improvement</strong> or request an <strong>addition</strong> to the documentation by <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue">creating an issue</a> in <a href="https://github.com/bookwyrm-social/documentation">the documentation repository</a>.</p>
-<h2>How the docs are made</h2>
+<h2 id="how-the-docs-are-made"><a class="headerlink" href="#how-the-docs-are-made">How the docs are made</a></h2>
 <p>The Documentation <a href="https://github.com/bookwyrm-social/documentation">has its own GitHub repository</a>. Documentation is written in Markdown and we use <a href="https://jinja.palletsprojects.com/en/stable">Jinja</a> and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).</p>
 <p>All source files are saved in the <code>content</code> directory. Each section has a directory within that, with each page being represented by a single markdown file.</p>
-<h2>Editing or creating a documentation page</h2>
+<h2 id="editing-or-creating-a-documentation-page"><a class="headerlink" href="#editing-or-creating-a-documentation-page">Editing or creating a documentation page</a></h2>
 <p>To edit or create a new page you will need to:</p>
 <ol>
 <li>clone <a href="https://github.com/bookwyrm-social/documentation">the GitHub repository</a></li>
@@ -233,7 +233,7 @@ Documentation
 <li>enjoy seeing your updates instantly published when your pull request is approved and merged</li>
 </ol>
 <p>If you have never used git or GitHub before, that may sound daunting, but let's break it down:</p>
-<h3>Clone the repository</h3>
+<h3 id="clone-the-repository"><a class="headerlink" href="#clone-the-repository">Clone the repository</a></h3>
 <ol>
 <li>Make sure you have <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">a GitHub account</a>.</li>
 <li>
@@ -246,7 +246,7 @@ Documentation
 <p><code>git clone https://github.com/bookwyrm-social/documentation.git</code></p>
 </li>
 </ol>
-<h3>Create a new branch and make your edits</h3>
+<h3 id="create-a-new-branch-and-make-your-edits"><a class="headerlink" href="#create-a-new-branch-and-make-your-edits">Create a new branch and make your edits</a></h3>
 <ol>
 <li><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue">Create a new branch</a> in your fork</li>
 <li>Make your edits in the <code>content</code> directory and <strong>commit</strong> your changes:<ul>
@@ -257,7 +257,7 @@ Documentation
 </li>
 </ol>
 <p>At this point you might want to see what your changes will look like when published. See "Building docs locally" below for instruction on how to preview your changes.</p>
-<h3>Create a pull request</h3>
+<h3 id="create-a-pull-request"><a class="headerlink" href="#create-a-pull-request">Create a pull request</a></h3>
 <p>Once you have completed your changes, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">make a pull request</a> to the docs repository.</p>
 <p>Your pull request will be reviewed and one of three things will happen:</p>
 <ol>
@@ -265,12 +265,12 @@ Documentation
 <li>You will be asked to make <strong>changes</strong></li>
 <li>It will be <strong>rejected</strong> and closed</li>
 </ol>
-<h3>Respond to reviews</h3>
+<h3 id="respond-to-reviews"><a class="headerlink" href="#respond-to-reviews">Respond to reviews</a></h3>
 <p>If you are asked to make changes, you can make them locally and <code>push</code> your local changes to your fork/clone on GitHub. This will automatically flow through to your pull request. Let the reviewer know when you have completed your updates so they can do another review and hopefully "pull" your changes.</p>
 <p>We welcome all contributions. It would be unusual for a contribution to the docs to be rejected immediately. This would only happen if your pull request introduces information that is wrong or misleading with no chance of being improved, or if it has been declared out of scope.</p>
-<h3>Your changes are published</h3>
+<h3 id="your-changes-are-published"><a class="headerlink" href="#your-changes-are-published">Your changes are published</a></h3>
 <p>When your pull request is merged, <a href="https://docs.joinbookwyrm.com/">the documentation</a> is automatically updated. You may need to refresh your browser or use "incognito mode" to see the changes in your browser.</p>
-<h2>New pages</h2>
+<h2 id="new-pages"><a class="headerlink" href="#new-pages">New pages</a></h2>
 <p>If you are adding a new page, you will need to add some metadata and may need to adjust other pages.</p>
 <p>At the top of each markdown file is the "frontmatter" in <code>toml</code> format, with a <code>---</code> line above and below:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="p">:</span><span class="w"> </span><span class="n">Documentation</span>
@@ -279,7 +279,7 @@ Documentation
 </code></pre></div>
 
 <p>This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, <code>Contributing</code>), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.</p>
-<h2>Building docs locally</h2>
+<h2 id="building-docs-locally"><a class="headerlink" href="#building-docs-locally">Building docs locally</a></h2>
 <p>You might want to see what your changes will look like before sending a pull request. The docs repository includes a development script like the main code repository, with the same name: <code>bw-dev</code>. You can use this to test what your changes will look like.</p>
 <p>Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you <a href="https://docs.python.org/3/library/venv.html">use a virtual environment</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
@@ -288,12 +288,12 @@ Documentation
 </code></pre></div>
 
 <p>There are a number of commands available by running <code>./bw-dev &lt;command&gt;</code>. The ones you are likely to want to use are:</p>
-<h3>site:compile</h3>
+<h3 id="sitecompile"><a class="headerlink" href="#sitecompile">site:compile</a></h3>
 <p>This will compile markdown files into html files using the <code>generate.py</code> script.</p>
 <p>When you run <code>site:compile</code> it will generate a large number of files in the <code>site</code> directory. Do not check these in or include them in your pull request: they will be re-generated on the documentation server when your pull request is merged.</p>
-<h3>site:serve</h3>
+<h3 id="siteserve"><a class="headerlink" href="#siteserve">site:serve</a></h3>
 <p>This runs a local web server at <code>http://[::1]:8080/</code> so you can see what the docs will look like.</p>
-<h3>black</h3>
+<h3 id="black"><a class="headerlink" href="#black">black</a></h3>
 <p>This will run <code>black</code> to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in <code>content</code>.</p>
 </section>
 

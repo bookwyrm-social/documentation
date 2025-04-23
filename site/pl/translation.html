@@ -193,13 +193,13 @@ Tłumaczenia
         <div class="column">
             
 <section class="block content">
-    <h2>Udzielanie się w tłumaczeniach</h2>
+    <h2 id="udzielanie-sie-w-tumaczeniach"><a class="headerlink" href="#udzielanie-sie-w-tumaczeniach">Udzielanie się w tłumaczeniach</a></h2>
 <p>Możesz dołączyć do projektu tłumaczenia BookWyrm na <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a>.</p>
-<h2>Język neutralny płciowo</h2>
+<h2 id="jezyk-neutralny-pciowo"><a class="headerlink" href="#jezyk-neutralny-pciowo">Język neutralny płciowo</a></h2>
 <p>Tam, gdzie to możliwe, tłumaczenia BookWyrm powinny zawierać neutralne płciowo wyrazy. Ma to zastosowanie również, gdy rodzaj męski jest traktowany jako neutralny lub istnieje coś podobnego do "on/ona". Równie ważne jest, aby przetłumaczone treści były jasne, zwięzłe i czytelne dla użytkownika, a czasami te wartości nie idą w parze; nie ma jednej odpowiedzi na wszystkie aspekty, więc należy wykorzystać wszelkie zasoby języka.</p>
 <p>Poświęć więcej uwagi na integrację oraz neutralny płciowo język niż na poprawność lub oficjalne formy stylizacji. Na przykład w języku angielskim wiele formalnych zwrotów wymaga użycia zaimka "ona" lub "on", gdy odnosimy się do osoby, ale lepiej będzie, jeśli na BookWyrm zastosujemy neutralne płciowo "ono/oni".</p>
 <p>Jeśli nie masz pewności, jak najlepiej podejść do problemu z tłumaczeniem, dodaj komentarz do tłumaczenia lub utwórz <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">dyskusję</a>, aby uzyskać odpowiedź na bardziej zawiłe pytania.</p>
-<h2>Umożliwianie tłumaczenia szablonów</h2>
+<h2 id="umozliwianie-tumaczenia-szablonow"><a class="headerlink" href="#umozliwianie-tumaczenia-szablonow">Umożliwianie tłumaczenia szablonów</a></h2>
 <p>BookWyrm korzysta z funkcji tłumaczenia Django, aby umożliwić zmienianie treści strony w zależności od języka wybranego przez użytkownika. Dokumentacja Django <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">zawiera pomocne objaśnienia</a>, jak to działa, a tutaj krótkie jej podusmowanie:</p>
 <ul>
 <li>cały tekst szablonu powinien zawierać znaczniki tłumaczenia szablonu</li>
@@ -207,7 +207,7 @@ Tłumaczenia
 <li>Jeśli blok tekstu jest tekstem dosłownym, możesz skorzystać z znacznika szablonu <code>{% trans %}</code></li>
 <li>Jeśli blok tekstu zawiera zmiennie, należy użyć pary znaczników <code>{% blocktrans %}</code> oraz <code>{% endblocktrans %}</code>. If you are including padding whitespace or line breaks, use <code>trimmed</code> to automatically remove it when the locale file is generated: <code>{% blocktrans trimmed %}</code></li>
 </ul>
-<h3>Przykłady</h3>
+<h3 id="przykady"><a class="headerlink" href="#przykady">Przykłady</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>

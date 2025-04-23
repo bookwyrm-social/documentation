@@ -193,9 +193,9 @@
         <div class="column">
             
 <section class="block content">
-    <h2>Wymagania wstępne</h2>
+    <h2 id="wymagania-wstepne"><a class="headerlink" href="#wymagania-wstepne">Wymagania wstępne</a></h2>
 <p>Te instrukcje zakładają, że rozwijasz BookWyrm przy użyciu Docker. Aby rozpocząć, należy <a href="https://docs.docker.com/engine/install/">zainstalować Docker</a> i <a href="https://docs.docker.com/compose/install/">docker-compose</a>.</p>
-<h2>Konfigurowanie środowiska programistycznego</h2>
+<h2 id="konfigurowanie-srodowiska-programistycznego"><a class="headerlink" href="#konfigurowanie-srodowiska-programistycznego">Konfigurowanie środowiska programistycznego</a></h2>
 <ul>
 <li>Uzyskaj kopię <a href="https://github.com/bookwyrm-social/bookwyrm">kodu BookWyrm z GitHub</a>. Możesz <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">zduplikować</a> repozytorium, a następnie <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">użyć <code>git clone</code>, aby pobrać kod</a> na swój komputer.</li>
 <li>Katalog, na którym znajduje się kod na Twoim komputerze to miejsce, z którego od teraz będziesz pracować.</li>
@@ -228,13 +228,13 @@
 <li>Po zakończeniu kompilacji możesz uzyskać dostęp pod <code>ttp://localhost:1333</code> i utworzyć konto administratora.</li>
 </ul>
 <p>Dla ciekawskich: polecenie <code>./bw-dev</code> to prosty skrypt uruchamiający wiele różnych narzędzi: powyżej możesz pominąć je i wykonać <code>docker-compose build</code> lub <code>docker-compose up</code> bezpośrednio, jeśli chcesz. <code>./bw-dev</code> po prostu gromadzi je wszystkie w jednym miejscu. Uruchom polecenia bez argumentów, aby uzyskać listę dostępnych poleceń, odczytać <a href="/command-line-tool.html">stronę dokumentacji</a> dla niego lub otwórz ją i rozejrzyj się, aby sprawdzić, co dokładnie robi dane polecenie!</p>
-<h3>Edytowanie lub tworzenie modeli</h3>
+<h3 id="edytowanie-lub-tworzenie-modeli"><a class="headerlink" href="#edytowanie-lub-tworzenie-modeli">Edytowanie lub tworzenie modeli</a></h3>
 <p>Zmieniając lub tworząc model prawdopodobnie ulegnie zmianie struktura bazy danych. Aby te zmiany zostały zastosowane, należy uruchomić polecenie Django <code>makemigrations</code>, aby utworzyć nowy <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">plik migracji Django</a>, a następnie przenieść go (<code>migrate</code>):</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h3>Edytowanie plików statycznych</h3>
+<h3 id="edytowanie-plikow-statycznych"><a class="headerlink" href="#edytowanie-plikow-statycznych">Edytowanie plików statycznych</a></h3>
 <p>Za każdym razem, gdy edytujesz CSS lub JavaScript, należy ponownie uruchomić polecenie Django <code>collectstatic</code>, aby miany zostały zastosowane:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>

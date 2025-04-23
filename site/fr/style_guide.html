@@ -193,32 +193,32 @@ Style Guide
         <div class="column">
             
 <section class="block content">
-    <h2>Pull requests</h2>
+    <h2 id="pull-requests"><a class="headerlink" href="#pull-requests">Pull requests</a></h2>
 <p>Vous voulez contribuer au code de BookWyrm, c’est génial ! S'il y a un problème ouvert que vous souhaitez corriger, il est préférable de laisser un commentaire dans la conversation pour que le travail ne soit pas dupliqué. Essayez de limiter la portée des pull requests et de concentrer votre attention sur un seul sujet. Comme ça elle est plus facile à relire, et si une partie a besoin de changements elle ne retardera pas les autres parties.</p>
 <p>Si vous ne savez pas comment régler un problème, ou que vous n'êtes plus disponible pour le faire, ne vous en faites pas. Laissez simplement un commentaire sur la pull request et nous allons prendre le relais 💖.</p>
 <p>Les pull requests doivent valider tous les tests automatiques avant d'être fusionnées, ça inclut des vérifications de style, des linters globaux, un test de sécurité et des tests unitaires.</p>
-<h2>Lint</h2>
-<h3>Global</h3>
+<h2 id="lint"><a class="headerlink" href="#lint">Lint</a></h2>
+<h3 id="global"><a class="headerlink" href="#global">Global</a></h3>
 <p>Nous utilisons <a href="https://editorconfig.org">EditorConfig</a> pour maintenir la cohérence de l’indentation et des fins de lignes.</p>
-<h3>Python</h3>
+<h3 id="python"><a class="headerlink" href="#python">Python</a></h3>
 <p>BookWyrm utilise le formateur de code <a href="https://github.com/psf/black">Black</a> pour maintenir la cohérence de la base de code Python. Toutes les nouvelles pull requests sont vérifiées avec des actions GitHub, et vous pouvez corriger automatiquement les problèmes de style de code en exécutant <code>./bw-dev black</code></p>
 <p>Le code est également vérifié avec Pylint via une action GitHub. Les avertissements de Pylint doivent être traités avant que les pull requests soient fusionnées, mais c'est une question de jugement si la suggestion doit être utilisée, ou l'avertissement supprimé. Pour supprimer un avertissement, ajoutez un commentaire à la fin ou sur la ligne précédant les avertissements : <code># pylint: disable=nom-de-la-regle</code></p>
-<h3>Gabarits (HTML)</h3>
+<h3 id="gabarits-html"><a class="headerlink" href="#gabarits-html">Gabarits (HTML)</a></h3>
 <p>Votre pull request sera également vérifiée par le linter <a href="https://www.curlylint.org">curlylint</a> pour les gabarits Django.</p>
-<h3>CSS</h3>
+<h3 id="css"><a class="headerlink" href="#css">CSS</a></h3>
 <p>Nous utilisons <a href="https://stylelint.io">stylelint</a> pour vérifier toutes les règles CSS. Comme pour Pylint <a href="https://stylelint.io/user-guide/ignore-code">vous pouvez désactiver le stylelint</a> pour une règle particulière, mais vous aurez besoin d'une bonne justification pour le faire.</p>
-<h3>JavaScript</h3>
+<h3 id="javascript"><a class="headerlink" href="#javascript">JavaScript</a></h3>
 <p><a href="https://eslint.org">ESLint</a> vérifie toute modification effectuée en JavaScript. Si ESLint n'aime pas votre JavaScript (même fonctionnel), vérifiez le message linter pour le problème exact.</p>
-<h2>Design inclusif</h2>
+<h2 id="design-inclusif"><a class="headerlink" href="#design-inclusif">Design inclusif</a></h2>
 <p>BookWyrm aspire à être aussi inclusif et accessible que possible.</p>
 <p>Lorsque vous contribuez du code, vérifiez la <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">checklist Inclusive Web Design</a> avant de proposer votre pull request. Pour des conseils sur l'accessibilité, <a href="https://www.a11y-101.com/development">A11Y-101</a> est également une ressource utile. Pour plus d'informations sur la manière de rendre vos gabarits de page multilingues, voir <a href="/translations.html">la section Traductions</a>.</p>
 <p>Quelques particularités à garder en tête pour la contribution au code de BookWyrm :</p>
-<h3>Formulaires</h3>
+<h3 id="formulaires"><a class="headerlink" href="#formulaires">Formulaires</a></h3>
 <ul>
 <li>N'utiliser <code>input[type="checkbox"]</code> ou <code>input[type="radio"]</code> qu’à l'intérieur de <code>&lt;label&gt;</code></li>
 <li>Si vous ne placez pas les cases à cocher et les boutons radio à l'intérieur du <code>&lt;label&gt;</code>, le <code>&lt;label&gt;</code> doit être placé <em>après</em> l'élément auquel il se rapporte</li>
 </ul>
-<h3>Boutons et Liens</h3>
+<h3 id="boutons-et-liens"><a class="headerlink" href="#boutons-et-liens">Boutons et Liens</a></h3>
 <ul>
 <li>Utilisez un élément <code>&lt;button&gt;</code> pour tout ce qui a pour but de déclencher une action JavaScript (par ex. cacher ou révéler un formulaire) ou envoyer une requête <code>POST</code> (par ex. soumettre un formulaire)</li>
 <li>Utilisez un élément <code>&lt;a&gt;</code> pour tout ce qui déclenche une requête <code>GET</code>. Habituellement, un lien (<code>&lt;a&gt;</code>) ne doit pas avoir l’apparence d’un bouton (<code>class="button"</code>), bien qu'il y ait quelques exceptions comme les boutons "Annuler". En cas de doute, demandez conseil dans votre pull request</li>

@@ -108,11 +108,11 @@ Management Commands
                 </li>
                 
                 <li>
-                    <a href="/user-migration.html" >User migration and aliases</a>
+                    <a href="/rss-feeds.html" >RSS Feeds</a>
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/user-migration.html" >User migration and aliases</a>
                 </li>
                 
             </ul>
@@ -218,17 +218,17 @@ Management Commands
             
 <section class="block content">
     <p>In the <code>bookwyrm/management/commands</code> directory there are some commands to manipulate the instance’s database. Some of them are documented here.</p>
-<h2>Merging objects</h2>
+<h2 id="merging-objects"><a class="headerlink" href="#merging-objects">Merging objects</a></h2>
 <p>Quite often an instance will end up with duplicate books and authors or editions that appear as separate books when they are actually just different editions of the same work. This can happen because of importing editions that don’t have shared identifiers or from user mistakes. Sadly there’s no user interface to correct this for the time being, but in cases where the books are important for your instance you can use these management commands to fix some of the problems if you are using at least version 0.6.2.</p>
 <p>Please take extra care when using these commands because if you make a mistake there’s no way to undo it.</p>
-<h3>Merging editions</h3>
+<h3 id="merging-editions"><a class="headerlink" href="#merging-editions">Merging editions</a></h3>
 <p>If an edition of a book appears twice in the database and you are sure they are actually both referring to same edition, you can combine them into one with a command like this:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev runweb python manage.py merge_editions --canonical=27 --other=38
 </code></pre></div>
 
 <p>This will copy any missing information from edition 38 (the “other” edition) over to edition 27 (the “canonical” edition) and then delete the other edition. If any field of information is in both editions then the data from the canonical edition will be kept. If the other edition is in any lists or has any comments or reviews etc then these will all be updated to point to the canonical edition instead.</p>
 <p>You can find the numbers to use in the command by visiting the page for a book and looking at the number in the URL.</p>
-<h3>Merging authors</h3>
+<h3 id="merging-authors"><a class="headerlink" href="#merging-authors">Merging authors</a></h3>
 <p>Similarly if an author is duplicated, you can combine the two authors into one with a command like this:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev runweb python manage.py merge_authors --canonical=7 --other=46
 </code></pre></div>

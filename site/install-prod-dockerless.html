@@ -108,11 +108,11 @@ Installing Without Docker
                 </li>
                 
                 <li>
-                    <a href="/user-migration.html" >User migration and aliases</a>
+                    <a href="/rss-feeds.html" >RSS Feeds</a>
                 </li>
                 
                 <li>
-                    <a href="/rss-feeds.html" >RSS Feeds</a>
+                    <a href="/user-migration.html" >User migration and aliases</a>
                 </li>
                 
             </ul>
@@ -220,14 +220,14 @@ Installing Without Docker
     <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.</p>
 <p>This method of installation is more involved, and therefore is for more experienced admins. <strong>Docker install is the recommended method</strong> as there may not be much support available for Dockerless installation. If you have expertise in this area, we would love your help to improve this documentation!</p>
 <p>This install method assumes you already have ssl configured with certificates available.</p>
-<h2>Server setup</h2>
+<h2 id="server-setup"><a class="headerlink" href="#server-setup">Server setup</a></h2>
 <ul>
 <li>Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Set up an email service (such as <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS</li>
 <li>Install dependencies. On debian this could look like <code>apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev gunicorn</code></li>
 </ul>
-<h2>Install and configure BookWyrm</h2>
+<h2 id="install-and-configure-bookwyrm"><a class="headerlink" href="#install-and-configure-bookwyrm">Install and configure BookWyrm</a></h2>
 <p>The <code>production</code> branch of BookWyrm contains a number of tools not on the <code>main</code> branch that are suited for running in production, such as <code>docker-compose</code> changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the <code>production</code> branch is still recommended</p>
 <p>Instructions for running BookWyrm in production without Docker:</p>
 <ul>
@@ -334,7 +334,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li>The application should now be running at your domain. When you load the domain, you should get a configuration page to confirm your instance settings, and a form to create an admin account. Use your admin code to register.</li>
 </ul>
 <p>Congrats! You did it!! Configure your instance however you'd like.</p>
-<h2>Finding log files</h2>
+<h2 id="finding-log-files"><a class="headerlink" href="#finding-log-files">Finding log files</a></h2>
 <p>Like all software, BookWyrm can contain bugs, and often these bugs are in the Python code and easiest to reproduce by getting more context from the logs.</p>
 <p>If you use the provided <code>systemd</code> service configurations from <code>contrib/systemd</code> you will be able to read the logs with <code>journalctl</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># viewing logs of the web process</span>
@@ -350,7 +350,7 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>bookwyrm-scheduler
 <p>Feel free to explore additional ways of slicing and dicing logs with flags documented in <code>journalctl --help</code>.</p>
 <p>While BookWyrm's application logs will most often be enough, you can find logs for other services like Nginx,
 PostgreSQL, or Redis are usually in <code>.log</code> files located somewhere in <code>/var/logs</code>.</p>
-<h2>Get Involved</h2>
+<h2 id="get-involved"><a class="headerlink" href="#get-involved">Get Involved</a></h2>
 <p>See <a href="https://joinbookwyrm.com/get-involved/">Get Involved</a> for details.</p>
 </section>
 

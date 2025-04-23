@@ -193,7 +193,7 @@ Using a Reverse-Proxy
         <div class="column">
             
 <section class="block content">
-    <h2>Rularea BookWyrm în spatele unui Reverse-Proxy</h2>
+    <h2 id="rularea-bookwyrm-in-spatele-unui-reverse-proxy"><a class="headerlink" href="#rularea-bookwyrm-in-spatele-unui-reverse-proxy">Rularea BookWyrm în spatele unui Reverse-Proxy</a></h2>
 <p>Dacă rulați un alt server web pe mașina dvs., trebuie să-l configurați să transmită cererile web către BookWyrm.</p>
 <p>Configurația BookWyrm de bază are deja un server nginx care redirecționează cererile către aplicația Django care se ocupă de SSL și deservește în mod direct fișierele statice. Fișierele statice sunt stocate într-un volum Docker la care au acces mai multe servicii BookWrym, deci nu este recomandat să înlăturați complet acest server.</p>
 <p>Pentru a rula BookWyrm în spatele unui reverse-proxy, faceți următoarele schimbări:</p>
@@ -213,7 +213,7 @@ Using a Reverse-Proxy
 </ul>
 <p>În acest moment, puteți urmări instrucțiunile <a href="#server-setup">setup</a> listate. Odată ce Docker rulează, puteți accesa instanța dvs. de BookWyrm la <code>http://localhost:8001</code> (<strong>NOTĂ:</strong> serverul dvs. nu este accesibil prin <code>https</code>).</p>
 <p>Pașii pentru configurarea unui reverse-proxy sunt independenți de server.</p>
-<h4>Nginx</h4>
+<h4 id="nginx"><a class="headerlink" href="#nginx">Nginx</a></h4>
 <p>Înainte de a putea configura nginx, veți avea nevoie să localizați dosarul dvs. de configurare nginx, care este dependent de platforma dvs. și de cum ați instalat nginx. Vedeți <a href="http://nginx.org/en/docs/beginners_guide.html">ghidul nginx</a> pentru detalii.</p>
 <p>Pentru a configura serverul dvs.:</p>
 <ul>
