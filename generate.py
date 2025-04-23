@@ -130,8 +130,8 @@ def format_markdown(file_path):
 
 
 if __name__ == "__main__":
-    # when we generate for older versions we need to change the page links
-    version = sys.argv[1] if len(sys.argv) > 1 else False
+    # when we generate for versions we need to change the page links
+    version = sys.argv[1] if (len(sys.argv) > 1 and sys.argv[1] != "main") else False
     # iterate through each locale
     for locale in i18n.locales_metadata:
         SLUG = locale["slug"]
