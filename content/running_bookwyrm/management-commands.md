@@ -8,7 +8,7 @@ In the `bookwyrm/management/commands` directory there are some commands to manip
 
 ## Merging objects
 
-Quite often an instance will end up with duplicate books and authors or editions that appear as separate books when they are actually just different editions of the same work. This can happen because of importing editions that don’t have shared identifiers or from user mistakes. Sadly there’s no user interface to correct this for the time being, but in cases where the books are important for your instance you can use these management commands to fix some of the problems if you are using at least version 0.6.2.
+Quite often an instance will end up with duplicate books and authors or editions that appear as separate books when they are actually just different editions of the same work. This can happen because of importing editions that don’t have shared identifiers or from user mistakes. There also was a bug prior to version 0.7.5 which created a large number of duplicate books, editions, and authors. Sadly there’s no user interface to correct this for the time being, but in cases where the books are important for your instance you can use these management commands to fix some of the problems if you are using at least version 0.6.2.
 
 Please take extra care when using these commands because if you make a mistake there’s no way to undo it.
 
@@ -26,9 +26,17 @@ You can find the numbers to use in the command by visiting the page for a book a
 
 ### Merging authors
 
-Similarly if an author is duplicated, you can combine the two authors into one with a command like this:
+You can identify potential duplicate authors with `show_duplicate_authors`:
 
+```sh
+./bw-dev runweb python manage.py show_duplicate_authors
 ```
+
+This will list all your _potential_ duplicate author records, based purely on their name, showing their birth and death dates if available, the count of books for each author, and a link to their page on your instance. Note that **you must check that these are actually duplicates** before merging them as they may be different authors with the same name.
+
+Once confirmed, if an author is duplicated you can combine the two authors into one with a command like this:
+
+```sh
 ./bw-dev runweb python manage.py merge_authors --canonical=7 --other=46
 ```
 
