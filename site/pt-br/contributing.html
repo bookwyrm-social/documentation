@@ -90,7 +90,7 @@ How to Contribute
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -194,14 +194,14 @@ How to Contribute
             
 <section class="block content">
     <p>Há muitas formas de contribuir com o projeto qualquer que esja seu nível de conhecimento técnico.</p>
-<h2>Feedback e pedido de recursos</h2>
+<h2 id="feedback-e-pedido-de-recursos"><a class="headerlink" href="#feedback-e-pedido-de-recursos">Feedback e pedido de recursos</a></h2>
 <p>Sinta-se à vontade para reportar bugs, dar sugestões, solicitar funções e dar ideias de como acha que as coisas deviam ser no <a href="https://github.com/bookwyrm-social/bookwyrm/issues">GitHub issues</a>.</p>
-<h2>Contribuições de código</h2>
+<h2 id="contribuicoes-de-codigo"><a class="headerlink" href="#contribuicoes-de-codigo">Contribuições de código</a></h2>
 <p>Contribuições de código são muito bem-vindas! Se você não sabe por onde começar, dê uma olhada na tag <a href="https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">"Bom para iniciantes" ("Good first issue")</a> tag. A BookWyrm é um projeto pequeno e não temos muita estrutura formal, mas há uma grande possibilidade de ajuda direta e acompanhamento, que pode envolver fazer perguntas enquanto você faz as coisas, programação em pares/pareamento, conversas em vídeo, etc., então sinta-se à vontade para falar com a gente.</p>
 <p>Se tiver alguma dúvida sobre o projeto ou sobre como contribuir, você pode entrar no <a href="https://app.element.io/#/room/#bookwyrm:matrix.org"> chat Matrix da BookWyrm</a>.</p>
-<h2>Tradução</h2>
+<h2 id="traducao"><a class="headerlink" href="#traducao">Tradução</a></h2>
 <p>Você fala alguma língua além do inglês? A BookWyrm precisa de localização! Você pode criar e editar traduções em <a href="http://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a></p>
-<h2>Apoio financeiro</h2>
+<h2 id="apoio-financeiro"><a class="headerlink" href="#apoio-financeiro">Apoio financeiro</a></h2>
 <p>A BookWyrm é um projeto apaixonado e sem anúncios sem intenção de conseguir financiamento de risco ou relações de financiamento corporativo. Se você quiser manter o projeto funcionando, pode fazer uma contribuição recorrente pelo <a href="https://www.patreon.com/bookwyrm">Patreon</a> ou <a href="https://opencollective.com/bookwyrm">OpenCollective</a> ou fazer uma doação única pelo <a href="https://paypal.me/oulipo">PayPal</a>.</p>
 </section>
 
@@ -268,11 +268,22 @@ How to Contribute
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -281,23 +292,16 @@ How to Contribute
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

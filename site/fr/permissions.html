@@ -90,7 +90,7 @@ Permissions
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -195,7 +195,7 @@ Permissions
 <section class="block content">
     <p>L'accès de l'utilisateur aux différentes fonctionnalités est contrôlé à l'aide du <a href="https://docs.djangoproject.com/en/3.2/topics/auth/default/">système d'authentification intégré</a> de Django. Lorsqu'une instance est créée, le script <code>initdb</code> crée un ensemble de permissions, qui sont assignées aux groupes. Par défaut, tous les nouveaux utilisateurs sont assignés au groupe <code>éditeur</code> qui leur permet de modifier les métadonnées du livre.</p>
 <p>L'administrateur de l'instance doit avoir le statut de <code>superutilisateur</code> qui leur donne accès à l'administration de Django (<code>/admin</code>) et confère toutes les permissions à cet utilisateur.</p>
-<h2>Permissions et groupes</h2>
+<h2 id="permissions-et-groupes"><a class="headerlink" href="#permissions-et-groupes">Permissions et groupes</a></h2>
 <p>Ce tableau montre les quatre groupes (administrateur, modérateur, éditeur et utilisateur) et les permissions que les utilisateurs de ce groupe ont :</p>
 <table>
 <thead>
@@ -331,11 +331,22 @@ Permissions
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -344,23 +355,16 @@ Permissions
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

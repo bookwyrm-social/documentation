@@ -90,7 +90,7 @@ Developer Environment
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -193,9 +193,9 @@ Developer Environment
         <div class="column">
             
 <section class="block content">
-    <h2>Pré-requisitos</h2>
+    <h2 id="pre-requisitos"><a class="headerlink" href="#pre-requisitos">Pré-requisitos</a></h2>
 <p>Estas instruções supoem que você esteja rodando a BookWyrm utilizando o Docker. Você vai precisar <a href="https://docs.docker.com/engine/install/">instalar o Docker</a> e o <a href="https://docs.docker.com/compose/install/">docker-compose</a> para começar.</p>
-<h2>Configurando o ambiente de desenvolvimento</h2>
+<h2 id="configurando-o-ambiente-de-desenvolvimento"><a class="headerlink" href="#configurando-o-ambiente-de-desenvolvimento">Configurando o ambiente de desenvolvimento</a></h2>
 <ul>
 <li>Faça uma cópia do <a href="https://github.com/bookwyrm-social/bookwyrm">código da BookWyrm no GitHub</a>. Você pode <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">criar uma bifurcação (fork)</a> do repositório e então <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">usar <code>git clone</code> pra baixar o código</a> para seu computador.</li>
 <li>Vá ao diretório onde o código foi baixado no seu computador; você trabalhará a partir dele daqui em diante.</li>
@@ -228,13 +228,13 @@ Developer Environment
 <li>Uma vez completado o build, você pode acessar a instância no endereço <code>http://localhost:1333</code> e criar um usuário administrador.</li>
 </ul>
 <p>Se estiver curiosa: o comando <code>./bw-dev</code> é um shell script simples que executa várias ferramentas: no exemplo acima, você poderia pular o script e executar <code>docker-compose build</code> ou <code>docker-compose up</code> diretamente, se preferir. <code>./bw-dev</code> só junta esses comandos em um só, por conveniência. Execute-o sem argumentos para ver uma lista de comandos disponíveis, leia a <a href="/command-line-tool.html">página da documentação</a> ou abra o arquivo para dar uma olhada no que cada comando faz!</p>
-<h3>Editando e criando Modelos (Models)</h3>
+<h3 id="editando-e-criando-modelos-models"><a class="headerlink" href="#editando-e-criando-modelos-models">Editando e criando Modelos (Models)</a></h3>
 <p>Se você quiser editar ou criar um modelo, você provavelmente vai alterar a estrutura do banco de dados. Para que essas alterações funcionem, você precisará executar o comando <code>makemigrations</code> do Django para criar um novo <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">arquivo de migrações do Django</a> e então <code>migrá-lo</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h3>Editando arquivos estáticos</h3>
+<h3 id="editando-arquivos-estaticos"><a class="headerlink" href="#editando-arquivos-estaticos">Editando arquivos estáticos</a></h3>
 <p>Toda vez que você alterar o CSS ou o JavaScript, você precisará rodar o comando <code>collectstatic</code>do Django para que as alterações passem a funcionar:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
@@ -305,11 +305,22 @@ Developer Environment
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -318,23 +329,16 @@ Developer Environment
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

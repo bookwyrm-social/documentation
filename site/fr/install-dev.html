@@ -90,7 +90,7 @@ Environnement de développement
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -193,9 +193,9 @@ Environnement de développement
         <div class="column">
             
 <section class="block content">
-    <h2>Prérequis</h2>
+    <h2 id="prerequis"><a class="headerlink" href="#prerequis">Prérequis</a></h2>
 <p>Ces instructions supposent que vous développez BookWyrm en utilisant Docker. Vous devrez <a href="https://docs.docker.com/engine/install/">installer Docker</a> et <a href="https://docs.docker.com/compose/install/">docker-compose</a> avant toute chose.</p>
-<h2>Mise en place de l'environnement de développement</h2>
+<h2 id="mise-en-place-de-lenvironnement-de-developpement"><a class="headerlink" href="#mise-en-place-de-lenvironnement-de-developpement">Mise en place de l'environnement de développement</a></h2>
 <ul>
 <li>Obtenez une copie de <a href="https://github.com/bookwyrm-social/bookwyrm">la base code de BookWyrm depuis GitHub</a>. Vous pouvez <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">créer un fork</a> du dépôt, puis <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">utiliser <code>git clone</code> pour télécharger le code</a> sur votre ordinateur.</li>
 <li>Allez dans le répertoire qui contient le code sur votre ordinateur, vous travaillerez désormais à partir de ce répertoire.</li>
@@ -228,13 +228,13 @@ Environnement de développement
 <li>Une fois la compilation terminée, vous pouvez accéder à l'instance sur <code>http://localhost:1333</code> et créer un utilisateur admin.</li>
 </ul>
 <p>Pour les curieux·ses : la commande <code>./bw-dev</code> est un simple script shell qui exécute divers autres outils ; au lieu des commandes ci-dessus, vous auriez pu exécuter <code>docker-compose build</code> ou <code>docker-compose up</code> directement si vous le souhaitez. <code>./bw-dev</code> les rassemble dans un seul endroit pour plus de commodité. Exécutez la commande sans argument pour obtenir une liste des commandes disponibles, lisez la <a href="/command-line-tool.html">page de documentation</a> dédiée, ou ouvrez le fichier et examinez exactement ce que chaque commande fait !</p>
-<h3>Édition ou création du modèle de données</h3>
+<h3 id="edition-ou-creation-du-modele-de-donnees"><a class="headerlink" href="#edition-ou-creation-du-modele-de-donnees">Édition ou création du modèle de données</a></h3>
 <p>Si vous créez ou modifiez un modèle, vous changerez probablement la structure de la base de données. Pour que ces changements aient des effets, vous devrez utiliser la commande <code>makemigrations</code> de Django pour créer un nouveau <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">fichier de migration Django</a>, puis la commande <code>migrate</code> pour le migrer :</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h3>Édition des fichiers statiques</h3>
+<h3 id="edition-des-fichiers-statiques"><a class="headerlink" href="#edition-des-fichiers-statiques">Édition des fichiers statiques</a></h3>
 <p>Chaque fois que vous éditez du CSS ou du JavaScript, vous devrez exécuter la commande <code>collectstatic</code> de Django pour que vos changements aient un effet :</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
@@ -305,11 +305,22 @@ Environnement de développement
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -318,23 +329,16 @@ Environnement de développement
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

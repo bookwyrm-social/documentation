@@ -90,7 +90,7 @@
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -193,13 +193,13 @@
         <div class="column">
             
 <section class="block content">
-    <h2>Colaborar com traduções</h2>
+    <h2 id="colaborar-com-traducoes"><a class="headerlink" href="#colaborar-com-traducoes">Colaborar com traduções</a></h2>
 <p>Você pode participar do projeto de tradução da BookWorm no <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a>.</p>
-<h2>Linguagem neutra</h2>
+<h2 id="linguagem-neutra"><a class="headerlink" href="#linguagem-neutra">Linguagem neutra</a></h2>
 <p>As traduções da BookWyrm devem usar marcação de gênero neutra o máximo possível. Isso se aplica mesmo se a língua utiliza o masculino como gênero neutro padrão, ou se possui algo similiar a "ele/ela". Também é importante que as traduções sejam claras, concisas e legíveis em leitores de tela, e às vezes esses objetivos entram em conflito; não há uma solução perfeita para todos os problemas, e a solução depende do idioma.</p>
 <p>Como elemento norteador, tente dar mais ênfase ao aspecto inclusivo e ao uso de palavras de gênero neutro do que se fiar à correção formal ou a guias de estilo oficiais. No Inglês, por exemplo, muitos guias de estilo formais exigem que se use um pronome singular "she" ou "he" para se referir a um indivíduo, mas na BookWyrm seria melhor utilizar o pronome singular neutro "they".</p>
 <p>Se você não sabe como resolver algum problema de tradução, abra um <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">tópico de discussão</a> para tratar de problemas mais amplos.</p>
-<h2>Fazendo templates traduzíveis</h2>
+<h2 id="fazendo-templates-traduziveis"><a class="headerlink" href="#fazendo-templates-traduziveis">Fazendo templates traduzíveis</a></h2>
 <p>A BookWyrm se utiliza da função de tradução do Django para fazer com que o conteúdo das páginas mude dependendo da língua da interface selecionada pelo usuário. A documentação do Django traz <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">uma ótima explicação</a> de como ela funciona, mas aqui temos uma versão mais curta:</p>
 <ul>
 <li>todo texto no template deve incluir as tags de tradução de template</li>
@@ -207,7 +207,7 @@
 <li>Se o bloco de texto for literal, você pode usar a tag <code>{% trans %}</code></li>
 <li>Se o bloco de texto tiver variáveis, você deve usar o par de tags <code>{% blocktrans %}</code> e <code>{% endblocktrans %}</code>. Se você estiver usando espaços em brancos ou quebras de linha, use <code>trimmed</code> para removê-los automaticamente quando o arquivo de localização for gerado: <code>{% blocktrans trimmed %}</code></li>
 </ul>
-<h3>Exemplos</h3>
+<h3 id="exemplos"><a class="headerlink" href="#exemplos">Exemplos</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;Esta lista está vazia&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -281,11 +281,22 @@
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -294,23 +305,16 @@
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

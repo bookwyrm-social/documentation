@@ -90,7 +90,7 @@
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -193,13 +193,13 @@
         <div class="column">
             
 <section class="block content">
-    <h2>Zu Übersetzungen beitragen</h2>
+    <h2 id="zu-ubersetzungen-beitragen"><a class="headerlink" href="#zu-ubersetzungen-beitragen">Zu Übersetzungen beitragen</a></h2>
 <p>Du kannst dem BookWyrm Übersetzungsprojekt unter <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a> beitreten.</p>
-<h2>Geschlechtsneutrale Sprache</h2>
+<h2 id="geschlechtsneutrale-sprache"><a class="headerlink" href="#geschlechtsneutrale-sprache">Geschlechtsneutrale Sprache</a></h2>
 <p>Wo immer möglich, sollten BookWyrm Übersetzungen geschlechtsneutrale Sprache verwenden. Dies gilt auch dann, wenn eine Sprache als neutrales Geschlecht voreingestellt ist oder wenn sie etwas Ähnliches wie "he/she" verwendet. Es ist auch wichtig, dass Übersetzungen klar, präzise und lesbar für einen Screenreader sind und manchmal stehen diese Ziele im Widerspruch zueinander; es gibt nicht die eine perfekte Lösung und diese hängt von der Sprache ab.</p>
 <p>Als Leitfaden versuche, einen höheren Wert auf inklusive und geschlechtsneutrale Sprache zu legen als auf formale Korrektheit oder offiziell anerkannte Stilführer. Im Englischen zum Beispiel benötigen viele formale Leitfäden ein einzelnes "she"- oder "he"-Pronomen, um für eine Person verwendet zu werden, aber es wäre besser, in BookWyrm das geschlechtsneutrale singuläre "they" zu verwenden.</p>
 <p>Wenn du nicht sicher bist, wie du am besten an ein Übersetzungsproblem herangehen kannst, kommentiere die Übersetzung oder öffne ein <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">-Diskussionsthema</a>, um weitergehende Fragen zu stellen.</p>
-<h2>Vorlagen übersetzbar machen</h2>
+<h2 id="vorlagen-ubersetzbar-machen"><a class="headerlink" href="#vorlagen-ubersetzbar-machen">Vorlagen übersetzbar machen</a></h2>
 <p>Bookwyrm nutzt die Django-Übersetzungsfunktionalität, um den Seiteninhalt je nach der von den Benutzer*innen gewählten Anzeigesprache ändern zu können. Die Django-Dokumentation <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">bietet hilfreiche Erklärungen</a> wie das funktioniert, aber hier ist eine Kurzversion:</p>
 <ul>
 <li>alle Template-Texte sollten Übersetzungstexte enthalten</li>
@@ -207,7 +207,7 @@
 <li>Wenn der Textblock wörtlicher Text ist, kannst du das Template-Tag <code>{% trans %}</code> verwenden</li>
 <li>Wenn der Textblock Variablen enthält, solltest du das Template-Tag-Paar <code>{% blocktrans %}</code> und <code>{% endblocktrans %}</code> verwenden. Wenn du Leerzeichen oder Zeilenumbrüche einbaust, nutze <code>gekürzt</code>, um es automatisch zu entfernen, wenn die Sprachdatei generiert wird: <code>{% blocktrans trimmed %}</code></li>
 </ul>
-<h3>Beispiele</h3>
+<h3 id="beispiele"><a class="headerlink" href="#beispiele">Beispiele</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -281,11 +281,22 @@
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -294,23 +305,16 @@
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

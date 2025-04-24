@@ -90,7 +90,7 @@ External Storage
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -194,11 +194,11 @@ External Storage
             
 <section class="block content">
     <p>În mod implicit, BookWyrm folosește stocarea locală pentru modelele statice (favicon, avatarul de bază etc.) și media (avatarurile utilizatorilor, coperțile cărților etc.), dar puteți folosi un serviciu de stocare extern pentru a deservi aceste fișiere. BookWyrm folosește <code>django-storages</code> pentru a manipula stocarea externă, precum servicii S3 compatibile, Apache Libcloud sau SFTP.</p>
-<h2>Servicii S3 compatibile</h2>
-<h3>Configurare</h3>
+<h2 id="servicii-s3-compatibile"><a class="headerlink" href="#servicii-s3-compatibile">Servicii S3 compatibile</a></h2>
+<h3 id="configurare"><a class="headerlink" href="#configurare">Configurare</a></h3>
 <p>Creați o „găleată” la serviciul dvs. S3 compatibil împreună cu ID-ul unei chei de acces și o cheie de acces secretă. Acestea pot fi auto-găzduite, precum <a href="https://ceph.io/en/">Ceph</a> (LGPL 2.1/3.0) sau <a href="https://min.io/">MinIO</a> (GNU AGPL v3.0) sau comerciale (<a href="https://www.scaleway.com/en/docs/object-storage-feature/">Scaleway</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key">Digital Ocean</a>…).</p>
 <p>Acest ghid a fost testat cu Scaleway Object Storage. Dacă folosiți un alt serviciu, vă rugăm partajați experiența dvs. (în special dacă a trebuit să urmați pași diferiți) completând un tichet pe depozitul <a href="https://github.com/bookwyrm-social/documentation">BookWyrm Documentation</a>.</p>
-<h3>Ce vă așteaptă</h3>
+<h3 id="ce-va-asteapta"><a class="headerlink" href="#ce-va-asteapta">Ce vă așteaptă</a></h3>
 <p>Dacă începeți o nouă instanță BookWyrm, procesul va fi:</p>
 <ul>
 <li>Configurarea serviciul dvs. extern de stocare</li>
@@ -214,7 +214,7 @@ External Storage
 <li>Reporniți instanța BookWyrm</li>
 <li>Actualizați conectorul instanței</li>
 </ul>
-<h3>Setări BookWyrm</h3>
+<h3 id="setari-bookwyrm"><a class="headerlink" href="#setari-bookwyrm">Setări BookWyrm</a></h3>
 <p>Editați fișierul dvs. <code>.env</code> decomentând următoarele linii:</p>
 <ul>
 <li><code>AWS_ACCESS_KEY_ID</code>: ID-ul cheie de acces al dvs.</li>
@@ -227,13 +227,13 @@ External Storage
 <li><code>AWS_S3_CUSTOM_DOMAIN</code>: domeniul care va deservi modelele, de ex. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code> sau <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
 <li><code>AWS_S3_ENDPOINT_URL</code>: punctul final al API-ului S3 (S3 API endpoint), de ex. <code>"https://s3.fr-par.scw.cloud"</code> sau <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
 </ul>
-<h3>Copiați fișierele media locale pe stocarea externă</h3>
+<h3 id="copiati-fisierele-media-locale-pe-stocarea-externa"><a class="headerlink" href="#copiati-fisierele-media-locale-pe-stocarea-externa">Copiați fișierele media locale pe stocarea externă</a></h3>
 <p>Dacă instanța dvs. BookWyrm rulează deja și fișierele media au fost încărcate (avatare de utilizator, coperți de cărți…), va trebui să migrați fișierele media încărcate pe „găleata” (bucket) dvs.</p>
 <p>Această sarcină este realizată de comanda:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>copy_media_to_s3
 </code></pre></div>
 
-<h3>Activați stocarea externă pentru BookWyrm</h3>
+<h3 id="activati-stocarea-externa-pentru-bookwyrm"><a class="headerlink" href="#activati-stocarea-externa-pentru-bookwyrm">Activați stocarea externă pentru BookWyrm</a></h3>
 <p>Pentru a activa stocarea externă S3 compatibiliă, va trebui să editați fișierul dvs. <code>.env</code> schimbând valoarea proprietății pentru <code>USE_S3</code> din <code>false</code> în <code>true</code>:</p>
 <div class="highlight"><pre><span></span><code>USE_S3=true
 </code></pre></div>
@@ -242,12 +242,12 @@ External Storage
 <div class="highlight"><pre><span></span><code>USE_HTTPS=true
 </code></pre></div>
 
-<h4>Modele statice</h4>
+<h4 id="modele-statice"><a class="headerlink" href="#modele-statice">Modele statice</a></h4>
 <p>Apoi, veți avea nevoie să rulați următoarea comandă pentru a copia modelele statice către „găleata” dvs. S3:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
-<h4>Setări CORS</h4>
+<h4 id="setari-cors"><a class="headerlink" href="#setari-cors">Setări CORS</a></h4>
 <p>Odată ce modelele statice au fost colectate, veți avea nevoie să configurați CORS pentru găleata dvs.</p>
 <p>Unele servicii precum Digital Ocean oferă o interfață de configurare, vedeți <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
 <p>Dacă serviciul dvs. nu oferă o interfață, încă puteți configura CORS în linia de comandă.</p>
@@ -272,7 +272,7 @@ External Storage
 
 <p>Dacă nu afișează nimic este de bine.</p>
 <p>Dacă începeți o instanță nouă BookWyrm, puteți reveni la instrucțiunile de configurare acum. Dacă nu, continuați să citiți.</p>
-<h3>Reporniți instanța dvs.</h3>
+<h3 id="reporniti-instanta-dvs"><a class="headerlink" href="#reporniti-instanta-dvs">Reporniți instanța dvs.</a></h3>
 <p>Odată ce migrarea fișierelor media a fost făcută și modelele statice colectate, puteți încărca noua configurare <code>.env</code> și reporni instanța cu:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
@@ -287,7 +287,7 @@ External Storage
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>sync_media_to_s3
 </code></pre></div>
 
-<h3>Actualizați conectorul instanței</h3>
+<h3 id="actualizati-conectorul-instantei"><a class="headerlink" href="#actualizati-conectorul-instantei">Actualizați conectorul instanței</a></h3>
 <p><em>Notă: puteți sări acest pas dacă rulați o versiune actualizată de BookWyrm. În septembrie 2021, „conectorul de raft” a fost înlăturat în <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
 <p>Pentru ca URL-ul corect să fie utilizat la afișarea rezultatelor de căutare pentru cărțile locale, va trebui să modificați valoarea pentru URL de bază a imaginilor de copertă.</p>
 <p>Datele conectorului pot fi accesate cu interfața de admin Django, situată la URL-ul <code>http://MY_DOMAIN_NAME/admin</code>. Conectorul pentru propria voastră instanță este prima intrare în baza de date, deci puteți să-l accesați prin acest URL: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
@@ -358,11 +358,22 @@ External Storage
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -371,23 +382,16 @@ External Storage
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

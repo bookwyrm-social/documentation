@@ -90,7 +90,7 @@ ActivityPub
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -219,8 +219,8 @@ ActivityPub
 <section class="block content">
     <p>BookWyrm uses the <a href="http://activitypub.rocks/">ActivityPub</a> protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like <a href="https://joinmastodon.org/">Mastodon</a>. To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.</p>
 <p>To view the ActivityPub data for a BookWyrm entity (user, book, list, etc) you can usually add <code>.json</code> to the end of the URL. e.g. <code>https://www.example.com/user/sam.json</code> and see the JSON in your web browser or via an http request (e.g. using <code>curl</code>).</p>
-<h2>Activities and Objects</h2>
-<h3>Users and relationships</h3>
+<h2 id="activities-and-objects"><a class="headerlink" href="#activities-and-objects">Activities and Objects</a></h2>
+<h3 id="users-and-relationships"><a class="headerlink" href="#users-and-relationships">Users and relationships</a></h3>
 <p>User relationship interactions follow the standard ActivityPub spec.</p>
 <ul>
 <li><code>Follow</code>: request to receive statuses from a user, and view their statuses that have followers-only privacy</li>
@@ -232,15 +232,15 @@ ActivityPub
 <li><code>Undo</code>: reverses a <code>Follow</code> or <code>Block</code></li>
 <li><code>Move</code>: communicate that a user has changed their ID and has moved to a new server. Most ActivityPub software will "follow" the user to the new identity. BookWyrm sends a notification to followers and requires them to confirm they want to follow the user to their new identity.</li>
 </ul>
-<h3>Statuses</h3>
-<h4>Object types</h4>
+<h3 id="statuses"><a class="headerlink" href="#statuses">Statuses</a></h3>
+<h4 id="object-types"><a class="headerlink" href="#object-types">Object types</a></h4>
 <ul>
 <li><code>Note</code>: On services like Mastodon, <code>Note</code>s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, <code>Note</code>s can only be created as direct messages or as replies to other statuses.</li>
 <li><code>Review</code>: A review is a status in response to a book (indicated by the <code>inReplyToBook</code> field), which has a title, body, and numerical rating between 0 (not rated) and 5.</li>
 <li><code>Comment</code>: A comment on a book mentions a book and has a message body.</li>
 <li><code>Quotation</code>: A quote has a message body, an excerpt from a book, and mentions a book.</li>
 </ul>
-<h4>Activities</h4>
+<h4 id="activities"><a class="headerlink" href="#activities">Activities</a></h4>
 <ul>
 <li>
 <p><code>Create</code>: saves a new status in the database.</p>
@@ -258,37 +258,37 @@ ActivityPub
 <li><code>Announce</code>: Boosts the status into the actor's timeline</li>
 <li><code>Undo</code>: Reverses a <code>Like</code> or <code>Announce</code></li>
 </ul>
-<h3>Collections</h3>
+<h3 id="collections"><a class="headerlink" href="#collections">Collections</a></h3>
 <p>User's books and lists are represented by <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection"><code>OrderedCollection</code></a></p>
-<h4>Objects</h4>
+<h4 id="objects"><a class="headerlink" href="#objects">Objects</a></h4>
 <ul>
 <li><code>Shelf</code>: A user's book collection. By default, every user has a <code>to-read</code>, <code>reading</code>, and <code>read</code> shelf which are used to track reading progress.</li>
 <li><code>List</code>: A collection of books that may have items contributed by users other than the one who created the list.</li>
 </ul>
-<h4>Activities</h4>
+<h4 id="activities_1"><a class="headerlink" href="#activities_1">Activities</a></h4>
 <ul>
 <li><code>Create</code>: Adds a shelf or list to the database.</li>
 <li><code>Delete</code>: Removes a shelf or list.</li>
 <li><code>Add</code>: Adds a book to a shelf or list.</li>
 <li><code>Remove</code>: Removes a book from a shelf or list.</li>
 </ul>
-<h2>Alternative Serialization</h2>
+<h2 id="alternative-serialization"><a class="headerlink" href="#alternative-serialization">Alternative Serialization</a></h2>
 <p>Because BookWyrm uses custom object types (<code>Review</code>, <code>Comment</code>, <code>Quotation</code>) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. <code>Review</code>s are converted into <code>Article</code>s, and <code>Comment</code>s and <code>Quotation</code>s are converted into <code>Note</code>s, with a link to the book and the cover image attached.</p>
 <p>This may change in future in favor of the more ActivityPub-compliant <a href="https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type">extended Object types</a> listed alongside core ActivityPub types.</p>
-<h2>Making ActivityPub-aware models</h2>
+<h2 id="making-activitypub-aware-models"><a class="headerlink" href="#making-activitypub-aware-models">Making ActivityPub-aware models</a></h2>
 <p>The way BookWyrm sends and receives ActivityPub objects can be confusing for developers who are new to BookWyrm. It is mostly controlled by:</p>
 <ul>
 <li>Functions and <a href="https://docs.python.org/3/library/dataclasses.html">data classes</a> outlined in the <a href="https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub">activitypub</a> directory</li>
 <li>The <a href="https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40">ActivitypubMixin</a> and its children for models that are serializable for ActivityPub requests</li>
 </ul>
-<h3>Serializing data to and from ActivityPub JSON</h3>
+<h3 id="serializing-data-to-and-from-activitypub-json"><a class="headerlink" href="#serializing-data-to-and-from-activitypub-json">Serializing data to and from ActivityPub JSON</a></h3>
 <p>BookWyrm needs to know how to <em>serialize</em> the data from the model into an ActivityPub JSON-LD object.</p>
 <p>The <code>/activitypub/base_activity.py</code> file provides the core functions that turn ActivityPub JSON-LD strings into usable Django model objects, and vice-versa. We do this by creating a data class in <code>bookwyrm/activitypub</code>, and defining how the model should be serialized by providing an <code>activity_serializer</code> value in the model, which points to the relevant data class. From <code>ActivityObject</code> we inherit <code>id</code> and <code>type</code>, and two <em>class methods</em>:</p>
 <p><strong><code>to_model</code></strong></p>
 <p>This method takes an ActivityPub JSON string and tries to turn it into a BookWyrm model object, finding an existing object wherever possible. This is how we process <strong>incoming</strong> ActivityPub objects.</p>
 <p><strong><code>serialize</code></strong></p>
 <p>This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. This is how we process <strong>outgoing</strong> ActivityPub objects.</p>
-<h3>Example - Users</h3>
+<h3 id="example-users"><a class="headerlink" href="#example-users">Example - Users</a></h3>
 <p>A BookWyrm user <a href="https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py">is defined in <code>models/user.py</code></a>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;a user who wants to read books&quot;&quot;&quot;</span>
@@ -392,11 +392,22 @@ ActivityPub
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -405,23 +416,16 @@ ActivityPub
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

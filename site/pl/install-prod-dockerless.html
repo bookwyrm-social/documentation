@@ -90,7 +90,7 @@ Installing Without Docker
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -194,14 +194,14 @@ Installing Without Docker
             
 <section class="block content">
     <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production. This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended This install method assumes you already have ssl configured with certificates available</p>
-<h2>Server setup</h2>
+<h2 id="server-setup"><a class="headerlink" href="#server-setup">Server setup</a></h2>
 <ul>
 <li>Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Set up an email service (such as <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS</li>
 <li>Install dependencies. W systemie Debian może to wyglądać następująco: <code>apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev</code></li>
 </ul>
-<h2>Install and configure BookWyrm</h2>
+<h2 id="install-and-configure-bookwyrm"><a class="headerlink" href="#install-and-configure-bookwyrm">Install and configure BookWyrm</a></h2>
 <p>The <code>production</code> branch of BookWyrm contains a number of tools not on the <code>main</code> branch that are suited for running in production, such as <code>docker-compose</code> changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the <code>production</code> branch is still recommended</p>
 <p>Instructions for running BookWyrm in production without Docker:</p>
 <ul>
@@ -334,7 +334,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 
 <p>Należy skonfigurować zadanie Cron, aby usługa była uruchamiana po ponownym uruchomieniu serwera.</p>
 <p>Congrats! You did it!! Configure your instance however you'd like.</p>
-<h2>Get Involved</h2>
+<h2 id="get-involved"><a class="headerlink" href="#get-involved">Get Involved</a></h2>
 <p>See <a href="https://joinbookwyrm.com/get-involved/">Get Involved</a> for details.</p>
 </section>
 
@@ -401,11 +401,22 @@ c6c35779-af3a-4091-b330-c026610920d6
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -414,23 +425,16 @@ c6c35779-af3a-4091-b330-c026610920d6
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

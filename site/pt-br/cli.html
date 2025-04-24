@@ -90,7 +90,7 @@ Command Line Tool
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -195,93 +195,93 @@ Command Line Tool
 <section class="block content">
     <p>Desenvolvedores e administradores de instâncias Bookwyrm podem usar o script <code>bw-dev</code> para tarefas cotidianas. Isso pode tornar seus comandos mais curtos, mais fáceis de lembrar e mais difíceis de serem confundidos.</p>
 <p>Se tiver uma instalado uma instância BookWyrm <a href="installing-in-production.html">em produção</a> ou <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">em desenvolvimento</a>, você pode executar o script pela linha de comando com <code>./bw-dev</code> seguido com um subcomando para executar.</p>
-<h2>Atalhos do Docker</h2>
-<h3>bash</h3>
+<h2 id="atalhos-do-docker"><a class="headerlink" href="#atalhos-do-docker">Atalhos do Docker</a></h2>
+<h3 id="bash"><a class="headerlink" href="#bash">bash</a></h3>
 <p>Abre uma sessão <code>bash</code> interativa dentro do container <code>web</code> do Docker.</p>
-<h3>build</h3>
+<h3 id="build"><a class="headerlink" href="#build">build</a></h3>
 <p>Equivalente ao <code>docker-compose build</code>.</p>
-<h3>dbshell</h3>
+<h3 id="dbshell"><a class="headerlink" href="#dbshell">dbshell</a></h3>
 <p>Abre um shell interativo do banco de dados Postgres. Espero que você saiba o que está fazendo.</p>
-<h3>runweb args</h3>
+<h3 id="runweb-args"><a class="headerlink" href="#runweb-args">runweb args</a></h3>
 <p>Executa um comando arbitrário (representado acima pelo <code>args</code>) no container <code>web</code>.</p>
 <p>Equivalent to <code>docker-compose run --rm web</code>.</p>
-<h3>service_ports_web args</h3>
+<h3 id="service_ports_web-args"><a class="headerlink" href="#service_ports_web-args">service_ports_web args</a></h3>
 <p>Executa um comando arbitrário no container <code>web</code> (representado acima por <code>args</code>) com as portas expostas. Isso é útil para quando você quer executar testes <code>pdb</code> porque o <code>runweb</code> não irá expor o promp <code>pdb</code>.</p>
 <p>Equivalente ao <code>docker-compose run --rm --service-ports web</code>.</p>
-<h3>shell</h3>
+<h3 id="shell"><a class="headerlink" href="#shell">shell</a></h3>
 <p>Abre um shell interativo Django dentro do container <code>web</code> do Docker. Você pode usar isso se quiser executar comandos do shell do Django diretamente.</p>
-<h3>up [args]</h3>
+<h3 id="up-args"><a class="headerlink" href="#up-args">up [args]</a></h3>
 <p>Inicia ou reinicia containers do Docker, incluindo opcionalmente quaisquer argumentos (representados acima por <code>args</code>). Equivalente ao <code>docker-compose up --build [args]</code></p>
-<h2>Gerenciando o banco de dados</h2>
-<h3>initdb</h3>
+<h2 id="gerenciando-o-banco-de-dados"><a class="headerlink" href="#gerenciando-o-banco-de-dados">Gerenciando o banco de dados</a></h2>
+<h3 id="initdb"><a class="headerlink" href="#initdb">initdb</a></h3>
 <p>Inicializa um banco de dados.</p>
-<h3>makemigrations [appname migration number]</h3>
+<h3 id="makemigrations-appname-migration-number"><a class="headerlink" href="#makemigrations-appname-migration-number">makemigrations [appname migration number]</a></h3>
 <p><em>Este comando não está disponível no branch <code>produção</code></em>.</p>
 <p>Executa o comando <code>makemigrations</code> do Django dentro do seu container Docker. Se você alterou a estrutura do banco de dados em um branch de desenvolvimento, você precisará executar este comando para que suas alterações tenham efeito. Facultativamente, você pode especificar alguma migração para executar, p. ex. <code>./bw-dev makemigrations bookwyrm 0108</code></p>
-<h3>migrate</h3>
+<h3 id="migrate"><a class="headerlink" href="#migrate">migrate</a></h3>
 <p>Executa o comando <code>migrate</code> do Django dentro de seu container Docker. Você sempre irá precisar executá-lo após o <code>makemigrations</code>.</p>
-<h3>resetdb</h3>
+<h3 id="resetdb"><a class="headerlink" href="#resetdb">resetdb</a></h3>
 <p><em>Este comando não está disponível no branch <code>produção</code></em>.</p>
 <p>Reinicia o banco de dados. <strong>Este comando vai excluir todo o banco de dados da BookWyrm</strong>, criar outro banco de dados e executar todas as migrações. Você deve deletar todos os arquivos de migração recentes que não quer rodar <em>antes</em> de executar <code>resetdb</code>.</p>
-<h2>Gerenciando uma instância BookWyrm</h2>
-<h3>compile_themes</h3>
+<h2 id="gerenciando-uma-instancia-bookwyrm"><a class="headerlink" href="#gerenciando-uma-instancia-bookwyrm">Gerenciando uma instância BookWyrm</a></h2>
+<h3 id="compile_themes"><a class="headerlink" href="#compile_themes">compile_themes</a></h3>
 <p>Compiles all BookWyrm themes, which are <code>*.scss</code> files listed in <code>bookwyrm/static/css/themes</code>.</p>
-<h3>collectstatic</h3>
+<h3 id="collectstatic"><a class="headerlink" href="#collectstatic">collectstatic</a></h3>
 <p>Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.</p>
-<h3>generate_preview_images</h3>
+<h3 id="generate_preview_images"><a class="headerlink" href="#generate_preview_images">generate_preview_images</a></h3>
 <p>Generate preview images for site, users, and books. This can take a while if you have a large database. See <a href="/optional_features.html">Optional Features: Generating preview images</a></p>
-<h3>remove_remote_user_preview_images</h3>
+<h3 id="remove_remote_user_preview_images"><a class="headerlink" href="#remove_remote_user_preview_images">remove_remote_user_preview_images</a></h3>
 <p>Remove generated preview images for remote users. See <a href="/optional_features.html">Optional Features: Removing preview images for remote users</a></p>
-<h3>generate_thumbnails</h3>
+<h3 id="generate_thumbnails"><a class="headerlink" href="#generate_thumbnails">generate_thumbnails</a></h3>
 <p>Generates thumbnail images for book covers.</p>
-<h3>populate_streams args</h3>
+<h3 id="populate_streams-args"><a class="headerlink" href="#populate_streams-args">populate_streams args</a></h3>
 <p>Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the <code>--stream</code> argument.</p>
-<h3>populate_list_streams</h3>
+<h3 id="populate_list_streams"><a class="headerlink" href="#populate_list_streams">populate_list_streams</a></h3>
 <p>Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.</p>
-<h3>populate_suggestions</h3>
+<h3 id="populate_suggestions"><a class="headerlink" href="#populate_suggestions">populate_suggestions</a></h3>
 <p>Populate suggested users for all users. You may want to run this manually to refresh suggestions.</p>
-<h3>restart_celery</h3>
+<h3 id="restart_celery"><a class="headerlink" href="#restart_celery">restart_celery</a></h3>
 <p>Restarts the <code>celery_worker</code> Docker container.</p>
-<h3>update</h3>
+<h3 id="update"><a class="headerlink" href="#update">update</a></h3>
 <p>When there are changes to the <code>production</code> branch, you can update your instance without downtime.</p>
 <p>This command <code>git pull</code>s the latest <code>production</code> branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.</p>
-<h3>admin_code</h3>
+<h3 id="admin_code"><a class="headerlink" href="#admin_code">admin_code</a></h3>
 <p>Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.</p>
-<h2>Configurando um armazenamento compatível com S3</h2>
+<h2 id="configurando-um-armazenamento-compativel-com-s3"><a class="headerlink" href="#configurando-um-armazenamento-compativel-com-s3">Configurando um armazenamento compatível com S3</a></h2>
 <p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
 <p>See <a href="/external-storage.html">External Storage</a> for more information.</p>
-<h3>copy_media_to_s3</h3>
+<h3 id="copy_media_to_s3"><a class="headerlink" href="#copy_media_to_s3">copy_media_to_s3</a></h3>
 <p>Migrate all uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
-<h3>sync_media_to_s3</h3>
+<h3 id="sync_media_to_s3"><a class="headerlink" href="#sync_media_to_s3">sync_media_to_s3</a></h3>
 <p>Sync new or changed uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
-<h3>set_cors_to_s3 filename</h3>
+<h3 id="set_cors_to_s3-filename"><a class="headerlink" href="#set_cors_to_s3-filename">set_cors_to_s3 filename</a></h3>
 <p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
-<h2>Desenvolvimento e teste</h2>
+<h2 id="desenvolvimento-e-teste"><a class="headerlink" href="#desenvolvimento-e-teste">Desenvolvimento e teste</a></h2>
 <p><em>These commands are not available on the <code>production</code> branch</em>.</p>
-<h3>black</h3>
+<h3 id="black"><a class="headerlink" href="#black">black</a></h3>
 <p>BookWyrm uses the <a href="https://github.com/psf/black">Black</a> code formatter to keep the Python codebase consistent styled. Run <code>black</code> before committing your changes so the <code>pylint</code> task does not fail for your pull request and make you sad.</p>
-<h3>prettier</h3>
+<h3 id="prettier"><a class="headerlink" href="#prettier">prettier</a></h3>
 <p>BookWyrm uses <a href="https://prettier.io/">Prettier</a> to keep the JavaScript codebase consistently styled. Run <code>prettier</code> before committing changes to scripts to automatically format your code.</p>
-<h3>stylelint</h3>
+<h3 id="stylelint"><a class="headerlink" href="#stylelint">stylelint</a></h3>
 <p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelintprettier</code> before committing changes to scripts to automatically format your code.</p>
-<h3>formatters</h3>
+<h3 id="formatters"><a class="headerlink" href="#formatters">formatters</a></h3>
 <p>This command runs all code formatters (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) in one go.</p>
-<h3>clean</h3>
+<h3 id="clean"><a class="headerlink" href="#clean">clean</a></h3>
 <p>Remove all stopped Docker containers.</p>
 <p>Equivalent to:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
 docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
 </code></pre></div>
 
-<h3>makemessages</h3>
+<h3 id="makemessages"><a class="headerlink" href="#makemessages">makemessages</a></h3>
 <p>Creates message files for all translation strings. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Django's makemessages</a>.</p>
-<h3>compilemessages</h3>
+<h3 id="compilemessages"><a class="headerlink" href="#compilemessages">compilemessages</a></h3>
 <p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
-<h3>pytest args</h3>
+<h3 id="pytest-args"><a class="headerlink" href="#pytest-args">pytest args</a></h3>
 <p>Run tests with <code>pytest</code>.</p>
-<h3>deactivate_2fa</h3>
+<h3 id="deactivate_2fa"><a class="headerlink" href="#deactivate_2fa">deactivate_2fa</a></h3>
 <p>Deactivates two factor authentication for a given user.</p>
-<h3>manual_confirm</h3>
+<h3 id="manual_confirm"><a class="headerlink" href="#manual_confirm">manual_confirm</a></h3>
 <p>Confirms a users email, sets the user to active.</p>
 </section>
 
@@ -348,11 +348,22 @@ docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -361,23 +372,16 @@ docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>

@@ -90,7 +90,7 @@ Installing in Production
                 
                 <option value="latest" >latest</option>
                 
-                <option value="v0.7.5" >v0.7.5</option>
+                <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
@@ -194,14 +194,14 @@ Installing in Production
             
 <section class="block content">
     <p>Este projeto ainda é jovem e não está, no momento, muito estável, então tenha cuidado ao rodá-lo em produção.</p>
-<h2>Configuração do servidor</h2>
+<h2 id="configuracao-do-servidor"><a class="headerlink" href="#configuracao-do-servidor">Configuração do servidor</a></h2>
 <ul>
 <li>Obtenha um domínio e configure o DNS para seu servidor. Você deverá apontar os nameservers do seu domínio no provedor de DNS ao servidor onde você hospedará a BookWyrm. Aqui estão as instruções para a <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Configure o seu servidor com firewalls adequados a uma aplicação web (estas instruções foram testadas no Ubuntu 20.04). Aqui estão as instruções para a <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Configure um serviço de email (como o <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) e as configurações corretas de SMTP/DNS. Use a documentação do serviço para configurar seu DNS</li>
 <li><a href="https://docs.docker.com/compose/install/">Instale o Docker e docker-compose</a></li>
 </ul>
-<h2>Instale e configure a BookWyrm</h2>
+<h2 id="instale-e-configure-a-bookwyrm"><a class="headerlink" href="#instale-e-configure-a-bookwyrm">Instale e configure a BookWyrm</a></h2>
 <p>O branch <code>produção (production)</code> da BookWyrm tem uma série de ferramentas indisponíveis no branch <code>principal (main)</code> que servem para a execução em produção, como alterações no <code>docker-compose</code> para atualizar os comandos padrão, configuração de containers e alterações individuais nas configurações dos containers para ativar coisas com SSL ou backups comuns.</p>
 <p>Instruções para rodar a BookWyrm em produção:</p>
 <ul>
@@ -263,7 +263,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
 </ul>
 <p>Congrats! You did it!! Configure your instance however you'd like.</p>
-<h2>Backups</h2>
+<h2 id="backups"><a class="headerlink" href="#backups">Backups</a></h2>
 <p>BookWyrm's db service dumps a backup copy of its database to its <code>/backups</code> directory daily at midnight UTC. Backups are named <code>backup__%Y-%m-%d.sql</code>.</p>
 <p>The db service has an optional script for periodically pruning the backups directory so that all recent daily backups are kept, but for older backups, only weekly or monthly backups are kept. To enable this script:</p>
 <ul>
@@ -275,7 +275,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li>Run <code>docker-compose ps</code> to confirm the db service's full name (it's probably <code>bookwyrm_db_1</code>.</li>
 <li>Run <code>docker cp &lt;container_name&gt;:/backups &lt;host machine path&gt;</code></li>
 </ul>
-<h2>Port Conflicts</h2>
+<h2 id="port-conflicts"><a class="headerlink" href="#port-conflicts">Port Conflicts</a></h2>
 <p>BookWyrm has multiple services that run on their default ports. This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.</p>
 <p>If this occurs, you will need to change your configuration to run services on different ports. This may require one or more changes the following files:</p>
 <ul>
@@ -284,7 +284,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li><code>.env</code> (You create this file yourself during setup)</li>
 </ul>
 <p>If you are already running a web-server on your machine, you will need to set up a reverse-proxy.</p>
-<h2>Get Connected</h2>
+<h2 id="get-connected"><a class="headerlink" href="#get-connected">Get Connected</a></h2>
 <p>Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. There are a few ways in get in touch:</p>
 <ul>
 <li>Open an issue or pull request to add your instance to the <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md">official list</a></li>
@@ -356,11 +356,22 @@ c6c35779-af3a-4091-b330-c026610920d6
             var new_location = "/" + event.target.value;
 
             if (locale_index) {
-                new_location += current_location.slice(locale_index + current_locale.length);
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
             } else {
-                new_location += current_location.slice(1);
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
             }
-
             window.location = new_location;
         }
     })()
@@ -369,23 +380,16 @@ c6c35779-af3a-4091-b330-c026610920d6
     (function() {
         var versionSelector = document.getElementById("version_selection");
         versionSelector.onchange = function(event) {
-            var current_version = "";
-            console.log(current_version)
+            current_version = "v0.7.5"
             var current_location = window.location.pathname;
-            var version_index = current_location.indexOf(current_version);
-            var new_location = "/" + event.target.value;
-
-            console.log(current_location)
-            console.log(new_location)
-
-            if (version_index) {
-                new_location += current_location.slice(version_index + current_version.length) + "/";
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
             } else {
-                console.log("no version_index")
-                new_location += `/${current_location.slice(1)}`;
+                window.location = `/${target_version}${current_location}`
             }
-
-            window.location = new_location;
         }
     })()
 </script>
