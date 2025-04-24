@@ -113,19 +113,25 @@ def format_markdown(file_path):
                     headerless.append(line)
             return markdown(
                 "".join(headerless),
-                extensions=["tables", "fenced_code", "codehilite"],
-                extension_configs={"codehilite": {"css_class": "highlight"}},
+                extensions=["tables", "fenced_code", "codehilite", "toc"],
+                extension_configs={
+                    "codehilite": {"css_class": "highlight"},
+                    "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
+                },
             )
         return markdown(
             "".join(markdown_content.readlines()[3:]),
-            extensions=["tables", "fenced_code", "codehilite"],
-            extension_configs={"codehilite": {"css_class": "highlight"}},
+            extensions=["tables", "fenced_code", "codehilite", "toc"],
+            extension_configs={
+                "codehilite": {"css_class": "highlight"},
+                "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
+            },
         )
 
 
 if __name__ == "__main__":
-    # when we generate for older versions we need to change the page links
-    version = sys.argv[1] if len(sys.argv) > 1 else False
+    # when we generate for versions we need to change the page links
+    version = sys.argv[1] if (len(sys.argv) > 1 and sys.argv[1] != "main") else False
     # iterate through each locale
     for locale in i18n.locales_metadata:
         SLUG = locale["slug"]
@@ -169,9 +175,11 @@ if __name__ == "__main__":
                         else f"/{version}/{SLUG}{output_path}"
                     )
                     versions = ["latest", "v0.7.5"]
+                    current_version = version if version else ""
                     render_file.write(
                         template.render(
                             versions=versions,
+                            current_version=current_version,
                             locale=locale,
                             locales_metadata=i18n.locales_metadata,
                             **data,
