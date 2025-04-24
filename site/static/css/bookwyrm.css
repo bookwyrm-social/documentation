@@ -2,7 +2,7 @@
     .column {
         overflow: auto;
     }
-
+    a.headerlink {color: var(--bulma-content-heading-color);}
 }
 
 @media (prefers-color-scheme: light) {
