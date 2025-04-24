@@ -175,9 +175,11 @@ if __name__ == "__main__":
                         else f"/{version}/{SLUG}{output_path}"
                     )
                     versions = ["latest", "v0.7.5"]
+                    current_version = version if version else ""
                     render_file.write(
                         template.render(
                             versions=versions,
+                            current_version=current_version,
                             locale=locale,
                             locales_metadata=i18n.locales_metadata,
                             **data,
