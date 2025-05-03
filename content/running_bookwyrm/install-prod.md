@@ -35,25 +35,14 @@ Instructions for running BookWyrm in production:
     - `FLOWER_PASSWORD` | Your own secure password for accessing Flower queue monitor
     - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
     - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
-    - Make a copy of the production template config and set it for use in nginx `cp nginx/production nginx/default.conf`
-    - Update `nginx/default.conf`:
-        - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
-        - If you aren't using the `www` subdomain, remove the www.your-domain.com version of the domain from the `server_name` in the first server block in `nginx/default.conf` and remove the `-d www.${DOMAIN}` flag at the end of the `certbot` command in `docker-compose.yml`.
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+    - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+- Setup ssl certificate via letsencrypt by running `./bw-dev init_ssl`
 - Initialize the database by running `./bw-dev migrate`
-- Run the application (this should also set up a Certbot ssl cert for your domain) with
-    `docker-compose up --build`, and make sure all the images build successfully
+- Run the application with
+  `docker-compose up --build`, and make sure all the images build successfully
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
     See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
-- Set up HTTPS redirect
-    - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
-    - In `nginx/default.conf`, uncomment lines 18 through 111 to enable forwarding to HTTPS. You should have two `server` blocks enabled
-- Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
-    - Type `crontab -e` to edit your cron file in the host machine
-    - add a line to try renewing once a day:
-    `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Initialize the application with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
     - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
@@ -96,7 +85,7 @@ If this occurs, you will need to change your configuration to run services on di
 This may require one or more changes the following files:
 
 - `docker-compose.yml`
-- `nginx/default.conf`
+- `nginx/production.conf` or `nginx/reverse_proxy.conf` depending on NGINX_SETUP in .env-file
 - `.env` (You create this file yourself during setup)
 
 If you are already running a web-server on your machine, you will need to set up a reverse-proxy.
