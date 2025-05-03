@@ -245,37 +245,18 @@ Installing in Production
 <li><code>FLOWER_PASSWORD</code> | Your own secure password for accessing Flower queue monitor</li>
 <li><code>EMAIL_HOST_USER</code> | The "from" address that your app will use when sending email</li>
 <li><code>EMAIL_HOST_PASSWORD</code> | The password provided by your email service</li>
-</ul>
-</li>
-<li>Configure nginx<ul>
-<li>Make a copy of the production template config and set it for use in nginx <code>cp nginx/production nginx/default.conf</code></li>
-<li>Update <code>nginx/default.conf</code>:<ul>
-<li>Replace <code>your-domain.com</code> with your domain name everywhere in the file (including the lines that are currently commented out)</li>
-<li>If you aren't using the <code>www</code> subdomain, remove the www.your-domain.com version of the domain from the <code>server_name</code> in the first server block in <code>nginx/default.conf</code> and remove the <code>-d www.${DOMAIN}</code> flag at the end of the <code>certbot</code> command in <code>docker-compose.yml</code>.</li>
 <li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li>Setup ssl certificate via letsencrypt by running <code>./bw-dev init_ssl</code></li>
 <li>Initialize the database by running <code>./bw-dev migrate</code></li>
-<li>Run the application (this should also set up a Certbot ssl cert for your domain) with
-    <code>docker-compose up --build</code>, and make sure all the images build successfully<ul>
+<li>Run the application with
+  <code>docker-compose up --build</code>, and make sure all the images build successfully<ul>
 <li>If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
 See the <a href="#port_conflicts">troubleshooting guide</a> for advice on resolving this.</li>
 </ul>
 </li>
 <li>When docker has built successfully, stop the process with <code>CTRL-C</code></li>
-<li>Set up HTTPS redirect<ul>
-<li>In <code>docker-compose.yml</code>, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.</li>
-<li>In <code>nginx/default.conf</code>, uncomment lines 18 through 111 to enable forwarding to HTTPS. You should have two <code>server</code> blocks enabled</li>
-</ul>
-</li>
-<li>Set up a <code>cron</code> job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)<ul>
-<li>Type <code>crontab -e</code> to edit your cron file in the host machine</li>
-<li>add a line to try renewing once a day:
-<code>5 0 * * * cd /path/to/your/bookwyrm &amp;&amp; docker-compose run --rm certbot</code></li>
-</ul>
-</li>
 <li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
 <li>Initialize the application with <code>./bw-dev setup</code>, and copy the admin code to use when you create your admin account.<ul>
 <li>The output of <code>./bw-dev setup</code> should conclude with your admin code. You can get your code at any time by running <code>./bw-dev admin_code</code> from the command line. Here's an example output:</li>
@@ -314,7 +295,7 @@ This means that, depending on what else you are running on your host machine, yo
 This may require one or more changes the following files:</p>
 <ul>
 <li><code>docker-compose.yml</code></li>
-<li><code>nginx/default.conf</code></li>
+<li><code>nginx/production.conf</code> or <code>nginx/reverse_proxy.conf</code> depending on NGINX_SETUP in .env-file</li>
 <li><code>.env</code> (You create this file yourself during setup)</li>
 </ul>
 <p>If you are already running a web-server on your machine, you will need to set up a reverse-proxy.</p>
