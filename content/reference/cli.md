@@ -1,7 +1,7 @@
 ---
 Title: Command Line Tool
-Date: 2021-11-11
-Order: 10
+Date: 2025-04-28
+Order: 2
 ---
 
 Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
@@ -40,7 +40,7 @@ Open an interactive Django shell inside the docker `web` container. You would us
 
 ### up [args]
 
-Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up --build [args]`
+Start or restart Docker containers, optionally including any arguments (represented above by `args`). Equivalent to `docker-compose up [args]`
 
 ## Managing the database
 
