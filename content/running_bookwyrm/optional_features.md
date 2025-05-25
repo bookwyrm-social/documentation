@@ -1,5 +1,5 @@
 ---
-Title: Optional features
+Title: Optional Features
 Date: 2021-08-02
 Order: 9
 ---

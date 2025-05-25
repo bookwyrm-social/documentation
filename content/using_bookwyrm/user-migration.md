@@ -1,5 +1,5 @@
 ---
-Title: User migration and aliases
+Title: User Migration and Aliases
 Date: 2024-01-06
 Order: 3
 ---
