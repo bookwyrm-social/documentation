@@ -26,6 +26,19 @@ There are three types of posts users can create directly in response to books: r
 | Rating | ✔ |  |  |
 | Title field | ✔ |  |  |
 
+#### Spoiler alerts
+
+Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read.
+Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific.
+It is good practice to include the book title in the spoiler alert, so readers from other federated platforms (like Mastodon) know what book the status is spoiling.
+You should also add one if your status discusses potentially sensitive topics.
+
+#### Star ratings
+
+A star rating can be added to reviews, or added on it's own by clicking the stars below a book.
+It is a 5-star scale, and half stars can be added by double clicking on the star.
+For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half.
+When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
 ### Reading status updates
 
