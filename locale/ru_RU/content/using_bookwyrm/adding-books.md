@@ -1,20 +1,20 @@
 ---
-Title: Adding Books
-Date: 2022-07-29
+Title: Добавление Книг
+Date: 2022-07-05
 Order: 2
 ---
 
-There are a few different ways to add books to your BookWyrm instance! When you can't find the book you're looking for, try these options in order -- it's better to import a book than to create one from scratch.
+Есть несколько способов добавить книги на ваш сервер BookWyrm! Когда вы не можете найти книгу, которую ищете, попробуйте их по очереди — лучше импортировать книгу, чем добавлять её с нуля.
 
-## Loading books from other catalogs
+## Берём книги из других каталогов
 
-If the book you're looking for isn't available on your instance, there are a few different ways to add it. The best way is to import it from an outside source -- your instance can load books from other BookWyrm instances, as well as [OpenLibrary](http://openlibrary.org/) and [Inventaire](http://inventaire.io/). If there are no search results for your query, these sources will automatically be queried, and will show up with a button to "**Import book**". If there are local search results that aren't what you're looking for, you can click the "**Load results from other catalogues**" link to load more results.
+Если книги, которую вы ищете, нет на вашем сервере, есть несколько разных способов её добавить. Лучший способ — взять её извне. Ваш сервер может импортировать книги с других серверов BookWyrm, или из [OpenLibrary](http://openlibrary.org/) и [Inventaire](http://inventaire.io/). Если поиск не даст результатов, эти источники будут запрошены автоматически, и появится кнопка "**Импортировать книгу**". Если в локальных результатах поиска нет нужных книг, можно нажать на "**Загрузить результаты из других каталогов**", чтобы найти больше вариантов.
 
 
-## Adding another edition
+## Добавление другого издания
 
-Если вы нашли книгу, которую вы хотите, но не правильный вариант, вы можете добавить еще одну редакцию в работу из списка изданий. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
+Если вы нашли нужную книгу, но другое издание, вы можете добавить еще одно издание в список изданий. Нажмите ссылку под описанием, в которой указано, сколько изданий имеется (например, "**4 издания**"). Под списком изданий есть кнопка "**Добавить другое издание**".
 
-## Add a completely new book
+## Добавление новой книги
 
-Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. The link to manually add a book is at the bottom of the search page when external catalogs are shown. You can also navigate direclty to `/create-book` on your instance.
+Если вы уже пытались найти книгу, импортировать её из другого каталога, и искали другие издания, вы можете добавить новую книгу вручную. Ссылка для добавления книги вручную находится внизу страницы поиска по внешним каталогам. Вы также можете прямо перейти к `/create-book` на своём сервере.
