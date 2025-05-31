@@ -48,9 +48,9 @@ User's books and lists are represented by [`OrderedCollection`](https://www.w3.o
 - `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
 - `List`: A collection of books that may have items contributed by users other than the one who created the list.
 
-#### Activities
+#### Atividades
 
-- `Create`: Adds a shelf or list to the database.
+- `Criar`: Adiciona uma prateleira ou lista à base de dados.
 - `Delete`: Removes a shelf or list.
 - `Add`: Adds a book to a shelf or list.
 - `Remove`: Removes a book from a shelf or list.
