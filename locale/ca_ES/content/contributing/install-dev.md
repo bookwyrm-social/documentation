@@ -17,34 +17,34 @@ cp .env.example .env
 - A `.env`, modifica `DEBUG` a `true`
 - Opcionalment, pots utilitzar un servei com [ngrok](https://ngrok.com/) per configurar el nom de domini i, establir la variable `DOMAIN` al teu fitxer `.env` al nom de domini generat per ngrok.
 
-- Set up nginx for development by copying the developer nginx configuration file (`nginx/development`) into a new file named `nginx/default.conf`:
+- Configura nginx per desenvolupament copiant el fitxer de configuració de nginx desenvolupador (`nginx/development`) a un nou fitxer de nom `nginx/default.conf`:
 ``` { .sh }
 cp nginx/development nginx/default.conf
 ```
 
-- Start the application. In the command line, run:
+- Inicia l'aplicació. A la línia de comandes, executa:
 ``` { .sh }
-./bw-dev build            # Build the docker images
-./bw-dev setup            # Initialize the database and run migrations
-./bw-dev up               # Start the docker containers
+./bw-dev build            # Crea les imatges docker
+./bw-dev setup            # Inicialitza la base de dades i executa migracions
+./bw-dev up               # Inicia els contenidors del docker
 ```
-- Once the build is complete, you can access the instance at `http://localhost:1333` and create an admin user.
+- Un cop la creació s'ha completat, pots accedir a la instància a través de `http://localhost:1333` i crear un usuari administrador.
 
-If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
+Si ets curiós: el comandament `./bw-dev` és un senzill script que fa funcionar unes altres eines: a sobre, pots ometre o iniciar directament `docker-composer build` o `docker-composer up` si vols. `./bw-dev` els recull tots a un lloc comú per comoditat. Sense arguments torna una llista dels comandaments disponibles, llegeix la [documentation page](/command-line-tool.html) per veure'ls, o obre-la i mira per a veure que és el que fa exactament cada comandament!
 
-### Editing or creating Models
+### Editant o creant Models
 
-If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
+Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base de dades. A fi que aquests canvis siguin efectius, haureu d'executar l'ordre `makemigrations` de Django per a crear un [fitxer de migració de Django](https://docs.djangoproject.com/en/3.2/topics/migrations) nou, i després `migrar-lo`:
 
 ``` { .sh }
 ./bw-dev makemigrations
 ./bw-dev migrate
 ```
 
-### Editing static files
-Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
+### Editant fitxers estàtics
+Sempre que editeu el CSS o el JavaScript, haureu de tornar a executar l'ordre `collectstatic` a fi que els canvis tinguin efecte:
 ``` { .sh }
 ./bw-dev collectstatic
 ```
 
-If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
+Si heu [instal·lat el Yarn](https://yarnpkg.com/getting-started/install), podeu executar `yarn watch:static` a fi que s'executi de forma automàtica l'script anterior cada cop que hi hagi un canvi al directori `bookwyrm/static`.
