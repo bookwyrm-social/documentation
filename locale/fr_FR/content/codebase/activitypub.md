@@ -15,12 +15,12 @@ Les interactions de relations entre les utilisateurs suivent la spécification s
 - `Block` : empêche les utilisateurs de voir les statuts de l'autre et empêche l'utilisateur bloqué de voir le profil de l'acteur
 - `Update` : met à jour le profil et les paramètres d'un utilisateur
 - `Delete` : désactive un utilisateur
-- `Undo` : inverse un `Follow` ou un `Block`
+- `Undo` : Ne plus suivre `Follow` ou Bloquer `Block`
 
 ### Statuts
 #### Types d'Object
 
-- `Note` : Sur les services comme Mastodon, les `Note`s sont le type principal de statut. Ils contiennent un corps de message, des pièces jointes, peuvent mentionner les utilisateurs et être des réponses à des statuts de n'importe quel type. Dans BookWyrm, les `Note`s ne peuvent être créés qu'en tant que messages directs ou en tant que réponses à d'autres statuts.
+- `Note` : Sur les services comme Mastodon, les `Note`s sont le type principal de statut. Ils contiennent un corps de message, des pièces jointes, peuvent mentionner les utilisateurs et être des réponses à des statuts de n'importe quel type. Dans BookWyrm, les `Notes` ne peuvent être créés qu'en tant que messages directs ou en tant que réponses à d'autres statuts.
 - `Critique` : Une critique est un statut en réponse à un livre (indiqué par le champ `inReplyToBook`), qui a un titre, un corps et une évaluation numérique entre 0 (non évalué) et 5.
 - `Comment` : Un commentaire sur un livre mentionne un livre et a un corps de message.
 - `Citation` : Une citation a un corps de message, un extrait d'un livre et mentionne un livre.
