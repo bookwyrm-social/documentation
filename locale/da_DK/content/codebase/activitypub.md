@@ -1,38 +1,38 @@
 - - -
-Title: ActivityPub Date: 2021-04-20 Order: 1
+Titel: ActivityPub Dato: 2021-04-20 Rækkefølge: 1
 - - -
 
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm bruger [ActivityPub](http://activitypub.rocks/)-protokollen til at sende og modtage brugeraktivitet mellem andre BookWyrm-servere og andre tjenester, der implementerer ActivityPub, som f. eks. [Mastodon](https://joinmastodon.org/). For at håndtere bogdata har BookWyrm en håndfuld udvidede aktivitetstyper, som ikke er en del af standarden, men er læselige for andre BookWyrm-servere.
 
-## Activities and Objects
+## Aktiviteter og objekter
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Brugere og relationer
+Brugerforhold og interaktioner følger standardspecifikationerne for ActivityPub.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Følg`: Anmodning om at modtage statusser fra en bruger og se de statusser, som kun kan ses af følgere
+- `Accepter`: godkender en anmodning om at `følge` og opretter forholdet
+- `Afvis`: benægter en anmodning om at `følge`
+- `Blokér`: forhindrer brugere i at se hinandens statusser og forhindrer den blokerede bruger i at se profilen for brugeren, som har oprettet blokeringen
+- `Opdatér`: opdaterer en brugers profil og indstillinger
+- `Slet`: deaktiverer en bruger
+- `Fortryd`: trækker en anmodning om at `følge` eller en `blokering` tilbage
 
-### Statuses
-#### Object types
+### Statusser
+#### Objekttyper
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
+- `Note`: På tjenester som Mastodon er `Note`r den primære type status. De indeholder en beskeds brødtekst, vedhæftede filer. De kan nævne brugere og være svar på statusser af enhver type. I BookWyrm kan `Note`r kun oprettes som direkte beskeder eller som svar på andre statusser.
+- `Anmeldelse`: En anmeldelse er en status som svar på en bog (angivet af `inReplyToBook`-feltet), som har en titel, brødtekst og numerisk bedømmelse på mellem 0 (ikke bedømt) og 5.
+- `Kommentar`: En kommentar til en bog nævner en bog og består af en brødtekst.
+- `Citat`: Et citat har en brødtekst, et uddrag fra en bog og en reference til en bog.
 
 
-#### Activities
+#### Aktiviteter
 
-- `Create`: saves a new status in the database.
+- `Opret`: gemmer en ny status i databasen.
 
-   **Note**: BookWyrm only accepts `Create` activities if they are:
+   **Note**: BookWyrm accepterer kun `Opret`-aktiviteter, hvis de er:
 
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
+   - Direkte beskeder (dvs. `Note`r med privatindstillingen `direkte`, og som nævner en lokal bruger),
    - Related to a book (of a custom status type that includes the field `inReplyToBook`),
    - Replies to existing statuses saved in the database
 - `Delete`: Removes a status
