@@ -2,7 +2,12 @@
     .column {
         overflow: auto;
     }
-    a.headerlink {color: var(--bulma-content-heading-color);}
+    a.headerlink {
+        color: var(--bulma-content-heading-color);
+    }
+    .menu {
+        background-color: var(--bulma-scheme-main-bis);
+    }
 }
 
 @media (prefers-color-scheme: light) {
