@@ -2,11 +2,11 @@
 Títol: Barra d'eines de depuració de Django Data: 2022-05-16 Ordre: 5
 - - -
 
-BookWyrm té una branca configurada per executar la [Barra d'Eines de Depuració de Django](https://django-debug-toolbar.readthedocs.io/en/latest/). Aquesta branca no serà mai unida a `main` i té alguns retocs que li permet treballar amb la barra d'eines però, no és segur fer-ne ús en un entorn destinat a producció. To use this branch, you will need to go through a few steps to get it running.
+BookWyrm té una branca configurada per executar la [Barra d'Eines de Depuració de Django](https://django-debug-toolbar.readthedocs.io/en/latest/). Aquesta branca no serà mai unida a `main` i té alguns retocs que li permet treballar amb la barra d'eines però, no és segur fer-ne ús en un entorn destinat a producció. Per a fer servir aquesta branca, necessitaràs fer algunes accions per fer-la funcionar.
 
-## Set up
+## Configuració
 
-- Using git, checkout out the [`debug-toolbar`](https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar) branch
-- Update the branch relative to `main` using `git merge main`. The branch is updated periodically but will likely be behind latest.
-- Re-build the Docker images using `docker-compose up --build` to ensure that the Debug Toolbar library is installed from `requirements.txt`
-- Access the application `web` image directly (instead of via `nginx`) using port `8000`
+- Utilitzant git, busca la branca [`debug-toolbar`](https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar)
+- Actualitza la branca relativa a `main` fent ús de `git merge main`. La branca s'actualitza periòdicament però anirà per darrere de l'última.
+- Reconstrueix les imatges de Docker mitjançant `docker-compose up --build` per assegurar-te que la llibreria de la Barra d'eines de Depuració s'instal·la des de `requirements.txt`
+- Accedeix directament a la imatge de l'aplicació `web` (en comptes de via `nginx`) fent ús del port `8000`
