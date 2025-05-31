@@ -2,7 +2,7 @@
 Title: Optional features Date: 2021-08-02 Order: 8
 - - -
 
-Some features of BookWyrm have to be enabled to work.
+Sommige functies van BookWyrm moeten ingeschakeld zijn om te werken.
 
 ## Preview image generation
 
@@ -14,13 +14,13 @@ The preview images will be sized for large OpenGraph images (used by Twitter und
 - the user image will display their avatar, display name, handle (in the form of username@instance)
 - the book image will display their cover, title, subtitle (if present), author and rating (if present)
 
-These images will be updated at various points:
+Deze afbeeldingen zullen op verschillende punten worden bijgewerkt:
 
 - instance image: when the instance name or big logo are changed
 - user image: when the display name or avatar are changed
 - book image: when the title(s), author(s) or cover are changed, or when a new rating is added
 
-### Enabling preview images
+### Voorbeeldafbeeldingen inschakelen
 
 In order to enable the feature with default settings, you have to uncomment (remove the `#` in front of) the line `ENABLE_PREVIEW_IMAGES=true` in your `.env` file. All the new updating events aforementioned will cause the generation of the corresponding image.
 
@@ -32,9 +32,9 @@ If you enable this setting after your instance has been started, some images may
 
 User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.
 
-### Optional settings
+### Optionele instellingen
 
-So you want to customize your preview images? Here are the options:
+So you want to customize your preview images? Dit zijn de opties:
 
 - `PREVIEW_BG_COLOR` will set the color for the preview image background. You can supply a color value, like `#b00cc0`, or the following values `use_dominant_color_light` or `use_dominant_color_dark`. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.
 - `PREVIEW_TEXT_COLOR` will set the color for the text. Depending on the choice for the background color, you should find a value that will have a sufficient contrast for the image to be accessible. A contrast ratio of 1:4.5 is recommended.
