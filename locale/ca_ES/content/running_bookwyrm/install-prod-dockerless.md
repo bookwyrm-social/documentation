@@ -22,23 +22,23 @@ Instructions for running BookWyrm in production without Docker:
 - Get the application code: `git clone git@github.com:bookwyrm-social/bookwyrm.git ./`
 - Switch to the `production` branch: `git checkout production`
 - Create your environment variables file, `cp .env.example .env`, and update the following:
-    - `SECRET_KEY` | A difficult to guess, secret string of characters
-    - `DOMAIN` | Your web domain
-    - `POSTGRES_PASSWORD` | Set a secure password for the database
-    - `POSTGRES_HOST` | Set to `localhost` (the machine running your db)
+    - `SECRET_KEY` | Una clau difícil d'esbrinar i secreta
+    - `DOMAIN` | El teu domini web
+    - `POSTGRES_PASSWORD` | Configura una clau secreta per a la base de dades
+    - `POSTGRES_HOST` | Configura el `localhost` (la màquina que executa la teva base de dades)
     - `POSTGRES_USER` | Set to `bookwyrm` (recommended) or something custom (configured later)
-    - `POSTGRES_DB` | Set to `bookwyrm`
+    - `POSTGRES_DB` | Configura-ho com a `bookwyrm`
     - `REDIS_ACTIVITY_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
     - `REDIS_ACTIVITY_HOST` | Set to `localhost` (the machine running redis)
     - `REDIS_BROKER_PASSWORD` | Set to nothing (fine on a local machine with a firewall)
     - `REDIS_BROKER_HOST` | Set to `localhost` (the machine running redis)
-    - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
-    - `EMAIL_HOST_PASSWORD` | The password provided by your email service
+    - `EMAIL_HOST_USER` | L'adreça del "remitent" que utilitzarà la teva aplicació quan enviï correus electrònics
+    - `EMAIL_HOST_PASSWORD` | La clau proporcionada pel teu servei de correu electrònic
 - Configure nginx
     - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
     - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
     - Update nginx `bookwyrm.conf`:
-        - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
+        - Renombra `el-teu-domini.cat` amb el nom de domini al fitxer (incloent-hi les línies que es mencionen continuació)
         - Replace `/app/` with your install directory `/opt/bookwyrm/` everywhere in the file (including commented out)
         - Uncomment lines 18 to 67 to enable forwarding to HTTPS. You should have two `server` blocks enabled
         - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
@@ -79,13 +79,13 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 
 ``` { .sh }
 *******************************************
-Use this code to create your admin account:
+Utilitza aquest codi per crear el teu compte d'administrador:
 c6c35779-af3a-4091-b330-c026610920d6
 *******************************************
 ```
 
-- Make and configure the run script
-    - Make a file called dockerless-run.sh and fill it with the following contents
+- Crea i configura l'execució de l'script
+    - Crea un fitxer anomenat dockerless-run.sh i complimenta-ho amb els continguts següents
 
 ``` { .sh }
 #!/bin/bash
@@ -101,10 +101,10 @@ set -e
 /opt/bookwyrm/venv/bin/celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler &
 # /opt/bookwyrm/venv/bin/celery -A celerywyrm flower &
 ```
-    - Replace `/opt/bookwyrm` with your install dir
-    - Change `8000` to your custom port number
+    - Substitueix `/opt/bookwyrm` pel teu directori d'instal·lació
+    - Canvia `8000` pel teu número de port personalitzat
     - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
-- You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
+- Ara pots executar BookWyrm mitjançant: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
 - The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
 - You may want to configure BookWyrm to autorun with a systemd service. Here is an example:
 ```
@@ -125,9 +125,9 @@ WorkingDirectory=/opt/bookwyrm/
 [Install]
 WantedBy=multi-user.target
 ```
-You will need to set up a Cron job for the service to start automatically on a server restart.
+Necessitaràs configurar un treball de Cron pel servei per tal que ho inicialitzi de manera automàtica quan es reiniciï el servidor.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Enhorabona! Ho heu aconseguit! Configure your instance however you'd like.
 
 ## Get Involved
 
