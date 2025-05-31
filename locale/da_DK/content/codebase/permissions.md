@@ -1,21 +1,21 @@
 - - -
-Title: Permissions Date: 2021-04-18 Order: 2
+Titel: Tilladelser Dato: 2021-04-18 Rækkefølge: 2
 - - -
 
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+Brugeradgang til forskellige funktioner styres ved hjælp af Djangos [indbyggede godkendelsessystem](https://docs.djangoproject.com/en/3.2/topics/auth/default/). Når en instans oprettes, skaber `initdb`-scriptet et sæt tilladelser, som bliver tildelt grupper. Som standard tildeles alle nye brugere `redaktør`-gruppen, som tillader dem at redigere metadata om bøger.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+Administratoren for instansen skal have `superbruger`-status, hvilket giver vedkommende adgang til Django-administratorpanelet (`/admin`) og giver alle tilladelser til denne bruger.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Tilladelser og grupper
+Tabellen her viser de fire grupper (administrator, moderator, redaktør og bruger) og hvilke tilladelser, brugere i hver gruppe har:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                                   | administrator | moderator | redaktør | bruger |
+| --------------------------------- | ------------- | --------- | -------- | ------ |
+| kan redigere instansindstillinger | ✔️            | -         | -        | -      |
+| kan ændre brugerniveau            | ✔️            | -         | -        | -      |
+| kan håndtere føderering           | ✔️            | ✔️        | -        | -      |
+| kan udstede invitationer          | ✔️            | ✔️        | -        | -      |
+| kan deaktivere brugere            | ✔️            | ✔️        | -        | -      |
+| kan slette indlæg                 | ✔️            | ✔️        | -        | -      |
+| kan redigere bøger                | ✔️            | ✔️        | ✔️       | -      |
+ kan uploade omslag            |  ✔️    |     ✔️       |   ✔️     |  ✔️
