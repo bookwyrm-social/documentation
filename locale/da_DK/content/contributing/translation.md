@@ -1,36 +1,36 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Titel: Oversættelser Dato: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Sådan bidrager man til oversættelse
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Du kan slutte dig til BookWyrm-oversættelsesprojektet på [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Kønsneutralt sprog
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Så vidt muligt bør BookWyrm-oversættelser anvende kønsneutralt sprog. Dette gælder også for sprog, som bruger hankøn som et neutralt køn, eller hvis det bruger noget lignende "han/hun". Det er også vigtigt, at oversættelser er klare, koncise og læselige for en skærmlæser, og nogle gange modarbejder disse mål hinanden; der er altså ikke et perfekt svar, som passer til alle, og løsningen afhænger af sproget.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Som ledende princip skal du forsøge at vægte inklusivt og kønsneutralt sprog højere end formel korrekthed eller officielt godkendte stilguider. På engelsk kræver mange formelle stilguider for eksempel, at et pronomen i ental skal være "she" eller "he", når der henvises til en person, men det ville være bedre i BookWyrm at bruge det kønsneutrale "they" i ental i stedet.
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Hvis du ikke er sikker på, hvordan du bedst kan håndtere et oversættelsesproblem, kan du kommentere på oversættelsen eller åbne et [diskussionsemne](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) for at påpege et mere generelt tvivlsspørgsmål.
 
-## Making templates translatable
+## Sådan gøres skabeloner oversættelige
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+BookWyrm udnytter Djangos oversættelsesfunktionalitet til at gøre det muligt for sidens indhold at ændre sig afhængigt af brugerens valgte visningssprog. Django-dokumentationen [giver en nyttig forklaring](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) på, hvordan det virker, men her er den korte version:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* al skabelontekst bør indeholde opmærkning til oversættelsesskabeloner
+* tilføj `{% load i18n %}` øverst i din skabelon for at aktivere oversættelser
+* Hvis tekstblokken er ren tekst, kan du bruge skabelonmærket `{% trans %}`
+* Hvis tekstblokken indeholder variabler, skal du bruge skabelonmærkeparret `{% blocktrans %}` og `{% endblocktrans %}`. Hvis du inkluderer polstring i form af blanke tegn eller linjeskift, så brug `trimmed` til automatisk at fjerne det, når oversættelsesfilen genereres: `{% blocktrans trimmed %}`
 
-### Examples
+### Eksempler
 
 ```html
-<p>{% trans "This list is currently empty" %}</p>
+<p>{% trans "Denne liste er p.t. tom" %}</p>
 
 <p>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Added by <a href="{{ user_path }}">{{ username }}</a>
+    Tilføjet af <a href="{{ user_path }}">{{ username }}</a>
     {% endblocktrans %}
 </p>
 ```
