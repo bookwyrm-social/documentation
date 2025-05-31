@@ -1,5 +1,5 @@
 ---
-Title: Environment variables
+Title: Environment Variables
 Date: 2025-04-28
 Order: 1
 ---
