@@ -6,7 +6,7 @@ Posting on BookWyrm starts with a book. Users can comment on in-progress or rece
 
 If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
 
-## Types of statuses
+## Типы статусов
 
 ### User commentary
 
@@ -26,15 +26,15 @@ There are three types of posts users can create directly in response to books: r
 
 Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
 
-## Text
-Text can include:
+## Текст
+Текст может содержать:
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+- Обращение (@user)
+- URL-адреса (`http(s)://` не показывается)
+- Текст в [формате Markdown](https://www.markdownguide.org/cheat-sheet/)
+  - жирный
+  - курсив
+  - цитата
+  - список
+  - ссылка
 
