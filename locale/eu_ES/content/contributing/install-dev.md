@@ -30,7 +30,7 @@ cp nginx/development nginx/default.conf
 ```
 - Konpilazioa bukatuta, `http://localhost:1333` instantziara irits zaitezke eta admin erabiltzaile bat sor dezakezu.
 
-Kuriosa bazara: `./bw-dev` komandoa shell skript soil bat da eta beste hainbat tresna exekutatzen ditu: aurreko komandoen ordez, zuk `docker-compose build` edo `docker-compose up` exekutatzen ahal zenuen zuzenean, nahi izanez gero. `./bw-dev` komandoak leku bakar batean biltzen ditu erosotasun gehiagorako. Exekutatu komando hori argumenturik gabe eskura dauden komandoen zerrenda lortzeko, irakurri dagokion [dokumentazio-orria](/command-line-tool.html) edo ireki fitxategia eta berrikusi zehatz-mehatz komando bakoitzak egiten duena!
+Kuriosa bazara: `./bw-dev` komandoa shell skript soil bat da eta beste hainbat tresna exekutatzen ditu: aurreko komandoen ordez, zuk `docker-compose build` edo `docker-compose up` exekutatzen ahal zenuen zuzenean, nahi izanez gero. `./bw-dev` komandoak leku bakar batean biltzen ditu erosotasun gehiagorako. Exekutatu komando hori argumenturik gabe eskura dauden komandoen zerrenda lortzeko, irakurri dagokion [dokumentazio orrialdea](/command-line-tool.html) edo ireki fitxategia eta berrikusi zehatz-mehatz komando bakoitzak egiten duena!
 
 ### Ereduak editatzea edo sortzea
 
