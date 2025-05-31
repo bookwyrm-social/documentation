@@ -2,23 +2,23 @@
 Название: Статус сообщения Дата: 2021-04-30 Заказ: 1
 - - -
 
-BookWyrm использует протокол [ActivityPub](http://activitypub.rocks/) для отправки и получения активности пользователей между другими экземплярами BookWyrm и другими службами, реализующими ActivityPub, такими как [Mastodon](https://joinmastodon.org/). Для обработки книжных данных BookWyrm имеет несколько типов расширенных действий, которые не являются частью стандарта, но разборчивы к другим экземплярам BookWyrm.
+BookWyrm использует протокол [ActivityPub](http://activitypub.rocks/) для отправки и получения активности пользователей между другими узлами BookWyrm и прочими сайтами, использующими ActivityPub, например [Mastodon](https://joinmastodon.org/). Для работы с книгами в BookWyrm добавлен ряд расширенных действий, которые не являются частью стандарта, но понятны другим узлам BookWyrm.
 
 ## Действия и объекты
 
 ### Пользователи и отношения
 Взаимодействие между пользователями соответствует стандартной спецификации ActivityPub.
 
-- `Follow (Подпишитесь на)`: запрос на получение статусов от пользователя и просмотрите их статусы, в которых есть только подписчики
-- `Accept (Принять)`: одобряет `Следовать` и фиксирует взаимоотношения
-- `Reject (Отклонить)`: запрещает `Follow (подписку)`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Подписк`а: запрос на получение обновлений пользователя и просмотра статусов, доступных только для подписчиков
+- `Принять`: одобряет `подписк`у и устанавливает связь
+- `Отклонить`: не разрешает `подписк`у
+- `Блок`ировка: не позволяет пользователям видеть статусы друг друга, а также заблокированный не видит профиль заблокировавшего
+- `Обновить`: обновляем настройки и профиль пользователя
+- `Удалить`: удаляет пользователя
+- `Отмена`: отменяет `Подписк`у или `Блок`ировку
 
-### Statuses
-#### Object types
+### Статусы
+#### Типы объектов
 
 - `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
 - `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
@@ -28,7 +28,7 @@ BookWyrm использует протокол [ActivityPub](http://activitypub.
 
 #### Действия
 
-- `Create`: saves a new status in the database.
+- `Создать`: сохраняет новый статус в базе данных.
 
    **Note**: BookWyrm only accepts `Create` activities if they are:
 
@@ -41,7 +41,7 @@ BookWyrm использует протокол [ActivityPub](http://activitypub.
 - `Undo`: Reverses a `Like` or `Announce`
 
 ### Collections
-Книги и списки пользователей представлены [`Заказной Коллекцией`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+Книги и списки пользователя представлены [`Упорядоченной Коллекцией`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
 
 #### Objects
 
@@ -52,9 +52,9 @@ BookWyrm использует протокол [ActivityPub](http://activitypub.
 
 - `Create`: Adds a shelf or list to the database.
 - `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Добавить`: Добавляет книгу на полку или в список.
+- `Убрать`: Убирает книгу с полки или из списка.
 
 
 ## Alternative Serialization
-Потому что BookWyrm использует пользовательские типы объектов (`Обзор`, `Комментарий`, `Цитаты`) которые не поддерживаются программой ActivityPub, статусы преобразуются в стандартные типы при отправке или просмотре службами не BookWyrm. `Отзыв`с конвертируются в `Статьи`с, и `Комментарий`s и `цитата`s преобразуются в `Примечание`s, с ссылкой на книгу и прикрепленное изображение обложки.
+Поскольку BookWyrm использует пользовательские типы объектов (`Обзор`, `Комментарий`, `Цитаты`) которые не поддерживаются ActivityPub, статусы преобразуются в стандартные типы при получении или просмотре сторонними сервисами. `Отзыв` конвертируется в `Статью`, а `Комментарий` и `цитата` преобразуются в `заметку`, со ссылкой на книгу и прикрепленное изображение обложки.
