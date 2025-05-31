@@ -16,6 +16,6 @@ This table shows the four groups (admin, moderator, editor, and user) and what p
 | manage federation      | ✔️    | ✔️        | -      | -    |
 | issue invites          | ✔️    | ✔️        | -      | -    |
 | deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+| 게시물 삭제                 | ✔️    | ✔️        | -      | -    |
+| 도서 수정                  | ✔️    | ✔️        | ✔️     | -    |
+ 표지 추가            |  ✔️    |     ✔️       |   ✔️     |  ✔️
