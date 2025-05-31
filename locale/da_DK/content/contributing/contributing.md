@@ -1,19 +1,19 @@
 - - -
-Title: How to Contribute Date: 2021-04-12 Order: 1
+Titel: Hvordan man bidrager Dato: 2021-04-12 Rækkefølge: 1
 - - -
 
-There are many ways you can contribute to this project, regardless of your level of technical expertise.
+Der er mange måder, du kan bidrage til dette projekt på, uanset dit niveau af teknisk ekspertise.
 
-## Feedback and feature requests
-Please feel encouraged and welcome to point out bugs, suggestions, feature requests, and ideas for how things ought to work using [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues).
+## Feedback eller forslag til funktionalitet
+Du opfordres og er meget velkommen til at påpege fejl, forslag, funktionsforespørgsler og idéer til, hvordan tingene bør fungere ved hjælp af [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues).
 
-## Code contributions
-Code contributions are gladly welcomed! If you're not sure where to start, take a look at the ["Good first issue"](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) tag. Because BookWyrm is a small project, there isn't a lot of formal structure, but there is a huge capacity for one-on-one support, which can look like asking questions as you go, pair programming, video chats, et cetera, so please feel free to reach out.
+## Kodebidrag
+Bidrag til koden er meget velkomme! Hvis du ikke er sikker på, hvor du skal starte, så tag et kig på ["Godt første problem"](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)-tagget. Fordi BookWyrm er et lille projekt, er der ikke nogen meget formel struktur, men der er en enorm kapacitet til en-til-en støtte, som kan omfatte at stille spørgsmål undervejs, parvis programmering, videochats, osv., så du er velkommen til at tage kontakt.
 
-If you have questions about the project or contributing, you can join the [BookWyrm matrix chat](https://app.element.io/#/room/#bookwyrm:matrix.org).
+Hvis du har spørgsmål til projektet eller til bidrag, kan du deltage i [BookWyrm matrix chat](https://app.element.io/#/room/#bookwyrm:matrix.org).
 
-## Translation
-Do you speak a language besides English? BookWyrm needs localization! You can add and edit translations at [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
+## Oversættelse
+Taler du et sprog ud over engelsk? BookWyrm skal lokaliseres! Du kan tilføje og redigere oversættelser på [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
 
-## Financial Support
-BookWyrm is an ad-free passion project with no intentions of seeking out venture funding or corporate financial relationships. If you want to help keep the project going, you can become a sustaining contributor via [Patreon](https://www.patreon.com/bookwyrm) or [OpenCollective](https://opencollective.com/bookwyrm), or make a one time gift via [PayPal](https://paypal.me/oulipo).
+## Økonomisk støtte
+BookWyrm er et reklamefrit passionsprojekt uden intentioner om at søge risikovillig finansiering eller økonomiske virksomhedsrelationer. Hvis du ønsker at hjælpe med at holde projektet i gang, kan du blive en vedvarende bidragyder via [Patreon](https://www.patreon.com/bookwyrm) eller [OpenCollective](https://opencollective.com/bookwyrm), eller donere en engangs gave via [PayPal](https://paypal.me/oulipo).
