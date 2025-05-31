@@ -2,15 +2,15 @@
 Title: Developer Environment Date: 2021-04-12 Order: 3
 - - -
 
-## Prerequisites
+## Vereisten
 
-These instructions assume you are developing BookWyrm using Docker. You'll need to [install Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to get started.
+Deze instructies gaan ervan uit dat je BookWyrm ontwikkelt met Docker. Je moet [Docker](https://docs.docker.com/engine/install/) en [docker-compose](https://docs.docker.com/compose/install/) installeren om aan de slag te gaan.
 
-## Setting up the developer environment
+## Het instellen van de ontwikkelaarsomgeving
 
 - Get a copy of [the BookWyrm codebase from GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
 - Go to the directory which contains the code on your computer, you'll be working from there from here on out.
-- Set up your development environment variables file by copying the example environment file (`.env.example`) into a new file named `.env`. In the command line, you can do this with:
+- Set up your development environment variables file by copying the example environment file (`.env.example`) into a new file named `.env`. In de opdrachtregel kun je dit doen met:
 ``` { .sh }
 cp .env.example .env
 ```
@@ -22,7 +22,7 @@ cp .env.example .env
 cp nginx/development nginx/default.conf
 ```
 
-- Start the application. In the command line, run:
+- Start de applicatie. Voer op de opdrachtregel het volgende uit:
 ``` { .sh }
 ./bw-dev build            # Build the docker images
 ./bw-dev setup            # Initialize the database and run migrations
@@ -32,16 +32,16 @@ cp nginx/development nginx/default.conf
 
 If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/command-line-tool.html) for it, or open it up and look around to see exactly what each command is doing!
 
-### Editing or creating Models
+### Het bewerken of maken van modellen
 
-If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
+Als je een model wijzigt of creëert, dan verander je waarschijnlijk de structuur van de database. For these changes to have effect you will need to run Django's `makemigrations` command to create a new [Django migrations file](https://docs.djangoproject.com/en/3.2/topics/migrations), and then `migrate` it:
 
 ``` { .sh }
 ./bw-dev makemigrations
 ./bw-dev migrate
 ```
 
-### Editing static files
+### Statische bestanden bewerken
 Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 ``` { .sh }
 ./bw-dev collectstatic
