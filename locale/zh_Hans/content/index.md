@@ -1,5 +1,5 @@
 - - -
-Title: Welcome Date: 2021-04-13
+Title: 欢迎 Date: 2021-04-13
 - - -
 
 BookWyrm是一个社交网络，用于跟踪你的阅读，谈论书籍，撰写评论，并发现下一步的阅读内容。 联盟允许BookWyrm用户加入小型的、可信赖的社区，这些社区可以相互联系，并与其他ActivityPub服务（如Mastodon和Pleroma）联系。
@@ -14,19 +14,19 @@ BookWyrm是一个社交网络，用于跟踪你的阅读，谈论书籍，撰写
         - 引语或摘录
     - 回复状态
     - 在连接的BookWyrm实例中查看一本书的汇总评论
-    - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
-    - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
-    - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
-- Federation with ActivityPub
-    - Broadcast and receive user statuses and activity
-    - Share book data between instances to create a networked database of metadata
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
+    - 区分本地与联邦的评论和评分信息
+- 跟踪阅读活动
+    - 书架默认以“想读”、“在读”和“读过”分类
+    - 创建自定义书架
+    - 存储在读和读过的日期以及在阅读时的进度
+    - 更新关注者的阅读活动(可选，使用精细的隐私控制)
+    - 创建书目列表，它们可以开放给任何人、管理或只由创建者编辑
+- 使用 ActivityPub 协议联邦
+    - 广播并接收用户状态和活动
+    - 在实例之间分享书籍数据以创建一个网络化的元数据资料库
+    - 识别实例的共享书和它的相关内容
+    - 在 BookWyrm 实例中关于并与用户互动
+    - 与非 BookWyrm ActivityPub 服务交互(目前支持 Mastodon)
 - 精细的隐私控制
     - 帖子、书架和列表的私密性、仅有粉丝和公开的隐私
     - 用户可以选择手动允许他人成为你的粉丝
