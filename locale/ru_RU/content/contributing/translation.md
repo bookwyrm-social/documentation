@@ -2,35 +2,35 @@
 Title: Translations Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Помощь с переводом
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Вы можете помочь с переводом BookWyrm на сайте [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Гендерно-нейтральный язык
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+При переводе BookWyrm должен использоваться гендерно-нейтральный язык везде, где возможно. Даже там, где в языке по умолчанию используется мужской род или союзы, вроде «он/она». Также важно, чтобы перевод был ясным, кратким и читаемым с экрана, хотя иногда эти цели противоречат друг другу; поэтому идеального и исчерпывающего подхода нет, а решение зависит от языка.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+В качестве главного принципа старайтесь придавать большое значение инклюзивному и гендерно-нейтральному языку, чем формальной грамматике или официально утвержденной стилистике. В английском языке, например, многие руководства по переводу требуют единого «она» или «он» в отношении индивидуума, но в BookWyrm предпочтительнее использовать гендерно-нейтральное «они».
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Если вы не уверены в том, как лучше подойти к переводу, оставьте комментарий к переводу или откройте [тему для обсуждения](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) для обсуждения сообществом.
 
-## Making templates translatable
+## Перевод шаблонов
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+Bookwyrm использует функциональность перевода Django, позволяющую изменять содержание страниц в зависимости от выбранного пользователем языка. Документация Django [предоставляет полезную информацию](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) о том как это работает. Если коротко, то:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* весь текст шаблона должен включать теги шаблона перевода
+* добавьте `{% load i18n %}` в верхней части шаблона, чтобы включить перевод
+* Если текстовый блок является переводимым текстом, вы можете использовать тег шаблона `{% trans %}`
+* Если текстовый блок включает переменные, следует использовать пару тегов `{% blocktrans %}` и `{% endblocktrans %}`. Если вы используете отступы пробелами или переносы строки, используйте `trimmed` для автоматического удаления его после генерации локального файла: `{% blocktrans trimmed %}`
 
-### Examples
+### Примеры
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>
 
 <p>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Added by <a href="{{ user_path }}">{{ username }}</a>
+    Добавлено <a href="{{ user_path }}">{{ username }}</a>
     {% endblocktrans %}
 </p>
 ```
