@@ -1,35 +1,35 @@
 - - -
-Title: External Storage Date: 2021-06-07 Order: 7
+Titel: Externe opslag Datum: 2021-06-07 order: 7
 - - -
 
 By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses `django-storages` to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.
 
-## S3-compatible Services
+## S3-compatibele diensten
 
-### Setup
+### Installatie
 
 Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) or [MinIO](https://min.io/) (GNU AGPL v3.0), or commercial ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
 
 This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
 
-### What awaits you
+### Wat er u te wachten staat
 
 If you are starting a new BookWyrm instance, the process will be:
 
-- Set up your external storage service
-- Enable external storage on BookWyrm
+- Stel je externe opslagservice in
+- Externe opslag op BookWyrm inschakelen
 - Start your BookWyrm instance
 - Update the instance connector
 
 If you already started your instance, and images have been uploaded to local storage, the process will be:
 
-- Set up your external storage service
-- Copy your local media to external storage
-- Enable external storage on BookWyrm
+- Stel je externe opslagservice in
+- Kopieer uw lokale media naar externe opslag
+- Externe opslag op BookWyrm inschakelen
 - Restart your BookWyrm instance
 - Update the instance connector
 
-### BookWyrm Settings
+### BookWyrm instellingen
 
 Edit your `.env` file by uncommenting the following lines:
 
@@ -43,7 +43,7 @@ If your S3-compatible service is Amazon AWS, you should be set. If not, you’ll
 - `AWS_S3_CUSTOM_DOMAIN`: the domain that will serve the assets, e.g. `"example-bucket-name.s3.fr-par.scw.cloud"` or `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
 - `AWS_S3_ENDPOINT_URL`: the S3 API endpoint, e.g. `"https://s3.fr-par.scw.cloud"` or `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
 
-### Copying local media to external storage
+### Lokale media kopiëren naar externe opslagruimte
 
 If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.
 
@@ -101,7 +101,7 @@ Create a file called `cors.json`, with the following content:
 
 Replace `MY_DOMAIN_NAME` with the domain name(s) of your instance.
 
-Then, run the following command:
+Voer vervolgens het volgende commando uit:
 
 ```bash
 ./bw-dev set_cors_to_s3 cors.json
@@ -109,9 +109,9 @@ Then, run the following command:
 
 No output means it should be good.
 
-If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.
+If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. Zo niet, blijf lezen.
 
-### Restarting your instance
+### Herstarten van je server
 
 Once the media migration has been done and the static assets are collected, you can load the new `.env` configuration and restart your instance with:
 
