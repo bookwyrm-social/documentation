@@ -65,7 +65,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
 \q
 ```
 
-- Migrer le schéma de la base de données en exécutant `venv/bin/python3 manage.py migrate`
+- Migrez le schéma de la base de données en exécutant `venv/bin/python3 manage.py migrate`
 - Initialisez la base de données en exécutant `venv/bin/python3 manage.py initdb`
 - Générez les static en exécutant `venv/bin/python3 manage.py collectstatic --no-input`
 - Si vous souhaitez utiliser un stockage externe pour les ressources statiques et les fichiers multimédias (comme un service compatible S3), [suivez les instructions](/external-storage.html) jusqu'à être redirigé ici
