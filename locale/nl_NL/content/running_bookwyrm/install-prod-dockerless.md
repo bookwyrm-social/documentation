@@ -6,13 +6,13 @@ Order: 2
 
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production. This method of installation is more involved, and therefore is for more experienced admins. Docker install is recommended This install method assumes you already have ssl configured with certificates available
 
-## Server setup
+## Server installatie
 - Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev`
+- Installeer afhankelijkheden. On debian this could look like `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev`
 
-## Install and configure BookWyrm
+## Installeer en configureer BookWyrm
 
 The `production` branch of BookWyrm contains a number of tools not on the `main` branch that are suited for running in production, such as `docker-compose` changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups. Not all of these changes effect the dockerless install, however the `production` branch is still recommended
 
@@ -75,7 +75,7 @@ GRANT ALL PRIVILEGES ON DATABASE bookwyrm TO bookwyrm;
     - You should now run bookwyrm related commands as the bookwyrm user: `sudo -u bookwyrm echo I am the $(whoami) user`
 
 - Generate the admin code with `sudo -u bookwyrm venv/bin/python3 manage.py admin_code`, and copy the admin code to use when you create your admin account.
-- You can get your code at any time by re-running that command. Here's an example output:
+- You can get your code at any time by re-running that command. Hier is een voorbeeld uitvoer:
 
 ``` { .sh }
 *******************************************
@@ -105,8 +105,8 @@ set -e
     - Change `8000` to your custom port number
     - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
 - You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
-- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
-- You may want to configure BookWyrm to autorun with a systemd service. Here is an example:
+- The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Gebruik uw beheerderscode om te registreren.
+- You may want to configure BookWyrm to autorun with a systemd service. Hier is een voorbeeld:
 ```
 # /etc/systemd/system/bookwyrm.service
 [Unit]
@@ -127,8 +127,8 @@ WantedBy=multi-user.target
 ```
 You will need to set up a Cron job for the service to start automatically on a server restart.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Gefeliciteerd! Het is je gelukt!! Configure your instance however you'd like.
 
-## Get Involved
+## Doe mee
 
-See [Get Involved](https://joinbookwyrm.com/get-involved/) for details.
+Zie [Neem deel](https://joinbookwyrm.com/get-involved/) voor details.
