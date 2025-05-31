@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-07-08 17:52\n"
+"PO-Revision-Date: 2025-05-31 23:28\n"
 "Last-Translator: \n"
 "Language-Team: Danish\n"
 "Language: da_DK\n"
@@ -19,15 +19,15 @@ msgstr ""
 
 #: templates/index.html:5 templates/layout.html:6
 msgid "BookWyrm Documentation"
-msgstr ""
+msgstr "BookWyrm-dokumentation"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
-msgstr ""
+msgstr "Din vejledning til at bruge og bidrage til BookWyrm"
 
 #: templates/index.html:6
 msgid "How to Use and Contribute"
-msgstr ""
+msgstr "Hvordan man bruger og bidrager"
 
 #: templates/layout.html:4
 msgid "BookWyrm: Social Reading and Reviewing"
