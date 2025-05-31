@@ -45,7 +45,7 @@ Erabiltzaile-harremanaren elkarrekintzek Activity Pub-en berezitasun estandarrar
 
 #### Objektuak
 
-- `Apalategia`: Erabiltzaile baten liburu bilduma. Lehenespenez, erabiltzaile bakoitzak hainbat atal ditu, irakurtketaren aurrerapenari jarraitzeko: `irakurtzekoak`, `irakurtzen hasitakoak` eta `irakurriak`.
+- `Apala`: erabiltzaile baten liburu bilduma. Lehenespenez, erabiltzaile bakoitzak hainbat atal ditu irakurketaren egoeraren berri izateko: `irakurtzekoak`, `irakurtzen hasitakoak` eta `irakurriak`.
 - `Zerrenda`: Zerrenda sortu zuen erabiltzaileaz besteko elementuak izan ditzakeen liburu-bilduma.
 
 #### Jarduerak
