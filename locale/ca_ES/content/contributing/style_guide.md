@@ -2,15 +2,15 @@
 Títol: Guia d'estil Data: 2021-10-20 Ordre: 4
 - - -
 
-## Pull requests
+## Sol·licitud d'extracció
 
-So you want to contribute code to BookWyrm: that rules! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.
+Així que vols contribuir al codi de BookWyrm: genial! Si hi ha alguna incidència oberta que vulgueu solucionar, poseu-hi un comentari per a evitar duplicacions de feina. Intenteu mantenir petits i enfocats a un sol tema concret l'abast dels pull requests. Aquesta manera és més fàcil de revisar i, si una part necessita canvis, no interferirà en les altres.
 
-If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.
+Si no tens clar com arreglar alguna cosa o no te'n surts, cap problema. Simplement deixa un comentari a la petició i ja ho trobarem.
 
-Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.
+Les pull requests han de passar tots els controls automàtics abans que es fusionin. Això inclou fer verificacions d'estil, linters globals, una verificació de seguretat i tests unitaris.
 
-## Linting
+## Lint
 
 ### Global
 
@@ -18,34 +18,34 @@ Fem ús d'[EditorConfig](https://editorconfig.org) per mantenir sagnats i finals
 
 ### Python
 
-BookWyrm uses the [Black](https://github.com/psf/black) code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev black`
+BookWyrm utilitza el formatador de codi [Negre](https://github.com/psf/black) per mantenir l'estil coherent de la base de codi Python. Totes les sol·licituds d'extracció noves es comproven amb accions de GitHub i podeu solucionar automàticament els problemes d'estil de codi executant `./bw-dev black`
 
-Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: `# pylint: disable=warning-name`
+Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. Per eliminar una advertència, afegeix un comentari al final o a la línia de sobre de les advertències: `# pylint: disable=warning-name`
 
 ### Plantilles (HTML)
 
-Your pull request will also be checked by the [curlylint](https://www.curlylint.org) linter for Django templates.
+El teu pull request també el comprovarà el linter [curlyint](https://www.curlylint.org) per plantilles Django.
 
 ### CSS
 
-We use [stylelint](https://stylelint.io) to check all CSS rules. As with Pylint [you can disable stylelint](https://stylelint.io/user-guide/ignore-code) for a particular rule, but you will need a good justification for doing so.
+Fem servir [stylelint](https://stylelint.io) per validar totes les regles CSS. Com amb Pylint [pots deshabilitar stylelint](https://stylelint.io/user-guide/ignore-code) per a una regla en particular, però et caldrà una bona raó.
 
 ### JavaScript
 
-[ESLint](https://eslint.org) checks any JavaScript changes you have made. If ESLint doesn't like your working JavaScript, check the linter message for the exact problem.
+L'[ESLint](https://eslint.org) comprova tots els canvis de JavaScript que facis. Si a l'ESLint no li agrada el teu JavaScript, mira el missatge linter per trobar quin és el problema exacte.
 
 ## Disseny inclusiu
 
-Bookwyrm aims to be as inclusive and accessible as possible.
+BookWyrm intenta ser tan inclusiu i accessible com sigui possible.
 
-When contributing code, check the [Inclusive Web Design Checklist](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) before you file your pull request. For accessibility advice, [A11Y-101](https://www.a11y-101.com/development) is also a useful source. For information on how to make your page templates multi-lingual, see the [Translations section](/translations.html).
+Si contribueixes en el codi, comprova la [Llista de comprovacions per al disseny web inclusiu](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) abans de fer el teu pull request. Per a consells sobre accessibilitat, [A11Y-101](https://www.a11y-101.com/development) també pot ser una font útil. Per a informació sobre com fer que les teves plantilles siguin multilingües, ves a la [secció de traduccions](/translations.html).
 
-Some particular things that Bookwyrm contributors have found useful to remember are:
+Algunes particularitats que els contribuïdors de BookWyrm han trobat útils són:
 
 ### Formularis
 
-* Only use `input[type="checkbox"]` or `input[type="radio"]` inside `<label>`
-* If you do not place checkboxes and radio buttons inside the `<label>`, the `<label>` should be placed _after_ the element it relates to
+* Fes servir `input[type="checkbox"]` o `input[type="radio"]` només a dins de <0>&lt;label&gt;</0>
+* Si no col·loques els elements checkbbox i radio dins de `<label>`, el `<label>` s'haurà de col·locar _després_ de l'element a què es refereix
 
 ### Botons i enllaços
 
