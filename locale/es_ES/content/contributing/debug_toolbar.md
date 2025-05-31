@@ -1,12 +1,12 @@
 - - -
-Title: Django Debug Toolbar Date: 2022-05-16 Order: 5
+Título: Django Debug Toolbar Fecha: 2022-05-16 Orden: 5
 - - -
 
-BookWyrm has a branch that is configured to run [Django Debug Toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/). This branch will never get merged into `main` and has a few tweaks that make it work with the toolbar, but unsafe to use in anything resembling a production environment. To use this branch, you will need to go through a few steps to get it running.
+BookWyrm tiene una rama configurada para ejecutar [Barra de Herramientas de Depuración de Django](https://django-debug-toolbar.readthedocs.io/en/latest/). Esta rama nunca se fusionará en `main` y tiene algunos ajustes que funcionan con la barra de herramientas, aunque no es segura para usar en algo parecido a un entorno de producción. Para usar esta rama, necesitarás pasar por unos pocos pasos para ponerla en marcha.
 
-## Set up
+## Configuración
 
-- Using git, checkout out the [`debug-toolbar`](https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar) branch
-- Update the branch relative to `main` using `git merge main`. The branch is updated periodically but will likely be behind latest.
-- Re-build the Docker images using `docker-compose up --build` to ensure that the Debug Toolbar library is installed from `requirements.txt`
-- Access the application `web` image directly (instead of via `nginx`) using port `8000`
+- Usando git, revisa la rama [`debug-toolbar`](https://github.com/bookwyrm-social/bookwyrm/tree/debug-toolbar).
+- Actualiza la rama relativa a `main` usando `git merge main`. La rama se actualiza periódicamente pero probablemente esté por detrás de la última.
+- Recompilar las imágenes Docker usando `docker-compose up --build` para asegurar que la biblioteca de la barra de depuración esté instalada desde `requirements.txt`.
+- Acceder a la aplicación web directamente usando `web` (en lugar de `nginx`) usando el puerto `8000`.
