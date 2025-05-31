@@ -2,25 +2,25 @@
 Títol: Actualitzant la teva instància Data: 2022-11-17 Ordre: 3
 - - -
 
-Quan hi ha canvis disponibles a la branca de producció, els pots instal·lar i fer funcionar a la teva instància mitjançant la comanda `./bw-dev update`. This does a number of things:
+Quan hi ha canvis disponibles a la branca de producció, els pots instal·lar i fer funcionar a la teva instància mitjançant la comanda `./bw-dev update`. Això fa les següents coses:
 
-- `git pull` gets the updated code from the git repository. If there are conflicts, you may need to run `git pull` separately and resolve the conflicts before trying the `./bw-dev update` script again.
-- `docker-compose build` rebuilds the images, which ensures that the correct packages are installed. This step takes a long time and is only needed when the dependencies (including pip `requirements.txt` packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.
-- `docker-compose run --rm web python manage.py migrate` runs the database migrations in Django using the newly built Docker images
-- `docker-compose run --rm web python manage.py collectstatic --no-input` loads any updated static files (such as the JavaScript and CSS)
-- `docker-compose down; docker-compose up -d` will restart all the docker containers and make use of the newly built images (Attention: downtime during the restart)
+- `git pull` retorna el codi actualitzat des del repositori de git. Si hi ha conflictes, podries necessitar executar  `git pull` de manera separada i resoldre els conflictes abans d'intentar l'script `./bw-dev update` de nou.
+- `docker-compose build` reconstrueix les imatges, cosa que garanteix que els paquets correctes s'instal·lin. Els passos requereixen temps i només són necessaris quan les dependències (incloent els paquets pip `requirements.txt`) han canviat, així que ho pots comentar si vols una actualització més ràpida i no et fa res descomentar si fes falta.
+- `docker-compose run --rm web python manage.py migrate` executa les migracions de la base de dades amb Django fent ús de les noves imatges Docker construïdes
+- `docker-compose run --rm web python manage.py collectstatic --no-input` carrega qualsevol fitxer estàtic actualitzat (així com el JavaScript i CSS)
+- `docker-compose down; docker-compose up -d` reiniciarà tots els contenidors docker i farà ús de les noves imatges construïdes (Atenció: temps inoperatiu durant el reinici)
 
-## Re-building activity streams
+## Reconstruint els fluxos d'activitat
 
-Feeds for each user are stored in Redis. To re-populate a stream, use the management command:
+La informació de la qual es nodreix cada usuari queda emmagatzemada a Redis. Per tal de recrear un flux, utilitza la comanda de gestió:
 
 ``` { .sh }
 ./bw-dev populate_streams
-# Or use docker-compose directly
+# O utilitza docker-compose directament
 docker-compose run --rm web python manage.py populate_streams
 ```
 
-If something has gone terribly awry, the stream data can be deleted.
+Si alguna cosa ha anat molt malament, el flux de dades es pot eliminar.
 
 ``` { .sh }
 docker-compose run --rm web python manage.py erase_streams
