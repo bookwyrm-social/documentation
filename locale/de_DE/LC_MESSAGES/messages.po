@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2023-01-02 13:53\n"
+"PO-Revision-Date: 2025-05-31 23:28\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -23,7 +23,7 @@ msgstr "BookWyrm Dokumentation"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
-msgstr "Deine Anleitung BookWyrm zu nutzen und dazu beizutragen"
+msgstr "Wie man BookWyrm benutzt und dazu beiträgt"
 
 #: templates/index.html:6
 msgid "How to Use and Contribute"
@@ -39,7 +39,7 @@ msgstr "Beitreten"
 
 #: templates/layout.html:38 templates/layout.html:42
 msgid "Get involved"
-msgstr "Mach mit"
+msgstr "Mitmachen"
 
 #: templates/layout.html:41 templates/layout.html:45
 msgid "Support"
@@ -56,7 +56,7 @@ msgstr "Dokumentation"
 
 #: templates/layout.html:95 templates/layout.html:101
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr "<strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird."
+msgstr "<strong>BookWyrm</strong> ist eine kollaborative, nicht-kommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird."
 
 #: templates/layout.html:98 templates/layout.html:104
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
