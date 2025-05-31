@@ -8,7 +8,7 @@ Hai dous xeitos diferentes de engadir libros á túa instancia BookWyrm! Cando n
 
 ## Cargar libros desde outros catálogos
 
-Se o libro que buscas non está dispoñible na túa instancia, existen varios xeitos de engadilo. O mellor xeito é importalo desde unha fonte externa -- a túa instancia pode obter libros desde outras instancias BookWyrm, así como de [OpenLibrary](http://openlibrary.org/) e [Inventaire](http://inventaire.io/). Se non obtes resultados para a busca, estas fontes serán consultadas automáticamente, e mostrarán un botón para "**Importar libro**". Se hai resultados locais que non son o que estabas a buscar, podes premer na ligazón "**Cargar resultados doutros catálogos**" para ver máis suxestións.
+Se o libro que buscas non está dispoñible na túa instancia, existen varios xeitos de engadilo. O mellor xeito é importalo desde unha orixe externa -- a túa instancia pode obter libros desde outras instancias BookWyrm, así como de [OpenLibrary](http://openlibrary.org/) e [Inventaire](http://inventaire.io/). Se non obtés resultados para a busca, estas orixes serán consultadas automáticamente, e mostrarán un botón para "**Importar libro**". Se hai resultados locais que non son o que estabas a buscar, podes premer na ligazón "**Cargar resultados doutros catálogos**" para ver máis suxestións.
 
 
 ## Engadir outra edición
