@@ -1,25 +1,25 @@
 - - -
-Title: Posting statuses Date: 2022-04-30 Order: 1
+Títol: Publicar estats Data: 2022-04-30 Ordre: 1
 - - -
 
-Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+Publicar a BookWyrm comença amb un llibre. Els usuaris poden comentar llibres en progrés o llegits fa poc des de la secció "Els teus llibres" o des de la pàgina d'inici d'un llibre. Des d'aquí, els usuaris poden respondre o iniciar una conversa. Les publicacions de BookWyrm pot incloure estils com negreta, cursiva i enllaços fent ús de [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
+Si estàs familiaritzat en [publicar a Mastodon](https://docs.joinmastodon.org/user/posting/), trobaràs que els estats de BookWyrm tenen similars configuracions de visualització, advertències de contingut i mencions. Tot i això, enquestes, emojis personalitzats i adjunts no són suportats encara.
 
 ## Tipus d'estats
 
 ### Comentari d'usuari
 
-There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
+Hi ha tres tipus de publicacions que els usuaris poden crear directament en resposta a llibres: ressenyes, comentaris i cites. Els comentaris responen a aspectes generals d'un llibre, les cites pertanyen a passatges específics d'un llibre i les ressenyes tracten sobre els llibres de manera general. Els usuaris també poden respondre a estats.
 
-| Component                | Review | Comment | Quote | Reply |
-| ------------------------ | ------ | ------- | ----- | ----- |
-| Camp de text             | ✔      | ✔       | ✔     | ✔     |
-| Revela parts de la trama | ✔      | ✔       | ✔     | ✔     |
-| Número de pàgina         |        | ✔       | ✔     |       |
-| Cita                     |        |         | ✔     |       |
-| Valoració                | ✔      |         |       |       |
-| Camp de títol            | ✔      |         |       |       |
+| Component                | Ressenya | Comentari | Cita | Resposta |
+| ------------------------ | -------- | --------- | ---- | -------- |
+| Camp de text             | ✔        | ✔         | ✔    | ✔        |
+| Revela parts de la trama | ✔        | ✔         | ✔    | ✔        |
+| Número de pàgina         |          | ✔         | ✔    |          |
+| Cita                     |          |           | ✔    |          |
+| Valoració                | ✔        |           |      |          |
+| Camp de títol            | ✔        |           |      |          |
 
 
 ### Actualitzacions d'estats de lectura
