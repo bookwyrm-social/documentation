@@ -1,21 +1,21 @@
 - - -
-Название: Разрешения Дата: 2021-04-18 Заказ: 2
+Название: Права Дата: 2021-04-18 Заказ: 2
 - - -
 
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+Доступ пользователей к различным функциям управляется [встроенной системой авторизации](https://docs.djangoproject.com/en/3.2/topics/auth/default/) Django. When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. Изначально все пользователи относятся к группе `редакторы`, которая может редактировать метаданные книг.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+Администратор узла должен иметь статус `superuser`, который даёт ему доступ администратора Django (`/admin`) и все права этого пользователя.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Права и группы
+Эта таблица показывает 4 группы (админы, модераторы, редакторы и пользователи) и какие права члены этих групп имеют:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                        | админы | модераторы | редакторы | пользователи |
+| ---------------------- | ------ | ---------- | --------- | ------------ |
+| настройки узла         | ✔️     | -          | -         | -            |
+| уровни пользователей   | ✔️     | -          | -         | -            |
+| настройки федерации    | ✔️     | ✔️         | -         | -            |
+| выдача приглашений     | ✔️     | ✔️         | -         | -            |
+| удаление пользователей | ✔️     | ✔️         | -         | -            |
+| удаление постов        | ✔️     | ✔️         | -         | -            |
+| редактирование книг    | ✔️     | ✔️         | ✔️        | -            |
+ | загрузка обложек            |  ✔️    |     ✔️       |   ✔️     |  ✔️
