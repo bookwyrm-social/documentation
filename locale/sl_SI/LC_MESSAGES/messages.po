@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-12-13 06:56\n"
+"PO-Revision-Date: 2025-05-31 23:28\n"
 "Last-Translator: \n"
 "Language-Team: Slovenian\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
 "X-Crowdin-Project: bookwyrm\n"
 "X-Crowdin-Project-ID: 479239\n"
 "X-Crowdin-Language: sl\n"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: templates/layout.html:104 templates/layout.html:110
 msgid "BookWyrm on GitHub"
-msgstr ""
+msgstr "BookWyrm na GitHubu"
 
 #: templates/layout.html:107 templates/layout.html:113
 msgid "Contribute to this page"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: templates/layout.html:122 templates/layout.html:128
 msgid "Learn more"
-msgstr ""
+msgstr "Več o tem"
 
 #: templates/layout.html:127 templates/layout.html:133
 msgid "Contact maintainer"
