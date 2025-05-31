@@ -2,32 +2,32 @@
 Izenburua: Ongi etorri Eguna: 2021-04-13
 - - -
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+BookWyrm, irakurketaren jarraipena egiteko, liburuei buruz hitz egiteko, erreseinak idazteko eta zer irakurri aurkitzeko sare sozial bat da. Federazioak BookWyrm-eko erabiltzaileei komunitate txiki eta fidagarrietara batzea onartzen die, bata bestearekin, eta Mastodon eta Pleroma bezalako beste ActivityPub-en zerbitzuetara konekta daitezkeenak.
 
-## Features
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+## Eginbideak
+Proiektua oraindik hasierako fasean dagoenez, eginbideak egunero hazten doaz, eta iradokizun eta ideia berriak entzuteko prest gaude. Ireki [proposamen](https://github.com/bookwyrm-social/bookwyrm/issues) bat elkarrizketa hasteko.
 
-- Posting about books
-    - Compose reviews, with or without ratings, which are aggregated in the book page
-    - Compose other kinds of statuses about books, such as:
-        - Comments on a book
-        - Quotes or excerpts
-    - Reply to statuses
-    - View aggregate reviews of a book across connected BookWyrm instances
-    - Differentiate local and federated reviews and rating in your activity feed
-- Track reading activity
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
-    - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
-    - Update followers about reading activity (optionally, and with granular privacy controls)
-    - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
-- Federation with ActivityPub
-    - Broadcast and receive user statuses and activity
-    - Share book data between instances to create a networked database of metadata
-    - Identify shared books across instances and aggregate related content
-    - Follow and interact with users across BookWyrm instances
-    - Inter-operate with non-BookWyrm ActivityPub services (currently, Mastodon is supported)
-- Granular privacy controls
-    - Private, followers-only, and public privacy levels for posting, shelves, and lists
-    - Option for users to manually approve followers
-    - Allow blocking and flagging for moderation
+- Liburuei buruz argitaratzen
+    - Idatzi iriziak, balorazioarekin edo gabe, eta liburuaren orrian gehituko dira
+    - Idatzi liburuen beste egoera mota batzuk, hala nola:
+        - Liburu baten iruzkinak
+        - Aipuak edo pasarteak
+    - Erantzun egoerei
+    - Ikusi liburu bati gehitutako iritziak konektatutako BookWyrm instantzietan zehar
+    - Ezberdindu iritzi lokalak edo federatuak eta jardueren jarioko balorazioa
+- Jarraitu irakurketaren jarduerak
+    - Artxibatu liburuak lehenetsitako "irakurtzekoak", "orain irakurtzen" eta "irakurritakoak" apaletan
+    - Sortu apal pertsonalizatuak
+    - Gorde irakurtzen hasitako edo irakurtzen amaitutako datak, baita aurrerapen-eguneratzeak ere
+    - Eguneratu irakurketa-jardueraren jarraitzaileak (aukeran, eta pribatutasun-kontrol granularrarekin)
+    - Sortu edozeinek liburuak gehi ditzakeen liburu-zerrenda pertsonalizatuak, soilik sortzaileak edita ditzakeenak
+- Federazioa ActivityPub-ekin
+    - Igorri eta jaso erabiltzaile-egoerak eta -jarduerak
+    - Partekatu liburuen datuak instantzien artean metadatuen konektatutako datu-base bat sortzeko
+    - Identifikatu instantzietan zehar partekatutako liburuak eta gehitu lotutako edukia
+    - Jarraitu eta elkarreragin BookWyrm instantzietako erabiltzaileekin
+    - Interoperatu BookWyrm ez diren ActivityPub-en zerbitzuekin (unean, Mastodon onartzen da)
+- Pribatutasun-kontrol granularrak
+    - Pribatuak, jarraitzaileentzat soilik eta publikoak diren pribatutasun-mailak argitaratzeko, artxibatzeko eta zerrendatzeko
+    - Erabiltzaileentzako aukera jarraitzaileak eskuz onartzeko
+    - Onartu blokeatzea eta salatzea moderatzeko
