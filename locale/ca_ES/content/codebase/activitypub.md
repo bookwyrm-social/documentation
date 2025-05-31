@@ -1,23 +1,23 @@
 - - -
-Title: ActivityPub Date: 2021-04-20 Order: 1
+Títol: ActivityPub Data: 2021-04-20 Ordre: 1
 - - -
 
-BookWyrm utiltza el protocol [ActivityPub](http://activitypub.rocks/) per enviar i rebre activitat d'usuari entre diferents instàncies de BookWyrm i altres serveis que implementen ActivityPub, com [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm utiltza el protocol [ActivityPub](http://activitypub.rocks/) per enviar i rebre activitat d'usuari entre diferents instàncies de BookWyrm i altres serveis que implementen ActivityPub, com [Mastodon](https://joinmastodon.org/). Per manegar les dades d'un llibre, BookWyrm té molts tipus d'activitats que no formen parts de l'estàndard, però que altres instàncies de BookWyrm poden llegir.
 
-## Activities and Objects
+## Activitats i Objectes
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Usuaris i relacions
+Les interaccions entre usuaris segueixen les especificacions estandars d'ActivityPub.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Segueix`: sol·licita rebre les entrades d'un usuari i veure aquelles que només són accessibles per part dels seguidors
+- `Accepta`: aprova un `Segueix` i finalitza la sol·licitud
+- `Refusa`: denega un `Segueix`
+- `Bloqueja`: impossibilita als usuaris que es vegin mútuament les entrades i l'accés de la persona bloquejada al perfil de qui l'ha bloquejat
+- `Actualitza`: actualitza el perfil i configuració de l'usuari
+- `Elimina`: desactiva l'usuari
+- `Desfés`: desfà un `Segueix` o `Bloqueja`
 
-### Statuses
+### Estats
 #### Tipus d'objecte
 
 - `Nota`: En serveis com Mastodon, les `Notes` són el tipus principal d'estat. Contenen un cos del missatge, adjunts, poden fer menció a usuaris i, ser respostes altres tipus d'estat. Dins de BookWyrm, les `Notes` només poden ser creades com a missatges directes o com a respostes a altres estats.
@@ -45,8 +45,8 @@ Els llibres i llistats de l'usuari son representats per [`OrderedCollection`](ht
 
 #### Objectes
 
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
+- `Prestatge`: Una col·lecció de llibres d'un usuari. Per defecte, tots els usuaris tenen un prestatge `per-llegir`, `llegint` i `llegit` els quals són emprats per fer un seguiment de la seva activitat de lectura.
+- `Llista`: Una col·lecció de llibres que pot contenir contribucions realitzades per altres usuaris a més a més de qui ha creat la llista.
 
 #### Activitats
 
@@ -57,4 +57,4 @@ Els llibres i llistats de l'usuari son representats per [`OrderedCollection`](ht
 
 
 ## Serialitzacions alternatives
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+Degut a que BookWyrm fa ús de tipus d'objectes personalitzats (`Ressenya`, `Comentari`, `Cita`) que no són reconeguts per l'ActiityPub, els estats són transformats a tipus estàndard quan s'envien o són llegits per serveis que no són BookWyrm. `Ressenyes` són convertides en `Article`s i, `Comentari`s i `Cites` són transformats en `Notes`, amb un enllaç al llibre i a la imatge de portada adjunta.
