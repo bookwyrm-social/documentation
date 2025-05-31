@@ -1,54 +1,54 @@
 - - -
-Title: Optional features Date: 2021-08-02 Order: 8
+Título: Funciones opcionales Fecha: 2021-08-02 Orden: 8
 - - -
 
-Some features of BookWyrm have to be enabled to work.
+Algunas características de BookWyrm tienen que estar habilitadas para funcionar.
 
-## Preview image generation
+## Previsualización de imágenes
 
-By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
+Por defecto, BookWyrm utiliza el logo de la instancia como una imagen de vista previa de OpenGraph. Como alternativa, puedes habilitar la generación de imágenes de vista previa para libros, usuarios y el sitio web.
 
-The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Depending on the type of image, the contents will be:
+Las imágenes de vista previa grandes serán redimensionadas para las imágenes de OpenGraph (utilizadas por Twitter con el nombre de `Resumy_large_image`). Dependiendo del tipo de imagen, el contenido será:
 
-- the default instance image will display the big logo, along with the name of the instance and its url
-- the user image will display their avatar, display name, handle (in the form of username@instance)
-- the book image will display their cover, title, subtitle (if present), author and rating (if present)
+- la imagen por defecto de la instancia mostrará el logo grande junto con el nombre de la instancia y su url
+- la imagen del usuario mostrará su avatar, nombre, e identificador (en forma de nombre de usuario@instancia)
+- la imagen del libro mostrará su portada, título, subtítulo (si está presente), autore y valoración (si está presente)
 
-These images will be updated at various points:
+Estas imágenes se actualizarán en varios puntos:
 
-- instance image: when the instance name or big logo are changed
-- user image: when the display name or avatar are changed
-- book image: when the title(s), author(s) or cover are changed, or when a new rating is added
+- imagen de la instancia: cuando se cambia el nombre de la instancia o el logotipo grande
+- imagen de usuario: cuando se cambia el nombre o avatar
+- imagen de libro: cuando el título, le autore o la portada son cambiados, o cuando se añade una nueva valoración
 
-### Enabling preview images
+### Habilitar imágenes de vista previa
 
-In order to enable the feature with default settings, you have to uncomment (remove the `#` in front of) the line `ENABLE_PREVIEW_IMAGES=true` in your `.env` file. All the new updating events aforementioned will cause the generation of the corresponding image.
+Para activar la característica con la configuración predeterminada, tienes que descomentar (eliminar la `#`) la línea `ENABLE_PREVIEW_IMAGES=true` en tu archivo `.env`. Todas las nuevas actualizaciones de eventos causarán la generación de la imagen correspondiente.
 
-Examples for these images can be viewed on the [feature’s pull request’s description](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink).
+Ejemplos de estas imágenes se pueden ver en la descripción de la [solicitud de extracción](https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink) de la función.
 
-### Generating preview images
+### Generando vista previa
 
-If you enable this setting after your instance has been started, some images may not have been generated. A command has been added to automate the image generation. In order to prevent a ressource hog by generating **A LOT** of images, you have to pass the argument `--all` (or `-a`) to start the generation of the preview images for all users and books. Without this argument, only the site preview will be generated.
+Si activas esta configuración después de que la instancia haya sido iniciada, es posible que algunas imágenes no hayan sido generadas. Se ha añadido un comando para automatizar la generación de imágenes. Con el fin de prevenir un bloqueo de recursos generando **UN MONTÓN** de imágenes, tienes que pasar el argumento `--all` (o `-a`) para iniciar la generación de imágenes de vista previa para todos los usuarios y libros. Sin este argumento, solo se generará la vista previa del sitio.
 
-User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.
+Las imágenes de vista previa del usuario y del libro se generarán de forma asincrónica: la tarea se enviará a Flower. Puede ser necesario algún tiempo antes de que todos los libros y usuarios tengan una imagen de vista previa funcional. Si tienes un buen libro 📖, un gatito 🐱 o un pastel 🍰, este es el momento perfecto para brindarles algo de atención 💖.
 
-### Optional settings
+### Configuraciones opcionales
 
-So you want to customize your preview images? Here are the options:
+¿Así que quieres personalizar tus imágenes de vista previa? Aquí hay algunas opciones:
 
-- `PREVIEW_BG_COLOR` will set the color for the preview image background. You can supply a color value, like `#b00cc0`, or the following values `use_dominant_color_light` or `use_dominant_color_dark`. These will extract a dominant color from the book cover and use it, in a light or a dark theme respectively.
-- `PREVIEW_TEXT_COLOR` will set the color for the text. Depending on the choice for the background color, you should find a value that will have a sufficient contrast for the image to be accessible. A contrast ratio of 1:4.5 is recommended.
-- `PREVIEW_IMG_WIDTH` and `PREVIEW_IMG_HEIGHT` will set the dimensions of the image. Currently, the system will work best on images with a landscape (horizontal) orientation.
-- `PREVIEW_DEFAULT_COVER_COLOR` will set the color for books without covers.
+- `PREVIEW_BG_COLOR` establecerá el color del fondo de la imagen de vista previa. Puedes proporcionar un valor del color, como `#b00cc0`, o los siguientes valores: `use_dominant_color_light`, o `use_dominant_color_dark`. Estos extraerán un color dominante de la portada del libro y la utilizarán en un tema claro o oscuro, respectivamente.
+- `PREVIEW_TEXT_COLOR` establecerá el color del texto. Dependiendo de la elección del color de fondo, debes encontrar un valor que tenga un contraste suficiente para que la imagen sea accesible. Se recomienda una relación de contraste de 1:4.5
+- `PREVIEW_IMG_WIDTH` y `PREVIEW_IMG_HEIGHT` establecerán las dimensiones de la imagen. Actualmente, el sistema funciona mejor en imágenes con una orientación horizontal.
+- `PREVIEW_DEFAULT_COVER_COLOR` establecerá el color para libros sin portadas.
 
-All the color variables accept values that can be recognized as colors by Pillow’s `ImageColor` module: [Learn more about Pillow color names](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
+Todas las variables de color aceptan valores que pueden ser reconocidos como colores por el módulo `ImageColor` de Pillow: [Aprende más sobre los nombres de colores de Pillow](https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names).
 
-### Removing preview images for remote users
+### Eliminar imágenes de vista previa generadas por usuarios remotos
 
-Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in terms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:
+Antes de BookWyrm 0.5.4, las imágenes de vista previa eran generadas por usuarios remotos. Al ser excesivo en términos de espacio en disco y potencia informática, esa generación se ha detenido. Si deseas eliminar todas las imágenes que se generaron previamente por usuarios remotos, se añadió un nuevo comando:
 
 ```sh
 ./bw-dev remove_remote_user_preview_images
 ```
 
-That command will empty the `user.preview_image` property in the database for remote users, and delete the file in storage.
+Ese comando vaciará la propiedad `user.preview_image` en la base de datos para usuarios remotos, y eliminará el archivo en almacenamiento.
