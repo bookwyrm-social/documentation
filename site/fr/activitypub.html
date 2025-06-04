@@ -9,7 +9,7 @@ ActivityPub
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
@@ -31,12 +31,21 @@ ActivityPub
         <a class="navbar-item" href="https://joinbookwyrm.com/">
             <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
         </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentation
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
             <a href="https://joinbookwyrm.com/fr/instances" class="navbar-item">
-                <span class="button is-success has-text-weight-normal has-text-white">Rejoindre</span>
+                Rejoindre
             </a>
             <a href="https://joinbookwyrm.com/fr/get-involved" class="navbar-item">
                 Comment s'impliquer ?
@@ -47,44 +56,30 @@ ActivityPub
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 Code
             </a>
-            <a href="#" class="navbar-item is-active">
-                Documentation
-            </a>
-        </div>
-    </div>
-    <div class="navbar-end">
-        <div class="navbar-item">
-            <div class="select">
-                <select aria-label="Select a language" id="language_selection">
-                    
-                    <option value="" >English (US)</option>
-                    
-                    <option value="de/" >Deutsch</option>
-                    
-                    <option value="fr/" selected>Français</option>
-                    
-                    <option value="pl/" >Polski</option>
-                    
-                    <option value="pt-br/" >Português do Brasil</option>
-                    
-                    <option value="ro/" >Română</option>
-                    
-              </select>
-            </div>
         </div>
     </div>
 </nav>
 
-<div class="container is-max-desktop">
-<section class="section">
-
-    <header class="content block column is-offset-one-quarter pl-2">
-        
-<h1 class="title is-1">ActivityPub</h1>
-
-    </header>
-    <div class="columns">
-	<nav class="menu column is-one-quarter mt-2">
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" selected>Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
         <div class="select">
             <select aria-label="Previous versions" id="version_selection">
                 
@@ -94,109 +89,115 @@ ActivityPub
                 
             </select>
         </div>
-            <h2 class="menu-label"><a href="/fr/">Welcome</a></h2>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
             
-            <h2 class="menu-label">Using BookWyrm</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/fr/posting-statuses.html" >Publication de statuts</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/adding-books.html" >Ajout de livres</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/fr/posting-statuses.html" class="has-background-inherit" >Publication de statuts</a>
+            </li>
             
-            <h2 class="menu-label">Running BookWyrm</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/fr/moderation.html" >Modération</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/reverse-proxy.html" ></a>
-                </li>
-                
-                <li>
-                    <a href="/fr/install-prod.html" >Installation en Production</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/install-prod-dockerless.html" >Installation sans Docker</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/updating.html" >Mise à jour de votre instance</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/external-storage.html" >Stockage Externe</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/optional_features.html" >Fonctionnalités optionnelles</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/cli.html" >Outils en ligne de commande</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/fr/adding-books.html" class="has-background-inherit" >Ajout de livres</a>
+            </li>
             
-            <h2 class="menu-label">Contributing</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/fr/contributing.html" >Comment contribuer</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/translation.html" >Translations</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/install-dev.html" >Environnement de développement</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/style_guide.html" >Style Guide</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/debug_toolbar.html" >Django Debug Toolbar</a>
-                </li>
-                
-            </ul>
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
             
-            <h2 class="menu-label">Codebase</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/fr/activitypub.html" class="is-active">ActivityPub</a>
-                </li>
-                
-                <li>
-                    <a href="/fr/permissions.html" >Permissions</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/fr/moderation.html" class="has-background-inherit" >Modération</a>
+            </li>
             
-            <h2 class="menu-label">Reference Guides</h2>
-            <ul class="menu-list">
-                
-            </ul>
+            <li>
+                <a href="/fr/reverse-proxy.html" class="has-background-inherit" ></a>
+            </li>
             
-        </nav>
+            <li>
+                <a href="/fr/install-prod.html" class="has-background-inherit" >Installation en Production</a>
+            </li>
+            
+            <li>
+                <a href="/fr/install-prod-dockerless.html" class="has-background-inherit" >Installation sans Docker</a>
+            </li>
+            
+            <li>
+                <a href="/fr/updating.html" class="has-background-inherit" >Mise à jour de votre instance</a>
+            </li>
+            
+            <li>
+                <a href="/fr/monitoring-queue.html" class="has-background-inherit" >Suivi de la file d'attente</a>
+            </li>
+            
+            <li>
+                <a href="/fr/external-storage.html" class="has-background-inherit" >Stockage Externe</a>
+            </li>
+            
+            <li>
+                <a href="/fr/optional_features.html" class="has-background-inherit" >Fonctionnalités optionnelles</a>
+            </li>
+            
+            <li>
+                <a href="/fr/cli.html" class="has-background-inherit" >Outils en ligne de commande</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/fr/contributing.html" class="has-background-inherit" >Comment contribuer</a>
+            </li>
+            
+            <li>
+                <a href="/fr/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/fr/install-dev.html" class="has-background-inherit" >Environnement de développement</a>
+            </li>
+            
+            <li>
+                <a href="/fr/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/fr/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/fr/activitypub.html" class="has-background-inherit" class="is-active">ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/fr/permissions.html" class="has-background-inherit" >Permissions</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Reference Guides</h2>
+        <ul class="menu-list has-background-inherit">
+            
+        </ul>
+        
+    </nav>
 
-        <div class="column">
-            
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">ActivityPub</h1>
+
+                </header>
+                
 <section class="block content">
     <p>BookWyrm utilise le protocole <a href="http://activitypub.rocks/">ActivityPub</a> pour envoyer et recevoir des activités utilisateur entre des instances de BookWyrm et d’autres services qui implémentent ActivityPub, comme <a href="https://joinmastodon.org/">Mastodon</a>. Pour gérer les données de livres, BookWyrm utilise plusieurs extensions de types d’Activity qui ne font pas partie de la norme, mais sont interopérables avec les autres instances de BookWyrm.</p>
 <h2 id="activites-et-objets"><a class="headerlink" href="#activites-et-objets">Activités et Objets</a></h2>
@@ -251,9 +252,9 @@ ActivityPub
 <p>Parce que BookWyrm utilise des types d'objets personnalisés (<code>Review</code>, <code>Comment</code>, <code>Quotation</code>) qui ne sont pas pris en charge par ActivityPub, les statuts sont transformés en types standards lorsqu'ils sont envoyés ou vus par des services non-BookWyrm. Les <code>Review</code>s sont converties en <code>Article</code>s, les <code>Comment</code>s et <code>Quotation</code>s sont convertis en <code>Note</code>s, avec un lien vers le livre et l'image de couverture en pièce jointe.</p>
 </section>
 
+            </section>
         </div>
     </div>
-</section>
 </div>
 
 <footer id="contentinfo" class="footer">
@@ -303,55 +304,9 @@ ActivityPub
     </div>
 </footer>
 
-<script type="text/javascript">
-    (function() {
-        var languageSelector = document.getElementById("language_selection");
-        languageSelector.onchange = function(event) {
-            var current_locale = "fr/";
-            var current_location = window.location.pathname;
-
-            var locale_index = current_location.indexOf(current_locale);
-            var new_location = "/" + event.target.value;
-
-            if (locale_index) {
-                // we're in a locale - swap it out
-                new_location = current_location.replace(current_locale, event.target.value)
-            } else {
-                // are we in a version?
-                var regx = /\/v[0-9\.]+/
-                if (regx.test(current_location)) {
-                    // split current location
-                    arr = current_location.split("/")
-                    // insert new locale
-                    arr.splice(2, 0, event.target.value.replace("/", ""))
-                    // gather it all together again
-                    new_location = arr.join("/")
-                } else {
-                    new_location += current_location.slice(1);
-                }
-            }
-            window.location = new_location;
-        }
-    })()
+<script>
+    var current_locale = "fr/";
 </script>
-<script type="text/javascript">
-    (function() {
-        var versionSelector = document.getElementById("version_selection");
-        versionSelector.onchange = function(event) {
-            current_version = ""
-            var current_location = window.location.pathname;
-            var target_version = event.target.value == "latest" ? "" : event.target.value;
-            var arr = current_location.split("/")
-            var regx = /\/v[0-9\.]+/
-            if (regx.test(current_location)) {
-                window.location = window.location.href.replace(regx,`${target_version}`)
-            } else {
-                window.location = `/${target_version}${current_location}`
-            }
-        }
-    })()
-</script>
-
-
+<script src="/static/js/bookwyrm.js"></script>
 </body>
 </html>
