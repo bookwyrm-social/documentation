@@ -2,7 +2,7 @@
 Title: ActivityPub Date: 2021-04-20 Order: 1
 - - -
 
-BookWyrm verwendet das [ActivityPub](http://activitypub.rocks/)-Protokoll, um Benutzeraktivitäten zwischen anderen BookWyrm-Instanzen und anderen Diensten zu senden und zu empfangen, die ActivityPub implementieren, wie [Mastodon](https://joinmastodon.org/). Um Buchdaten zu behandeln, hat BookWyrm eine Handvoll erweiterter Aktivitätstypen, die nicht zum Standard gehören, aber nur für andere BookWyrm-Instanzen lesbar sind.
+BookWyrm verwendet das [ActivityPub](http://activitypub.rocks/)-Protokoll, um Benutzer*innenaktivitäten zwischen anderen BookWyrm-Instanzen und anderen Diensten, die ActivityPub implementieren (wie [Mastodon](https://joinmastodon.org/)), zu senden und zu empfangen. Um Buchdaten zu handhaben, hat BookWyrm eine Handvoll erweiterter Aktivitätstypen, die nicht zum Standard gehören, aber für andere BookWyrm-Instanzen lesbar sind.
 
 ## Aktivitäten und Objekte
 
@@ -46,7 +46,7 @@ Bücher und Listen von Benutzern werden durch [`Sortierte Sammlung`](https://www
 #### Objekte
 
 - `Regal`: Buchsammlung eines Benutzers. Standardmäßig hat jeder Benutzer ein `zu lesen`, `liest`, und `gelesen` Regal, die verwendet werden, um den Lesefortschritt zu verfolgen.
-- `Liste`: Eine Sammlung von Büchern, die möglicherweise von anderen Benutzern als derjenige, der die Liste erstellt hat, beigetragen haben.
+- `Liste`: Eine Sammlung von Büchern, zu der auch andere Personen als die, die die Liste erstellt hat, Bücher beitragen können.
 
 #### Aktivitäten
 
@@ -57,4 +57,4 @@ Bücher und Listen von Benutzern werden durch [`Sortierte Sammlung`](https://www
 
 
 ## Alternative Serialisierung
-Weil BookWyrm eigene Objekttypen (`Rezension`, `Kommentar`, `Zitat`) benutzt, die nicht von ActivityPub unterstützt werden, werden Status in Standardtypen umgewandelt, wenn sie an nicht-BookWyrm-Dienste gesendet oder angezeigt werden. `Rezension`en werden in `Artikel` umgewandelt und `Kommentar`s und `Zitat`s werden in `Notiz`s konvertiert mit einem Link auf das Buch und das Titelbild wird angehängt.
+Weil BookWyrm eigene Objekttypen (`Rezension`, `Kommentar`, `Zitat`) benutzt, die nicht von ActivityPub unterstützt werden, werden Status in Standardtypen umgewandelt, wenn sie an nicht-BookWyrm-Dienste gesendet oder angezeigt werden. `Rezension`en werden in `Artikel` umgewandelt und `Kommentar`e und `Zitat`e werden in `Notiz`en mit einem Link zu dem Buch und dem Titelbild als Anhang konvertiert.

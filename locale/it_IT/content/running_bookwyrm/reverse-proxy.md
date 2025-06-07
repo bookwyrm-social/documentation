@@ -1,39 +1,39 @@
 - - -
-Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 4
+Titolo: Usare un Proxy inverso Data: 2021-05-11 Ordine: 4
 - - -
 
-## Running BookWyrm Behind a Reverse-Proxy
-If you are running another web-server on your machine, you should have it handle proxying web requests to BookWyrm.
+## Avvio di BookWyrm Dietro un Proxy inverso
+Se si esegue un altro web-server sulla vostra macchina, si dovrebbe avere esso gestire le richieste di proxy web a BookWyrm.
 
-The default BookWyrm configuration already has an nginx server that proxies requests to the django app that handles SSL and directly serves static files. The static files are stored in a Docker volume that several BookWyrm services access, so it is not recommended to remove this server completely.
+La configurazione predefinita di BookWyrm ha già un server nginx che i proxy richiedono all'app django che gestisce SSL e serve direttamente file statici. I file statici sono memorizzati in un volume Docker che diversi servizi di accesso a BookWyrm, quindi non è consigliabile rimuovere completamente questo server.
 
-To run BookWyrm behind a reverse-proxy, make the following changes:
+Per eseguire BookWyrm dietro un proxy inverso, effettuare le seguenti modifiche:
 
 - In `nginx/default.conf`:
-    - Comment out the two default servers
-    - Uncomment the server labeled Reverse-Proxy server
-    - Replace `your-domain.com` with your domain name
+    - Commenta i due server predefiniti
+    - Annulla il commento del server etichettato Server Reverse-Proxy
+    - Sostituisci `your-domain.com` con il tuo nome di dominio
 - In `docker-compose.yml`:
-    - In `services` -> `nginx` -> `ports`, comment out the default ports and add `- 8001:8001`
-    - In `services` -> `nginx` -> `volumes`, comment out the two volumes that begin `./certbot/`
-    - In `services`, comment out the `certbot` service
+    - In `services` -> `nginx` -> `ports`, commenta le porte predefinite e aggiungi `- 8001:8001`
+    - Nei servizi `` -> `nginx` -> `volumi`commenta i due volumi che iniziano `./certbot/`
+    - In `services`, commenta il servizio `certbot`
 
-At this point, you can follow, the [setup](#server-setup) instructions as listed. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https`).
+A questo punto, puoi seguire, le istruzioni di configurazione [](#server-setup) come elencate. Una volta avviato il docker, puoi accedere alla tua istanza BookWyrm su `http://localhost:8001` (**NOTA:** il tuo server non è accessibile su `https`).
 
-Steps for setting up a reverse-proxy are server dependent.
+I passaggi per configurare un proxy inverso dipendono dal server.
 
 #### Nginx
 
-Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx. See [nginx's guide](http://nginx.org/en/docs/beginners_guide.html) for details.
+Prima di poter impostare nginx, dovrai individuare la tua directory di configurazione nginx, che dipende dalla tua piattaforma e da come hai installato nginx. Vedi la guida [nginx](http://nginx.org/en/docs/beginners_guide.html) per i dettagli.
 
-To set up your server:
+Per configurare il server:
 
-- In you `nginx.conf` file, ensure that `include servers/*;` isn't commented out.
-- In your nginx `servers` directory, create a new file named after your domain containing the following information:
+- Nel tuo file `nginx.conf`, assicurati che `includa server/*;` non sia commentato.
+- Nella directory di nginx `server`, crea un nuovo file dal nome del tuo dominio contenente le seguenti informazioni:
 
 ``` { .nginx }
 server {
-    server_name your-domain.com www.your-domain.com;
+    server_name your-domain.com www.your-domain. om;
 
     location / {
         proxy_pass http://localhost:8000;
@@ -53,33 +53,33 @@ server {
         proxy_set_header Host $host;
     }
 
-    listen [::]:80 ssl;
-    listen 80 ssl;
+    ascolta [::]:80 ssl;
+    ascolta 80 ssl;
 }
 ```
 
-To set up with an ssl block:
+Per impostare con un blocco ssl:
 ``` { .nginx }
 server {
-    server_name your.domain;
+    server_name your. omain;
 
     listen [::]:80;
     listen 80;
-    add_header Strict-Transport-Security "max-age=31536000;includeSubDomains" always;
-    rewrite ^ https://$server_name$request_uri;
-    location / { return 301 https://$host$request_uri; }
+    add_header Strict-Transport-Security "max-age=31536000; ncludeSubDomains" sempre;
+    riscrivere ^ ↓ ://$server_name$request_uri;
+    location / { return 301 ↓ ://$host$request_uri; }
 }
 
-# SSL code
-ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem;
+# Codice SSL
+ssl_certificate /etc/letsencrypt/live/your. omain/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey. em;
 
 server {
     listen [::]:443 ssl http2;
-    listen 443 ssl http2;
+    ascolta 443 ssl http2;
 
-    server_name your.domain;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    server_name tuo. omain;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" sempre;
     location / {
         proxy_pass http://localhost:8000;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -99,12 +99,12 @@ server {
     }
 }
 ```
-- run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
-- restart nginx
+- esegui `sudo certbot esegui --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
+- riavvia nginx
 
-If everything worked correctly, your BookWyrm instance should now be externally accessible.
+Se tutto funzionava correttamente, ora la tua istanza BookWyrm dovrebbe essere accessibile esternamente.
 
-*Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
+*Nota: l'host `proxy_set_header $host;` è essenziale; se non lo includi, i messaggi in arrivo da server federati saranno rifiutati.*
 
-*Note: the location of the ssl certificates may vary depending on the OS of your server*
+*Nota: la posizione dei certificati ssl può variare a seconda del sistema operativo del server*
 

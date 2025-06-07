@@ -51,10 +51,10 @@ User's books and lists are represented by [`OrderedCollection`](https://www.w3.o
 #### Aktiviteter
 
 - `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Ta bort`: Tar bort en hylla eller lista.
+- `Lägg till`: Lägger till en bok till en hylla eller lista.
+- `Ta bort`: Tar bort en bok från en hylla eller lista.
 
 
-## Alternative Serialization
+## Alternativ serialisering
 Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.

@@ -19,7 +19,7 @@ Como o proxecto aínda está nos seus primeiros pasos, o número de funcións di
     - Coloca os libros nos estantes por defecto "Pendentes", "Lectura actual" e "Lidos"
     - Crea estantes personais
     - Garda as datas de comezo/remate da lectura, así como actualizacións do progreso durante a mesma
-    - Pon ao día ás tuas seguidoras acerca do que les (optativo, e con controis de privacidade detallados)
+    - Pon ao día ás tuas seguidoras sobre o que les (optativo, e con controis de privacidade detallados)
     - Crea listas de libros que podes abrir a suxestións de outras persoas, xestionadas e editadas só por ti
 - Federación con ActivityPub
     - Emite e recibe estados e actividades de outras usuarias

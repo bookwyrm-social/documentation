@@ -2,25 +2,25 @@
 Title: Aktualizowanie instancji Date: 2022-11-17 Order: 3
 - - -
 
-When there are changes available in the production branch, you can install and get them running on your instance using the command `./bw-dev update`. Wykonuje ono kilka rzeczy:
+Gdy w gałęzi produkcyjnej są dostępne zmiany, możesz zainstalować i uruchomić je na swojej instancji używając polecenia `./bw-dev update`. Wykonuje ono kilka rzeczy:
 
 - `git pull` wczytuje zaktualizowany kod z repozytorium git. Jeśli wystąpią konflikty, może być konieczne wykonanie `git pull` oddzielnie i rozwiązanie konfliktów przez ponownym wypróbowaniem skryptu `./bw-dev update`.
-- `docker-compose build` ponownie kompiluje obrazy, co zapewnia zainstalowanie odpowiednich pakietów. This step takes a long time and is only needed when the dependencies (including pip `requirements.txt` packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.
-- `docker-compose run --rm web python manage.py migrate` runs the database migrations in Django using the newly built Docker images
-- `docker-compose run --rm web python manage.py collectstatic --no-input` loads any updated static files (such as the JavaScript and CSS)
-- `docker-compose down; docker-compose up -d` will restart all the docker containers and make use of the newly built images (Attention: downtime during the restart)
+- `docker-compose build` ponownie kompiluje obrazy, co zapewnia zainstalowanie odpowiednich pakietów. Ten krok zajmuje dużo czasu i jest wymagany tylko, gdy zależności (w tym pakiety pip z `requirements.txt`) uległy zmianie, więc możesz użyć znacznika komentarza dla szybszej ścieżki aktualizacji, a znacznik możesz usunąć w razie potrzeby.
+- `docker-compose run --rm web python manage.py migrate` uruchamia migracje bazy danych w Django, używając nowo skompilowanych obrazów Docker
+- `docker-compose run --rm web python manage.py collectstatic --no-input` wczytuje wszelkie zaktualizowane pliki statyczne (takie jak JavaScript i CSS)
+- `docker-compose down; docker-compose up -d` ponownie uruchamia wszystkie kontenery dockera i wczytuje nowo skompilowane obrazy (Uwaga: przestoje podczas ponownego uruchamiania)
 
-## Re-building activity streams
+## Odbudowa strumieni aktywności
 
-Feeds for each user are stored in Redis. To re-populate a stream, use the management command:
+Kanały każdego użytkownika są przechowywane w bazie danych Redis. Aby ponownie wypełnić strumień, użyj polecenia zarządzania:
 
 ``` { .sh }
 ./bw-dev populate_streams
-# Or use docker-compose directly
+# Lub użyj bezpośrednio docker-compose
 docker-compose run --rm web python manage.py populate_streams
 ```
 
-If something has gone terribly awry, the stream data can be deleted.
+Jeśli wystąpił jakiś przerażający błąd, dane strumienia można usunąć.
 
 ``` { .sh }
 docker-compose run --rm web python manage.py erase_streams

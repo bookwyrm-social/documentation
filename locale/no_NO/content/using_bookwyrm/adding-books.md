@@ -1,20 +1,20 @@
 ---
-Title: Adding Books
+Title: Legg til bøker
 Date: 2022-07-29
 Order: 2
 ---
 
-There are a few different ways to add books to your BookWyrm instance! When you can't find the book you're looking for, try these options in order -- it's better to import a book than to create one from scratch.
+Det er forskjellige måter å legge til bøker til din BookWyrm-instans! Om du ikke finner boken du leter etter, prøv disse alternativene i rekkefølge -- det er bedre å importere en bok enn å opprette en fra bunnen av.
 
-## Loading books from other catalogs
+## Laster inn bøker fra andre kataloger
 
-If the book you're looking for isn't available on your instance, there are a few different ways to add it. The best way is to import it from an outside source -- your instance can load books from other BookWyrm instances, as well as [OpenLibrary](http://openlibrary.org/) and [Inventaire](http://inventaire.io/). If there are no search results for your query, these sources will automatically be queried, and will show up with a button to "**Import book**". If there are local search results that aren't what you're looking for, you can click the "**Load results from other catalogues**" link to load more results.
+Hvis boken du leter etter er ikke tilgjengelig på din instans, er det flere måter å legge den på. Den beste måten er å importere den fra en ekstern kilde -- din instans kan laste inn bøker fra andre BookWyrm-instanser, samt [OpenLibrary](http://openlibrary.org/) og [Inventaire](http://inventaire.io/). Hvis det ikke finnes noen søkeresultater for dine søk, blir disse kildene automatisk spurt, og vil dukke opp sammen med en knapp til «**Importer bok**». Hvis det finnes lokale søkeresultater som ikke er det du leter etter, kan du trykke på «**Last resultater fra andre kataloger**»-lenken for å laste inn flere resultater.
 
 
-## Adding another edition
+## Legg til en ny utgave
 
-If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
+Hvis du fant boken du ønsker, men ikke den riktige utgaven, kan du legge til en annen utgave av verket fra listen av utgaver. Trykk på lenken nedenfor beskrivelsen som forteller deg hvor mange utgaver det er (for eksempel «**4 utgaver**»). På bunnen av utgave-listen finnes det en knapp «**Legg til en annen utgave**».
 
-## Add a completely new book
+## Legg til en helt ny bok
 
-Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. The link to manually add a book is at the bottom of the search page when external catalogs are shown. You can also navigate direclty to `/create-book` on your instance.
+Når du har prøvd å søke etter boken din, å importere den fra en annen katalog, og å finne andre utgaver av boken, kan du legge til en ny bok manuelt. Lenken for å legge til en bok manuelt finnes nederst på søkesiden når eksterne kataloger vises. Du kan også navigere direkte til `/create-book` på din instans.

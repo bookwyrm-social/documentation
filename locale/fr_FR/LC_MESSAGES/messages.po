@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-07-08 17:52\n"
+"PO-Revision-Date: 2025-05-31 23:28\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -39,7 +39,7 @@ msgstr "Rejoindre"
 
 #: templates/layout.html:38 templates/layout.html:42
 msgid "Get involved"
-msgstr "Comment s'impliquer ?"
+msgstr "S'impliquer dans le projet"
 
 #: templates/layout.html:41 templates/layout.html:45
 msgid "Support"
