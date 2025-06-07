@@ -1,29 +1,29 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Title: Oversettelser Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Bidra til oversettelser
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Du kan bli med i BookWyrm-oversettelsesprosjektet på [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Kjønnsnøytralt språk
 
-Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
+Så langt det lar seg gjøre, bør Bokwyrm-oversettelser bruke et kjønnsnøytralt språk. Dette gjelder selv om et språk som standard bruker hankjønn som nøytralt kjønn, eller hvis det bruker noe lignende «han/hun». Det er også viktig at oversettelser skal være tydelige, konsise og leselig for en skjermleser, og noen ganger er disse målene i konflikt; det er ikke en perfekt løsning som passer absolutt over alt, og løsningen avhenger av språket.
 
-As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.
+Som hovedregel prøver man å verdsette inkluderende og kjønnsnøytralt språk mer enn formell korrekthet eller offisielt godkjente stilveiledninger. På engelsk, for eksempel, krever mange formelle stilguider at et singulært «she» eller «he»-pronomen brukes ved henvisning til et enkeltindivid, men i BookWyrm er det bedre å bruke det kjønnsnøytrale singulære «they» i stedenfor.
 
-If you aren't sure how best to approach a translation problem, comment on the translation or open a [discussion topic](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) to address broader-scale questions.
+Hvis du er usikker på hva som er den beste fremgangsmåten for en oversettelse, kommenter oversettelsen eller åpne et [diskusjonstema,](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) for å diskutere større spørsmål.
 
-## Making templates translatable
+## Gjør maler oversettbare
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+BookWyrm benytter Django sin oversettelsesfunksjonalitet for å muliggjøre at sideinnholdet tilpasser seg språket brukeren har valgt. Django-dokumentasjonen [forklarer hvordan dette fungerer](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code), men her en kort oppsummering:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* all maltekst bør inkludere tagger for oversettelsesmalen
+* legg til `{% load i18n %}` øverst på din mal for å aktivere oversettelser
+* Dersom tekstblokken er en literal tekst, kan du bruke mal-taggen `{% trans %}`
+* Dersom tekstblokken inkluderer variabler, skal du bruke mal-taggparet `{% blocktrans %}` og `{% endblocktrans %}`. Hvis du inkluderer padding-mellomrom eller linjebrudd, bruk `trimmed` for å automatisk fjerne den når språkfilen blir generert: `{% blocktrans trimmed %}`
 
-### Examples
+### Eksempler
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>

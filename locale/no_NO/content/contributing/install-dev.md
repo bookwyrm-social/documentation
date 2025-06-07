@@ -4,11 +4,11 @@ Title: Developer Environment Date: 2021-04-12 Order: 3
 
 ## Prerequisites
 
-These instructions assume you are developing BookWyrm using Docker. You'll need to [install Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to get started.
+Disse instruksjonene tar utgangspunkt i at du utvikler BookWyrm i Docker. Du trenger å [installere Docker](https://docs.docker.com/engine/install/) og [docker-compose](https://docs.docker.com/compose/install/) for å begynne.
 
 ## Setting up the developer environment
 
-- Get a copy of [the BookWyrm codebase from GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
+- Last ned en kopi av [BookWyrm-kodebasen fra GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
 - Go to the directory which contains the code on your computer, you'll be working from there from here on out.
 - Set up your development environment variables file by copying the example environment file (`.env.example`) into a new file named `.env`. In the command line, you can do this with:
 ``` { .sh }

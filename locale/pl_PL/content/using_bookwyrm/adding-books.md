@@ -13,7 +13,7 @@ Jeśli książka, której szukasz nie jest dostępna w Twojej instancji, istniej
 
 ## Dodawanie innego wydania
 
-Jeśli znajdziesz właściwą książkę, ale nie odpowiednie wydanie, możesz dodać inne wydanie z listy wydań. Naciśnij na odnośnik poniżej opisu, który zawiera ilość wydań (na przykład: "**4 wydania**"). Na dole listy wydań umieszczony jest przycisk "**Dodaj inne wydanie**".
+Jeśli znajdziesz właściwą książkę, ale nie odpowiednie wydanie, możesz dodać inne wydanie z listy wydań. Naciśnij na odnośnik poniżej opisu, który zawiera liczbę wydań (na przykład: "**4 wydania**"). Na dole listy wydań umieszczony jest przycisk "**Dodaj inne wydanie**".
 
 ## Dodawanie zupełnie nowej książki
 

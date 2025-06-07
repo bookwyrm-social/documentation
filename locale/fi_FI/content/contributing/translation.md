@@ -1,12 +1,12 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Title: Kääntäminen Date: 2021-10-20 Order: 2
 - - -
 
-## Contributing to translations
+## Osallistuminen kääntämiseen
 
-You can join the BookWyrm translation project at [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
+Voit liittyä BookWyrm-käännösprojektiin osoitteessa [translate.joinbookwyrm.com](https://translate.joinbookwyrm.com/).
 
-## Gender-neutral language
+## Sukupuolineutraali kieli
 
 Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.
 
@@ -23,7 +23,7 @@ Bookwyrm takes advantage of Django's translation functionality to enable page co
 * If the text block is literal text, you can use the template tag `{% trans %}`
 * If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
 
-### Examples
+### Esimerkkejä
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>

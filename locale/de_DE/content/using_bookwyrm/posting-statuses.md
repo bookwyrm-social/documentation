@@ -2,9 +2,9 @@
 Title: Beitragsstatus Date: 2022-04-30 Order: 1
 - - -
 
-Das Schreiben auf BookWyrm beginnt mit einem Buch. Benutzer*innen können im Verlauf oder vor kurzem gelesene Bücher aus dem Abschnitt "Ihre Bücher" kommentieren oder von der eigenen Seite eines Buches aus. Von dort aus können Benutzer*innen antworten und eine Unterhaltung starten. BookWyrm Beiträge können Formatierungen wie fett, kursiv und Links mit [Markdown](https://www.markdownguide.org/cheat-sheet/) beinhalten.
+Das Schreiben auf BookWyrm beginnt mit einem Buch. Benutzer*innen können angefangene oder vor kurzem gelesene Bücher aus dem Abschnitt "Ihre Bücher" kommentieren oder von der Startseite eines Buches aus. Von dort aus können Benutzer*innen antworten und eine Unterhaltung starten. BookWyrm Beiträge können Formatierungen wie fett, kursiv und Links mit [Markdown](https://www.markdownguide.org/cheat-sheet/) beinhalten.
 
-Wenn Sie mit dem [Posten auf Mastodon](https://docs.joinmastodon.org/user/posting/) vertraut sind, wirst du feststellen, dass der BookWyrm-Status analoge Sichtbarkeitseinstellungen, Inhaltswarnungen und Erwähnungen enthält. Umfragen, benutzerdefinierte Emoji und Anhänge werden jedoch noch nicht unterstützt.
+Wer mit dem [Posten auf Mastodon](https://docs.joinmastodon.org/user/posting/) vertraut ist, wird feststellen, dass Beiträge auf BookWyrm analoge Einstellungen zur Sichtbarkeit, Inhaltswarnungen und Erwähnungen enthält. Umfragen, benutzerdefinierte Emoji und Anhänge werden jedoch noch nicht unterstützt.
 
 ## Typen von Status
 

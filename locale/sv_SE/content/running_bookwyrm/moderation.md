@@ -5,7 +5,7 @@ Title: Moderation Date: 2021-04-18 Order: 5
 ## Blocking
 Users have the option to block other users on their own, without a moderator intervening. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.
 
-## Reports
+## Rapporter
 Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.
 
 When a report is made, there are a few options how the moderator can respond.
