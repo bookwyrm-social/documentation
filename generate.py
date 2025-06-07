@@ -113,7 +113,7 @@ def format_markdown(file_path):
                     headerless.append(line)
             return markdown(
                 "".join(headerless),
-                extensions=["tables", "fenced_code", "codehilite", "toc"],
+                extensions=["tables", "fenced_code", "codehilite", "toc", "sane_lists"],
                 extension_configs={
                     "codehilite": {"css_class": "highlight"},
                     "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
@@ -121,7 +121,7 @@ def format_markdown(file_path):
             )
         return markdown(
             "".join(markdown_content.readlines()[3:]),
-            extensions=["tables", "fenced_code", "codehilite", "toc"],
+            extensions=["tables", "fenced_code", "codehilite", "toc", "sane_lists"],
             extension_configs={
                 "codehilite": {"css_class": "highlight"},
                 "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
