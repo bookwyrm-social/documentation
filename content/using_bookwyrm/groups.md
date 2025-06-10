@@ -43,22 +43,7 @@ The group owner is marked with a star symbol.
 Group Lists work very similarly to normal Lists, except they are curated by all members of a Group.
 They can be created by any member of a group from the group's homepage.
 
-## Future improvements
-
-Bookwyrm Groups are quite basic, and there are many features which would improve them.
-Here is a short list of possible improvements:
-
-- Federation and interoperability between Bookwyrm websites
-
-- Group timeline & post to a specific group
-
-- Shared reading goals
-
-- Shared bookshelf view
-
-- Better membership management (multiple owners, request to join, etc)
-
-### Related ideas and discussion on GitHub
+## Related ideas and discussion on GitHub
 
 Allow users to request to join public groups ([#1840](https://github.com/bookwyrm-social/bookwyrm/issues/1840) on GitHub)
 
