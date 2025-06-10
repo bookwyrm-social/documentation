@@ -18,7 +18,7 @@ Note: Anyone can just follow you and then be able to see all things you marked F
 To limit this, go to `Settings - Edit Profile - Privacy` and enable 'Manually approve followers'.
 This allows you to vet follow requests, or limit them just to your friends.
 
-Other privacy settings are explained at the bottom of this page. [Click here](#privacy-related-settings) to scroll down to them.
+Other privacy settings are explained [at the bottom of this page](#privacy-related-settings).
 
 --- 
 
@@ -36,7 +36,7 @@ The default option.
 - Your status will appear on:
 	- public timelines
 	- discovery pages.
-	- it's related book's page.
+	- its related book's page.
 	- the home timeline of people who follow you
 - Your status can be **boosted** into other people's home timelines.
 
@@ -53,7 +53,7 @@ The exact same as Public, but:
 
 ### Private
 
-- Your status can only be seen by you, and anyone **mentioned** in it.
+- Your status can only be seen by you, anyone **mentioned** in it, and anyone previously involved in the conversation.
 - This is the privacy level used in Direct Messages.
 
 ---
@@ -122,6 +122,7 @@ For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265
 
 Groups have the same privacy settings as statuses and lists do, except they can't be Followers-only.
 Group membership always requires an invitation from the group's owner, even if it is marked Public.
+Note that currently, the Groups tab on a profile is only shown if the user viewing it is logged in (see [#3610](https://github.com/bookwyrm-social/bookwyrm/issues/3610)).
 
 ### Public
 
@@ -136,8 +137,7 @@ Group membership always requires an invitation from the group's owner, even if i
 ### Private
 
 - Only members of the group can view the group page, members and its Lists
-
-- All the Groups statuses and Lists will also be private.  
+- All the Groups Lists will also be private.  
 
 ---
 
