@@ -1,5 +1,5 @@
 - - -
-Título: Publicando estados Fecha: 2022-04-30 Pedido: 1
+Title: Posting Statuses Date: 2025-05-26 Order: 1
 - - -
 
 Publicar en BookWyrm empieza con un libro. Usuarios pueden comentar sobre libros que están en leyendo o ya han acabado en la sección de "Tus Libros" o desde la página de inicio de un libro. Desde ahí, los usuarios pueden responder y empezar una conversación. Las publicaciones de BookWyrm incluyen formatos como negritas, itálicas y enlaces usando [lenguaje de marcado](https://www.markdownguide.org/cheat-sheet/).
@@ -21,6 +21,13 @@ Hay tres tipos de publicaciones que un usuario puede crear directamente en respu
 | Puntuación        | ✔      |            |      |           |
 | Campo de título   | ✔      |            |      |           |
 
+#### Spoiler alerts
+
+Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.
+
+#### Star ratings
+
+A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
 ### Leyendo actualizaciones de estados
 
@@ -32,9 +39,9 @@ Los textos incluyen:
 - Menciones (@usuario)
 - URLs (`http(s)://` no se muestra)
 - Algunos [ formatos de Markdown](https://www.markdownguide.org/cheat-sheet/)
-  - negrita
-  - itálicas
-  - citas en bloque
-  - listas de viñetas
-  - enlaces
+    - negrita
+    - itálicas
+    - citas en bloque
+    - listas de viñetas
+    - enlaces
 
