@@ -1,7 +1,7 @@
 ---
 Title: Adding Books
 Date: 2022-07-29
-Order: 2
+Order: 3
 ---
 
 There are a few different ways to add books to your BookWyrm instance! When you can't find the book you're looking for, try these options in order -- it's better to import a book than to create one from scratch.
@@ -15,6 +15,7 @@ If you're coming to BookWyrm from another platform for tracking books and readin
 * LibraryThing (TSV)
 * OpenLibrary (CSV)
 * Storygraph (CSV)
+* OpenReads (CSV)
 
 Under 'Settings' navigate to 'Import Book List', select the matching data source, select your file and, if relevant, select whether to import reviews and what privacy setting to give them. When you press 'Import' a background task will begin to import your data. You will be notified when it has finished.
 
