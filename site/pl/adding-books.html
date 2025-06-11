@@ -100,11 +100,19 @@ Dodawanie książek
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/v0.7.5/pl/posting-statuses.html" >Zamieszczanie statusów</a>
+                    <a href="/v0.7.5/pl/posting-statuses.html" >Posting Statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/privacy-controls.html" >Privacy Controls</a>
                 </li>
                 
                 <li>
                     <a href="/v0.7.5/pl/adding-books.html" class="is-active">Dodawanie książek</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/groups.html" >Groups</a>
                 </li>
                 
             </ul>
@@ -194,12 +202,24 @@ Dodawanie książek
             
 <section class="block content">
     <p>Istnieje kilka sposobów na dodawanie książek do swojej instancji BookWyrm! Jeśli nie możesz znaleźć książki, której szukasz, wypróbuj te opcje w ich kolejności -- lepiej jest zaimportować książkę niż tworzyć ją od nowa.</p>
+<h2 id="importing-data-about-your-books-and-reading"><a class="headerlink" href="#importing-data-about-your-books-and-reading">Importing data about your books and reading</a></h2>
+<p>If you're coming to BookWyrm from another platform for tracking books and reading, you may want to import your books and reading data. Currently BookWyrm is capable of importing export files from the following platforms:</p>
+<ul>
+<li>Calibre (CSV)</li>
+<li>Goodreads (CSV)</li>
+<li>LibraryThing (TSV)</li>
+<li>OpenLibrary (CSV)</li>
+<li>Storygraph (CSV)</li>
+<li>OpenReads (CSV)</li>
+</ul>
+<p>Under 'Settings' navigate to 'Import Book List', select the matching data source, select your file and, if relevant, select whether to import reviews and what privacy setting to give them. When you press 'Import' a background task will begin to import your data. You will be notified when it has finished.</p>
+<p>It is important to understand that the import process does not import data directly from the other service - in many cases (e.g. Goodreads) this is not possible. When you import a data file, BookWyrm will search the local database, connected BookWyrm servers, and selected public data sources to find a match. For this reason, BookWyrm may not be able to import all of your data. We are always looking for new data sources with free and open APIs, especially for data about books in languages other than English. If you are aware of such a data source, please consider <a href="https://github.com/bookwyrm-social/bookwyrm/issues">creating an Issue</a>,</p>
 <h2 id="wczytywanie-ksiazek-z-pozostaych-katalogow"><a class="headerlink" href="#wczytywanie-ksiazek-z-pozostaych-katalogow">Wczytywanie książek z pozostałych katalogów</a></h2>
-<p>Jeśli książka, której szukasz nie jest dostępna w Twojej instancji, istnieje kilka sposób, aby ją dodać. Najlepszym z nich jest importowanie jej z zewnętrznego źródła -- Twoja instancja może wczytać książki z pozostałych instancji BookWyrm oraz <a href="http://openlibrary.org/">OpenLibrary</a> i <a href="http://inventaire.io/">Inventaire</a>. Jeśli nie ma wyników wyszukiwania dla Twojego zapytania, zostanie ono automatycznie przekierowane do tych źródeł i pokażą się z przyciskiem "<strong>Importuj książkę</strong>". Jeśli istnieją lokalne wyniki wyszukiwania, które nie są tym, czego szukasz, naciśnij na odnośnik "<strong>Wczytaj wyniki z pozostałych katalogów</strong>", aby wczytać więcej wyników.</p>
+<p>If the book you're looking for isn't available on your BookWyrm instance, there are a few different ways to add it. Najlepszym z nich jest importowanie jej z zewnętrznego źródła -- Twoja instancja może wczytać książki z pozostałych instancji BookWyrm oraz <a href="http://openlibrary.org/">OpenLibrary</a> i <a href="http://inventaire.io/">Inventaire</a>. Jeśli nie ma wyników wyszukiwania dla Twojego zapytania, zostanie ono automatycznie przekierowane do tych źródeł i pokażą się z przyciskiem "<strong>Importuj książkę</strong>". Jeśli istnieją lokalne wyniki wyszukiwania, które nie są tym, czego szukasz, naciśnij na odnośnik "<strong>Wczytaj wyniki z pozostałych katalogów</strong>", aby wczytać więcej wyników.</p>
 <h2 id="dodawanie-innego-wydania"><a class="headerlink" href="#dodawanie-innego-wydania">Dodawanie innego wydania</a></h2>
 <p>Jeśli znajdziesz właściwą książkę, ale nie odpowiednie wydanie, możesz dodać inne wydanie z listy wydań. Naciśnij na odnośnik poniżej opisu, który zawiera liczbę wydań (na przykład: "<strong>4 wydania</strong>"). Na dole listy wydań umieszczony jest przycisk "<strong>Dodaj inne wydanie</strong>".</p>
 <h2 id="dodawanie-zupenie-nowej-ksiazki"><a class="headerlink" href="#dodawanie-zupenie-nowej-ksiazki">Dodawanie zupełnie nowej książki</a></h2>
-<p>Po wypróbowaniu szukania książki, importowania jej z pozostałych katalogów oraz szukania innych wydań książki, możesz dodać nową książkę ręcznie. Odnośnik do ręcznego dodania książki umieszczony jest na dole strony wyszukiwania, gdy pokazane są zewnętrzne katalogi. Możesz również bezpośrednio przejść do <code>/create-book</code> na swojej instancji.</p>
+<p>Po wypróbowaniu szukania książki, importowania jej z pozostałych katalogów oraz szukania innych wydań książki, możesz dodać nową książkę ręcznie. Odnośnik do ręcznego dodania książki umieszczony jest na dole strony wyszukiwania, gdy pokazane są zewnętrzne katalogi. You can also navigate directly to <code>/create-book</code> on your instance.</p>
 </section>
 
         </div>

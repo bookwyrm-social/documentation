@@ -100,11 +100,19 @@ Bücher hinzufügen
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/v0.7.5/de/posting-statuses.html" >Beitragsstatus</a>
+                    <a href="/v0.7.5/de/posting-statuses.html" >Posting Statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/de/privacy-controls.html" >Privacy Controls</a>
                 </li>
                 
                 <li>
                     <a href="/v0.7.5/de/adding-books.html" class="is-active">Bücher hinzufügen</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/de/groups.html" >Groups</a>
                 </li>
                 
             </ul>
@@ -194,12 +202,24 @@ Bücher hinzufügen
             
 <section class="block content">
     <p>Es gibt einige verschiedene Möglichkeiten, um Bücher zu deiner BookWyrm-Instanz hinzuzufügen! Wenn du das gesuchte Buch nicht finden kannst, versuche diese Optionen in der Reihenfolge -- es ist besser, ein Buch zu importieren als eines von Grund auf neu zu erstellen.</p>
+<h2 id="importing-data-about-your-books-and-reading"><a class="headerlink" href="#importing-data-about-your-books-and-reading">Importing data about your books and reading</a></h2>
+<p>If you're coming to BookWyrm from another platform for tracking books and reading, you may want to import your books and reading data. Currently BookWyrm is capable of importing export files from the following platforms:</p>
+<ul>
+<li>Calibre (CSV)</li>
+<li>Goodreads (CSV)</li>
+<li>LibraryThing (TSV)</li>
+<li>OpenLibrary (CSV)</li>
+<li>Storygraph (CSV)</li>
+<li>OpenReads (CSV)</li>
+</ul>
+<p>Under 'Settings' navigate to 'Import Book List', select the matching data source, select your file and, if relevant, select whether to import reviews and what privacy setting to give them. When you press 'Import' a background task will begin to import your data. You will be notified when it has finished.</p>
+<p>It is important to understand that the import process does not import data directly from the other service - in many cases (e.g. Goodreads) this is not possible. When you import a data file, BookWyrm will search the local database, connected BookWyrm servers, and selected public data sources to find a match. For this reason, BookWyrm may not be able to import all of your data. We are always looking for new data sources with free and open APIs, especially for data about books in languages other than English. If you are aware of such a data source, please consider <a href="https://github.com/bookwyrm-social/bookwyrm/issues">creating an Issue</a>,</p>
 <h2 id="bucher-aus-anderen-katalogen-laden"><a class="headerlink" href="#bucher-aus-anderen-katalogen-laden">Bücher aus anderen Katalogen laden</a></h2>
-<p>Wenn das gesuchte Buch in deiner Instanz nicht verfügbar ist, gibt es einige verschiedene Möglichkeiten, es hinzuzufügen. Der beste Weg ist, sie von einer externen Quelle zu importieren -- deine Instanz kann Bücher von anderen BookWyrm-Instanzen laden, sowie <a href="http://openlibrary.org/">OpenLibrary</a> und <a href="http://inventaire.io/">Inventaire</a>. Wenn es keine Suchergebnisse für Ihre Anfrage gibt, werden diese Quellen automatisch abgefragt und erscheint mit einem Button zum "<strong>Buch importieren</strong>". Wenn es lokale Suchergebnisse gibt, die nicht das sind, was Sie suchen, können Sie auf den Link "<strong>Ergebnisse aus anderen Katalogen laden</strong>" klicken, um mehr Ergebnisse zu laden.</p>
+<p>If the book you're looking for isn't available on your BookWyrm instance, there are a few different ways to add it. Der beste Weg ist, sie von einer externen Quelle zu importieren -- deine Instanz kann Bücher von anderen BookWyrm-Instanzen laden, sowie <a href="http://openlibrary.org/">OpenLibrary</a> und <a href="http://inventaire.io/">Inventaire</a>. Wenn es keine Suchergebnisse für Ihre Anfrage gibt, werden diese Quellen automatisch abgefragt und erscheint mit einem Button zum "<strong>Buch importieren</strong>". Wenn es lokale Suchergebnisse gibt, die nicht das sind, was Sie suchen, können Sie auf den Link "<strong>Ergebnisse aus anderen Katalogen laden</strong>" klicken, um mehr Ergebnisse zu laden.</p>
 <h2 id="eine-weitere-ausgabe-hinzufugen"><a class="headerlink" href="#eine-weitere-ausgabe-hinzufugen">Eine weitere Ausgabe hinzufügen</a></h2>
 <p>Wenn du das gesuchte Buch gefunden hast, es aber die falsche Ausgabe ist, kannst du eine andere Ausgabe aus der Liste der Ausgaben hinzufügen. Klicke auf den Link unter der Beschreibung, der angibt, wie viele Ausgaben es gibt (zum Beispiel "<strong>4 Ausgaben</strong>"). Am unteren Rand der Editionsliste befindet sich ein Button zum "<strong>Eine weitere Ausgabe hinzufügen</strong>".</p>
 <h2 id="ein-komplett-neues-buch-hinzufugen"><a class="headerlink" href="#ein-komplett-neues-buch-hinzufugen">Ein komplett neues Buch hinzufügen</a></h2>
-<p>Sobald du versucht hast, nach deinem Buch zu suchen, es aus einem anderen Katalog zu importieren und findest nur andere Ausgaben des Buchs, kannst du ein neues Buch manuell hinzufügen. Der Link zum manuellen Hinzufügen eines Buches befindet sich am Ende der Suchseite, wenn externe Kataloge angezeigt werden. Du kannst auch direkt zu <code>/create-book</code> in deiner Instanz navigieren.</p>
+<p>Sobald du versucht hast, nach deinem Buch zu suchen, es aus einem anderen Katalog zu importieren und findest nur andere Ausgaben des Buchs, kannst du ein neues Buch manuell hinzufügen. Der Link zum manuellen Hinzufügen eines Buches befindet sich am Ende der Suchseite, wenn externe Kataloge angezeigt werden. You can also navigate directly to <code>/create-book</code> on your instance.</p>
 </section>
 
         </div>

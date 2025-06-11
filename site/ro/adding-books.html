@@ -100,11 +100,19 @@ Adding Books
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/v0.7.5/ro/posting-statuses.html" >Posting statuses</a>
+                    <a href="/v0.7.5/ro/posting-statuses.html" >Posting Statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/ro/privacy-controls.html" >Privacy Controls</a>
                 </li>
                 
                 <li>
                     <a href="/v0.7.5/ro/adding-books.html" class="is-active">Adding Books</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/ro/groups.html" >Groups</a>
                 </li>
                 
             </ul>
@@ -194,12 +202,24 @@ Adding Books
             
 <section class="block content">
     <p>Există câteva modalități diferite de a adăuga cărți instanței dvs. BookWyrm! Când nu găsiți o carte pe care o căutați, încercați aceste opțiuni în ordine: este mai bine să importați o carte decât să creați una de la zero.</p>
+<h2 id="importing-data-about-your-books-and-reading"><a class="headerlink" href="#importing-data-about-your-books-and-reading">Importing data about your books and reading</a></h2>
+<p>If you're coming to BookWyrm from another platform for tracking books and reading, you may want to import your books and reading data. Currently BookWyrm is capable of importing export files from the following platforms:</p>
+<ul>
+<li>Calibre (CSV)</li>
+<li>Goodreads (CSV)</li>
+<li>LibraryThing (TSV)</li>
+<li>OpenLibrary (CSV)</li>
+<li>Storygraph (CSV)</li>
+<li>OpenReads (CSV)</li>
+</ul>
+<p>Under 'Settings' navigate to 'Import Book List', select the matching data source, select your file and, if relevant, select whether to import reviews and what privacy setting to give them. When you press 'Import' a background task will begin to import your data. You will be notified when it has finished.</p>
+<p>It is important to understand that the import process does not import data directly from the other service - in many cases (e.g. Goodreads) this is not possible. When you import a data file, BookWyrm will search the local database, connected BookWyrm servers, and selected public data sources to find a match. For this reason, BookWyrm may not be able to import all of your data. We are always looking for new data sources with free and open APIs, especially for data about books in languages other than English. If you are aware of such a data source, please consider <a href="https://github.com/bookwyrm-social/bookwyrm/issues">creating an Issue</a>,</p>
 <h2 id="incarcarea-de-carti-din-alte-cataloage"><a class="headerlink" href="#incarcarea-de-carti-din-alte-cataloage">Încărcarea de cărți din alte cataloage</a></h2>
-<p>Dacă cartea pe care o căutați nu este disponibilă pe instanța dvs., există câteva moduri diferite de a o adăuga. Cel mai bun mod este de a o importa dintr-o sursă exterioară -- instanța dvs. poate încărca cărți din alte instanțe BookWyrm, precum și din <a href="http://openlibrary.org/">OpenLibrary</a> și <a href="http://inventaire.io/">Inventaire</a>. Dacă nu există rezultate pentru interogarea dvs., aceste surse vor fi automat întrebate și vor arăta un buton cu „<strong>Importați carte</strong>”. Dacă există rezultate locale care nu sunt ceea ce căutați, puteți face clic pe legătura „<strong>Încărcați rezultate din alte cataloage</strong>” pentru a încărca mai multe rezultate.</p>
+<p>If the book you're looking for isn't available on your BookWyrm instance, there are a few different ways to add it. Cel mai bun mod este de a o importa dintr-o sursă exterioară -- instanța dvs. poate încărca cărți din alte instanțe BookWyrm, precum și din <a href="http://openlibrary.org/">OpenLibrary</a> și <a href="http://inventaire.io/">Inventaire</a>. Dacă nu există rezultate pentru interogarea dvs., aceste surse vor fi automat întrebate și vor arăta un buton cu „<strong>Importați carte</strong>”. Dacă există rezultate locale care nu sunt ceea ce căutați, puteți face clic pe legătura „<strong>Încărcați rezultate din alte cataloage</strong>” pentru a încărca mai multe rezultate.</p>
 <h2 id="adaugati-o-noua-editie"><a class="headerlink" href="#adaugati-o-noua-editie">Adăugați o nouă ediție</a></h2>
 <p>If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how many editions there are (for example, "<strong>4 editions</strong>"). În partea de jos a listei de ediții este un buton „<strong>Adăugați o altă ediție</strong>”.</p>
 <h2 id="adaugati-o-carte-complet-noua"><a class="headerlink" href="#adaugati-o-carte-complet-noua">Adăugați o carte complet nouă</a></h2>
-<p>Odată ce ați încercat să găsiți cartea dvs., să o importați dintr-un alt catalog și să găsiți alte ediții ale cărții, puteți adăuga o carte nouă manual. The link to manually add a book is at the bottom of the search page when external catalogs are shown. Puteți de asemenea naviga direct la <code>/create-book</code> de pe instanța dvs..</p>
+<p>Odată ce ați încercat să găsiți cartea dvs., să o importați dintr-un alt catalog și să găsiți alte ediții ale cărții, puteți adăuga o carte nouă manual. The link to manually add a book is at the bottom of the search page when external catalogs are shown. You can also navigate directly to <code>/create-book</code> on your instance.</p>
 </section>
 
         </div>

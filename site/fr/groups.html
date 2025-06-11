@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>
+        
+Groups
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/fr/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Rejoindre</span>
+            </a>
+            <a href="https://joinbookwyrm.com/fr/get-involved" class="navbar-item">
+                S'impliquer dans le projet
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Soutenir
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Documentation
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" selected>Français</option>
+                    
+                    <option value="pl/" >Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Groups</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="latest" >latest</option>
+                
+                <option value="v0.7.5" selected>v0.7.5</option>
+                
+            </select>
+        </div>
+            <h2 class="menu-label"><a href="/fr/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/v0.7.5/fr/posting-statuses.html" >Posting Statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/privacy-controls.html" >Privacy Controls</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/adding-books.html" >Ajout de livres</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/groups.html" class="is-active">Groups</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/v0.7.5/fr/reverse-proxy.html" ></a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/moderation.html" >Modération</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/install-prod.html" >Installation en Production</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/install-prod-dockerless.html" >Installation sans Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/updating.html" >Mise à jour de votre instance</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/monitoring-queue.html" >Suivi de la file d'attente</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/external-storage.html" >Stockage Externe</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/optional_features.html" >Fonctionnalités optionnelles</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/cli.html" >Outils en ligne de commande</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/v0.7.5/fr/contributing.html" >Comment contribuer</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/translation.html" >Translations</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/v0.7.5/fr/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/fr/permissions.html" >Permissions</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>You can join or create a Group with others on Bookwyrm.
+There are many things a group could be made for - a book club, a bunch of friends, whatever makes sense for you.
+Groups can curate book <strong>Lists</strong> together, but that's about it right now.
+Currently, the Bookwyrm developers are focusing on other things, not groups, but they will be improved in the future.</p>
+<p>To find the groups page, first navigate to your profile, then open the 'Groups' tab.</p>
+<h2 id="group-administration"><a class="headerlink" href="#group-administration">Group administration</a></h2>
+<h3 id="creating-a-group"><a class="headerlink" href="#creating-a-group">Creating a group</a></h3>
+<p>On the top right of the groups page is the 'Create group' button.
+You will then need to give it a name and describe what it is about, before choosing its privacy setting.</p>
+<h3 id="group-privacy"><a class="headerlink" href="#group-privacy">Group privacy</a></h3>
+<p>Groups have the same privacy settings as posts and lists do, except they can't be Followers-only.
+Group membership always requires an invitation from the group's owner, even if it is marked Public.
+For more details, see <a href="/privacy-controls#Groups">here</a>.</p>
+<h3 id="adding-and-removing-users"><a class="headerlink" href="#adding-and-removing-users">Adding and removing users</a></h3>
+<p>Groups are currently limited only to members on the current instance.
+To add members, search their username in the search bar, then click 'Invite'.
+To remove members, click the 'Remove' button and then 'Confirm'.</p>
+<h2 id="group-membership"><a class="headerlink" href="#group-membership">Group membership</a></h2>
+<h3 id="joining-a-group"><a class="headerlink" href="#joining-a-group">Joining a group</a></h3>
+<p>To join a group, you must be on the same instance (website) and be invited by its owner.
+You will then receive a notification which lets you join.
+The group owner is marked with a star symbol.</p>
+<h3 id="using-group-lists"><a class="headerlink" href="#using-group-lists">Using group Lists</a></h3>
+<p>Group Lists work very similarly to normal Lists, except they are curated by all members of a Group.
+They can be created by any member of a group from the group's homepage.</p>
+<h2 id="related-ideas-and-discussion-on-github"><a class="headerlink" href="#related-ideas-and-discussion-on-github">Related ideas and discussion on GitHub</a></h2>
+<p>Allow users to request to join public groups (<a href="https://github.com/bookwyrm-social/bookwyrm/issues/1840">#1840</a> on GitHub)</p>
+<p>Allow groups to have multiple admins/owners (<a href="https://github.com/bookwyrm-social/bookwyrm/issues/1841">#1841</a> on GitHub)</p>
+<p>Allow groups to include users from multiple instances (ActivityPub) (<a href="https://github.com/bookwyrm-social/bookwyrm/issues/1548">#1548</a> on GitHub)</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> est un logiciel collaboratif et anti-commercial maintenu par <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Soutenir BookWyrm sur <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Contribuer</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm sur GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/groups.md">Contribuer à cette page</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">En savoir plus</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licence</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "fr/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
+            } else {
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
+            }
+            window.location = new_location;
+        }
+    })()
+</script>
+<script type="text/javascript">
+    (function() {
+        var versionSelector = document.getElementById("version_selection");
+        versionSelector.onchange = function(event) {
+            current_version = "v0.7.5"
+            var current_location = window.location.pathname;
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
+            } else {
+                window.location = `/${target_version}${current_location}`
+            }
+        }
+    })()
+</script>
+
+
+</body>
+</html>
