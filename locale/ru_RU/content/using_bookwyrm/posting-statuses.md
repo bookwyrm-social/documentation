@@ -1,5 +1,5 @@
 - - -
-Название: Статус сообщения Дата: 2022-04-30 Заказ: 1
+Title: Posting Statuses Date: 2025-05-26 Order: 1
 - - -
 
 Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
@@ -21,6 +21,13 @@ There are three types of posts users can create directly in response to books: r
 | Rating        | ✔      |         |       |       |
 | Title field   | ✔      |         |       |       |
 
+#### Spoiler alerts
+
+Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.
+
+#### Star ratings
+
+A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
 ### Reading status updates
 
@@ -32,9 +39,9 @@ Statuses are generated when a user indicates that they want to read, have starte
 - Обращение (@user)
 - URL-адреса (`http(s)://` не показывается)
 - Текст в [формате Markdown](https://www.markdownguide.org/cheat-sheet/)
-  - жирный
-  - курсив
-  - цитата
-  - список
-  - ссылка
+    - жирный
+    - курсив
+    - цитата
+    - список
+    - ссылка
 
