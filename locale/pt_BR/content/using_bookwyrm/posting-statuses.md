@@ -1,5 +1,5 @@
 - - -
-Título: Status da postagem Data: 2022-04-30 Ordem: 1
+Title: Posting Statuses Date: 2025-05-26 Order: 1
 - - -
 
 Postar em BookWyrm começa com um livro. Os usuários podem comentar em livros "em processo" ou "lidos recentemente" na seção de "Seus livros", ou na página de destino de um livro. A partir daí, os usuários podem responder e iniciar uma conversa. As postagens em BookWyrm podem incluir formatos como "negrita", "itálico" e links usando [Markdown](https://www.markdownguide.org/cheat-sheet/).
@@ -21,6 +21,13 @@ Há três tipos de postagens que os usuários podem criar diretamente em respost
 | Avaliação         | ✔       |            |         |          |
 | Campo de título   | ✔       |            |         |          |
 
+#### Spoiler alerts
+
+Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.
+
+#### Star ratings
+
+A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
 ### Atualização do estado de leitura
 
@@ -34,9 +41,9 @@ No texto pode incluir:
 - Alguns
 formatos de Markdown</0 
   
-    - negrita
-  - itálico
-  - bloco de citações
-  - lista de marcadores
-  - links</li> </ul>
+      - negrita
+    - itálico
+    - bloco de citações
+    - lista de marcadores
+    - links</li> </ul>
 
