@@ -3,7 +3,7 @@
 <head>
     <title>
         
-User Migration and Aliases
+Privacy Controls
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,7 +98,7 @@ User Migration and Aliases
             </li>
             
             <li>
-                <a href="/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+                <a href="/privacy-controls.html" class="has-background-inherit" class="is-active">Privacy Controls</a>
             </li>
             
             <li>
@@ -110,7 +110,7 @@ User Migration and Aliases
             </li>
             
             <li>
-                <a href="/user-migration.html" class="has-background-inherit" class="is-active">User Migration and Aliases</a>
+                <a href="/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
             </li>
             
         </ul>
@@ -226,51 +226,101 @@ User Migration and Aliases
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">User Migration and Aliases</h1>
+<h1 class="title is-1">Privacy Controls</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>You can migrate your account between BookWyrm instances, and/or set up an <em>alias</em> between any ActivityPub account and your BookWyrm acccount.</p>
-<h2 id="exporting-account-data"><a class="headerlink" href="#exporting-account-data">Exporting account data</a></h2>
-<p>You can export your account data at any time, however there will be a limit on how often you can do this, set by your instance admin. When you create an export file a process will run in the background and you will be notified when it is completed and ready for download. Export files are in <code>tar.gz</code> format.</p>
-<p>Account export files include:</p>
+    <p>Bookwyrm has different privacy levels which let users control how public something is and who it is visible to.
+Do you want to share your reading with the internet, just your friends, or do you want to keep it private?</p>
+<p>There are four privacy levels: Public, Unlisted, Followers, and Private.
+Broadly speaking, Public is visible to anyone; Unlisted hides it from discovery pages; Followers is only visible to people who follow you; and Private is only visible to you.
+There are some slight differences in how these apply to different things in Bookwyrm.</p>
+<p>Throughout the website, you can check what something's privacy level is by the icon next to it.
+Public is a globe, Unlisted is an open lock, Followers is a closed lock, and Private is an envelope.</p>
+<p>Note: Anyone can just follow you and then be able to see all things you marked Followers-only.
+To limit this, go to <code>Settings - Edit Profile - Privacy</code> and enable 'Manually approve followers'.
+This allows you to vet follow requests, or limit them just to your friends.</p>
+<p>Other privacy settings are explained <a href="#privacy-related-settings">at the bottom of this page</a>.</p>
+<h2 id="shelves"><a class="headerlink" href="#shelves">Shelves</a></h2>
+<p>Shelves are Public by default, but you can edit them to make them only visible to your followers or just yourself.</p>
+<h3 id="public-unlisted"><a class="headerlink" href="#public-unlisted">Public / Unlisted</a></h3>
 <ul>
-<li>User profile and avatar</li>
-<li>Most user settings</li>
-<li>Reading goals</li>
-<li>Shelves</li>
-<li>Reading history</li>
-<li>Book reviews</li>
-<li>Statuses</li>
-<li>Your own lists and saved lists</li>
-<li>Which users you follow and block</li>
+<li>There is no difference between Public and Unlisted for Shelves. The Unlisted option may be removed in the future.</li>
+<li>Anyone can see these shelves and all the books on them.</li>
 </ul>
-<p>Exports do <em>not</em> include:</p>
+<h3 id="followers"><a class="headerlink" href="#followers">Followers</a></h3>
 <ul>
-<li>Direct messages</li>
-<li>Replies to your statuses</li>
-<li>Groups</li>
-<li>Favorites</li>
+<li>Only people who follow you will see this shelf and the books on it.</li>
 </ul>
-<h2 id="aliases"><a class="headerlink" href="#aliases">Aliases</a></h2>
-<p>An <em>alias</em> indicates to ActivityPub software that two accounts represent and are controlled by the same person. You can assign any ActivityPub account as an alias of your BookWyrm account by navigating to <code>Settings - Aliases</code>.</p>
-<p>Setting an account as an alias is easily reversible, and is required to migrate accounts.</p>
-<h2 id="moving-an-account"><a class="headerlink" href="#moving-an-account">Moving an account</a></h2>
-<p>You can "move" an account from one to another at <code>Settings - Move Account</code>. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.</p>
-<p>Your old (origin) account will be marked as moved and will not be discoverable or usable unless you undo the move, which you can do at any time, however any followers who have migrated their follow from the old account to the new account will no longer be following your old account.</p>
-<p>You <em>must</em> set the old (source) user as an alias of the new (target) user in the settings of the target account for a <code>Move</code> to work.</p>
-<h2 id="importing-account-data"><a class="headerlink" href="#importing-account-data">Importing account data</a></h2>
-<p>Once you have an export file you can import it into another BookWyrm instance. To do so, you must first set the new (target) account as an alias of the old (source) account, or <code>Move</code> the old account to the new one.</p>
-<p>It is important to read the instructions on the account import page as some data will be overwritten if selected. There is also a limit on how often you can import user data.</p>
+<h3 id="private"><a class="headerlink" href="#private">Private</a></h3>
 <ul>
-<li>Go to <code>Settings - Import BookWyrm Account</code></li>
-<li>Select your export file</li>
-<li>Untick any data options you do not wish to import</li>
-<li>Click 'Import'</li>
+<li>Only you will be able to see this shelf and the books on it.</li>
 </ul>
-<p>Your import will run in the background and you will be notified when it is completed.</p>
-<p>If you import data from an account on the same server, all posts (comments, reviews, quotations) will be re-assigned to the new user.</p>
+<h3 id="all-books-shelf"><a class="headerlink" href="#all-books-shelf">All books shelf</a></h3>
+<ul>
+<li>The 'All books' shelf is a default shelf which displays books from all visible shelves to the user viewing it. </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Books on Public shelves</th>
+<th>Books on Unlisted shelves</th>
+<th>Books on Followers-only shelves</th>
+<th>Books on Private shelves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anyone</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Follows you</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Yourself</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+<h3 id="implications"><a class="headerlink" href="#implications">Implications</a></h3>
+<ul>
+<li>If you read a book, want to track it on Bookwyrm, but don't want anyone to know that you did, you'll need to put it on a new Private shelf, not a Public shelf.</li>
+</ul>
+<h2 id="groups"><a class="headerlink" href="#groups">Groups</a></h2>
+<p>Groups have the same privacy settings as statuses and lists do, except they can't be Followers-only.
+Group membership always requires an invitation from the group's owner, even if it is marked Public.
+Note that currently, the Groups tab on a profile is only shown if the user viewing it is logged in (see <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3610">#3610</a>).</p>
+<h3 id="public"><a class="headerlink" href="#public">Public</a></h3>
+<ul>
+<li>
+<p>Anyone can view the Group page, members and its Lists (except for private Lists)</p>
+</li>
+<li>
+<p>In the future it will be displayed on a Groups discovery page.</p>
+</li>
+</ul>
+<h3 id="unlisted"><a class="headerlink" href="#unlisted">Unlisted</a></h3>
+<ul>
+<li>Anyone can view the group page, members and its Lists (except for private Lists)</li>
+</ul>
+<h3 id="private_1"><a class="headerlink" href="#private_1">Private</a></h3>
+<ul>
+<li>Only members of the group can view the group page, members and its Lists</li>
+<li>All the Groups Lists will also be private.  </li>
+</ul>
 </section>
 
             </section>
@@ -295,7 +345,7 @@ User Migration and Aliases
                     <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/user-migration.md">Contribute to this page</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/privacy-controls.md">Contribute to this page</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">
