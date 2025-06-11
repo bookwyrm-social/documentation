@@ -1,5 +1,5 @@
 - - -
-Title: Publication de statuts Date: 2022-04-30 Order: 1
+Title: Posting Statuses Date: 2025-05-26 Order: 1
 - - -
 
 La publication sur BookWyrm commence par un livre. Les utilisateurs peuvent commenter les livres en cours ou récemment lus depuis la section « Vos livres » ou depuis la page d'un livre. De là, les utilisateurs peuvent répondre et démarrer une conversation. Les posts sur BookWyrm peuvent inclure un formatage basique avec du gras, de l'italique et des liens, en utilisant [Markdown](https://www.markdownguide.org/cheat-sheet/).
@@ -21,6 +21,13 @@ Il y a trois types de posts que les utilisateurs peuvent créer directement en r
 | Note                     | ✔        |             |          |         |
 | Champ de titre           | ✔        |             |          |         |
 
+#### Spoiler alerts
+
+Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.
+
+#### Star ratings
+
+A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
 ### État de lecture
 
@@ -32,9 +39,9 @@ Le texte peut inclure :
 - des mentions d’utilisateurs (@user)
 - des adresses URL (`http(s)://` n'est pas affiché)
 - du [formatage Markdown](https://www.markdownguide.org/cheat-sheet/)
-  - gras
-  - italique
-  - blocs de citation
-  - listes à puces
-  - liens
+    - gras
+    - italique
+    - blocs de citation
+    - listes à puces
+    - liens
 
