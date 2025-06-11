@@ -1,5 +1,5 @@
 - - -
-Títol: Publicar estats Data: 2022-04-30 Ordre: 1
+Title: Posting Statuses Date: 2025-05-26 Order: 1
 - - -
 
 Publicar a BookWyrm comença amb un llibre. Els usuaris poden comentar llibres en progrés o llegits fa poc des de la secció "Els teus llibres" o des de la pàgina d'inici d'un llibre. Des d'aquí, els usuaris poden respondre o iniciar una conversa. Les publicacions de BookWyrm pot incloure estils com negreta, cursiva i enllaços fent ús de [Markdown](https://www.markdownguide.org/cheat-sheet/).
@@ -21,6 +21,13 @@ Hi ha tres tipus de publicacions que els usuaris poden crear directament en resp
 | Valoració                | ✔        |           |      |          |
 | Camp de títol            | ✔        |           |      |          |
 
+#### Spoiler alerts
+
+Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.
+
+#### Star ratings
+
+A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
 ### Actualitzacions d'estats de lectura
 
@@ -32,9 +39,9 @@ El text pot incloure:
 - Mencions (@usuari)
 - URLs (`http(s)://` no es mostra)
 - Algunes [opcions de format](https://www.markdownguide.org/cheat-sheet/)
-  - negreta
-  - cursiva
-  - cometes
-  - llista amb boletes
-  - enllaços
+    - negreta
+    - cursiva
+    - cometes
+    - llista amb boletes
+    - enllaços
 
