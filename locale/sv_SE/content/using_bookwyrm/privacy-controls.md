@@ -75,11 +75,11 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 - The 'All books' shelf is a default shelf which displays books from all visible shelves to the user viewing it.
 
-| User        | Books on Public shelves | Books on Unlisted shelves | Books on Followers-only shelves | Books on Private shelves |
-| ----------- | ----------------------- | ------------------------- | ------------------------------- | ------------------------ |
-| Anyone      | ✔                       | ✔                         |                                 |                          |
-| Follows you | ✔                       | ✔                         | ✔                               |                          |
-| Yourself    | ✔                       | ✔                         | ✔                               | ✔                        |
+| User       | Books on Public shelves | Books on Unlisted shelves | Books on Followers-only shelves | Books on Private shelves |
+| ---------- | ----------------------- | ------------------------- | ------------------------------- | ------------------------ |
+| Anyone     | ✔                       | ✔                         |                                 |                          |
+| Följer dig | ✔                       | ✔                         | ✔                               |                          |
+| Yourself   | ✔                       | ✔                         | ✔                               | ✔                        |
 
 ### Implications
 
@@ -93,7 +93,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 - Your List will appear on:
     - the Lists discovery page (Lists tab).
     - the pages of books that are in it, displayed on the side of the screen.
-    - your profile.
+    - din profil.
 - Anyone can 'save' (bookmark) your List.
 
 ### Unlisted
