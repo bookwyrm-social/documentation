@@ -34,7 +34,7 @@ Instructions for running BookWyrm in production without Docker:
     - `REDIS_BROKER_HOST` | Set to `localhost` (the machine running redis)
     - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
     - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
+- Konfigurera nginx
     - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
     - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
     - Update nginx `bookwyrm.conf`:
