@@ -14,7 +14,7 @@ There are three types of posts users can create directly in response to books: r
 
 | Component     | Review | Comment | Quote | Reply |
 | ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
+| Textfält      | ✔      | ✔       | ✔     | ✔     |
 | Spoiler alert | ✔      | ✔       | ✔     | ✔     |
 | Page number   |        | ✔       | ✔     |       |
 | Quote         |        |         | ✔     |       |
@@ -43,5 +43,5 @@ Text can include:
     - italics
     - block quotes
     - bullet lists
-    - links
+    - länkar
 
