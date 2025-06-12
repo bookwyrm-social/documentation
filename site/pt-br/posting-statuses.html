@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Posting statuses
+Posting Statuses
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +32,7 @@ Posting statuses
             <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
         </a>
         <a href="/" class="navbar-item has-text-link has-text-weight-bold">
-            Documentation
+            Documentação
         </a>
         <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
@@ -45,16 +45,16 @@ Posting statuses
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
             <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
-                Join
+                Registrar
             </a>
             <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
-                Get involved
+                Participe
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
-                Support
+                Suporte
             </a>
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
-                Code
+                Código
             </a>
         </div>
     </div>
@@ -94,11 +94,19 @@ Posting statuses
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pt-br/posting-statuses.html" class="has-background-inherit" class="is-active">Posting statuses</a>
+                <a href="/pt-br/posting-statuses.html" class="has-background-inherit" class="is-active">Posting Statuses</a>
             </li>
             
             <li>
-                <a href="/pt-br/adding-books.html" class="has-background-inherit" >Adding Books</a>
+                <a href="/pt-br/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/adding-books.html" class="has-background-inherit" >Adicionar livros</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -148,7 +156,11 @@ Posting statuses
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pt-br/contributing.html" class="has-background-inherit" >How to Contribute</a>
+                <a href="/pt-br/style_guide.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/contributing.html" class="has-background-inherit" ></a>
             </li>
             
             <li>
@@ -157,10 +169,6 @@ Posting statuses
             
             <li>
                 <a href="/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
@@ -173,7 +181,7 @@ Posting statuses
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pt-br/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+                <a href="/pt-br/activitypub.html" class="has-background-inherit" ></a>
             </li>
             
             <li>
@@ -194,64 +202,64 @@ Posting statuses
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Posting statuses</h1>
+<h1 class="title is-1">Posting Statuses</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a>.</p>
-<p>If you're familiar with <a href="https://docs.joinmastodon.org/user/posting/">posting on Mastodon</a>, you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.</p>
-<h2 id="types-of-statuses"><a class="headerlink" href="#types-of-statuses">Types of statuses</a></h2>
-<h3 id="user-commentary"><a class="headerlink" href="#user-commentary">User commentary</a></h3>
-<p>There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.</p>
+    <p>Postar em BookWyrm começa com um livro. Os usuários podem comentar em livros "em processo" ou "lidos recentemente" na seção de "Seus livros", ou na página de destino de um livro. A partir daí, os usuários podem responder e iniciar uma conversa. As postagens em BookWyrm podem incluir formatos como "negrita", "itálico" e links usando <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a>.</p>
+<p>Se você tem intimidade com as <a href="https://docs.joinmastodon.org/user/posting/">postagens em Mastodon</a>, você verá que os status em BookWyrm têm configurações de visibilidade, avisos de conteúdo e menções análogas. No entanto, enquetes, emojis personalizados e anexos não são suportados ainda.</p>
+<h2 id="tipos-de-status"><a class="headerlink" href="#tipos-de-status">Tipos de status</a></h2>
+<h3 id="comentario-de-usuario"><a class="headerlink" href="#comentario-de-usuario">Comentário de usuário</a></h3>
+<p>Há três tipos de postagens que os usuários podem criar diretamente em resposta a livros: resenhas, comentários e citações. Comentários respondem a aspectos gerais de um livro, citações pertencem a passagens específicas e resenhas lidam com o livro em sua totalidade. Os usuários também podem responder aos status.</p>
 <table>
 <thead>
 <tr>
-<th>Component</th>
-<th>Review</th>
-<th>Comment</th>
-<th>Quote</th>
-<th>Reply</th>
+<th>Componentes.</th>
+<th>Resenha</th>
+<th>Comentário</th>
+<th>Citação</th>
+<th>Resposta</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Text field</td>
+<td>Campo de texto</td>
 <td>✔</td>
 <td>✔</td>
 <td>✔</td>
 <td>✔</td>
 </tr>
 <tr>
-<td>Spoiler alert</td>
+<td>Alerta de spoiler</td>
 <td>✔</td>
 <td>✔</td>
 <td>✔</td>
 <td>✔</td>
 </tr>
 <tr>
-<td>Page number</td>
+<td>Número da página</td>
 <td></td>
 <td>✔</td>
 <td>✔</td>
 <td></td>
 </tr>
 <tr>
-<td>Quote</td>
+<td>Citação</td>
 <td></td>
 <td></td>
 <td>✔</td>
 <td></td>
 </tr>
 <tr>
-<td>Rating</td>
+<td>Avaliação</td>
 <td>✔</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>Title field</td>
+<td>Campo de título</td>
 <td>✔</td>
 <td></td>
 <td></td>
@@ -259,19 +267,28 @@ Posting statuses
 </tr>
 </tbody>
 </table>
-<h3 id="reading-status-updates"><a class="headerlink" href="#reading-status-updates">Reading status updates</a></h3>
-<p>Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.</p>
-<h2 id="text"><a class="headerlink" href="#text">Text</a></h2>
-<p>Text can include:</p>
+<h4 id="spoiler-alerts"><a class="headerlink" href="#spoiler-alerts">Spoiler alerts</a></h4>
+<p>Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.</p>
+<h4 id="star-ratings"><a class="headerlink" href="#star-ratings">Star ratings</a></h4>
+<p>A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".</p>
+<h3 id="atualizacao-do-estado-de-leitura"><a class="headerlink" href="#atualizacao-do-estado-de-leitura">Atualização do estado de leitura</a></h3>
+<p>Os status são gerados quando o usuário indicar que ele "quer ler", "começou a ler" ou "terminou de ler" um livro.</p>
+<h2 id="texto"><a class="headerlink" href="#texto">Texto</a></h2>
+<p>No texto pode incluir:</p>
 <ul>
-<li>Mentions (@user)</li>
-<li>URLs (<code>http(s)://</code> is not displayed)</li>
-<li>Some <a href="https://www.markdownguide.org/cheat-sheet/">Markdown formatting</a></li>
-<li>bold</li>
-<li>italics</li>
-<li>block quotes</li>
-<li>bullet lists</li>
-<li>links</li>
+<li>Menções (@usuário)</li>
+<li>URLs (<code>http(s)://</code> não é exibido)</li>
+<li>
+<p>Alguns
+formatos de Markdown&lt;!--0 </p>
+<ul>
+<li>negrita</li>
+<li>itálico</li>
+<li>bloco de citações</li>
+<li>lista de marcadores</li>
+<li>links</li--> </ul></li>
+</ul>
+</li>
 </ul>
 </section>
 
@@ -285,19 +302,19 @@ Posting statuses
         <div class="columns">
             <div class="column content">
                 <p>
-                    <strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                    <strong>BookWyrm</strong> é um software colaborativo e anti-corporativo mantido por <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
                 </p>
                 <p>
-                    Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                    Apoie a BookWyrm no <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
                 </p>
             </div>
             <div class="column">
-                <h3 class="title is-6">Get Involved</h3>
+                <h3 class="title is-6">Participe</h3>
                 <p>
-                    <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm no GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/posting-statuses.md">Contribute to this page</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/posting-statuses.md">Contribua para esta página</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">
@@ -312,15 +329,15 @@ Posting statuses
                 </p>
             </div>
             <div class="column">
-                <h3 class="title is-6">Learn more</h3>
+                <h3 class="title is-6">Saiba mais</h3>
                 <p>
-                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                    <a href="https://docs.joinbookwyrm.com">Documentação</a>
                 </p>
                 <p>
-                    <a href="mailto:mousereeve@riseup.net">Contact maintainer</a>
+                    <a href="mailto:mousereeve@riseup.net">Falar com a administração</a>
                 </p>
                 <p>
-                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">License</a>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licença</a>
                 </p>
             </div>
         </div>

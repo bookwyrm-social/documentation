@@ -21,7 +21,7 @@ Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 #### Tipologia di oggetto
 
 - `Nota`: Su servizi come Mastodon, `Nota` è il tipo primario di stato. Contengono il corpo del messaggio, gli allegati, possono menzionare gli utenti, ed posso ricevere in risposta qualsiasi tipo di stato. All'interno di BookWyrm, la `Nota`s può essere creata solo come messaggio diretto o come risposta ad altri stati.
-- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
+- `Recensione`: Una recensione è uno stato in risposta a un libro (indicato dal campo `inReplyToBook`), avente un titolo, un corpo e una valutazione numerica compresa tra 0 (non valutato) e 5.
 - `Comment`: Un commento a un libro parla del libro stesso e ha un corpo messaggio.
 - `Citazione`: Una citazione ha un corpo del messaggio, un estratto da un libro e menziona un libro.
 

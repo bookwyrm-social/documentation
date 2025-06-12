@@ -16,12 +16,12 @@ Jeśli nie masz pewności, jak najlepiej podejść do problemu z tłumaczeniem, 
 
 ## Umożliwianie tłumaczenia szablonów
 
-BookWyrm korzysta z funkcji tłumaczenia Django, aby umożliwić zmienianie treści strony w zależności od języka wybranego przez użytkownika. Dokumentacja Django [zawiera pomocne objaśnienia](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code), jak to działa, a tutaj krótkie jej podusmowanie:
+BookWyrm korzysta z funkcji tłumaczenia Django, aby umożliwić zmienianie treści strony w zależności od języka wybranego przez użytkownika. Dokumentacja Django [zawiera pomocne objaśnienia](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code), jak to działa, a tutaj krótkie jej podsumowanie:
 
 * cały tekst szablonu powinien zawierać znaczniki tłumaczenia szablonu
 * dodaj `{% load i18n %}` na górze szablonu, aby umożliwić tłumaczenia
 * Jeśli blok tekstu jest tekstem dosłownym, możesz skorzystać z znacznika szablonu `{% trans %}`
-* Jeśli blok tekstu zawiera zmiennie, należy użyć pary znaczników `{% blocktrans %}` oraz `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* Jeśli blok tekstu zawiera zmienne, należy użyć pary znaczników `{% blocktrans %}` oraz `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
 
 ### Przykłady
 

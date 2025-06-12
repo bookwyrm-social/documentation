@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Beitragsstatus
+Posting Statuses
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +48,7 @@ Beitragsstatus
                 Beitreten
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Mach mit
+                Mitmachen
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -94,11 +94,19 @@ Beitragsstatus
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/de/posting-statuses.html" class="has-background-inherit" class="is-active">Beitragsstatus</a>
+                <a href="/de/posting-statuses.html" class="has-background-inherit" class="is-active">Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/de/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
             </li>
             
             <li>
                 <a href="/de/adding-books.html" class="has-background-inherit" >Bücher hinzufügen</a>
+            </li>
+            
+            <li>
+                <a href="/de/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -156,11 +164,11 @@ Beitragsstatus
             </li>
             
             <li>
-                <a href="/de/install-dev.html" class="has-background-inherit" >Entwicklungsumgebung</a>
+                <a href="/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
             </li>
             
             <li>
-                <a href="/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
+                <a href="/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
             <li>
@@ -194,13 +202,13 @@ Beitragsstatus
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Beitragsstatus</h1>
+<h1 class="title is-1">Posting Statuses</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>Das Schreiben auf BookWyrm beginnt mit einem Buch. Benutzer<em>innen können im Verlauf oder vor kurzem gelesene Bücher aus dem Abschnitt "Ihre Bücher" kommentieren oder von der eigenen Seite eines Buches aus. Von dort aus können Benutzer</em>innen antworten und eine Unterhaltung starten. BookWyrm Beiträge können Formatierungen wie fett, kursiv und Links mit <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a> beinhalten.</p>
-<p>Wenn Sie mit dem <a href="https://docs.joinmastodon.org/user/posting/">Posten auf Mastodon</a> vertraut sind, wirst du feststellen, dass der BookWyrm-Status analoge Sichtbarkeitseinstellungen, Inhaltswarnungen und Erwähnungen enthält. Umfragen, benutzerdefinierte Emoji und Anhänge werden jedoch noch nicht unterstützt.</p>
+    <p>Das Schreiben auf BookWyrm beginnt mit einem Buch. Benutzer<em>innen können angefangene oder vor kurzem gelesene Bücher aus dem Abschnitt "Ihre Bücher" kommentieren oder von der Startseite eines Buches aus. Von dort aus können Benutzer</em>innen antworten und eine Unterhaltung starten. BookWyrm Beiträge können Formatierungen wie fett, kursiv und Links mit <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a> beinhalten.</p>
+<p>Wer mit dem <a href="https://docs.joinmastodon.org/user/posting/">Posten auf Mastodon</a> vertraut ist, wird feststellen, dass Beiträge auf BookWyrm analoge Einstellungen zur Sichtbarkeit, Inhaltswarnungen und Erwähnungen enthält. Umfragen, benutzerdefinierte Emoji und Anhänge werden jedoch noch nicht unterstützt.</p>
 <h2 id="typen-von-status"><a class="headerlink" href="#typen-von-status">Typen von Status</a></h2>
 <h3 id="kommentare-von-nutzerinnen"><a class="headerlink" href="#kommentare-von-nutzerinnen">Kommentare von Nutzer*innen</a></h3>
 <p>Es gibt drei Arten von Beiträgen, auf die Benutzer<em>innen direkt auf Bücher antworten können: Rezensionen, Kommentare und Zitate. Kommentare reagieren auf allgemeine Aspekte eines Buches, Zitate beziehen sich auf bestimmte Passagen und Rezensionen befassen sich mit Büchern insgesamt. Benutzer</em>innen können auch auf Status antworten.</p>
@@ -259,6 +267,10 @@ Beitragsstatus
 </tr>
 </tbody>
 </table>
+<h4 id="spoiler-alerts"><a class="headerlink" href="#spoiler-alerts">Spoiler alerts</a></h4>
+<p>Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.</p>
+<h4 id="star-ratings"><a class="headerlink" href="#star-ratings">Star ratings</a></h4>
+<p>A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".</p>
 <h3 id="lesestatusaktualisierungen"><a class="headerlink" href="#lesestatusaktualisierungen">Lesestatusaktualisierungen</a></h3>
 <p>Der Status wird generiert, wenn ein<em>e Benutzer</em>in angibt, dass sie lesen will, begonnen hat oder ein Buch gelesen hat.</p>
 <h2 id="text"><a class="headerlink" href="#text">Text</a></h2>
@@ -266,12 +278,14 @@ Beitragsstatus
 <ul>
 <li>Erwähnungen (@Benutzer)</li>
 <li>URLs (<code>http(s)://</code> wird nicht angezeigt)</li>
-<li>Einige <a href="https://www.markdownguide.org/cheat-sheet/">Markdown-Formatierungen</a></li>
+<li>Einige <a href="https://www.markdownguide.org/cheat-sheet/">Markdown-Formatierungen</a><ul>
 <li>fett</li>
 <li>kursiv</li>
 <li>Zitatblock</li>
 <li>Aufzählungsliste</li>
 <li>Links</li>
+</ul>
+</li>
 </ul>
 </section>
 
@@ -285,7 +299,7 @@ Beitragsstatus
         <div class="columns">
             <div class="column content">
                 <p>
-                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                    <strong>BookWyrm</strong> ist eine kollaborative, nicht-kommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
                 </p>
                 <p>
                     Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.

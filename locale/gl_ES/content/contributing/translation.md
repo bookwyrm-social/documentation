@@ -18,7 +18,7 @@ Se non tes certeza sobre como afrontar este problema de tradución, fai un comen
 
 BookWyrm aproveita as vantaxes da funcionabilidade das traducións de Django para permitir que o contido da páxina varíe en función do idioma elexido. A documentación de Django [proporciona axuda](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) sobre como funciona, pero aquí tes unha versión reducida:
 
-* tódolos modelos do texto deben incluír etiquetas do modelo da tradución
+* todos os modelos do texto deben incluír etiquetas do modelo da tradución
 * engade `{% load i18n %}` na parte superior do modelo para activar as traducións
 * Se o bloque de texto é texto literal, podes usar o modelo de etiqueta `{% trans %}`
 * Se o bloque inclúe variables, debes usar o par de modelos de etiqueta `{% blocktrans %}` e `{% endblocktrans %}`. Se estás incluíndo espazos en branco ou saltos de liña, usa `trimmed` para eliminalos automáticamente cando se crea o ficheiro coa tradución: `{% blocktrans trimmed %}`
@@ -30,7 +30,7 @@ BookWyrm aproveita as vantaxes da funcionabilidade das traducións de Django par
 
 <p>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Added by <a href="{{ user_path }}">{{ username }}</a>
+    Engadido por <a href="{{ user_path }}">{{ username }}</a>
     {% endblocktrans %}
 </p>
 ```

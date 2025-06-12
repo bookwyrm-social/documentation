@@ -1,5 +1,5 @@
 - - -
-Title: Translations Date: 2021-10-20 Order: 2
+Título: Traducciones Fecha: 2021-10-20 Orden: 2
 - - -
 
 ## Contribuyendo a las traducciones
@@ -14,16 +14,16 @@ Como principio rector, trata de valorar más un lenguaje inclusivo y neutral par
 
 Si tienes dudas sobre cómo abordar un problema de traducción, comenta en la traducción o abre un [tema de discusión](https://translate.joinbookwyrm.com/project/bookwyrm/discussions) para abordar preguntas más generales.
 
-## Making templates translatable
+## Volver traducibles las plantillas
 
-Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation [provides a helpful explanation](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) of how this works, but here is the short version:
+BookWyrm aprovecha las funciones de traducción de Django. Permite que el contenido de la página cambie dependiendo del idioma elegido por el usuario. La documentación de Django [proporciona una útil explicación](https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code) de cómo funciona esto, pero aquí hay un breve resumen:
 
-* all template text should include translation template tags
-* add `{% load i18n %}` at the top of your template to enable translations
-* If the text block is literal text, you can use the template tag `{% trans %}`
-* If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
+* todo el texto de la plantilla debe incluir etiquetas de traducción
+* añade `{% load i18n %}` en la parte superior de la plantilla para habilitar las traducciones
+* Si el bloque de texto es texto literal, puede usar la etiqueta `{% trans %}`
+* Si el bloque de texto incluye variables, deberías usar el par de etiquetas `{% blocktrans %}` y `{% endblocktrans %}`. Si incluyes espacios en blanco o saltos de línea, usa `trimmed`. Para eliminarlo automáticamente cuando se genere el archivo local: `{% blocktrans trimmed %}`
 
-### Examples
+### Ejemplos
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>

@@ -18,9 +18,9 @@ Note: Anyone can just follow you and then be able to see all things you marked F
 To limit this, go to `Settings - Edit Profile - Privacy` and enable 'Manually approve followers'.
 This allows you to vet follow requests, or limit them just to your friends.
 
-Other privacy settings are explained at the bottom of this page. [Click here](#privacy-related-settings) to scroll down to them.
+Other privacy settings are explained [at the bottom of this page](#privacy-related-settings).
 
---- 
+
 
 ## Statuses
 
@@ -36,7 +36,7 @@ The default option.
 - Your status will appear on:
 	- public timelines
 	- discovery pages.
-	- it's related book's page.
+	- its related book's page.
 	- the home timeline of people who follow you
 - Your status can be **boosted** into other people's home timelines.
 
@@ -53,10 +53,10 @@ The exact same as Public, but:
 
 ### Private
 
-- Your status can only be seen by you, and anyone **mentioned** in it.
+- Your status can only be seen by you, anyone **mentioned** in it, and anyone previously involved in the conversation.
 - This is the privacy level used in Direct Messages.
 
----
+
 
 ## Shelves
 
@@ -77,7 +77,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 ### All books shelf
 
-- The 'All books' shelf is a default shelf which displays books from all visible shelves to the user viewing it. 
+- The 'All books' shelf is a default shelf which displays books from all visible shelves to the user viewing it.
 
 | User        | Books on Public shelves | Books on Unlisted shelves | Books on Followers-only shelves | Books on Private shelves |
 |-------------|-------------------------|---------------------------|---------------------------------|--------------------------|
@@ -89,7 +89,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 - If you read a book, want to track it on Bookwyrm, but don't want anyone to know that you did, you'll need to put it on a new Private shelf, not a Public shelf.
 
----
+
 
 ## Lists
 
@@ -100,12 +100,12 @@ Shelves are Public by default, but you can edit them to make them only visible t
 	- the Lists discovery page (Lists tab).
 	- the pages of books that are in it, displayed on the side of the screen.
 	- your profile.
-- Anyone can 'save' (bookmark) your List. 
+- Anyone can 'save' (bookmark) your List.
 
 ### Unlisted
 
-- There is currently no difference between Public and Unlisted for Lists. 
-In the future, Unlisted will hide the List from the Lists discovery page and books pages. 
+- There is currently no difference between Public and Unlisted for Lists.
+In the future, Unlisted will hide the List from the Lists discovery page and books pages.
 For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) on GitHub.
 
 ### Followers
@@ -116,12 +116,13 @@ For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265
 
 - Only you can see your List on the aforementioned pages.
 
----
+
 
 ## Groups
 
 Groups have the same privacy settings as statuses and lists do, except they can't be Followers-only.
 Group membership always requires an invitation from the group's owner, even if it is marked Public.
+Note that currently, the Groups tab on a profile is only shown if the user viewing it is logged in (see [#3610](https://github.com/bookwyrm-social/bookwyrm/issues/3610)).
 
 ### Public
 
@@ -136,28 +137,27 @@ Group membership always requires an invitation from the group's owner, even if i
 ### Private
 
 - Only members of the group can view the group page, members and its Lists
+- All the Groups Lists will also be private.
 
-- All the Groups statuses and Lists will also be private.  
 
----
 
 ## Privacy related settings
 
 ### Manually approve followers
 
-Found in `Settings - Edit Profile - Privacy`. 
+Found in `Settings - Edit Profile - Privacy`.
 
 When enabled, you will get a notification when someone wants to follow you, and you'll be able to choose whether or not to accept it.
 Useful if you want to check who they are or restrict your followers to only be your friends and people you know.
 
 ### Hide followers and following lists on profile
 
-Found in `Settings - Edit Profile - Privacy`. 
+Found in `Settings - Edit Profile - Privacy`.
 
 By default, anyone can view the list of people you follow and who follow you.
 There are many reasons you might not want this, so Bookwyrm allows you to hide these lists.
 
-### Show this account in suggested users 
+### Show this account in suggested users
 
 Found in `Settings - Edit Profile - Display`.
 

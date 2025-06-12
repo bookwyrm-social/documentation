@@ -1,40 +1,47 @@
 - - -
-Titolo: Stato di pubblicazione Data: 2022-04-30 Ordine: 1
+Title: Posting Statuses Date: 2025-05-26 Order: 1
 - - -
 
-Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+La pubblicazione su BookWyrm inizia con un libro. Gli utenti possono commentare i libri in corso o leggere di recente dalla sezione "I tuoi libri" o dalla pagina di destinazione di un libro. Da lì, gli utenti possono rispondere e avviare una conversazione. I post di BookWyrm possono includere la formattazione come grassetto, corsivo e link utilizzando [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
+Se hai familiarità con la pubblicazione [su Mastodon](https://docs.joinmastodon.org/user/posting/), scoprirai che gli stati di BookWyrm hanno impostazioni di visibilità analoghe, avvisi di contenuto e menzioni. Tuttavia, i sondaggi, le emoji personalizzate e gli allegati non sono ancora supportati.
 
 ## Tipi di status
 
 ### Commento dell'utente
 
-There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
+Ci sono tre tipi di post che gli utenti possono creare direttamente in risposta ai libri: recensioni, commenti e citazioni. I commenti rispondono agli aspetti generali di un libro, le citazioni riguardano passaggi specifici, e le recensioni si occupano di libri in generale. Gli utenti possono anche rispondere agli stati.
 
-| Component     | Review | Comment | Quote | Reply |
-| ------------- | ------ | ------- | ----- | ----- |
-| Text field    | ✔      | ✔       | ✔     | ✔     |
-| Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
-| Quote         |        |         | ✔     |       |
-| Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| Elemento         | Recensione | Commento | Citazione | Risposta |
+| ---------------- | ---------- | -------- | --------- | -------- |
+| Campo di testo   | ✔          | ✔        | ✔         | ✔        |
+| Allerta spoiler  | ✔          | ✔        | ✔         | ✔        |
+| Numero di pagina |            | ✔        | ✔         |          |
+| Citazione        |            |          | ✔         |          |
+| Valutazione      | ✔          |          |           |          |
+| Campo del titolo | ✔          |          |           |          |
 
+#### Spoiler alerts
 
-### Reading status updates
+Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.
 
-Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
+#### Star ratings
 
-## Text
-Text can include:
+A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
-- Mentions (@user)
-- URLs (`http(s)://` is not displayed)
-- Some [Markdown formatting](https://www.markdownguide.org/cheat-sheet/)
-  - bold
-  - italics
-  - block quotes
-  - bullet lists
-  - links
+### Aggiornamento stato lettura
+
+Gli stati vengono generati quando un utente indica che vuole leggere, ha iniziato a leggere o ha finito di leggere un libro.
+
+## Testo
+Il testo può includere:
+
+- Menzioni (@utente)
+- URL (`http(s)://` non viene visualizzato)
+- Formattazione [Markdown](https://www.markdownguide.org/cheat-sheet/) limitata
+    - grassetto
+    - corsivo
+    - citazioni a blocchetto
+    - elenchi puntati
+    - link
 

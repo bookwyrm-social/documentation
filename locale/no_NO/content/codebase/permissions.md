@@ -1,21 +1,21 @@
 - - -
-Title: Permissions Date: 2021-04-18 Order: 2
+Title: Tillatelser Date: 2021-04-18 Order: 2
 - - -
 
-User access to different features is controlled using Django's [built-in authentication system](https://docs.djangoproject.com/en/3.2/topics/auth/default/). When an instance is created, the `initdb` script creates a set of permissions, which are assinged to groups. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+Brukertilgang til ulike funksjoner kontrolleres ved hjelp av Django sitt [innebygde autentiseringssystem](https://docs.djangoproject.com/en/3.2/topics/auth/default/). Når en instans er opprettet, vil `initdb`-skriptet opprette et sett med tillatelser, som tildeles grupper. Som standard tildeles alle nye brukere `editoren` -gruppen, hvilket tillater dem å redigere bokmetadata.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+Instansadministratoren bør ha `superuser` status, som gir dem tilgang til Django admin (`/admin`), og gir alle tillatelser til den brukeren.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Tillatelser og grupper
+Denne tabellen viser de fire gruppene (admin, moderator, redaktør og bruker) og hvilke tillatelser brukere i den gruppa har:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                              | admin | moderator | redaktører | bruker |
+| ---------------------------- | ----- | --------- | ---------- | ------ |
+| rediger instansinnstillinger | ✔️    | -         | -          | -      |
+| endre brukernivå             | ✔️    | -         | -          | -      |
+| administrere føderering      | ✔️    | ✔️        | -          | -      |
+| tildele invitasjoner         | ✔️    | ✔️        | -          | -      |
+| deaktivere brukere           | ✔️    | ✔️        | -          | -      |
+| slette innlegg               | ✔️    | ✔️        | -          | -      |
+| redigere bøker               | ✔️    | ✔️        | ✔️         | -      |
+ last opp bokomslag           |  ✔️    |     ✔️       |   ✔️     |  ✔️

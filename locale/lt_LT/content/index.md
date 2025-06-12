@@ -1,13 +1,13 @@
 - - -
-Title: Welcome Date: 2021-04-13
+Pavadinimas: Sveiki atvykę Data: 2021-04-13
 - - -
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+„BookWyrm“ – tai socialinis tinklas, skirtas sekti savo skaitymą, kalbėti apie knygas, rašyti apžvalgas ir sužinoti, ką skaityti toliau. Federacija leidžia „BookWyrm“ naudotojams jungtis prie nedidelių, patikimų bendruomenių, kurios gali susijungti tarpusavyje ir su kitomis „ActivityPub“ paslaugomis, tokiomis kaip „Mastodon“ ir „Pleroma“.
 
-## Features
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+## Funkcijos
+Kadangi projektas tebėra ankstyvojoje stadijoje, funkcijų kasdien daugėja, todėl yra daug erdvės pasiūlymams ir idėjoms. Atverkite [problemą](https://github.com/bookwyrm-social/bookwyrm/issues), kad pradėtumėte pokalbį!
 
-- Posting about books
+- Skelbimai apie knygas
     - Compose reviews, with or without ratings, which are aggregated in the book page
     - Compose other kinds of statuses about books, such as:
         - Comments on a book

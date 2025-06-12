@@ -94,11 +94,19 @@ Developer Environment
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/ro/posting-statuses.html" class="has-background-inherit" >Posting statuses</a>
+                <a href="/ro/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/ro/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
             </li>
             
             <li>
                 <a href="/ro/adding-books.html" class="has-background-inherit" >Adding Books</a>
+            </li>
+            
+            <li>
+                <a href="/ro/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -156,11 +164,11 @@ Developer Environment
             </li>
             
             <li>
-                <a href="/ro/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
+                <a href="/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
-                <a href="/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
+                <a href="/ro/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
             </li>
             
             <li>
@@ -202,45 +210,47 @@ Developer Environment
     <h2 id="cerinte-preliminare"><a class="headerlink" href="#cerinte-preliminare">Cerințe preliminare</a></h2>
 <p>Aceste instrucțiuni presupun că dezvoltați BookWyrm folosind Docker. Va trebui să <a href="https://docs.docker.com/engine/install/">instalați Docker</a> și <a href="https://docs.docker.com/compose/install/">docker-compose</a> pentru a începe.</p>
 <h2 id="configurati-mediul-de-dezvoltare"><a class="headerlink" href="#configurati-mediul-de-dezvoltare">Configurați mediul de dezvoltare</a></h2>
-<ul>
+<h3 id="get-the-code"><a class="headerlink" href="#get-the-code">Get the code</a></h3>
+<ol>
 <li>Obțineți o copie a <a href="https://github.com/bookwyrm-social/bookwyrm">bazei de cod BookWyrm de pe GitHub</a>. Puteți <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">crea un fork</a> al depozitului și apoi <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">folosi <code>git clone</code> pentru a descărca codul</a> pe calculatorul dumneavoastră.</li>
 <li>Mergeți în dosarul care conține codul pe calculatorul dvs, veți lucra aici de aici în colo.</li>
 <li>Configurați fișierul de variabile de mediu al dvs. copiind fișierul de mediu exemplu (<code>.env.example</code>) într-un nou fișier numit <code>.env</code>. În linia de comandă, puteți face asta cu:</li>
-</ul>
+</ol>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 </code></pre></div>
 
-<ul>
-<li>În <code>.env</code>, schimbați <code>DEBUG</code> în <code>true</code></li>
-<li>
-<p>Opțional, puteți folosi un serviciu precum <a href="https://ngrok.com/">ngrok</a> pentru a configura un nume de domeniu și seta variabila <code>DOMAIN</code> în fișierul dumneavoastră <code>.env</code> în numele de domeniu generat de ngrok.</p>
-</li>
-<li>
-<p>Configurați nginx pentru dezvoltare prin copierea fișierului de configurație nginx (<code>nginx/development</code>) într-un nou fișier numit <code>nginx/default.conf</code>:</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>nginx/development<span class="w"> </span>nginx/default.conf
-</code></pre></div>
-
-<ul>
-<li>Porniți aplicația. În linia de comandă, rulați:</li>
-</ul>
+<h3 id="configure-your-environment-settings"><a class="headerlink" href="#configure-your-environment-settings">Configure your environment settings</a></h3>
+<p>In <code>.env</code>:</p>
+<ol start="4">
+<li>change <code>DEBUG</code> to <code>true</code></li>
+<li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>). Otherwise, set <code>DOMAIN</code> to <code>localhost</code></li>
+<li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
+<li>If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment <code>PORT</code> and set it (e.g. <code>PORT=1333</code>). If using <code>localhost</code> this is optional.</li>
+</ol>
+<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code>, you should check these settings, as you may have set your domain or port incorrectly.</p>
+<h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
+<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
+<h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
+<ol start="8">
+<li>În linia de comandă, rulați:</li>
+</ol>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Build the docker images</span>
-./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialize the database and run migrations</span>
+./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialize the database and run migrations. Note the ADMIN key at the end of this output. You&#39;ll need it to register the first admin user.</span>
 ./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start the docker containers</span>
 </code></pre></div>
 
-<ul>
-<li>Odată compilarea terminată, puteți accesa instanța la <code>http://localhost:1333</code> și crea un utilizator administrator.</li>
-</ul>
-<p>Dacă sunteți curios: comanda <code>./bw-dev</code> este un simplu script shell care rulează multe alte comenzi: deasupra, ați putea sări peste ea și rula <code>docker-compose build</code> sau <code>docker-compose up</code> direct dacă doriți. <code>./bw-dev</code> doar le colectează într-un singur loc pentru conveniență. Rulați-o fără argumente pentru a obține o listă a comenzilor disponibile, citiți <a href="/command-line-tool.html">pagina de documentație</a> pentru ea sau deschideți-o pentru a vedea ce face fiecare comandă!</p>
-<h3 id="editati-sau-configurati-modele"><a class="headerlink" href="#editati-sau-configurati-modele">Editați sau configurați modele</a></h3>
+<ol start="9">
+<li>Once the build is complete, you can access the instance at <code>http://localhost</code>, your ngrok domain, or <code>http://localhost:{PORT}</code>, depending on you domain and port configuration.</li>
+<li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
+</ol>
+<p>Dacă sunteți curios: comanda <code>./bw-dev</code> este un simplu script shell care rulează multe alte comenzi: deasupra, ați putea sări peste ea și rula <code>docker-compose build</code> sau <code>docker-compose up</code> direct dacă doriți. <code>./bw-dev</code> doar le colectează într-un singur loc pentru conveniență. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
+<h2 id="editati-sau-configurati-modele"><a class="headerlink" href="#editati-sau-configurati-modele">Editați sau configurați modele</a></h2>
 <p>Dacă schimbați sau creați un model, veți schimba probabil structura bazei de date. Pentru ca aceste schimbă să aibă efect va trebui să rulați comanda Django <code>makemigrations</code> pentru a crea un nou <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">fișier de migrare Django</a> și apoi <code>migrate</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h3 id="editati-fisiere-statice"><a class="headerlink" href="#editati-fisiere-statice">Editați fișiere statice</a></h3>
+<h2 id="editati-fisiere-statice"><a class="headerlink" href="#editati-fisiere-statice">Editați fișiere statice</a></h2>
 <p>De fiecare dată când editați CSS sau JavaScript, va trebui să rulați comanda Django <code>collectstatic</code> pentru ca schimbările dvs. să aibă efect:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>

@@ -1,60 +1,60 @@
 - - -
-Tittel: ActivityPub Dato: 2021-04-20 Rekkefølge: 1
+Title: ActivityPub Date: 2021-04-20 Order: 1
 - - -
 
-BookWyrm uses the [ActivityPub](http://activitypub.rocks/) protocol to send and receive user activity between other BookWyrm instances and other services that implement ActivityPub, like [Mastodon](https://joinmastodon.org/). To handle book data, BookWyrm has a handful of extended Activity types which are not part of the standard, but are legible to other BookWyrm instances.
+BookWyrm bruker [ActivityPub](http://activitypub.rocks/)-protokollen for å sende og motta brukeraktivitet mellom andre BookWyrm-instanser og andre tjenester som implementerer ActivityPub, som [Mastodon](https://joinmastodon.org/). For å håndtere bokdata, har BookWyrm en håndfull utvidede aktivitetstyper som ikke er en del av standarden, men er forståelige for andre BookWyrm-instanser.
 
-## Activities and Objects
+## Aktiviteter og objekter
 
-### Users and relationships
-User relationship interactions follow the standard ActivityPub spec.
+### Brukere og relasjoner
+Interaksjoner for brukerrelasjoner følger standard ActivityPub-spesifikasjon.
 
-- `Follow`: request to receive statuses from a user, and view their statuses that have followers-only privacy
-- `Accept`: approves a `Follow` and finalizes the relationship
-- `Reject`: denies a `Follow`
-- `Block`: prevent users from seeing one another's statuses, and prevents the blocked user from viewing the actor's profile
-- `Update`: updates a user's profile and settings
-- `Delete`: deactivates a user
-- `Undo`: reverses a `Follow` or `Block`
+- `Follow`: be om å motta statuser fra en bruker, og se deres statuser som er begrenset til å sees kun av følgere
+- `Accept`: godkjenner en `Follow` og fullfører forholdet
+- `Reject`: nekter en `Follow`
+- `Block`: forhindrer brukere fra å se hverandres statuser, og forhindrer at blokkerte brukere fra å se aktørens profil
+- `Update`: oppdaterer brukerens profil og innstillinger
+- `Delete`: deaktiverer en bruker
+- `Undo`: reverserer en `Follow` eller `Block`
 
-### Statuses
-#### Object types
+### Statuser
+#### Objekttyper
 
-- `Note`: On services like Mastodon, `Note`s are the primary type of status. They contain a message body, attachments, can mention users, and be replies to statuses of any type. Within BookWyrm, `Note`s can only be created as direct messages or as replies to other statuses.
-- `Review`: A review is a status in response to a book (indicated by the `inReplyToBook` field), which has a title, body, and numerical rating between 0 (not rated) and 5.
-- `Comment`: A comment on a book mentions a book and has a message body.
-- `Quotation`: A quote has a message body, an excerpt from a book, and mentions a book.
-
-
-#### Activities
-
-- `Create`: saves a new status in the database.
-
-   **Note**: BookWyrm only accepts `Create` activities if they are:
-
-   - Direct messages (i.e., `Note`s with the privacy level `direct`, which mention a local user),
-   - Related to a book (of a custom status type that includes the field `inReplyToBook`),
-   - Replies to existing statuses saved in the database
-- `Delete`: Removes a status
-- `Like`: Creates a favorite on the status
-- `Announce`: Boosts the status into the actor's timeline
-- `Undo`: Reverses a `Like` or `Announce`
-
-### Collections
-User's books and lists are represented by [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
-
-#### Objects
-
-- `Shelf`: A user's book collection. By default, every user has a `to-read`, `reading`, and `read` shelf which are used to track reading progress.
-- `List`: A collection of books that may have items contributed by users other than the one who created the list.
-
-#### Activities
-
-- `Create`: Adds a shelf or list to the database.
-- `Delete`: Removes a shelf or list.
-- `Add`: Adds a book to a shelf or list.
-- `Remove`: Removes a book from a shelf or list.
+- `Note`: På tjenester som Mastodon er `Note` den primære typen status. De inneholder meldingens brødtekst, vedlegg, kan nevne brukere, og kan være svar til statuser av alle typer. I BookWyrm kan `Note` bare opprettes som direktemeldinger eller som svar på andre statuser.
+- `Review`: A anmeldelse er en responsstatus til en bok (indikert med `inReplyToBook`-feltet), og har en tittel, en brødtekst, og en numerisk vurdering mellom 0 (ikke vurdert) og 5.
+- `Comment`: En kommentar til en bok nevner en bok og har en brødtekst.
+- `Quotation`: Et sitat har en brødtekst, et utdrag fra en bok, og nevner en bok.
 
 
-## Alternative Serialization
-Because BookWyrm uses custom object types (`Review`, `Comment`, `Quotation`) that aren't supported by ActivityPub, statuses are transformed into standard types when sent to or viewed by non-BookWyrm services. `Review`s are converted into `Article`s, and `Comment`s and `Quotation`s are converted into `Note`s, with a link to the book and the cover image attached.
+#### Aktiviteter
+
+- `Create`: lagrer en ny status i databasen.
+
+   **Merk**: BookWyrm godtar bare `Create`-aktiviteter dersom de er:
+
+   - direktemeldinger (f.eks. `Note` med personvernsnivå `direct`, som nevner en lokal bruker),
+   - svar til en bok (av en egendefinert statustype som inkluderer feltet `inReplyToBook`),
+   - svar til en eksisterende status lagret i databasen
+- `Delete`: Fjerner en status
+- `Like`: Oppretter en favoritt på statusen
+- `Announce`: Booster statusen inn i aktørens tidslinje
+- `Undo`: reverserer en `Like` eller `Announce`
+
+### Samlinger
+Brukerens bøker og lister er representert av en [`OrderedCollection`](https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection)
+
+#### Objekter
+
+- `Shelf`: En brukers boksamling. Som standard har hver bruker en `to-read`-, `reading`-, og `read`-hylle som brukes til å spore lesefremdriften.
+- `List`: En samling med bøker som kan ha elementer bidratt av andre enn den som opprettet listen.
+
+#### Aktiviteter
+
+- `Create`: Legger til en hylle eller en liste i databasen.
+- `Delete`: Fjerner en hylle eller en liste.
+- `Add`: Legger til en bok til en hylle eller liste.
+- `Delete`: Fjerner en bok fra en hylle eller liste.
+
+
+## Alternativ serialisering
+Ettersom BookWyrm bruker tilpassede objecttyper (`Review`, `Comment`, `Quotation`) som ikke er støttet av ActivityPub, vil statuser bli oversatt til standardtyper når de blir sendt til eller sett på av ikke-BookWyrm-tjenester. `Review` blir konvertert til `Article`, og `Comment` og `Quotation` blir konvertert til `Note`, med en lenke til boka med vedlagt omslagsbilde.
