@@ -12,11 +12,11 @@ If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user
 
 There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
 
-| Component     | Review | Comment | Quote | Reply |
+| Komponent     | Review | Comment | Quote | Reply |
 | ------------- | ------ | ------- | ----- | ----- |
 | Textfält      | ✔      | ✔       | ✔     | ✔     |
 | Spoiler alert | ✔      | ✔       | ✔     | ✔     |
-| Page number   |        | ✔       | ✔     |       |
+| Sidnummer     |        | ✔       | ✔     |       |
 | Quote         |        |         | ✔     |       |
 | Rating        | ✔      |         |       |       |
 | Title field   | ✔      |         |       |       |
