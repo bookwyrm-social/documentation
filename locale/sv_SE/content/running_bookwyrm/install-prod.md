@@ -29,7 +29,7 @@ Instructions for running BookWyrm in production:
     - `FLOWER_PASSWORD` | Your own secure password for accessing Flower queue monitor
     - `EMAIL_HOST_USER` | The "from" address that your app will use when sending email
     - `EMAIL_HOST_PASSWORD` | The password provided by your email service
-- Configure nginx
+- Konfigurera nginx
     - Make a copy of the production template config and set it for use in nginx `cp nginx/production nginx/default.conf`
     - Update `nginx/default.conf`:
         - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
