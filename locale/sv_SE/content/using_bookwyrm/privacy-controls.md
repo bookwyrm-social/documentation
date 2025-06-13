@@ -44,7 +44,7 @@ The exact same as Public, but:
 
 - Your status will **not** appear in public timelines or discover pages.
 
-### Followers
+### Följare
 
 - Only people who follow you can see your status in their timelines or related book's page.
 - Your status cannot be boosted.
@@ -63,7 +63,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 - There is no difference between Public and Unlisted for Shelves. The Unlisted option may be removed in the future.
 - Anyone can see these shelves and all the books on them.
 
-### Followers
+### Följare
 
 - Only people who follow you will see this shelf and the books on it.
 
@@ -75,17 +75,17 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 - The 'All books' shelf is a default shelf which displays books from all visible shelves to the user viewing it.
 
-| User        | Books on Public shelves | Books on Unlisted shelves | Books on Followers-only shelves | Books on Private shelves |
-| ----------- | ----------------------- | ------------------------- | ------------------------------- | ------------------------ |
-| Anyone      | ✔                       | ✔                         |                                 |                          |
-| Follows you | ✔                       | ✔                         | ✔                               |                          |
-| Yourself    | ✔                       | ✔                         | ✔                               | ✔                        |
+| User       | Books on Public shelves | Books on Unlisted shelves | Books on Followers-only shelves | Books on Private shelves |
+| ---------- | ----------------------- | ------------------------- | ------------------------------- | ------------------------ |
+| Anyone     | ✔                       | ✔                         |                                 |                          |
+| Följer dig | ✔                       | ✔                         | ✔                               |                          |
+| Yourself   | ✔                       | ✔                         | ✔                               | ✔                        |
 
 ### Implications
 
 - If you read a book, want to track it on Bookwyrm, but don't want anyone to know that you did, you'll need to put it on a new Private shelf, not a Public shelf.
 
-## Lists
+## Listor
 
 ### Public
 
@@ -93,7 +93,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 - Your List will appear on:
     - the Lists discovery page (Lists tab).
     - the pages of books that are in it, displayed on the side of the screen.
-    - your profile.
+    - din profil.
 - Anyone can 'save' (bookmark) your List.
 
 ### Unlisted
@@ -102,7 +102,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
     In the future, Unlisted will hide the List from the Lists discovery page and books pages.
     For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) on GitHub.
 
-### Followers
+### Följare
 
 - Only people who follow you can see your List on the aforementioned pages.
 
