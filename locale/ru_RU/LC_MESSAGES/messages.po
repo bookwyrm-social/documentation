@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bookwyrm\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-08 10:16-0700\n"
+"PO-Revision-Date: 2025-05-31 23:28\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: bookwyrm\n"
+"X-Crowdin-Project-ID: 479239\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /[bookwyrm-social.documentation] main/locale/en_US/LC_MESSAGES/messages.po\n"
+"X-Crowdin-File-ID: 1636\n"
+
+#: templates/index.html:5 templates/layout.html:6
+msgid "BookWyrm Documentation"
+msgstr "Документация по BookWyrm"
+
+#: templates/index.html:6
+msgid "Your guide to using and contributing to BookWyrm"
+msgstr "Как пользоваться и участвовать в BookWyrm"
+
+#: templates/index.html:6
+msgid "How to Use and Contribute"
+msgstr "Как участвовать и пользоваться"
+
+#: templates/layout.html:4
+msgid "BookWyrm: Social Reading and Reviewing"
+msgstr "BookWyrm: вместе читаем и обсуждаем"
+
+#: templates/layout.html:35 templates/layout.html:39
+msgid "Join"
+msgstr "Вступить"
+
+#: templates/layout.html:38 templates/layout.html:42
+msgid "Get involved"
+msgstr "Поучаствовать"
+
+#: templates/layout.html:41 templates/layout.html:45
+msgid "Support"
+msgstr "Помощь"
+
+#: templates/layout.html:44 templates/layout.html:48
+msgid "Code"
+msgstr "Код"
+
+#: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
+#: templates/layout.html:130
+msgid "Documentation"
+msgstr "Документация"
+
+#: templates/layout.html:95 templates/layout.html:101
+msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
+msgstr "<strong>BookWyrm</strong> это совместный антикорпоративный сервис, созданный <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
+
+#: templates/layout.html:98 templates/layout.html:104
+msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
+msgstr "Помочь BookWyrm на <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
+
+#: templates/layout.html:102 templates/layout.html:108
+msgid "Get Involved"
+msgstr "Поучаствовать"
+
+#: templates/layout.html:104 templates/layout.html:110
+msgid "BookWyrm on GitHub"
+msgstr "BookWyrm на GitHub"
+
+#: templates/layout.html:107 templates/layout.html:113
+msgid "Contribute to this page"
+msgstr "Добавить на эту страницу"
+
+#: templates/layout.html:122 templates/layout.html:128
+msgid "Learn more"
+msgstr "Узнать больше"
+
+#: templates/layout.html:127 templates/layout.html:133
+msgid "Contact maintainer"
+msgstr "Связаться с автором"
+
+#: templates/layout.html:130 templates/layout.html:136
+msgid "License"
+msgstr "Лицензия"
+
