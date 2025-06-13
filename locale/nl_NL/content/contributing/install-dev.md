@@ -8,7 +8,7 @@ Deze instructies gaan ervan uit dat je BookWyrm ontwikkelt met Docker. Je moet [
 
 ## Het instellen van de ontwikkelaarsomgeving
 
-### Get the code
+### Ontvang de code
 
 1. Get a copy of [the BookWyrm codebase from GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
 2. Go to the directory which contains the code on your computer, you'll be working from there from here on out.
@@ -17,7 +17,7 @@ Deze instructies gaan ervan uit dat je BookWyrm ontwikkelt met Docker. Je moet [
 cp .env.example .env
 ```
 
-### Configure your environment settings
+### Configureer uw omgevingsinstellingen
 
 In `.env`:
 
@@ -28,7 +28,7 @@ In `.env`:
 
 If you try to register your admin account and see a message that `CSRF verification failed`, you should check these settings, as you may have set your domain or port incorrectly.
 
-### Email (optional)
+### Email (optioneel)
 
 If you want to test sending emails, you will need to [set up appropriate values](/environment.html#email-configuration) in the "Email config" section. You do not need to change anything for [the separate `EMAIL` setting](/environment.html#email).
 
