@@ -3,7 +3,7 @@
 <head>
     <title>
         
-
+Lists
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,7 +106,7 @@
             </li>
             
             <li>
-                <a href="/pt-br/lists.html" class="has-background-inherit" >Lists</a>
+                <a href="/pt-br/lists.html" class="has-background-inherit" class="is-active">Lists</a>
             </li>
             
             <li>
@@ -168,7 +168,7 @@
             </li>
             
             <li>
-                <a href="/pt-br/translation.html" class="has-background-inherit" class="is-active"></a>
+                <a href="/pt-br/translation.html" class="has-background-inherit" ></a>
             </li>
             
             <li>
@@ -206,34 +206,57 @@
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1"></h1>
+<h1 class="title is-1">Lists</h1>
 
                 </header>
                 
 <section class="block content">
-    <h2 id="colaborar-com-traducoes"><a class="headerlink" href="#colaborar-com-traducoes">Colaborar com traduções</a></h2>
-<p>Você pode participar do projeto de tradução da BookWorm no <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a>.</p>
-<h2 id="linguagem-neutra"><a class="headerlink" href="#linguagem-neutra">Linguagem neutra</a></h2>
-<p>As traduções da BookWyrm devem usar marcação de gênero neutra o máximo possível. Isso se aplica mesmo se a língua utiliza o masculino como gênero neutro padrão, ou se possui algo similiar a "ele/ela". Também é importante que as traduções sejam claras, concisas e legíveis em leitores de tela, e às vezes esses objetivos entram em conflito; não há uma solução perfeita para todos os problemas, e a solução depende do idioma.</p>
-<p>Como elemento norteador, tente dar mais ênfase ao aspecto inclusivo e ao uso de palavras de gênero neutro do que se fiar à correção formal ou a guias de estilo oficiais. No Inglês, por exemplo, muitos guias de estilo formais exigem que se use um pronome singular "she" ou "he" para se referir a um indivíduo, mas na BookWyrm seria melhor utilizar o pronome singular neutro "they".</p>
-<p>Se você não sabe como resolver algum problema de tradução, abra um <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">tópico de discussão</a> para tratar de problemas mais amplos.</p>
-<h2 id="fazendo-templates-traduziveis"><a class="headerlink" href="#fazendo-templates-traduziveis">Fazendo templates traduzíveis</a></h2>
-<p>A BookWyrm se utiliza da função de tradução do Django para fazer com que o conteúdo das páginas mude dependendo da língua da interface selecionada pelo usuário. A documentação do Django traz <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">uma ótima explicação</a> de como ela funciona, mas aqui temos uma versão mais curta:</p>
+    <p>Lists in Bookwyrm are a way to organise and display similar books together.</p>
+<p>The Lists page is accessible from the 'Lists' tab on the main page.
+To see your Lists, click 'Your Lists' below the title or navigate to your profile to the Lists tab.</p>
+<h2 id="creating-a-list"><a class="headerlink" href="#creating-a-list">Creating a List</a></h2>
+<p>To create a List, first select the 'Create List' button on the top right of the page.
+It needs a name, and you can optionally add a description.
+You will then choose how you'd like to curate the List.</p>
+<h2 id="list-curation"><a class="headerlink" href="#list-curation">List curation</a></h2>
+<p>There are four options for List curation:</p>
 <ul>
-<li>todo texto no template deve incluir as tags de tradução de template</li>
-<li>adicione <code>{% load i18n %}</code> no início do arquivo de template pra ativar as traduções</li>
-<li>Se o bloco de texto for literal, você pode usar a tag <code>{% trans %}</code></li>
-<li>Se o bloco de texto tiver variáveis, você deve usar o par de tags <code>{% blocktrans %}</code> e <code>{% endblocktrans %}</code>. Se você estiver usando espaços em brancos ou quebras de linha, use <code>trimmed</code> para removê-los automaticamente quando o arquivo de localização for gerado: <code>{% blocktrans trimmed %}</code></li>
+<li><strong>Closed</strong>: Only you can add and remove books to this list.</li>
+<li><strong>Curated</strong>: Anyone can suggest books, subject to your approval.</li>
+<li><strong>Open</strong>: Anyone can add books to this list. Only you can remove them.</li>
+<li><strong>Group</strong>: <a href="/groups.html">Group</a> members can add to and remove from this list .</li>
 </ul>
-<h3 id="exemplos"><a class="headerlink" href="#exemplos">Exemplos</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;Esta lista está vazia&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-    {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Adicionado por <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ user_path }}&quot;</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    {% endblocktrans %}
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div>
+<h2 id="list-privacy"><a class="headerlink" href="#list-privacy">List privacy</a></h2>
+<p>Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted, Followers and Private.
+See more details on the <a href="/privacy-controls.html#lists">privacy controls</a> page.</p>
+<h2 id="adding-books-to-a-list"><a class="headerlink" href="#adding-books-to-a-list">Adding books to a List</a></h2>
+<p>You can add books to any List that you own, "Open" Lists and group-curated Lists of Groups you are a part of.
+You can also suggest books to "Curated" Lists in the exact same way.</p>
+<p>There is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
+It shows books that you've recently interacted with on Bookwyrm, and a search bar.
+Currently, the search is limited to book titles (see issue <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3607">#3607</a>).
+Once you find the one you want, use the 'Add' button to add it to the List.</p>
+<h3 id="notes"><a class="headerlink" href="#notes">Notes</a></h3>
+<p>You can add a "Note" to each book in a List, which could be used to explain why it was added.
+Notes are added when a book is first added, or at any time with the 'Add notes' button.
+They are displayed with the book when the List is viewed.
+To delete a note, edit it, remove everything in it, then press 'Save'.</p>
+<h3 id="list-order"><a class="headerlink" href="#list-order">List order</a></h3>
+<p>The owner or curator of the List can set a custom display order for the books in it.
+By default, new books are added to the end of the List.
+The position of a book can be changed with the 'List position' box below each book.</p>
+<h2 id="sorting-lists"><a class="headerlink" href="#sorting-lists">Sorting Lists</a></h2>
+<p>You can sort by the manually created list order, book title or average rating, in ascending and descending order.</p>
+<h2 id="lists-sidetab-on-book-pages"><a class="headerlink" href="#lists-sidetab-on-book-pages">Lists sidetab on book pages</a></h2>
+<p>There is a sidetab on each books page which shows the Lists it is in, if it is in any.
+This is great for finding similar books suggested by the community.</p>
+<h2 id="saving-lists"><a class="headerlink" href="#saving-lists">Saving Lists</a></h2>
+<p>Lists can be 'saved' or bookmarked using the button in the top right when viewing it.
+There is a tab on the main Lists page which shows all your saved Lists, allowing you to find it later.</p>
+<h2 id="embedding-lists-on-other-websites"><a class="headerlink" href="#embedding-lists-on-other-websites">Embedding Lists on other websites</a></h2>
+<p>If you have a blog or personal website, you are able to embed a List from Bookwyrm onto it.
+Find the section 'Embed this list on a website' below sorting and adding books, then copy the embed code.
+This is in the form of an iframe and can be pasted directly into your website.</p>
 </section>
 
             </section>
@@ -258,7 +281,7 @@
                     <a href="https://github.com/bookwyrm-social">BookWyrm no GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/contributing/translation.md">Contribua para esta página</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/lists.md">Contribua para esta página</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">

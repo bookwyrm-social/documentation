@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Posting Statuses
+Lists
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,7 +94,7 @@ Posting Statuses
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/ro/posting-statuses.html" class="has-background-inherit" class="is-active">Posting Statuses</a>
+                <a href="/ro/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
             </li>
             
             <li>
@@ -106,7 +106,7 @@ Posting Statuses
             </li>
             
             <li>
-                <a href="/ro/lists.html" class="has-background-inherit" >Lists</a>
+                <a href="/ro/lists.html" class="has-background-inherit" class="is-active">Lists</a>
             </li>
             
             <li>
@@ -206,91 +206,57 @@ Posting Statuses
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Posting Statuses</h1>
+<h1 class="title is-1">Lists</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>Postatul pe BookWyrm începe cu o carte. Utilizatorii pot comenta o carte citită recent sau în curs de citire din secțiunea „Cărțile dvs.” sau de pe pagina principală a unei cărți. De acolo, utilizatorii pot răspunde sau începe o conversație. Postările BookWyrm pot include text formatat precum bold, italic sau legături folosind <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a>.</p>
-<p>Dacă sunteți familiar cu <a href="https://docs.joinmastodon.org/user/posting/">postatul pe Mastodon</a>, veți vedea că stările BookWyrm au setări de vizibilitate similare, avertismente de conținut și mențiuni. Totuși, sondajele, emoticoanele personalizate și atașamentele nu sunt încă implementate.</p>
-<h2 id="tipuri-de-stari"><a class="headerlink" href="#tipuri-de-stari">Tipuri de stări</a></h2>
-<h3 id="comentariu-de-utilizator"><a class="headerlink" href="#comentariu-de-utilizator">Comentariu de utilizator</a></h3>
-<p>Acestea sunt trei tipuri de postări pe care utilizatorii pot să le creeze direct ca răspuns cărților: recenzii, comentarii și citate. Comentariile corespund aspectelor generale ale unei cărți, citatele unor pasaje specifice și recenziile tratează cărțile în general. Utilizatorii pot de asemenea răspunde stărilor.</p>
-<table>
-<thead>
-<tr>
-<th>Componentă</th>
-<th>Recenzie</th>
-<th>Comentariu</th>
-<th>Citat</th>
-<th>Răspuns</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Câmp text</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-</tr>
-<tr>
-<td>Alertă de divulgare</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-</tr>
-<tr>
-<td>Numărul paginii</td>
-<td></td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-</tr>
-<tr>
-<td>Citat</td>
-<td></td>
-<td></td>
-<td>✔</td>
-<td></td>
-</tr>
-<tr>
-<td>Evaluare</td>
-<td>✔</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Câmp titlu</td>
-<td>✔</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h4 id="spoiler-alerts"><a class="headerlink" href="#spoiler-alerts">Spoiler alerts</a></h4>
-<p>Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.</p>
-<h4 id="star-ratings"><a class="headerlink" href="#star-ratings">Star ratings</a></h4>
-<p>A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".</p>
-<h3 id="actualizari-a-starilor-de-lectura"><a class="headerlink" href="#actualizari-a-starilor-de-lectura">Actualizări a stărilor de lectură</a></h3>
-<p>Stările sunt generate când un utilizator indică ceea ce vrea să citească, a început să citească sau a terminat de citit o carte.</p>
-<h2 id="text"><a class="headerlink" href="#text">Text</a></h2>
-<p>Textul poate să includă:</p>
+    <p>Lists in Bookwyrm are a way to organise and display similar books together.</p>
+<p>The Lists page is accessible from the 'Lists' tab on the main page.
+To see your Lists, click 'Your Lists' below the title or navigate to your profile to the Lists tab.</p>
+<h2 id="creating-a-list"><a class="headerlink" href="#creating-a-list">Creating a List</a></h2>
+<p>To create a List, first select the 'Create List' button on the top right of the page.
+It needs a name, and you can optionally add a description.
+You will then choose how you'd like to curate the List.</p>
+<h2 id="list-curation"><a class="headerlink" href="#list-curation">List curation</a></h2>
+<p>There are four options for List curation:</p>
 <ul>
-<li>Mențiuni (@utilizator)</li>
-<li>URL-uri (<code>http(s)://</code> nu este afișat)</li>
-<li><a href="https://www.markdownguide.org/cheat-sheet/">Formatare Markdown</a><ul>
-<li>bold</li>
-<li>italic</li>
-<li>citate bloc</li>
-<li>liste neordonate</li>
-<li>legături</li>
+<li><strong>Closed</strong>: Only you can add and remove books to this list.</li>
+<li><strong>Curated</strong>: Anyone can suggest books, subject to your approval.</li>
+<li><strong>Open</strong>: Anyone can add books to this list. Only you can remove them.</li>
+<li><strong>Group</strong>: <a href="/groups.html">Group</a> members can add to and remove from this list .</li>
 </ul>
-</li>
-</ul>
+<h2 id="list-privacy"><a class="headerlink" href="#list-privacy">List privacy</a></h2>
+<p>Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted, Followers and Private.
+See more details on the <a href="/privacy-controls.html#lists">privacy controls</a> page.</p>
+<h2 id="adding-books-to-a-list"><a class="headerlink" href="#adding-books-to-a-list">Adding books to a List</a></h2>
+<p>You can add books to any List that you own, "Open" Lists and group-curated Lists of Groups you are a part of.
+You can also suggest books to "Curated" Lists in the exact same way.</p>
+<p>There is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
+It shows books that you've recently interacted with on Bookwyrm, and a search bar.
+Currently, the search is limited to book titles (see issue <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3607">#3607</a>).
+Once you find the one you want, use the 'Add' button to add it to the List.</p>
+<h3 id="notes"><a class="headerlink" href="#notes">Notes</a></h3>
+<p>You can add a "Note" to each book in a List, which could be used to explain why it was added.
+Notes are added when a book is first added, or at any time with the 'Add notes' button.
+They are displayed with the book when the List is viewed.
+To delete a note, edit it, remove everything in it, then press 'Save'.</p>
+<h3 id="list-order"><a class="headerlink" href="#list-order">List order</a></h3>
+<p>The owner or curator of the List can set a custom display order for the books in it.
+By default, new books are added to the end of the List.
+The position of a book can be changed with the 'List position' box below each book.</p>
+<h2 id="sorting-lists"><a class="headerlink" href="#sorting-lists">Sorting Lists</a></h2>
+<p>You can sort by the manually created list order, book title or average rating, in ascending and descending order.</p>
+<h2 id="lists-sidetab-on-book-pages"><a class="headerlink" href="#lists-sidetab-on-book-pages">Lists sidetab on book pages</a></h2>
+<p>There is a sidetab on each books page which shows the Lists it is in, if it is in any.
+This is great for finding similar books suggested by the community.</p>
+<h2 id="saving-lists"><a class="headerlink" href="#saving-lists">Saving Lists</a></h2>
+<p>Lists can be 'saved' or bookmarked using the button in the top right when viewing it.
+There is a tab on the main Lists page which shows all your saved Lists, allowing you to find it later.</p>
+<h2 id="embedding-lists-on-other-websites"><a class="headerlink" href="#embedding-lists-on-other-websites">Embedding Lists on other websites</a></h2>
+<p>If you have a blog or personal website, you are able to embed a List from Bookwyrm onto it.
+Find the section 'Embed this list on a website' below sorting and adding books, then copy the embed code.
+This is in the form of an iframe and can be pasted directly into your website.</p>
 </section>
 
             </section>
@@ -315,7 +281,7 @@ Posting Statuses
                     <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/posting-statuses.md">Contribuiți la această pagină</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/lists.md">Contribuiți la această pagină</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">
