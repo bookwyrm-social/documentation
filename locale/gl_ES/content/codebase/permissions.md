@@ -9,13 +9,13 @@ The instance administrator should have `superuser` status, which gives them acce
 ## Permissions and groups
 This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                           | admin | moderadora | editor | user |
+| ------------------------- | ----- | ---------- | ------ | ---- |
+| edición axustes instancia | ✔️    | -          | -      | -    |
+| cambiar nivel da usuaria  | ✔️    | -          | -      | -    |
+| xestión da federación     | ✔️    | ✔️         | -      | -    |
+| enviar convites           | ✔️    | ✔️         | -      | -    |
+| desactivar usuarias       | ✔️    | ✔️         | -      | -    |
+| eliminar publicacións     | ✔️    | ✔️         | -      | -    |
+| editar libros             | ✔️    | ✔️         | ✔️     | -    |
+ subir portadas            |  ✔️    |     ✔️       |   ✔️     |  ✔️

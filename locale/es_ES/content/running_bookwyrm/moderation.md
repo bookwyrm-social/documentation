@@ -1,21 +1,21 @@
 - - -
-Title: Moderation Date: 2021-04-18 Order: 5
+Título: Moderación Fecha: 18-04-2021 Orden: 5
 - - -
 
-## Blocking
-Users have the option to block other users on their own, without a moderator intervening. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.
+## Bloqueo
+Los usuarios tienen la opción de bloquear a otros usuarios por sí mismos, sin que intervenga un moderador. Desde la opción de administración de "Instancias Federadas", los administradores pueden ver cuántos usuarios de una instancia han sido bloqueados por los usuarios locales.
 
-## Reports
-Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.
+## Reportes
+Los usuarios pueden reportar estados o usuarios desde el menú "más opciones" en el pie de los mensajes y los botones 'siguientes'/'dejar de seguir' para los usuarios. Cuando se reporta, todos los usuarios con permisos de administrador recibirán una notificación.
 
-When a report is made, there are a few options how the moderator can respond.
-- Send a direct message to the reported user.
-- Delete the reported status.
-- Deactivate the user. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.
+Cuando se hace un reporte, hay opciones de cómo puede responder el moderador.
+- Enviar un mensaje directo al usuario reportado.
+- Eliminar el estado reportado.
+- Desactivar al usuario. Para los usuarios locales, esto hará que no puedan iniciar sesión, y su cuenta no se mostrará en la aplicación. Para los usuarios remotos, el servidor rechazará cualquier actividad entrante de este usuario, y no se mostrará en las búsquedas.
 
-## Instance-level moderation
-Moderators can block entire instances. This will prevent any activities from coming in from that instance, and deactivate all accounts from that instance locally.
+## Niveles de moderación en instancia
+Los moderadores pueden bloquear instancias enteras. Esto evitará que cualquier actividad entre en esa instancia y desactivará todas las cuentas de esa instancia localmente.
 
-If the instance is un-blocked, all the users who were deactivated by the block will be re-activated.
+Si la instancia está desbloqueada, todos los usuarios que fueron desactivados por el bloqueo serán reactivados.
 
-Moderators can also upload blocklists to block servers in bulk.
+Los moderadores también pueden subir listas de bloqueo para bloquear los servidores en masa.

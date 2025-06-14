@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Środowisko programistyczne
+Developer Environment
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,11 +94,23 @@
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pl/posting-statuses.html" class="has-background-inherit" >Zamieszczanie statusów</a>
+                <a href="/pl/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/pl/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
             </li>
             
             <li>
                 <a href="/pl/adding-books.html" class="has-background-inherit" >Dodawanie książek</a>
+            </li>
+            
+            <li>
+                <a href="/pl/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/pl/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -156,11 +168,11 @@
             </li>
             
             <li>
-                <a href="/pl/install-dev.html" class="has-background-inherit" class="is-active">Środowisko programistyczne</a>
+                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
-                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
+                <a href="/pl/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
             </li>
             
             <li>
@@ -194,7 +206,7 @@
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Środowisko programistyczne</h1>
+<h1 class="title is-1">Developer Environment</h1>
 
                 </header>
                 
@@ -202,45 +214,47 @@
     <h2 id="wymagania-wstepne"><a class="headerlink" href="#wymagania-wstepne">Wymagania wstępne</a></h2>
 <p>Te instrukcje zakładają, że rozwijasz BookWyrm przy użyciu Docker. Aby rozpocząć, należy <a href="https://docs.docker.com/engine/install/">zainstalować Docker</a> i <a href="https://docs.docker.com/compose/install/">docker-compose</a>.</p>
 <h2 id="konfigurowanie-srodowiska-programistycznego"><a class="headerlink" href="#konfigurowanie-srodowiska-programistycznego">Konfigurowanie środowiska programistycznego</a></h2>
-<ul>
+<h3 id="get-the-code"><a class="headerlink" href="#get-the-code">Get the code</a></h3>
+<ol>
 <li>Uzyskaj kopię <a href="https://github.com/bookwyrm-social/bookwyrm">kodu BookWyrm z GitHub</a>. Możesz <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">zduplikować</a> repozytorium, a następnie <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">użyć <code>git clone</code>, aby pobrać kod</a> na swój komputer.</li>
 <li>Katalog, na którym znajduje się kod na Twoim komputerze to miejsce, z którego od teraz będziesz pracować.</li>
 <li>Skonfiguruj plik zmiennych środowiskowych swojego środowiska programistycznego kopiując przykładowy plik (<code>.env.example</code>) do nowego pliku o nazwie <code>.env</code>. W wierszu polecenia można to zrobić następująco:</li>
-</ul>
+</ol>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 </code></pre></div>
 
-<ul>
-<li>W pliku <code>.env</code> zmień <code>DEBUG</code> na <code>true</code></li>
-<li>
-<p>Jeśli chcesz, możesz skorzystać z usług, takich jak <a href="https://ngrok.com/">ngrok</a>, aby skonfigurować nazwę domeny oraz ustawić zmienną <code>DOMAIN</code> w swoim pliku <code>.env</code> dla nazwy domeny wygenerowanej przez ngrok.</p>
-</li>
-<li>
-<p>Skonfiguruj nginx w celu programowania kopiując plik konfiguracyjny nginx (<code>nginx/development</code>) do nowego pliku o nazwie <code>nginx/default.conf</code>:</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>nginx/development<span class="w"> </span>nginx/default.conf
+<h3 id="configure-your-environment-settings"><a class="headerlink" href="#configure-your-environment-settings">Configure your environment settings</a></h3>
+<p>In <code>.env</code>:</p>
+<ol start="4">
+<li>change <code>DEBUG</code> to <code>true</code></li>
+<li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>). Otherwise, set <code>DOMAIN</code> to <code>localhost</code></li>
+<li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
+<li>If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment <code>PORT</code> and set it (e.g. <code>PORT=1333</code>). If using <code>localhost</code> this is optional.</li>
+</ol>
+<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code>, you should check these settings, as you may have set your domain or port incorrectly.</p>
+<h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
+<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
+<h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
+<ol start="8">
+<li>W wierszu polecenia wykonaj:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Build the docker images</span>
+./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialize the database and run migrations. Note the ADMIN key at the end of this output. You&#39;ll need it to register the first admin user.</span>
+./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start the docker containers</span>
 </code></pre></div>
 
-<ul>
-<li>Uruchom aplikację. W wierszu polecenia wykonaj:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Kompiluje obraz docker</span>
-./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Inicjuje bazę danych i uruchamia migracje</span>
-./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Uruchamia kontenery docker</span>
-</code></pre></div>
-
-<ul>
-<li>Po zakończeniu kompilacji możesz uzyskać dostęp pod <code>ttp://localhost:1333</code> i utworzyć konto administratora.</li>
-</ul>
-<p>Dla ciekawskich: polecenie <code>./bw-dev</code> to prosty skrypt uruchamiający wiele różnych narzędzi: powyżej możesz pominąć je i wykonać <code>docker-compose build</code> lub <code>docker-compose up</code> bezpośrednio, jeśli chcesz. <code>./bw-dev</code> po prostu gromadzi je wszystkie w jednym miejscu. Uruchom polecenia bez argumentów, aby uzyskać listę dostępnych poleceń, odczytać <a href="/command-line-tool.html">stronę dokumentacji</a> dla niego lub otwórz ją i rozejrzyj się, aby sprawdzić, co dokładnie robi dane polecenie!</p>
-<h3 id="edytowanie-lub-tworzenie-modeli"><a class="headerlink" href="#edytowanie-lub-tworzenie-modeli">Edytowanie lub tworzenie modeli</a></h3>
+<ol start="9">
+<li>Once the build is complete, you can access the instance at <code>http://localhost</code>, your ngrok domain, or <code>http://localhost:{PORT}</code>, depending on you domain and port configuration.</li>
+<li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
+</ol>
+<p>Dla ciekawskich: polecenie <code>./bw-dev</code> to prosty skrypt uruchamiający wiele różnych narzędzi: powyżej możesz pominąć je i wykonać <code>docker-compose build</code> lub <code>docker-compose up</code> bezpośrednio, jeśli chcesz. <code>./bw-dev</code> po prostu gromadzi je wszystkie w jednym miejscu. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
+<h2 id="edytowanie-lub-tworzenie-modeli"><a class="headerlink" href="#edytowanie-lub-tworzenie-modeli">Edytowanie lub tworzenie modeli</a></h2>
 <p>Zmieniając lub tworząc model prawdopodobnie ulegnie zmianie struktura bazy danych. Aby te zmiany zostały zastosowane, należy uruchomić polecenie Django <code>makemigrations</code>, aby utworzyć nowy <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">plik migracji Django</a>, a następnie przenieść go (<code>migrate</code>):</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h3 id="edytowanie-plikow-statycznych"><a class="headerlink" href="#edytowanie-plikow-statycznych">Edytowanie plików statycznych</a></h3>
+<h2 id="edytowanie-plikow-statycznych"><a class="headerlink" href="#edytowanie-plikow-statycznych">Edytowanie plików statycznych</a></h2>
 <p>Za każdym razem, gdy edytujesz CSS lub JavaScript, należy ponownie uruchomić polecenie Django <code>collectstatic</code>, aby miany zostały zastosowane:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>

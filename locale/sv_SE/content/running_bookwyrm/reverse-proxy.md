@@ -100,7 +100,7 @@ server {
 }
 ```
 - run `sudo certbot run --nginx --email YOUR_EMAIL -d your-domain.com -d www.your-domain.com`
-- restart nginx
+- starta om nginx
 
 If everything worked correctly, your BookWyrm instance should now be externally accessible.
 

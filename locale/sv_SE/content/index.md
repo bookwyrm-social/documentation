@@ -1,16 +1,16 @@
 - - -
-Title: Welcome Date: 2021-04-13
+Titel: Välkommen Datum: 2021-04-13
 - - -
 
-BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federation allows BookWyrm users to join small, trusted communities that can connect with one another, and with other ActivityPub services like Mastodon and Pleroma.
+BookWyrm is a social network for tracking your reading, talking about books, writing reviews, and discovering what to read next. Federering tillåter BookWyrm-användare att gå med i små, pålitliga gemenskaper som kan ansluta med varandra, och med andra ActivityPub-tjänster så som Mastodon och Pleroma.
 
-## Features
-Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+## Funktioner
+Since the project is still in its early stages, the features are growing every day, and there is plenty of room for suggestions and ideas. Öppna en [felrapport](https://github.com/bookwyrm-social/bookwyrm/issues) för att få igång konversationen!s
 
 - Posting about books
     - Compose reviews, with or without ratings, which are aggregated in the book page
     - Compose other kinds of statuses about books, such as:
-        - Comments on a book
+        - Kommentarer på en bok
         - Quotes or excerpts
     - Reply to statuses
     - View aggregate reviews of a book across connected BookWyrm instances

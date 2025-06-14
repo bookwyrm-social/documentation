@@ -49,7 +49,7 @@ Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:
 - Einrichtung der virtuellen Python-Umgebung
     - Erstelle den Python venv-Ordner in deinem Installationsverzeichnis: `mkdir venv` `python3 -m venv ./venv`
     - Installiere die Python-Abhängigkeiten für Bookwyrm via pip mit folgendem Befehl: `./venv/bin/pip3 install -r requirements.txt`
-- Erstelle die Bookwyrm postgresql Datenbank. Ändere das Passwort zu dem, welches du in der `.env` Konfiguration gesetzt hast:
+- Erstelle die Bookwyrm PostgreSQL-Datenbank. Ändere das Passwort zu dem, welches du in der `.env` Konfiguration gesetzt hast:
 
     `sudo -i -u postgres psql`
 

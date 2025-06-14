@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-09-10 21:23\n"
+"PO-Revision-Date: 2025-05-31 23:28\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -56,7 +56,7 @@ msgstr "Documentación"
 
 #: templates/layout.html:95 templates/layout.html:101
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr "<strong>BookWyrm</strong> es un software colaborativo anticorporativo mantenido por <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
+msgstr "<strong>BookWyrm</strong> es un software colaborativo anti corporativo mantenido por <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 
 #: templates/layout.html:98 templates/layout.html:104
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."

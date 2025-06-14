@@ -32,7 +32,7 @@ Developer Environment
             <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
         </a>
         <a href="/" class="navbar-item has-text-link has-text-weight-bold">
-            Documentation
+            Documentação
         </a>
         <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
@@ -45,16 +45,16 @@ Developer Environment
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
             <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
-                Join
+                Registrar
             </a>
             <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
-                Get involved
+                Participe
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
-                Support
+                Suporte
             </a>
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
-                Code
+                Código
             </a>
         </div>
     </div>
@@ -94,11 +94,23 @@ Developer Environment
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pt-br/posting-statuses.html" class="has-background-inherit" >Posting statuses</a>
+                <a href="/pt-br/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
             </li>
             
             <li>
-                <a href="/pt-br/adding-books.html" class="has-background-inherit" >Adding Books</a>
+                <a href="/pt-br/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/adding-books.html" class="has-background-inherit" >Adicionar livros</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -148,7 +160,11 @@ Developer Environment
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pt-br/contributing.html" class="has-background-inherit" >How to Contribute</a>
+                <a href="/pt-br/style_guide.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/contributing.html" class="has-background-inherit" ></a>
             </li>
             
             <li>
@@ -157,10 +173,6 @@ Developer Environment
             
             <li>
                 <a href="/pt-br/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
@@ -173,7 +185,7 @@ Developer Environment
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pt-br/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+                <a href="/pt-br/activitypub.html" class="has-background-inherit" ></a>
             </li>
             
             <li>
@@ -202,45 +214,47 @@ Developer Environment
     <h2 id="pre-requisitos"><a class="headerlink" href="#pre-requisitos">Pré-requisitos</a></h2>
 <p>Estas instruções supoem que você esteja rodando a BookWyrm utilizando o Docker. Você vai precisar <a href="https://docs.docker.com/engine/install/">instalar o Docker</a> e o <a href="https://docs.docker.com/compose/install/">docker-compose</a> para começar.</p>
 <h2 id="configurando-o-ambiente-de-desenvolvimento"><a class="headerlink" href="#configurando-o-ambiente-de-desenvolvimento">Configurando o ambiente de desenvolvimento</a></h2>
-<ul>
+<h3 id="get-the-code"><a class="headerlink" href="#get-the-code">Get the code</a></h3>
+<ol>
 <li>Faça uma cópia do <a href="https://github.com/bookwyrm-social/bookwyrm">código da BookWyrm no GitHub</a>. Você pode <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">criar uma bifurcação (fork)</a> do repositório e então <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">usar <code>git clone</code> pra baixar o código</a> para seu computador.</li>
 <li>Vá ao diretório onde o código foi baixado no seu computador; você trabalhará a partir dele daqui em diante.</li>
 <li>Configure as variáveis do seu ambiente de trabalho copiando o arquivo de ambiente de exemplo (<code>.env.example</code>) e renomeando o arquivo para <code>.env</code>. Na linha de comando, você pode fazer assim:</li>
-</ul>
+</ol>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 </code></pre></div>
 
-<ul>
-<li>No <code>.env</code>, altere <code>DEBUG</code> para <code>true</code></li>
-<li>
-<p>Facultativamente, você pode usar algum serviço como o <a href="https://ngrok.com/">ngrok</a> para configurar um domínio e apontar a variável <code>DOMAIN</code> do seu arquivo <code>.env</code> para o domínio gerado pelo ngrok.</p>
-</li>
-<li>
-<p>Configure o nginx para o ambiente de desenvolvimento copiando o arquivo de configuração para desenvolvimento (<code>nginx/development</code>) e renomeando o arquivo para <code>nginx/default.conf</code>:</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>nginx/development<span class="w"> </span>nginx/default.conf
+<h3 id="configure-your-environment-settings"><a class="headerlink" href="#configure-your-environment-settings">Configure your environment settings</a></h3>
+<p>In <code>.env</code>:</p>
+<ol start="4">
+<li>change <code>DEBUG</code> to <code>true</code></li>
+<li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>). Otherwise, set <code>DOMAIN</code> to <code>localhost</code></li>
+<li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
+<li>If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment <code>PORT</code> and set it (e.g. <code>PORT=1333</code>). If using <code>localhost</code> this is optional.</li>
+</ol>
+<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code>, you should check these settings, as you may have set your domain or port incorrectly.</p>
+<h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
+<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
+<h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
+<ol start="8">
+<li>In the command line, run:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Build the docker images</span>
+./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialize the database and run migrations. Note the ADMIN key at the end of this output. You&#39;ll need it to register the first admin user.</span>
+./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start the docker containers</span>
 </code></pre></div>
 
-<ul>
-<li>Inicie o aplicativo. In the command line, run:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Gera a imagem docker</span>
-./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Inicializa o banco de dados e executa as migrações</span>
-./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Inicia os containers do docker</span>
-</code></pre></div>
-
-<ul>
-<li>Uma vez completado o build, você pode acessar a instância no endereço <code>http://localhost:1333</code> e criar um usuário administrador.</li>
-</ul>
-<p>Se estiver curiosa: o comando <code>./bw-dev</code> é um shell script simples que executa várias ferramentas: no exemplo acima, você poderia pular o script e executar <code>docker-compose build</code> ou <code>docker-compose up</code> diretamente, se preferir. <code>./bw-dev</code> só junta esses comandos em um só, por conveniência. Execute-o sem argumentos para ver uma lista de comandos disponíveis, leia a <a href="/command-line-tool.html">página da documentação</a> ou abra o arquivo para dar uma olhada no que cada comando faz!</p>
-<h3 id="editando-e-criando-modelos-models"><a class="headerlink" href="#editando-e-criando-modelos-models">Editando e criando Modelos (Models)</a></h3>
+<ol start="9">
+<li>Once the build is complete, you can access the instance at <code>http://localhost</code>, your ngrok domain, or <code>http://localhost:{PORT}</code>, depending on you domain and port configuration.</li>
+<li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
+</ol>
+<p>Se estiver curiosa: o comando <code>./bw-dev</code> é um shell script simples que executa várias ferramentas: no exemplo acima, você poderia pular o script e executar <code>docker-compose build</code> ou <code>docker-compose up</code> diretamente, se preferir. <code>./bw-dev</code> só junta esses comandos em um só, por conveniência. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
+<h2 id="editando-e-criando-modelos-models"><a class="headerlink" href="#editando-e-criando-modelos-models">Editando e criando Modelos (Models)</a></h2>
 <p>Se você quiser editar ou criar um modelo, você provavelmente vai alterar a estrutura do banco de dados. Para que essas alterações funcionem, você precisará executar o comando <code>makemigrations</code> do Django para criar um novo <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">arquivo de migrações do Django</a> e então <code>migrá-lo</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h3 id="editando-arquivos-estaticos"><a class="headerlink" href="#editando-arquivos-estaticos">Editando arquivos estáticos</a></h3>
+<h2 id="editando-arquivos-estaticos"><a class="headerlink" href="#editando-arquivos-estaticos">Editando arquivos estáticos</a></h2>
 <p>Toda vez que você alterar o CSS ou o JavaScript, você precisará rodar o comando <code>collectstatic</code>do Django para que as alterações passem a funcionar:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
@@ -258,19 +272,19 @@ Developer Environment
         <div class="columns">
             <div class="column content">
                 <p>
-                    <strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                    <strong>BookWyrm</strong> é um software colaborativo e anti-corporativo mantido por <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
                 </p>
                 <p>
-                    Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                    Apoie a BookWyrm no <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
                 </p>
             </div>
             <div class="column">
-                <h3 class="title is-6">Get Involved</h3>
+                <h3 class="title is-6">Participe</h3>
                 <p>
-                    <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm no GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/contributing/install-dev.md">Contribute to this page</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/contributing/install-dev.md">Contribua para esta página</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">
@@ -285,15 +299,15 @@ Developer Environment
                 </p>
             </div>
             <div class="column">
-                <h3 class="title is-6">Learn more</h3>
+                <h3 class="title is-6">Saiba mais</h3>
                 <p>
-                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                    <a href="https://docs.joinbookwyrm.com">Documentação</a>
                 </p>
                 <p>
-                    <a href="mailto:mousereeve@riseup.net">Contact maintainer</a>
+                    <a href="mailto:mousereeve@riseup.net">Falar com a administração</a>
                 </p>
                 <p>
-                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">License</a>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licença</a>
                 </p>
             </div>
         </div>

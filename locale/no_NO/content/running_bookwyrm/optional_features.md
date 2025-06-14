@@ -1,12 +1,12 @@
 - - -
-Title: Optional features Date: 2021-08-02 Order: 8
+Title: Valgfrie funksjoner Date: 2021-08-02 Order: 8
 - - -
 
-Some features of BookWyrm have to be enabled to work.
+Noen funksjoner i BookWyrm må aktiveres for å kunne brukes.
 
-## Preview image generation
+## Generering av forhåndsvisningsbilder
 
-By default, BookWyrm uses the instance's logo (or the default logo) as an OpenGraph preview image. As an alternative, you can enable the generation of preview images for books, users, and the website.
+Som standard bruker BookWyrm instansens logo (eller standardlogoen) som OpenGraph-forhåndsvisningsbilde. Som et alternativ kan du aktivere generering av forhåndsvisningsbilder for bøker, brukere og nettsiden.
 
 The preview images will be sized for large OpenGraph images (used by Twitter under the name of `summary_large_image`). Depending on the type of image, the contents will be:
 

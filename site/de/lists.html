@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        
+Lists
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Dokumentation
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
+                Beitreten
+            </a>
+            <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
+                Mitmachen
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Unterstützung
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" selected>Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="latest" >latest</option>
+                
+                <option value="v0.7.5" >v0.7.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/de/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/de/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/de/adding-books.html" class="has-background-inherit" >Bücher hinzufügen</a>
+            </li>
+            
+            <li>
+                <a href="/de/lists.html" class="has-background-inherit" class="is-active">Lists</a>
+            </li>
+            
+            <li>
+                <a href="/de/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/de/install-prod.html" class="has-background-inherit" >Installation in Produktion</a>
+            </li>
+            
+            <li>
+                <a href="/de/install-prod-dockerless.html" class="has-background-inherit" >Installation ohne Docker</a>
+            </li>
+            
+            <li>
+                <a href="/de/updating.html" class="has-background-inherit" >Deine Instanz updaten</a>
+            </li>
+            
+            <li>
+                <a href="/de/reverse-proxy.html" class="has-background-inherit" >Verwenden eines Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/de/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/de/monitoring-queue.html" class="has-background-inherit" >Überwachungswarteschlange</a>
+            </li>
+            
+            <li>
+                <a href="/de/external-storage.html" class="has-background-inherit" >Externer Speicher</a>
+            </li>
+            
+            <li>
+                <a href="/de/optional_features.html" class="has-background-inherit" >Optionale Funktionen</a>
+            </li>
+            
+            <li>
+                <a href="/de/cli.html" class="has-background-inherit" >Befehlszeilenwerkzeug</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/de/contributing.html" class="has-background-inherit" >Wie mitmachen</a>
+            </li>
+            
+            <li>
+                <a href="/de/translation.html" class="has-background-inherit" >Übersetzungen</a>
+            </li>
+            
+            <li>
+                <a href="/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
+            </li>
+            
+            <li>
+                <a href="/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/de/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/de/permissions.html" class="has-background-inherit" >Berechtigungen</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Reference Guides</h2>
+        <ul class="menu-list has-background-inherit">
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">Lists</h1>
+
+                </header>
+                
+<section class="block content">
+    <p>Lists in Bookwyrm are a way to organise and display similar books together.</p>
+<p>The Lists page is accessible from the 'Lists' tab on the main page.
+To see your Lists, click 'Your Lists' below the title or navigate to your profile to the Lists tab.</p>
+<h2 id="creating-a-list"><a class="headerlink" href="#creating-a-list">Creating a List</a></h2>
+<p>To create a List, first select the 'Create List' button on the top right of the page.
+It needs a name, and you can optionally add a description.
+You will then choose how you'd like to curate the List.</p>
+<h2 id="list-curation"><a class="headerlink" href="#list-curation">List curation</a></h2>
+<p>There are four options for List curation:</p>
+<ul>
+<li><strong>Closed</strong>: Only you can add and remove books to this list.</li>
+<li><strong>Curated</strong>: Anyone can suggest books, subject to your approval.</li>
+<li><strong>Open</strong>: Anyone can add books to this list. Only you can remove them.</li>
+<li><strong>Group</strong>: <a href="/groups.html">Group</a> members can add to and remove from this list .</li>
+</ul>
+<h2 id="list-privacy"><a class="headerlink" href="#list-privacy">List privacy</a></h2>
+<p>Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted, Followers and Private.
+See more details on the <a href="/privacy-controls.html#lists">privacy controls</a> page.</p>
+<h2 id="adding-books-to-a-list"><a class="headerlink" href="#adding-books-to-a-list">Adding books to a List</a></h2>
+<p>You can add books to any List that you own, "Open" Lists and group-curated Lists of Groups you are a part of.
+You can also suggest books to "Curated" Lists in the exact same way.</p>
+<p>There is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
+It shows books that you've recently interacted with on Bookwyrm, and a search bar.
+Currently, the search is limited to book titles (see issue <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3607">#3607</a>).
+Once you find the one you want, use the 'Add' button to add it to the List.</p>
+<h3 id="notes"><a class="headerlink" href="#notes">Notes</a></h3>
+<p>You can add a "Note" to each book in a List, which could be used to explain why it was added.
+Notes are added when a book is first added, or at any time with the 'Add notes' button.
+They are displayed with the book when the List is viewed.
+To delete a note, edit it, remove everything in it, then press 'Save'.</p>
+<h3 id="list-order"><a class="headerlink" href="#list-order">List order</a></h3>
+<p>The owner or curator of the List can set a custom display order for the books in it.
+By default, new books are added to the end of the List.
+The position of a book can be changed with the 'List position' box below each book.</p>
+<h2 id="sorting-lists"><a class="headerlink" href="#sorting-lists">Sorting Lists</a></h2>
+<p>You can sort by the manually created list order, book title or average rating, in ascending and descending order.</p>
+<h2 id="lists-sidetab-on-book-pages"><a class="headerlink" href="#lists-sidetab-on-book-pages">Lists sidetab on book pages</a></h2>
+<p>There is a sidetab on each books page which shows the Lists it is in, if it is in any.
+This is great for finding similar books suggested by the community.</p>
+<h2 id="saving-lists"><a class="headerlink" href="#saving-lists">Saving Lists</a></h2>
+<p>Lists can be 'saved' or bookmarked using the button in the top right when viewing it.
+There is a tab on the main Lists page which shows all your saved Lists, allowing you to find it later.</p>
+<h2 id="embedding-lists-on-other-websites"><a class="headerlink" href="#embedding-lists-on-other-websites">Embedding Lists on other websites</a></h2>
+<p>If you have a blog or personal website, you are able to embed a List from Bookwyrm onto it.
+Find the section 'Embed this list on a website' below sorting and adding books, then copy the embed code.
+This is in the form of an iframe and can be pasted directly into your website.</p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> ist eine kollaborative, nicht-kommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                </p>
+                <p>
+                    Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Machen Sie mit</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/lists.md">Zu dieser Seite beitragen</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Mehr erfahren</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Betreiber*in kontaktieren</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Lizenz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "de/";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>

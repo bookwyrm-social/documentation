@@ -1,5 +1,5 @@
 - - -
-Title: How to Contribute Date: 2021-04-12 Order: 1
+Título: Como contribuir Data: 2021-04-12 Ordem: 1
 - - -
 
 Há muitas formas de contribuir com o projeto qualquer que esja seu nível de conhecimento técnico.

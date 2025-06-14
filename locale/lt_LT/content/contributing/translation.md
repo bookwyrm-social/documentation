@@ -23,7 +23,7 @@ Bookwyrm takes advantage of Django's translation functionality to enable page co
 * If the text block is literal text, you can use the template tag `{% trans %}`
 * If the text block includes variables, you should use the template tag pair `{% blocktrans %}` and `{% endblocktrans %}`. If you are including padding whitespace or line breaks, use `trimmed` to automatically remove it when the locale file is generated: `{% blocktrans trimmed %}`
 
-### Examples
+### Pavyzdžiai
 
 ```html
 <p>{% trans "This list is currently empty" %}</p>

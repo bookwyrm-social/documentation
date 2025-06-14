@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2022-07-08 17:52\n"
+"PO-Revision-Date: 2025-05-31 23:28\n"
 "Last-Translator: \n"
 "Language-Team: Finnish\n"
 "Language: fi_FI\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: templates/index.html:5 templates/layout.html:6
 msgid "BookWyrm Documentation"
-msgstr ""
+msgstr "BookWyrm-dokumentaatio"
 
 #: templates/index.html:6
 msgid "Your guide to using and contributing to BookWyrm"
@@ -35,15 +35,15 @@ msgstr ""
 
 #: templates/layout.html:35 templates/layout.html:39
 msgid "Join"
-msgstr ""
+msgstr "Liity"
 
 #: templates/layout.html:38 templates/layout.html:42
 msgid "Get involved"
-msgstr ""
+msgstr "Osallistu"
 
 #: templates/layout.html:41 templates/layout.html:45
 msgid "Support"
-msgstr ""
+msgstr "Tue projektia"
 
 #: templates/layout.html:44 templates/layout.html:48
 msgid "Code"
@@ -52,11 +52,11 @@ msgstr ""
 #: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
 #: templates/layout.html:130
 msgid "Documentation"
-msgstr ""
+msgstr "Käyttöohjeet"
 
 #: templates/layout.html:95 templates/layout.html:101
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
-msgstr ""
+msgstr "<strong>BookWyrm</strong> on yhteistyössä tehty ja epäkaupallinen sovellus, jota ylläpitää <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 
 #: templates/layout.html:98 templates/layout.html:104
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
@@ -76,7 +76,7 @@ msgstr ""
 
 #: templates/layout.html:122 templates/layout.html:128
 msgid "Learn more"
-msgstr ""
+msgstr "Lue lisää"
 
 #: templates/layout.html:127 templates/layout.html:133
 msgid "Contact maintainer"
@@ -84,5 +84,5 @@ msgstr ""
 
 #: templates/layout.html:130 templates/layout.html:136
 msgid "License"
-msgstr ""
+msgstr "Lisenssi"
 
