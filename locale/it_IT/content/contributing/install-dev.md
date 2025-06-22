@@ -42,10 +42,10 @@ If you want to test sending emails, you will need to [set up appropriate values]
 ./bw-dev up               # Start the docker containers
 ```
 
-9. Once the build is complete, you can access the instance at `http://localhost`, your ngrok domain, or `http://localhost:{PORT}`, depending on you domain and port configuration.
-10. You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".
+9. Una volta completata la build, puoi accedere all'istanza su `http://localhost`, il tuo dominio ngrok, o `http://localhost:{PORT}`a seconda del dominio e della configurazione della porta.
+10. Puoi inserire la admin key e creare l'utente admin. Da qui in poi la procedura è la stessa di quanto descritto in  descritto in "Eseguire BookWyrm".
 
-Se sei curioso: il comando `./bw-dev` è un semplice script di shell esegue vari altri strumenti: puoi comunque eseguire `docker-compose build` o `docker-compose` direttamente se preferisci. `./bw-dev` li raccoglie in un unico posto comune per comodità. Run it without arguments to get a list of available commands, read the [documentation page](/cli.html) for it, or open it up and look around to see exactly what each command is doing!
+Se sei curioso: il comando `./bw-dev` è un semplice script di shell esegue vari altri strumenti: puoi comunque eseguire `docker-compose build` o `docker-compose` direttamente se preferisci. `./bw-dev` li raccoglie in un unico posto comune per comodità.
 
 ## Modifica o crea dei modelli
 
