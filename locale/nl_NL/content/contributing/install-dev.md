@@ -10,7 +10,7 @@ Deze instructies gaan ervan uit dat je BookWyrm ontwikkelt met Docker. Je moet [
 
 ### Ontvang de code
 
-1. Get a copy of [the BookWyrm codebase from GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
+1. Krijg een kopie van [de BookWyrm codebase van GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
 2. Go to the directory which contains the code on your computer, you'll be working from there from here on out.
 3. Set up your development environment variables file by copying the example environment file (`.env.example`) into a new file named `.env`. In de opdrachtregel kun je dit doen met:
 ``` { .sh }
