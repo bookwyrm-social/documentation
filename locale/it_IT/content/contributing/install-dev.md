@@ -8,7 +8,7 @@ Queste istruzioni presuppongono che tu stia sviluppando BookWyrm usando Docker. 
 
 ## Impostazioni dell'ambiente di sviluppo
 
-### Get the code
+### Ottieni il codice
 
 1. Ottieni una copia del [codebase di BookWyrm da GitHub](https://github.com/bookwyrm-social/bookwyrm). Puoi [creare un fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) del repository, e poi [usare `git clone` per scaricare il codice](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) sul tuo computer.
 2. Vai alla directory che contiene il codice sul tuo computer, lavorerai da qui d'ora in poi.
@@ -17,35 +17,35 @@ Queste istruzioni presuppongono che tu stia sviluppando BookWyrm usando Docker. 
 cp .env.example .env
 ```
 
-### Configure your environment settings
+### Configura le impostazioni del tuo ambiente
 
 In `.env`:
 
-4. change `DEBUG` to `true`
-5. If you use a tunneling/proxy service like [ngrok](https://ngrok.com), set `DOMAIN` to to the domain name you are using (e.g. `abcd-1234.ngrok-free.app`). Otherwise, set `DOMAIN` to `localhost`
-6. change `NGINX_SETUP` to `reverse_proxy` (this prevents BookWyrm trying to set up https certificates on your development machine)
-7. If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment `PORT` and set it (e.g. `PORT=1333`). If using `localhost` this is optional.
+4. Cambia `DEBUG` in `true`
+5. Se usi un servizio di tunneling/proxy come [ngrok](https://ngrok.com), imposta `DOMAIN` sul nome di dominio che stai usando (ad esempio `abcd-1234.ngrok-free.app`). Altrimenti, imposta `DOMAIN` su `localhost`.
+6. Cambia `NGINX_SETUP` in `reverse_proxy` (questo impedisce a BookWyrm di provare a configurare i certificati HTTPS sulla tua macchina di sviluppo)
+7. Se devi usare una porta specifica (ad esempio se stai usando un tunnel con ngrok), decommenta `PORT` e impostala (ad esempio `PORT=1333`). Se usi `localhost`, questo è opzionale.
 
-If you try to register your admin account and see a message that `CSRF verification failed`, you should check these settings, as you may have set your domain or port incorrectly.
+Se provi a registrare il tuo account admin e visualizzi un messaggio di errore `Verifica CSRF fallita`, controlla queste impostazioni, poiché potresti aver configurato in modo errato il dominio o la porta.
 
-### Email (optional)
+### Email (opzionale)
 
-If you want to test sending emails, you will need to [set up appropriate values](/environment.html#email-configuration) in the "Email config" section. You do not need to change anything for [the separate `EMAIL` setting](/environment.html#email).
+Se vuoi testare l’invio di email, devi [impostare i valori appropriati](/environment.html#email-configuration) nella sezione "Configurazione email". Non è necessario modificare nulla per [l’impostazione separata `EMAIL`](/environment.html#email).
 
-### Build and run
+### Compila ed esegui
 
 8. Dalla riga di comando esegui:
 
 ``` { .sh }
-./bw-dev build            # Build the docker images
-./bw-dev setup            # Initialize the database and run migrations. Note the ADMIN key at the end of this output. You'll need it to register the first admin user.
-./bw-dev up               # Start the docker containers
+./bw-dev build            # Compila le immagini Docker  
+./bw-dev setup            # Inizializza il database ed esegui le migrazioni. Note the ADMIN key at the end of this output. Avrai bisogno di registrare il primo utente amministratore.
+./bw-dev verso l'alto # Avviare i contenitori docker
 ```
 
 9. Una volta completata la build, puoi accedere all'istanza su `http://localhost`, il tuo dominio ngrok, o `http://localhost:{PORT}`a seconda del dominio e della configurazione della porta.
 10. Puoi inserire la admin key e creare l'utente admin. Da qui in poi la procedura è la stessa di quanto descritto in  descritto in "Eseguire BookWyrm".
 
-Se sei curioso: il comando `./bw-dev` è un semplice script di shell esegue vari altri strumenti: puoi comunque eseguire `docker-compose build` o `docker-compose` direttamente se preferisci. `./bw-dev` li raccoglie in un unico posto comune per comodità.
+Se sei curioso: il comando `./bw-dev` è un semplice script shell che esegue vari altri strumenti. Come visto sopra, puoi anche saltarlo ed eseguire direttamente `docker-compose build` o `docker-compose up`, se preferisci. `./bw-dev` si limita a raccoglierli tutti in un’unica posizione per comodità.
 
 ## Modifica o crea dei modelli
 
@@ -57,9 +57,9 @@ Se cambi o crei un modello, probabilmente dovrai cambiare la struttura del datab
 ```
 
 ## Modifica file statici
-Ogni volta che modifichi il CSS o JavaScript, è necessario eseguire nuovamente il comando `collectstatic` di Django affinché le modifiche abbiano effetto:
+Ogni volta che modifichi il CSS o il JavaScript, dovrai eseguire nuovamente il comando `collectstatic` di Django affinché le modifiche abbiano effetto:
 ``` { .sh }
 ./bw-dev collectstatic
 ```
 
-Se hai [installato yarn](https://yarnpkg.com/getting-started/install), è possibile eseguire `yarn watch:static` per eseguire automaticamente lo script precedente ogni volta che si verifica un cambiamento nella directory `bookwyrm/static`.
+Se hai [installato yarn](https://yarnpkg.com/getting-started/install), puoi eseguire `yarn watch:static` per far partire automaticamente lo script precedente ogni volta che viene rilevata una modifica nella cartella `bookwyrm/static`.
