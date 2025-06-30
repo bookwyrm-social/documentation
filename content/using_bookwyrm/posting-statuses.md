@@ -9,8 +9,7 @@ Users can comment on in-progress or recently read books from the "Your books" se
 From there, users can reply and start a conversation.
 BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-Bookwyrm statuses have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
-It is similar to [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), however polls, custom emoji, and attachments are not supported yet.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Types of statuses
 
