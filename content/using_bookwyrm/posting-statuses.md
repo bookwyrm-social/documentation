@@ -1,7 +1,7 @@
 ---
 Title: Posting Statuses
 Date: 2025-05-26
-Order: 1
+Order: 4
 ---
 
 Posting on BookWyrm starts with a book.

@@ -1,7 +1,7 @@
 ---
 Title: User Migration and Aliases
 Date: 2024-01-06
-Order: 3
+Order: 21
 ---
 
 You can migrate your account between BookWyrm instances, and/or set up an _alias_ between any ActivityPub account and your BookWyrm acccount.
