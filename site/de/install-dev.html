@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Entwicklungsumgebung
+Developer Environment
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +48,7 @@ Entwicklungsumgebung
                 Beitreten
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Mach mit
+                Mitmachen
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -94,11 +94,23 @@ Entwicklungsumgebung
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/de/posting-statuses.html" class="has-background-inherit" >Beitragsstatus</a>
+                <a href="/de/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/de/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
             </li>
             
             <li>
                 <a href="/de/adding-books.html" class="has-background-inherit" >Bücher hinzufügen</a>
+            </li>
+            
+            <li>
+                <a href="/de/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/de/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -156,11 +168,11 @@ Entwicklungsumgebung
             </li>
             
             <li>
-                <a href="/de/install-dev.html" class="has-background-inherit" class="is-active">Entwicklungsumgebung</a>
+                <a href="/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
             </li>
             
             <li>
-                <a href="/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
+                <a href="/de/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
             </li>
             
             <li>
@@ -194,7 +206,7 @@ Entwicklungsumgebung
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Entwicklungsumgebung</h1>
+<h1 class="title is-1">Developer Environment</h1>
 
                 </header>
                 
@@ -202,45 +214,47 @@ Entwicklungsumgebung
     <h2 id="voraussetzungen"><a class="headerlink" href="#voraussetzungen">Voraussetzungen</a></h2>
 <p>Diese Anweisungen gehen davon aus, dass du BookWyrm mit Docker entwickelst. Du musst <a href="https://docs.docker.com/engine/install/">Docker</a> und <a href="https://docs.docker.com/compose/install/">docker-compose</a> installieren, um loszulegen.</p>
 <h2 id="entwicklungsumgebung-einrichten"><a class="headerlink" href="#entwicklungsumgebung-einrichten">Entwicklungsumgebung einrichten</a></h2>
-<ul>
+<h3 id="get-the-code"><a class="headerlink" href="#get-the-code">Get the code</a></h3>
+<ol>
 <li>Kopiere die <a href="https://github.com/bookwyrm-social/bookwyrm">der BookWyrm-Codebasis von GitHub</a>. Du kannst <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">einen Fork</a> des Projekts erstellen und <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">verwende dann <code>git clone</code>, um den Code</a> auf deinen Computer herunterzuladen.</li>
 <li>Gehe in das Verzeichnis, das den Code auf Ihrem Computer enthält. Du arbeitest von hier aus.</li>
 <li>Richte deine Datei für Entwicklungsumgebungsvariablen durch Kopieren der Beispielumgebungsdatei (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. In der Kommandozeile kannst du das wie folgt tun:</li>
-</ul>
+</ol>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 </code></pre></div>
 
-<ul>
-<li>In <code>.env</code>ändere <code>DEBUG</code> zu <code>true</code></li>
-<li>
-<p>Optional kannst du einen Dienst wie <a href="https://ngrok.com/">ngrok</a> verwenden, um eine Domain einzurichten und setze die <code>DOMAIN</code>-Variable in Ihrer <code>.env</code>-Datei auf den von ngrok-generierten Domainnamen.</p>
-</li>
-<li>
-<p>Richte nginx für die Entwicklung ein, indem du die Entwicklerkonfigurationsdatei für nginx (<code>nginx/development</code>) in eine neue Datei mit dem Namen <code>nginx/default.conf</code> kopierst:</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>nginx/development<span class="w"> </span>nginx/default.conf
+<h3 id="configure-your-environment-settings"><a class="headerlink" href="#configure-your-environment-settings">Configure your environment settings</a></h3>
+<p>In <code>.env</code>:</p>
+<ol start="4">
+<li>change <code>DEBUG</code> to <code>true</code></li>
+<li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>). Otherwise, set <code>DOMAIN</code> to <code>localhost</code></li>
+<li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
+<li>If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment <code>PORT</code> and set it (e.g. <code>PORT=1333</code>). If using <code>localhost</code> this is optional.</li>
+</ol>
+<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code>, you should check these settings, as you may have set your domain or port incorrectly.</p>
+<h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
+<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
+<h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
+<ol start="8">
+<li>Führe Folgendes über die Kommandozeile aus:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Build the docker images</span>
+./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialize the database and run migrations. Note the ADMIN key at the end of this output. You&#39;ll need it to register the first admin user.</span>
+./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start the docker containers</span>
 </code></pre></div>
 
-<ul>
-<li>Starte die Applikation. Führe Folgendes über die Kommandozeile aus:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Baut die Docker-Images</span>
-./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialisiert die Datenbank und führt die Migrationen aus</span>
-./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start die Docker-Container</span>
-</code></pre></div>
-
-<ul>
-<li>Sobald die Erstellung abgeschlossen ist, kannst du auf die Instanz unter <code>http://localhost:1333</code> zugreifen und einen Admin erstellen.</li>
-</ul>
-<p>Wenn du neugierig bist: das <code>./bw-dev</code> Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk <code>docker-compose build</code> oder <code>docker-compose up</code> laufen lassen, wenn du magst. <code>./bw-dev</code> sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Führe es ohne Argumente aus, um eine Liste der verfügbaren Befehle zu erhalten, lese die <a href="/command-line-tool.html">Dokumentationsseite</a> dafür oder öffne es und schaue dich um, um genau zu sehen, was jeder Befehl tut!</p>
-<h3 id="modelle-editieren-oder-erstellen"><a class="headerlink" href="#modelle-editieren-oder-erstellen">Modelle editieren oder erstellen</a></h3>
+<ol start="9">
+<li>Once the build is complete, you can access the instance at <code>http://localhost</code>, your ngrok domain, or <code>http://localhost:{PORT}</code>, depending on you domain and port configuration.</li>
+<li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
+</ol>
+<p>Wenn du neugierig bist: das <code>./bw-dev</code> Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk <code>docker-compose build</code> oder <code>docker-compose up</code> laufen lassen, wenn du magst. <code>./bw-dev</code> sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
+<h2 id="modelle-editieren-oder-erstellen"><a class="headerlink" href="#modelle-editieren-oder-erstellen">Modelle editieren oder erstellen</a></h2>
 <p>Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenbankstruktur ändern. Damit diese Änderungen wirksam werden, musst du Djangos <code>makemigrations</code>-Befehl ausführen, um eine neue <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django Migrationsdatei</a>zu erstellen und dann diese <code>migrieren</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h3 id="statische-dateien-editieren"><a class="headerlink" href="#statische-dateien-editieren">Statische Dateien editieren</a></h3>
+<h2 id="statische-dateien-editieren"><a class="headerlink" href="#statische-dateien-editieren">Statische Dateien editieren</a></h2>
 <p>Jedes Mal, wenn du CSS oder JavaScript bearbeitest, musst du Djangos <code>collectstatic</code>-Befehl erneut ausführen, damit deine Änderungen wirksam werden:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
@@ -258,7 +272,7 @@ Entwicklungsumgebung
         <div class="columns">
             <div class="column content">
                 <p>
-                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                    <strong>BookWyrm</strong> ist eine kollaborative, nicht-kommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
                 </p>
                 <p>
                     Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.

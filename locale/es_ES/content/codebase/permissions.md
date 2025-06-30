@@ -2,20 +2,20 @@
 Título: Permisos Fecha: 18-04-2021 Pedido: 2
 - - -
 
-El acceso del usuario a diferentes características se controla usando el [sistema de autenticación integrado](https://docs.djangoproject.com/en/3.2/topics/auth/default/) de Django. Cuando se crea una instancia, el script `initdb` crea un conjunto de permisos, que son asignados a grupos. By default, all new users are assigned the `editor` group, which allows them to edit book metadata.
+El acceso del usuario a diferentes características se controla usando el [sistema de autenticación integrado](https://docs.djangoproject.com/en/3.2/topics/auth/default/) de Django. Cuando se crea una instancia, el script `initdb` crea un conjunto de permisos, que son asignados a grupos. De manera predeterminada, a les nueves usuaries se les asigna el grupo `editore`, lo que les permite editar los metadatos de los libros.
 
-The instance administrator should have `superuser` status, which gives them access to Django admin (`/admin`) and confers all permissions to that user.
+Le administradore de la instancia debe tener el estatus de `superusuarie`, lo que le da acceso a la administración (`/admin`) y le otorga todos los permisos.
 
-## Permissions and groups
-This table shows the four groups (admin, moderator, editor, and user) and what permissions users in that group have:
+## Permisos y grupos
+La siguiente tabla muestra los cuatro grupos (administradore, moderadore, editore y usuarie):
 
-|                        | admin | moderator | editor | user |
-| ---------------------- | ----- | --------- | ------ | ---- |
-| edit instance settings | ✔️    | -         | -      | -    |
-| change user level      | ✔️    | -         | -      | -    |
-| manage federation      | ✔️    | ✔️        | -      | -    |
-| issue invites          | ✔️    | ✔️        | -      | -    |
-| deactivate users       | ✔️    | ✔️        | -      | -    |
-| delete posts           | ✔️    | ✔️        | -      | -    |
-| edit books             | ✔️    | ✔️        | ✔️     | -    |
- upload covers            |  ✔️    |     ✔️       |   ✔️     |  ✔️
+|                                   | administradore | moderadore | editore | usuarie |
+| --------------------------------- | -------------- | ---------- | ------- | ------- |
+| editar configuración de instancia | ✔️             | -          | -       | -       |
+| cambiar nivel de usuarie          | ✔️             | -          | -       | -       |
+| administrar federación            | ✔️             | ✔️         | -       | -       |
+| enviar invitaciones               | ✔️             | ✔️         | -       | -       |
+| desactivar usuaries               | ✔️             | ✔️         | -       | -       |
+| eliminar publicaciones            | ✔️             | ✔️         | -       | -       |
+| editar libros                     | ✔️             | ✔️         | ✔️      | -       |
+ subir portadas            |  ✔️    |     ✔️       |   ✔️     |  ✔️

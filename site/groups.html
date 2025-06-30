@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        
+Groups
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentation
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/instances" class="navbar-item">
+                Join
+            </a>
+            <a href="https://joinbookwyrm.com/get-involved" class="navbar-item">
+                Get involved
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Support
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" selected>English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="latest" >latest</option>
+                
+                <option value="v0.7.5" >v0.7.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/adding-books.html" class="has-background-inherit" >Adding Books</a>
+            </li>
+            
+            <li>
+                <a href="/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+            <li>
+                <a href="/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/groups.html" class="has-background-inherit" class="is-active">Groups</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/optional_features.html" class="has-background-inherit" >Optional Features</a>
+            </li>
+            
+            <li>
+                <a href="/management-commands.html" class="has-background-inherit" >Management Commands</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/codereview.html" class="has-background-inherit" >Code Review</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/permissions.html" class="has-background-inherit" >Permissions</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Reference Guides</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/environment.html" class="has-background-inherit" >Environment Variables</a>
+            </li>
+            
+            <li>
+                <a href="/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">Groups</h1>
+
+                </header>
+                
+<section class="block content">
+    <p>You can join or create a Group with others on Bookwyrm.
+There are many things a group could be made for - a book club, a bunch of friends, whatever makes sense for you.
+Groups can curate book <strong>Lists</strong> together, but that's about it right now.
+Currently, the Bookwyrm developers are focusing on other things, not groups, but they will be improved in the future.</p>
+<p>To find the groups page, first navigate to your profile, then open the 'Groups' tab.</p>
+<h2 id="group-administration"><a class="headerlink" href="#group-administration">Group administration</a></h2>
+<h3 id="creating-a-group"><a class="headerlink" href="#creating-a-group">Creating a group</a></h3>
+<p>On the top right of the groups page is the 'Create group' button. 
+You will then need to give it a name and describe what it is about, before choosing its privacy setting. </p>
+<h3 id="group-privacy"><a class="headerlink" href="#group-privacy">Group privacy</a></h3>
+<p>Groups have the same privacy settings as posts and lists do, except they can't be Followers-only.
+Group membership always requires an invitation from the group's owner, even if it is marked Public.
+For more details, see <a href="/privacy-controls#Groups">here</a>.</p>
+<h3 id="adding-and-removing-users"><a class="headerlink" href="#adding-and-removing-users">Adding and removing users</a></h3>
+<p>Groups are currently limited only to members on the current instance.
+To add members, search their username in the search bar, then click 'Invite'.
+To remove members, click the 'Remove' button and then 'Confirm'.</p>
+<h2 id="group-membership"><a class="headerlink" href="#group-membership">Group membership</a></h2>
+<h3 id="joining-a-group"><a class="headerlink" href="#joining-a-group">Joining a group</a></h3>
+<p>To join a group, you must be on the same instance (website) and be invited by its owner. 
+You will then receive a notification which lets you join.
+The group owner is marked with a star symbol.</p>
+<h3 id="using-group-lists"><a class="headerlink" href="#using-group-lists">Using group Lists</a></h3>
+<p>Group Lists work very similarly to normal Lists, except they are curated by all members of a Group.
+They can be created by any member of a group from the group's homepage.</p>
+<h2 id="related-ideas-and-discussion-on-github"><a class="headerlink" href="#related-ideas-and-discussion-on-github">Related ideas and discussion on GitHub</a></h2>
+<p>Allow users to request to join public groups (<a href="https://github.com/bookwyrm-social/bookwyrm/issues/1840">#1840</a> on GitHub)</p>
+<p>Allow groups to have multiple admins/owners (<a href="https://github.com/bookwyrm-social/bookwyrm/issues/1841">#1841</a> on GitHub)</p>
+<p>Allow groups to include users from multiple instances (ActivityPub) (<a href="https://github.com/bookwyrm-social/bookwyrm/issues/1548">#1548</a> on GitHub)</p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Get Involved</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/groups.md">Contribute to this page</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Learn more</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact maintainer</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">License</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>

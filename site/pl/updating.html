@@ -94,11 +94,23 @@ Aktualizowanie instancji
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pl/posting-statuses.html" class="has-background-inherit" >Zamieszczanie statusów</a>
+                <a href="/pl/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/pl/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
             </li>
             
             <li>
                 <a href="/pl/adding-books.html" class="has-background-inherit" >Dodawanie książek</a>
+            </li>
+            
+            <li>
+                <a href="/pl/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/pl/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -156,11 +168,11 @@ Aktualizowanie instancji
             </li>
             
             <li>
-                <a href="/pl/install-dev.html" class="has-background-inherit" >Środowisko programistyczne</a>
+                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
-                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
+                <a href="/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
             <li>
@@ -199,22 +211,22 @@ Aktualizowanie instancji
                 </header>
                 
 <section class="block content">
-    <p>When there are changes available in the production branch, you can install and get them running on your instance using the command <code>./bw-dev update</code>. Wykonuje ono kilka rzeczy:</p>
+    <p>Gdy w gałęzi produkcyjnej są dostępne zmiany, możesz zainstalować i uruchomić je na swojej instancji używając polecenia <code>./bw-dev update</code>. Wykonuje ono kilka rzeczy:</p>
 <ul>
 <li><code>git pull</code> wczytuje zaktualizowany kod z repozytorium git. Jeśli wystąpią konflikty, może być konieczne wykonanie <code>git pull</code> oddzielnie i rozwiązanie konfliktów przez ponownym wypróbowaniem skryptu <code>./bw-dev update</code>.</li>
-<li><code>docker-compose build</code> ponownie kompiluje obrazy, co zapewnia zainstalowanie odpowiednich pakietów. This step takes a long time and is only needed when the dependencies (including pip <code>requirements.txt</code> packages) have changed, so you can comment it out if you want a quicker update path and don't mind un-commenting it as needed.</li>
-<li><code>docker-compose run --rm web python manage.py migrate</code> runs the database migrations in Django using the newly built Docker images</li>
-<li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> loads any updated static files (such as the JavaScript and CSS)</li>
-<li><code>docker-compose down; docker-compose up -d</code> will restart all the docker containers and make use of the newly built images (Attention: downtime during the restart)</li>
+<li><code>docker-compose build</code> ponownie kompiluje obrazy, co zapewnia zainstalowanie odpowiednich pakietów. Ten krok zajmuje dużo czasu i jest wymagany tylko, gdy zależności (w tym pakiety pip z <code>requirements.txt</code>) uległy zmianie, więc możesz użyć znacznika komentarza dla szybszej ścieżki aktualizacji, a znacznik możesz usunąć w razie potrzeby.</li>
+<li><code>docker-compose run --rm web python manage.py migrate</code> uruchamia migracje bazy danych w Django, używając nowo skompilowanych obrazów Docker</li>
+<li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> wczytuje wszelkie zaktualizowane pliki statyczne (takie jak JavaScript i CSS)</li>
+<li><code>docker-compose down; docker-compose up -d</code> ponownie uruchamia wszystkie kontenery dockera i wczytuje nowo skompilowane obrazy (Uwaga: przestoje podczas ponownego uruchamiania)</li>
 </ul>
-<h2 id="re-building-activity-streams"><a class="headerlink" href="#re-building-activity-streams">Re-building activity streams</a></h2>
-<p>Feeds for each user are stored in Redis. To re-populate a stream, use the management command:</p>
+<h2 id="odbudowa-strumieni-aktywnosci"><a class="headerlink" href="#odbudowa-strumieni-aktywnosci">Odbudowa strumieni aktywności</a></h2>
+<p>Kanały każdego użytkownika są przechowywane w bazie danych Redis. Aby ponownie wypełnić strumień, użyj polecenia zarządzania:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>populate_streams
-<span class="c1"># Or use docker-compose directly</span>
+<span class="c1"># Lub użyj bezpośrednio docker-compose</span>
 docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>web<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>populate_streams
 </code></pre></div>
 
-<p>If something has gone terribly awry, the stream data can be deleted.</p>
+<p>Jeśli wystąpił jakiś przerażający błąd, dane strumienia można usunąć.</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>web<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>erase_streams
 </code></pre></div>
 </section>

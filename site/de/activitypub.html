@@ -48,7 +48,7 @@ ActivityPub
                 Beitreten
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
-                Mach mit
+                Mitmachen
             </a>
             <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
                 Unterstützung
@@ -94,11 +94,23 @@ ActivityPub
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/de/posting-statuses.html" class="has-background-inherit" >Beitragsstatus</a>
+                <a href="/de/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/de/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
             </li>
             
             <li>
                 <a href="/de/adding-books.html" class="has-background-inherit" >Bücher hinzufügen</a>
+            </li>
+            
+            <li>
+                <a href="/de/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/de/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -156,11 +168,11 @@ ActivityPub
             </li>
             
             <li>
-                <a href="/de/install-dev.html" class="has-background-inherit" >Entwicklungsumgebung</a>
+                <a href="/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
             </li>
             
             <li>
-                <a href="/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
+                <a href="/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
             <li>
@@ -199,7 +211,7 @@ ActivityPub
                 </header>
                 
 <section class="block content">
-    <p>BookWyrm verwendet das <a href="http://activitypub.rocks/">ActivityPub</a>-Protokoll, um Benutzeraktivitäten zwischen anderen BookWyrm-Instanzen und anderen Diensten zu senden und zu empfangen, die ActivityPub implementieren, wie <a href="https://joinmastodon.org/">Mastodon</a>. Um Buchdaten zu behandeln, hat BookWyrm eine Handvoll erweiterter Aktivitätstypen, die nicht zum Standard gehören, aber nur für andere BookWyrm-Instanzen lesbar sind.</p>
+    <p>BookWyrm verwendet das <a href="http://activitypub.rocks/">ActivityPub</a>-Protokoll, um Benutzer*innenaktivitäten zwischen anderen BookWyrm-Instanzen und anderen Diensten, die ActivityPub implementieren (wie <a href="https://joinmastodon.org/">Mastodon</a>), zu senden und zu empfangen. Um Buchdaten zu handhaben, hat BookWyrm eine Handvoll erweiterter Aktivitätstypen, die nicht zum Standard gehören, aber für andere BookWyrm-Instanzen lesbar sind.</p>
 <h2 id="aktivitaten-und-objekte"><a class="headerlink" href="#aktivitaten-und-objekte">Aktivitäten und Objekte</a></h2>
 <h3 id="benutzerinnen-und-beziehungen"><a class="headerlink" href="#benutzerinnen-und-beziehungen">Benutzer*innen und Beziehungen</a></h3>
 <p>Benutzer*innenbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.</p>
@@ -239,7 +251,7 @@ ActivityPub
 <h4 id="objekte"><a class="headerlink" href="#objekte">Objekte</a></h4>
 <ul>
 <li><code>Regal</code>: Buchsammlung eines Benutzers. Standardmäßig hat jeder Benutzer ein <code>zu lesen</code>, <code>liest</code>, und <code>gelesen</code> Regal, die verwendet werden, um den Lesefortschritt zu verfolgen.</li>
-<li><code>Liste</code>: Eine Sammlung von Büchern, die möglicherweise von anderen Benutzern als derjenige, der die Liste erstellt hat, beigetragen haben.</li>
+<li><code>Liste</code>: Eine Sammlung von Büchern, zu der auch andere Personen als die, die die Liste erstellt hat, Bücher beitragen können.</li>
 </ul>
 <h4 id="aktivitaten_1"><a class="headerlink" href="#aktivitaten_1">Aktivitäten</a></h4>
 <ul>
@@ -249,7 +261,7 @@ ActivityPub
 <li><code>Entfernen</code>: Entfernt ein Buch aus einem Regal oder einer Liste.</li>
 </ul>
 <h2 id="alternative-serialisierung"><a class="headerlink" href="#alternative-serialisierung">Alternative Serialisierung</a></h2>
-<p>Weil BookWyrm eigene Objekttypen (<code>Rezension</code>, <code>Kommentar</code>, <code>Zitat</code>) benutzt, die nicht von ActivityPub unterstützt werden, werden Status in Standardtypen umgewandelt, wenn sie an nicht-BookWyrm-Dienste gesendet oder angezeigt werden. <code>Rezension</code>en werden in <code>Artikel</code> umgewandelt und <code>Kommentar</code>s und <code>Zitat</code>s werden in <code>Notiz</code>s konvertiert mit einem Link auf das Buch und das Titelbild wird angehängt.</p>
+<p>Weil BookWyrm eigene Objekttypen (<code>Rezension</code>, <code>Kommentar</code>, <code>Zitat</code>) benutzt, die nicht von ActivityPub unterstützt werden, werden Status in Standardtypen umgewandelt, wenn sie an nicht-BookWyrm-Dienste gesendet oder angezeigt werden. <code>Rezension</code>en werden in <code>Artikel</code> umgewandelt und <code>Kommentar</code>e und <code>Zitat</code>e werden in <code>Notiz</code>en mit einem Link zu dem Buch und dem Titelbild als Anhang konvertiert.</p>
 </section>
 
             </section>
@@ -262,7 +274,7 @@ ActivityPub
         <div class="columns">
             <div class="column content">
                 <p>
-                    <strong>BookWyrm</strong> ist eine kollaborative, nichtkommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
+                    <strong>BookWyrm</strong> ist eine kollaborative, nicht-kommerzielle Software, die von <a href='https://www.mousereeve.com/'>Mouse Reeve</a> betrieben wird.
                 </p>
                 <p>
                     Unterstütze BookWyrm auf <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.

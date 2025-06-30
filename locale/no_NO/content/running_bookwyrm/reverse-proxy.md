@@ -1,5 +1,5 @@
 - - -
-Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 4
+Title: Bruk av Reverse-Proxy Date: 2021-05-11 Order: 4
 - - -
 
 ## Running BookWyrm Behind a Reverse-Proxy

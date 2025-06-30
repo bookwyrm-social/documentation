@@ -94,11 +94,23 @@ Tłumaczenia
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/pl/posting-statuses.html" class="has-background-inherit" >Zamieszczanie statusów</a>
+                <a href="/pl/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/pl/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
             </li>
             
             <li>
                 <a href="/pl/adding-books.html" class="has-background-inherit" >Dodawanie książek</a>
+            </li>
+            
+            <li>
+                <a href="/pl/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/pl/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
         </ul>
@@ -156,11 +168,11 @@ Tłumaczenia
             </li>
             
             <li>
-                <a href="/pl/install-dev.html" class="has-background-inherit" >Środowisko programistyczne</a>
+                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
-                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
+                <a href="/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
             <li>
@@ -206,12 +218,12 @@ Tłumaczenia
 <p>Poświęć więcej uwagi na integrację oraz neutralny płciowo język niż na poprawność lub oficjalne formy stylizacji. Na przykład w języku angielskim wiele formalnych zwrotów wymaga użycia zaimka "ona" lub "on", gdy odnosimy się do osoby, ale lepiej będzie, jeśli na BookWyrm zastosujemy neutralne płciowo "ono/oni".</p>
 <p>Jeśli nie masz pewności, jak najlepiej podejść do problemu z tłumaczeniem, dodaj komentarz do tłumaczenia lub utwórz <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">dyskusję</a>, aby uzyskać odpowiedź na bardziej zawiłe pytania.</p>
 <h2 id="umozliwianie-tumaczenia-szablonow"><a class="headerlink" href="#umozliwianie-tumaczenia-szablonow">Umożliwianie tłumaczenia szablonów</a></h2>
-<p>BookWyrm korzysta z funkcji tłumaczenia Django, aby umożliwić zmienianie treści strony w zależności od języka wybranego przez użytkownika. Dokumentacja Django <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">zawiera pomocne objaśnienia</a>, jak to działa, a tutaj krótkie jej podusmowanie:</p>
+<p>BookWyrm korzysta z funkcji tłumaczenia Django, aby umożliwić zmienianie treści strony w zależności od języka wybranego przez użytkownika. Dokumentacja Django <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">zawiera pomocne objaśnienia</a>, jak to działa, a tutaj krótkie jej podsumowanie:</p>
 <ul>
 <li>cały tekst szablonu powinien zawierać znaczniki tłumaczenia szablonu</li>
 <li>dodaj <code>{% load i18n %}</code> na górze szablonu, aby umożliwić tłumaczenia</li>
 <li>Jeśli blok tekstu jest tekstem dosłownym, możesz skorzystać z znacznika szablonu <code>{% trans %}</code></li>
-<li>Jeśli blok tekstu zawiera zmiennie, należy użyć pary znaczników <code>{% blocktrans %}</code> oraz <code>{% endblocktrans %}</code>. If you are including padding whitespace or line breaks, use <code>trimmed</code> to automatically remove it when the locale file is generated: <code>{% blocktrans trimmed %}</code></li>
+<li>Jeśli blok tekstu zawiera zmienne, należy użyć pary znaczników <code>{% blocktrans %}</code> oraz <code>{% endblocktrans %}</code>. If you are including padding whitespace or line breaks, use <code>trimmed</code> to automatically remove it when the locale file is generated: <code>{% blocktrans trimmed %}</code></li>
 </ul>
 <h3 id="przykady"><a class="headerlink" href="#przykady">Przykłady</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
