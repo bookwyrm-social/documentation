@@ -1,5 +1,5 @@
 - - -
-Title: Installing in Production Date: 2021-05-18 Order: 1
+Title: Installing in Production Date: 2025-04-01 Order: 1
 - - -
 
 Este projeto ainda é jovem e não está, no momento, muito estável, então tenha cuidado ao rodá-lo em produção.
@@ -12,6 +12,8 @@ Este projeto ainda é jovem e não está, no momento, muito estável, então ten
 
 ## Instale e configure a BookWyrm
 
+There are several repos in the BookWyrm org, including documentation, a static landing page, and the actual Bookwyrm code. To run BookWyrm, you want the actual app code which is in [bookwyrm-social/bookwyrm](https://github.com/bookwyrm-social/bookwyrm).
+
 O branch `produção (production)` da BookWyrm tem uma série de ferramentas indisponíveis no branch `principal (main)` que servem para a execução em produção, como alterações no `docker-compose` para atualizar os comandos padrão, configuração de containers e alterações individuais nas configurações dos containers para ativar coisas com SSL ou backups comuns.
 
 Instruções para rodar a BookWyrm em produção:
@@ -19,32 +21,23 @@ Instruções para rodar a BookWyrm em produção:
 - Obtenha o código da aplicação: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Mude para o branch `produção (production)`: `git checkout production`
 - Crie seu arquivo de variáveis do ambiente, `cp .env.example .env`, e atualize o seguinte:
-    - `SECRET_KEY` | Uma string de caracteres difíceis de descobrir
     - `DOMAIN` | Seu domínio
     - `EMAIL` | Um endereço de email para ser usado na verificação de domínio do certbot
+    - `FLOWER_USER` | Seu nome de usuário para acessar o monitor de filas Flower
+    - `EMAIL_HOST_USER` | O endereço do recipiente que o aplicativo usará para enviar emails
+    - `EMAIL_HOST_PASSWORD` | A senha do seu serviço de email
+- Initialize secrets by running `bw-dev create_secrets` or manually update following in `.env`:
+    - `SECRET_KEY` | Uma string de caracteres difíceis de descobrir
     - `POSTGRES_PASSWORD` | Defina uma senha segura para o banco de dados
     - `REDIS_ACTIVITY_PASSWORD` | Defina uma senha segura para o subsistema Redis Activity
     - `REDIS_BROKER_PASSWORD` | Defina uma senha segura para o subsistema Redis queue broker
-    - `FLOWER_USER` | Seu nome de usuário para acessar o monitor de filas Flower
     - `FLOWER_PASSWORD` | Sua senha segura para acessar o monitor de filas Flower
-    - `EMAIL_HOST_USER` | O endereço do recipiente que o aplicativo usará para enviar emails
-    - `EMAIL_HOST_PASSWORD` | A senha do seu serviço de email
-- Configure o nginx
-    - Faça uma cópia do template da configuração de produção e ative-o no ngix `cp nginx/production nginx/default.conf`
-    - Atualize o `nginx/default.conf`:
-        - Substitua `your-domain.com` com seu domínio em todos os lugares do arquivo (incluindo as linhas comentadas)
-        - Se você não estiver utilizando o subdomínio `www`, exclua a versão do domínio www.your-domain.com do `server_name` no primeiro bloco server no `nginx/default.conf` e exclua a flag `-d www.${DOMAIN}` no fim do comando `certbot` no `docker-compose.yml`.
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+    - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+- Setup ssl certificate via letsencrypt by running `./bw-dev init_ssl`
 - Initialize the database by running `./bw-dev migrate`
-- Rode a aplicação (e isso deve também configurar o certificado ssl do Certbot para seu domínio) com `docker-compose up --build`, e certifique-se de que todas as imagens foram construidas com sucesso
+- Run the application with `docker-compose up --build`, and make sure all the images build successfully
     - If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port. See the [troubleshooting guide](#port_conflicts) for advice on resolving this.
 - When docker has built successfully, stop the process with `CTRL-C`
-- Set up HTTPS redirect
-    - In `docker-compose.yml`, comment out the active certbot command, which installs the certificate, and uncomment the line below, which sets up automatically renewals.
-    - In `nginx/default.conf`, uncomment lines 18 through 50 to enable forwarding to HTTPS. You should have two `server` blocks enabled
-- Set up a `cron` job to keep your certificates up to date (Lets Encrypt certificates expire after 90 days)
-    - Type `crontab -e` to edit your cron file in the host machine
-    - add a line to try renewing once a day: `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - If you wish to use an external storage for static assets and media files (such as an S3-compatible service), [follow the instructions](/external-storage.html) until it tells you to come back here
 - Initialize the application with `./bw-dev setup`, and copy the admin code to use when you create your admin account.
     - The output of `./bw-dev setup` should conclude with your admin code. You can get your code at any time by running `./bw-dev admin_code` from the command line. Here's an example output:
@@ -83,7 +76,7 @@ BookWyrm has multiple services that run on their default ports. This means that,
 If this occurs, you will need to change your configuration to run services on different ports. This may require one or more changes the following files:
 
 - `docker-compose.yml`
-- `nginx/default.conf`
+- `nginx/production.conf` or `nginx/reverse_proxy.conf` depending on NGINX_SETUP in .env-file
 - `.env` (You create this file yourself during setup)
 
 If you are already running a web-server on your machine, you will need to set up a reverse-proxy.
@@ -92,6 +85,6 @@ If you are already running a web-server on your machine, you will need to set up
 
 Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. There are a few ways in get in touch:
 
- - Open an issue or pull request to add your instance to the [official list](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
+ - Open an issue or pull request to add your instance to the [official list](https://joinbookwyrm.com/instances/)
  - Reach out to the project on [Mastodon](https://tech.lgbt/@bookwyrm) or [email the maintainer](mailto:mousereeve@riseup.net) directly with your GitHub username
  - Join the [Matrix](https://matrix.to/#/#bookwyrm:matrix.org) chat room
