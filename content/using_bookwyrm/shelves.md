@@ -19,7 +19,7 @@ These are used to track the reading status of each of your books.
 
 When browsing books on Bookwyrm, there is a button below or beside each book, used to update its reading status.
 
-The app expects the flow of `Not shelved` -> `To read` -> `Currently reading` -> `Read`.
+BookWyrm expects the flow of `Not shelved` -> `To read` -> `Currently reading` -> `Read`.
 So the default option will always advance the book along this flow.
 Other options are available from the dropdown arrow.
 
@@ -54,14 +54,15 @@ Adding books to them works the same though.
 ### On multiple custom shelves
 
 As opposed to the built-in reading status shelves, a book can be on multiple custom shelves at once.
+It could also be on a reading status shelf at the same time as one or more custom shelves, or just on a custom shelf.
 
 ## Editing shelf descriptions
 
-You can add a description to any shelf by selecting the shelfs tab and then 'Edit shelf'.
+You can add a description to any shelf by selecting the shelf and then 'Edit shelf'.
 
 ## Filtering your books
 
-Currently, the only available filter is by keyword, which searches against the books title and author.
+Currently, the only available filter is by keyword, which searches against the title and author.
 
 ## Shelf Privacy
 
