@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>
+        
+User Migration and Aliases
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Dokumentacja
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/pl/instances" class="navbar-item">
+                Dołącz
+            </a>
+            <a href="https://joinbookwyrm.com/pl/get-involved" class="navbar-item">
+                Udziel się
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Wsparcie
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Kod źródłowy
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" selected>Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="latest" >latest</option>
+                
+                <option value="v0.7.5" >v0.7.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/pl/adding-books.html" class="has-background-inherit" >Dodawanie książek</a>
+            </li>
+            
+            <li>
+                <a href="/pl/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/pl/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/pl/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/pl/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/pl/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/pl/user-migration.html" class="has-background-inherit" class="is-active">User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/pl/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/pl/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/pl/updating.html" class="has-background-inherit" >Aktualizowanie instancji</a>
+            </li>
+            
+            <li>
+                <a href="/pl/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/pl/moderation.html" class="has-background-inherit" >Moderacja</a>
+            </li>
+            
+            <li>
+                <a href="/pl/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/pl/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/pl/optional_features.html" class="has-background-inherit" >Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/pl/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/pl/contributing.html" class="has-background-inherit" >Udzielanie się</a>
+            </li>
+            
+            <li>
+                <a href="/pl/translation.html" class="has-background-inherit" >Tłumaczenia</a>
+            </li>
+            
+            <li>
+                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/pl/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/pl/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/pl/permissions.html" class="has-background-inherit" >Uprawnienia</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Reference Guides</h2>
+        <ul class="menu-list has-background-inherit">
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">User Migration and Aliases</h1>
+
+                </header>
+                
+<section class="block content">
+    <p>You can migrate your account between BookWyrm instances, and/or set up an <em>alias</em> between any ActivityPub account and your BookWyrm acccount.</p>
+<h2 id="exporting-account-data"><a class="headerlink" href="#exporting-account-data">Exporting account data</a></h2>
+<p>You can export your account data at any time, however there will be a limit on how often you can do this, set by your instance admin. When you create an export file a process will run in the background and you will be notified when it is completed and ready for download. Export files are in <code>tar.gz</code> format.</p>
+<p>Account export files include:</p>
+<ul>
+<li>User profile and avatar</li>
+<li>Most user settings</li>
+<li>Reading goals</li>
+<li>Shelves</li>
+<li>Reading history</li>
+<li>Book reviews</li>
+<li>Statuses</li>
+<li>Your own lists and saved lists</li>
+<li>Which users you follow and block</li>
+</ul>
+<p>Exports do <em>not</em> include:</p>
+<ul>
+<li>Direct messages</li>
+<li>Replies to your statuses</li>
+<li>Groups</li>
+<li>Favorites</li>
+</ul>
+<h2 id="aliases"><a class="headerlink" href="#aliases">Aliases</a></h2>
+<p>An <em>alias</em> indicates to ActivityPub software that two accounts represent and are controlled by the same person. You can assign any ActivityPub account as an alias of your BookWyrm account by navigating to <code>Settings - Aliases</code>.</p>
+<p>Setting an account as an alias is easily reversible, and is required to migrate accounts.</p>
+<h2 id="moving-an-account"><a class="headerlink" href="#moving-an-account">Moving an account</a></h2>
+<p>You can "move" an account from one to another at <code>Settings - Move Account</code>. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.</p>
+<p>Your old (origin) account will be marked as moved and will not be discoverable or usable unless you undo the move, which you can do at any time, however any followers who have migrated their follow from the old account to the new account will no longer be following your old account.</p>
+<p>You <em>must</em> set the old (source) user as an alias of the new (target) user in the settings of the target account for a <code>Move</code> to work.</p>
+<h2 id="importing-account-data"><a class="headerlink" href="#importing-account-data">Importing account data</a></h2>
+<p>Once you have an export file you can import it into another BookWyrm instance. To do so, you must first set the new (target) account as an alias of the old (source) account, or <code>Move</code> the old account to the new one.</p>
+<p>It is important to read the instructions on the account import page as some data will be overwritten if selected. There is also a limit on how often you can import user data.</p>
+<ul>
+<li>Go to <code>Settings - Import BookWyrm Account</code></li>
+<li>Select your export file</li>
+<li>Untick any data options you do not wish to import</li>
+<li>Click 'Import'</li>
+</ul>
+<p>Your import will run in the background and you will be notified when it is completed.</p>
+<p>If you import data from an account on the same server, all posts (comments, reviews, quotations) will be re-assigned to the new user.</p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> to współtworzone, antykorporacyjne oprogramowanie zarządzane przez <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Wspieraj BookWyrm poprzez <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Udziel się</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm na GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/user-migration.md">Udziel się na tej stronie</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Dowiedz się więcej</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentacja</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Skontaktuj się z opiekunem</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licencja</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "pl/";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>

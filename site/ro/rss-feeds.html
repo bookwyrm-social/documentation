@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>
+        
+RSS Feeds
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentație
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/ro/instances" class="navbar-item">
+                Alăturați-vă
+            </a>
+            <a href="https://joinbookwyrm.com/ro/get-involved" class="navbar-item">
+                Implicați-vă
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Susțineți
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Cod
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" selected>Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="latest" >latest</option>
+                
+                <option value="v0.7.5" >v0.7.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/adding-books.html" class="has-background-inherit" >Adding Books</a>
+            </li>
+            
+            <li>
+                <a href="/ro/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/ro/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/ro/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/ro/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/ro/rss-feeds.html" class="has-background-inherit" class="is-active">RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/ro/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/ro/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/ro/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/ro/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/ro/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/ro/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/ro/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/ro/optional_features.html" class="has-background-inherit" >Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/ro/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/ro/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/permissions.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/ro/activitypub.html" class="has-background-inherit" >ActivitatePub</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Reference Guides</h2>
+        <ul class="menu-list has-background-inherit">
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">RSS Feeds</h1>
+
+                </header>
+                
+<section class="block content">
+    <p>BookWyrm is an <em>open</em> platform and generally it's ok to integrate your books and bookshelves in BookWyrm with other things. We provide some <a href="https://cyber.harvard.edu/rss/rss.html">RSS feeds</a> to help you do that.</p>
+<h2 id="rss-locations"><a class="headerlink" href="#rss-locations">RSS Locations</a></h2>
+<p>Currently, all RSS Feeds are relative to a someone's profile on their BookWyrm instance. So if your profile is at https://bookwyrm.social/user/mouse then all the rss feeds will be at a URL based on that.</p>
+<h3 id="all-activity"><a class="headerlink" href="#all-activity">All Activity</a></h3>
+<p>This is everything someone posts that's publicly visible.</p>
+<p>You can see all the <em>public</em> activity of a user at their profile url /rss. So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all activity at http://bookwyrm.social/user/mouse/rss</p>
+<p>BookWyrm is social - people quote books, chat with each other about books, etc. If you are looking for a more filtered view, the next locations might be useful.</p>
+<h3 id="reviews"><a class="headerlink" href="#reviews">Reviews</a></h3>
+<p>To get an RSS feed of every Review someone posts, add <code>/rss-reviews</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Reviews at http://bookwyrm.social/user/mouse/rss-reviews</p>
+<h3 id="quotes"><a class="headerlink" href="#quotes">Quotes</a></h3>
+<p>To get a feed of every Quote someone posts, add <code>/rss-quotes</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Quotes at http://bookwyrm.social/user/mouse/rss-quotes</p>
+<h3 id="comments"><a class="headerlink" href="#comments">Comments</a></h3>
+<p>To get a feed of every Comment someone posts, add <code>/rss-comments</code> to the end of their profile url.</p>
+<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Comments at http://bookwyrm.social/user/mouse/rss-comments</p>
+<h3 id="shelves"><a class="headerlink" href="#shelves">Shelves</a></h3>
+<p>You might also want to get a feed of books being added to someone's bookshelves. You'll add <code>/rss</code> to the end of that bookshelf's url.</p>
+<p>So for bookshelf https://bookwyrm.social/user/mouse/books/read you can get an RSS feed of all books added at https://bookwyrm.social/user/mouse/books/read/rss</p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> este un program colaborativ, anti-corporație, menținut de <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Susțineți BookWyrm pe <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Alăturați-vă</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/rss-feeds.md">Contribuiți la această pagină</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Aflați mai multe</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentație</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contactați responsabilul</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licență</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "ro/";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>
