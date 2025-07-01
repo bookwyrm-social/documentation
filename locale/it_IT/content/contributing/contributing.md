@@ -2,7 +2,7 @@
 Titolo: Come contribuire Data: 12-04-2021 Ordine: 1
 - - -
 
-Ci sono molti modi in cui puoi contribuire a questo progetto, indipendentemente dal tuo livello di competenza tecnica,.
+Ci sono molti modi per contribuire a questo progetto, indipendentemente dal tuo livello di competenza tecnica.
 
 ## Commenti e richieste di funzionalità
 Ti preghiamo di sentirti incoraggiato e benvenuto a segnalare bug, suggerimenti, richieste di caratteristiche, e idee su come le cose dovrebbero funzionare usando [problemi di GitHub](https://github.com/bookwyrm-social/bookwyrm/issues).
