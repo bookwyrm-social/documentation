@@ -10,7 +10,7 @@ BookWyrm is an _open_ platform and generally it's ok to integrate your books and
 
 Currently, all RSS Feeds are relative to a someone's profile on their BookWyrm instance. So if your profile is at https://bookwyrm.social/user/mouse then all the rss feeds will be at a URL based on that.
 
-### All Activity
+### Alle Activiteit
 
 This is everything someone posts that's publicly visible.
 
@@ -30,14 +30,14 @@ To get a feed of every Quote someone posts, add `/rss-quotes` to the end of thei
 
 So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Quotes at http://bookwyrm.social/user/mouse/rss-quotes
 
-### Comments
+### Opmerkingen
 
 To get a feed of every Comment someone posts, add `/rss-comments` to the end of their profile url.
 
 So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Comments at http://bookwyrm.social/user/mouse/rss-comments
 
-### Shelves
+### Boekenplanken
 
-You might also want to get a feed of books being added to someone's bookshelves. You'll add `/rss` to the end of that bookshelf's url.
+Misschien wil je ook dat er een boek toegevoegd wordt aan iemands boekenplank. You'll add `/rss` to the end of that bookshelf's url.
 
 So for bookshelf https://bookwyrm.social/user/mouse/books/read you can get an RSS feed of all books added at https://bookwyrm.social/user/mouse/books/read/rss
