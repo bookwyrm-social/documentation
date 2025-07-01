@@ -19,9 +19,13 @@ These are used to track the reading status of each of your books.
 
 When browsing books on Bookwyrm, there is a button below or beside each book, used to update its reading status.
 
-BookWyrm expects the flow of `Not shelved` -> `To read` -> `Currently reading` -> `Read`.
-So the default option will always advance the book along this flow.
-Other options are available from the dropdown arrow.
+For each book, BookWyrm expects the reading flow of `Not shelved` -> `To read` -> `Currently reading` -> `Read`.
+The default option for the button will move the book to the next stage in the sequence.
+For example, a new book is 'Not shelved' yet, so the button will suggest adding it to your 'To read' shelf.
+Once on 'To read', the next step is to start reading it, which will move it to 'Currently reading'.
+
+At any time, you can use the dropdown arrow to skip steps in the sequence and manually select any reading status for the book.
+There is also an option to add it to your 'Stopped Reading' shelf, for books you do not want to finish (DNF).
 
 ### Only on one status shelf
 
@@ -49,7 +53,11 @@ Use 'Finish reading' when you've finished reading a book.
 ## Custom Shelves
 
 Custom shelves are completely separate from the reading status shelves.
-Adding books to them works the same though.
+
+### Adding books to custom shelves
+
+You can add any book to a custom shelf by using the dropdown menu on the shelf/reading status button.
+Once you've created new shelves, they will be displayed there and selecting one will add it. 
 
 ### On multiple custom shelves
 
