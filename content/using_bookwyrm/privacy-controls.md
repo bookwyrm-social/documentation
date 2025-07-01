@@ -1,7 +1,7 @@
 ---
 Title: Privacy Controls
 Date: 2025-05-26
-Order: 2
+Order: 7
 ---
 
 Bookwyrm has different privacy levels which let users control how public something is and who it is visible to.
