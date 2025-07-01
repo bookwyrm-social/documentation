@@ -12,38 +12,38 @@ You can export your account data at any time, however there will be a limit on h
 
 Account export files include:
 
-- User profile and avatar
-- Most user settings
-- Reading goals
-- Shelves
-- Reading history
+- Gebruikersprofiel en avatar
+- Meeste gebruikersinstellingen
+- Leesdoelen
+- Boekenplanken
+- Leesgeschiedenis
 - Book reviews
-- Statuses
-- Your own lists and saved lists
+- Statussen
+- Uw eigen lijsten en opgeslagen lijsten
 - Which users you follow and block
 
 Exports do _not_ include:
 
-- Direct messages
-- Replies to your statuses
-- Groups
-- Favorites
+- Privéberichten
+- Antwoorden op uw statussen
+- Groepen
+- Favorieten
 
-## Aliases
+## Aliassen
 
 An _alias_ indicates to ActivityPub software that two accounts represent and are controlled by the same person. You can assign any ActivityPub account as an alias of your BookWyrm account by navigating to `Settings - Aliases`.
 
 Setting an account as an alias is easily reversible, and is required to migrate accounts.
 
-## Moving an account
+## Een account verplaatsen
 
-You can "move" an account from one to another at `Settings - Move Account`. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.
+Je kunt een account "verplaatsen" van een naar een ander account bij `Instellingen - Verplaats Account`. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.
 
 Your old (origin) account will be marked as moved and will not be discoverable or usable unless you undo the move, which you can do at any time, however any followers who have migrated their follow from the old account to the new account will no longer be following your old account.
 
 You _must_ set the old (source) user as an alias of the new (target) user in the settings of the target account for a `Move` to work.
 
-## Importing account data
+## Importeren van accountgegevens
 
 Once you have an export file you can import it into another BookWyrm instance. To do so, you must first set the new (target) account as an alias of the old (source) account, or `Move` the old account to the new one.
 
