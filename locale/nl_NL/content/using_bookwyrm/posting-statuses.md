@@ -4,7 +4,7 @@ Title: Posting Statuses Date: 2025-05-26 Order: 4
 
 Plaatsen op BookWyrm begint met een boek. Gebruikers kunnen commentaar geven op de voortgang of recent gelezen boeken vanuit het "Jouw boeken" gedeelte, of vanaf de landingspagina van een boek. Vanaf daar kunnen gebruikers antwoorden en een gesprek beginnen. BookWyrm publicaties kunnen opmaak zoals dikgedrukt, schuingedrukt en koppelingen bevatten met behulp van [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-Als je bekend bent met [berichten op Mastodon](https://docs.joinmastodon.org/user/posting/)dan zie je dat BookWyrm statussen gelijksoortige zichtbaarheidsinstellingen, waarschuwingen van inhoud en vermeldingen hebben. Echter, enquêtes, aangepaste emoji en bijlagen worden nog niet ondersteund.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Soorten statussen
 
