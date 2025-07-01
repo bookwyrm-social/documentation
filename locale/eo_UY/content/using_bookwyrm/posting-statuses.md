@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 1
+Title: Posting Statuses Date: 2025-05-26 Order: 4
 - - -
 
 Afiŝado ĉe BookWyrm komenciĝas per libro. Uzantoj povas komenti pri legataj aŭ legitaj libroj en la sekcio «viaj libroj», aŭ ĉe la paĝo de la libro. De tie, uzantoj povas respondi kaj komenci konversacion. Afiŝoj ĉe BookWyrm povas inkluzivi formatadon kiel grasajn kaj kursivajn literojn, kaj ligilojn, per uzo de [Markdown](https://www.markdownguide.org/cheat-sheet/).
