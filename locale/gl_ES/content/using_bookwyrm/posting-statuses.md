@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 1
+Title: Posting Statuses Date: 2025-05-26 Order: 4
 - - -
 
 As publicacións en BookWyrm inicianse a partir dun libro. As usuarias poden comentar o progreso na lectura ou os libros recentes da sección "Os teus libros", ou desde a páxina de incio dun libro. Desde aí, poderán responder e iniciar unha conversa. As publicacións de BookWyrm poden incluir formato no texto, como letra grosa, cursiva ou ligazóns utilizando [Markdown](https://www.markdownguide.org/cheat-sheet/).
