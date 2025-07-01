@@ -22,7 +22,7 @@ Other privacy settings are explained [at the bottom of this page](#privacy-relat
 
 ## Statuses
 
-On Bookwyrm, [statuses](/posting-statuses.html) can be posted at four different privacy levels, which restrict who can see it and if it's promoted on public pages.
+На Bookwyrm-у, [статуси](/posting-statuses.html) могу да се поставе на четири различита нивоа приватности, који одрећују ко може да их види и да ли ће бити промовисани на јавним страницама.
 Each status has its own privacy level, so you can choose when to make it Public or Private, or set a default in settings.
 Note that it cannot be changed once it's published.
 
@@ -89,7 +89,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 ### Public
 
-- Anyone can see your [List](/lists.html) without logging in.
+- Свако може да види твоју [Листу](/lists.html) без потребе за логином.
 - Your List will appear on:
     - the Lists discovery page (Lists tab).
     - the pages of books that are in it, displayed on the side of the screen.
@@ -112,7 +112,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 ## Groups
 
-[Groups](/groups.html) have the same privacy settings as statuses and lists do, except they can't be Followers-only.
+[Групе](/groups.html) имају иста подешавања приватности као и листе и статуси, изузев тига што не могу бити само за Пратиоце.
 Group membership always requires an invitation from the group's owner, even if it is marked Public.
 Note that currently, the Groups tab on a profile is only shown if the user viewing it is logged in (see [#3610](https://github.com/bookwyrm-social/bookwyrm/issues/3610)).
 
