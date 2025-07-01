@@ -4,7 +4,7 @@ Title: Posting Statuses Date: 2025-05-26 Order: 4
 
 Publicar en BookWyrm empieza con un libro. Usuarios pueden comentar sobre libros que están en leyendo o ya han acabado en la sección de "Tus Libros" o desde la página de inicio de un libro. Desde ahí, los usuarios pueden responder y empezar una conversación. Las publicaciones de BookWyrm incluyen formatos como negritas, itálicas y enlaces usando [lenguaje de marcado](https://www.markdownguide.org/cheat-sheet/).
 
-Si estás familiarizado con [publicar en Mastodon](https://docs.joinmastodon.org/user/posting/), encontrarás que los estados de BookWyrm configuraciones análogas de visibilidad, advertencias de contenido y menciones. Sin embargo, encuestas, emojis personalizados y los archivos adjuntos aún no son compatibles.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Tipos de estados
 
