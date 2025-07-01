@@ -4,7 +4,7 @@ Title: Posting Statuses Date: 2025-05-26 Order: 4
 
 Das Schreiben auf BookWyrm beginnt mit einem Buch. Benutzer*innen können angefangene oder vor kurzem gelesene Bücher aus dem Abschnitt "Ihre Bücher" kommentieren oder von der Startseite eines Buches aus. Von dort aus können Benutzer*innen antworten und eine Unterhaltung starten. BookWyrm Beiträge können Formatierungen wie fett, kursiv und Links mit [Markdown](https://www.markdownguide.org/cheat-sheet/) beinhalten.
 
-Wer mit dem [Posten auf Mastodon](https://docs.joinmastodon.org/user/posting/) vertraut ist, wird feststellen, dass Beiträge auf BookWyrm analoge Einstellungen zur Sichtbarkeit, Inhaltswarnungen und Erwähnungen enthält. Umfragen, benutzerdefinierte Emoji und Anhänge werden jedoch noch nicht unterstützt.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Typen von Status
 
