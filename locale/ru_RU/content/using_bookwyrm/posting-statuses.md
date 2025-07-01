@@ -4,7 +4,7 @@ Title: Posting Statuses Date: 2025-05-26 Order: 4
 
 Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-If you're familiar with [posting on Mastodon](https://docs.joinmastodon.org/user/posting/), you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Типы статусов
 
