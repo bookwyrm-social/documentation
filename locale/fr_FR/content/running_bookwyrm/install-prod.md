@@ -1,5 +1,5 @@
 - - -
-Title: Installation en Production Date: 2021-05-18 Order: 1
+Title: Installing in Production Date: 2025-04-01 Order: 1
 - - -
 
 Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites preuve de prudence lors de son utilisation en production.
@@ -12,6 +12,8 @@ Ce projet est encore jeune et n'est pas, pour le moment, très stable, faites pr
 
 ## Installation et configuration de BookWyrm
 
+There are several repos in the BookWyrm org, including documentation, a static landing page, and the actual Bookwyrm code. To run BookWyrm, you want the actual app code which is in [bookwyrm-social/bookwyrm](https://github.com/bookwyrm-social/bookwyrm).
+
 La branche `production` de BookWyrm contient nombre d'outils qui ne sont pas sur la branche `main` prévus pour fonctionner en production. Par exemple des changements dans `docker-compose` pour mettre à jour les commandes par défaut ou la configuration des conteneurs et des changements individuels à la configuration des conteneurs pour activer des choses comme SSL ou les sauvegardes régulières.
 
 Instructions pour lancer BookWyrm en production :
@@ -19,32 +21,23 @@ Instructions pour lancer BookWyrm en production :
 - Récupérez le code de l'application : `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Basculez sur la branche `production` : `git checkout production`
 - Créez votre fichier de variables d'environnement, `cp .env.example .env`, et mettez à jour les valeurs suivantes :
-    - `SECRET_KEY` | Une chaîne de caractères, difficile à deviner
     - `DOMAIN` | Votre nom domaine
     - `EMAIL` | L'adresse mail qui sera utilisée pour la vérification certbot
+    - `FLOWER_USER` | Votre propre nom d'utilisateur·ice pour accéder à la surveillance des files d'attente Flower
+    - `EMAIL_HOST_USER` | L'adresse "From" que l'application utilisera pour l'envoi de mail
+    - `EMAIL_HOST_PASSWORD` | Le mot de passe fourni par votre service mail
+- Initialize secrets by running `bw-dev create_secrets` or manually update following in `.env`:
+    - `SECRET_KEY` | Une chaîne de caractères, difficile à deviner
     - `POSTGRES_PASSWORD` | Un mot de passe sécurisé pour la base de données
     - `REDIS_ACTIVITY_PASSWORD` | Un mot de passe sécurisé pour le Redis d'activités
     - `REDIS_BROKER_PASSWORD` | Un mot de passe sécurisé pour le Redis de files d'attente
-    - `FLOWER_USER` | Votre propre nom d'utilisateur·ice pour accéder à la surveillance des files d'attente Flower
     - `FLOWER_PASSWORD` | Votre propre mot de passe sécurisé pour accéder à la surveillance des files d'attente Flower
-    - `EMAIL_HOST_USER` | L'adresse "From" que l'application utilisera pour l'envoi de mail
-    - `EMAIL_HOST_PASSWORD` | Le mot de passe fourni par votre service mail
-- Configuration de Nginx
-    - Faites une copie du modèle de configuration de production pour nginx `cp nginx/production nginx/default.conf`
-    - Mettez à jour `nginx/default.conf` :
-        - Remplacez `your-domain.com` par votre nom de domaine partout dans le fichier (y compris dans les lignes qui sont commentées)
-        - Si vous n'utilisez pas le sous-domaine `www`, retirez le domaine www.your-domain.com de la partie `server_name` dans le premier bloc server de `nginx/default.conf` et retirez l'argument `-d www.${DOMAIN}` à la fin de la commande `certbot` dans `docker-compose.yml`.
-        - Si vous faites fonctionner un autre serveur web sur votre machine, vous devez suivre les [instructions de proxy inverse](/reverse-proxy.html)
+    - Si vous faites fonctionner un autre serveur web sur votre machine, vous devez suivre les [instructions de proxy inverse](/reverse-proxy.html)
+- Setup ssl certificate via letsencrypt by running `./bw-dev init_ssl`
 - Initialisez la base de données avec `./bw-dev migrate`
-- Lancez l'application (cela devrait aussi créer un certificat SSL avec Certbot pour votre nom de domaine) avec `docker-compose up --build`, et assurez-vous que toutes les images sont bien construites
+- Run the application with `docker-compose up --build`, and make sure all the images build successfully
     - Si vous faites fonctionner d'autres services sur votre machine, vous pourriez rencontrer des erreurs avec certains services tentant de s'attribuer un port. Consultez le [guide de dépannage](#port_conflicts) pour avoir des conseils de résolution à ce sujet.
 - Une fois que les images docker sont construites avec succès, arrêtez le processus avec `CTRL-C`
-- Configurez la redirection HTTPS
-    - Dans `docker-compose.yml`, commentez la commande certbot active, qui installe le certificat, et décommentez la ligne suivante, qui configure le renouvellement automatique.
-    - Dans `nginx/default.conf`, décommentez les lignes 18 à 50 pour activer la redirection vers HTTPS. Vous devriez avoir deux blocs `server` activés
-- Configurez une tâche `cron` pour garder le certificat à jour (les certificats Lets Encrypt expire après 90 jours)
-    - Tapez `crontab -e` pour éditer le fichier cron de votre machine
-    - ajoutez une ligne pour tenter un renouvellement une fois par jour : `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - Si vous souhaitez utiliser un stockage externe pour les fichiers statiques et médias (comme un service compatible S3), [suivez les instructions](/external-storage.html) jusqu'à ce que celles-ci indiquent de revenir ici
 - Initialisez l'application avec `./bw-dev setup` et copiez le code admin afin de l'utiliser pour créer votre compte admin.
     - La sortie de `./bw-dev setup` devrait se terminer par votre code admin. Vous pouvez récupérer votre code à tout moment en lançant `./bw-dev admin_code` depuis la ligne de commande. Voici un exemple du résultat :
@@ -83,7 +76,7 @@ BookWyrm a plusieurs services fonctionnant sur leurs ports par défaut. Cela veu
 Si cela arrive, vous devrez changer votre configuration pour lancer ces services sur des ports différents. Cela peut demander des modifications dans les fichiers suivants :
 
 - `docker-compose.yml`
-- `nginx/default.conf`
+- `nginx/production.conf` or `nginx/reverse_proxy.conf` depending on NGINX_SETUP in .env-file
 - `.env` (Vous créer ce fichier vous-même durant la configuration)
 
 Si vous avez déjà un serveur web sur cette machine, vous devrez configurer un proxy inverse.
@@ -92,6 +85,6 @@ Si vous avez déjà un serveur web sur cette machine, vous devrez configurer un 
 
 BookWyrm étant un projet jeune, nous travaillons toujours pour planifier une version stable et il y a beaucoup de bogues et de changements cassants. Il y a une équipe GitHub qui peut être mentionnée quand quelque chose d'important à propos d'une mise à jour se passe et que vous pouvez rejoindre en partageant votre nom d'utilisateur·ice GitHub. Il y a plusieurs manières d'entrer en contact :
 
- - Ouvrir une issue ou une pull request pour ajouter votre propre instance à la [liste officielle](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
+ - Open an issue or pull request to add your instance to the [official list](https://joinbookwyrm.com/instances/)
  - Contacter le projet sur [Mastodon](https://tech.lgbt/@bookwyrm) ou [envoyer un mail au mainteneur·ice](mailto:mousereeve@riseup.net) directement avec votre nom d'utilisateur·ice GitHub
  - Rejoindre le salon de discussion [Matrix](https://matrix.to/#/#bookwyrm:matrix.org)
