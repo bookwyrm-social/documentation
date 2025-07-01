@@ -4,7 +4,7 @@ Title: Posting Statuses Date: 2025-05-26 Order: 4
 
 BookWyrm-en bidalketak liburu batekin hasten dira. Erabiltzaileek irakurtzen ari diren edo irakurri berri dituzten liburuen gainean iruzkinak egin ditzakete "Zure liburuak" atalean edo liburu baten hasiera orrian. Bertan, erabiltzaileek elkarrizketa bat hasi eta mezuei erantzun ahalko diete. BookWyrm-eko bidalketek formatoa izan dezakete, hala nola letra lodia, etzana eta hiperestekak. Horretarako [Markdown](https://www.markdownguide.org/cheat-sheet/) erabili behar da.
 
-[Mastodonen argitaratzea](https://docs.joinmastodon.org/user/posting/) ezaguna baduzu, konturatuko zara BookWyrm-en bidalketek antzekotasunak dituztela ikusgarritasun ezarpenei, eduki oharrei eta aipuei dagokienez. Hala ere, gaur-gaurkoz, ezin dira inkestak edo eranskinak egin, ezta pertsonalizatutako emojiak erabili.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Bidalketa motak
 
