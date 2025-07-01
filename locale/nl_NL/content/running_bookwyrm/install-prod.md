@@ -1,5 +1,5 @@
 - - -
-Title: Installing in Production Date: 2025-04-01 Order: 1
+Titel: Installeren in Productie Datum: 2025-04-01 Bestelling: 1
 - - -
 
 This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
