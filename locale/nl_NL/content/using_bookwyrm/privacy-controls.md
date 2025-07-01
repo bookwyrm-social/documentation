@@ -89,7 +89,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 ### Public
 
-- Anyone can see your [List](/lists.html) without logging in.
+- Iedereen kan jouw [List](/lists.html) zien zonder in te loggen.
 - Your List will appear on:
     - the Lists discovery page (Lists tab).
     - the pages of books that are in it, displayed on the side of the screen.
