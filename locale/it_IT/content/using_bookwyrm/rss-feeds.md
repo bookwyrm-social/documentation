@@ -1,43 +1,43 @@
 ---
-Title: RSS Feeds
-Date: 2023-09-29
+Title: Feed RSS
+Date: 29-09-2023
 Order: 20
 ---
 
-BookWyrm is an _open_ platform and generally it's ok to integrate your books and bookshelves in BookWyrm with other things. We provide some [RSS feeds](https://cyber.harvard.edu/rss/rss.html) to help you do that.
+BookWyrm è una piattaforma aperta, il che significa che puoi collegare i tuoi libri e scaffali ad altri strumenti legati alla lettura. Ti offriamo alcuni feed RSS per aiutarti a farlo, così puoi ricevere aggiornamenti automatici su libri e scaffali.
 
-## RSS Locations
+## Punti di accesso ai feed RSS
 
-Currently, all RSS Feeds are relative to a someone's profile on their BookWyrm instance. So if your profile is at https://bookwyrm.social/user/mouse then all the rss feeds will be at a URL based on that.
+Al momento, tutti gli aggiornamenti RSS sono disponibili a partire dal profilo personale di ciascun utente nella propria istanza BookWyrm. Per esempio, se il tuo profilo è all’indirizzo https://bookwyrm.social/user/mouse, tutti i feed RSS saranno accessibili a partire da quell’URL.
 
-### All Activity
+### Tutte le Attività
 
-This is everything someone posts that's publicly visible.
+Questo include tutto ciò che una persona pubblica e che è visibile pubblicamente.
 
-You can see all the _public_ activity of a user at their profile url /rss. So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all activity at http://bookwyrm.social/user/mouse/rss
+Per vedere tutto ciò che un utente ha pubblicato in modo pubblico, ti basta visitare l’URL del suo profilo seguito da /rss. Ad esempio, se il profilo di un utente è http://bookwyrm.social/user/mouse, puoi seguire tutte le sue attività pubbliche tramite RSS all’indirizzo http://bookwyrm.social/user/mouse/rss
 
-BookWyrm is social - people quote books, chat with each other about books, etc. If you are looking for a more filtered view, the next locations might be useful.
+BookWyrm è una rete sociale dedicata ai libri: gli utenti possono citare libri, discutere tra loro e condividere le proprie letture. Se vuoi una vista più filtrata, i link qui sotto potrebbero fare al caso tuo.
 
-### Reviews
+### Recensioni
 
-To get an RSS feed of every Review someone posts, add `/rss-reviews` to the end of their profile url.
+Per ottenere un feed RSS di tutte le recensioni pubblicate da un utente, aggiungi /rss-reviews alla fine dell’URL del suo profilo.
 
-So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Reviews at http://bookwyrm.social/user/mouse/rss-reviews
+Ad esempio, se il profilo di un utente è http://bookwyrm.social/user/mouse, puoi seguire tutte le sue recensioni tramite RSS all’indirizzo http://bookwyrm.social/user/mouse/rss-reviews
 
-### Quotes
+### Citazioni
 
-To get a feed of every Quote someone posts, add `/rss-quotes` to the end of their profile url.
+Per ottenere un feed RSS di tutte le citazioni pubblicate da un utente, aggiungi /rss-quotes alla fine dell’URL del suo profilo.
 
-So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Quotes at http://bookwyrm.social/user/mouse/rss-quotes
+Ad esempio, se il profilo di un utente è http://bookwyrm.social/user/mouse, puoi seguire tutte le sue citazioni tramite RSS all’indirizzo http://bookwyrm.social/user/mouse/rss-quotes
 
-### Comments
+### Commenti
 
-To get a feed of every Comment someone posts, add `/rss-comments` to the end of their profile url.
+Per ottenere un feed RSS di tutti i commenti pubblicati da un utente, aggiungi /rss-comments alla fine dell’URL del suo profilo.
 
-So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Comments at http://bookwyrm.social/user/mouse/rss-comments
+Ad esempio, se il profilo di un utente è http://bookwyrm.social/user/mouse, puoi seguire tutti i suoi commenti tramite RSS all’indirizzo http://bookwyrm.social/user/mouse/rss-comments
 
-### Shelves
+### Raccolte
 
-You might also want to get a feed of books being added to someone's bookshelves. You'll add `/rss` to the end of that bookshelf's url.
+Potresti anche ottenere un feed dei libri che vengono aggiunti alla libreria di un account. Per ottenere il feed, aggiungi /rss alla fine dell’URL dello scaffale.
 
-So for bookshelf https://bookwyrm.social/user/mouse/books/read you can get an RSS feed of all books added at https://bookwyrm.social/user/mouse/books/read/rss
+Ad esempio, se lo scaffale è https://bookwyrm.social/user/mouse/books/read, puoi seguire tutti i libri aggiunti tramite RSS all’indirizzo https://bookwyrm.social/user/mouse/books/read/rss
