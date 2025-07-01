@@ -4,7 +4,7 @@ Title: Posting Statuses Date: 2025-05-26 Order: 4
 
 Afiŝado ĉe BookWyrm komenciĝas per libro. Uzantoj povas komenti pri legataj aŭ legitaj libroj en la sekcio «viaj libroj», aŭ ĉe la paĝo de la libro. De tie, uzantoj povas respondi kaj komenci konversacion. Afiŝoj ĉe BookWyrm povas inkluzivi formatadon kiel grasajn kaj kursivajn literojn, kaj ligilojn, per uzo de [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-Se vi jam spertis [afiŝadon ĉe Mastodon](https://docs.joinmastodon.org/user/posting/), vi trovos ke afiŝoj ĉe BookWyrm havas analogajn agordojn de videbleco, enhavavertojn kaj menciojn. Tamen, enketoj, personigitajn emoĝiojn kaj kunsendaĵoj ne estas subtenataj.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Tipoj de afiŝoj
 
