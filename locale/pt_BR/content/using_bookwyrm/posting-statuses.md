@@ -4,7 +4,7 @@ Title: Posting Statuses Date: 2025-05-26 Order: 4
 
 Postar em BookWyrm começa com um livro. Os usuários podem comentar em livros "em processo" ou "lidos recentemente" na seção de "Seus livros", ou na página de destino de um livro. A partir daí, os usuários podem responder e iniciar uma conversa. As postagens em BookWyrm podem incluir formatos como "negrita", "itálico" e links usando [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-Se você tem intimidade com as [postagens em Mastodon](https://docs.joinmastodon.org/user/posting/), você verá que os status em BookWyrm têm configurações de visibilidade, avisos de conteúdo e menções análogas. No entanto, enquetes, emojis personalizados e anexos não são suportados ainda.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Tipos de status
 
