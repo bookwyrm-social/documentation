@@ -36,7 +36,7 @@ L'opzione predefinita.
     - pagine di scoperta.
     - its related book's page.
     - la timeline principale delle persone che ti seguono
-- Your status can be **boosted** into other people's home timelines.
+- Il tuo stato può essere condiviso (boostato) nelle timeline principali di altre persone.
 
 ### Non in elenco
 
@@ -85,13 +85,13 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 - If you read a book, want to track it on Bookwyrm, but don't want anyone to know that you did, you'll need to put it on a new Private shelf, not a Public shelf.
 
-## Lists
+## Liste
 
-### Public
+### Pubblico
 
-- Anyone can see your [List](/lists.html) without logging in.
-- Your List will appear on:
-    - the Lists discovery page (Lists tab).
+- Chiunque può vedere la tua [Lista](/lists.html) senza effettuare l’accesso.
+- La tua lista apparirà su:
+    - la pagina Liste di scoperta (scheda Elenchi).
     - the pages of books that are in it, displayed on the side of the screen.
     - your profile.
 - Anyone can 'save' (bookmark) your List.
@@ -120,7 +120,7 @@ Note that currently, the Groups tab on a profile is only shown if the user viewi
 
 - Anyone can view the Group page, members and its Lists (except for private Lists)
 
-- In the future it will be displayed on a Groups discovery page.
+- In futuro verrà mostrata in una pagina di scoperta dedicata ai Gruppi.
 
 ### Unlisted
 
