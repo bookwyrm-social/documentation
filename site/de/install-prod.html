@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Installation in Produktion
+Installing in Production
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@ Installation in Produktion
 
     <header class="content block column is-offset-one-quarter pl-2">
         
-<h1 class="title is-1">Installation in Produktion</h1>
+<h1 class="title is-1">Installing in Production</h1>
 
     </header>
     <div class="columns">
@@ -133,7 +133,7 @@ Installation in Produktion
             <ul class="menu-list">
                 
                 <li>
-                    <a href="/v0.7.5/de/install-prod.html" class="is-active">Installation in Produktion</a>
+                    <a href="/v0.7.5/de/install-prod.html" class="is-active">Installing in Production</a>
                 </li>
                 
                 <li>
@@ -222,50 +222,36 @@ Installation in Produktion
 <li><a href="https://docs.docker.com/compose/install/">Docker und docker-compose installieren</a></li>
 </ul>
 <h2 id="bookwyrm-installieren-und-konfigurieren"><a class="headerlink" href="#bookwyrm-installieren-und-konfigurieren">BookWyrm installieren und konfigurieren</a></h2>
+<p>There are several repos in the BookWyrm org, including documentation, a static landing page, and the actual Bookwyrm code. To run BookWyrm, you want the actual app code which is in <a href="https://github.com/bookwyrm-social/bookwyrm">bookwyrm-social/bookwyrm</a>.</p>
 <p>Der <code>-Produktionszweig</code> von BookWyrm enthält eine Reihe von Werkzeugen die nicht auf dem <code>main</code>-Zweig sind, die für den Betrieb in der Produktion geeignet sind zum Beispiel <code>docker-compose</code>-Änderungen, um die Standardbefehle oder die Konfiguration von Containern zu aktualisieren und individuelle Änderungen an der Container-Konfiguration, um Dinge wie SSL oder regelmäßige Sicherungen zu aktivieren.</p>
 <p>Anleitung für das Ausführen von BookWyrm in der Produktion:</p>
 <ul>
 <li>Hole den Code: <code>git clone git@github.com:bookwyrm-social/bookwyrm.git</code></li>
 <li>Wechsel zum <code>Produktionszweig</code>: <code>git checkout production</code></li>
 <li>Erstelle deine Umgebungsvariablendatei <code>cp .env.example .env</code> und aktualisiere Folgendes:<ul>
-<li><code>SECRET_KEY</code> | Eine schwer zu erratende geheime Zeichenfolge</li>
 <li><code>DOMAIN</code> | Deine Webdomain</li>
 <li><code>EMAIL</code> | E-Mail-Adresse für die Verifizierung der certbot-Domain</li>
-<li><code>POSTGRES_PASSWORD</code> | Setze sicheres Passwort für die Datenbank</li>
-<li><code>REDIS_ACTIVITY_PASSWORD</code> | Setze ein sicheres Passwort für das Redis Activity Subsystem</li>
-<li><code>REDIS_BROKER_PASSWORD</code> | Setze ein sicheres Passwort für das Redis Queue Broker Subsystem</li>
 <li><code>FLOWER_USER</code> | Dein eigener Benutzername für den Zugriff auf den Flower Queue Monitor</li>
-<li><code>FLOWER_PASSWORD</code> | Dein eigenes sicheres Passwort für den Zugriff auf Flower Queue Monitor</li>
 <li><code>EMAIL_HOST_USER</code> | Die "von"-Adresse, die die App beim Senden von E-Mails verwendet</li>
 <li><code>EMAIL_HOST_PASSWORD</code> | Das von deinem E-Mail-Dienst bereitgestellte Passwort</li>
 </ul>
 </li>
-<li>Nginx konfigurieren<ul>
-<li>Erstelle eine Kopie der Konfiguration der Produktionsvorlage und setze sie für die Verwendung in nginx <code>cp nginx/production nginx/default.conf</code></li>
-<li>Aktualisiere <code>nginx/default.conf</code>:<ul>
-<li>Ersetze <code>your-domain.com</code> mit deinem Domain-Namen überall in der Datei (einschließlich der Zeilen, die derzeit auskommentiert sind)</li>
-<li>Wenn du die <code>www</code>-Subdomain nicht verwendest, entferne die www.your-domain.com-Version der Domain aus dem <code>server_name</code> im ersten Serverblock in <code>nginx/default.conf</code> und entferne das <code>-d www.${DOMAIN}</code>-Flag am Ende des Befehls <code>certbot</code> in <code>docker-compose.yml</code>.</li>
+<li>Initialize secrets by running <code>bw-dev create_secrets</code> or manually update following in <code>.env</code>:<ul>
+<li><code>SECRET_KEY</code> | Eine schwer zu erratende geheime Zeichenfolge</li>
+<li><code>POSTGRES_PASSWORD</code> | Setze sicheres Passwort für die Datenbank</li>
+<li><code>REDIS_ACTIVITY_PASSWORD</code> | Setze ein sicheres Passwort für das Redis Activity Subsystem</li>
+<li><code>REDIS_BROKER_PASSWORD</code> | Setze ein sicheres Passwort für das Redis Queue Broker Subsystem</li>
+<li><code>FLOWER_PASSWORD</code> | Dein eigenes sicheres Passwort für den Zugriff auf Flower Queue Monitor</li>
 <li>Wenn du einen anderen Webserver auf deinem Host-Rechner betreibst, musst du den <a href="/reverse-proxy.html">Reverse-Proxy-Anweisungen</a> folgen</li>
 </ul>
 </li>
-</ul>
-</li>
+<li>Setup ssl certificate via letsencrypt by running <code>./bw-dev init_ssl</code></li>
 <li>Initialisiere die Datenbank durch Ausführen von <code>./bw-dev migrate</code></li>
-<li>Führe die Anwendung aus (dies sollte auch ein Certbot-Ssl-Zertifikat für deine Domain einrichten) mit <code>docker-compose up --build</code> und stelle sicher, dass alle Images erfolgreich erstellt werden<ul>
+<li>Run the application with <code>docker-compose up --build</code>, and make sure all the images build successfully<ul>
 <li>Wenn du andere Dienste auf deinem Host-Rechner betreibst, kannst du auf Fehler stoßen, dass Dienste fehlschlagen, wenn du versuchst, sich an einen Port zu binden. Siehe die <a href="#port_conflicts">Fehlerbehebungsanleitung</a> für Hinweise dies zu beheben.</li>
 </ul>
 </li>
 <li>Wenn Docker erfolgreich gebaut wurde, stoppe den Prozess mit <code>STRG-C</code></li>
-<li>HTTPS-Weiterleitung einrichten<ul>
-<li>In <code>docker-compose.yml</code> kommentiere den aktiven certbot-Befehl, der das Zertifikat installiert und entfernen die Kommentarzeile unten, die automatische Erneuerungen einstellt.</li>
-<li>In <code>nginx/default.conf</code>entferne die Kommentarzeilen 18 bis 50, um die Weiterleitung zu HTTPS zu aktivieren. Du solltest zwei <code>Server</code>-Blöcke aktiviert haben</li>
-</ul>
-</li>
-<li>Richte einen <code>cron</code>-Job ein, um deine Zertifikate aktuell zu halten (Lets Encrypt-Zertifikate laufen nach 90 Tagen ab)<ul>
-<li>Gebe <code>crontab -e</code> ein, um die cron-Datei im Host zu bearbeiten</li>
-<li>fügen eine Zeile zum Erneuern einmal am Tag hinzu: <code>5 0 * * * cd /path/to/your/bookwyrm &amp;&amp; docker-compose run --rm certbot</code></li>
-</ul>
-</li>
 <li>Wenn du einen externen Speicher für statische Assets und Mediendateien verwenden möchtest (z. B. einen S3-kompatiblen Dienst), <a href="/external-storage.html">befolge die Anweisungen</a> bis es dir mitteilt, wieder hierherzukommen</li>
 <li>Initialisieren die Anwendung mit <code>./bw-dev setup</code> und kopiere den Admin-Code, der beim Erstellen deines Admin-Kontos verwendet werden soll.<ul>
 <li>Die Ausgabe von <code>./bw-dev setup</code> sollte mit deinem Admin-Code abgeschlossen werden. Du kannst den Code jederzeit erhalten, indem du <code>./bw-dev admin_code</code> auf der Befehlszeile ausführst. Hier ist eine Beispielausgabe:</li>
@@ -300,14 +286,14 @@ c6c35779-af3a-4091-b330-c026610920d6
 <p>Wenn dies geschieht, musst du deine Konfiguration ändern, um Dienste auf verschiedenen Ports auszuführen. Dies kann eine oder mehrere Änderungen der folgenden Dateien erfordern:</p>
 <ul>
 <li><code>docker-compose.yml</code></li>
-<li><code>nginx/default.conf</code></li>
+<li><code>nginx/production.conf</code> or <code>nginx/reverse_proxy.conf</code> depending on NGINX_SETUP in .env-file</li>
 <li><code>.env</code> (Sie erstellen diese Datei selbst während des Setups)</li>
 </ul>
 <p>Wenn du bereits einen Webserver auf deinem Rechner betreibst, musst du einen Reverse-Proxy einrichten.</p>
 <h2 id="verbinde-dich"><a class="headerlink" href="#verbinde-dich">Verbinde dich</a></h2>
 <p>Da BookWyrm ein junges Projekt ist, arbeiten wir noch immer an einem stabilen Veröffentlichungsplan und es gibt viele Fehler und große Änderungen. Es gibt ein GitHub Team, das markiert werden kann, wenn es etwas Wichtiges über ein Update gibt und dem du beitreten kannst, indem du deinen GitHub-Namen teilst. Es gibt einige Möglichkeiten, sich mit uns in Kontakt zu setzen:</p>
 <ul>
-<li>Öffne ein Issue oder einen Pull Request, um deine Instanz zur <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md">offiziellen Liste</a> hinzuzufügen</li>
+<li>Open an issue or pull request to add your instance to the <a href="https://joinbookwyrm.com/instances/">official list</a></li>
 <li>Erreiche das Projekt auf <a href="https://tech.lgbt/@bookwyrm">Mastodon</a> oder <a href="mailto:mousereeve@riseup.net">maile den Betreuern</a> direkt deinen GitHub-Benutzernamen</li>
 <li>Trete dem <a href="https://matrix.to/#/#bookwyrm:matrix.org">Matrix</a> Chatraum bei</li>
 </ul>

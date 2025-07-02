@@ -1,5 +1,5 @@
 - - -
-Title: Installing in Production Date: 2021-05-18 Order: 1
+Title: Installing in Production Date: 2025-04-01 Order: 1
 - - -
 
 Acest proiect este încă tânăr și nu foarte stabil în acest moment, așa că vă rugăm să continuați cu precauție atunci când rulați în producție.
@@ -12,6 +12,8 @@ Acest proiect este încă tânăr și nu foarte stabil în acest moment, așa c�
 
 ## Instalați și configurați BookWyrm
 
+There are several repos in the BookWyrm org, including documentation, a static landing page, and the actual Bookwyrm code. To run BookWyrm, you want the actual app code which is in [bookwyrm-social/bookwyrm](https://github.com/bookwyrm-social/bookwyrm).
+
 Ramura de `producție` BookWyrm conține un număr de unelte care nu sunt prezente pe ramura `main` și care sunt potrivite pentru rularea în producție, precum `docker-compose` care schimbă comenzile de bază sau configurarea containerelor și schimbări individuale pentru a activa lucruri precum SSL sau copii de rezervă regulate (regular backups).
 
 Instrucțiuni pentru rularea BookWyrm în producție:
@@ -19,32 +21,23 @@ Instrucțiuni pentru rularea BookWyrm în producție:
 - Obțineți codul aplicației: `git clone git@github.com:bookwyrm-social/bookwyrm.git`
 - Comutați la ramura de `production`: `git checkout production`
 - Creați un fișier cu variabilele de mediu, `cp .env.example .env` și actualizați următoarele:
-    - `SECRET_KEY` | Un șir de caractere secret, greu de ghicit
     - `DOMAIN` | Domeniul dvs. web
     - `EMAIL` | Adresa de email utilizată pentru verificarea de domeniu certbot
+    - `FLOWER_USER` | Setați propriul nume de utilizator pentru accesarea „Flower queue monitor”
+    - `EMAIL_HOST_USER` | Adresa „de la” pe care aplicația dvs. o va folosi pentru trimiterea email-urilor
+    - `EMAIL_HOST_PASSWORD` | Parola furnizată de serviciul dvs. email
+- Initialize secrets by running `bw-dev create_secrets` or manually update following in `.env`:
+    - `SECRET_KEY` | Un șir de caractere secret, greu de ghicit
     - `POSTGRES_PASSWORD` | Setați o parolă sigură pentru baza de date
     - `REDIS_ACTIVITY_PASSWORD` | Setați o parolă sigură pentru subsistemul Redis Activity
     - `REDIS_BROKER_PASSWORD` | Setați o parolă sigură pentru „Redis queue broker subsystem”
-    - `FLOWER_USER` | Setați propriul nume de utilizator pentru accesarea „Flower queue monitor”
     - `FLOWER_PASSWORD` | Setați propria parolă sigură pentru accesul la „Flower queue monitor”
-    - `EMAIL_HOST_USER` | Adresa „de la” pe care aplicația dvs. o va folosi pentru trimiterea email-urilor
-    - `EMAIL_HOST_PASSWORD` | Parola furnizată de serviciul dvs. email
-- Configurare nginx
-    - Faceți o copie a șablonului de configurare de producție și setați-l pentru a fi utilizat de nginx `cp nginx/production nginx/default.conf`
-    - Actualizați `nginx/default.conf`:
-        - Înlocuiți `your-domain.com` cu numele domeniului dvs. peste tot în fișier (inclusiv liniile care sunt momentan comentate)
-        - Dacă nu folosiți subdomeniul `www`, înlăturați versiunea www.your-domain.com a domeniului din `server_name` în primul bloc al server-ului în `nginx/default.conf` și înlăturați opțiunea `-d www.${DOMAIN}` de la finalul comenzii `certbot` din `docker-compose.yml`.
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+    - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+- Setup ssl certificate via letsencrypt by running `./bw-dev init_ssl`
 - Inițializați baza de date rulând `./bw-dev migrate`
-- Rulați aplicația cu `docker-compose up --build` (acest lucru ar trebui să configureze de asemenea un Certbot ssl cert pentru domeniul dvs.) și asigurați-vă că toate imaginile au fost compilate cu succes
+- Run the application with `docker-compose up --build`, and make sure all the images build successfully
     - Dacă rulați alte servicii pe calculatorul gazdă al dvs., s-ar putea să vă confruntați cu erori când serviciile eșuează încercând să se lege la un port. Vedeți [ghidul de depanare](#port_conflicts) pentru sfaturi despre rezolvarea acestor probleme.
 - Când Docker s-a compilat cu succes, opriți procesul cu `CTRL-C`
-- Configurați redirecționarea HTTPS
-    - În `docker-compose.yml`, comentați comanda certbot activă, care instalează certificatul, și decomentați linia de mai jos, care configurează automat reînnoirea.
-    - În `nginx/default.conf`, decomentați de la linia 18 până la 50 pentru a activa redirecționarea HTTPS. Ar trebui să aveți două blocuri `server` activate
-- Configurați o sarcină (job) `cron` pentru a păstra certificatele dvs. actualizate (certificatele Lets Encrypt expiră după 90 de zile)
-    - Tastați `crontab -e ` pentru a edita fișierul dvs. cron pe mașina gazdă
-    - adăugați o linie pentru a încerca reînnoirea o dată pe zi: `5 0 * * * cd /path/to/your/bookwyrm && docker-compose run --rm certbot`
 - Dacă doriți să folosiți un mediu de stocare externă pentru modelele statice și fișierele media (precum un serviciu S3 compatibil), [urmați instrucțiunile](/external-storage.html) până când vă spune să reveniți aici
 - Inițializați aplicația cu `./bw-dev setup` și copiați codul adminului pentru a îl folosi când vă creați contul dvs. de admin.
     - Afișajul `./bw-dev setup` ar trebui să se termine cu codul dvs. de admin. Puteți obține codul dvs. oricând rulând `./bw-dev admin_code` din linia de comandă. Iată un exemplu de afișaj:
@@ -83,7 +76,7 @@ BookWyrm are multiple servicii care rulează pe porturile lor implicite. Asta î
 Dacă se întâmplă acest lucru, veți avea nevoie să schimbați fișierul dvs. de configurare pentru a rula serviciile pe porturi diferite. Acest lucru poate necesita una sau multe schimbări ale următoarelor fișiere:
 
 - `docker-compose.yml`
-- `nginx/default.conf`
+- `nginx/production.conf` or `nginx/reverse_proxy.conf` depending on NGINX_SETUP in .env-file
 - `.env` (Dvs. creați acest fișier în timpul configurării)
 
 Dacă rulați deja un server web pe mașina dvs., veți avea nevoie să configurați un reverse-proxy.
@@ -92,6 +85,6 @@ Dacă rulați deja un server web pe mașina dvs., veți avea nevoie să configur
 
 Deoarece BookWyrm este un proiect tânăr, încă lucrăm la un program de lansare stabil, existând o mulțime de buguri și schimbări care strică totul. Avem o echipă GitHub care poate fi notificată când este ceva important de știut despre o actualizare, echipă căreia vă puteți alătura partajând numele dvs. GitHub. Există câteva moduri de a lua legătura:
 
- - Deschideți un tichet sau o cerere de extragere pentru a adăuga instanța dvs. la [lista oficială](https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/instances.md)
+ - Open an issue or pull request to add your instance to the [official list](https://joinbookwyrm.com/instances/)
  - Contactați proiectul pe [Mastodon](https://tech.lgbt/@bookwyrm) sau prin [email-ul maintainer-ului](mailto:mousereeve@riseup.net) direct cu numele dvs. GitHub
  - Alăturați-vă salonului de discuție (chat room) [Matrix](https://matrix.to/#/#bookwyrm:matrix.org)

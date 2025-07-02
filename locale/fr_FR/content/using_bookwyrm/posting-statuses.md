@@ -4,7 +4,7 @@ Title: Posting Statuses Date: 2025-05-26 Order: 4
 
 La publication sur BookWyrm commence par un livre. Les utilisateurs peuvent commenter les livres en cours ou récemment lus depuis la section « Vos livres » ou depuis la page d'un livre. De là, les utilisateurs peuvent répondre et démarrer une conversation. Les posts sur BookWyrm peuvent inclure un formatage basique avec du gras, de l'italique et des liens, en utilisant [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-Si vous avez de la familiarité avec [les posts sur Mastodon](https://docs.joinmastodon.org/user/posting/), vous trouverez que les statuts de BookWyrm ont des paramètres de visibilité similaires, des avertissements de contenu et des mentions. Cependant les sondages, les emoji personnalisés et les pièces jointes ne sont pas encore prises en charge.
+Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
 ## Types de statuts
 
