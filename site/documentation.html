@@ -273,6 +273,7 @@ Documentation
 </li>
 </ol>
 <h3 id="create-a-new-branch-and-make-your-edits"><a class="headerlink" href="#create-a-new-branch-and-make-your-edits">Create a new branch and make your edits</a></h3>
+<p>To make changes:</p>
 <ol>
 <li><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue">Create a new branch</a> in your fork</li>
 <li>Make your edits in the <code>content</code> directory and <strong>commit</strong> your changes:<ul>
@@ -282,7 +283,7 @@ Documentation
 </ul>
 </li>
 </ol>
-<p>At this point you might want to see what your changes will look like when published. See "Building docs locally" below for instruction on how to preview your changes.</p>
+<p>At this point you might want to see what your changes will look like when published. See <a href="#building-docs-locally">Building docs locally</a> below for instruction on how to preview your changes.</p>
 <h3 id="create-a-pull-request"><a class="headerlink" href="#create-a-pull-request">Create a pull request</a></h3>
 <p>Once you have completed your changes, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">make a pull request</a> to the docs repository.</p>
 <p>Your pull request will be reviewed and one of three things will happen:</p>
@@ -298,13 +299,17 @@ Documentation
 <p>When your pull request is merged, <a href="https://docs.joinbookwyrm.com/">the documentation</a> is automatically updated. You may need to refresh your browser or use "incognito mode" to see the changes in your browser.</p>
 <h2 id="new-pages"><a class="headerlink" href="#new-pages">New pages</a></h2>
 <p>If you are adding a new page, you will need to add some metadata and may need to adjust other pages.</p>
-<p>At the top of each markdown file is the "frontmatter" in <code>toml</code> format, with a <code>---</code> line above and below:</p>
+<p>At the top of each markdown file is the "frontmatter" in <code>toml</code> format:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="p">:</span><span class="w"> </span><span class="n">Documentation</span>
 <span class="n">Date</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
 <span class="n">Order</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 </code></pre></div>
 
 <p>This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, <code>Contributing</code>), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.</p>
+<p>This section is contained within a pair of triple dashes (<code>---</code>). In markdown, triple dashes can also be used to indicate a horizontal rule, however the BookWyrm docs parser can get confused by this. If you need a horizontal rule, enter it as HTML code directly with blank lines above and below:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+</code></pre></div>
+
 <h2 id="building-docs-locally"><a class="headerlink" href="#building-docs-locally">Building docs locally</a></h2>
 <p>You might want to see what your changes will look like before sending a pull request. The docs repository includes a development script like the main code repository, with the same name: <code>bw-dev</code>. You can use this to test what your changes will look like.</p>
 <p>Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you <a href="https://docs.python.org/3/library/venv.html">use a virtual environment</a>:</p>
