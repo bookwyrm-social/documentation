@@ -16,7 +16,7 @@ BookWyrm estas socia reto por spuri onian legadon, paroli pri libroj, verki rece
     - Vidu kunigaĵon de recenzoj de libro tra konektitaj instancoj de BookWyrm
     - Apartigi lokajn kaj fratarajn recenzojn kaj taksojn en via novaĵfluo de aktiveco
 - Spuru vian legan agadon
-    - Surbretigu librojn sur defaŭltajn «legotan», «legatan» kaj «legitan» bretojn
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Kreu proprajn bretojn
     - Registru datojn de komenco kaj fino de legado, kaj ankaŭ ĝisdatigojn de la progreso dum la legado
     - Ĝisdatigu sekvantojn pri lega aktiveco (kun nedevigaj, precizaj agordoj pri privateco)
