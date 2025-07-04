@@ -16,7 +16,7 @@ Da sich das Projekt noch in den Anfangsphasen befindet, wachsen die Funktionen j
     - Gesamte Rezensionen eines Buches über verbundene BookWyrm-Instanzen ansehen
     - Unterscheide lokale und föderierte Rezensionen und Bewertungen in deinem Aktivitätsfeed
 - Leseaktivität verfolgen
-    - Bücher in die Standardregale "Zu Lesen", "Aktuell Lesend" und "Gelesen" einsortieren
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Erstelle eigene Regale
     - Speichere Lesestart/Leseende Daten sowie Fortschrittsaktualisierungen während des Lesens
     - Aktualisiere Follower über Leseaktivitäten (optional mit granularen Privatsphäreeinstellungen)
