@@ -16,7 +16,7 @@ Aangezien het project zich nog in de beginfase bevindt, groeien de functies elke
     - Bekijk geaggregeerde recensies van een boek door verbonden BookWyrm instanties
     - Onderscheid lokale en globale recensies en beoordelingen in uw activiteiten-feed
 - Houd leesactiviteit bij
-    - Schuif boeken op standaard "te lezen", "momenteel aan het lezen," en "gelezen" planken
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Maak aangepaste planken aan
     - Sla onderweg lezen-/afrondingsdatums en voortgangsupdates op
     - Informeer volgers over je lees activiteit (en optioneel, met fijnmazige privacy-controles)
