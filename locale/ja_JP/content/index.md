@@ -16,7 +16,7 @@ Since the project is still in its early stages, the features are growing every d
     - View aggregate reviews of a book across connected BookWyrm instances
     - Differentiate local and federated reviews and rating in your activity feed
 - 読書アクティビティを追跡
-    - Shelve books on default "to-read," "currently reading," and "read" shelves
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Create custom shelves
     - Store started reading/finished reading dates, as well as progress updates along the way
     - Update followers about reading activity (optionally, and with granular privacy controls)
