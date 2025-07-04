@@ -16,7 +16,7 @@ Proiektua oraindik hasierako fasean dagoenez, eginbideak egunero hazten doaz, et
     - Ikusi liburu bati gehitutako iritziak konektatutako BookWyrm instantzietan zehar
     - Ezberdindu iritzi lokalak edo federatuak eta jardueren jarioko balorazioa
 - Jarraitu irakurketaren jarduerak
-    - Artxibatu liburuak lehenetsitako "irakurtzekoak", "orain irakurtzen" eta "irakurritakoak" apaletan
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Sortu apal pertsonalizatuak
     - Gorde irakurtzen hasitako edo irakurtzen amaitutako datak, baita aurrerapen-eguneratzeak ere
     - Eguneratu irakurketa-jardueraren jarraitzaileak (aukeran, eta pribatutasun-kontrol granularrarekin)
