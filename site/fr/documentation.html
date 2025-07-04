@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>
+        
+Documentation
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentation
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/fr/instances" class="navbar-item">
+                Rejoindre
+            </a>
+            <a href="https://joinbookwyrm.com/fr/get-involved" class="navbar-item">
+                S'impliquer dans le projet
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Soutenir
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Code
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" selected>Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="latest" >latest</option>
+                
+                <option value="v0.7.5" >v0.7.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/fr/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+            </li>
+            
+            <li>
+                <a href="/fr/adding-books.html" class="has-background-inherit" >Ajout de livres</a>
+            </li>
+            
+            <li>
+                <a href="/fr/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/fr/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/fr/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/fr/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/fr/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/fr/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/fr/reverse-proxy.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/fr/moderation.html" class="has-background-inherit" >Modération</a>
+            </li>
+            
+            <li>
+                <a href="/fr/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/fr/install-prod-dockerless.html" class="has-background-inherit" >Installation sans Docker</a>
+            </li>
+            
+            <li>
+                <a href="/fr/updating.html" class="has-background-inherit" >Mise à jour de votre instance</a>
+            </li>
+            
+            <li>
+                <a href="/fr/monitoring-queue.html" class="has-background-inherit" >Suivi de la file d'attente</a>
+            </li>
+            
+            <li>
+                <a href="/fr/external-storage.html" class="has-background-inherit" >Stockage Externe</a>
+            </li>
+            
+            <li>
+                <a href="/fr/optional_features.html" class="has-background-inherit" >Fonctionnalités optionnelles</a>
+            </li>
+            
+            <li>
+                <a href="/fr/cli.html" class="has-background-inherit" >Outils en ligne de commande</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/fr/contributing.html" class="has-background-inherit" >Comment contribuer</a>
+            </li>
+            
+            <li>
+                <a href="/fr/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/fr/documentation.html" class="has-background-inherit" class="is-active">Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/fr/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/fr/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/fr/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/fr/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/fr/permissions.html" class="has-background-inherit" >Permissions</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Reference Guides</h2>
+        <ul class="menu-list has-background-inherit">
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">Documentation</h1>
+
+                </header>
+                
+<section class="block content">
+    <p>The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.</p>
+<h2 id="suggesting-an-improvement"><a class="headerlink" href="#suggesting-an-improvement">Suggesting an improvement</a></h2>
+<p>You can report an <strong>error</strong>, suggest an <strong>improvement</strong> or request an <strong>addition</strong> to the documentation by <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue">creating an issue</a> in <a href="https://github.com/bookwyrm-social/documentation">the documentation repository</a>.</p>
+<h2 id="how-the-docs-are-made"><a class="headerlink" href="#how-the-docs-are-made">How the docs are made</a></h2>
+<p>The Documentation <a href="https://github.com/bookwyrm-social/documentation">has its own GitHub repository</a>. Documentation is written in Markdown and we use <a href="https://jinja.palletsprojects.com/en/stable">Jinja</a> and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).</p>
+<p>All source files are saved in the <code>content</code> directory. Each section has a directory within that, with each page being represented by a single markdown file.</p>
+<h2 id="editing-or-creating-a-documentation-page"><a class="headerlink" href="#editing-or-creating-a-documentation-page">Editing or creating a documentation page</a></h2>
+<p>To edit or create a new page you will need to:</p>
+<ol>
+<li>clone <a href="https://github.com/bookwyrm-social/documentation">the GitHub repository</a></li>
+<li>work in the <code>content</code> directory to make your changes - either editing an existing markdown page or creating a new one</li>
+<li>create a new Pull Request</li>
+<li>respond to any reviews with further edits</li>
+<li>enjoy seeing your updates instantly published when your pull request is approved and merged</li>
+</ol>
+<p>If you have never used git or GitHub before, that may sound daunting, but let's break it down:</p>
+<h3 id="clone-the-repository"><a class="headerlink" href="#clone-the-repository">Clone the repository</a></h3>
+<ol>
+<li>Make sure you have <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">a GitHub account</a>.</li>
+<li>
+<p>Create a "clone" or "fork" of the Documentation repository:</p>
+<ul>
+<li>From the <strong>web interface</strong>, click "Fork" at the top of <a href="https://github.com/bookwyrm-social/documentation">this page</a></li>
+<li>If you are using <strong>GitHub Desktop</strong>, follow <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop">these instructions</a></li>
+<li>If you are using the command line, run:</li>
+</ul>
+<p><code>git clone https://github.com/bookwyrm-social/documentation.git</code></p>
+</li>
+</ol>
+<h3 id="create-a-new-branch-and-make-your-edits"><a class="headerlink" href="#create-a-new-branch-and-make-your-edits">Create a new branch and make your edits</a></h3>
+<p>To make changes:</p>
+<ol>
+<li><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue">Create a new branch</a> in your fork</li>
+<li>Make your edits in the <code>content</code> directory and <strong>commit</strong> your changes:<ul>
+<li><a href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">GitHub web interface</a></li>
+<li><a href="https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop">GitHub Desktop</a></li>
+<li>On the command line save your changes to the files and run <code>git commit</code></li>
+</ul>
+</li>
+</ol>
+<p>At this point you might want to see what your changes will look like when published. See <a href="#building-docs-locally">Building docs locally</a> below for instruction on how to preview your changes.</p>
+<h3 id="create-a-pull-request"><a class="headerlink" href="#create-a-pull-request">Create a pull request</a></h3>
+<p>Once you have completed your changes, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">make a pull request</a> to the docs repository.</p>
+<p>Your pull request will be reviewed and one of three things will happen:</p>
+<ol>
+<li>It will be <strong>merged</strong> with no changes</li>
+<li>You will be asked to make <strong>changes</strong></li>
+<li>It will be <strong>rejected</strong> and closed</li>
+</ol>
+<h3 id="respond-to-reviews"><a class="headerlink" href="#respond-to-reviews">Respond to reviews</a></h3>
+<p>If you are asked to make changes, you can make them locally and <code>push</code> your local changes to your fork/clone on GitHub. This will automatically flow through to your pull request. Let the reviewer know when you have completed your updates so they can do another review and hopefully "pull" your changes.</p>
+<p>We welcome all contributions. It would be unusual for a contribution to the docs to be rejected immediately. This would only happen if your pull request introduces information that is wrong or misleading with no chance of being improved, or if it has been declared out of scope.</p>
+<h3 id="your-changes-are-published"><a class="headerlink" href="#your-changes-are-published">Your changes are published</a></h3>
+<p>When your pull request is merged, <a href="https://docs.joinbookwyrm.com/">the documentation</a> is automatically updated. You may need to refresh your browser or use "incognito mode" to see the changes in your browser.</p>
+<h2 id="new-pages"><a class="headerlink" href="#new-pages">New pages</a></h2>
+<p>If you are adding a new page, you will need to add some metadata and may need to adjust other pages.</p>
+<p>At the top of each markdown file is the "frontmatter" in <code>toml</code> format:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="p">:</span><span class="w"> </span><span class="n">Documentation</span>
+<span class="n">Date</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
+<span class="n">Order</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+</code></pre></div>
+
+<p>This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, <code>Contributing</code>), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.</p>
+<p>This section is contained within a pair of triple dashes (<code>---</code>). In markdown, triple dashes can also be used to indicate a horizontal rule, however the BookWyrm docs parser can get confused by this. If you need a horizontal rule, enter it as HTML code directly with blank lines above and below:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+</code></pre></div>
+
+<h2 id="building-docs-locally"><a class="headerlink" href="#building-docs-locally">Building docs locally</a></h2>
+<p>You might want to see what your changes will look like before sending a pull request. The docs repository includes a development script like the main code repository, with the same name: <code>bw-dev</code>. You can use this to test what your changes will look like.</p>
+<p>Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you <a href="https://docs.python.org/3/library/venv.html">use a virtual environment</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
+<span class="n">source</span> <span class="o">&lt;</span><span class="n">venv</span><span class="o">&gt;/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</code></pre></div>
+
+<p>There are a number of commands available by running <code>./bw-dev &lt;command&gt;</code>. The ones you are likely to want to use are:</p>
+<h3 id="sitecompile"><a class="headerlink" href="#sitecompile">site:compile</a></h3>
+<p>This will compile markdown files into html files using the <code>generate.py</code> script.</p>
+<p>When you run <code>site:compile</code> it will generate a large number of files in the <code>site</code> directory. Do not check these in or include them in your pull request: they will be re-generated on the documentation server when your pull request is merged.</p>
+<h3 id="siteserve"><a class="headerlink" href="#siteserve">site:serve</a></h3>
+<p>This runs a local web server at <code>http://[::1]:8080/</code> so you can see what the docs will look like.</p>
+<h3 id="black"><a class="headerlink" href="#black">black</a></h3>
+<p>This will run <code>black</code> to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in <code>content</code>.</p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> est un logiciel collaboratif et anti-commercial maintenu par <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Soutenir BookWyrm sur <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Contribuer</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm sur GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/contributing/documentation.md">Contribuer à cette page</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">En savoir plus</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentation</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contact</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licence</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "fr/";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>
