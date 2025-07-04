@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>
+        
+Shelves & Reading Status
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/pl/instances" class="navbar-item">
+                <span class="button is-success has-text-weight-normal has-text-white">Dołącz</span>
+            </a>
+            <a href="https://joinbookwyrm.com/pl/get-involved" class="navbar-item">
+                Udziel się
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Wsparcie
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Kod źródłowy
+            </a>
+            <a href="#" class="navbar-item is-active">
+                Dokumentacja
+            </a>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="select">
+                <select aria-label="Select a language" id="language_selection">
+                    
+                    <option value="" >English (US)</option>
+                    
+                    <option value="de/" >Deutsch</option>
+                    
+                    <option value="fr/" >Français</option>
+                    
+                    <option value="pl/" selected>Polski</option>
+                    
+                    <option value="pt-br/" >Português do Brasil</option>
+                    
+                    <option value="ro/" >Română</option>
+                    
+              </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-max-desktop">
+<section class="section">
+
+    <header class="content block column is-offset-one-quarter pl-2">
+        
+<h1 class="title is-1">Shelves & Reading Status</h1>
+
+    </header>
+    <div class="columns">
+	<nav class="menu column is-one-quarter mt-2">
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="latest" >latest</option>
+                
+                <option value="v0.7.5" selected>v0.7.5</option>
+                
+            </select>
+        </div>
+            <h2 class="menu-label"><a href="/pl/">Welcome</a></h2>
+            
+            <h2 class="menu-label">Using BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/v0.7.5/pl/shelves.html" class="is-active">Shelves & Reading Status</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/adding-books.html" >Dodawanie książek</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/posting-statuses.html" >Posting Statuses</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/lists.html" >Lists</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/privacy-controls.html" >Privacy Controls</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/groups.html" >Groups</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/rss-feeds.html" >RSS Feeds</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/user-migration.html" >User Migration and Aliases</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Running BookWyrm</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/v0.7.5/pl/install-prod.html" >Installing in Production</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/install-prod-dockerless.html" >Installing Without Docker</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/updating.html" >Aktualizowanie instancji</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/reverse-proxy.html" >Using a Reverse-Proxy</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/moderation.html" >Moderacja</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/monitoring-queue.html" >Monitoring Queue</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/external-storage.html" >External Storage</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/optional_features.html" >Optional features</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/cli.html" >Command Line Tool</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Contributing</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/v0.7.5/pl/contributing.html" >Udzielanie się</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/translation.html" >Tłumaczenia</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/documentation.html" >Documentation</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/style_guide.html" >Style Guide</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/install-dev.html" >Developer Environment</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/debug_toolbar.html" >Django Debug Toolbar</a>
+                </li>
+                
+            </ul>
+            
+            <h2 class="menu-label">Codebase</h2>
+            <ul class="menu-list">
+                
+                <li>
+                    <a href="/v0.7.5/pl/activitypub.html" >ActivityPub</a>
+                </li>
+                
+                <li>
+                    <a href="/v0.7.5/pl/permissions.html" >Uprawnienia</a>
+                </li>
+                
+            </ul>
+            
+        </nav>
+
+        <div class="column">
+            
+<section class="block content">
+    <p>An integral part of managing your reading is organising your books and their read status.
+On Bookwyrm, you use Shelves for this.</p>
+<p>To get to the shelves page, select the 'Your Books' link at the top of the website.
+The tabs are your shelves, as well as an 'All books' view.</p>
+<h2 id="reading-status-shelves"><a class="headerlink" href="#reading-status-shelves">Reading Status Shelves</a></h2>
+<p>Bookwyrm comes with four default shelves: To Read, Currently Reading, Read and Stopped Reading.
+These are used to track the reading status of each of your books.</p>
+<h3 id="updating-reading-status"><a class="headerlink" href="#updating-reading-status">Updating reading status</a></h3>
+<p>When browsing books on Bookwyrm, there is a button below or beside each book, used to update its reading status.</p>
+<p>For each book, BookWyrm expects the reading flow of <code>Not shelved</code> -&gt; <code>To read</code> -&gt; <code>Currently reading</code> -&gt; <code>Read</code>.
+The default option for the button will move the book to the next stage in the sequence.
+For example, a new book is 'Not shelved' yet, so the button will suggest adding it to your 'To read' shelf.
+Once on 'To read', the next step is to start reading it, which will move it to 'Currently reading'.</p>
+<p>At any time, you can use the dropdown arrow to skip steps in the sequence and manually select any reading status for the book.
+There is also an option to add it to your 'Stopped Reading' shelf, for books you do not want to finish (DNF).</p>
+<h3 id="only-on-one-status-shelf"><a class="headerlink" href="#only-on-one-status-shelf">Only on one status shelf</a></h3>
+<p>A book can only be on one of the four reading status shelves at a time.
+When you update your reading progress, the book is moved from one shelf to the next.
+This means that if you're reading a book for a second time, it will be put on Currently Reading and not on Read, even though you had read it before.</p>
+<h3 id="reading-activity-dates"><a class="headerlink" href="#reading-activity-dates">Reading activity dates</a></h3>
+<p>When starting and finishing a book, you are prompted to confirm the start and finish dates.
+These can be seen on a books page under the 'Your reading activity' subtitle.
+If you manually add read dates, keep in mind that it won't automatically shelve the book.</p>
+<h3 id="posting-status-updates"><a class="headerlink" href="#posting-status-updates">Posting status updates</a></h3>
+<p>In the same pop-up screen you confirm reading dates, you have the option to post a reading status update to your feed.
+These will appear in the feeds of people who follow you, and have similar <a href="/privacy-controls.html">visibility settings</a> as most things in Bookwyrm.</p>
+<h3 id="finish-reading-or-stop-reading"><a class="headerlink" href="#finish-reading-or-stop-reading">Finish reading or stop reading?</a></h3>
+<p>Use 'Finish reading' when you've finished reading a book.</p>
+<p>'Stop reading' is for books you don't want to keep reading, also known as a DNF (did not finish).</p>
+<h2 id="custom-shelves"><a class="headerlink" href="#custom-shelves">Custom Shelves</a></h2>
+<p>Custom shelves are completely separate from the reading status shelves.</p>
+<h3 id="adding-books-to-custom-shelves"><a class="headerlink" href="#adding-books-to-custom-shelves">Adding books to custom shelves</a></h3>
+<p>You can add any book to a custom shelf by using the dropdown menu on the shelf/reading status button.
+Once you've created new shelves, they will be displayed there and selecting one will add it.</p>
+<h3 id="on-multiple-custom-shelves"><a class="headerlink" href="#on-multiple-custom-shelves">On multiple custom shelves</a></h3>
+<p>As opposed to the built-in reading status shelves, a book can be on multiple custom shelves at once.
+It could also be on a reading status shelf at the same time as one or more custom shelves, or just on a custom shelf.</p>
+<h2 id="editing-shelf-descriptions"><a class="headerlink" href="#editing-shelf-descriptions">Editing shelf descriptions</a></h2>
+<p>You can add a description to any shelf by selecting the shelf and then 'Edit shelf'.</p>
+<h2 id="filtering-your-books"><a class="headerlink" href="#filtering-your-books">Filtering your books</a></h2>
+<p>Currently, the only available filter is by keyword, which searches against the title and author.</p>
+<h2 id="shelf-privacy"><a class="headerlink" href="#shelf-privacy">Shelf Privacy</a></h2>
+<p>By default, your shelves are all Public.
+To restrict a shelf to Followers-only or Private, navigate to it and select 'Edit shelf'.
+For more information, see the <a href="/privacy-controls.html">privacy controls</a> page.</p>
+<h2 id="all-books-view"><a class="headerlink" href="#all-books-view">All Books View</a></h2>
+<p>The default tab on the 'Your books' page is 'All books'.
+It simply displays any book that is on at least one of your shelves.
+Books on Follower-only shelves will only be displayed there to you and your followers, and books on Private shelves only to you.</p>
+</section>
+
+        </div>
+    </div>
+</section>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> to współtworzone, antykorporacyjne oprogramowanie zarządzane przez <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Wspieraj BookWyrm poprzez <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Udziel się</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm na GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/shelves.md">Udziel się na tej stronie</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Dowiedz się więcej</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Dokumentacja</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Skontaktuj się z opiekunem</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licencja</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    (function() {
+        var languageSelector = document.getElementById("language_selection");
+        languageSelector.onchange = function(event) {
+            var current_locale = "pl/";
+            var current_location = window.location.pathname;
+
+            var locale_index = current_location.indexOf(current_locale);
+            var new_location = "/" + event.target.value;
+
+            if (locale_index) {
+                // we're in a locale - swap it out
+                new_location = current_location.replace(current_locale, event.target.value)
+            } else {
+                // are we in a version?
+                var regx = /\/v[0-9\.]+/
+                if (regx.test(current_location)) {
+                    // split current location
+                    arr = current_location.split("/")
+                    // insert new locale
+                    arr.splice(2, 0, event.target.value.replace("/", ""))
+                    // gather it all together again
+                    new_location = arr.join("/")
+                } else {
+                    new_location += current_location.slice(1);
+                }
+            }
+            window.location = new_location;
+        }
+    })()
+</script>
+<script type="text/javascript">
+    (function() {
+        var versionSelector = document.getElementById("version_selection");
+        versionSelector.onchange = function(event) {
+            current_version = "v0.7.5"
+            var current_location = window.location.pathname;
+            var target_version = event.target.value == "latest" ? "" : event.target.value;
+            var arr = current_location.split("/")
+            var regx = /\/v[0-9\.]+/
+            if (regx.test(current_location)) {
+                window.location = window.location.href.replace(regx,`${target_version}`)
+            } else {
+                window.location = `/${target_version}${current_location}`
+            }
+        }
+    })()
+</script>
+
+
+</body>
+</html>
