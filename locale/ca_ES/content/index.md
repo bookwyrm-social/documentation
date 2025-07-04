@@ -16,7 +16,7 @@ Com que el projecte es troba en un estat primerenc, les funcionalitats creixen a
     - Mira ressenyes agregades d'un llibre d'entre les instàncies connectades de BookWyrm
     - Diferencia ressenyes i valoracions locals o federades al teu fil d'activitat
 - Fes seguiment de la teva activitat de lectura
-    - Llista llibres per defecte als prestatges "per llegir", "llegint actualment" i "llegits"
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Crea prestatges personalitzats
     - Guarda les dates d'inici/final de lectura, així com, actualitzacions del teu progrés
     - Actualitza l'activitat de lectura que veuen els teus seguidors (opcionalment i, amb control precís de privacitat)
