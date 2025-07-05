@@ -16,7 +16,7 @@ Ponieważ projekt jest nadal we wczesnej fazie rozwoju, funkcje są dodawane ka�
     - Przeglądaj zebrane recenzje książki pomiędzy połączonymi instancjami BookWyrm
     - Oddzielaj lokalne i sfederowane recenzje oraz oceny na swoim kanale aktywności
 - Śledź aktywność czytania
-    - Umieszczaj książki na domyślnych półkach "do przeczytania", "obecnie czytanie" oraz "przeczytane"
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Twórz własne półki
     - Przechowuj daty rozpoczęcia/ukończenia czytania oraz aktualizacje postępu z upływem czasu
     - Dziel się swoją aktywnością czytania z obserwującymi (opcjonalnie i z bardzo precyzyjnymi ustawieniami prywatności)

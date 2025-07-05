@@ -16,7 +16,7 @@ Comme le projet en est encore à ses débuts, ses caractéristiques se développ
     - Voyez les commentaires d'un livre venant de plusieurs instances connectées de BookWyrm
     - Différenciez les commentaires et ratings locaux et fédérés dans votre fil d'activité
 - Suivez votre activité de lecture
-    - Organisez vos livres dans les sections par défault "à lire", "présentement en train de lire" et "lu"
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Créez des sections personnalisées
     - Enregistrez les dates du début et de la fin de la lecture et mettez à jour votre progression à mesure
     - Tenez au courant vos abonné-e-s à propos de votre activité (optionnellement, et avec des contrôles de confidentialité précis)

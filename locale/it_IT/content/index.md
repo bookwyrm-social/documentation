@@ -16,7 +16,7 @@ Dal momento che il progetto è ancora nelle sue prime fasi, le caratteristiche s
     - Visualizza le recensioni aggregate di un libro attraverso le istanze di BookWyrm collegate
     - Differenziare le recensioni locali e federate e la valutazione nel tuo feed di attività
 - Monitorare l'attività di lettura
-    - Libri sugli scaffali "da leggere", "letture correnti" e "letti"
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Creare scaffali personalizzati
     - Salva le date di inizio/fine lettura, così come gli aggiornamenti di avanzamento
     - Aggiorna chi ti segue sull'attività di lettura (opzionalmente, e con controlli sulla privacy)
