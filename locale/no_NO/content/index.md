@@ -16,7 +16,7 @@ Ettersom prosjektet fortsatt er i et tidlig stadie kommer det nye funksjoner hve
     - Vis samlede bokomtaler på tvers av tilkoblede BookWyrm-instanser
     - Differensier mellom lokale og føderte omtaler og rangeringer i din aktivitetsstrøm
 - Spor leseaktivitet
-    - Still ut bøker på standardhyllene «Å lese», «Leser», og «Lest»
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Opprett tilpassede hyller
     - Lagre datoer for oppstart/avslutning av lesing, samt fremdriftsoppdateringer underveis
     - Oppdater følgere om leseaktivitet (valgfritt, og med granulære personvernkontroller)

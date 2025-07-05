@@ -16,7 +16,7 @@ Uma vez que o projeto está ainda na fase inicial, as funcionalidades crescem a 
     - Veja as resenhas sobre um livro de várias instâncias BookWyrm conectadas
     - Diferencie resenhas locais e federadas e as notas na sua página de atividades
 - Acompanhe sua leitura
-    - Coloque livro nas prateleiras padrão, "para-ler", "lendo" e "lido"
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Crie prateleiras personalizadas
     - Guarde as datas em que começou ou terminou de ler um livro, além de atualizações sobre o andamento de sua leitura
     - Envia aos seguidores as atividades de leitura (opcionalmente, e com privacidade de controle granular)

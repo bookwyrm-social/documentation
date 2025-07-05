@@ -16,7 +16,7 @@ Cum proiectul este încă în fazele timpuri, caracteristicile cresc în fiecare
     - Vizualizați recenzii agregate ale unei cărți de pe instanțe BookWyrm conectate
     - Diferențiați recenzii locale și federate și evaluări în fluxul dvs. de activitate
 - Urmăriți activitatea dvs. de lectură
-    - Puneți cărți pe rafturile prestabilite „de citit”, „în curs de citire” și „citit”
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Creați rafturi personalizate
     - Înregistrați datele de început și sfârșit de lectură, cât și actualizările de progres
     - Țineți la curent urmăritorii despre activitatea de citit (opțional cu control granulat a confidențialității)

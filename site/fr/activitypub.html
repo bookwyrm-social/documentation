@@ -222,6 +222,7 @@ ActivityPub
             
 <section class="block content">
     <p>BookWyrm utilise le protocole <a href="http://activitypub.rocks/">ActivityPub</a> pour envoyer et recevoir des activités utilisateur entre des instances de BookWyrm et d’autres services qui implémentent ActivityPub, comme <a href="https://joinmastodon.org/">Mastodon</a>. Pour gérer les données de livres, BookWyrm utilise plusieurs extensions de types d’Activity qui ne font pas partie de la norme, mais sont interopérables avec les autres instances de BookWyrm.</p>
+<p>To view the ActivityPub data for a BookWyrm entity (user, book, list, etc) you can usually add <code>.json</code> to the end of the URL. e.g. <code>https://www.example.com/user/sam.json</code> and see the JSON in your web browser or via an http request (e.g. using <code>curl</code>).</p>
 <h2 id="activites-et-objets"><a class="headerlink" href="#activites-et-objets">Activités et Objets</a></h2>
 <h3 id="utilisateurs-et-relations"><a class="headerlink" href="#utilisateurs-et-relations">Utilisateurs et relations</a></h3>
 <p>Les interactions de relations entre les utilisateurs suivent la spécification standard ActivityPub.</p>
@@ -233,6 +234,7 @@ ActivityPub
 <li><code>Update</code> : met à jour le profil et les paramètres d'un utilisateur</li>
 <li><code>Delete</code> : désactive un utilisateur</li>
 <li><code>Undo</code> : Ne plus suivre <code>Follow</code> ou Bloquer <code>Block</code></li>
+<li><code>Move</code>: communicate that a user has changed their ID and has moved to a new server. Most ActivityPub software will "follow" the user to the new identity. BookWyrm sends a notification to followers and requires them to confirm they want to follow the user to their new identity.</li>
 </ul>
 <h3 id="statuts"><a class="headerlink" href="#statuts">Statuts</a></h3>
 <h4 id="types-dobject"><a class="headerlink" href="#types-dobject">Types d'Object</a></h4>
@@ -244,14 +246,18 @@ ActivityPub
 </ul>
 <h4 id="activities"><a class="headerlink" href="#activities">Activities</a></h4>
 <ul>
-<li><code>Create</code> : sauvegarde un nouveau statut dans la base de données.</li>
-</ul>
+<li>
+<p><code>Create</code> : sauvegarde un nouveau statut dans la base de données.</p>
 <p><strong>Remarque</strong> : BookWyrm n'accepte les activités <code>Create</code> que si elles sont :</p>
 <ul>
 <li>des messages directs (c'est à dire des <code>Note</code>s avec le niveau de confidentialité <code>direct</code>, qui mentionnent un utilisateur local),</li>
 <li>liées à un livre (d'un type de statut personnalisé qui inclut le champ <code>inReplyToBook</code>),</li>
 <li>en réponse à des statuts existants enregistrés dans la base de données</li>
-<li><code>Delete</code> : Supprime un statut</li>
+</ul>
+</li>
+<li>
+<p><code>Delete</code> : Supprime un statut</p>
+</li>
 <li><code>Like</code> : Crée un favori sur le statut</li>
 <li><code>Announce</code> : Booste (reposte) le statut dans la chronologie de l'acteur</li>
 <li><code>Undo</code> : Inverse un <code>Like</code> ou un <code>Announce</code></li>
@@ -260,7 +266,7 @@ ActivityPub
 <p>Les livres et listes d'un utilisateurs sont représentés par <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection"><code>OrderedCollection</code></a></p>
 <h4 id="objects"><a class="headerlink" href="#objects">Objects</a></h4>
 <ul>
-<li><code>Shelf</code> : Collection de livres d'un utilisateur. Par défaut, chaque utilisateur a les étagères <code>to-read</code> (à lire), <code>reading</code> (en cours de lecture), et <code>read</code> (livres lus), qui sont utilisées pour suivre la progression de la lecture.</li>
+<li><code>Shelf</code> : Collection de livres d'un utilisateur. By default, every user has a <code>to-read</code>, <code>reading</code>, <code>stop-reading</code> and <code>read</code> shelf which are used to track reading progress.</li>
 <li><code>List</code> : Une collection de livres qui peut avoir des éléments contribués par des utilisateurs autres que celui qui a créé la liste.</li>
 </ul>
 <h4 id="activities_1"><a class="headerlink" href="#activities_1">Activities</a></h4>
@@ -272,6 +278,59 @@ ActivityPub
 </ul>
 <h2 id="serialisation-alternative"><a class="headerlink" href="#serialisation-alternative">Sérialisation alternative</a></h2>
 <p>Parce que BookWyrm utilise des types d'objets personnalisés (<code>Review</code>, <code>Comment</code>, <code>Quotation</code>) qui ne sont pas pris en charge par ActivityPub, les statuts sont transformés en types standards lorsqu'ils sont envoyés ou vus par des services non-BookWyrm. Les <code>Review</code>s sont converties en <code>Article</code>s, les <code>Comment</code>s et <code>Quotation</code>s sont convertis en <code>Note</code>s, avec un lien vers le livre et l'image de couverture en pièce jointe.</p>
+<p>This may change in future in favor of the more ActivityPub-compliant <a href="https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type">extended Object types</a> listed alongside core ActivityPub types.</p>
+<h2 id="making-activitypub-aware-models"><a class="headerlink" href="#making-activitypub-aware-models">Making ActivityPub-aware models</a></h2>
+<p>The way BookWyrm sends and receives ActivityPub objects can be confusing for developers who are new to BookWyrm. It is mostly controlled by:</p>
+<ul>
+<li>Functions and <a href="https://docs.python.org/3/library/dataclasses.html">data classes</a> outlined in the <a href="https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub">activitypub</a> directory</li>
+<li>The <a href="https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40">ActivitypubMixin</a> and its children for models that are serializable for ActivityPub requests</li>
+</ul>
+<h3 id="serializing-data-to-and-from-activitypub-json"><a class="headerlink" href="#serializing-data-to-and-from-activitypub-json">Serializing data to and from ActivityPub JSON</a></h3>
+<p>BookWyrm needs to know how to <em>serialize</em> the data from the model into an ActivityPub JSON-LD object.</p>
+<p>The <code>/activitypub/base_activity.py</code> file provides the core functions that turn ActivityPub JSON-LD strings into usable Django model objects, and vice-versa. We do this by creating a data class in <code>bookwyrm/activitypub</code>, and defining how the model should be serialized by providing an <code>activity_serializer</code> value in the model, which points to the relevant data class. From <code>ActivityObject</code> we inherit <code>id</code> and <code>type</code>, and two <em>class methods</em>:</p>
+<p><strong><code>to_model</code></strong></p>
+<p>This method takes an ActivityPub JSON string and tries to turn it into a BookWyrm model object, finding an existing object wherever possible. This is how we process <strong>incoming</strong> ActivityPub objects.</p>
+<p><strong><code>serialize</code></strong></p>
+<p>This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. This is how we process <strong>outgoing</strong> ActivityPub objects.</p>
+<h3 id="example-users"><a class="headerlink" href="#example-users">Example - Users</a></h3>
+<p>A BookWyrm user <a href="https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py">is defined in <code>models/user.py</code></a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;a user who wants to read books&quot;&quot;&quot;</span>
+</code></pre></div>
+
+<p>Notice that we are inheriting from ("subclassing") <code>OrderedCollectionPageMixin</code>. This in turn inherits from <code>ObjectMixin</code>, which inherits from <code>ActivitypubMixin</code>. This may seem convoluted, but this inheritence chain allows us to avoid duplicating code as our ActivityPub objects become more specific. <code>AbstractUser</code> is <a href="https://docs.djangoproject.com/en/5.1/topics/auth/customizing/#specifying-custom-user-model">a Django model intended to be subclassed</a>, giving us things like hashed password logins and permission levels "out of the box".</p>
+<p>Because <code>User</code> inherits from <a href="https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L213"><code>ObjectMixin</code></a>, when we <code>save()</code> a <code>User</code> object we will send a <code>Create</code> activity (if this is the first time the user was saved) or an <code>Update</code> activity (if we're just saving a change – e.g. to the user description or avatar). Any other model you add to BookWyrm will have the same capability if it inherits from <code>ObjectMixin</code>.</p>
+<p>For BookWyrm users, the <code>activity_serializer</code> is defined in the <code>User</code> model:</p>
+<div class="highlight"><pre><span></span><code><span class="n">activity_serializer</span> <span class="o">=</span> <span class="n">activitypub</span><span class="o">.</span><span class="n">Person</span>
+</code></pre></div>
+
+<p>The data class definition for <code>activitypub.Person</code> is at <code>/activitypub/person.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">ActivityObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;actor activitypub json&quot;&quot;&quot;</span>
+
+    <span class="n">preferredUsername</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">inbox</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">publicKey</span><span class="p">:</span> <span class="n">PublicKey</span>
+    <span class="n">followers</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">following</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">outbox</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">endpoints</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">icon</span><span class="p">:</span> <span class="n">Image</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">bookwyrmUser</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">manuallyApprovesFollowers</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">discoverable</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">hideFollows</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">movedTo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">alsoKnownAs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Person&quot;</span>
+</code></pre></div>
+
+<p>You might notice that some of these fields are not a perfect match to the fields in the <code>User</code> model. If you have a field name in your model that needs to be called something different in the ActivityPub object (e.g. to comply with Python naming conventions in the model but JSON naming conventions in JSON string), you can define an <code>activitypub_field</code> in the model field definition:</p>
+<div class="highlight"><pre><span></span><code><span class="n">followers_url</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">activitypub_field</span><span class="o">=</span><span class="s2">&quot;followers&quot;</span><span class="p">)</span>
+</code></pre></div>
 </section>
 
         </div>

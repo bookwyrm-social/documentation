@@ -16,7 +16,7 @@ Como o proxecto aínda está nos seus primeiros pasos, o número de funcións di
     - Ver recensións agregadas entre instancias BookWyrm que estén conectadas
     - Diferenciar na túa cronoloxía entre recensións e valoracións locais e federadas
 - Seguir a actividade lectora
-    - Coloca os libros nos estantes por defecto "Pendentes", "Lectura actual" e "Lidos"
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Crea estantes personais
     - Garda as datas de comezo/remate da lectura, así como actualizacións do progreso durante a mesma
     - Pon ao día ás tuas seguidoras sobre o que les (optativo, e con controis de privacidade detallados)

@@ -16,7 +16,7 @@ BookWyrm是一个社交网络，用于跟踪你的阅读，谈论书籍，撰写
     - 在连接的BookWyrm实例中查看一本书的汇总评论
     - 区分本地与联邦的评论和评分信息
 - 跟踪阅读活动
-    - 书架默认以“想读”、“在读”和“读过”分类
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - 创建自定义书架
     - 存储在读和读过的日期以及在阅读时的进度
     - 更新关注者的阅读活动(可选，使用精细的隐私控制)

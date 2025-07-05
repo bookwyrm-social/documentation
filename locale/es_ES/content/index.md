@@ -16,7 +16,7 @@ Dado que el proyecto está todavía en sus primeras etapas, las características
     - Ve reseñas agregadas de un libro a través de instancias de BookWyrm asociadas
     - Diferencia reseñas y calificaciones locales y federadas en tu feed de actividad
 - Seguimiento de tu actividad de lectura
-    - Guarda libros en las estanterías por defecto "para leer", "leyendo actualmente" y "leído"
+    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Añade estantes personalizados
     - Registrar las fechas de inicio y de término de lectura, así como actualizaciones de progreso durante el camino
     - Actualiza a tus seguidores sobre la actividad de lectura (opcionalmente, y con controles granulares de privacidad)
