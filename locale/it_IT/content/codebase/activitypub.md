@@ -61,13 +61,13 @@ I libri e le liste degli utenti sono rappresentati da [`OrdinedCollection`](http
 ## Serializzazione Alternativa
 Poiché BookWyrm utilizza tipi di oggetti personalizzati (`Recensione`, `Commento`, `Citazione`) che non sono supportati da ActivityPub, gli stati si trasformano in tipi standard quando inviati o visualizzati da servizi non-BookWyrm. `Recensione`s viene convertita in `Articolo`s, `Commento`s e `Citazione`s vengono convertiti in `Nota`s, con un link al libro e l'immagine di copertina allegata.
 
-This may change in future in favor of the more ActivityPub-compliant [extended Object types](https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type) listed alongside core ActivityPub types.
+Questo potrebbe cambiare in futuro a favore dei [tipi di oggetti estesi](https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type) più conformi a ActivityPub, elencati insieme ai tipi core di ActivityPub.
 
-## Making ActivityPub-aware models
+## Sviluppo di modelli compatibili con ActivityPub
 
-The way BookWyrm sends and receives ActivityPub objects can be confusing for developers who are new to BookWyrm. It is mostly controlled by:
+Il modo in cui BookWyrm invia e riceve oggetti ActivityPub può risultare confuso per gli sviluppatori che si avvicinano per la prima volta a BookWyrm. È principalmente composto da:
 
-* Functions and [data classes](https://docs.python.org/3/library/dataclasses.html) outlined in the [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub) directory
+* Funzioni e [classi dati](https://docs.python.org/3/library/dataclasses.html) descritte nella directory [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub).
 * The [ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) and its children for models that are serializable for ActivityPub requests
 
 ### Serializing data to and from ActivityPub JSON
