@@ -1,10 +1,10 @@
 - - -
-Title: ActivityPub Date: 2025-04-21 Order: 1
+Titolo: ActivityPub Data: 21-04-2025 Ordine: 1
 - - -
 
 BookWyrm utilizza il protocollo [ActivityPub](http://activitypub.rocks/) per inviare e ricevere le attività dell'utente tra altre istanze di BookWyrm e altri servizi che implementano ActivityPub, come [Mastodon](https://joinmastodon.org/). Per gestire i dati del libro, BookWyrm ha una manciata di tipi di attività estesi che non fanno parte dello standard, ma sono leggibili ad altre istanze di BookWyrm.
 
-To view the ActivityPub data for a BookWyrm entity (user, book, list, etc) you can usually add `.json` to the end of the URL. e.g. `https://www.example.com/user/sam.json` and see the JSON in your web browser or via an http request (e.g. using `curl`).
+Per accedere ai dati ActivityPub relativi a un'entità BookWyrm (come un utente, un libro o una lista), aggiungi `.json` alla fine dell'URL. visita `https://www.example.com/user/sam.json` per visualizzare i dati JSON nel browser o tramite una richiesta HTTP (ad esempio con `curl`).
 
 ## Attività e oggetti
 
@@ -18,7 +18,7 @@ Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 - `Aggiorna`: aggiorna il profilo e le impostazioni di un utente
 - `Elimina`: disattiva un utente
 - `Annulla`: inverte un `Segui` o `Blocco`
-- `Move`: communicate that a user has changed their ID and has moved to a new server. Most ActivityPub software will "follow" the user to the new identity. BookWyrm sends a notification to followers and requires them to confirm they want to follow the user to their new identity.
+- `Spostamento`: indica che un utente ha modificato il proprio ID e si è spostato su un altro server. La maggior parte delle applicazioni ActivityPub continuerà a seguire l’utente dopo il cambio di identità. BookWyrm invia una notifica ai follower e richiede loro di confermare se desiderano continuare a seguire l’utente nella sua nuova identità.
 
 ### Stati
 #### Tipologia di oggetto
@@ -48,7 +48,7 @@ I libri e le liste degli utenti sono rappresentati da [`OrdinedCollection`](http
 
 #### Obiettivi
 
-- `Scaffale`: Collezione di libri di un utente. By default, every user has a `to-read`, `reading`, `stop-reading` and `read` shelf which are used to track reading progress.
+- `Scaffale`: Collezione di libri di un utente. Di default, ogni utente ha `una scaffale da leggere`, `in lettura`,`interrotto`letto</code>, utilizzati per tenere traccia del progresso di lettura.
 - `Lista`: Una raccolta di libri che può avere elementi forniti da utenti diversi da quello che ha creato la lista.
 
 #### Attività
