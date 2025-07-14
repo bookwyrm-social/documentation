@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2025-05-31 23:28\n"
+"POT-Creation-Date: 2025-06-07 21:11+0000\n"
+"PO-Revision-Date: 2025-07-14 16:48\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Language: uk_UA\n"
@@ -33,56 +33,75 @@ msgstr "Як користуватися або взяти участь у роз
 msgid "BookWyrm: Social Reading and Reviewing"
 msgstr "BookWyrm: Соціальне Читання та Рецензії"
 
-#: templates/layout.html:35 templates/layout.html:39
+#: templates/layout.html:35 templates/layout.html:39 templates/layout.html:40
+#: templates/layout.html:48
 msgid "Join"
 msgstr "Приєднатися"
 
-#: templates/layout.html:38 templates/layout.html:42
+#: templates/layout.html:38 templates/layout.html:42 templates/layout.html:43
+#: templates/layout.html:51
 msgid "Get involved"
 msgstr "Долучитися"
 
-#: templates/layout.html:41 templates/layout.html:45
+#: templates/layout.html:41 templates/layout.html:45 templates/layout.html:46
+#: templates/layout.html:54
 msgid "Support"
 msgstr "Підтримати"
 
-#: templates/layout.html:44 templates/layout.html:48
+#: templates/layout.html:44 templates/layout.html:48 templates/layout.html:49
+#: templates/layout.html:57
 msgid "Code"
 msgstr "Програмний код"
 
 #: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
-#: templates/layout.html:130
+#: templates/layout.html:130 templates/layout.html:52 templates/layout.html:131
+#: templates/layout.html:137 templates/layout.html:35 templates/layout.html:138
 msgid "Documentation"
 msgstr "Документація"
 
-#: templates/layout.html:95 templates/layout.html:101
+#: templates/layout.html:95 templates/layout.html:101 templates/layout.html:102
+#: templates/layout.html:108 templates/layout.html:109
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 msgstr "<strong>BookWyrm</strong> це колаборативне, антикорпоративне програмне забезпечення, яке розроблено та підтримується <a href='https://www.mousereeve.com/'>Маус Рів</a>."
 
-#: templates/layout.html:98 templates/layout.html:104
+#: templates/layout.html:98 templates/layout.html:104 templates/layout.html:105
+#: templates/layout.html:111 templates/layout.html:112
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 msgstr "Підтримайте BookWyrm на <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 
 #: templates/layout.html:102 templates/layout.html:108
+#: templates/layout.html:109 templates/layout.html:115
+#: templates/layout.html:116
 msgid "Get Involved"
 msgstr "Долучитися"
 
 #: templates/layout.html:104 templates/layout.html:110
+#: templates/layout.html:111 templates/layout.html:117
+#: templates/layout.html:118
 msgid "BookWyrm on GitHub"
 msgstr "BookWyrm на GitHub"
 
 #: templates/layout.html:107 templates/layout.html:113
+#: templates/layout.html:114 templates/layout.html:120
+#: templates/layout.html:121
 msgid "Contribute to this page"
 msgstr "Поліпшити цю сторінку"
 
 #: templates/layout.html:122 templates/layout.html:128
+#: templates/layout.html:129 templates/layout.html:135
+#: templates/layout.html:136
 msgid "Learn more"
 msgstr "Дізнатися більше"
 
 #: templates/layout.html:127 templates/layout.html:133
+#: templates/layout.html:134 templates/layout.html:140
+#: templates/layout.html:141
 msgid "Contact maintainer"
 msgstr "Зв'язатися з розробником"
 
 #: templates/layout.html:130 templates/layout.html:136
+#: templates/layout.html:137 templates/layout.html:143
+#: templates/layout.html:144
 msgid "License"
 msgstr "Ліцензія"
 
