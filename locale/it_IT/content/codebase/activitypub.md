@@ -68,17 +68,17 @@ Questo potrebbe cambiare in futuro a favore dei [tipi di oggetti estesi](https:/
 Il modo in cui BookWyrm invia e riceve oggetti ActivityPub può risultare confuso per gli sviluppatori che si avvicinano per la prima volta a BookWyrm. È principalmente composto da:
 
 * Funzioni e [classi dati](https://docs.python.org/3/library/dataclasses.html) descritte nella directory [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub).
-* The [ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) and its children for models that are serializable for ActivityPub requests
+* Il [ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) e i suoi elementi figli per i modelli che possono essere serializzati per le richieste ActivityPub
 
-### Serializing data to and from ActivityPub JSON
+### Serializzazione dei dati in formato JSON per ActivityPub e viceversa
 
-BookWyrm needs to know how to _serialize_ the data from the model into an ActivityPub JSON-LD object.
+BookWyrm deve sapere come _serializzare_ i dati del modello in un oggetto JSON-LD compatibile con ActivityPub.
 
-The `/activitypub/base_activity.py` file provides the core functions that turn ActivityPub JSON-LD strings into usable Django model objects, and vice-versa. We do this by creating a data class in `bookwyrm/activitypub`, and defining how the model should be serialized by providing an `activity_serializer` value in the model, which points to the relevant data class. From `ActivityObject` we inherit `id` and `type`, and two _class methods_:
+Il file `/activitypub/base_activity.py` fornisce le funzioni principali che trasformano le stringhe JSON-LD di ActivityPub in oggetti modello Django utilizzabili, e viceversa. Facciamo questo creando una data class in `bookwyrm/activitypub` e definendo come il modello debba essere serializzato, fornendo un valore `activity_serializer` nel modello, che punta alla data class corrispondente. Da `ActivityObject` ereditiamo `id` e `type`, e due _metodi di classe_:
 
 **`to_model`**
 
-This method takes an ActivityPub JSON string and tries to turn it into a BookWyrm model object, finding an existing object wherever possible. This is how we process **incoming** ActivityPub objects.
+Questo metodo prende una stringa JSON di ActivityPub e cerca di trasformarla in un oggetto modello di BookWyrm, trovando un oggetto esistente quando possibile. È così che processiamo gli oggetti ActivityPub **in entrata**.
 
 **`serialize`**
 
