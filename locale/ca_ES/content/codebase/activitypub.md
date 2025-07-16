@@ -4,7 +4,7 @@ Title: ActivityPub Date: 2025-04-21 Order: 1
 
 BookWyrm utiltza el protocol [ActivityPub](http://activitypub.rocks/) per enviar i rebre activitat d'usuari entre diferents instàncies de BookWyrm i altres serveis que implementen ActivityPub, com [Mastodon](https://joinmastodon.org/). Per manegar les dades d'un llibre, BookWyrm té molts tipus d'activitats que no formen parts de l'estàndard, però que altres instàncies de BookWyrm poden llegir.
 
-To view the ActivityPub data for a BookWyrm entity (user, book, list, etc) you can usually add `.json` to the end of the URL. e.g. `https://www.example.com/user/sam.json` and see the JSON in your web browser or via an http request (e.g. using `curl`).
+Per veure les dades ActivityPub d'una entitat a BookWyrm (usuari, llibre, llista, etc.) pots afegir `.json` al final de l'URL. per exemple. `https://www.example.com/user/sam.json` i veure el resultat JSON al teu navegador o a través d'una petició http (per exemple, utilitzant `curl`).
 
 ## Activitats i Objectes
 
@@ -18,7 +18,7 @@ Les interaccions entre usuaris segueixen les especificacions estandars d'Activit
 - `Actualitza`: actualitza el perfil i configuració de l'usuari
 - `Elimina`: desactiva l'usuari
 - `Desfés`: desfà un `Segueix` o `Bloqueja`
-- `Move`: communicate that a user has changed their ID and has moved to a new server. Most ActivityPub software will "follow" the user to the new identity. BookWyrm sends a notification to followers and requires them to confirm they want to follow the user to their new identity.
+- `Moure`: informa que un usuari ha canviat el seu ID i s'ha mogut a un nou servidor. La majoria del software que utilitza ActivityPub "seguirà" a l'usuari a la nova identitat. BookWyrm envia una notificació als seguidors i demana de confirmar que volen seguir l'usuari en la seva nova identitat.
 
 ### Estats
 #### Tipus d'objecte
