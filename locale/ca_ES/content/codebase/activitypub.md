@@ -61,11 +61,11 @@ Els llibres i llistats de l'usuari son representats per [`OrderedCollection`](ht
 ## Serialitzacions alternatives
 Degut a que BookWyrm fa ús de tipus d'objectes personalitzats (`Ressenya`, `Comentari`, `Cita`) que no són reconeguts per l'ActiityPub, els estats són transformats a tipus estàndard quan s'envien o són llegits per serveis que no són BookWyrm. `Ressenyes` són convertides en `Article`s i, `Comentari`s i `Cites` són transformats en `Notes`, amb un enllaç al llibre i a la imatge de portada adjunta.
 
-This may change in future in favor of the more ActivityPub-compliant [extended Object types](https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type) listed alongside core ActivityPub types.
+Això podria canviar en un futur a favor del [extended Object types](https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type) més conforme amb ActivityPub, llistat amb els principals tipus a ActivityPub.
 
 ## Making ActivityPub-aware models
 
-The way BookWyrm sends and receives ActivityPub objects can be confusing for developers who are new to BookWyrm. It is mostly controlled by:
+El mode que BookWyrm envia i rep objectes ActivityPub pot ser confús per als desenvolupadors que són nous a BookWyrm. It is mostly controlled by:
 
 * Functions and [data classes](https://docs.python.org/3/library/dataclasses.html) outlined in the [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub) directory
 * The [ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) and its children for models that are serializable for ActivityPub requests
