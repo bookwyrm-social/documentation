@@ -65,12 +65,12 @@ Això podria canviar en un futur a favor del [extended Object types](https://www
 
 ## Making ActivityPub-aware models
 
-El mode que BookWyrm envia i rep objectes ActivityPub pot ser confús per als desenvolupadors que són nous a BookWyrm. It is mostly controlled by:
+El mode que BookWyrm envia i rep objectes ActivityPub pot ser confús per als desenvolupadors que són nous a BookWyrm. Està principalment controlat per:
 
-* Functions and [data classes](https://docs.python.org/3/library/dataclasses.html) outlined in the [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub) directory
-* The [ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) and its children for models that are serializable for ActivityPub requests
+* Funcions i [classes de dades](https://docs.python.org/3/library/dataclasses.html) esbossades al directori d'[activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub)
+* L'[ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) i els seus fills de models que són serialitzables per les peticions d'ActivityPub
 
-### Serializing data to and from ActivityPub JSON
+### Serialitzar dades a i d'ActivityPub JSON
 
 BookWyrm needs to know how to _serialize_ the data from the model into an ActivityPub JSON-LD object.
 
