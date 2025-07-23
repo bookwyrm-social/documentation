@@ -1,5 +1,5 @@
 - - -
-Title: ActivityPub Date: 2025-04-21 Order: 1
+Títol: ActivityPub Data: 21-04-2025 Ordre: 1
 - - -
 
 BookWyrm utiltza el protocol [ActivityPub](http://activitypub.rocks/) per enviar i rebre activitat d'usuari entre diferents instàncies de BookWyrm i altres serveis que implementen ActivityPub, com [Mastodon](https://joinmastodon.org/). Per manegar les dades d'un llibre, BookWyrm té molts tipus d'activitats que no formen parts de l'estàndard, però que altres instàncies de BookWyrm poden llegir.
@@ -48,7 +48,7 @@ Els llibres i llistats de l'usuari son representats per [`OrderedCollection`](ht
 
 #### Objectes
 
-- `Prestatge`: Una col·lecció de llibres d'un usuari. By default, every user has a `to-read`, `reading`, `stop-reading` and `read` shelf which are used to track reading progress.
+- `Prestatge`: Una col·lecció de llibres d'un usuari. Per defecte, tots els usuaris tenen un prestatge `per-llegir`, `llegint`, `lectura aturada` i `llegit` els quals són emprats per fer un seguiment de la seva activitat de lectura.
 - `Llista`: Una col·lecció de llibres que pot contenir contribucions realitzades per altres usuaris a més a més de qui ha creat la llista.
 
 #### Activitats
@@ -63,18 +63,18 @@ Degut a que BookWyrm fa ús de tipus d'objectes personalitzats (`Ressenya`, `Com
 
 Això podria canviar en un futur a favor del [extended Object types](https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type) més conforme amb ActivityPub, llistat amb els principals tipus a ActivityPub.
 
-## Making ActivityPub-aware models
+## Creant models ActivityPub
 
 El mode que BookWyrm envia i rep objectes ActivityPub pot ser confús per als desenvolupadors que són nous a BookWyrm. Està principalment controlat per:
 
 * Funcions i [classes de dades](https://docs.python.org/3/library/dataclasses.html) esbossades al directori d'[activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub)
 * L'[ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) i els seus fills de models que són serialitzables per les peticions d'ActivityPub
 
-### Serialitzar dades a i d'ActivityPub JSON
+### Serialitzar dades a i des de ActivityPub JSON
 
-BookWyrm needs to know how to _serialize_ the data from the model into an ActivityPub JSON-LD object.
+BookWyrm necessita saber com _serialitzar_ les dades des del model fins a un objecte ActivityPub JSON-LD.
 
-The `/activitypub/base_activity.py` file provides the core functions that turn ActivityPub JSON-LD strings into usable Django model objects, and vice-versa. We do this by creating a data class in `bookwyrm/activitypub`, and defining how the model should be serialized by providing an `activity_serializer` value in the model, which points to the relevant data class. From `ActivityObject` we inherit `id` and `type`, and two _class methods_:
+L'arxiu `/activitypub/base_activity.py` proporciona les funcions principals que converteixen les cadenes JSON-LD d'ActivityPub en objectes de model Django utilitzables, i viceversa. We do this by creating a data class in `bookwyrm/activitypub`, and defining how the model should be serialized by providing an `activity_serializer` value in the model, which points to the relevant data class. From `ActivityObject` we inherit `id` and `type`, and two _class methods_:
 
 **`to_model`**
 
