@@ -74,7 +74,7 @@ El mode que BookWyrm envia i rep objectes ActivityPub pot ser confús per als de
 
 BookWyrm necessita saber com _serialitzar_ les dades des del model fins a un objecte ActivityPub JSON-LD.
 
-L'arxiu `/activitypub/base_activity.py` proporciona les funcions principals que converteixen les cadenes JSON-LD d'ActivityPub en objectes de model Django utilitzables, i viceversa. We do this by creating a data class in `bookwyrm/activitypub`, and defining how the model should be serialized by providing an `activity_serializer` value in the model, which points to the relevant data class. From `ActivityObject` we inherit `id` and `type`, and two _class methods_:
+L'arxiu `/activitypub/base_activity.py` proporciona les funcions principals que converteixen les cadenes JSON-LD d'ActivityPub en objectes de model Django utilitzables, i viceversa. Aconseguim això creant una classe de dades a `bookwyrm/activitypub`, i definint com el model ha de ser serialitzat, proporcionant un valor `activity_serializer` en el model, que apunta a la classe de dades adient. Des de `ActivityObject` s'hereda `id` i `type`, i dues _mètodes de classe_:
 
 **`to_model`**
 
