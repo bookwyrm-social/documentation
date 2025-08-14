@@ -78,15 +78,15 @@ L'arxiu `/activitypub/base_activity.py` proporciona les funcions principals que 
 
 **`to_model`**
 
-This method takes an ActivityPub JSON string and tries to turn it into a BookWyrm model object, finding an existing object wherever possible. This is how we process **incoming** ActivityPub objects.
+Aquest mètode rep una cadena JSON ActivityPub i prova de transformar-la en un objecte ActivityPub, trobant un objecte existent sempre que sigui possible. Així és com processem els objectes ActivityPub **entrants**.
 
 **`serialize`**
 
-This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. This is how we process **outgoing** ActivityPub objects.
+Aquest mètode rep un objecte ActivityPub, i el transforma en una cadena vàlida ActivityPub JSON utilitzant les definicions dataclass. Així és com es processen els objectes ActivityPub **sortints**.
 
-### Example - Users
+### Exemple - Usuaris
 
-A BookWyrm user [is defined in `models/user.py`](https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py):
+Un usuari BookWyrm [és definit a `models/user.py`](https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py):
 
 ```py
 class User(OrderedCollectionPageMixin, AbstractUser):
