@@ -12,8 +12,8 @@ Kodo prisidėjimai labai laukiami! Jei nežinote, nuo ko pradėti, pažiūrėkit
 
 If you have questions about the project or contributing, you can join the [BookWyrm matrix chat](https://app.element.io/#/room/#bookwyrm:matrix.org).
 
-## Translation
-Do you speak a language besides English? BookWyrm needs localization! You can add and edit translations at [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/)
+## Vertimas
+Ar kalbate kita kalba be anglų? „BookWyrm“ reikia lokalizavimo! Vertimus galite pridėti ir redaguoti svetainėje [translate.joinbookwyrm.com](http://translate.joinbookwyrm.com/).
 
 ## Finansinė parama
-„BookWyrm“ – tai be reklamų, iš aistros sukurtas projektas, kurio kūrėjai nesiekia pritraukti rizikos kapitalo ar užmegzti korporacinių finansinių ryšių. If you want to help keep the project going, you can become a sustaining contributor via [Patreon](https://www.patreon.com/bookwyrm) or [OpenCollective](https://opencollective.com/bookwyrm), or make a one time gift via [PayPal](https://paypal.me/oulipo).
+„BookWyrm“ – tai be reklamų, iš aistros sukurtas projektas, kurio kūrėjai nesiekia pritraukti rizikos kapitalo ar užmegzti korporacinių finansinių ryšių. Jei norite padėti tęsti projektą, galite tapti nuolatiniu rėmėju per [„Patreon“](https://www.patreon.com/bookwyrm), [„OpenCollective“](https://opencollective.com/bookwyrm) arba padarykite vienkartinę auką per [„PayPal“](https://paypal.me/oulipo).
