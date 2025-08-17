@@ -65,9 +65,9 @@ This may change in future in favor of the more ActivityPub-compliant [extended O
 
 ## Making ActivityPub-aware models
 
-The way BookWyrm sends and receives ActivityPub objects can be confusing for developers who are new to BookWyrm. It is mostly controlled by:
+The way BookWyrm sends and receives ActivityPub objects can be confusing for developers who are new to BookWyrm. Het wordt voornamelijk gecontroleerd door:
 
-* Functions and [data classes](https://docs.python.org/3/library/dataclasses.html) outlined in the [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub) directory
+* Functies en [gegevensklassen](https://docs.python.org/3/library/dataclasses.html) geschetst in de [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub) map
 * The [ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) and its children for models that are serializable for ActivityPub requests
 
 ### Serializing data to and from ActivityPub JSON

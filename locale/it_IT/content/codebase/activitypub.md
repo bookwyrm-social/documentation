@@ -1,10 +1,10 @@
 - - -
-Title: ActivityPub Date: 2025-04-21 Order: 1
+Titolo: ActivityPub Data: 21-04-2025 Ordine: 1
 - - -
 
 BookWyrm utilizza il protocollo [ActivityPub](http://activitypub.rocks/) per inviare e ricevere le attività dell'utente tra altre istanze di BookWyrm e altri servizi che implementano ActivityPub, come [Mastodon](https://joinmastodon.org/). Per gestire i dati del libro, BookWyrm ha una manciata di tipi di attività estesi che non fanno parte dello standard, ma sono leggibili ad altre istanze di BookWyrm.
 
-To view the ActivityPub data for a BookWyrm entity (user, book, list, etc) you can usually add `.json` to the end of the URL. e.g. `https://www.example.com/user/sam.json` and see the JSON in your web browser or via an http request (e.g. using `curl`).
+Per accedere ai dati ActivityPub relativi a un'entità BookWyrm (come un utente, un libro o una lista), aggiungi `.json` alla fine dell'URL. visita `https://www.example.com/user/sam.json` per visualizzare i dati JSON nel browser o tramite una richiesta HTTP (ad esempio con `curl`).
 
 ## Attività e oggetti
 
@@ -18,7 +18,7 @@ Le interazioni tra gli utenti seguono le specifiche standard di ActivityPub.
 - `Aggiorna`: aggiorna il profilo e le impostazioni di un utente
 - `Elimina`: disattiva un utente
 - `Annulla`: inverte un `Segui` o `Blocco`
-- `Move`: communicate that a user has changed their ID and has moved to a new server. Most ActivityPub software will "follow" the user to the new identity. BookWyrm sends a notification to followers and requires them to confirm they want to follow the user to their new identity.
+- `Spostamento`: indica che un utente ha modificato il proprio ID e si è spostato su un altro server. La maggior parte delle applicazioni ActivityPub continuerà a seguire l’utente dopo il cambio di identità. BookWyrm invia una notifica ai follower e richiede loro di confermare se desiderano continuare a seguire l’utente nella sua nuova identità.
 
 ### Stati
 #### Tipologia di oggetto
@@ -48,7 +48,7 @@ I libri e le liste degli utenti sono rappresentati da [`OrdinedCollection`](http
 
 #### Obiettivi
 
-- `Scaffale`: Collezione di libri di un utente. By default, every user has a `to-read`, `reading`, `stop-reading` and `read` shelf which are used to track reading progress.
+- `Scaffale`: Collezione di libri di un utente. Di default, ogni utente ha `una scaffale da leggere`, `in lettura`,`interrotto`letto</code>, utilizzati per tenere traccia del progresso di lettura.
 - `Lista`: Una raccolta di libri che può avere elementi forniti da utenti diversi da quello che ha creato la lista.
 
 #### Attività
@@ -61,24 +61,24 @@ I libri e le liste degli utenti sono rappresentati da [`OrdinedCollection`](http
 ## Serializzazione Alternativa
 Poiché BookWyrm utilizza tipi di oggetti personalizzati (`Recensione`, `Commento`, `Citazione`) che non sono supportati da ActivityPub, gli stati si trasformano in tipi standard quando inviati o visualizzati da servizi non-BookWyrm. `Recensione`s viene convertita in `Articolo`s, `Commento`s e `Citazione`s vengono convertiti in `Nota`s, con un link al libro e l'immagine di copertina allegata.
 
-This may change in future in favor of the more ActivityPub-compliant [extended Object types](https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type) listed alongside core ActivityPub types.
+Questo potrebbe cambiare in futuro a favore dei [tipi di oggetti estesi](https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type) più conformi a ActivityPub, elencati insieme ai tipi core di ActivityPub.
 
-## Making ActivityPub-aware models
+## Sviluppo di modelli compatibili con ActivityPub
 
-The way BookWyrm sends and receives ActivityPub objects can be confusing for developers who are new to BookWyrm. It is mostly controlled by:
+Il modo in cui BookWyrm invia e riceve oggetti ActivityPub può risultare confuso per gli sviluppatori che si avvicinano per la prima volta a BookWyrm. È principalmente composto da:
 
-* Functions and [data classes](https://docs.python.org/3/library/dataclasses.html) outlined in the [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub) directory
-* The [ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) and its children for models that are serializable for ActivityPub requests
+* Funzioni e [classi dati](https://docs.python.org/3/library/dataclasses.html) descritte nella directory [activitypub](https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub).
+* Il [ActivitypubMixin](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40) e i suoi elementi figli per i modelli che possono essere serializzati per le richieste ActivityPub
 
-### Serializing data to and from ActivityPub JSON
+### Serializzazione dei dati in formato JSON per ActivityPub e viceversa
 
-BookWyrm needs to know how to _serialize_ the data from the model into an ActivityPub JSON-LD object.
+BookWyrm deve sapere come _serializzare_ i dati del modello in un oggetto JSON-LD compatibile con ActivityPub.
 
-The `/activitypub/base_activity.py` file provides the core functions that turn ActivityPub JSON-LD strings into usable Django model objects, and vice-versa. We do this by creating a data class in `bookwyrm/activitypub`, and defining how the model should be serialized by providing an `activity_serializer` value in the model, which points to the relevant data class. From `ActivityObject` we inherit `id` and `type`, and two _class methods_:
+Il file `/activitypub/base_activity.py` fornisce le funzioni principali che trasformano le stringhe JSON-LD di ActivityPub in oggetti modello Django utilizzabili, e viceversa. Facciamo questo creando una data class in `bookwyrm/activitypub` e definendo come il modello debba essere serializzato, fornendo un valore `activity_serializer` nel modello, che punta alla data class corrispondente. Da `ActivityObject` ereditiamo `id` e `type`, e due _metodi di classe_:
 
 **`to_model`**
 
-This method takes an ActivityPub JSON string and tries to turn it into a BookWyrm model object, finding an existing object wherever possible. This is how we process **incoming** ActivityPub objects.
+Questo metodo prende una stringa JSON di ActivityPub e cerca di trasformarla in un oggetto modello di BookWyrm, trovando un oggetto esistente quando possibile. È così che processiamo gli oggetti ActivityPub **in entrata**.
 
 **`serialize`**
 
