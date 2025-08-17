@@ -1,11 +1,11 @@
 - - -
-Title: How to Contribute Date: 2021-04-12 Order: 1
+Pavadinimas: Kaip prisidėti Data: 2021-04-12 Eilė: 1
 - - -
 
-There are many ways you can contribute to this project, regardless of your level of technical expertise.
+Yra daugybė būdų, kaip galite prisidėti prie šio projekto, nepaisant jūsų techninių žinių lygio.
 
-## Feedback and feature requests
-Please feel encouraged and welcome to point out bugs, suggestions, feature requests, and ideas for how things ought to work using [GitHub issues](https://github.com/bookwyrm-social/bookwyrm/issues).
+## Atsiliepimai ir funkcijų prašymai
+Kviečiame drąsiai pranešti apie klaidas, teikti pasiūlymus, funkcijų prašymus ir idėjas, kaip viskas turėtų veikti, naudojant [„GitHub“ problemas](https://github.com/bookwyrm-social/bookwyrm/issues).
 
 ## Code contributions
 Code contributions are gladly welcomed! If you're not sure where to start, take a look at the ["Good first issue"](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) tag. Because BookWyrm is a small project, there isn't a lot of formal structure, but there is a huge capacity for one-on-one support, which can look like asking questions as you go, pair programming, video chats, et cetera, so please feel free to reach out.
