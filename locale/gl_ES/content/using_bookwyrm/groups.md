@@ -22,7 +22,7 @@ You will then need to give it a name and describe what it is about, before choos
 
 Groups have the same privacy settings as posts and lists do, except they can't be Followers-only.
 Group membership always requires an invitation from the group's owner, even if it is marked Public.
-For more details, see [here](/privacy-controls#Groups).
+Para máis info, ler [isto](/privacy-controls.html#groups).
 
 ### Adding and removing users
 
