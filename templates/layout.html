@@ -59,6 +59,13 @@
         </div>
     </div>
 </nav>
+{% if not current_version %}
+<div class="message is-danger">
+    <div class="message-body has-text-centered">
+        {{ _("This is the documentation for the current development code. Choose a version from the menu to see documentation for released versions since") }} <strong>v0.7.5</strong>.
+    </div>
+</div>
+{% endif %}
 
 <div class="columns">
     <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
