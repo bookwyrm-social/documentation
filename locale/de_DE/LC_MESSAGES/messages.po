@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-18 05:16+0000\n"
-"PO-Revision-Date: 2025-08-18 05:21\n"
+"PO-Revision-Date: 2025-08-18 06:28\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -110,5 +110,5 @@ msgstr "Lizenz"
 
 #: templates/layout.html:65
 msgid "This is the documentation for the current development code. Choose a version from the menu to see documentation for released versions since"
-msgstr ""
+msgstr "Dies ist die Dokumentation für den aktuellen Entwicklungsstand. Wählen Sie eine Version aus dem Menü aus, um die Dokumentation für veröffentlichte Versionen zu sehen seit"
 
