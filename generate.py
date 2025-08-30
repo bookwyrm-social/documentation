@@ -174,7 +174,7 @@ if __name__ == "__main__":
                         if not version
                         else f"/{version}/{SLUG}{output_path}"
                     )
-                    versions = ["latest", "v0.7.5"]
+                    versions = ["development", "v0.7.5"]
                     current_version = version if version else ""
                     render_file.write(
                         template.render(
