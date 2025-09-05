@@ -1,10 +1,8 @@
 ---
 Title: Main Menu & Timelines
-Date: 2025-06-01
+Date: 2025-09-06
 Order: 1
 ---
-
-
 
 ## Your Books view
 
