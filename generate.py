@@ -110,8 +110,7 @@ def format_markdown(file_path):
                 "codehilite": {"css_class": "highlight"},
                 "toc": {
                     "anchorlink": True,
-                    "anchorlink_class": "headerlink",
-                    "toc_class": "menu",
+                    "anchorlink_class": "headerlink"
                 },
             },
         )
