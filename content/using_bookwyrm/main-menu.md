@@ -22,11 +22,10 @@ By clicking on one of these books, it becomes the focus of the interact and revi
 Below the display of your books is a section that displays basic information about the selected book, and lets you interact with it.
 It includes:
 
-- The book's title, linking to it's main page.
+- The book's title, linking to its main page.
 - The name of the author, linking to the author's page.
 - The [update reading status](/shelves.html#updating-reading-status) button for that book.
-- Tabs to select a type of status you might want to [post about the book](/posting-statuses.html).
-The options are Review, Comment or Quote.
+- Tabs to select a type of status you might want to [post about the book](/posting-statuses.html). The options are Review, Comment or Quote.
 - An input form for the selected type of status.
 
 On mobile, you can temporarily hide this section by pressing the X in the top-right corner of it.
@@ -46,7 +45,7 @@ Try setting a goal that is achievable, and will motivate you to read often.
 
 On the top of the home page is a search box, which lets you search for books, authors, users or [lists](/lists.html).
 
-Beside it is a barcode reader which lets you easily find a book by scanning it's ISBN barcode using the device camera.
+Beside it is a barcode reader which lets you easily find a book by scanning its ISBN barcode using the device camera.
 This is especially useful if you're in a bookstore or the library!
 
 ## Timelines
@@ -60,13 +59,13 @@ They take up 2/3 of the screen, or on mobile are found below the reading goal se
 As a new user, you will be suggested some accounts to follow.
 You can also search for your friend's username to find and follow them.
 If they are using a different BookWyrm website than you (for example, `bookwyrm.social` and `ramblingreaders.org`)
-then you can still follow them - but you might also need to include their website address in the username, like this:
+then you can still follow them - but you will need to use their full account name including the instance domain name, like this:
 
 `user@example.com` or `arthur@ramblingreaders.org`
 
 ### Home Timeline
 
-Your Home Timeline is a chronological feed of all the statuses posted by people you follow.
+Your Home Timeline is a chronological feed of all the statuses about books posted by people you follow.
 This includes their reading status updates (want to read, started reading, finished, etc), reviews, ratings, comments, and quotes that they've shared.
 Read more about [types of statuses here](/posting-statuses.html).
 
@@ -75,6 +74,9 @@ This is similar to reposting or reblogging on other platforms, and means that st
 Boosting is the best way to share good reviews with your followers, and helps them find interesting people to follow.
 This is especially useful since there is no algorithm deciding what to show you,
 only the real humans that you've decided to follow.
+
+If you follow people on other fediverse apps, such as Mastodon, you will not find their normal text posts in your timeline.
+However, posts they boost or their replies to other posts will be included in it.
 
 ### Books Timeline
 
@@ -102,8 +104,7 @@ There are many links within the main menu to navigate to other pages on BookWyrm
 
 ### Top menu bar
 
-In the top bar is the search box to go to the search page, and links to [Lists](/lists.html), 
-Discover (recent statuses from the local instance), and [Your Books](/shelves.html).
+In the top bar is the search box to go to the search page, and links to [Lists](/lists.html), Discover (recent statuses from the local instance), and [Your Books](/shelves.html).
 
 On the right hand side is your profile icon and name. 
 When clicked, it has links to your Profile, the Directory of other users, your Direct Messages, Settings, and the Log Out button.
@@ -117,7 +118,7 @@ On mobile, some of these options will be collapsed into a 3 dots option which wi
 
 The website footer also includes links related to the administration of the site, link to this documentation and to re-start the Guided Tour. 
 
-It might also include a link to financially support the admins who provide you this service for free,
-even though it costs them many hours of management and up to several hundred dollars a year to run.
+If you are using a free BookWyrm instance, there might be a link to financially support the admins in the footer.
+Public instances require many hours of management and up to several hundred dollars a year to run.
 If you like using your BookWyrm site, please consider supporting them to keep it online and running smoothly!
 
