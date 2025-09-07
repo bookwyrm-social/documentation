@@ -108,10 +108,7 @@ def format_markdown(file_path):
             extensions=["tables", "fenced_code", "codehilite", "toc", "sane_lists"],
             extension_configs={
                 "codehilite": {"css_class": "highlight"},
-                "toc": {
-                    "anchorlink": True,
-                    "anchorlink_class": "headerlink"
-                },
+                "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
             },
         )
 
