@@ -60,4 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
             $menuTarget.classList.toggle('is-hidden-touch');
         });
     });
+
+    // Table of contents
+    const $tocController = document.getElementById("toc");
+    $tocController.addEventListener('click', () => {
+        $tocController.classList.toggle('is-active');
+        const target = $tocController.dataset.target;
+        const $target = document.getElementById(target);
+        $target.classList.toggle('is-hidden-touch');
+    })
+
 });
