@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-07 21:11+0000\n"
-"PO-Revision-Date: 2025-06-23 19:52\n"
+"POT-Creation-Date: 2025-08-18 05:16+0000\n"
+"PO-Revision-Date: 2025-08-18 05:21\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
@@ -56,52 +56,59 @@ msgstr "ソースコード"
 #: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
 #: templates/layout.html:130 templates/layout.html:52 templates/layout.html:131
 #: templates/layout.html:137 templates/layout.html:35 templates/layout.html:138
+#: templates/layout.html:145
 msgid "Documentation"
 msgstr "ドキュメント"
 
 #: templates/layout.html:95 templates/layout.html:101 templates/layout.html:102
 #: templates/layout.html:108 templates/layout.html:109
+#: templates/layout.html:116
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 msgstr "<strong>BookWyrm</strong> は、<a href='https://www.mousereeve.com/'>Mouse Reeve</a> によってメンテナンスされている、共同作業によるアンチ・コーポレートなソフトウェアです。"
 
 #: templates/layout.html:98 templates/layout.html:104 templates/layout.html:105
 #: templates/layout.html:111 templates/layout.html:112
+#: templates/layout.html:119
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 msgstr "<a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a> で、BookWyrmをサポート。"
 
 #: templates/layout.html:102 templates/layout.html:108
 #: templates/layout.html:109 templates/layout.html:115
-#: templates/layout.html:116
+#: templates/layout.html:116 templates/layout.html:123
 msgid "Get Involved"
 msgstr "参加する"
 
 #: templates/layout.html:104 templates/layout.html:110
 #: templates/layout.html:111 templates/layout.html:117
-#: templates/layout.html:118
+#: templates/layout.html:118 templates/layout.html:125
 msgid "BookWyrm on GitHub"
 msgstr "BookWyrmのGithubリポジトリ"
 
 #: templates/layout.html:107 templates/layout.html:113
 #: templates/layout.html:114 templates/layout.html:120
-#: templates/layout.html:121
+#: templates/layout.html:121 templates/layout.html:128
 msgid "Contribute to this page"
 msgstr "このページへのコントリビュート"
 
 #: templates/layout.html:122 templates/layout.html:128
 #: templates/layout.html:129 templates/layout.html:135
-#: templates/layout.html:136
+#: templates/layout.html:136 templates/layout.html:143
 msgid "Learn more"
 msgstr "詳しく見る"
 
 #: templates/layout.html:127 templates/layout.html:133
 #: templates/layout.html:134 templates/layout.html:140
-#: templates/layout.html:141
+#: templates/layout.html:141 templates/layout.html:148
 msgid "Contact maintainer"
 msgstr "メンテナーにお問い合わせ"
 
 #: templates/layout.html:130 templates/layout.html:136
 #: templates/layout.html:137 templates/layout.html:143
-#: templates/layout.html:144
+#: templates/layout.html:144 templates/layout.html:151
 msgid "License"
 msgstr "ライセンス"
+
+#: templates/layout.html:65
+msgid "This is the documentation for the current development code. Choose a version from the menu to see documentation for released versions since"
+msgstr ""
 
