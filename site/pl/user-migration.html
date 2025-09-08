@@ -68,7 +68,7 @@ User Migration and Aliases
 
 
 <div class="columns">
-    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6" id="menu">
         <h2 class="menu-label">Language & Version</a></h2>
         <div class="select">
             <select aria-label="Select a language" id="language_selection">
@@ -99,6 +99,10 @@ User Migration and Aliases
         
         <h2 class="menu-label">Using BookWyrm</h2>
         <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/pl/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
             
             <li>
                 <a href="/pl/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
@@ -224,7 +228,36 @@ User Migration and Aliases
         
     </nav>
 
-    <div class="column">
+    <div class="column pt-0">
+        
+
+<nav class="navbar is-dark" role="table-of-contents-navigation" aria-label="dropdown navigation">
+    <div class="navbar-start">
+        <div class="navbar-item has-dropdown" id="toc" data-target="toc-dropdown">
+            <a class="navbar-link">
+              Page Contents
+            </a>
+
+            <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
+              
+                  <a class="navbar-item" href="#exporting-account-data">Exporting account data</a>
+                  
+              
+                  <a class="navbar-item" href="#aliases">Aliases</a>
+                  
+              
+                  <a class="navbar-item" href="#moving-an-account">Moving an account</a>
+                  
+              
+                  <a class="navbar-item" href="#importing-account-data">Importing account data</a>
+                  
+              
+            </div>
+          </div>
+    </div>
+  </nav>
+
+
         <div class="container is-max-desktop">
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">

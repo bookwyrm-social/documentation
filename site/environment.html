@@ -68,7 +68,7 @@ Environment Variables
 
 
 <div class="columns">
-    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6" id="menu">
         <h2 class="menu-label">Language & Version</a></h2>
         <div class="select">
             <select aria-label="Select a language" id="language_selection">
@@ -244,7 +244,231 @@ Environment Variables
         
     </nav>
 
-    <div class="column">
+    <div class="column pt-0">
+        
+
+<nav class="navbar is-dark" role="table-of-contents-navigation" aria-label="dropdown navigation">
+    <div class="navbar-start">
+        <div class="navbar-item has-dropdown" id="toc" data-target="toc-dropdown">
+            <a class="navbar-link">
+              Page Contents
+            </a>
+
+            <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
+              
+                  <a class="navbar-item" href="#django-settings">Django settings</a>
+                  
+                      
+                      <a class="navbar-item" href="#allowed_hosts"><span class="pl-4">ALLOWED_HOSTS</span></a>
+                      
+                      <a class="navbar-item" href="#media_root"><span class="pl-4">MEDIA_ROOT</span></a>
+                      
+                      <a class="navbar-item" href="#secret_key"><span class="pl-4">SECRET_KEY</span></a>
+                      
+                      <a class="navbar-item" href="#static_root"><span class="pl-4">STATIC_ROOT</span></a>
+                      
+                      <a class="navbar-item" href="#debug"><span class="pl-4">DEBUG</span></a>
+                      
+                      <a class="navbar-item" href="#language_code"><span class="pl-4">LANGUAGE_CODE</span></a>
+                      
+                      <a class="navbar-item" href="#session_cookie_age"><span class="pl-4">SESSION_COOKIE_AGE</span></a>
+                      
+                      <a class="navbar-item" href="#data_upload_max_memory_mib"><span class="pl-4">DATA_UPLOAD_MAX_MEMORY_MiB</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#basic-bookwyrm-site-settings">Basic BookWyrm site settings</a>
+                  
+                      
+                      <a class="navbar-item" href="#default_language"><span class="pl-4">DEFAULT_LANGUAGE</span></a>
+                      
+                      <a class="navbar-item" href="#domain"><span class="pl-4">DOMAIN</span></a>
+                      
+                      <a class="navbar-item" href="#email"><span class="pl-4">EMAIL</span></a>
+                      
+                      <a class="navbar-item" href="#port"><span class="pl-4">PORT</span></a>
+                      
+                      <a class="navbar-item" href="#use_https"><span class="pl-4">USE_HTTPS</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#searching">Searching</a>
+                  
+                      
+                      <a class="navbar-item" href="#search_timeout"><span class="pl-4">SEARCH_TIMEOUT</span></a>
+                      
+                      <a class="navbar-item" href="#query_timeout"><span class="pl-4">QUERY_TIMEOUT</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#postgres-configuration">Postgres configuration</a>
+                  
+                      
+                      <a class="navbar-item" href="#pgport"><span class="pl-4">PGPORT</span></a>
+                      
+                      <a class="navbar-item" href="#postgres_password"><span class="pl-4">POSTGRES_PASSWORD</span></a>
+                      
+                      <a class="navbar-item" href="#postgres_user"><span class="pl-4">POSTGRES_USER</span></a>
+                      
+                      <a class="navbar-item" href="#postgres_db"><span class="pl-4">POSTGRES_DB</span></a>
+                      
+                      <a class="navbar-item" href="#postgres_host"><span class="pl-4">POSTGRES_HOST</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#redis">Redis</a>
+                  
+                      
+                      <a class="navbar-item" href="#max_stream_length"><span class="pl-4">MAX_STREAM_LENGTH</span></a>
+                      
+                      <a class="navbar-item" href="#redis_activity_host"><span class="pl-4">REDIS_ACTIVITY_HOST</span></a>
+                      
+                      <a class="navbar-item" href="#redis_activity_port"><span class="pl-4">REDIS_ACTIVITY_PORT</span></a>
+                      
+                      <a class="navbar-item" href="#redis_activity_password"><span class="pl-4">REDIS_ACTIVITY_PASSWORD</span></a>
+                      
+                      <a class="navbar-item" href="#redis_activity_db_index"><span class="pl-4">REDIS_ACTIVITY_DB_INDEX</span></a>
+                      
+                      <a class="navbar-item" href="#redis_activity_url"><span class="pl-4">REDIS_ACTIVITY_URL</span></a>
+                      
+                      <a class="navbar-item" href="#redis_broker_host"><span class="pl-4">REDIS_BROKER_HOST</span></a>
+                      
+                      <a class="navbar-item" href="#redis_broker_port"><span class="pl-4">REDIS_BROKER_PORT</span></a>
+                      
+                      <a class="navbar-item" href="#redis_broker_password"><span class="pl-4">REDIS_BROKER_PASSWORD</span></a>
+                      
+                      <a class="navbar-item" href="#redis_broker_db_index"><span class="pl-4">REDIS_BROKER_DB_INDEX</span></a>
+                      
+                      <a class="navbar-item" href="#redis_broker_url"><span class="pl-4">REDIS_BROKER_URL</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#flower">Flower</a>
+                  
+                      
+                      <a class="navbar-item" href="#flower_port"><span class="pl-4">FLOWER_PORT</span></a>
+                      
+                      <a class="navbar-item" href="#flower_user"><span class="pl-4">FLOWER_USER</span></a>
+                      
+                      <a class="navbar-item" href="#flower_password"><span class="pl-4">FLOWER_PASSWORD</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#email-configuration">Email configuration</a>
+                  
+                      
+                      <a class="navbar-item" href="#email_host"><span class="pl-4">EMAIL_HOST</span></a>
+                      
+                      <a class="navbar-item" href="#email_port"><span class="pl-4">EMAIL_PORT</span></a>
+                      
+                      <a class="navbar-item" href="#email_host_user"><span class="pl-4">EMAIL_HOST_USER</span></a>
+                      
+                      <a class="navbar-item" href="#email_host_password"><span class="pl-4">EMAIL_HOST_PASSWORD</span></a>
+                      
+                      <a class="navbar-item" href="#email_use_tls"><span class="pl-4">EMAIL_USE_TLS</span></a>
+                      
+                      <a class="navbar-item" href="#email_use_ssl"><span class="pl-4">EMAIL_USE_SSL</span></a>
+                      
+                      <a class="navbar-item" href="#email_sender_name"><span class="pl-4">EMAIL_SENDER_NAME</span></a>
+                      
+                      <a class="navbar-item" href="#email_sender_domain"><span class="pl-4">EMAIL_SENDER_DOMAIN</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#s3-object-storage">S3 object storage</a>
+                  
+                      
+                      <a class="navbar-item" href="#use_s3"><span class="pl-4">USE_S3</span></a>
+                      
+                      <a class="navbar-item" href="#s3_signed_url_expiry"><span class="pl-4">S3_SIGNED_URL_EXPIRY</span></a>
+                      
+                      <a class="navbar-item" href="#aws_access_key_id"><span class="pl-4">AWS_ACCESS_KEY_ID</span></a>
+                      
+                      <a class="navbar-item" href="#aws_secret_access_key"><span class="pl-4">AWS_SECRET_ACCESS_KEY</span></a>
+                      
+                      <a class="navbar-item" href="#aws_storage_bucket_name"><span class="pl-4">AWS_STORAGE_BUCKET_NAME</span></a>
+                      
+                      <a class="navbar-item" href="#aws_s3_region_name"><span class="pl-4">AWS_S3_REGION_NAME</span></a>
+                      
+                      <a class="navbar-item" href="#aws_s3_custom_domain"><span class="pl-4">AWS_S3_CUSTOM_DOMAIN</span></a>
+                      
+                      <a class="navbar-item" href="#aws_s3_url_protocol"><span class="pl-4">AWS_S3_URL_PROTOCOL</span></a>
+                      
+                      <a class="navbar-item" href="#aws_s3_endpoint_url"><span class="pl-4">AWS_S3_ENDPOINT_URL</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#azure-blob-storage">Azure blob storage</a>
+                  
+                      
+                      <a class="navbar-item" href="#use_azure"><span class="pl-4">USE_AZURE</span></a>
+                      
+                      <a class="navbar-item" href="#azure_account_name"><span class="pl-4">AZURE_ACCOUNT_NAME</span></a>
+                      
+                      <a class="navbar-item" href="#azure_account_key"><span class="pl-4">AZURE_ACCOUNT_KEY</span></a>
+                      
+                      <a class="navbar-item" href="#azure_container"><span class="pl-4">AZURE_CONTAINER</span></a>
+                      
+                      <a class="navbar-item" href="#azure_custom_domain"><span class="pl-4">AZURE_CUSTOM_DOMAIN</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#image-generation">Image generation</a>
+                  
+                      
+                      <a class="navbar-item" href="#enable_thumbnail_generation"><span class="pl-4">ENABLE_THUMBNAIL_GENERATION</span></a>
+                      
+                      <a class="navbar-item" href="#enable_preview_images"><span class="pl-4">ENABLE_PREVIEW_IMAGES</span></a>
+                      
+                      <a class="navbar-item" href="#preview_bg_color"><span class="pl-4">PREVIEW_BG_COLOR</span></a>
+                      
+                      <a class="navbar-item" href="#preview_text_color"><span class="pl-4">PREVIEW_TEXT_COLOR</span></a>
+                      
+                      <a class="navbar-item" href="#preview_img_width"><span class="pl-4">PREVIEW_IMG_WIDTH</span></a>
+                      
+                      <a class="navbar-item" href="#preview_img_height"><span class="pl-4">PREVIEW_IMG_HEIGHT</span></a>
+                      
+                      <a class="navbar-item" href="#preview_default_cover_color"><span class="pl-4">PREVIEW_DEFAULT_COVER_COLOR</span></a>
+                      
+                      <a class="navbar-item" href="#preview_default_font"><span class="pl-4">PREVIEW_DEFAULT_FONT</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#telemetry">Telemetry</a>
+                  
+                      
+                      <a class="navbar-item" href="#otel_exporter_otlp_endpoint"><span class="pl-4">OTEL_EXPORTER_OTLP_ENDPOINT</span></a>
+                      
+                      <a class="navbar-item" href="#otel_exporter_otlp_headers"><span class="pl-4">OTEL_EXPORTER_OTLP_HEADERS</span></a>
+                      
+                      <a class="navbar-item" href="#otel_service_name"><span class="pl-4">OTEL_SERVICE_NAME</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#http-headers">HTTP headers</a>
+                  
+                      
+                      <a class="navbar-item" href="#http_x_forwarded_proto"><span class="pl-4">HTTP_X_FORWARDED_PROTO</span></a>
+                      
+                      <a class="navbar-item" href="#csp_additional_hosts"><span class="pl-4">CSP_ADDITIONAL_HOSTS</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#multifactor-totp-authentication">Multifactor (TOTP) authentication</a>
+                  
+                      
+                      <a class="navbar-item" href="#two_factor_login_validity_window"><span class="pl-4">TWO_FACTOR_LOGIN_VALIDITY_WINDOW</span></a>
+                      
+                      <a class="navbar-item" href="#two_factor_login_max_seconds"><span class="pl-4">TWO_FACTOR_LOGIN_MAX_SECONDS</span></a>
+                      
+                  
+              
+            </div>
+          </div>
+    </div>
+  </nav>
+
+
         <div class="container is-max-desktop">
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">

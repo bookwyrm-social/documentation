@@ -68,7 +68,7 @@ Groups
 
 
 <div class="columns">
-    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6" id="menu">
         <h2 class="menu-label">Language & Version</a></h2>
         <div class="select">
             <select aria-label="Select a language" id="language_selection">
@@ -99,6 +99,10 @@ Groups
         
         <h2 class="menu-label">Using BookWyrm</h2>
         <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/fr/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
             
             <li>
                 <a href="/fr/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
@@ -224,7 +228,47 @@ Groups
         
     </nav>
 
-    <div class="column">
+    <div class="column pt-0">
+        
+
+<nav class="navbar is-dark" role="table-of-contents-navigation" aria-label="dropdown navigation">
+    <div class="navbar-start">
+        <div class="navbar-item has-dropdown" id="toc" data-target="toc-dropdown">
+            <a class="navbar-link">
+              Page Contents
+            </a>
+
+            <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
+              
+                  <a class="navbar-item" href="#group-administration">Group administration</a>
+                  
+                      
+                      <a class="navbar-item" href="#creating-a-group"><span class="pl-4">Creating a group</span></a>
+                      
+                      <a class="navbar-item" href="#group-privacy"><span class="pl-4">Group privacy</span></a>
+                      
+                      <a class="navbar-item" href="#adding-and-removing-users"><span class="pl-4">Adding and removing users</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#group-membership">Group membership</a>
+                  
+                      
+                      <a class="navbar-item" href="#joining-a-group"><span class="pl-4">Joining a group</span></a>
+                      
+                      <a class="navbar-item" href="#using-group-lists"><span class="pl-4">Using group Lists</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#related-ideas-and-discussion-on-github">Related ideas and discussion on GitHub</a>
+                  
+              
+            </div>
+          </div>
+    </div>
+  </nav>
+
+
         <div class="container is-max-desktop">
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">

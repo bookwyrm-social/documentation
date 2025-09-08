@@ -68,7 +68,7 @@ Command Line Tool
 
 
 <div class="columns">
-    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6" id="menu">
         <h2 class="menu-label">Language & Version</a></h2>
         <div class="select">
             <select aria-label="Select a language" id="language_selection">
@@ -244,7 +244,119 @@ Command Line Tool
         
     </nav>
 
-    <div class="column">
+    <div class="column pt-0">
+        
+
+<nav class="navbar is-dark" role="table-of-contents-navigation" aria-label="dropdown navigation">
+    <div class="navbar-start">
+        <div class="navbar-item has-dropdown" id="toc" data-target="toc-dropdown">
+            <a class="navbar-link">
+              Page Contents
+            </a>
+
+            <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
+              
+                  <a class="navbar-item" href="#docker-shortcuts">Docker shortcuts</a>
+                  
+                      
+                      <a class="navbar-item" href="#bash"><span class="pl-4">bash</span></a>
+                      
+                      <a class="navbar-item" href="#build"><span class="pl-4">build</span></a>
+                      
+                      <a class="navbar-item" href="#dbshell"><span class="pl-4">dbshell</span></a>
+                      
+                      <a class="navbar-item" href="#runweb-args"><span class="pl-4">runweb args</span></a>
+                      
+                      <a class="navbar-item" href="#service_ports_web-args"><span class="pl-4">service_ports_web args</span></a>
+                      
+                      <a class="navbar-item" href="#shell"><span class="pl-4">shell</span></a>
+                      
+                      <a class="navbar-item" href="#up-args"><span class="pl-4">up [args]</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#managing-the-database">Managing the database</a>
+                  
+                      
+                      <a class="navbar-item" href="#initdb"><span class="pl-4">initdb</span></a>
+                      
+                      <a class="navbar-item" href="#makemigrations-appname-migration-number"><span class="pl-4">makemigrations [appname migration number]</span></a>
+                      
+                      <a class="navbar-item" href="#migrate"><span class="pl-4">migrate</span></a>
+                      
+                      <a class="navbar-item" href="#resetdb"><span class="pl-4">resetdb</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#managing-a-bookwyrm-instance">Managing a Bookwyrm instance</a>
+                  
+                      
+                      <a class="navbar-item" href="#compile_themes"><span class="pl-4">compile_themes</span></a>
+                      
+                      <a class="navbar-item" href="#collectstatic"><span class="pl-4">collectstatic</span></a>
+                      
+                      <a class="navbar-item" href="#generate_preview_images"><span class="pl-4">generate_preview_images</span></a>
+                      
+                      <a class="navbar-item" href="#remove_remote_user_preview_images"><span class="pl-4">remove_remote_user_preview_images</span></a>
+                      
+                      <a class="navbar-item" href="#generate_thumbnails"><span class="pl-4">generate_thumbnails</span></a>
+                      
+                      <a class="navbar-item" href="#populate_streams-args"><span class="pl-4">populate_streams args</span></a>
+                      
+                      <a class="navbar-item" href="#populate_list_streams"><span class="pl-4">populate_list_streams</span></a>
+                      
+                      <a class="navbar-item" href="#populate_suggestions"><span class="pl-4">populate_suggestions</span></a>
+                      
+                      <a class="navbar-item" href="#restart_celery"><span class="pl-4">restart_celery</span></a>
+                      
+                      <a class="navbar-item" href="#update"><span class="pl-4">update</span></a>
+                      
+                      <a class="navbar-item" href="#admin_code"><span class="pl-4">admin_code</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#setting-up-s3-compatible-storage">Setting up S3 compatible storage</a>
+                  
+                      
+                      <a class="navbar-item" href="#copy_media_to_s3"><span class="pl-4">copy_media_to_s3</span></a>
+                      
+                      <a class="navbar-item" href="#sync_media_to_s3"><span class="pl-4">sync_media_to_s3</span></a>
+                      
+                      <a class="navbar-item" href="#set_cors_to_s3-filename"><span class="pl-4">set_cors_to_s3 filename</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#development-and-testing">Development and testing</a>
+                  
+                      
+                      <a class="navbar-item" href="#black"><span class="pl-4">black</span></a>
+                      
+                      <a class="navbar-item" href="#prettier"><span class="pl-4">prettier</span></a>
+                      
+                      <a class="navbar-item" href="#stylelint"><span class="pl-4">stylelint</span></a>
+                      
+                      <a class="navbar-item" href="#formatters"><span class="pl-4">formatters</span></a>
+                      
+                      <a class="navbar-item" href="#clean"><span class="pl-4">clean</span></a>
+                      
+                      <a class="navbar-item" href="#makemessages"><span class="pl-4">makemessages</span></a>
+                      
+                      <a class="navbar-item" href="#compilemessages"><span class="pl-4">compilemessages</span></a>
+                      
+                      <a class="navbar-item" href="#pytest-args"><span class="pl-4">pytest args</span></a>
+                      
+                      <a class="navbar-item" href="#remove_2fa"><span class="pl-4">remove_2fa</span></a>
+                      
+                      <a class="navbar-item" href="#confirm_email"><span class="pl-4">confirm_email</span></a>
+                      
+                  
+              
+            </div>
+          </div>
+    </div>
+  </nav>
+
+
         <div class="container is-max-desktop">
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
