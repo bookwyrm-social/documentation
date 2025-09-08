@@ -1,10 +1,10 @@
 ---
-Title: Main Menu & Timelines
+Title: Menú principal e Cronoloxías
 Date: 2025-09-06
 Order: 1
 ---
 
-## Your Books view
+## Vista dos teus libros
 
 In the top-left of the page (or top of the page on mobile) you will find a small selection of your books.
 It will include up to 5 books, from your Currently Reading, Read and To Read reading status shelves.
@@ -62,7 +62,7 @@ then you can still follow them - but you will need to use their full account nam
 
 `user@example.com` or `arthur@ramblingreaders.org`
 
-### Home Timeline
+### Cronoloxía de Inicio
 
 Your Home Timeline is a chronological feed of all the statuses about books posted by people you follow.
 This includes their reading status updates (want to read, started reading, finished, etc), reviews, ratings, comments, and quotes that they've shared.
