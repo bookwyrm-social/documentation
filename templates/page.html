@@ -7,6 +7,30 @@
 <h1 class="title is-1">{{ headers.Title }}</h1>
 {% endblock %}
 
+{% block toc %}
+{% if toc %}
+<nav class="navbar is-dark" role="table-of-contents-navigation" aria-label="dropdown navigation">
+    <div class="navbar-start">
+        <div class="navbar-item has-dropdown" id="toc" data-target="toc-dropdown">
+            <a class="navbar-link">
+              {{ _("Page Contents") }}
+            </a>
+
+            <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
+              {% for entry in toc %}
+                  <a class="navbar-item" href="#{{entry.id}}">{{entry.name}}</a>
+                  {% if entry.children %}
+                      {% for child in entry.children %}
+                      <a class="navbar-item" href="#{{child.id}}"><span class="pl-4">{{child.name}}</span></a>
+                      {% endfor %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+    </div>
+  </nav>
+{% endif %}
+{% endblock %}
 
 {% block content %}
 <section class="block content">

@@ -68,7 +68,7 @@
 {% endif %}
 
 <div class="columns">
-    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6" id="menu">
         <h2 class="menu-label">Language & Version</a></h2>
         <div class="select">
             <select aria-label="{{ _("Select a language") }}" id="language_selection">
@@ -96,7 +96,8 @@
         {% endfor %}
     </nav>
 
-    <div class="column">
+    <div class="column pt-0">
+        {% block toc %}{% endblock %}
         <div class="container is-max-desktop">
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
