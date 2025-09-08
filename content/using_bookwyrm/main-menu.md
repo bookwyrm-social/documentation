@@ -96,7 +96,7 @@ You can include or exclude Reviews, Comments, Quotations, or Everything Else (in
 Then click the 'Apply filters' button to reload the timeline with the new filters.
 
 A little badge called 'Filters are applied' will be shown after filters are changed, 
-but this disappears after another page reload even though filters are still being applied.
+but this disappears after another page reload even though filters are still in effect.
 
 ## Navigation to other pages
 
