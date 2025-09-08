@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>
+        
+Main Menu & Timelines
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentação
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
+                Registrar
+            </a>
+            <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
+                Participe
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Suporte
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Código
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" selected>Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="development" >development</option>
+                
+                <option value="v0.7.5" selected>v0.7.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/main-menu.html" class="has-background-inherit" class="is-active">Main Menu & Timelines</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/adding-books.html" class="has-background-inherit" >Adicionar livros</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/optional_features.html" class="has-background-inherit" >Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/style_guide.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/contributing.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/translation.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/permissions.html" class="has-background-inherit" >Permissões</a>
+            </li>
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">Main Menu & Timelines</h1>
+
+                </header>
+                
+<section class="block content">
+    <h2 id="your-books-view"><a class="headerlink" href="#your-books-view">Your Books view</a></h2>
+<p>In the top-left of the page (or top of the page on mobile) you will find a small selection of your books.
+It will include up to 5 books, from your Currently Reading, Read and To Read reading status shelves.</p>
+<p>To see all of them, you may need to <em>horizontally</em> scroll, or pull on the horizontal scroll bar.</p>
+<p>If you have 3 or 4 currently reading, the To Read section will not be displayed.
+Similarly, if all 5 are currently reading, the Read section won't be available either.
+However, if you have more than 5 currently reading, it will still only show 5 of them.</p>
+<p>By clicking on one of these books, it becomes the focus of the interact and review section.</p>
+<h3 id="interact-review-section"><a class="headerlink" href="#interact-review-section">Interact &amp; Review section</a></h3>
+<p>Below the display of your books is a section that displays basic information about the selected book, and lets you interact with it.
+It includes:</p>
+<ul>
+<li>The book's title, linking to its main page.</li>
+<li>The name of the author, linking to the author's page.</li>
+<li>The <a href="/shelves.html#updating-reading-status">update reading status</a> button for that book.</li>
+<li>Tabs to select a type of status you might want to <a href="/posting-statuses.html">post about the book</a>. The options are Review, Comment or Quote.</li>
+<li>An input form for the selected type of status.</li>
+</ul>
+<p>On mobile, you can temporarily hide this section by pressing the X in the top-right corner of it.</p>
+<h2 id="reading-goal"><a class="headerlink" href="#reading-goal">Reading Goal</a></h2>
+<p>If you scroll down below the Your Books and post form, you will see your progress towards your reading goal this year.</p>
+<p>As a new user you will see a prompt to set your reading goal when you start using BookWyrm.
+Otherwise, you can set it by navigating to <strong>Your Profile &gt; Reading Goal</strong>.
+Once set, that is also where you can see your progress and all the books you've read this year.</p>
+<p>Try setting a goal that is achievable, and will motivate you to read often.</p>
+<h2 id="search-barcode-reader"><a class="headerlink" href="#search-barcode-reader">Search &amp; Barcode Reader</a></h2>
+<p>On the top of the home page is a search box, which lets you search for books, authors, users or <a href="/lists.html">lists</a>.</p>
+<p>Beside it is a barcode reader which lets you easily find a book by scanning its ISBN barcode using the device camera.
+This is especially useful if you're in a bookstore or the library!</p>
+<h2 id="timelines"><a class="headerlink" href="#timelines">Timelines</a></h2>
+<p>Timelines are filled with <strong>statuses</strong> from people you <strong>follow</strong> on Bookwyrm.
+It's how you keep up with what your friends are reading, reviewing and recommending.
+They take up 2/3 of the screen, or on mobile are found below the reading goal section.</p>
+<h3 id="following-other-users"><a class="headerlink" href="#following-other-users">Following other users</a></h3>
+<p>As a new user, you will be suggested some accounts to follow.
+You can also search for your friend's username to find and follow them.
+If they are using a different BookWyrm website than you (for example, <code>bookwyrm.social</code> and <code>ramblingreaders.org</code>)
+then you can still follow them - but you will need to use their full account name including the instance domain name, like this:</p>
+<p><code>user@example.com</code> or <code>arthur@ramblingreaders.org</code></p>
+<h3 id="home-timeline"><a class="headerlink" href="#home-timeline">Home Timeline</a></h3>
+<p>Your Home Timeline is a chronological feed of all the statuses about books posted by people you follow.
+This includes their reading status updates (want to read, started reading, finished, etc), reviews, ratings, comments, and quotes that they've shared.
+Read more about <a href="/posting-statuses.html">types of statuses here</a>.</p>
+<p>Your Home Timeline also includes any statuses that people you follow have <strong>boosted</strong>.
+This is similar to reposting or reblogging on other platforms, and means that status has been shared into your Timeline.
+Boosting is the best way to share good reviews with your followers, and helps them find interesting people to follow.
+This is especially useful since there is no algorithm deciding what to show you,
+only the real humans that you've decided to follow.</p>
+<p>If you follow people on other fediverse apps, such as Mastodon, you will not find their normal text posts in your timeline.
+However, posts they boost or their replies to other posts will be included in it.</p>
+<h3 id="books-timeline"><a class="headerlink" href="#books-timeline">Books Timeline</a></h3>
+<p>Your Books Timeline is a chronological feed that collects statuses posted about books that you have in <a href="/shelves.html">your shelves</a>.</p>
+<p>It might not display <em>all</em> statuses, if your BookWyrm website doesn't know about some</p>
+<h3 id="interacting-with-statuses"><a class="headerlink" href="#interacting-with-statuses">Interacting with statuses</a></h3>
+<p>You can reply to any status in your timeline to start a discussion, and boost or like the status.
+Under 'More Options' there is a link to send a direct message to the poster, report the status, or block them.</p>
+<h3 id="filtering-timelines"><a class="headerlink" href="#filtering-timelines">Filtering Timelines</a></h3>
+<p>Both timelines have a Filters menu which lets you filter what types of statuses you'd like to see in it.
+You can include or exclude Reviews, Comments, Quotations, or Everything Else (including reading status updates).
+Then click the 'Apply filters' button to reload the timeline with the new filters.</p>
+<p>A little badge called 'Filters are applied' will be shown after filters are changed,
+but this disappears after another page reload even though filters are still in effect.</p>
+<h2 id="navigation-to-other-pages"><a class="headerlink" href="#navigation-to-other-pages">Navigation to other pages</a></h2>
+<p>There are many links within the main menu to navigate to other pages on BookWyrm.</p>
+<h3 id="top-menu-bar"><a class="headerlink" href="#top-menu-bar">Top menu bar</a></h3>
+<p>In the top bar is the search box to go to the search page, and links to <a href="/lists.html">Lists</a>, Discover (recent statuses from the local instance), and <a href="/shelves.html">Your Books</a>.</p>
+<p>On the right hand side is your profile icon and name.
+When clicked, it has links to your Profile, the Directory of other users, your Direct Messages, Settings, and the Log Out button.</p>
+<p>On the far right is the Notifications button.
+It will display a number if you have unread notifications.</p>
+<p>On mobile, some of these options will be collapsed into a 3 dots option which will show them.</p>
+<h3 id="footer"><a class="headerlink" href="#footer">Footer</a></h3>
+<p>The website footer also includes links related to the administration of the site, link to this documentation and to re-start the Guided Tour.</p>
+<p>If you are using a free BookWyrm instance, there might be a link to financially support the admins in the footer.
+Public instances require many hours of management and up to several hundred dollars a year to run.
+If you like using your BookWyrm site, please consider supporting them to keep it online and running smoothly!</p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> é um software colaborativo e anti-corporativo mantido por <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Apoie a BookWyrm no <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Participe</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm no GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/main-menu.md">Contribua para esta página</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Saiba mais</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentação</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Falar com a administração</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licença</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "pt-br/";
+    var current_version = "v0.7.5";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>
