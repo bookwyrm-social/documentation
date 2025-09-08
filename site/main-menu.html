@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Command Line Tool
+Main Menu & Timelines
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -101,7 +101,7 @@ Command Line Tool
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+                <a href="/main-menu.html" class="has-background-inherit" class="is-active">Main Menu & Timelines</a>
             </li>
             
             <li>
@@ -237,7 +237,7 @@ Command Line Tool
             </li>
             
             <li>
-                <a href="/cli.html" class="has-background-inherit" class="is-active">Command Line Tool</a>
+                <a href="/cli.html" class="has-background-inherit" >Command Line Tool</a>
             </li>
             
         </ul>
@@ -249,101 +249,87 @@ Command Line Tool
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Command Line Tool</h1>
+<h1 class="title is-1">Main Menu & Timelines</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>Bookwyrm developers and instance managers can use the <code>bw-dev</code> script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.</p>
-<p>Once you have installed Bookwyrm <a href="installing-in-production.html">in production</a> or <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">in development</a>, you can run the script from the command line with <code>./bw-dev</code> followed by the subcommand you want to run.</p>
-<h2 id="docker-shortcuts"><a class="headerlink" href="#docker-shortcuts">Docker shortcuts</a></h2>
-<h3 id="bash"><a class="headerlink" href="#bash">bash</a></h3>
-<p>Open an interactive <code>bash</code> session inside the docker <code>web</code> container.</p>
-<h3 id="build"><a class="headerlink" href="#build">build</a></h3>
-<p>Equivalent to <code>docker-compose build</code>.</p>
-<h3 id="dbshell"><a class="headerlink" href="#dbshell">dbshell</a></h3>
-<p>Open an interactive Postgres database shell. I hope you know what you're doing.</p>
-<h3 id="runweb-args"><a class="headerlink" href="#runweb-args">runweb args</a></h3>
-<p>Run an arbitrary command (represented above by <code>args</code>) in the <code>web</code> container.</p>
-<p>Equivalent to <code>docker-compose run --rm web</code>.</p>
-<h3 id="service_ports_web-args"><a class="headerlink" href="#service_ports_web-args">service_ports_web args</a></h3>
-<p>Run an arbitrary command in the <code>web</code> container (represented above by <code>args</code>) with ports exposed. This is useful if you want to run <code>pdb</code> tests because <code>runweb</code> will not expose the <code>pdb</code> prompt.</p>
-<p>Equivalent to <code>docker-compose run --rm --service-ports web</code>.</p>
-<h3 id="shell"><a class="headerlink" href="#shell">shell</a></h3>
-<p>Open an interactive Django shell inside the docker <code>web</code> container. You would use this if you want to run Django shell commands directly.</p>
-<h3 id="up-args"><a class="headerlink" href="#up-args">up [args]</a></h3>
-<p>Start or restart Docker containers, optionally including any arguments (represented above by <code>args</code>). Equivalent to <code>docker-compose up [args]</code></p>
-<h2 id="managing-the-database"><a class="headerlink" href="#managing-the-database">Managing the database</a></h2>
-<h3 id="initdb"><a class="headerlink" href="#initdb">initdb</a></h3>
-<p>Initialize a database.</p>
-<h3 id="makemigrations-appname-migration-number"><a class="headerlink" href="#makemigrations-appname-migration-number">makemigrations [appname migration number]</a></h3>
-<p><em>This command is not available on the <code>production</code> branch</em>.</p>
-<p>Runs Django's <code>makemigrations</code> command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. <code>./bw-dev makemigrations bookwyrm 0108</code></p>
-<h3 id="migrate"><a class="headerlink" href="#migrate">migrate</a></h3>
-<p>Runs Django's <code>migrate</code> command inside your Docker container. You always need to run this after <code>makemigrations</code>.</p>
-<h3 id="resetdb"><a class="headerlink" href="#resetdb">resetdb</a></h3>
-<p><em>This command is not available on the <code>production</code> branch</em>.</p>
-<p>Resets the database. <strong>This command will delete your entire Bookwyrm database</strong>, and then initiate a fresh database and run all migrations. You should delete any recent migration files you do not want to run, <em>before</em> running <code>resetdb</code>.</p>
-<h2 id="managing-a-bookwyrm-instance"><a class="headerlink" href="#managing-a-bookwyrm-instance">Managing a Bookwyrm instance</a></h2>
-<h3 id="compile_themes"><a class="headerlink" href="#compile_themes">compile_themes</a></h3>
-<p>Compiles all BookWyrm themes, which are <code>*.scss</code> files listed in <code>bookwyrm/static/css/themes</code>.</p>
-<h3 id="collectstatic"><a class="headerlink" href="#collectstatic">collectstatic</a></h3>
-<p>Migrate static assets to either a Docker container or to an S3-compatible "bucket", depending on the context.</p>
-<h3 id="generate_preview_images"><a class="headerlink" href="#generate_preview_images">generate_preview_images</a></h3>
-<p>Generate preview images for site, users, and books. This can take a while if you have a large database. See <a href="/optional_features.html">Optional Features: Generating preview images</a></p>
-<h3 id="remove_remote_user_preview_images"><a class="headerlink" href="#remove_remote_user_preview_images">remove_remote_user_preview_images</a></h3>
-<p>Remove generated preview images for remote users. See <a href="/optional_features.html">Optional Features: Removing preview images for remote users</a></p>
-<h3 id="generate_thumbnails"><a class="headerlink" href="#generate_thumbnails">generate_thumbnails</a></h3>
-<p>Generates thumbnail images for book covers.</p>
-<h3 id="populate_streams-args"><a class="headerlink" href="#populate_streams-args">populate_streams args</a></h3>
-<p>Re-populates Redis streams (user feeds). You will not usually need to run this unless there is an error that wipes out your user feeds for some reason. You can specify which stream using the <code>--stream</code> argument.</p>
-<h3 id="populate_list_streams"><a class="headerlink" href="#populate_list_streams">populate_list_streams</a></h3>
-<p>Re-populates Redis cache of lists. You will not usually need to run this unless there is an error that wipes out your users' lists for some reason.</p>
-<h3 id="populate_suggestions"><a class="headerlink" href="#populate_suggestions">populate_suggestions</a></h3>
-<p>Populate suggested users for all users. You may want to run this manually to refresh suggestions.</p>
-<h3 id="restart_celery"><a class="headerlink" href="#restart_celery">restart_celery</a></h3>
-<p>Restarts the <code>celery_worker</code> Docker container.</p>
-<h3 id="update"><a class="headerlink" href="#update">update</a></h3>
-<p>When there are changes to the <code>production</code> branch, you can update your instance without downtime.</p>
-<p>This command <code>git pull</code>s the latest <code>production</code> branch updates, builds docker images if necessary, runs Django migrations, updates static files, and restarts all Docker containers.</p>
-<h3 id="admin_code"><a class="headerlink" href="#admin_code">admin_code</a></h3>
-<p>Gets the secret admin code used to register the inital admin user on a new BookWyrm instance.</p>
-<h2 id="setting-up-s3-compatible-storage"><a class="headerlink" href="#setting-up-s3-compatible-storage">Setting up S3 compatible storage</a></h2>
-<p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
-<p>See <a href="/external-storage.html">External Storage</a> for more information.</p>
-<h3 id="copy_media_to_s3"><a class="headerlink" href="#copy_media_to_s3">copy_media_to_s3</a></h3>
-<p>Migrate all uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
-<h3 id="sync_media_to_s3"><a class="headerlink" href="#sync_media_to_s3">sync_media_to_s3</a></h3>
-<p>Sync new or changed uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
-<h3 id="set_cors_to_s3-filename"><a class="headerlink" href="#set_cors_to_s3-filename">set_cors_to_s3 filename</a></h3>
-<p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
-<h2 id="development-and-testing"><a class="headerlink" href="#development-and-testing">Development and testing</a></h2>
-<p><em>These commands are not available on the <code>production</code> branch</em>.</p>
-<h3 id="black"><a class="headerlink" href="#black">black</a></h3>
-<p>BookWyrm uses the <a href="https://github.com/psf/black">Black</a> code formatter to keep the Python codebase consistent styled. Run <code>black</code> before committing your changes so the <code>pylint</code> task does not fail for your pull request and make you sad.</p>
-<h3 id="prettier"><a class="headerlink" href="#prettier">prettier</a></h3>
-<p>BookWyrm uses <a href="https://prettier.io/">Prettier</a> to keep the JavaScript codebase consistently styled. Run <code>prettier</code> before committing changes to scripts to automatically format your code.</p>
-<h3 id="stylelint"><a class="headerlink" href="#stylelint">stylelint</a></h3>
-<p>BookWyrm uses <a href="uhttps://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelint</code> before committing changes to scripts to automatically format your code.</p>
-<h3 id="formatters"><a class="headerlink" href="#formatters">formatters</a></h3>
-<p>This command runs all code formatters (<code>black</code>, <code>prettier</code>, and <code>stylelint</code>) in one go.</p>
-<h3 id="clean"><a class="headerlink" href="#clean">clean</a></h3>
-<p>Remove all stopped Docker containers.</p>
-<p>Equivalent to:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
-docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
-</code></pre></div>
-
-<h3 id="makemessages"><a class="headerlink" href="#makemessages">makemessages</a></h3>
-<p>Creates message files for all translation strings. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#makemessages">Django's makemessages</a>.</p>
-<h3 id="compilemessages"><a class="headerlink" href="#compilemessages">compilemessages</a></h3>
-<p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/3.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
-<h3 id="pytest-args"><a class="headerlink" href="#pytest-args">pytest args</a></h3>
-<p>Run tests with <code>pytest</code>.</p>
-<h3 id="remove_2fa"><a class="headerlink" href="#remove_2fa">remove_2fa</a></h3>
-<p>Deactivates two factor authentication for a given user.</p>
-<h3 id="confirm_email"><a class="headerlink" href="#confirm_email">confirm_email</a></h3>
-<p>Confirms a users email, sets the user to active.</p>
+    <h2 id="your-books-view"><a class="headerlink" href="#your-books-view">Your Books view</a></h2>
+<p>In the top-left of the page (or top of the page on mobile) you will find a small selection of your books. 
+It will include up to 5 books, from your Currently Reading, Read and To Read reading status shelves.</p>
+<p>To see all of them, you may need to <em>horizontally</em> scroll, or pull on the horizontal scroll bar.</p>
+<p>If you have 3 or 4 currently reading, the To Read section will not be displayed.
+Similarly, if all 5 are currently reading, the Read section won't be available either.
+However, if you have more than 5 currently reading, it will still only show 5 of them.</p>
+<p>By clicking on one of these books, it becomes the focus of the interact and review section. </p>
+<h3 id="interact-review-section"><a class="headerlink" href="#interact-review-section">Interact &amp; Review section</a></h3>
+<p>Below the display of your books is a section that displays basic information about the selected book, and lets you interact with it.
+It includes:</p>
+<ul>
+<li>The book's title, linking to its main page.</li>
+<li>The name of the author, linking to the author's page.</li>
+<li>The <a href="/shelves.html#updating-reading-status">update reading status</a> button for that book.</li>
+<li>Tabs to select a type of status you might want to <a href="/posting-statuses.html">post about the book</a>. The options are Review, Comment or Quote.</li>
+<li>An input form for the selected type of status.</li>
+</ul>
+<p>On mobile, you can temporarily hide this section by pressing the X in the top-right corner of it.</p>
+<h2 id="reading-goal"><a class="headerlink" href="#reading-goal">Reading Goal</a></h2>
+<p>If you scroll down below the Your Books and post form, you will see your progress towards your reading goal this year.</p>
+<p>As a new user you will see a prompt to set your reading goal when you start using BookWyrm. 
+Otherwise, you can set it by navigating to <strong>Your Profile &gt; Reading Goal</strong>.
+Once set, that is also where you can see your progress and all the books you've read this year.</p>
+<p>Try setting a goal that is achievable, and will motivate you to read often.</p>
+<h2 id="search-barcode-reader"><a class="headerlink" href="#search-barcode-reader">Search &amp; Barcode Reader</a></h2>
+<p>On the top of the home page is a search box, which lets you search for books, authors, users or <a href="/lists.html">lists</a>.</p>
+<p>Beside it is a barcode reader which lets you easily find a book by scanning its ISBN barcode using the device camera.
+This is especially useful if you're in a bookstore or the library!</p>
+<h2 id="timelines"><a class="headerlink" href="#timelines">Timelines</a></h2>
+<p>Timelines are filled with <strong>statuses</strong> from people you <strong>follow</strong> on Bookwyrm.
+It's how you keep up with what your friends are reading, reviewing and recommending. 
+They take up 2/3 of the screen, or on mobile are found below the reading goal section.</p>
+<h3 id="following-other-users"><a class="headerlink" href="#following-other-users">Following other users</a></h3>
+<p>As a new user, you will be suggested some accounts to follow.
+You can also search for your friend's username to find and follow them.
+If they are using a different BookWyrm website than you (for example, <code>bookwyrm.social</code> and <code>ramblingreaders.org</code>)
+then you can still follow them - but you will need to use their full account name including the instance domain name, like this:</p>
+<p><code>user@example.com</code> or <code>arthur@ramblingreaders.org</code></p>
+<h3 id="home-timeline"><a class="headerlink" href="#home-timeline">Home Timeline</a></h3>
+<p>Your Home Timeline is a chronological feed of all the statuses about books posted by people you follow.
+This includes their reading status updates (want to read, started reading, finished, etc), reviews, ratings, comments, and quotes that they've shared.
+Read more about <a href="/posting-statuses.html">types of statuses here</a>.</p>
+<p>Your Home Timeline also includes any statuses that people you follow have <strong>boosted</strong>.
+This is similar to reposting or reblogging on other platforms, and means that status has been shared into your Timeline.
+Boosting is the best way to share good reviews with your followers, and helps them find interesting people to follow.
+This is especially useful since there is no algorithm deciding what to show you,
+only the real humans that you've decided to follow.</p>
+<p>If you follow people on other fediverse apps, such as Mastodon, you will not find their normal text posts in your timeline.
+However, posts they boost or their replies to other posts will be included in it.</p>
+<h3 id="books-timeline"><a class="headerlink" href="#books-timeline">Books Timeline</a></h3>
+<p>Your Books Timeline is a chronological feed that collects statuses posted about books that you have in <a href="/shelves.html">your shelves</a>.</p>
+<p>It might not display <em>all</em> statuses, if your BookWyrm website doesn't know about some</p>
+<h3 id="interacting-with-statuses"><a class="headerlink" href="#interacting-with-statuses">Interacting with statuses</a></h3>
+<p>You can reply to any status in your timeline to start a discussion, and boost or like the status.
+Under 'More Options' there is a link to send a direct message to the poster, report the status, or block them.</p>
+<h3 id="filtering-timelines"><a class="headerlink" href="#filtering-timelines">Filtering Timelines</a></h3>
+<p>Both timelines have a Filters menu which lets you filter what types of statuses you'd like to see in it.
+You can include or exclude Reviews, Comments, Quotations, or Everything Else (including reading status updates). 
+Then click the 'Apply filters' button to reload the timeline with the new filters.</p>
+<p>A little badge called 'Filters are applied' will be shown after filters are changed, 
+but this disappears after another page reload even though filters are still in effect.</p>
+<h2 id="navigation-to-other-pages"><a class="headerlink" href="#navigation-to-other-pages">Navigation to other pages</a></h2>
+<p>There are many links within the main menu to navigate to other pages on BookWyrm.</p>
+<h3 id="top-menu-bar"><a class="headerlink" href="#top-menu-bar">Top menu bar</a></h3>
+<p>In the top bar is the search box to go to the search page, and links to <a href="/lists.html">Lists</a>, Discover (recent statuses from the local instance), and <a href="/shelves.html">Your Books</a>.</p>
+<p>On the right hand side is your profile icon and name. 
+When clicked, it has links to your Profile, the Directory of other users, your Direct Messages, Settings, and the Log Out button.</p>
+<p>On the far right is the Notifications button. 
+It will display a number if you have unread notifications.</p>
+<p>On mobile, some of these options will be collapsed into a 3 dots option which will show them.</p>
+<h3 id="footer"><a class="headerlink" href="#footer">Footer</a></h3>
+<p>The website footer also includes links related to the administration of the site, link to this documentation and to re-start the Guided Tour. </p>
+<p>If you are using a free BookWyrm instance, there might be a link to financially support the admins in the footer.
+Public instances require many hours of management and up to several hundred dollars a year to run.
+If you like using your BookWyrm site, please consider supporting them to keep it online and running smoothly!</p>
 </section>
 
             </section>
@@ -368,7 +354,7 @@ docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
                     <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/reference/cli.md">Contribute to this page</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/main-menu.md">Contribute to this page</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">
