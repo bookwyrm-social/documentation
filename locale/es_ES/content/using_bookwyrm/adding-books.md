@@ -6,7 +6,7 @@ Order: 3
 
 ¡Hay varias maneras para añadir libros a tu instancia de BookWyrm! Cuando no puedas encontrar el libro que estás buscando, intenta estas opciones en orden -- es mejor importar un libro que crear uno desde cero.
 
-## Importing data about your books and reading
+## Importar datos de tus libros y lecturas
 
 If you're coming to BookWyrm from another platform for tracking books and reading, you may want to import your books and reading data. Currently BookWyrm is capable of importing export files from the following platforms:
 
