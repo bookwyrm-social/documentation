@@ -128,7 +128,7 @@ class Person(ActivityObject):
     type: str = "Person"
 ```
 
-Potser hauràs observat que alguns dels camps no són exactament iguals que els camps del model `User`. If you have a field name in your model that needs to be called something different in the ActivityPub object (e.g. to comply with Python naming conventions in the model but JSON naming conventions in JSON string), you can define an `activitypub_field` in the model field definition:
+Potser hauràs observat que alguns dels camps no són exactament iguals que els camps del model `User`. Si tens un nom d'un camp al teu model que cal anomenar d'una manera diferent l'objecte ActivityPub (per exemple, per complir amb les convencions de nom de Python al model i a les convencions de nom JSON a una cadena JSON), pots definir un `activitypub_field` a les definicions de camps del model:
 
 ```py
 followers_url = fields.CharField(max_length=255, activitypub_field="followers")
