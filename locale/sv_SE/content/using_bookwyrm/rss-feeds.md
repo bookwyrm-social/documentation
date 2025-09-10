@@ -1,12 +1,12 @@
 ---
-Title: RSS Feeds
+Title: RSS-flöden
 Date: 2023-09-29
 Order: 20
 ---
 
 BookWyrm is an _open_ platform and generally it's ok to integrate your books and bookshelves in BookWyrm with other things. We provide some [RSS feeds](https://cyber.harvard.edu/rss/rss.html) to help you do that.
 
-## RSS Locations
+## RSS-platser
 
 Currently, all RSS Feeds are relative to a someone's profile on their BookWyrm instance. So if your profile is at https://bookwyrm.social/user/mouse then all the rss feeds will be at a URL based on that.
 
@@ -30,7 +30,7 @@ To get a feed of every Quote someone posts, add `/rss-quotes` to the end of thei
 
 So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Quotes at http://bookwyrm.social/user/mouse/rss-quotes
 
-### Comments
+### Kommentarer
 
 To get a feed of every Comment someone posts, add `/rss-comments` to the end of their profile url.
 
