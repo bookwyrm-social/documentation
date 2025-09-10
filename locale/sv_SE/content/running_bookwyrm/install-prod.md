@@ -52,7 +52,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 - Run docker-compose in the background with: `docker-compose up -d`
 - The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Grattis! You did it!! Configure your instance however you'd like.
 
 
 ## Backups
