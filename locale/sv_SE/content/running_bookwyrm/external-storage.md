@@ -12,7 +12,7 @@ Create a bucket at your S3-compatible service of choice, along with an Access Ke
 
 This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the [BookWyrm Documentation](https://github.com/bookwyrm-social/documentation) repository.
 
-### What awaits you
+### Vad som väntar dig
 
 If you are starting a new BookWyrm instance, the process will be:
 
@@ -29,7 +29,7 @@ If you already started your instance, and images have been uploaded to local sto
 - Restart your BookWyrm instance
 - Update the instance connector
 
-### BookWyrm Settings
+### BookWyrm-inställningar
 
 Edit your `.env` file by uncommenting the following lines:
 
@@ -75,7 +75,7 @@ Then, you will need to run the following command, to copy the static assets to y
 ./bw-dev collectstatic
 ```
 
-#### CORS settings
+#### CORS-inställningar
 
 Once the static assets are collected, you will need to set up CORS for your bucket.
 
@@ -109,7 +109,7 @@ Then, run the following command:
 
 No output means it should be good.
 
-If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.
+If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. Om inte, fortsätt läsa.
 
 ### Restarting your instance
 
