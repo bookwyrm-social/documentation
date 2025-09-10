@@ -106,7 +106,7 @@ set -e
     - Flower has been disabled here because it is not autoconfigured with the password set in the `.env` file
 - You can now run BookWyrm with: `sudo -u bookwyrm bash /opt/bookwyrm/dockerless-run.sh`
 - The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.
-- You may want to configure BookWyrm to autorun with a systemd service. Here is an example:
+- You may want to configure BookWyrm to autorun with a systemd service. Här är ett exempel:
 ```
 # /etc/systemd/system/bookwyrm.service
 [Unit]
@@ -127,7 +127,7 @@ WantedBy=multi-user.target
 ```
 You will need to set up a Cron job for the service to start automatically on a server restart.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Grattis! You did it!! Configure your instance however you'd like.
 
 ## Get Involved
 
