@@ -92,17 +92,17 @@ Un usuari BookWyrm [és definit a `models/user.py`](https://github.com/bookwyrm-
 class User(OrderedCollectionPageMixin, AbstractUser):
     """a user who wants to read books"""
 ```
-Notice that we are inheriting from ("subclassing") `OrderedCollectionPageMixin`. This in turn inherits from `ObjectMixin`, which inherits from `ActivitypubMixin`. This may seem convoluted, but this inheritence chain allows us to avoid duplicating code as our ActivityPub objects become more specific. `AbstractUser` is [a Django model intended to be subclassed](https://docs.djangoproject.com/en/5.1/topics/auth/customizing/#specifying-custom-user-model), giving us things like hashed password logins and permission levels "out of the box".
+Observa que estem heretant de ("subclassing") `OrderedCollectionPageMixin`. La que, al seu torn, hereta de `ObjectMixin`, que hereta de `AvtivitypubMixin`. Això pot semblar complicat, però aquesta cadena d'herències ens permet evitar duplicar el codi a mesura que els nostres objectes ActivityPub es tornen més específics. `AbstractUser` és [un model Django destinat a ser utilitzat a una subclase](https://docs.djangoproject.com/en/5.1/topics/auth/customizing/#specifying-custom-user-model), donant-nos coses com autenticacions amb paraules de pas no visibles i nivells de permís "fora de la caixa".
 
-Because `User` inherits from [`ObjectMixin`](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L213), when we `save()` a `User` object we will send a `Create` activity (if this is the first time the user was saved) or an `Update` activity (if we're just saving a change – e.g. to the user description or avatar). Any other model you add to BookWyrm will have the same capability if it inherits from `ObjectMixin`.
+Com `User` hereva de [`ObjectMixin`](https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L213), quan `save()` un objecte `User` enviarem una activitat `Create()` (si és la primera vegada que l'usuari és guardat) o una activitat `Update` (si estem guardant un canvi - per exemple a la descripció d'usuari o l'avatar). Qualsevol altre model que afegeixis a BookWyrm tindrà la mateixa capacitat si hereta de `ObjectMixin`.
 
-For BookWyrm users, the `activity_serializer` is defined in the `User` model:
+Per als usuaris de BookWyrm, la `activity_serializer` és definida al model `User`:
 
 ```py
 activity_serializer = activitypub.Person
 ```
 
-The data class definition for `activitypub.Person` is at `/activitypub/person.py`:
+La definició de les dades de la classe `activitypub.Person` és a `/activitypub/person.py`:
 
 ```py
 @dataclass(init=False)
@@ -128,7 +128,7 @@ class Person(ActivityObject):
     type: str = "Person"
 ```
 
-You might notice that some of these fields are not a perfect match to the fields in the `User` model. If you have a field name in your model that needs to be called something different in the ActivityPub object (e.g. to comply with Python naming conventions in the model but JSON naming conventions in JSON string), you can define an `activitypub_field` in the model field definition:
+Potser hauràs observat que alguns dels camps no són exactament iguals que els camps del model `User`. If you have a field name in your model that needs to be called something different in the ActivityPub object (e.g. to comply with Python naming conventions in the model but JSON naming conventions in JSON string), you can define an `activitypub_field` in the model field definition:
 
 ```py
 followers_url = fields.CharField(max_length=255, activitypub_field="followers")
