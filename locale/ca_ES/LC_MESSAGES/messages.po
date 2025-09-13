@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-08 05:35+0000\n"
-"PO-Revision-Date: 2025-09-08 07:09\n"
+"PO-Revision-Date: 2025-09-13 09:51\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -116,9 +116,9 @@ msgstr "Llicència"
 
 #: templates/layout.html:65
 msgid "This is the documentation for the current development code. Choose a version from the menu to see documentation for released versions since"
-msgstr ""
+msgstr "Aquesta és la documentació del codi de desenvolupament actual. Trieu una versió del menú per a veure la documentació de les versions publicades des de"
 
 #: templates/page.html:16
 msgid "Page Contents"
-msgstr ""
+msgstr "Contingut de la pàgina"
 
