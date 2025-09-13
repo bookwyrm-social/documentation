@@ -1,6 +1,6 @@
 ---
 Title: Groups
-Date: 2025-05-26
+Date: 26-05-2025
 Order: 12
 ---
 
