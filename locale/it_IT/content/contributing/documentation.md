@@ -4,9 +4,9 @@ Date: 2025-04-09
 Order: 4
 ---
 
-The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.
+The documentation you are reading right now is maintained by the BookWyrm community. Chiunque può contribuire alla documentazione.
 
-## Suggesting an improvement
+## Suggerisci un miglioramento
 
 You can report an **error**, suggest an **improvement** or request an **addition** to the documentation by [creating an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) in [the documentation repository](https://github.com/bookwyrm-social/documentation).
 
@@ -33,11 +33,11 @@ If you have never used git or GitHub before, that may sound daunting, but let's 
 1. Make sure you have [a GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github).
 2. Create a "clone" or "fork" of the Documentation repository:
 
-    - From the **web interface**, click "Fork" at the top of [this page](https://github.com/bookwyrm-social/documentation)
-    - If you are using **GitHub Desktop**, follow [these instructions](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
-    - If you are using the command line, run:
+   - From the **web interface**, click "Fork" at the top of [this page](https://github.com/bookwyrm-social/documentation)
+   - If you are using **GitHub Desktop**, follow [these instructions](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
+   - If you are using the command line, run:
 
-    `git clone https://github.com/bookwyrm-social/documentation.git`
+   `git clone https://github.com/bookwyrm-social/documentation.git`
 
 ### Create a new branch and make your edits
 
@@ -45,9 +45,9 @@ To make changes:
 
 1. [Create a new branch](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) in your fork
 2. Make your edits in the `content` directory and **commit** your changes:
-    - [GitHub web interface](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
-    - [GitHub Desktop](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop)
-    - On the command line save your changes to the files and run `git commit`
+   - [GitHub web interface](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
+   - [GitHub Desktop](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop)
+   - On the command line save your changes to the files and run `git commit`
 
 At this point you might want to see what your changes will look like when published. See [Building docs locally](#building-docs-locally) below for instruction on how to preview your changes.
 
@@ -117,6 +117,6 @@ When you run `site:compile` it will generate a large number of files in the `sit
 
 This runs a local web server at `http://[::1]:8080/` so you can see what the docs will look like.
 
-### black
+### nero
 
 This will run `black` to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in `content`.
