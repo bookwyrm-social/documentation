@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 05:16+0000\n"
-"PO-Revision-Date: 2025-08-18 05:22\n"
+"POT-Creation-Date: 2025-09-08 05:35+0000\n"
+"PO-Revision-Date: 2025-09-08 07:09\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -56,59 +56,69 @@ msgstr "Código"
 #: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
 #: templates/layout.html:130 templates/layout.html:52 templates/layout.html:131
 #: templates/layout.html:137 templates/layout.html:35 templates/layout.html:138
-#: templates/layout.html:145
+#: templates/layout.html:145 templates/layout.html:146
 msgid "Documentation"
 msgstr "Documentação"
 
 #: templates/layout.html:95 templates/layout.html:101 templates/layout.html:102
 #: templates/layout.html:108 templates/layout.html:109
-#: templates/layout.html:116
+#: templates/layout.html:116 templates/layout.html:117
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 msgstr "<strong>BookWyrm</strong> é um software colaborativo e anti-corporativo mantido por <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 
 #: templates/layout.html:98 templates/layout.html:104 templates/layout.html:105
 #: templates/layout.html:111 templates/layout.html:112
-#: templates/layout.html:119
+#: templates/layout.html:119 templates/layout.html:120
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 msgstr "Apoie a BookWyrm no <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 
 #: templates/layout.html:102 templates/layout.html:108
 #: templates/layout.html:109 templates/layout.html:115
 #: templates/layout.html:116 templates/layout.html:123
+#: templates/layout.html:124
 msgid "Get Involved"
 msgstr "Participe"
 
 #: templates/layout.html:104 templates/layout.html:110
 #: templates/layout.html:111 templates/layout.html:117
 #: templates/layout.html:118 templates/layout.html:125
+#: templates/layout.html:126
 msgid "BookWyrm on GitHub"
 msgstr "BookWyrm no GitHub"
 
 #: templates/layout.html:107 templates/layout.html:113
 #: templates/layout.html:114 templates/layout.html:120
 #: templates/layout.html:121 templates/layout.html:128
+#: templates/layout.html:129
 msgid "Contribute to this page"
 msgstr "Contribua para esta página"
 
 #: templates/layout.html:122 templates/layout.html:128
 #: templates/layout.html:129 templates/layout.html:135
 #: templates/layout.html:136 templates/layout.html:143
+#: templates/layout.html:144
 msgid "Learn more"
 msgstr "Saiba mais"
 
 #: templates/layout.html:127 templates/layout.html:133
 #: templates/layout.html:134 templates/layout.html:140
 #: templates/layout.html:141 templates/layout.html:148
+#: templates/layout.html:149
 msgid "Contact maintainer"
 msgstr "Falar com a administração"
 
 #: templates/layout.html:130 templates/layout.html:136
 #: templates/layout.html:137 templates/layout.html:143
 #: templates/layout.html:144 templates/layout.html:151
+#: templates/layout.html:152
 msgid "License"
 msgstr "Licença"
 
 #: templates/layout.html:65
 msgid "This is the documentation for the current development code. Choose a version from the menu to see documentation for released versions since"
+msgstr ""
+
+#: templates/page.html:16
+msgid "Page Contents"
 msgstr ""
 

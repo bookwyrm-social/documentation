@@ -6,19 +6,19 @@ Order: 21
 
 You can migrate your account between BookWyrm instances, and/or set up an _alias_ between any ActivityPub account and your BookWyrm acccount.
 
-## Exporting account data
+## Exportera kontodata
 
 You can export your account data at any time, however there will be a limit on how often you can do this, set by your instance admin. When you create an export file a process will run in the background and you will be notified when it is completed and ready for download. Export files are in `tar.gz` format.
 
 Account export files include:
 
-- User profile and avatar
+- Användarprofil och avatar
 - Most user settings
 - Reading goals
 - Shelves
 - Reading history
 - Book reviews
-- Statuses
+- Statusar
 - Your own lists and saved lists
 - Which users you follow and block
 
@@ -26,8 +26,8 @@ Exports do _not_ include:
 
 - Direct messages
 - Replies to your statuses
-- Groups
-- Favorites
+- Grupper
+- Favoriter
 
 ## Aliases
 
@@ -35,7 +35,7 @@ An _alias_ indicates to ActivityPub software that two accounts represent and are
 
 Setting an account as an alias is easily reversible, and is required to migrate accounts.
 
-## Moving an account
+## Flytta ett konto
 
 You can "move" an account from one to another at `Settings - Move Account`. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.
 
@@ -43,16 +43,16 @@ Your old (origin) account will be marked as moved and will not be discoverable o
 
 You _must_ set the old (source) user as an alias of the new (target) user in the settings of the target account for a `Move` to work.
 
-## Importing account data
+## Importera kontodata
 
 Once you have an export file you can import it into another BookWyrm instance. To do so, you must first set the new (target) account as an alias of the old (source) account, or `Move` the old account to the new one.
 
 It is important to read the instructions on the account import page as some data will be overwritten if selected. There is also a limit on how often you can import user data.
 
 - Go to `Settings - Import BookWyrm Account`
-- Select your export file
+- Välj din exportfil
 - Untick any data options you do not wish to import
-- Click 'Import'
+- Klicka 'Importera'
 
 Your import will run in the background and you will be notified when it is completed.
 

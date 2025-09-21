@@ -286,6 +286,8 @@ Environment Variables
                       
                       <a class="navbar-item" href="#email"><span class="pl-4">EMAIL</span></a>
                       
+                      <a class="navbar-item" href="#nginx_setup"><span class="pl-4">NGINX_SETUP</span></a>
+                      
                       <a class="navbar-item" href="#port"><span class="pl-4">PORT</span></a>
                       
                       <a class="navbar-item" href="#use_https"><span class="pl-4">USE_HTTPS</span></a>
@@ -380,9 +382,13 @@ Environment Variables
                       
                       <a class="navbar-item" href="#use_s3"><span class="pl-4">USE_S3</span></a>
                       
+                      <a class="navbar-item" href="#use_s3_for_exports"><span class="pl-4">USE_S3_FOR_EXPORTS</span></a>
+                      
                       <a class="navbar-item" href="#s3_signed_url_expiry"><span class="pl-4">S3_SIGNED_URL_EXPIRY</span></a>
                       
                       <a class="navbar-item" href="#aws_access_key_id"><span class="pl-4">AWS_ACCESS_KEY_ID</span></a>
+                      
+                      <a class="navbar-item" href="#aws_default_acl"><span class="pl-4">AWS_DEFAULT_ACL</span></a>
                       
                       <a class="navbar-item" href="#aws_secret_access_key"><span class="pl-4">AWS_SECRET_ACCESS_KEY</span></a>
                       
@@ -513,10 +519,10 @@ Environment Variables
 <h3 id="debug"><a class="headerlink" href="#debug"><code>DEBUG</code></a></h3>
 <ul>
 <li><strong>Type</strong>: Boolean</li>
-<li><strong>Default</strong>: <code>true</code></li>
+<li><strong>Default</strong>: <code>false</code></li>
 </ul>
 <p><code>DEBUG</code> provides useful error information in the web interface for debugging on development servers.</p>
-<p>This should be set to <code>false</code> on production instances. <strong>Never deploy a site into production without setting <code>DEBUG</code> to <code>false</code>!</strong></p>
+<p>This should be set to <code>false</code> on production instances. <strong>Never deploy a site into production <code>DEBUG</code> set to <code>true</code>!</strong></p>
 <p><strong>NOTE:</strong> For version 0.7.5 and earlier, <code>DEBUG</code> defaulted to <code>true</code>.</p>
 <h3 id="language_code"><a class="headerlink" href="#language_code"><code>LANGUAGE_CODE</code></a></h3>
 <ul>
@@ -556,20 +562,23 @@ Environment Variables
 <li><strong>Default</strong>: not set</li>
 </ul>
 <p>Used in the <code>production</code> branch's <code>docker-compose.yml</code> file as the email to send to Certbot.</p>
+<h3 id="nginx_setup"><a class="headerlink" href="#nginx_setup"><code>NGINX_SETUP</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>https</code></li>
+<li><strong>Options</strong>: <code>https</code>, <code>reverse_proxy</code></li>
+</ul>
+<p>Indicates how to set the <code>nginx</code> configuration. <code>https</code> assumes all traffic should be handled by BookWyrm's nginx container and will attempt to set up a certbot HTTPS certificate, whereas <code>reverse_proxy</code> assumes traffic is being proxied by a web server between BookWyrm and the outside world. In development you should always set this to <code>reverse_proxy</code>.</p>
 <h3 id="port"><a class="headerlink" href="#port"><code>PORT</code></a></h3>
 <ul>
 <li><strong>Type</strong>: Integer</li>
-<li><strong>Default</strong>: <code>80</code> or <code>443</code> depending on value of <code>USE_HTTPS</code></li>
+<li><strong>Default</strong>: <code>443</code>, or if domain is <code>localhost</code>, <code>80</code>.</li>
 </ul>
 <p>The port used to communicate with the web. Note that this is different to Django's <code>PORT</code>.</p>
 <h3 id="use_https"><a class="headerlink" href="#use_https"><code>USE_HTTPS</code></a></h3>
-<ul>
-<li><strong>Type</strong>: Boolean</li>
-<li><strong>Default</strong>: Opposite value to <code>DEBUG</code></li>
-</ul>
-<p>Indicates whether or not your site uses HTTPS (SSL) – this affects which port BookWyrm uses and whether cookies are secured. <strong>Never run a production site without HTTPS!</strong>. This should always be set to <code>true</code> unless you are running a development server for testing.</p>
+<p>This variable is deprecated after <code>v0.7.5</code>. It is assumed that your instance is using HTTPS unless the domain is <code>localhost</code>.</p>
 <h2 id="searching"><a class="headerlink" href="#searching">Searching</a></h2>
-<p>These configurations may be moved to site.settings in future.</p>
+<p>These configurations may be moved to <code>site.settings</code> in future.</p>
 <h3 id="search_timeout"><a class="headerlink" href="#search_timeout"><code>SEARCH_TIMEOUT</code></a></h3>
 <ul>
 <li><strong>Type</strong>: Integer</li>
@@ -764,6 +773,13 @@ Environment Variables
 <li><strong>Type</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
+<p>Indicates whether you are using S3 object storage for images and static files.</p>
+<h3 id="use_s3_for_exports"><a class="headerlink" href="#use_s3_for_exports"><code>USE_S3_FOR_EXPORTS</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<p>Indicates whether you are using S3 object storage for user export and import files. By default <code>USE_S3</code> does not include user import and exports. It is safer to use the default local storage for these, along with the regular file deletion job running. On larger instances local storage may cause performance issues and you may prefer to set this to <code>true</code>.</p>
 <h3 id="s3_signed_url_expiry"><a class="headerlink" href="#s3_signed_url_expiry"><code>S3_SIGNED_URL_EXPIRY</code></a></h3>
 <ul>
 <li><strong>Type</strong>: Integer</li>
@@ -777,6 +793,13 @@ Environment Variables
 <li><strong>Default</strong>: not set</li>
 </ul>
 <p>Access key for S3 storage of all types.</p>
+<h3 id="aws_default_acl"><a class="headerlink" href="#aws_default_acl"><code>AWS_DEFAULT_ACL</code></a></h3>
+<ul>
+<li><strong>required</strong> if using Backblaze storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: "public-read"</li>
+</ul>
+<p>Backblaze (B2) does not recognise "public-read" as a default ACL setting, so Backblaze users should set this to an empty string.</p>
 <h3 id="aws_secret_access_key"><a class="headerlink" href="#aws_secret_access_key"><code>AWS_SECRET_ACCESS_KEY</code></a></h3>
 <ul>
 <li><strong>required</strong> if using S3 storage</li>

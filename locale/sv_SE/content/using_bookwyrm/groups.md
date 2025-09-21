@@ -1,5 +1,5 @@
 ---
-Title: Groups
+Title: Grupper
 Date: 2025-05-26
 Order: 12
 ---
@@ -11,7 +11,7 @@ Currently, the Bookwyrm developers are focusing on other things, not groups, but
 
 To find the groups page, first navigate to your profile, then open the 'Groups' tab.
 
-## Group administration
+## Gruppadministration
 
 ### Creating a group
 
@@ -24,21 +24,21 @@ Groups have the same privacy settings as posts and lists do, except they can't b
 Group membership always requires an invitation from the group's owner, even if it is marked Public.
 For more details, see [here](/privacy-controls.html#groups).
 
-### Adding and removing users
+### Lägga till och ta bort användare
 
 Groups are currently limited only to members on the current instance.
 To add members, search their username in the search bar, then click 'Invite'.
 To remove members, click the 'Remove' button and then 'Confirm'.
 
-## Group membership
+## Gruppmedlemskap
 
-### Joining a group
+### Gå med i en grupp
 
 To join a group, you must be on the same instance (website) and be invited by its owner.
 You will then receive a notification which lets you join.
 The group owner is marked with a star symbol.
 
-### Using group Lists
+### Använda grupplistor
 
 Group Lists work very similarly to normal Lists, except they are curated by all members of a Group.
 They can be created by any member of a group from the group's homepage.

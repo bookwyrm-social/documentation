@@ -32,10 +32,10 @@ The default option.
 
 - Anyone can see your status without logging in.
 - Your status will appear on:
-    - public timelines
-    - discovery pages.
-    - its related book's page.
-    - the home timeline of people who follow you
+  - public timelines
+  - discovery pages.
+  - its related book's page.
+  - the home timeline of people who follow you
 - Your status can be **boosted** into other people's home timelines.
 
 ### Unlisted
@@ -75,7 +75,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 - The 'All books' shelf is a default shelf which displays books from all visible shelves to the user viewing it.
 
-| User       | Books on Public shelves | Books on Unlisted shelves | Books on Followers-only shelves | Books on Private shelves |
+| Användare  | Books on Public shelves | Books on Unlisted shelves | Books on Followers-only shelves | Books on Private shelves |
 | ---------- | ----------------------- | ------------------------- | ------------------------------- | ------------------------ |
 | Anyone     | ✔                       | ✔                         |                                 |                          |
 | Följer dig | ✔                       | ✔                         | ✔                               |                          |
@@ -91,16 +91,16 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 - Anyone can see your [List](/lists.html) without logging in.
 - Your List will appear on:
-    - the Lists discovery page (Lists tab).
-    - the pages of books that are in it, displayed on the side of the screen.
-    - din profil.
+  - the Lists discovery page (Lists tab).
+  - the pages of books that are in it, displayed on the side of the screen.
+  - din profil.
 - Anyone can 'save' (bookmark) your List.
 
 ### Unlisted
 
 - There is currently no difference between Public and Unlisted for Lists.
-    In the future, Unlisted will hide the List from the Lists discovery page and books pages.
-    For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) on GitHub.
+  In the future, Unlisted will hide the List from the Lists discovery page and books pages.
+  For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) on GitHub.
 
 ### Följare
 
@@ -110,7 +110,7 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 - Only you can see your List on the aforementioned pages.
 
-## Groups
+## Grupper
 
 [Groups](/groups.html) have the same privacy settings as statuses and lists do, except they can't be Followers-only.
 Group membership always requires an invitation from the group's owner, even if it is marked Public.
@@ -122,7 +122,7 @@ Note that currently, the Groups tab on a profile is only shown if the user viewi
 
 - In the future it will be displayed on a Groups discovery page.
 
-### Unlisted
+### Olistad
 
 - Anyone can view the group page, members and its Lists (except for private Lists)
 

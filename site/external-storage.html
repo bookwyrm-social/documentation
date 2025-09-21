@@ -271,6 +271,8 @@ External Storage
                       
                       <a class="navbar-item" href="#additional-step-for-linode-object-storage-users"><span class="pl-4">Additional Step for Linode Object Storage Users</span></a>
                       
+                      <a class="navbar-item" href="#user-export-and-import-files"><span class="pl-4">User export and import files</span></a>
+                      
                       <a class="navbar-item" href="#new-instance"><span class="pl-4">New Instance</span></a>
                       
                       <a class="navbar-item" href="#restarting-your-instance"><span class="pl-4">Restarting your instance</span></a>
@@ -334,6 +336,10 @@ External Storage
 <li>for Digital Ocean, e.g. <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
 <li>For Linode Object Storage, set this to the cluster domain, e.g. <code>"https://eu-central-1.linodeobjects.com"</code></li>
 </ul>
+<p>For many S3 compatible services, the default <code>ACL</code> is <code>"public-read"</code>, and this is what BookWyrm defaults to. If you are using Backblaze (B2) you need to explicitly set the default ACL to be empty in your <code>.env</code> file:</p>
+<div class="highlight"><pre><span></span><code>AWS_DEFAULT_ACL=&quot;&quot;
+</code></pre></div>
+
 <h3 id="copying-local-media-to-external-storage"><a class="headerlink" href="#copying-local-media-to-external-storage">Copying local media to external storage</a></h3>
 <p>If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.</p>
 <p>This task is done with the command:</p>
@@ -345,10 +351,7 @@ External Storage
 <div class="highlight"><pre><span></span><code>USE_S3=true
 </code></pre></div>
 
-<p>If your external storage is being served over HTTPS (which most are these days), you'll also need to make sure that <code>USE_HTTPS</code> is set to <code>true</code>, so images will be loaded over HTTPS:</p>
-<div class="highlight"><pre><span></span><code>USE_HTTPS=true
-</code></pre></div>
-
+<p><strong>Note</strong> that after <code>v0.7.5</code> all traffic is assumed to be HTTPS, so you need to ensure that your external storage is also served over HTTPS.</p>
 <h4 id="static-assets"><a class="headerlink" href="#static-assets">Static assets</a></h4>
 <p>Then, you will need to run the following commands to compile the themes and copy all static assets to your S3 bucket:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>compile_themes
@@ -386,8 +389,11 @@ To fix this, you need to now insert the bucket-name into the <code>AWS_S3_CUSTOM
 </code></pre></div>
 
 <p><em>Note</em>: From this point on, any bw-dev copy or sync commands will place objects into an incorrect location in your object store, so if you need to use them, revert to the previous setting, run and re-enable.</p>
+<h3 id="user-export-and-import-files"><a class="headerlink" href="#user-export-and-import-files">User export and import files</a></h3>
+<p>After <code>v0.7.5</code>, user export and import files are saved to local storage even if <code>USE_S3</code> is set to <code>true</code>. Generally it is safer to use local storage for these files, and keep your used storage under control by setting up the task to periodically delete old export and import files.</p>
+<p>If you are running a large instance you may prefer to use S3 for these files as well. If so, you will need to set the environment variable <code>USE_S3_FOR_EXPORTS</code> to <code>true</code>.</p>
 <h3 id="new-instance"><a class="headerlink" href="#new-instance">New Instance</a></h3>
-<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.</p>
+<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now: [<a href="install-prod.html">Docker</a>] [<a href="install-prod-dockerless.html">Dockerless</a>]. If not, keep on reading.</p>
 <h3 id="restarting-your-instance"><a class="headerlink" href="#restarting-your-instance">Restarting your instance</a></h3>
 <p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d

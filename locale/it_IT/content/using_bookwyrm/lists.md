@@ -1,5 +1,5 @@
 ---
-Title: Lists
+Title: Liste
 Date: 2025-05-26
 Order: 5
 ---

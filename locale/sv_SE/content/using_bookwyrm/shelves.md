@@ -50,7 +50,7 @@ Use 'Finish reading' when you've finished reading a book.
 
 'Stop reading' is for books you don't want to keep reading, also known as a DNF (did not finish).
 
-## Custom Shelves
+## Anpassade hyllor
 
 Custom shelves are completely separate from the reading status shelves.
 

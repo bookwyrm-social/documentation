@@ -40,14 +40,14 @@ Once set, that is also where you can see your progress and all the books you've 
 
 Try setting a goal that is achievable, and will motivate you to read often.
 
-## Search & Barcode Reader
+## Sök & streckkodsläsare
 
 On the top of the home page is a search box, which lets you search for books, authors, users or [lists](/lists.html).
 
 Beside it is a barcode reader which lets you easily find a book by scanning its ISBN barcode using the device camera.
 This is especially useful if you're in a bookstore or the library!
 
-## Timelines
+## Tidslinjer
 
 Timelines are filled with **statuses** from people you **follow** on Bookwyrm.
 It's how you keep up with what your friends are reading, reviewing and recommending.
@@ -62,7 +62,7 @@ then you can still follow them - but you will need to use their full account nam
 
 `user@example.com` or `arthur@ramblingreaders.org`
 
-### Home Timeline
+### Hemtidslinje
 
 Your Home Timeline is a chronological feed of all the statuses about books posted by people you follow.
 This includes their reading status updates (want to read, started reading, finished, etc), reviews, ratings, comments, and quotes that they've shared.
