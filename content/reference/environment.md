@@ -50,11 +50,11 @@ The absolute path to the directory where `collectstatic` will collect static fil
 ### `DEBUG`
 
 - **Type**: Boolean
-- **Default**: `true`
+- **Default**: `false`
 
 `DEBUG` provides useful error information in the web interface for debugging on development servers.
 
-This should be set to `false` on production instances. **Never deploy a site into production without setting `DEBUG` to `false`!**
+This should be set to `false` on production instances. **Never deploy a site into production `DEBUG` set to `true`!**
 
 **NOTE:** For version 0.7.5 and earlier, `DEBUG` defaulted to `true`.
 
@@ -103,23 +103,28 @@ The fully qualified domain name for your site. Do not include a protocol or port
 
 Used in the `production` branch's `docker-compose.yml` file as the email to send to Certbot.
 
+### `NGINX_SETUP`
+
+- **Type**: String
+- **Default**: `https`
+- **Options**: `https`, `reverse_proxy`
+
+Indicates how to set the `nginx` configuration. `https` assumes all traffic should be handled by BookWyrm's nginx container and will attempt to set up a certbot HTTPS certificate, whereas `reverse_proxy` assumes traffic is being proxied by a web server between BookWyrm and the outside world. In development you should always set this to `reverse_proxy`.
+
 ### `PORT`
 
 - **Type**: Integer
-- **Default**: `80` or `443` depending on value of `USE_HTTPS`
+- **Default**: `443`, or if domain is `localhost`, `80`.
 
 The port used to communicate with the web. Note that this is different to Django's `PORT`.
 
 ### `USE_HTTPS`
 
-- **Type**: Boolean
-- **Default**: Opposite value to `DEBUG`
-
-Indicates whether or not your site uses HTTPS (SSL) – this affects which port BookWyrm uses and whether cookies are secured. **Never run a production site without HTTPS!**. This should always be set to `true` unless you are running a development server for testing.
+This variable is deprecated after `v0.7.5`. It is assumed that your instance is using HTTPS unless the domain is `localhost`.
 
 ## Searching
 
-These configurations may be moved to site.settings in future.
+These configurations may be moved to `site.settings` in future.
 
 ### `SEARCH_TIMEOUT`
 
@@ -361,6 +366,15 @@ The domain of the email address for emails sent by your BookWyrm instance. e.g. 
 - **Type**: Boolean
 - **Default**: `false`
 
+Indicates whether you are using S3 object storage for images and static files.
+
+### `USE_S3_FOR_EXPORTS`
+
+- **Type**: Boolean
+- **Default**: `false`
+
+Indicates whether you are using S3 object storage for user export and import files. By default `USE_S3` does not include user import and exports. It is safer to use the default local storage for these, along with the regular file deletion job running. On larger instances local storage may cause performance issues and you may prefer to set this to `true`.
+
 ### `S3_SIGNED_URL_EXPIRY`
 
 - **Type**: Integer
@@ -375,6 +389,14 @@ Number of seconds before signed S3 urls expire. This is currently only used for 
 - **Default**: not set
 
 Access key for S3 storage of all types.
+
+### `AWS_DEFAULT_ACL`
+
+- **required** if using Backblaze storage
+- **Type**: String
+- **Default**: "public-read"
+
+Backblaze (B2) does not recognise "public-read" as a default ACL setting, so Backblaze users should set this to an empty string.
 
 ### `AWS_SECRET_ACCESS_KEY`
 
