@@ -40,7 +40,7 @@ Once set, that is also where you can see your progress and all the books you've 
 
 Try setting a goal that is achievable, and will motivate you to read often.
 
-## Search & Barcode Reader
+## Ricerca e Lettore Codice a Barre
 
 On the top of the home page is a search box, which lets you search for books, authors, users or [lists](/lists.html).
 

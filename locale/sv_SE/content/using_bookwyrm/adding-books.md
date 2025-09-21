@@ -30,6 +30,6 @@ If the book you're looking for isn't available on your BookWyrm instance, there 
 
 If you found the book you want, but not the right edition, you can add another edition to the work from the list of editions. Click the link below the description that tells you how many editions there are (for example, "**4 editions**"). At the bottom of the editions list, there is a button to "**Add another edition**".
 
-## Add a completely new book
+## Lägg till en helt ny bok
 
 Once you've tried searching for your book, importing it from another catalog, and finding other editions of the book, you can add a new book manually. The link to manually add a book is at the bottom of the search page when external catalogs are shown. You can also navigate directly to `/create-book` on your instance.

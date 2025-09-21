@@ -56,7 +56,7 @@ If you change or create a model, you will probably change the database structure
 ./bw-dev migrate
 ```
 
-## Editing static files
+## Redigera statiska filer
 Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 ``` { .sh }
 ./bw-dev collectstatic

@@ -12,7 +12,7 @@ Since the project is still in its early stages, the features are growing every d
     - Compose other kinds of statuses about books, such as:
         - Kommentarer på en bok
         - Quotes or excerpts
-    - Reply to statuses
+    - Svara på statusar
     - View aggregate reviews of a book across connected BookWyrm instances
     - Differentiate local and federated reviews and rating in your activity feed
 - Track reading activity

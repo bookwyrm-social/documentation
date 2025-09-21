@@ -80,7 +80,7 @@ Il file `/activitypub/base_activity.py` fornisce le funzioni principali che tras
 
 Questo metodo prende una stringa JSON di ActivityPub e cerca di trasformarla in un oggetto modello di BookWyrm, trovando un oggetto esistente quando possibile. È così che processiamo gli oggetti ActivityPub **in entrata**.
 
-**`serialize`**
+**`serializza`**
 
 This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. This is how we process **outgoing** ActivityPub objects.
 
