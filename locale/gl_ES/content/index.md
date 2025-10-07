@@ -5,7 +5,7 @@ Title: Ben vida Date: 2021-04-13
 BookWyrm é unha rede social para rexistrar as túas lecturas, falar acerca dos libros, escribir recensións e descubrir novos libros para ler. A Federación permítelle ás persoas usuarias de BookWyrm unirse en pequenas comunidades de confianza que poden conectarse unhas con outras e con outros servizos ActivityPub como Mastodon ou Pleroma.
 
 ## Características
-Como o proxecto aínda está nos seus primeiros pasos, o número de funcións dispoñibles aumenta cada día, e hai moito espazo para ideas e suxestións. Abre un [issue](https://github.com/bookwyrm-social/bookwyrm/issues) para continuar a conversa!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Publicar sobre libros
     - Escribe recensións, con ou sen valoracións, que serán engadidas á páxina do libro
@@ -18,9 +18,10 @@ Como o proxecto aínda está nos seus primeiros pasos, o número de funcións di
 - Seguir a actividade lectora
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Crea estantes personais
-    - Garda as datas de comezo/remate da lectura, así como actualizacións do progreso durante a mesma
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Pon ao día ás tuas seguidoras sobre o que les (optativo, e con controis de privacidade detallados)
     - Crea listas de libros que podes abrir a suxestións de outras persoas, xestionadas e editadas só por ti
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Federación con ActivityPub
     - Emite e recibe estados e actividades de outras usuarias
     - Comparte os datos do libro entre instancias para crear unha base de datos distribuída de metadatos
