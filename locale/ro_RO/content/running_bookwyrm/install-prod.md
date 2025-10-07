@@ -26,13 +26,14 @@ Instrucțiuni pentru rularea BookWyrm în producție:
     - `FLOWER_USER` | Setați propriul nume de utilizator pentru accesarea „Flower queue monitor”
     - `EMAIL_HOST_USER` | Adresa „de la” pe care aplicația dvs. o va folosi pentru trimiterea email-urilor
     - `EMAIL_HOST_PASSWORD` | Parola furnizată de serviciul dvs. email
-- Initialize secrets by running `bw-dev create_secrets` or manually update following in `.env`:
+- Initialize secrets by running `./bw-dev create_secrets` or manually update following in `.env`:
     - `SECRET_KEY` | Un șir de caractere secret, greu de ghicit
     - `POSTGRES_PASSWORD` | Setați o parolă sigură pentru baza de date
     - `REDIS_ACTIVITY_PASSWORD` | Setați o parolă sigură pentru subsistemul Redis Activity
     - `REDIS_BROKER_PASSWORD` | Setați o parolă sigură pentru „Redis queue broker subsystem”
     - `FLOWER_PASSWORD` | Setați propria parolă sigură pentru accesul la „Flower queue monitor”
     - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+- Check that you have [all the required settings configured](/environment.html#required-environment-settings) before proceeding further
 - Setup ssl certificate via letsencrypt by running `./bw-dev init_ssl`
 - Inițializați baza de date rulând `./bw-dev migrate`
 - Run the application with `docker-compose up --build`, and make sure all the images build successfully
