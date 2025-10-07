@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Stockage Externe
+External Storage
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -136,11 +136,11 @@ Stockage Externe
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/v0.7.5/fr/reverse-proxy.html" class="has-background-inherit" ></a>
+                <a href="/v0.7.5/fr/moderation.html" class="has-background-inherit" >Modération</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/fr/moderation.html" class="has-background-inherit" >Modération</a>
+                <a href="/v0.7.5/fr/reverse-proxy.html" class="has-background-inherit" ></a>
             </li>
             
             <li>
@@ -160,7 +160,7 @@ Stockage Externe
             </li>
             
             <li>
-                <a href="/v0.7.5/fr/external-storage.html" class="has-background-inherit" class="is-active">Stockage Externe</a>
+                <a href="/v0.7.5/fr/external-storage.html" class="has-background-inherit" class="is-active">External Storage</a>
             </li>
             
             <li>
@@ -185,19 +185,19 @@ Stockage Externe
             </li>
             
             <li>
-                <a href="/v0.7.5/fr/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
                 <a href="/v0.7.5/fr/documentation.html" class="has-background-inherit" >Documentation</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/fr/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+                <a href="/v0.7.5/fr/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
                 <a href="/v0.7.5/fr/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/fr/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
@@ -222,7 +222,7 @@ Stockage Externe
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Stockage Externe</h1>
+<h1 class="title is-1">External Storage</h1>
 
                 </header>
                 
@@ -254,13 +254,23 @@ Stockage Externe
 <li><code>AWS_ACCESS_KEY_ID</code>: votre ID de clé d'accès</li>
 <li><code>AWS_SECRET_ACCESS_KEY</code>: votre clé d'accès secrète</li>
 <li><code>AWS_STORAGE_BUCKET_NAME</code>: le nom de votre compartiment</li>
-<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> pour AWS, <code>"fr-par"</code> pour Scaleway ou <code>"nyc3"</code> pour Digital Ocean</li>
+<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway, <code>"nyc3"</code> for Digital Ocean or <code>"cluster-id"</code> for Linode</li>
 </ul>
 <p>Si votre service compatible S3 est Amazon AWS, la configuration devrait être terminée. Pour les autres services, vous aurez à décommenter les lignes suivantes :</p>
 <ul>
-<li><code>AWS_S3_CUSTOM_DOMAIN</code>: le domaine qui va mettre à disposition les fichiers, par exemple <code>"exemple-nom-compartiment-s3.fr-par.scw.cloud"</code> ou <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
-<li><code>AWS_S3_ENDPOINT_URL</code>: le point de terminaison d'API S3, par exemple <code>"https://s3.fr-par.scw.cloud"</code> ou <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li><code>AWS_S3_CUSTOM_DOMAIN</code>: the domain that will serve the assets:</li>
+<li>for Scaleway, e.g. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code></li>
+<li>for Digital Ocean, e.g. <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li>for Linode Object Storage, this should be set to the cluster domain, e.g. <code>"eu-central-1.linodeobjects.com"</code></li>
+<li><code>AWS_S3_ENDPOINT_URL</code>: the S3 API endpoint:</li>
+<li>for Scaleway, e.g. <code>"https://s3.fr-par.scw.cloud"</code></li>
+<li>for Digital Ocean, e.g. <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li>For Linode Object Storage, set this to the cluster domain, e.g. <code>"https://eu-central-1.linodeobjects.com"</code></li>
 </ul>
+<p>For many S3 compatible services, the default <code>ACL</code> is <code>"public-read"</code>, and this is what BookWyrm defaults to. If you are using Backblaze (B2) you need to explicitly set the default ACL to be empty in your <code>.env</code> file:</p>
+<div class="highlight"><pre><span></span><code>AWS_DEFAULT_ACL=&quot;&quot;
+</code></pre></div>
+
 <h3 id="copie-de-vos-medias-locaux-sur-le-stockage-externe"><a class="headerlink" href="#copie-de-vos-medias-locaux-sur-le-stockage-externe">Copie de vos médias locaux sur le stockage externe</a></h3>
 <p>Si votre instance BookWyrm est déjà en cours d'exécution et que des fichiers médias ont été téléchargés (avatars d'utilisateur, couvertures de livres…), vous devrez copier les médias téléchargés sur votre compartiment.</p>
 <p>Cette tâche est effectuée avec la commande :</p>
@@ -272,13 +282,11 @@ Stockage Externe
 <div class="highlight"><pre><span></span><code>USE_S3=true
 </code></pre></div>
 
-<p>Si votre stockage externe est accessible via HTTPS (la plupart le sont actuellement), vous devrez également vous assurer que <code>USE_HTTPS</code> est défini à <code>true</code>, afin que les images soient téléchargées via HTTPS :</p>
-<div class="highlight"><pre><span></span><code>USE_HTTPS=true
-</code></pre></div>
-
+<p><strong>Note</strong> that after <code>v0.7.5</code> all traffic is assumed to be HTTPS, so you need to ensure that your external storage is also served over HTTPS.</p>
 <h4 id="ressources-statiques"><a class="headerlink" href="#ressources-statiques">Ressources statiques</a></h4>
-<p>Vous devrez ensuite exécuter la commande suivante, afin de copier les ressources statiques vers votre compartiment S3 :</p>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+<p>Then, you will need to run the following commands to compile the themes and copy all static assets to your S3 bucket:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>compile_themes
+./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <h4 id="parametres-cors"><a class="headerlink" href="#parametres-cors">Paramètres CORS</a></h4>
@@ -305,7 +313,17 @@ Stockage Externe
 </code></pre></div>
 
 <p>Une absence de retour signifie que cela a fonctionné.</p>
-<p>Si vous installez une nouvelle instance de BookWyrm, vous pouvez retourner aux instructions de configuration dès maintenant. Dans le cas contraire, continuez à lire.</p>
+<h3 id="additional-step-for-linode-object-storage-users"><a class="headerlink" href="#additional-step-for-linode-object-storage-users">Additional Step for Linode Object Storage Users</a></h3>
+<p>For Linode, you now need to make an alteration to the <code>.env</code> to ensure that the generated links to your storage objects are correct. If you miss this step, all the links to images and static files (like css) will be broken. To fix this, you need to now insert the bucket-name into the <code>AWS_S3_CUSTOM_DOMAIN</code>, for example if your <code>AWS_STORAGE_BUCKET_NAME</code> is <code>"my-bookwyrm-bucket"</code>, then set it to:</p>
+<div class="highlight"><pre><span></span><code>AWS_S3_CUSTOM_DOMAIN=my-bookwyrm-bucket.cluster-id.linodeobjects.com
+</code></pre></div>
+
+<p><em>Note</em>: From this point on, any bw-dev copy or sync commands will place objects into an incorrect location in your object store, so if you need to use them, revert to the previous setting, run and re-enable.</p>
+<h3 id="user-export-and-import-files"><a class="headerlink" href="#user-export-and-import-files">User export and import files</a></h3>
+<p>After <code>v0.7.5</code>, user export and import files are saved to local storage even if <code>USE_S3</code> is set to <code>true</code>. Generally it is safer to use local storage for these files, and keep your used storage under control by setting up the task to periodically delete old export and import files.</p>
+<p>If you are running a large instance you may prefer to use S3 for these files as well. If so, you will need to set the environment variable <code>USE_S3_FOR_EXPORTS</code> to <code>true</code>.</p>
+<h3 id="new-instance"><a class="headerlink" href="#new-instance">New Instance</a></h3>
+<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now: [<a href="install-prod.html">Docker</a>] [<a href="install-prod-dockerless.html">Dockerless</a>]. Dans le cas contraire, continuez à lire.</p>
 <h3 id="redemarrage-de-votre-instance"><a class="headerlink" href="#redemarrage-de-votre-instance">Redémarrage de votre instance</a></h3>
 <p>Une fois la copie des fichiers médias effectuée et les ressources statiques recueillies, vous pouvez charger la nouvelle configuration <code>.env</code> et redémarrer votre instance avec la commande :</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d

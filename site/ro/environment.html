@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>
+        
+Environment Variables
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentație
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/ro/instances" class="navbar-item">
+                Alăturați-vă
+            </a>
+            <a href="https://joinbookwyrm.com/ro/get-involved" class="navbar-item">
+                Implicați-vă
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Susțineți
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Cod
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" selected>Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="development" >development</option>
+                
+                <option value="v0.7.5" selected>v0.7.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/ro/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/adding-books.html" class="has-background-inherit" >Adding Books</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/ro/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/optional_features.html" class="has-background-inherit" >Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/ro/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/ro/permissions.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">Environment Variables</h1>
+
+                </header>
+                
+<section class="block content">
+    <p>BookWyrm requires certain environment (<code>ENV</code>) variables in order to run correctly. These are set from a file named <code>.env</code> in the directory you run BookWyrm from. You will find most of these variabled described in the <code>.env.example</code> file in the main code repository. You should copy this as the basis of your <code>.env</code> file.</p>
+<p>BookWyrm <strong>instance administrators</strong> should carefully check version release notes for any changes or additions to environment variables.</p>
+<p>BookWyrm <strong>developers</strong> should prefer to use <code>site.settings</code> for configuration rather than <code>ENV</code> values if possible.</p>
+<h2 id="django-settings"><a class="headerlink" href="#django-settings">Django settings</a></h2>
+<p>Learn more about each of these in <a href="https://docs.djangoproject.com/en/4.2/ref/settings">the Django reference documentation</a>.</p>
+<h3 id="allowed_hosts"><a class="headerlink" href="#allowed_hosts"><code>ALLOWED_HOSTS</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String of comma-separated values</li>
+<li><strong>Default</strong>: all</li>
+</ul>
+<p>A list of strings representing the host/domain names that this site can serve. This is a security measure to prevent HTTP Host header attacks, which are possible even under many seemingly-safe web server configurations.</p>
+<p>The default is to allow all hosts, but you should usually change this. e.g. <code>"localhost,bookwyrm.example.com"</code></p>
+<h3 id="media_root"><a class="headerlink" href="#media_root"><code>MEDIA_ROOT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>images</code></li>
+</ul>
+<p>Absolute filesystem path to the directory that will hold user-uploaded files. If running with Docker, remember that this is the directory location inside your container, not the host machine.</p>
+<h3 id="secret_key"><a class="headerlink" href="#secret_key"><code>SECRET_KEY</code></a></h3>
+<ul>
+<li><strong>required</strong></li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>"7(2w1sedok=aznpq)ta1mc4i%4h=xx@hxwx*o57ctsuml0x%fr"</code></li>
+</ul>
+<p>A secret key for a particular BookWyrm instance. This is used to provide cryptographic signing, and should be set to a unique, unpredictable and long string.</p>
+<p>If you do not change the <code>SECRET_KEY</code> from <code>.env.example</code> BookWyrm will throw an error and refuse to start.</p>
+<h3 id="static_root"><a class="headerlink" href="#static_root"><code>STATIC_ROOT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>static</code></li>
+</ul>
+<p>The absolute path to the directory where <code>collectstatic</code> will collect static files for deployment. If running with Docker, remember that this is the directory location inside your container, not the host machine.</p>
+<h3 id="debug"><a class="headerlink" href="#debug"><code>DEBUG</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<p><code>DEBUG</code> provides useful error information in the web interface for debugging on development servers.</p>
+<p>This should be set to <code>false</code> on production instances. <strong>Never deploy a site into production <code>DEBUG</code> set to <code>true</code>!</strong></p>
+<p><strong>NOTE:</strong> For version 0.7.5 and earlier, <code>DEBUG</code> defaulted to <code>true</code>.</p>
+<h3 id="language_code"><a class="headerlink" href="#language_code"><code>LANGUAGE_CODE</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>"en-us"</code></li>
+</ul>
+<p>A string representing the default language code for this installation.</p>
+<h3 id="session_cookie_age"><a class="headerlink" href="#session_cookie_age"><code>SESSION_COOKIE_AGE</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>2592000</code></li>
+</ul>
+<p>Time before being logged out (in seconds). The default is equivalent to 30 days. In future this default is <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3082">likely to change to 1 year</a>.</p>
+<h3 id="data_upload_max_memory_mib"><a class="headerlink" href="#data_upload_max_memory_mib"><code>DATA_UPLOAD_MAX_MEMORY_MiB</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>100</code></li>
+</ul>
+<p>Maximum allowed memory for file uploads. You can increase this if users are having trouble uploading BookWyrm export files. The real Django setting is <code>DATA_UPLOAD_MAX_MEMORY_SIZE</code>, however we use this setting in <code>.env</code> to allow instance admins to set the value <a href="https://en.wikipedia.org/wiki/Byte#Multiple-byte_units">in mebibytes</a> rather than bytes.</p>
+<h2 id="basic-bookwyrm-site-settings"><a class="headerlink" href="#basic-bookwyrm-site-settings">Basic BookWyrm site settings</a></h2>
+<h3 id="default_language"><a class="headerlink" href="#default_language"><code>DEFAULT_LANGUAGE</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>English</code></li>
+</ul>
+<p>Books will rank higher in search results on this instance if one of their <code>language</code> values matches this value.</p>
+<h3 id="domain"><a class="headerlink" href="#domain"><code>DOMAIN</code></a></h3>
+<ul>
+<li><strong>required</strong></li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The fully qualified domain name for your site. Do not include a protocol or port numbers. e.g. <code>example.com</code> or <code>subdomain.example.com</code>.</p>
+<h3 id="email"><a class="headerlink" href="#email"><code>EMAIL</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>Used in the <code>production</code> branch's <code>docker-compose.yml</code> file as the email to send to Certbot.</p>
+<h3 id="nginx_setup"><a class="headerlink" href="#nginx_setup"><code>NGINX_SETUP</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>https</code></li>
+<li><strong>Options</strong>: <code>https</code>, <code>reverse_proxy</code></li>
+</ul>
+<p>Indicates how to set the <code>nginx</code> configuration. <code>https</code> assumes all traffic should be handled by BookWyrm's nginx container and will attempt to set up a certbot HTTPS certificate, whereas <code>reverse_proxy</code> assumes traffic is being proxied by a web server between BookWyrm and the outside world. In development you should always set this to <code>reverse_proxy</code>.</p>
+<h3 id="port"><a class="headerlink" href="#port"><code>PORT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>443</code>, or if domain is <code>localhost</code>, <code>80</code>.</li>
+</ul>
+<p>The port used to communicate with the web. Note that this is different to Django's <code>PORT</code>.</p>
+<h3 id="use_https"><a class="headerlink" href="#use_https"><code>USE_HTTPS</code></a></h3>
+<p>This variable is deprecated after <code>v0.7.5</code>. It is assumed that your instance is using HTTPS unless the domain is <code>localhost</code>.</p>
+<h2 id="searching"><a class="headerlink" href="#searching">Searching</a></h2>
+<p>These configurations may be moved to <code>site.settings</code> in future.</p>
+<h3 id="search_timeout"><a class="headerlink" href="#search_timeout"><code>SEARCH_TIMEOUT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong> <code>8</code></li>
+</ul>
+<p>The total time in seconds that the instance will spend searching connectors.</p>
+<h3 id="query_timeout"><a class="headerlink" href="#query_timeout"><code>QUERY_TIMEOUT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong> <code>5</code></li>
+</ul>
+<p>Timeout for a query to an individual connector.</p>
+<h2 id="postgres-configuration"><a class="headerlink" href="#postgres-configuration">Postgres configuration</a></h2>
+<p>The primary database for BookWyrm uses Postgres.</p>
+<h3 id="pgport"><a class="headerlink" href="#pgport"><code>PGPORT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong> <code>5432</code></li>
+</ul>
+<p>The port to connect to the Postgres server. Same as Django's <code>PORT</code>.</p>
+<h3 id="postgres_password"><a class="headerlink" href="#postgres_password"><code>POSTGRES_PASSWORD</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong> <code>bookwyrm</code></li>
+</ul>
+<p>Password for the database. Set this to a strong password string between quotation marks to avoid problems with certain characters being misinterpreted.</p>
+<p><strong>Do not use either of the default values from <code>.env</code> or <code>settings.py</code></strong> as they are publicly known.</p>
+<h3 id="postgres_user"><a class="headerlink" href="#postgres_user"><code>POSTGRES_USER</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>bookwyrm</code></li>
+</ul>
+<p>The name of your database user. Same as Django's <code>USER</code>.</p>
+<h3 id="postgres_db"><a class="headerlink" href="#postgres_db"><code>POSTGRES_DB</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>bookwyrm</code></li>
+</ul>
+<p>The name of your database.</p>
+<h3 id="postgres_host"><a class="headerlink" href="#postgres_host"><code>POSTGRES_HOST</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>localhost</code></li>
+</ul>
+<p>The host server for your database. If not set or a blank string, defaults to localhost. Same as Django's <code>HOST</code>.</p>
+<h2 id="redis"><a class="headerlink" href="#redis">Redis</a></h2>
+<p>Redis is used to manage both activity streams and background jobs.</p>
+<h3 id="max_stream_length"><a class="headerlink" href="#max_stream_length"><code>MAX_STREAM_LENGTH</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>200</code></li>
+</ul>
+<p>The maximum length for Redis streams. If a stream grows longer than this, Redis will discard the oldest items in order to not exceed the <code>MAX_STREAM_LENGTH</code>.</p>
+<p>See the <a href="https://redis.io/docs/latest/commands/xtrim/">Redis <code>XTRIM</code> documentation</a> for more detail.</p>
+<h3 id="redis_activity_host"><a class="headerlink" href="#redis_activity_host"><code>REDIS_ACTIVITY_HOST</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>localhost</code></li>
+</ul>
+<p>Redis server host. If not set, this defaults to <code>localhost</code> but if you are using Docker it should usually be set to <code>redis_activity</code> so that you are using the Redis container of that name.</p>
+<h3 id="redis_activity_port"><a class="headerlink" href="#redis_activity_port"><code>REDIS_ACTIVITY_PORT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>6379</code></li>
+</ul>
+<p>The port your Redis server uses.</p>
+<h3 id="redis_activity_password"><a class="headerlink" href="#redis_activity_password"><code>REDIS_ACTIVITY_PASSWORD</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: Empty string</li>
+</ul>
+<p>Password for your Redis database.</p>
+<h3 id="redis_activity_db_index"><a class="headerlink" href="#redis_activity_db_index"><code>REDIS_ACTIVITY_DB_INDEX</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>If you are not using the default Docker setup with a separate Redis server for activity streams, you should set the <code>REDIS_ACTIVITY_DB_INDEX</code> to indicate which Redis database is being used for BookWyrm activity streams.</p>
+<h3 id="redis_activity_url"><a class="headerlink" href="#redis_activity_url"><code>REDIS_ACTIVITY_URL</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>If you are using an external Redis database or want to use a unix socket, you can override all the other Redis settings by explictly setting the full <code>REDIS_ACTIVITY_URL</code>.</p>
+<p>e.g. <code>"redis://username:top_secret_pass@example.com:6380/0"</code></p>
+<h3 id="redis_broker_host"><a class="headerlink" href="#redis_broker_host"><code>REDIS_BROKER_HOST</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>localhost</code></li>
+</ul>
+<p>Redis Celery server host. If not set this defaults to <code>localhost</code> but if using Docker should usually be set to <code>redis_broker</code> so that you are using the Redis container of that name.</p>
+<h3 id="redis_broker_port"><a class="headerlink" href="#redis_broker_port"><code>REDIS_BROKER_PORT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>6379</code></li>
+</ul>
+<p>The port your Redis Celery server uses.</p>
+<h3 id="redis_broker_password"><a class="headerlink" href="#redis_broker_password"><code>REDIS_BROKER_PASSWORD</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: Empty string</li>
+</ul>
+<p>Password for your Redis Celery database.</p>
+<h3 id="redis_broker_db_index"><a class="headerlink" href="#redis_broker_db_index"><code>REDIS_BROKER_DB_INDEX</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>If you are not using the default Docker setup with a separate Redis server for Celery, you should set the <code>REDIS_ACTIVITY_DB_INDEX</code> to indicate which Redis database is being used for BookWyrm activity streams.</p>
+<h3 id="redis_broker_url"><a class="headerlink" href="#redis_broker_url"><code>REDIS_BROKER_URL</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>If you are using an external Redis database or want to use a unix socket, you can override all the other Redis settings for your Celery database by explictly setting the full <code>REDIS_BROKER_URL</code>.</p>
+<p>e.g. <code>"redis://username:top_secret_pass@example.com:6380/0"</code></p>
+<h2 id="flower"><a class="headerlink" href="#flower">Flower</a></h2>
+<p>Flower provides a web UI for monitoring Celery tasks.</p>
+<h3 id="flower_port"><a class="headerlink" href="#flower_port"><code>FLOWER_PORT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>8888</code></li>
+</ul>
+<p>Port for Flower site used to monitor Celery at <code>https://example.com/flower</code>.</p>
+<h3 id="flower_user"><a class="headerlink" href="#flower_user"><code>FLOWER_USER</code></a></h3>
+<ul>
+<li><strong>required</strong></li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The user for your Flower interface.</p>
+<h3 id="flower_password"><a class="headerlink" href="#flower_password"><code>FLOWER_PASSWORD</code></a></h3>
+<ul>
+<li><strong>required</strong></li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The password for your Flower monitoring interface. Flower can see all messages passing through your server so it is important that you set this to a strong, unique password and keep it secure.</p>
+<h2 id="email-configuration"><a class="headerlink" href="#email-configuration">Email configuration</a></h2>
+<h3 id="email_host"><a class="headerlink" href="#email_host"><code>EMAIL_HOST</code></a></h3>
+<ul>
+<li><strong>required</strong></li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The smtp address of your email host. e.g. <code>smtp.mailgun.org</code>. Always check the terms and conditions of your email provider before using them for sending large volumes of mail. You probably need something like Mailgun.</p>
+<h3 id="email_port"><a class="headerlink" href="#email_port"><code>EMAIL_PORT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>587</code></li>
+</ul>
+<p>The port for your email provider's smtp server.</p>
+<h3 id="email_host_user"><a class="headerlink" href="#email_host_user"><code>EMAIL_HOST_USER</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The username for your email provider. Usually in the form of a full email address e.g. <code>mail@your.domain.here</code></p>
+<h3 id="email_host_password"><a class="headerlink" href="#email_host_password"><code>EMAIL_HOST_PASSWORD</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The password for your email provider account.</p>
+<h3 id="email_use_tls"><a class="headerlink" href="#email_use_tls"><code>EMAIL_USE_TLS</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>true</code></li>
+</ul>
+<p>Whether your smtp connection uses TLS. Check that you are using the correct <code>EMAIL_PORT</code> for this.</p>
+<h3 id="email_use_ssl"><a class="headerlink" href="#email_use_ssl"><code>EMAIL_USE_SSL</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<p>Whether your smtp connection uses SSL. Check that you are using the correct <code>EMAIL_PORT</code> for this.</p>
+<h3 id="email_sender_name"><a class="headerlink" href="#email_sender_name"><code>EMAIL_SENDER_NAME</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>admin</code></li>
+</ul>
+<p>The first part of the email address for emails sent by your BookWyrm instance. e.g. <strong><code>admin</code></strong>@example.com.</p>
+<h3 id="email_sender_domain"><a class="headerlink" href="#email_sender_domain"><code>EMAIL_SENDER_DOMAIN</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: Same as <code>DOMAIN</code></li>
+</ul>
+<p>The domain of the email address for emails sent by your BookWyrm instance. e.g. admin@<strong><code>example.com</code></strong>.</p>
+<h2 id="s3-object-storage"><a class="headerlink" href="#s3-object-storage">S3 object storage</a></h2>
+<h3 id="use_s3"><a class="headerlink" href="#use_s3"><code>USE_S3</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<p>Indicates whether you are using S3 object storage for images and static files.</p>
+<h3 id="use_s3_for_exports"><a class="headerlink" href="#use_s3_for_exports"><code>USE_S3_FOR_EXPORTS</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<p>Indicates whether you are using S3 object storage for user export and import files. By default <code>USE_S3</code> does not include user import and exports. It is safer to use the default local storage for these, along with the regular file deletion job running. On larger instances local storage may cause performance issues and you may prefer to set this to <code>true</code>.</p>
+<h3 id="s3_signed_url_expiry"><a class="headerlink" href="#s3_signed_url_expiry"><code>S3_SIGNED_URL_EXPIRY</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>900</code></li>
+</ul>
+<p>Number of seconds before signed S3 urls expire. This is currently only used for user export files. This should only be as long as is required for a user download to complete once the user has clicked on the "download" button after the export has been processed.</p>
+<h3 id="aws_access_key_id"><a class="headerlink" href="#aws_access_key_id"><code>AWS_ACCESS_KEY_ID</code></a></h3>
+<ul>
+<li><strong>required</strong> if using S3 storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>Access key for S3 storage of all types.</p>
+<h3 id="aws_default_acl"><a class="headerlink" href="#aws_default_acl"><code>AWS_DEFAULT_ACL</code></a></h3>
+<ul>
+<li><strong>required</strong> if using Backblaze storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: "public-read"</li>
+</ul>
+<p>Backblaze (B2) does not recognise "public-read" as a default ACL setting, so Backblaze users should set this to an empty string.</p>
+<h3 id="aws_secret_access_key"><a class="headerlink" href="#aws_secret_access_key"><code>AWS_SECRET_ACCESS_KEY</code></a></h3>
+<ul>
+<li><strong>required</strong> if using S3 storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>Secret key for S3 storage of all types.</p>
+<h3 id="aws_storage_bucket_name"><a class="headerlink" href="#aws_storage_bucket_name"><code>AWS_STORAGE_BUCKET_NAME</code></a></h3>
+<ul>
+<li><strong>required</strong> if using S3 storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The bucket name you are using. e.g. <code>"example-bucket-name"</code></p>
+<h3 id="aws_s3_region_name"><a class="headerlink" href="#aws_s3_region_name"><code>AWS_S3_REGION_NAME</code></a></h3>
+<ul>
+<li><strong>required</strong> if using S3 storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The S3 region name. e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway, <code>"nyc3"</code> for Digital Ocean or <code>"cluster-id"</code> for Linode.</p>
+<h3 id="aws_s3_custom_domain"><a class="headerlink" href="#aws_s3_custom_domain"><code>AWS_S3_CUSTOM_DOMAIN</code></a></h3>
+<ul>
+<li><strong>required</strong> if using non-AWS S3 storage (e.g. Scaleway or Digital Ocean Spaces)</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The domain that will serve the assets. e.g. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code></p>
+<h3 id="aws_s3_url_protocol"><a class="headerlink" href="#aws_s3_url_protocol"><code>AWS_S3_URL_PROTOCOL</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: Same as <code>PROTOCOL</code> plus a colon e.g. "http:"</li>
+</ul>
+<p>Protocol for your S3 storage. Defaults to <code>https:</code> in production. You do not need to set this unless you want to override the default behaviour.</p>
+<h3 id="aws_s3_endpoint_url"><a class="headerlink" href="#aws_s3_endpoint_url"><code>AWS_S3_ENDPOINT_URL</code></a></h3>
+<ul>
+<li><strong>required</strong> if using non-AWS S3 storage (e.g. Scaleway or Digital Ocean Spaces)</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The S3 API endpoint. e.g. <code>"https://s3.fr-par.scw.cloud"</code></p>
+<h2 id="azure-blob-storage"><a class="headerlink" href="#azure-blob-storage">Azure blob storage</a></h2>
+<p>These values are required if you are using <a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-account-get-info">Azure Blob Storage</a>.</p>
+<h3 id="use_azure"><a class="headerlink" href="#use_azure"><code>USE_AZURE</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<h3 id="azure_account_name"><a class="headerlink" href="#azure_account_name"><code>AZURE_ACCOUNT_NAME</code></a></h3>
+<ul>
+<li><strong>required</strong> if using Azure storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>e.g. <code>"example-account-name"</code></p>
+<h3 id="azure_account_key"><a class="headerlink" href="#azure_account_key"><code>AZURE_ACCOUNT_KEY</code></a></h3>
+<ul>
+<li><strong>required</strong> if using Azure storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>e.g. <code>"Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=="</code></p>
+<h3 id="azure_container"><a class="headerlink" href="#azure_container"><code>AZURE_CONTAINER</code></a></h3>
+<ul>
+<li><strong>required</strong> if using Azure storage</li>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>The unique name for your container. e.g. <code>"example-blob-container-name"</code>.</p>
+<h3 id="azure_custom_domain"><a class="headerlink" href="#azure_custom_domain"><code>AZURE_CUSTOM_DOMAIN</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>You can use a <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal">custom domain</a> with Azure blob storage but this is not required. e.g. <code>"example-account-name.blob.core.windows.net"</code>.</p>
+<h2 id="image-generation"><a class="headerlink" href="#image-generation">Image generation</a></h2>
+<p>Some of these configuration values may be moved to site.settings in future.</p>
+<h3 id="enable_thumbnail_generation"><a class="headerlink" href="#enable_thumbnail_generation"><code>ENABLE_THUMBNAIL_GENERATION</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<p>Whether to enable generation of thumbnail images for book covers. Setting this to <code>true</code> will provide a boost to performance in terms of rendering images, however it comes at the price of 4-5 times more file storage required for book covers. For this reason it is set to <code>false</code> by default.</p>
+<h3 id="enable_preview_images"><a class="headerlink" href="#enable_preview_images"><code>ENABLE_PREVIEW_IMAGES</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<p>This setting allows the server to generate preview images that can be used as OpenGraph images (or Twitter card image). These previews are generated for the book (every time the title, cover or author changes, or a new public review with rating is published), the user (every time the name or avatar is changed), and the website (every time the site name, tagline or logo are changed). See <a href="/optional_features.html">Optional Features</a> for more information.</p>
+<h3 id="preview_bg_color"><a class="headerlink" href="#preview_bg_color"><code>PREVIEW_BG_COLOR</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li>default: <code>use_dominant_color_light</code></li>
+</ul>
+<p>The background color for preview images. You can specify RGB tuple or RGB hex strings, or <code>use_dominant_color_light</code> / <code>use_dominant_color_dark</code>.</p>
+<h3 id="preview_text_color"><a class="headerlink" href="#preview_text_color"><code>PREVIEW_TEXT_COLOR</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>#363636</code></li>
+</ul>
+<p>The text color for preview images. If <code>PREVIEW_BG_COLOR</code> is <code>use_dominant_color_dark</code>, this should be set to <code>#fff</code>.</p>
+<h3 id="preview_img_width"><a class="headerlink" href="#preview_img_width"><code>PREVIEW_IMG_WIDTH</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>1200</code></li>
+</ul>
+<p>Width for preview images, in pixels.</p>
+<h3 id="preview_img_height"><a class="headerlink" href="#preview_img_height"><code>PREVIEW_IMG_HEIGHT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>630</code></li>
+</ul>
+<p>Height for preview images, in pixels.</p>
+<h3 id="preview_default_cover_color"><a class="headerlink" href="#preview_default_cover_color"><code>PREVIEW_DEFAULT_COVER_COLOR</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>#002549</code></li>
+</ul>
+<p>If there is no cover image for a book, we create a default cover. This setting determines the color of that default book cover.</p>
+<h3 id="preview_default_font"><a class="headerlink" href="#preview_default_font"><code>PREVIEW_DEFAULT_FONT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: <code>Source Han Sans</code></li>
+</ul>
+<p>If there is no cover image for a book, we create a default cover. This setting determines the font used on that default book cover.</p>
+<h2 id="telemetry"><a class="headerlink" href="#telemetry">Telemetry</a></h2>
+<p>Use these settings to enable automatically sending telemetry to an OTLP-compatible service. Many of the main monitoring apps have OLTP collectors, including NewRelic, DataDog, and Honeycomb.io - consult their documentation for setup instructions.</p>
+<h3 id="otel_exporter_otlp_endpoint"><a class="headerlink" href="#otel_exporter_otlp_endpoint"><code>OTEL_EXPORTER_OTLP_ENDPOINT</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>API endpoint for your provider.</p>
+<h3 id="otel_exporter_otlp_headers"><a class="headerlink" href="#otel_exporter_otlp_headers"><code>OTEL_EXPORTER_OTLP_HEADERS</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>Any headers required, usually authentication information.</p>
+<h3 id="otel_service_name"><a class="headerlink" href="#otel_service_name"><code>OTEL_SERVICE_NAME</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>Service name is an arbitrary tag that is attached to any data sent, used to distinguish different sources. It can be useful for sending prod and dev metrics to the same place and keeping them separate, for instance.</p>
+<h2 id="http-headers"><a class="headerlink" href="#http-headers">HTTP headers</a></h2>
+<h3 id="http_x_forwarded_proto"><a class="headerlink" href="#http_x_forwarded_proto"><code>HTTP_X_FORWARDED_PROTO</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Boolean</li>
+<li><strong>Default</strong>: <code>false</code></li>
+</ul>
+<p>Setting this to <code>true</code> can compromise your site’s security. Ensure you fully understand your setup before changing it.</p>
+<p>Only use it if your proxy is "swallowing" whether the original request was made via https. Please <a href="https://docs.djangoproject.com/en/4.2/ref/settings/#secure-proxy-ssl-header">refer to the Django Documentation</a> and assess the risks for your instance.</p>
+<h3 id="csp_additional_hosts"><a class="headerlink" href="#csp_additional_hosts"><code>CSP_ADDITIONAL_HOSTS</code></a></h3>
+<ul>
+<li><strong>Type</strong>: String</li>
+<li><strong>Default</strong>: not set</li>
+</ul>
+<p>Additional hosts to allow in the <code>Content-Security-Policy</code>, "self" (should be <code>DOMAIN</code> with optionally ":" + <code>PORT</code>) and <code>AWS_S3_CUSTOM_DOMAIN</code> (if used) are added by default.  Value should be a comma-separated list of host names.</p>
+<h2 id="multifactor-totp-authentication"><a class="headerlink" href="#multifactor-totp-authentication">Multifactor (TOTP) authentication</a></h2>
+<p>Some of these configuration values may be moved to site.settings in future.</p>
+<h3 id="two_factor_login_validity_window"><a class="headerlink" href="#two_factor_login_validity_window"><code>TWO_FACTOR_LOGIN_VALIDITY_WINDOW</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>2</code></li>
+</ul>
+<p>Sets the number of codes either side of which will be accepted. This should be a low number but you can increase it if your users are experiencing high network latency and their codes are expiring before they can complete the login process. With the default settings for this and <code>TWO_FACTOR_LOGIN_MAX_SECONDS</code>, users have up to 180 seconds to use a given login code and can use a valid code up to two before the current one.</p>
+<h3 id="two_factor_login_max_seconds"><a class="headerlink" href="#two_factor_login_max_seconds"><code>TWO_FACTOR_LOGIN_MAX_SECONDS</code></a></h3>
+<ul>
+<li><strong>Type</strong>: Integer</li>
+<li><strong>Default</strong>: <code>60</code></li>
+</ul>
+<p>Time in seconds for which a user login code is valid.</p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> este un program colaborativ, anti-corporație, menținut de <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Susțineți BookWyrm pe <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Alăturați-vă</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/reference/environment.md">Contribuiți la această pagină</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Aflați mai multe</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentație</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contactați responsabilul</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licență</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "ro/";
+    var current_version = "v0.7.5";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>

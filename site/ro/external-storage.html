@@ -185,19 +185,19 @@ External Storage
             </li>
             
             <li>
-                <a href="/v0.7.5/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
                 <a href="/v0.7.5/ro/documentation.html" class="has-background-inherit" >Documentation</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+                <a href="/v0.7.5/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
                 <a href="/v0.7.5/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
@@ -254,13 +254,23 @@ External Storage
 <li><code>AWS_ACCESS_KEY_ID</code>: ID-ul cheie de acces al dvs.</li>
 <li><code>AWS_SECRET_ACCESS_KEY</code>: cheia de acces secretă a dvs.</li>
 <li><code>AWS_STORAGE_BUCKET_NAME</code>: numele „găleții” dvs.</li>
-<li><code>AWS_S3_REGION_NAME</code>: de ex. <code>"eu-west-1"</code> pentru AWS, <code>"fr-par"</code> pentru Scaleway sau <code>"nyc3"</code> pentru Digital Ocean</li>
+<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway, <code>"nyc3"</code> for Digital Ocean or <code>"cluster-id"</code> for Linode</li>
 </ul>
 <p>Dacă serviciul dvs. S3 compatibil este Amazon AWS, ar trebui să fie deja setat. Dacă nu, va trebui să decomentați următoarele linii:</p>
 <ul>
-<li><code>AWS_S3_CUSTOM_DOMAIN</code>: domeniul care va deservi modelele, de ex. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code> sau <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
-<li><code>AWS_S3_ENDPOINT_URL</code>: punctul final al API-ului S3 (S3 API endpoint), de ex. <code>"https://s3.fr-par.scw.cloud"</code> sau <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li><code>AWS_S3_CUSTOM_DOMAIN</code>: the domain that will serve the assets:</li>
+<li>for Scaleway, e.g. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code></li>
+<li>for Digital Ocean, e.g. <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li>for Linode Object Storage, this should be set to the cluster domain, e.g. <code>"eu-central-1.linodeobjects.com"</code></li>
+<li><code>AWS_S3_ENDPOINT_URL</code>: the S3 API endpoint:</li>
+<li>for Scaleway, e.g. <code>"https://s3.fr-par.scw.cloud"</code></li>
+<li>for Digital Ocean, e.g. <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li>For Linode Object Storage, set this to the cluster domain, e.g. <code>"https://eu-central-1.linodeobjects.com"</code></li>
 </ul>
+<p>For many S3 compatible services, the default <code>ACL</code> is <code>"public-read"</code>, and this is what BookWyrm defaults to. If you are using Backblaze (B2) you need to explicitly set the default ACL to be empty in your <code>.env</code> file:</p>
+<div class="highlight"><pre><span></span><code>AWS_DEFAULT_ACL=&quot;&quot;
+</code></pre></div>
+
 <h3 id="copiati-fisierele-media-locale-pe-stocarea-externa"><a class="headerlink" href="#copiati-fisierele-media-locale-pe-stocarea-externa">Copiați fișierele media locale pe stocarea externă</a></h3>
 <p>Dacă instanța dvs. BookWyrm rulează deja și fișierele media au fost încărcate (avatare de utilizator, coperți de cărți…), va trebui să migrați fișierele media încărcate pe „găleata” (bucket) dvs.</p>
 <p>Această sarcină este realizată de comanda:</p>
@@ -272,13 +282,11 @@ External Storage
 <div class="highlight"><pre><span></span><code>USE_S3=true
 </code></pre></div>
 
-<p>Dacă stocarea externă a dvs. este deservită prin HTTPS (cel mai des în prezent), veți avea nevoie de asemenea să vă asigurați că <code>USE_HTTPS</code> este setat la <code>true</code>, în așa fel încât imaginile vor fi încărcate prin HTTPS:</p>
-<div class="highlight"><pre><span></span><code>USE_HTTPS=true
-</code></pre></div>
-
+<p><strong>Note</strong> that after <code>v0.7.5</code> all traffic is assumed to be HTTPS, so you need to ensure that your external storage is also served over HTTPS.</p>
 <h4 id="modele-statice"><a class="headerlink" href="#modele-statice">Modele statice</a></h4>
-<p>Apoi, veți avea nevoie să rulați următoarea comandă pentru a copia modelele statice către „găleata” dvs. S3:</p>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+<p>Then, you will need to run the following commands to compile the themes and copy all static assets to your S3 bucket:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>compile_themes
+./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <h4 id="setari-cors"><a class="headerlink" href="#setari-cors">Setări CORS</a></h4>
@@ -305,7 +313,17 @@ External Storage
 </code></pre></div>
 
 <p>Dacă nu afișează nimic este de bine.</p>
-<p>Dacă începeți o instanță nouă BookWyrm, puteți reveni la instrucțiunile de configurare acum. Dacă nu, continuați să citiți.</p>
+<h3 id="additional-step-for-linode-object-storage-users"><a class="headerlink" href="#additional-step-for-linode-object-storage-users">Additional Step for Linode Object Storage Users</a></h3>
+<p>For Linode, you now need to make an alteration to the <code>.env</code> to ensure that the generated links to your storage objects are correct. If you miss this step, all the links to images and static files (like css) will be broken. To fix this, you need to now insert the bucket-name into the <code>AWS_S3_CUSTOM_DOMAIN</code>, for example if your <code>AWS_STORAGE_BUCKET_NAME</code> is <code>"my-bookwyrm-bucket"</code>, then set it to:</p>
+<div class="highlight"><pre><span></span><code>AWS_S3_CUSTOM_DOMAIN=my-bookwyrm-bucket.cluster-id.linodeobjects.com
+</code></pre></div>
+
+<p><em>Note</em>: From this point on, any bw-dev copy or sync commands will place objects into an incorrect location in your object store, so if you need to use them, revert to the previous setting, run and re-enable.</p>
+<h3 id="user-export-and-import-files"><a class="headerlink" href="#user-export-and-import-files">User export and import files</a></h3>
+<p>After <code>v0.7.5</code>, user export and import files are saved to local storage even if <code>USE_S3</code> is set to <code>true</code>. Generally it is safer to use local storage for these files, and keep your used storage under control by setting up the task to periodically delete old export and import files.</p>
+<p>If you are running a large instance you may prefer to use S3 for these files as well. If so, you will need to set the environment variable <code>USE_S3_FOR_EXPORTS</code> to <code>true</code>.</p>
+<h3 id="new-instance"><a class="headerlink" href="#new-instance">New Instance</a></h3>
+<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now: [<a href="install-prod.html">Docker</a>] [<a href="install-prod-dockerless.html">Dockerless</a>]. Dacă nu, continuați să citiți.</p>
 <h3 id="reporniti-instanta-dvs"><a class="headerlink" href="#reporniti-instanta-dvs">Reporniți instanța dvs.</a></h3>
 <p>Odată ce migrarea fișierelor media a fost făcută și modelele statice colectate, puteți încărca noua configurare <code>.env</code> și reporni instanța cu:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
