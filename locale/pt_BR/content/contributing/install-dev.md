@@ -12,7 +12,8 @@ Estas instruções supoem que você esteja rodando a BookWyrm utilizando o Docke
 
 1. Faça uma cópia do [código da BookWyrm no GitHub](https://github.com/bookwyrm-social/bookwyrm). Você pode [criar uma bifurcação (fork)](https://docs.github.com/en/get-started/quickstart/fork-a-repo) do repositório e então [usar `git clone` pra baixar o código](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) para seu computador.
 2. Vá ao diretório onde o código foi baixado no seu computador; você trabalhará a partir dele daqui em diante.
-3. Configure as variáveis do seu ambiente de trabalho copiando o arquivo de ambiente de exemplo (`.env.example`) e renomeando o arquivo para `.env`. Na linha de comando, você pode fazer assim:
+3. Development occurs on the `main` branch, so ensure that is the branch you have checked out: `git checkout main`
+4. Configure as variáveis do seu ambiente de trabalho copiando o arquivo de ambiente de exemplo (`.env.example`) e renomeando o arquivo para `.env`. Na linha de comando, você pode fazer assim:
 ``` { .sh }
 cp .env.example .env
 ```
@@ -26,11 +27,13 @@ In `.env`:
 6. change `NGINX_SETUP` to `reverse_proxy` (this prevents BookWyrm trying to set up https certificates on your development machine)
 7. If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment `PORT` and set it (e.g. `PORT=1333`). If using `localhost` this is optional.
 
-If you try to register your admin account and see a message that `CSRF verification failed`, you should check these settings, as you may have set your domain or port incorrectly.
+Check that you have [all the required settings configured](/environment.html#required-environment-settings) before proceeding.
+
+If you try to register your admin account and see a message that `CSRF verification failed` you may have set your domain or port incorrectly.
 
 ### Email (optional)
 
-If you want to test sending emails, you will need to [set up appropriate values](/environment.html#email-configuration) in the "Email config" section. You do not need to change anything for [the separate `EMAIL` setting](/environment.html#email).
+If you want to test sending emails, you will need to [set up appropriate real values](/environment.html#email-configuration) in the "Email config" section. You do not need to change anything for [the separate `EMAIL` setting](/environment.html#email).
 
 ### Build and run
 
