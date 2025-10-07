@@ -5,7 +5,7 @@ Title: Willkommen Date: 2021-04-13
 BookWyrm ist ein soziales Netzwerk, um deinen Lesefortschritt zu verfolgen, über Bücher zu sprechen, Rezensionen zu schreiben und Neues zu entdecken. Föderation ermöglicht es BookWyrm-Benutzer*innen, kleinen, vertrauenswürdigen Communities beizutreten, die sich untereinander und mit anderen ActivityPub-Diensten wie Mastodon und Pleroma verbinden können.
 
 ## Funktionen
-Da sich das Projekt noch in den Anfangsphasen befindet, wachsen die Funktionen jeden Tag und es gibt viel Raum für Anregungen und Ideen. Öffne ein [Ticket](https://github.com/bookwyrm-social/bookwyrm/issues), um die Unterhaltung in Gang zu bringen!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Über Bücher schreiben
     - Rezensionen mit oder ohne Bewertungen erstellen, die in der Buchseite zusammengefasst werden
@@ -18,9 +18,10 @@ Da sich das Projekt noch in den Anfangsphasen befindet, wachsen die Funktionen j
 - Leseaktivität verfolgen
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Erstelle eigene Regale
-    - Speichere Lesestart/Leseende Daten sowie Fortschrittsaktualisierungen während des Lesens
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Aktualisiere Follower über Leseaktivitäten (optional mit granularen Privatsphäreeinstellungen)
     - Erstelle Listen von Büchern, die offen für Einreichungen von jedem, zusammengestellt, oder nur vom Ersteller bearbeitet werden können
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Föderation mit ActivityPub
     - Übertrage und empfange Status von Nutzer*innen und ihre Aktivität
     - Teile Buchdaten zwischen Instanzen, um eine vernetzte Datenbank mit Metadaten zu erstellen
