@@ -5,7 +5,7 @@ Název: Vítejte Datum: 2021-04-13
 BookWyrm je sociální síť pro zaznamenání vašeho čtení, mluvení o knihách, psaní recenzích a objevování, co chcete číst dále. Federace umožňuje uživatelům BookWyrmu připojit se k malým, důvěryhodným komunitám, které se mohou navzájem propojit, a dalším ActivityPub službám jako Mastodon a Pleroma.
 
 ## Vlastnosti
-Vzhledem k tomu, že tento projekt je stále v raných fázích, funkce rostou každý den, a je spousta prostoru pro návrhy a nápady. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Posting about books
     - Compose reviews, with or without ratings, which are aggregated in the book page
@@ -18,9 +18,10 @@ Vzhledem k tomu, že tento projekt je stále v raných fázích, funkce rostou k
 - Track reading activity
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Update followers about reading activity (optionally, and with granular privacy controls)
     - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Federation with ActivityPub
     - Broadcast and receive user statuses and activity
     - Share book data between instances to create a networked database of metadata
