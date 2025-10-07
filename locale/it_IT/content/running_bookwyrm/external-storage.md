@@ -1,5 +1,5 @@
 - - -
-Titolo: Archivio esterno Data: 2021-06-07 Ordine: 7
+Title: External Storage Date: 2021-06-07 Order: 8
 - - -
 
 Per impostazione predefinita, BookWyrm utilizza memoria locale per le risorse statiche (favicon, avatar predefinito, ecc., e i supporti (avatar utente, copertine di libri, ecc.), ma è possibile utilizzare un servizio di archiviazione esterno per servire questi file. BookWyrm utilizza `django-storages` per gestire l'archiviazione esterna, come servizi compatibili con S3, Apache Libcloud o SFTP.
@@ -36,12 +36,24 @@ Modifica il tuo file `.env` senza commentare le righe seguenti:
 - `AWS_ACCESS_KEY_ID`: ID della tua chiave di accesso
 - `AWS_SECRET_ACCESS_KEY`: la chiave di accesso segreto
 - `AWS_STORAGE_BUCKET_NAME`: nome del tuo bucket
-- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` per AWS, `"fr-par"` per Scaleway o `"nyc3"` per l'Oceano digitale
+- `AWS_S3_REGION_NAME`: e.g. `"eu-west-1"` for AWS, `"fr-par"` for Scaleway, `"nyc3"` for Digital Ocean or `"cluster-id"` for Linode
 
 Se il servizio compatibile con S3 è Amazon AWS, è necessario essere impostati. In caso contrario, dovrete annullare il commento alle seguenti righe:
 
-- `AWS_S3_CUSTOM_DOMAIN`: il dominio che servirà le risorse, ad esempio `"example-bucket-name.s3.fr-par.scw.cloud"` o `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
-- `AWS_S3_ENDPOINT_URL`: l'endpoint S3 API, ad esempio `"https://s3.fr-par.scw.cloud"` o `"한://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
+- `AWS_S3_CUSTOM_DOMAIN`: the domain that will serve the assets:
+  - for Scaleway, e.g. `"example-bucket-name.s3.fr-par.scw.cloud"`
+  - for Digital Ocean, e.g. `"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
+  - for Linode Object Storage, this should be set to the cluster domain, e.g. `"eu-central-1.linodeobjects.com"`
+- `AWS_S3_ENDPOINT_URL`: the S3 API endpoint:
+  - for Scaleway, e.g. `"https://s3.fr-par.scw.cloud"`
+  - for Digital Ocean, e.g. `"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"`
+  - For Linode Object Storage, set this to the cluster domain, e.g. `"https://eu-central-1.linodeobjects.com"`
+
+For many S3 compatible services, the default `ACL` is `"public-read"`, and this is what BookWyrm defaults to. If you are using Backblaze (B2) you need to explicitly set the default ACL to be empty in your `.env` file:
+
+```
+AWS_DEFAULT_ACL=""
+```
 
 ### Copia media locali su memoria esterna
 
@@ -61,17 +73,14 @@ Per attivare la memoria esterna compatibile con S3, dovrai modificare la tua `. 
 USE_S3=true
 ```
 
-Se la memoria esterna viene servita su HTTPS (che la maggior parte sono attualmente), avrai anche bisogno di assicurarsi che `USE_HTTPS` sia impostato su `true`in modo che le immagini saranno caricate su HTTPS:
-
-```
-USE_HTTPS=true
-```
+**Note** that after `v0.7.5` all traffic is assumed to be HTTPS, so you need to ensure that your external storage is also served over HTTPS.
 
 #### Risorsa statiche
 
-Quindi, è necessario eseguire il seguente comando, per copiare gli asset statici nel proprio bucket S3:
+Then, you will need to run the following commands to compile the themes and copy all static assets to your S3 bucket:
 
 ```bash
+./bw-dev compile_themes
 ./bw-dev collectstatic
 ```
 
@@ -109,7 +118,25 @@ Quindi, eseguire il comando seguente:
 
 Nessuna uscita significa che dovrebbe essere buona.
 
-Se stai iniziando una nuova istanza di BookWyrm, puoi tornare alle istruzioni di configurazione in questo momento. In caso negativo, continuare a leggere.
+### Additional Step for Linode Object Storage Users
+
+For Linode, you now need to make an alteration to the `.env` to ensure that the generated links to your storage objects are correct. If you miss this step, all the links to images and static files (like css) will be broken. To fix this, you need to now insert the bucket-name into the `AWS_S3_CUSTOM_DOMAIN`, for example if your `AWS_STORAGE_BUCKET_NAME` is `"my-bookwyrm-bucket"`, then set it to:
+
+```
+AWS_S3_CUSTOM_DOMAIN=my-bookwyrm-bucket.cluster-id.linodeobjects.com
+```
+
+*Note*: From this point on, any bw-dev copy or sync commands will place objects into an incorrect location in your object store, so if you need to use them, revert to the previous setting, run and re-enable.
+
+### User export and import files
+
+After `v0.7.5`, user export and import files are saved to local storage even if `USE_S3` is set to `true`. Generally it is safer to use local storage for these files, and keep your used storage under control by setting up the task to periodically delete old export and import files.
+
+If you are running a large instance you may prefer to use S3 for these files as well. If so, you will need to set the environment variable `USE_S3_FOR_EXPORTS` to `true`.
+
+### New Instance
+
+If you are starting a new BookWyrm instance, you can go back to the setup instructions right now: [[Docker](install-prod.html)] [[Dockerless](install-prod-dockerless.html)]. In caso negativo, continuare a leggere.
 
 ### Riavviare l'istanza
 
