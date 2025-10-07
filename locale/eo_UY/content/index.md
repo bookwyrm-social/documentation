@@ -5,7 +5,7 @@ Bonvenon
 BookWyrm estas socia reto por spuri onian legadon, paroli pri libroj, verki recenzojn kaj malkovri la sekvan legaĵon. La fratareco ebligas al uzantoj de BookWyrm aliĝi al malgrandaj, fidataj komunumoj kiuj povas konekti al unu la alia, kaj al aliaj servoj de ActivityPub kiel Mastodon kaj Pleroma.
 
 ## Trajtoj
-Ĉar la projekto ankoraŭ estas en siaj fruaj etapoj, la nombro de trajtoj kreskiĝas ĉiutage kaj estas multe da spaco por proponoj kaj ideoj. Kreu [cimraporton](https://github.com/bookwyrm-social/bookwyrm/issues) por komenci la konversacion!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Afiŝu pri libroj
     - Verku recenzojn, kun aŭ sen taksoj, kiuj kolektiĝos en la paĝo pri la libro
@@ -18,9 +18,10 @@ BookWyrm estas socia reto por spuri onian legadon, paroli pri libroj, verki rece
 - Spuru vian legan agadon
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Kreu proprajn bretojn
-    - Registru datojn de komenco kaj fino de legado, kaj ankaŭ ĝisdatigojn de la progreso dum la legado
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Ĝisdatigu sekvantojn pri lega aktiveco (kun nedevigaj, precizaj agordoj pri privateco)
     - Kreu listojn de libroj kiuj povas esti malfermaj al aldonoj de iu ajn, esti estrata de grupo aŭ esti modifebla nur de la kreinto
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Fratareco per ActivityPub
     - Dissendu kaj ricevu afiŝojn kaj aktivecon de uzantoj
     - Kunhavigu datumojn pri libroj inter instancoj por krei datumbazon kun metadatumoj disvastigitan sur reto
