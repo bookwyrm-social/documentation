@@ -9,7 +9,7 @@ Lists in Bookwyrm are a way to organise and display similar books together.
 The Lists page is accessible from the 'Lists' tab on the main page.
 To see your Lists, click 'Your Lists' below the title or navigate to your profile to the Lists tab.
 
-## Creating a List
+## إنشاء قائمة
 
 To create a List, first select the 'Create List' button on the top right of the page.
 It needs a name, and you can optionally add a description.
@@ -19,17 +19,17 @@ You will then choose how you'd like to curate the List.
 
 There are four options for List curation:
 
-- **Closed**: Only you can add and remove books to this list.
+- **مغلقة**: فقط يمكنك إضافة وإزالة الكتب لهذه القائمة.
 - **Curated**: Anyone can suggest books, subject to your approval.
-- **Open**: Anyone can add books to this list. Only you can remove them.
+- **Open**: Anyone can add books to this list. فقط أنت يمكنك إزالتهم.
 - **Group**: [Group](/groups.html) members can add to and remove from this list .
 
-## List privacy
+## خصوصية القائمة
 
 Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted, Followers and Private.
 See more details on the [privacy controls](/privacy-controls.html#lists) page.
 
-## Adding books to a List
+## إضافة كتب إلى قائمة
 
 You can add books to any List that you own, "Open" Lists and group-curated Lists of Groups you are a part of.
 You can also suggest books to "Curated" Lists in the exact same way.
