@@ -4,9 +4,9 @@ Date: 2022-07-29
 Order: 3
 ---
 
-There are a few different ways to add books to your BookWyrm instance! When you can't find the book you're looking for, try these options in order -- it's better to import a book than to create one from scratch.
+There are a few different ways to add books to your BookWyrm instance! عندما لا تتمكن من العثور على الكتاب الذي تبحث عنه، جرب هذه الخيارات من أجل -- من الأفضل استيراد كتاب بدلا من إنشاء كتاب من الصفر.
 
-## Importing data about your books and reading
+## استيراد البيانات حول الكتب الخاصة بك وقراءتك
 
 If you're coming to BookWyrm from another platform for tracking books and reading, you may want to import your books and reading data. Currently BookWyrm is capable of importing export files from the following platforms:
 
