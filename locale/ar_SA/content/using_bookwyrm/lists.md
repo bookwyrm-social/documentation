@@ -1,7 +1,7 @@
 ---
 Title: Lists
 Date: 2025-05-26
-Order: 5
+Order: 6
 ---
 
 Lists in Bookwyrm are a way to organise and display similar books together.
@@ -9,7 +9,7 @@ Lists in Bookwyrm are a way to organise and display similar books together.
 The Lists page is accessible from the 'Lists' tab on the main page.
 To see your Lists, click 'Your Lists' below the title or navigate to your profile to the Lists tab.
 
-## Creating a List
+## إنشاء قائمة
 
 To create a List, first select the 'Create List' button on the top right of the page.
 It needs a name, and you can optionally add a description.
@@ -19,31 +19,31 @@ You will then choose how you'd like to curate the List.
 
 There are four options for List curation:
 
-- **Closed**: Only you can add and remove books to this list.
-- **Curated**: Anyone can suggest books, subject to your approval.
-- **Open**: Anyone can add books to this list. Only you can remove them.
-- **Group**: [Group](/groups.html) members can add to and remove from this list .
+- **مغلقة**: فقط يمكنك إضافة وإزالة الكتب لهذه القائمة.
+- **معالجة**: يمكن لأي شخص أن يقترح الكتب، رهنا بموافقتك.
+- **فتح**: أي شخص يمكنه إضافة كتب إلى هذه القائمة. فقط أنت يمكنك إزالتهم.
+- **المجموعة**: [Group](/groups.html) يمكن للأعضاء الإضافة إلى هذه القائمة والحذف منها.
 
-## List privacy
+## خصوصية القائمة
 
 Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted, Followers and Private.
-See more details on the [privacy controls](/privacy-controls.html#lists) page.
+راجع المزيد من التفاصيل على صفحة [التحكم في الخصوصية](/privacy-controls.html#lists).
 
-## Adding books to a List
+## إضافة كتب إلى قائمة
 
-You can add books to any List that you own, "Open" Lists and group-curated Lists of Groups you are a part of.
+يمكنك إضافة كتب إلى أي قائمة تملكها، قوائم "مفتوحة" وقوائم المجموعات التي تحميها مجموعات من المجموعات التي أنت جزء منها.
 You can also suggest books to "Curated" Lists in the exact same way.
 
-There is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
-It shows books that you've recently interacted with on Bookwyrm, and a search bar.
-Currently, the search is limited to book titles (see issue [#3607](https://github.com/bookwyrm-social/bookwyrm/issues/3607)).
+هناك قائمة جانبية (في أسفل الجوال) بعنوان "إضافة الكتب" أو "اقتراح الكتب".
+ويظهر الكتب التي تفاعلت معها مؤخرا على Bookwyrm و شريط البحث.
+حاليا يقتصر البحث على عناوين الكتب (انظر المشكلة [#3607](https://github.com/bookwyrm-social/bookwyrm/issues/3607)).
 Once you find the one you want, use the 'Add' button to add it to the List.
 
-### Notes
+### الملاحظات
 
-You can add a "Note" to each book in a List, which could be used to explain why it was added.
-Notes are added when a book is first added, or at any time with the 'Add notes' button.
-They are displayed with the book when the List is viewed.
+يمكنك إضافة "ملاحظة" إلى كل كتاب في قائمة، والذي يمكن استخدامه لشرح سبب إضافته.
+تضاف الملاحظات عند إضافة الكتاب أول مرة، أو في أي وقت مع زر "إضافة ملاحظات".
+يتم عرضهم مع الكتاب عند عرض القائمة.
 To delete a note, edit it, remove everything in it, then press 'Save'.
 
 ### List order
@@ -56,20 +56,20 @@ The position of a book can be changed with the 'List position' box below each bo
 
 You can sort by the manually created list order, book title or average rating, in ascending and descending order.
 
-## Lists sidetab on book pages
+## القوائم الجانبية في صفحات الكتاب
 
 There is a sidetab on each books page which shows the Lists it is in, if it is in any.
-This is great for finding similar books suggested by the community.
+وهذا أمر رائع للعثور على كتب مماثلة اقترحها المجتمع المحلي.
 
-## Saving Lists
+## حفظ القوائم
 
-Lists can be 'saved' or bookmarked using the button in the top right when viewing it.
-There is a tab on the main Lists page which shows all your saved Lists, allowing you to find it later.
+القوائم يمكن حفظها أو تعليمها باستخدام الزر في أعلى اليمين عند عرضه.
+هناك علامة تبويب على صفحة القوائم الرئيسية التي تظهر جميع القوائم المحفوظة لديك، مما يسمح لك بالعثور عليها لاحقاً.
 
-## Embedding Lists on other websites
+## تضمين القوائم في مواقع ويب أخرى
 
-If you have a blog or personal website, you are able to embed a List from Bookwyrm onto it.
-Find the section 'Embed this list on a website' below sorting and adding books, then copy the embed code.
-This is in the form of an iframe and can be pasted directly into your website.
+إذا كان لديك مدونة أو موقع شبكي شخصي، فبإمكانك تضمين قائمة من Bookwyrm عليها.
+ابحث عن القسم "تضمين هذه القائمة على موقع" أدناه فرز الكتب وإضافتها، ثم انسخ الرمز المضمن.
+هذا في شكل إطار iframe ويمكن لصقه مباشرة في موقع الويب الخاص بك.
 
 
