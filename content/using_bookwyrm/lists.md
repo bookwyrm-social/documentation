@@ -1,7 +1,7 @@
 ---
 Title: Lists
 Date: 2025-05-26
-Order: 5
+Order: 6
 ---
 
 Lists in Bookwyrm are a way to organise and display similar books together.
@@ -12,7 +12,7 @@ To see your Lists, click 'Your Lists' below the title or navigate to your profil
 ## Creating a List
 
 To create a List, first select the 'Create List' button on the top right of the page.
-It needs a name, and you can optionally add a description. 
+It needs a name, and you can optionally add a description.
 You will then choose how you'd like to curate the List.
 
 ## List curation
@@ -26,7 +26,7 @@ There are four options for List curation:
 
 ## List privacy
 
-Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted, Followers and Private. 
+Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted, Followers and Private.
 See more details on the [privacy controls](/privacy-controls.html#lists) page.
 
 ## Adding books to a List
