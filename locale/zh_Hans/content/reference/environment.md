@@ -4,11 +4,62 @@ Date: 2025-04-28
 Order: 1
 ---
 
-BookWyrm requires certain environment (`ENV`) variables in order to run correctly. These are set from a file named `.env` in the directory you run BookWyrm from. You will find most of these variabled described in the `.env.example` file in the main code repository. You should copy this as the basis of your `.env` file.
+BookWyrm servers require certain environment (`ENV`) variables in order to run correctly. These are set from a file named `.env` in the directory you run BookWyrm from. You will find most of these variabled described in the `.env.example` file in the main code repository. You should copy this as the basis of your `.env` file.
 
 BookWyrm **instance administrators** should carefully check version release notes for any changes or additions to environment variables.
 
-BookWyrm **developers** should prefer to use `site.settings` for configuration rather than `ENV` values if possible.
+Wherever possible BookWyrm **developers** should prefer to use `site.settings` when creating new configuration values rather than `ENV` values.
+
+## Required settings
+
+The `env.example` file includes default values for core settings. These are designed to be safe defaults for production, apart from the default passwords. Docker users can run `./bw-dev create_secrets` to create safe and unique secrets for:
+
+- `SECRET_KEY`
+- `POSTGRES_PASSWORD`
+- `REDIS_ACTIVITY_PASSWORD`
+- `REDIS_BROKER_PASSWORD`
+- `FLOWER_PASSWORD`
+
+You _must_ assign an appropriate value to all of these settings, in your `.env` file:
+
+- `SECRET_KEY`
+- `DOMAIN`
+- Flower:
+  - `FLOWER_USER`
+  - `FLOWER_PASSWORD`
+  - `FLOWER_PORT`
+- Email (in development these may be blank strings but still need to be set):
+  - `EMAIL_HOST`
+  - `EMAIL_PORT`
+  - `EMAIL_HOST_USER`
+  - `EMAIL_HOST_PASSWORD`
+  - `EMAIL_USE_TLS`
+  - `EMAIL_USE_SSL`
+  - `EMAIL_SENDER_NAME`
+- Postgres:
+  - `POSTGRES_USER`
+  - `POSTGRES_DB`
+  - `POSTGRES_HOST`
+  - `POSTGRES_PASSWORD`
+- Redis:
+  - `REDIS_BROKER_HOST`
+  - `REDIS_BROKER_PORT`
+  - `REDIS_ACTIVITY_HOST`
+  - `REDIS_ACTIVITY_PORT`
+  - `REDIS_ACTIVITY_PASSWORD`
+  - `REDIS_BROKER_PASSWORD`
+
+When running BookWyrm in **development**:
+
+- `NGINX_SETUP` **must** be set to `reverse_proxy`
+- `DEBUG` _should_ be set to `true`
+- `DOMAIN` may be `localhost`
+
+When running BookWyrm in **production**:
+
+- `DEBUG` **must** be set to `false`
+- `DOMAIN` **must not** be `localhost`
+- Email settings **must** be real and use a bulk email provider such as mailgun
 
 ## Django settings
 

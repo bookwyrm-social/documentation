@@ -1410,7 +1410,7 @@ Installing in Production
 <li><code>EMAIL_HOST_PASSWORD</code> | Parola furnizată de serviciul dvs. email</li>
 </ul>
 </li>
-<li>Initialize secrets by running <code>bw-dev create_secrets</code> or manually update following in <code>.env</code>:<ul>
+<li>Initialize secrets by running <code>./bw-dev create_secrets</code> or manually update following in <code>.env</code>:<ul>
 <li><code>SECRET_KEY</code> | Un șir de caractere secret, greu de ghicit</li>
 <li><code>POSTGRES_PASSWORD</code> | Setați o parolă sigură pentru baza de date</li>
 <li><code>REDIS_ACTIVITY_PASSWORD</code> | Setați o parolă sigură pentru subsistemul Redis Activity</li>
@@ -1419,6 +1419,7 @@ Installing in Production
 <li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
 </ul>
 </li>
+<li>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding further</li>
 <li>Setup ssl certificate via letsencrypt by running <code>./bw-dev init_ssl</code></li>
 <li>Inițializați baza de date rulând <code>./bw-dev migrate</code></li>
 <li>Run the application with <code>docker-compose up --build</code>, and make sure all the images build successfully<ul>

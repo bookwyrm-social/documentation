@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Installing in Production
+Settings and Profile
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,7 +113,7 @@ Installing in Production
             </li>
             
             <li>
-                <a href="/settings.html" class="has-background-inherit" >Settings and Profile</a>
+                <a href="/settings.html" class="has-background-inherit" class="is-active">Settings and Profile</a>
             </li>
             
             <li>
@@ -146,7 +146,7 @@ Installing in Production
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/install-prod.html" class="has-background-inherit" class="is-active">Installing in Production</a>
+                <a href="/install-prod.html" class="has-background-inherit" >Installing in Production</a>
             </li>
             
             <li>
@@ -260,19 +260,33 @@ Installing in Production
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#server-setup">Server setup</a>
+                  <a class="navbar-item" href="#edit-profile">Edit Profile</a>
+                  
+                      
+                      <a class="navbar-item" href="#profile"><span class="pl-4">Profile</span></a>
+                      
+                      <a class="navbar-item" href="#display"><span class="pl-4">Display</span></a>
+                      
+                      <a class="navbar-item" href="#privacy"><span class="pl-4">Privacy</span></a>
+                      
                   
               
-                  <a class="navbar-item" href="#install-and-configure-bookwyrm">Install and configure BookWyrm</a>
+                  <a class="navbar-item" href="#change-password">Change Password</a>
                   
               
-                  <a class="navbar-item" href="#backups">Backups</a>
+                  <a class="navbar-item" href="#account-security">Account Security</a>
                   
               
-                  <a class="navbar-item" href="#port-conflicts">Port Conflicts</a>
+                  <a class="navbar-item" href="#aliases-and-moving-your-account">Aliases and moving your account</a>
                   
               
-                  <a class="navbar-item" href="#get-connected">Get Connected</a>
+                  <a class="navbar-item" href="#deactivating-or-deleting-your-account">Deactivating or deleting your account</a>
+                  
+              
+                  <a class="navbar-item" href="#importing-and-exporting-books">Importing and Exporting books</a>
+                  
+              
+                  <a class="navbar-item" href="#blocking-users">Blocking users</a>
                   
               
             </div>
@@ -285,104 +299,59 @@ Installing in Production
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Installing in Production</h1>
+<h1 class="title is-1">Settings and Profile</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.</p>
-<h2 id="server-setup"><a class="headerlink" href="#server-setup">Server setup</a></h2>
+    <p>You can control your account and profile settings by activating the dropdown menu below your username and selecting <code>Settings</code>.</p>
+<h2 id="edit-profile"><a class="headerlink" href="#edit-profile">Edit Profile</a></h2>
+<h3 id="profile"><a class="headerlink" href="#profile">Profile</a></h3>
 <ul>
-<li>Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
-<li>Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
-<li>Set up an email service (such as <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS</li>
-<li><a href="https://docs.docker.com/compose/install/">Install Docker and docker-compose</a></li>
+<li>Upload or remove your user avatar</li>
+<li>Change your display name</li>
+<li>Create or edit your user summary (bio or description)</li>
+<li>Change your registered email address</li>
 </ul>
-<h2 id="install-and-configure-bookwyrm"><a class="headerlink" href="#install-and-configure-bookwyrm">Install and configure BookWyrm</a></h2>
-<p>There are several repos in the BookWyrm org, including documentation, a static landing page, and the actual Bookwyrm code. To run BookWyrm, you want the actual app code which is in <a href="https://github.com/bookwyrm-social/bookwyrm">bookwyrm-social/bookwyrm</a>.</p>
-<p>The <code>production</code> branch of BookWyrm contains a number of tools not on the <code>main</code> branch that are suited for running in production, such as <code>docker-compose</code> changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.</p>
-<p>Instructions for running BookWyrm in production:</p>
+<h3 id="display"><a class="headerlink" href="#display">Display</a></h3>
 <ul>
-<li>Get the application code:
-    <code>git clone git@github.com:bookwyrm-social/bookwyrm.git</code></li>
-<li>Switch to the <code>production</code> branch:
-    <code>git checkout production</code></li>
-<li>Create your environment variables file, <code>cp .env.example .env</code>, and update the following:<ul>
-<li><code>DOMAIN</code> | Your web domain</li>
-<li><code>EMAIL</code> | Email address to be used for certbot domain verification</li>
-<li><code>FLOWER_USER</code> | Your own username for accessing Flower queue monitor</li>
-<li><code>EMAIL_HOST_USER</code> | The "from" address that your app will use when sending email</li>
-<li><code>EMAIL_HOST_PASSWORD</code> | The password provided by your email service</li>
+<li>Choose whether to show reading goal prompt in feed</li>
+<li>Choose whether to show ratings in reviews, or have them hidden behind a toggle by default</li>
+<li>Choose whether BookWyrm should suggest users to follow</li>
+<li>Choose whether BookWyrm can suggest your user account to others</li>
+<li>Select your timezone - this affects the time stamps displayed to you</li>
+<li>Select your user interface language</li>
+<li>Select a theme - different instances will have different options, by default there are BookWyrm light and dark themes</li>
 </ul>
-</li>
-<li>Initialize secrets by running <code>./bw-dev create_secrets</code> or manually update following in <code>.env</code>:<ul>
-<li><code>SECRET_KEY</code> | A difficult to guess, secret string of characters</li>
-<li><code>POSTGRES_PASSWORD</code> | Set a secure password for the database</li>
-<li><code>REDIS_ACTIVITY_PASSWORD</code> | Set a secure password for Redis Activity subsystem</li>
-<li><code>REDIS_BROKER_PASSWORD</code> | Set a secure password for Redis queue broker subsystem</li>
-<li><code>FLOWER_PASSWORD</code> | Your own secure password for accessing Flower queue monitor</li>
-<li>If you are running another web-server on your host machine, you will need to follow the <a href="/reverse-proxy.html">reverse-proxy instructions</a></li>
-</ul>
-</li>
-<li>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding further</li>
-<li>Setup ssl certificate via letsencrypt by running <code>./bw-dev init_ssl</code></li>
-<li>Initialize the database by running <code>./bw-dev migrate</code></li>
-<li>Run the application with
-  <code>docker-compose up --build</code>, and make sure all the images build successfully<ul>
-<li>If you are running other services on your host machine, you may run into errors where services fail when attempting to bind to a port.
-See the <a href="#port_conflicts">troubleshooting guide</a> for advice on resolving this.</li>
-</ul>
-</li>
-<li>When docker has built successfully, stop the process with <code>CTRL-C</code></li>
-<li>If you wish to use an external storage for static assets and media files (such as an S3-compatible service), <a href="/external-storage.html">follow the instructions</a> until it tells you to come back here</li>
-<li>Initialize the application with <code>./bw-dev setup</code>, and copy the admin code to use when you create your admin account.<ul>
-<li>The output of <code>./bw-dev setup</code> should conclude with your admin code. You can get your code at any time by running <code>./bw-dev admin_code</code> from the command line. Here's an example output:</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code>*******************************************
-Use<span class="w"> </span>this<span class="w"> </span>code<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>your<span class="w"> </span>admin<span class="w"> </span>account:
-c6c35779-af3a-4091-b330-c026610920d6
-*******************************************
-</code></pre></div>
-
+<h3 id="privacy"><a class="headerlink" href="#privacy">Privacy</a></h3>
 <ul>
-<li>Run docker-compose in the background with: <code>docker-compose up -d</code></li>
-<li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
+<li>Choose whether followers must be approved by you before following your account</li>
+<li>Choose whether to hide followers and following on your user profile</li>
+<li>Choose your default post privacy. Find <a href="/privacy-controls.html">more detail about what the post privacy options mean</a> on the Privacy Controls page</li>
 </ul>
-<p>Congrats! You did it!! Configure your instance however you'd like.</p>
-<h2 id="backups"><a class="headerlink" href="#backups">Backups</a></h2>
-<p>BookWyrm's db service dumps a backup copy of its database to its <code>/backups</code> directory daily at midnight UTC.
-Backups are named <code>backup__%Y-%m-%d.sql</code>.</p>
-<p>The db service has an optional script for periodically pruning the backups directory so that all recent daily backups are kept, but for older backups, only weekly or monthly backups are kept.
-To enable this script:</p>
-<ul>
-<li>Uncomment the final line in <code>postgres-docker/cronfile</code></li>
-<li>rebuild your instance <code>docker-compose up --build</code></li>
-</ul>
-<p>You can copy backups from the backups volume to your host machine with <code>docker cp</code>:</p>
-<ul>
-<li>Run <code>docker-compose ps</code> to confirm the db service's full name (it's probably <code>bookwyrm_db_1</code>.</li>
-<li>Run <code>docker cp &lt;container_name&gt;:/backups &lt;host machine path&gt;</code></li>
-</ul>
-<h2 id="port-conflicts"><a class="headerlink" href="#port-conflicts">Port Conflicts</a></h2>
-<p>BookWyrm has multiple services that run on their default ports.
-This means that, depending on what else you are running on your host machine, you may run into errors when building or running BookWyrm when attempts to bind to those ports fail.</p>
-<p>If this occurs, you will need to change your configuration to run services on different ports.
-This may require one or more changes the following files:</p>
-<ul>
-<li><code>docker-compose.yml</code></li>
-<li><code>nginx/production.conf</code> or <code>nginx/reverse_proxy.conf</code> depending on NGINX_SETUP in .env-file</li>
-<li><code>.env</code> (You create this file yourself during setup)</li>
-</ul>
-<p>If you are already running a web-server on your machine, you will need to set up a reverse-proxy.</p>
-<h2 id="get-connected"><a class="headerlink" href="#get-connected">Get Connected</a></h2>
-<p>Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. There are a few ways in get in touch:</p>
-<ul>
-<li>Open an issue or pull request to add your instance to the <a href="https://joinbookwyrm.com/instances/">official list</a></li>
-<li>Reach out to the project on <a href="https://tech.lgbt/@bookwyrm">Mastodon</a> or <a href="mailto:mousereeve@riseup.net">email the maintainer</a> directly with your GitHub username</li>
-<li>Join the <a href="https://matrix.to/#/#bookwyrm:matrix.org">Matrix</a> chat room</li>
-</ul>
+<h2 id="change-password"><a class="headerlink" href="#change-password">Change Password</a></h2>
+<p>Here you can ...change your password</p>
+<h2 id="account-security"><a class="headerlink" href="#account-security">Account Security</a></h2>
+<p>We recommend you protect your account with second-factor authentication using an authenticator app.</p>
+<p>This section also allows you to see all the logged-in sessions for your user account, and terminate them. This can be a useful way to protect your account if you have, for example, lost a device, or do not recognise a session.</p>
+<h2 id="aliases-and-moving-your-account"><a class="headerlink" href="#aliases-and-moving-your-account">Aliases and moving your account</a></h2>
+<p>You can set an "alias" for your account, indicating that they represent the same "actor". This is usually done when you want to migrate your account from one fediverse account to another.</p>
+<p>You can also move (migrate) your account using <code>Move Account</code>. You must set the account you are moving <em>from</em> as an alias of the account you are moving <em>to</em> before attempting to move the account.</p>
+<p>Setting an alias is easily reversable. Moving your account is not - choose wisely!</p>
+<p>See <a href="user-migration.html">User Migration and Aliases</a> for more details.</p>
+<h2 id="deactivating-or-deleting-your-account"><a class="headerlink" href="#deactivating-or-deleting-your-account">Deactivating or deleting your account</a></h2>
+<p>Under <code>Delete Account</code> you can either deactivate or delete your account.</p>
+<p>Deactivating marks your account as no longer active and hides your profile page. You can re-activate your account in future.</p>
+<p>Deleting your account is irreversable. Your username will not be available to register in the future. Note that on deleting your account, BookWyrm will attempt to delete all user data and posts, however it is possible that federated servers may not process the deletion correctly.</p>
+<p>Books that were added by a deleted user will remain available as they conceptually exist separately from any individual user or shelf.</p>
+<h2 id="importing-and-exporting-books"><a class="headerlink" href="#importing-and-exporting-books">Importing and Exporting books</a></h2>
+<p>Under the <code>Data</code> heading, you can import and export book lists.</p>
+<p>See <a href="/adding-books.html">Adding Books</a> for more information about importing books. Choose <code>Export Book List</code> to export a CSV file including all the books on your shelves, books you have reviewed, and books with reading activity.</p>
+<p>You can also import or export a user account from this section. See <a href="user-migration.html">User Migration and Aliases</a> for more details.</p>
+<h2 id="blocking-users"><a class="headerlink" href="#blocking-users">Blocking users</a></h2>
+<p>You can block or unblock a user by selecting the ellipses (...) on the right of the "Follow/Unfollow" button on their profile.</p>
+<p>If you have blocked any users, they will be listed under <code>Blocked Users</code> and can be unblocked from there.</p>
+<p>Blocked users cannot see your profile, lists, or shelves, send you DMs, or see or interact with your posts.</p>
 </section>
 
             </section>
@@ -407,7 +376,7 @@ This may require one or more changes the following files:</p>
                     <a href="https://github.com/bookwyrm-social">BookWyrm on GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/running_bookwyrm/install-prod.md">Contribute to this page</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/settings.md">Contribute to this page</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">

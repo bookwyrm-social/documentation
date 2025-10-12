@@ -244,6 +244,9 @@ Environment Variables
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
+                  <a class="navbar-item" href="#required-settings">Required settings</a>
+                  
+              
                   <a class="navbar-item" href="#django-settings">Django settings</a>
                   
                       
@@ -472,9 +475,59 @@ Environment Variables
                 </header>
                 
 <section class="block content">
-    <p>BookWyrm requires certain environment (<code>ENV</code>) variables in order to run correctly. These are set from a file named <code>.env</code> in the directory you run BookWyrm from. You will find most of these variabled described in the <code>.env.example</code> file in the main code repository. You should copy this as the basis of your <code>.env</code> file.</p>
+    <p>BookWyrm servers require certain environment (<code>ENV</code>) variables in order to run correctly. These are set from a file named <code>.env</code> in the directory you run BookWyrm from. You will find most of these variabled described in the <code>.env.example</code> file in the main code repository. You should copy this as the basis of your <code>.env</code> file.</p>
 <p>BookWyrm <strong>instance administrators</strong> should carefully check version release notes for any changes or additions to environment variables.</p>
-<p>BookWyrm <strong>developers</strong> should prefer to use <code>site.settings</code> for configuration rather than <code>ENV</code> values if possible.</p>
+<p>Wherever possible BookWyrm <strong>developers</strong> should prefer to use <code>site.settings</code> when creating new configuration values rather than <code>ENV</code> values.</p>
+<h2 id="required-settings"><a class="headerlink" href="#required-settings">Required settings</a></h2>
+<p>The <code>env.example</code> file includes default values for core settings. These are designed to be safe defaults for production, apart from the default passwords. Docker users can run <code>./bw-dev create_secrets</code> to create safe and unique secrets for:</p>
+<ul>
+<li><code>SECRET_KEY</code></li>
+<li><code>POSTGRES_PASSWORD</code></li>
+<li><code>REDIS_ACTIVITY_PASSWORD</code></li>
+<li><code>REDIS_BROKER_PASSWORD</code></li>
+<li><code>FLOWER_PASSWORD</code></li>
+</ul>
+<p>You <em>must</em> assign an appropriate value to all of these settings, in your <code>.env</code> file:</p>
+<ul>
+<li><code>SECRET_KEY</code></li>
+<li><code>DOMAIN</code></li>
+<li>Flower:</li>
+<li><code>FLOWER_USER</code></li>
+<li><code>FLOWER_PASSWORD</code></li>
+<li><code>FLOWER_PORT</code></li>
+<li>Email (in development these may be blank strings but still need to be set):</li>
+<li><code>EMAIL_HOST</code></li>
+<li><code>EMAIL_PORT</code></li>
+<li><code>EMAIL_HOST_USER</code></li>
+<li><code>EMAIL_HOST_PASSWORD</code></li>
+<li><code>EMAIL_USE_TLS</code></li>
+<li><code>EMAIL_USE_SSL</code></li>
+<li><code>EMAIL_SENDER_NAME</code></li>
+<li>Postgres:</li>
+<li><code>POSTGRES_USER</code></li>
+<li><code>POSTGRES_DB</code></li>
+<li><code>POSTGRES_HOST</code></li>
+<li><code>POSTGRES_PASSWORD</code></li>
+<li>Redis:</li>
+<li><code>REDIS_BROKER_HOST</code></li>
+<li><code>REDIS_BROKER_PORT</code></li>
+<li><code>REDIS_ACTIVITY_HOST</code></li>
+<li><code>REDIS_ACTIVITY_PORT</code></li>
+<li><code>REDIS_ACTIVITY_PASSWORD</code></li>
+<li><code>REDIS_BROKER_PASSWORD</code></li>
+</ul>
+<p>When running BookWyrm in <strong>development</strong>:</p>
+<ul>
+<li><code>NGINX_SETUP</code> <strong>must</strong> be set to <code>reverse_proxy</code></li>
+<li><code>DEBUG</code> <em>should</em> be set to <code>true</code></li>
+<li><code>DOMAIN</code> may be <code>localhost</code></li>
+</ul>
+<p>When running BookWyrm in <strong>production</strong>:</p>
+<ul>
+<li><code>DEBUG</code> <strong>must</strong> be set to <code>false</code></li>
+<li><code>DOMAIN</code> <strong>must not</strong> be <code>localhost</code></li>
+<li>Email settings <strong>must</strong> be real and use a bulk email provider such as mailgun</li>
+</ul>
 <h2 id="django-settings"><a class="headerlink" href="#django-settings">Django settings</a></h2>
 <p>Learn more about each of these in <a href="https://docs.djangoproject.com/en/4.2/ref/settings">the Django reference documentation</a>.</p>
 <h3 id="allowed_hosts"><a class="headerlink" href="#allowed_hosts"><code>ALLOWED_HOSTS</code></a></h3>

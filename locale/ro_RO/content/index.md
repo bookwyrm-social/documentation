@@ -5,7 +5,7 @@ Title: Bun venit Date: 13-04-2021
 BookWyrm este o rețea socială pentru a urmări cititul dvs., vorbi despre cărți, scrie recenzii și descoperi ce să citiți în continuare. Federarea permite utilizatorilor BookWyrm să se alăture unor comunități mici și de încredere care se pot conecta una cu cealaltă și cu alte servicii ActivityPub precum Mastodon și Pleroma.
 
 ## Caracteristici
-Cum proiectul este încă în fazele timpuri, caracteristicile cresc în fiecare zi. Există o mulțime de spațiu pentru sugestii și idei. Deschideți un [tichet](https://github.com/bookwyrm-social/bookwyrm/issues) pentru a continua conversația!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Postări despre cărți
     - Redactați recenzii, cu sau fără evaluări, agregate în continuare pe pagina cărții
@@ -18,9 +18,10 @@ Cum proiectul este încă în fazele timpuri, caracteristicile cresc în fiecare
 - Urmăriți activitatea dvs. de lectură
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Creați rafturi personalizate
-    - Înregistrați datele de început și sfârșit de lectură, cât și actualizările de progres
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Țineți la curent urmăritorii despre activitatea de citit (opțional cu control granulat a confidențialității)
     - Creați liste de cărți care pot fi deschise modificărilor tuturor sau modificate numai de creator
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Federație cu ActivityPub
     - Difuzați și primiți stări și activități de la utilizatori
     - Partajați date despre cărți între instanțe pentru a crea o bază de metadate la nivel de rețea

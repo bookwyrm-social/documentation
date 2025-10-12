@@ -1425,7 +1425,7 @@ Installing in Production
 <li><code>EMAIL_HOST_PASSWORD</code> | Le mot de passe fourni par votre service mail</li>
 </ul>
 </li>
-<li>Initialize secrets by running <code>bw-dev create_secrets</code> or manually update following in <code>.env</code>:<ul>
+<li>Initialize secrets by running <code>./bw-dev create_secrets</code> or manually update following in <code>.env</code>:<ul>
 <li><code>SECRET_KEY</code> | Une chaîne de caractères, difficile à deviner</li>
 <li><code>POSTGRES_PASSWORD</code> | Un mot de passe sécurisé pour la base de données</li>
 <li><code>REDIS_ACTIVITY_PASSWORD</code> | Un mot de passe sécurisé pour le Redis d'activités</li>
@@ -1434,6 +1434,7 @@ Installing in Production
 <li>Si vous faites fonctionner un autre serveur web sur votre machine, vous devez suivre les <a href="/reverse-proxy.html">instructions de proxy inverse</a></li>
 </ul>
 </li>
+<li>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding further</li>
 <li>Setup ssl certificate via letsencrypt by running <code>./bw-dev init_ssl</code></li>
 <li>Initialisez la base de données avec <code>./bw-dev migrate</code></li>
 <li>Run the application with <code>docker-compose up --build</code>, and make sure all the images build successfully<ul>
