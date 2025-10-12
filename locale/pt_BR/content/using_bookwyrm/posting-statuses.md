@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Postar em BookWyrm começa com um livro. Os usuários podem comentar em livros "em processo" ou "lidos recentemente" na seção de "Seus livros", ou na página de destino de um livro. A partir daí, os usuários podem responder e iniciar uma conversa. As postagens em BookWyrm podem incluir formatos como "negrita", "itálico" e links usando [Markdown](https://www.markdownguide.org/cheat-sheet/).
