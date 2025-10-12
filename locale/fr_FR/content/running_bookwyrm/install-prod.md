@@ -26,13 +26,14 @@ Instructions pour lancer BookWyrm en production :
     - `FLOWER_USER` | Votre propre nom d'utilisateur·ice pour accéder à la surveillance des files d'attente Flower
     - `EMAIL_HOST_USER` | L'adresse "From" que l'application utilisera pour l'envoi de mail
     - `EMAIL_HOST_PASSWORD` | Le mot de passe fourni par votre service mail
-- Initialize secrets by running `bw-dev create_secrets` or manually update following in `.env`:
+- Initialize secrets by running `./bw-dev create_secrets` or manually update following in `.env`:
     - `SECRET_KEY` | Une chaîne de caractères, difficile à deviner
     - `POSTGRES_PASSWORD` | Un mot de passe sécurisé pour la base de données
     - `REDIS_ACTIVITY_PASSWORD` | Un mot de passe sécurisé pour le Redis d'activités
     - `REDIS_BROKER_PASSWORD` | Un mot de passe sécurisé pour le Redis de files d'attente
     - `FLOWER_PASSWORD` | Votre propre mot de passe sécurisé pour accéder à la surveillance des files d'attente Flower
     - Si vous faites fonctionner un autre serveur web sur votre machine, vous devez suivre les [instructions de proxy inverse](/reverse-proxy.html)
+- Check that you have [all the required settings configured](/environment.html#required-environment-settings) before proceeding further
 - Setup ssl certificate via letsencrypt by running `./bw-dev init_ssl`
 - Initialisez la base de données avec `./bw-dev migrate`
 - Run the application with `docker-compose up --build`, and make sure all the images build successfully

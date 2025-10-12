@@ -5,7 +5,7 @@ Título: Bienvenido Fecha: 2021-04-13
 BookWryrm es una red social para registrar tu lectura, hablar sobre libros, escribir reseñas y descubrir que es lo siguiente por leer. La federación permite usuarios de BookWyrm unirse a pequeñas y confiables comunidades con las que conectar entre sí y otros servicios de ActivyPub como Mastodon y Pleroma.
 
 ## Características
-Dado que el proyecto está todavía en sus primeras etapas, las características crecen cada día, y hay mucho espacio para sugerencias e ideas. Explora algún [tópico](https://github.com/bookwyrm-social/bookwyrm/issues) e inicia la conversación!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Publicar sobre libros
     - Redacta reseñas, con o sin calificaciones, que se agregan a la página del libro
@@ -18,9 +18,10 @@ Dado que el proyecto está todavía en sus primeras etapas, las características
 - Seguimiento de tu actividad de lectura
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Añade estantes personalizados
-    - Registrar las fechas de inicio y de término de lectura, así como actualizaciones de progreso durante el camino
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Actualiza a tus seguidores sobre la actividad de lectura (opcionalmente, y con controles granulares de privacidad)
     - Crea listas de libros que pueden estar abiertos a envíos de cualquiera, curadas, o únicamente editadas por el creador
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Federación con ActivityPub
     - Transmite y recibe los estados y la actividad del usuarie
     - Compartir datos de libros entre instancias para crear una base de datos en red de metadatos

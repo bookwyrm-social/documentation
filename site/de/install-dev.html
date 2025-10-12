@@ -234,6 +234,7 @@ Developer Environment
 <ol>
 <li>Kopiere die <a href="https://github.com/bookwyrm-social/bookwyrm">der BookWyrm-Codebasis von GitHub</a>. Du kannst <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">einen Fork</a> des Projekts erstellen und <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">verwende dann <code>git clone</code>, um den Code</a> auf deinen Computer herunterzuladen.</li>
 <li>Gehe in das Verzeichnis, das den Code auf Ihrem Computer enthält. Du arbeitest von hier aus.</li>
+<li>Development occurs on the <code>main</code> branch, so ensure that is the branch you have checked out: <code>git checkout main</code></li>
 <li>Richte deine Datei für Entwicklungsumgebungsvariablen durch Kopieren der Beispielumgebungsdatei (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. In der Kommandozeile kannst du das wie folgt tun:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
@@ -247,9 +248,10 @@ Developer Environment
 <li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
 <li>If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment <code>PORT</code> and set it (e.g. <code>PORT=1333</code>). If using <code>localhost</code> this is optional.</li>
 </ol>
-<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code>, you should check these settings, as you may have set your domain or port incorrectly.</p>
+<p>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding.</p>
+<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code> you may have set your domain or port incorrectly.</p>
 <h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
-<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
+<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate real values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
 <h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
 <ol>
 <li>Führe Folgendes über die Kommandozeile aus:</li>

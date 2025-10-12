@@ -5,7 +5,7 @@ Titolo: Benvenuto Data: 13-04-2021
 BookWyrm è un social network per monitorare la lettura, parlare di libri, scrivere recensioni, e scoprire cosa leggere dopo. La Federazione permette agli utenti di BookWyrm di unirsi a piccole comunità di fiducia che possono connettersi tra loro e con altri servizi ActivityPub come Mastodon e Pleroma.
 
 ## Funzionalità
-Dal momento che il progetto è ancora nelle sue prime fasi, le caratteristiche stanno crescendo ogni giorno, e c'è un sacco di spazio per suggerimenti e idee. Apri una [segnalazione](https://github.com/bookwyrm-social/bookwyrm/issues) per avviare una conversazione!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Pubblicazioni sui libri
     - Componi le recensioni, con o senza valutazioni, che vengono aggregate nella pagina del libro
@@ -18,9 +18,10 @@ Dal momento che il progetto è ancora nelle sue prime fasi, le caratteristiche s
 - Monitorare l'attività di lettura
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Creare scaffali personalizzati
-    - Salva le date di inizio/fine lettura, così come gli aggiornamenti di avanzamento
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Aggiorna chi ti segue sull'attività di lettura (opzionalmente, e con controlli sulla privacy)
     - Crea liste di libri che possono essere aperte al contributo di chiunque, curate o modificate solo dal creatore
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Federazione con Activitypub
     - Trasmetti e ricevi stati e attività dell'utente
     - Condividere i dati dei libri tra istanze per creare un database di metadati in rete
