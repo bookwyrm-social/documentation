@@ -9,7 +9,7 @@ Developer Environment
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
@@ -31,12 +31,21 @@ Developer Environment
         <a class="navbar-item" href="https://joinbookwyrm.com/">
             <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
         </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Dokumentation
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
             <a href="https://joinbookwyrm.com/de/instances" class="navbar-item">
-                <span class="button is-success has-text-weight-normal has-text-white">Beitreten</span>
+                Beitreten
             </a>
             <a href="https://joinbookwyrm.com/de/get-involved" class="navbar-item">
                 Mitmachen
@@ -47,179 +56,180 @@ Developer Environment
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 Code
             </a>
-            <a href="#" class="navbar-item is-active">
-                Dokumentation
-            </a>
-        </div>
-    </div>
-    <div class="navbar-end">
-        <div class="navbar-item">
-            <div class="select">
-                <select aria-label="Select a language" id="language_selection">
-                    
-                    <option value="" >English (US)</option>
-                    
-                    <option value="de/" selected>Deutsch</option>
-                    
-                    <option value="fr/" >Français</option>
-                    
-                    <option value="pl/" >Polski</option>
-                    
-                    <option value="pt-br/" >Português do Brasil</option>
-                    
-                    <option value="ro/" >Română</option>
-                    
-              </select>
-            </div>
         </div>
     </div>
 </nav>
 
-<div class="container is-max-desktop">
-<section class="section">
 
-    <header class="content block column is-offset-one-quarter pl-2">
-        
-<h1 class="title is-1">Developer Environment</h1>
-
-    </header>
-    <div class="columns">
-	<nav class="menu column is-one-quarter mt-2">
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" selected>Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
         <div class="select">
             <select aria-label="Previous versions" id="version_selection">
                 
-                <option value="latest" >latest</option>
+                <option value="development" >development</option>
                 
                 <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
-            <h2 class="menu-label"><a href="/de/">Welcome</a></h2>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
             
-            <h2 class="menu-label">Using BookWyrm</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/de/shelves.html" >Shelves & Reading Status</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/adding-books.html" >Bücher hinzufügen</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/posting-statuses.html" >Posting Statuses</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/lists.html" >Lists</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/privacy-controls.html" >Privacy Controls</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/groups.html" >Groups</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/rss-feeds.html" >RSS Feeds</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/user-migration.html" >User Migration and Aliases</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/de/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
             
-            <h2 class="menu-label">Running BookWyrm</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/de/install-prod.html" >Installing in Production</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/install-prod-dockerless.html" >Installation ohne Docker</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/updating.html" >Deine Instanz updaten</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/reverse-proxy.html" >Verwenden eines Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/moderation.html" >Moderation</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/monitoring-queue.html" >Überwachungswarteschlange</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/external-storage.html" >Externer Speicher</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/optional_features.html" >Optionale Funktionen</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/cli.html" >Befehlszeilenwerkzeug</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/de/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+            </li>
             
-            <h2 class="menu-label">Contributing</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/de/contributing.html" >Wie mitmachen</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/translation.html" >Übersetzungen</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/documentation.html" >Documentation</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/style_guide.html" >Stilleitfaden</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/debug_toolbar.html" >Django Debug-Symbolleiste</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/install-dev.html" class="is-active">Developer Environment</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/de/adding-books.html" class="has-background-inherit" >Bücher hinzufügen</a>
+            </li>
             
-            <h2 class="menu-label">Codebase</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/de/activitypub.html" >ActivityPub</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/de/permissions.html" >Berechtigungen</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/de/settings.html" class="has-background-inherit" >Settings and Profile</a>
+            </li>
             
-        </nav>
+            <li>
+                <a href="/v0.7.5/de/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/de/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/install-prod-dockerless.html" class="has-background-inherit" >Installation ohne Docker</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/updating.html" class="has-background-inherit" >Deine Instanz updaten</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/reverse-proxy.html" class="has-background-inherit" >Verwenden eines Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/monitoring-queue.html" class="has-background-inherit" >Überwachungswarteschlange</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/optional_features.html" class="has-background-inherit" >Optionale Funktionen</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/cli.html" class="has-background-inherit" >Befehlszeilenwerkzeug</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/de/contributing.html" class="has-background-inherit" >Wie mitmachen</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/translation.html" class="has-background-inherit" >Übersetzungen</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/de/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/permissions.html" class="has-background-inherit" >Berechtigungen</a>
+            </li>
+            
+        </ul>
+        
+    </nav>
 
-        <div class="column">
-            
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">Developer Environment</h1>
+
+                </header>
+                
 <section class="block content">
     <h2 id="voraussetzungen"><a class="headerlink" href="#voraussetzungen">Voraussetzungen</a></h2>
 <p>Diese Anweisungen gehen davon aus, dass du BookWyrm mit Docker entwickelst. Du musst <a href="https://docs.docker.com/engine/install/">Docker</a> und <a href="https://docs.docker.com/compose/install/">docker-compose</a> installieren, um loszulegen.</p>
@@ -228,6 +238,7 @@ Developer Environment
 <ol>
 <li>Kopiere die <a href="https://github.com/bookwyrm-social/bookwyrm">der BookWyrm-Codebasis von GitHub</a>. Du kannst <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">einen Fork</a> des Projekts erstellen und <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">verwende dann <code>git clone</code>, um den Code</a> auf deinen Computer herunterzuladen.</li>
 <li>Gehe in das Verzeichnis, das den Code auf Ihrem Computer enthält. Du arbeitest von hier aus.</li>
+<li>Development occurs on the <code>main</code> branch, so ensure that is the branch you have checked out: <code>git checkout main</code></li>
 <li>Richte deine Datei für Entwicklungsumgebungsvariablen durch Kopieren der Beispielumgebungsdatei (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. In der Kommandozeile kannst du das wie folgt tun:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
@@ -241,9 +252,10 @@ Developer Environment
 <li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
 <li>If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment <code>PORT</code> and set it (e.g. <code>PORT=1333</code>). If using <code>localhost</code> this is optional.</li>
 </ol>
-<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code>, you should check these settings, as you may have set your domain or port incorrectly.</p>
+<p>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding.</p>
+<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code> you may have set your domain or port incorrectly.</p>
 <h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
-<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
+<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate real values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
 <h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
 <ol>
 <li>Führe Folgendes über die Kommandozeile aus:</li>
@@ -272,9 +284,9 @@ Developer Environment
 <p>Wenn du <a href="https://yarnpkg.com/getting-started/install">yarn installierstt</a> haben, kannst du <code>yarn watch:static</code> ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis <code>bookwyrm/static</code> auszuführen.</p>
 </section>
 
+            </section>
         </div>
     </div>
-</section>
 </div>
 
 <footer id="contentinfo" class="footer">
@@ -324,55 +336,10 @@ Developer Environment
     </div>
 </footer>
 
-<script type="text/javascript">
-    (function() {
-        var languageSelector = document.getElementById("language_selection");
-        languageSelector.onchange = function(event) {
-            var current_locale = "de/";
-            var current_location = window.location.pathname;
-
-            var locale_index = current_location.indexOf(current_locale);
-            var new_location = "/" + event.target.value;
-
-            if (locale_index) {
-                // we're in a locale - swap it out
-                new_location = current_location.replace(current_locale, event.target.value)
-            } else {
-                // are we in a version?
-                var regx = /\/v[0-9\.]+/
-                if (regx.test(current_location)) {
-                    // split current location
-                    arr = current_location.split("/")
-                    // insert new locale
-                    arr.splice(2, 0, event.target.value.replace("/", ""))
-                    // gather it all together again
-                    new_location = arr.join("/")
-                } else {
-                    new_location += current_location.slice(1);
-                }
-            }
-            window.location = new_location;
-        }
-    })()
+<script>
+    var current_locale = "de/";
+    var current_version = "v0.7.5";
 </script>
-<script type="text/javascript">
-    (function() {
-        var versionSelector = document.getElementById("version_selection");
-        versionSelector.onchange = function(event) {
-            current_version = "v0.7.5"
-            var current_location = window.location.pathname;
-            var target_version = event.target.value == "latest" ? "" : event.target.value;
-            var arr = current_location.split("/")
-            var regx = /\/v[0-9\.]+/
-            if (regx.test(current_location)) {
-                window.location = window.location.href.replace(regx,`${target_version}`)
-            } else {
-                window.location = `/${target_version}${current_location}`
-            }
-        }
-    })()
-</script>
-
-
+<script src="/static/js/bookwyrm.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ External Storage
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
@@ -31,12 +31,21 @@ External Storage
         <a class="navbar-item" href="https://joinbookwyrm.com/">
             <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
         </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentação
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
             <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
-                <span class="button is-success has-text-weight-normal has-text-white">Registrar</span>
+                Registrar
             </a>
             <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
                 Participe
@@ -47,179 +56,180 @@ External Storage
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 Código
             </a>
-            <a href="#" class="navbar-item is-active">
-                Documentação
-            </a>
-        </div>
-    </div>
-    <div class="navbar-end">
-        <div class="navbar-item">
-            <div class="select">
-                <select aria-label="Select a language" id="language_selection">
-                    
-                    <option value="" >English (US)</option>
-                    
-                    <option value="de/" >Deutsch</option>
-                    
-                    <option value="fr/" >Français</option>
-                    
-                    <option value="pl/" >Polski</option>
-                    
-                    <option value="pt-br/" selected>Português do Brasil</option>
-                    
-                    <option value="ro/" >Română</option>
-                    
-              </select>
-            </div>
         </div>
     </div>
 </nav>
 
-<div class="container is-max-desktop">
-<section class="section">
 
-    <header class="content block column is-offset-one-quarter pl-2">
-        
-<h1 class="title is-1">External Storage</h1>
-
-    </header>
-    <div class="columns">
-	<nav class="menu column is-one-quarter mt-2">
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" selected>Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
         <div class="select">
             <select aria-label="Previous versions" id="version_selection">
                 
-                <option value="latest" >latest</option>
+                <option value="development" >development</option>
                 
                 <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
-            <h2 class="menu-label"><a href="/pt-br/">Welcome</a></h2>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
             
-            <h2 class="menu-label">Using BookWyrm</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/shelves.html" >Shelves & Reading Status</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/adding-books.html" >Adicionar livros</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/posting-statuses.html" >Posting Statuses</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/lists.html" >Lists</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/privacy-controls.html" >Privacy Controls</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/groups.html" >Groups</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/rss-feeds.html" >RSS Feeds</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/user-migration.html" >User Migration and Aliases</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/pt-br/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
             
-            <h2 class="menu-label">Running BookWyrm</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/install-prod.html" >Installing in Production</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/install-prod-dockerless.html" >Installing Without Docker</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/updating.html" >Updating Your Instance</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/reverse-proxy.html" >Using a Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/moderation.html" >Moderation</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/monitoring-queue.html" >Monitoring Queue</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/external-storage.html" class="is-active">External Storage</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/optional_features.html" >Optional features</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/cli.html" >Command Line Tool</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/pt-br/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+            </li>
             
-            <h2 class="menu-label">Contributing</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/contributing.html" ></a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/style_guide.html" ></a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/translation.html" ></a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/documentation.html" >Documentation</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/debug_toolbar.html" >Django Debug Toolbar</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/install-dev.html" >Developer Environment</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/pt-br/adding-books.html" class="has-background-inherit" >Adicionar livros</a>
+            </li>
             
-            <h2 class="menu-label">Codebase</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/activitypub.html" >ActivityPub</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/permissions.html" >Permissões</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/pt-br/settings.html" class="has-background-inherit" >Settings and Profile</a>
+            </li>
             
-        </nav>
+            <li>
+                <a href="/v0.7.5/pt-br/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/optional_features.html" class="has-background-inherit" >Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/external-storage.html" class="has-background-inherit" class="is-active">External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/contributing.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/style_guide.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/translation.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/permissions.html" class="has-background-inherit" >Permissões</a>
+            </li>
+            
+        </ul>
+        
+    </nav>
 
-        <div class="column">
-            
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">External Storage</h1>
+
+                </header>
+                
 <section class="block content">
     <p>Por padrão, a BookWyrm usa o armazenamento local para os arquivos estáticos (ícones, avatar padrão, etc.) e as mídias (avatares dos usuários, capas de livros, etc.), mas você pode usar um armazenament externo para distribuir esses arquivos. A BooKWyrm utiliza o <code>django-storages</code> para lidar com o armazenamento externo, como serviços compatíveis com S3, Apache Libcloud ou SFTP.</p>
 <h2 id="servicos-compativeis-com-s3"><a class="headerlink" href="#servicos-compativeis-com-s3">Serviços compatíveis com S3</a></h2>
@@ -248,13 +258,23 @@ External Storage
 <li><code>AWS_ACCESS_KEY_ID</code>: sua ID de acesso</li>
 <li><code>AWS_SECRET_ACCESS_KEY</code>: sua chave de acesso secreta</li>
 <li><code>AWS_STORAGE_BUCKET_NAME</code>: o nome do seu bucket</li>
-<li><code>AWS_S3_REGION_NAME</code>: p.ex. <code>"eu-west-1"</code> para a AWS, <code>"fr-par"</code> para a Scaleway ou <code>"nyc3"</code> para a Digital Ocean</li>
+<li><code>AWS_S3_REGION_NAME</code>: e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway, <code>"nyc3"</code> for Digital Ocean or <code>"cluster-id"</code> for Linode</li>
 </ul>
 <p>Se seu serviço compatível com S3 for a Amazon AWS, já está tudo pronto. Se não, você deverá descomentar as seguintes linhas:</p>
 <ul>
-<li><code>AWS_S3_CUSTOM_DOMAIN</code>: o domínio que irá servir os arquivos, p.ex <code>"example-bucket-name.s3.fr-par.scw.cloud"</code> ou <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
-<li><code>AWS_S3_ENDPOINT_URL</code>: o endpoint da API S3, p. ex <code>"https://s3.fr-par.scw.cloud"</code> ou <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li><code>AWS_S3_CUSTOM_DOMAIN</code>: the domain that will serve the assets:</li>
+<li>for Scaleway, e.g. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code></li>
+<li>for Digital Ocean, e.g. <code>"${AWS_STORAGE_BUCKET_NAME}.${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li>for Linode Object Storage, this should be set to the cluster domain, e.g. <code>"eu-central-1.linodeobjects.com"</code></li>
+<li><code>AWS_S3_ENDPOINT_URL</code>: the S3 API endpoint:</li>
+<li>for Scaleway, e.g. <code>"https://s3.fr-par.scw.cloud"</code></li>
+<li>for Digital Ocean, e.g. <code>"https://${AWS_S3_REGION_NAME}.digitaloceanspaces.com"</code></li>
+<li>For Linode Object Storage, set this to the cluster domain, e.g. <code>"https://eu-central-1.linodeobjects.com"</code></li>
 </ul>
+<p>For many S3 compatible services, the default <code>ACL</code> is <code>"public-read"</code>, and this is what BookWyrm defaults to. If you are using Backblaze (B2) you need to explicitly set the default ACL to be empty in your <code>.env</code> file:</p>
+<div class="highlight"><pre><span></span><code>AWS_DEFAULT_ACL=&quot;&quot;
+</code></pre></div>
+
 <h3 id="copiando-a-midia-local-para-o-armazenamento-externo"><a class="headerlink" href="#copiando-a-midia-local-para-o-armazenamento-externo">Copiando a mídia local para o armazenamento externo</a></h3>
 <p>Se sua instância BookWyrm já está rodando e já recebeu mídias (avatares de usuários, capas de livros…), você precisará migrar essa mídia enviada para seu bucket.</p>
 <p>Essa tarefá é feita com o comando:</p>
@@ -266,13 +286,11 @@ External Storage
 <div class="highlight"><pre><span></span><code>USE_S3=true
 </code></pre></div>
 
-<p>Se seu armazenamento externo está servindo via HTTPS (como a maioria hoje em dia), você também precisará se certificar de que <code>USE_HTTPS</code> seja <code>true</code> para que as imagens carreguem via HTTPS:</p>
-<div class="highlight"><pre><span></span><code>USE_HTTPS=true
-</code></pre></div>
-
+<p><strong>Note</strong> that after <code>v0.7.5</code> all traffic is assumed to be HTTPS, so you need to ensure that your external storage is also served over HTTPS.</p>
 <h4 id="arquivos-estaticos"><a class="headerlink" href="#arquivos-estaticos">Arquivos estáticos</a></h4>
-<p>Então, para copiar os arquivos estáticos para o seu bucket S3 você precisará executar o seguinte comando:</p>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+<p>Then, you will need to run the following commands to compile the themes and copy all static assets to your S3 bucket:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>compile_themes
+./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <h4 id="configuracoes-do-cors"><a class="headerlink" href="#configuracoes-do-cors">Configurações do CORS</a></h4>
@@ -299,7 +317,17 @@ External Storage
 </code></pre></div>
 
 <p>No output means it should be good.</p>
-<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now. If not, keep on reading.</p>
+<h3 id="additional-step-for-linode-object-storage-users"><a class="headerlink" href="#additional-step-for-linode-object-storage-users">Additional Step for Linode Object Storage Users</a></h3>
+<p>For Linode, you now need to make an alteration to the <code>.env</code> to ensure that the generated links to your storage objects are correct. If you miss this step, all the links to images and static files (like css) will be broken. To fix this, you need to now insert the bucket-name into the <code>AWS_S3_CUSTOM_DOMAIN</code>, for example if your <code>AWS_STORAGE_BUCKET_NAME</code> is <code>"my-bookwyrm-bucket"</code>, then set it to:</p>
+<div class="highlight"><pre><span></span><code>AWS_S3_CUSTOM_DOMAIN=my-bookwyrm-bucket.cluster-id.linodeobjects.com
+</code></pre></div>
+
+<p><em>Note</em>: From this point on, any bw-dev copy or sync commands will place objects into an incorrect location in your object store, so if you need to use them, revert to the previous setting, run and re-enable.</p>
+<h3 id="user-export-and-import-files"><a class="headerlink" href="#user-export-and-import-files">User export and import files</a></h3>
+<p>After <code>v0.7.5</code>, user export and import files are saved to local storage even if <code>USE_S3</code> is set to <code>true</code>. Generally it is safer to use local storage for these files, and keep your used storage under control by setting up the task to periodically delete old export and import files.</p>
+<p>If you are running a large instance you may prefer to use S3 for these files as well. If so, you will need to set the environment variable <code>USE_S3_FOR_EXPORTS</code> to <code>true</code>.</p>
+<h3 id="new-instance"><a class="headerlink" href="#new-instance">New Instance</a></h3>
+<p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now: [<a href="install-prod.html">Docker</a>] [<a href="install-prod-dockerless.html">Dockerless</a>]. If not, keep on reading.</p>
 <h3 id="restarting-your-instance"><a class="headerlink" href="#restarting-your-instance">Restarting your instance</a></h3>
 <p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
@@ -323,9 +351,9 @@ External Storage
 <p>Você deverá atualizar o valor do <em>Covers url</em> toda vez que alterar o endereço de seu armazenamento.</p>
 </section>
 
+            </section>
         </div>
     </div>
-</section>
 </div>
 
 <footer id="contentinfo" class="footer">
@@ -375,55 +403,10 @@ External Storage
     </div>
 </footer>
 
-<script type="text/javascript">
-    (function() {
-        var languageSelector = document.getElementById("language_selection");
-        languageSelector.onchange = function(event) {
-            var current_locale = "pt-br/";
-            var current_location = window.location.pathname;
-
-            var locale_index = current_location.indexOf(current_locale);
-            var new_location = "/" + event.target.value;
-
-            if (locale_index) {
-                // we're in a locale - swap it out
-                new_location = current_location.replace(current_locale, event.target.value)
-            } else {
-                // are we in a version?
-                var regx = /\/v[0-9\.]+/
-                if (regx.test(current_location)) {
-                    // split current location
-                    arr = current_location.split("/")
-                    // insert new locale
-                    arr.splice(2, 0, event.target.value.replace("/", ""))
-                    // gather it all together again
-                    new_location = arr.join("/")
-                } else {
-                    new_location += current_location.slice(1);
-                }
-            }
-            window.location = new_location;
-        }
-    })()
+<script>
+    var current_locale = "pt-br/";
+    var current_version = "v0.7.5";
 </script>
-<script type="text/javascript">
-    (function() {
-        var versionSelector = document.getElementById("version_selection");
-        versionSelector.onchange = function(event) {
-            current_version = "v0.7.5"
-            var current_location = window.location.pathname;
-            var target_version = event.target.value == "latest" ? "" : event.target.value;
-            var arr = current_location.split("/")
-            var regx = /\/v[0-9\.]+/
-            if (regx.test(current_location)) {
-                window.location = window.location.href.replace(regx,`${target_version}`)
-            } else {
-                window.location = `/${target_version}${current_location}`
-            }
-        }
-    })()
-</script>
-
-
+<script src="/static/js/bookwyrm.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ Optional features
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
@@ -31,12 +31,21 @@ Optional features
         <a class="navbar-item" href="https://joinbookwyrm.com/">
             <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
         </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentação
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
 
     <div class="navbar-menu" id="main-nav">
         <div class="navbar-start">
             <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
-                <span class="button is-success has-text-weight-normal has-text-white">Registrar</span>
+                Registrar
             </a>
             <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
                 Participe
@@ -47,179 +56,180 @@ Optional features
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 Código
             </a>
-            <a href="#" class="navbar-item is-active">
-                Documentação
-            </a>
-        </div>
-    </div>
-    <div class="navbar-end">
-        <div class="navbar-item">
-            <div class="select">
-                <select aria-label="Select a language" id="language_selection">
-                    
-                    <option value="" >English (US)</option>
-                    
-                    <option value="de/" >Deutsch</option>
-                    
-                    <option value="fr/" >Français</option>
-                    
-                    <option value="pl/" >Polski</option>
-                    
-                    <option value="pt-br/" selected>Português do Brasil</option>
-                    
-                    <option value="ro/" >Română</option>
-                    
-              </select>
-            </div>
         </div>
     </div>
 </nav>
 
-<div class="container is-max-desktop">
-<section class="section">
 
-    <header class="content block column is-offset-one-quarter pl-2">
-        
-<h1 class="title is-1">Optional features</h1>
-
-    </header>
-    <div class="columns">
-	<nav class="menu column is-one-quarter mt-2">
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" selected>Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
         <div class="select">
             <select aria-label="Previous versions" id="version_selection">
                 
-                <option value="latest" >latest</option>
+                <option value="development" >development</option>
                 
                 <option value="v0.7.5" selected>v0.7.5</option>
                 
             </select>
         </div>
-            <h2 class="menu-label"><a href="/pt-br/">Welcome</a></h2>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
             
-            <h2 class="menu-label">Using BookWyrm</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/shelves.html" >Shelves & Reading Status</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/adding-books.html" >Adicionar livros</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/posting-statuses.html" >Posting Statuses</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/lists.html" >Lists</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/privacy-controls.html" >Privacy Controls</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/groups.html" >Groups</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/rss-feeds.html" >RSS Feeds</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/user-migration.html" >User Migration and Aliases</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/pt-br/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
             
-            <h2 class="menu-label">Running BookWyrm</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/install-prod.html" >Installing in Production</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/install-prod-dockerless.html" >Installing Without Docker</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/updating.html" >Updating Your Instance</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/reverse-proxy.html" >Using a Reverse-Proxy</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/moderation.html" >Moderation</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/monitoring-queue.html" >Monitoring Queue</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/external-storage.html" >External Storage</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/optional_features.html" class="is-active">Optional features</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/cli.html" >Command Line Tool</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/pt-br/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+            </li>
             
-            <h2 class="menu-label">Contributing</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/contributing.html" ></a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/style_guide.html" ></a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/translation.html" ></a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/documentation.html" >Documentation</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/debug_toolbar.html" >Django Debug Toolbar</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/install-dev.html" >Developer Environment</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/pt-br/adding-books.html" class="has-background-inherit" >Adicionar livros</a>
+            </li>
             
-            <h2 class="menu-label">Codebase</h2>
-            <ul class="menu-list">
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/activitypub.html" >ActivityPub</a>
-                </li>
-                
-                <li>
-                    <a href="/v0.7.5/pt-br/permissions.html" >Permissões</a>
-                </li>
-                
-            </ul>
+            <li>
+                <a href="/v0.7.5/pt-br/settings.html" class="has-background-inherit" >Settings and Profile</a>
+            </li>
             
-        </nav>
+            <li>
+                <a href="/v0.7.5/pt-br/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/optional_features.html" class="has-background-inherit" class="is-active">Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/contributing.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/style_guide.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/translation.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/permissions.html" class="has-background-inherit" >Permissões</a>
+            </li>
+            
+        </ul>
+        
+    </nav>
 
-        <div class="column">
-            
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">Optional features</h1>
+
+                </header>
+                
 <section class="block content">
     <p>Alguns recursos da BookWyrm devem ser habilitados para funcionar.</p>
 <h2 id="geracao-de-pre-visualizacao"><a class="headerlink" href="#geracao-de-pre-visualizacao">Geração de pré-visualização</a></h2>
@@ -259,9 +269,9 @@ Optional features
 <p>That command will empty the <code>user.preview_image</code> property in the database for remote users, and delete the file in storage.</p>
 </section>
 
+            </section>
         </div>
     </div>
-</section>
 </div>
 
 <footer id="contentinfo" class="footer">
@@ -311,55 +321,10 @@ Optional features
     </div>
 </footer>
 
-<script type="text/javascript">
-    (function() {
-        var languageSelector = document.getElementById("language_selection");
-        languageSelector.onchange = function(event) {
-            var current_locale = "pt-br/";
-            var current_location = window.location.pathname;
-
-            var locale_index = current_location.indexOf(current_locale);
-            var new_location = "/" + event.target.value;
-
-            if (locale_index) {
-                // we're in a locale - swap it out
-                new_location = current_location.replace(current_locale, event.target.value)
-            } else {
-                // are we in a version?
-                var regx = /\/v[0-9\.]+/
-                if (regx.test(current_location)) {
-                    // split current location
-                    arr = current_location.split("/")
-                    // insert new locale
-                    arr.splice(2, 0, event.target.value.replace("/", ""))
-                    // gather it all together again
-                    new_location = arr.join("/")
-                } else {
-                    new_location += current_location.slice(1);
-                }
-            }
-            window.location = new_location;
-        }
-    })()
+<script>
+    var current_locale = "pt-br/";
+    var current_version = "v0.7.5";
 </script>
-<script type="text/javascript">
-    (function() {
-        var versionSelector = document.getElementById("version_selection");
-        versionSelector.onchange = function(event) {
-            current_version = "v0.7.5"
-            var current_location = window.location.pathname;
-            var target_version = event.target.value == "latest" ? "" : event.target.value;
-            var arr = current_location.split("/")
-            var regx = /\/v[0-9\.]+/
-            if (regx.test(current_location)) {
-                window.location = window.location.href.replace(regx,`${target_version}`)
-            } else {
-                window.location = `/${target_version}${current_location}`
-            }
-        }
-    })()
-</script>
-
-
+<script src="/static/js/bookwyrm.js"></script>
 </body>
 </html>
