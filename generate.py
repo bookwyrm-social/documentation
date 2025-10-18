@@ -5,7 +5,7 @@ import os
 import sys
 
 from jinja2 import Environment, FileSystemLoader
-from markdown import markdown
+from markdown import Markdown
 import yaml
 
 import i18n
@@ -103,6 +103,15 @@ def format_markdown(file_path):
         dashed_header_format = first_line == "---\n"
 
     with open(file_path, "r", encoding="utf-8") as markdown_content:
+
+        md = Markdown(
+            extensions=["tables", "fenced_code", "codehilite", "toc", "sane_lists"],
+            extension_configs={
+                "codehilite": {"css_class": "highlight"},
+                "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
+            },
+        )
+
         if dashed_header_format:
             headerless = []
             header_block_open = False
@@ -111,22 +120,12 @@ def format_markdown(file_path):
                     header_block_open = not header_block_open
                 elif not header_block_open:
                     headerless.append(line)
-            return markdown(
-                "".join(headerless),
-                extensions=["tables", "fenced_code", "codehilite", "toc"],
-                extension_configs={
-                    "codehilite": {"css_class": "highlight"},
-                    "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
-                },
-            )
-        return markdown(
-            "".join(markdown_content.readlines()[3:]),
-            extensions=["tables", "fenced_code", "codehilite", "toc"],
-            extension_configs={
-                "codehilite": {"css_class": "highlight"},
-                "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
-            },
-        )
+
+            body = md.convert("".join(headerless))
+            return {"body": body, "toc": md.toc_tokens}
+
+        body = md.convert("".join(markdown_content.readlines()[3:]))
+        return {"body": body, "toc": md.toc}
 
 
 if __name__ == "__main__":
@@ -168,13 +167,15 @@ if __name__ == "__main__":
                     f"{LOCALIZED_SITE_PATH}{output_path}", "w+", encoding="utf-8"
                 ) as render_file:
                     data = get_site_data(SLUG, locale["code"], content_path, version)
-                    data["content"] = format_markdown(content_path)
+                    formatted_md = format_markdown(content_path)
+                    data["content"] = formatted_md["body"]
+                    data["toc"] = formatted_md["toc"]
                     data["path"] = (
                         f"/{SLUG}{output_path}"
                         if not version
                         else f"/{version}/{SLUG}{output_path}"
                     )
-                    versions = ["development", "v0.7.5"]
+                    versions = ["development", "v0.7.5", "v0.8.0"]
                     current_version = version if version else ""
                     render_file.write(
                         template.render(
