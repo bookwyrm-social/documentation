@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Na BookWyrm zaczyna się to od książki. Użytkownicy mogą komentować czytane lub ostatnio przeczytane książki z sekcji "Twoje książki" lub ze strony książki. Stamtąd użytkownicy mogą odpowiadać na i rozpoczynać rozmowy. Wpisy na BookWyrm mogą zawierać formatowanie, takie jak pogrubienie, kursywę lub odnośniki używając [Znaczników](https://www.markdownguide.org/cheat-sheet/).

@@ -32,7 +32,7 @@ If you enable this setting after your instance has been started, some images may
 
 User and book preview images will be generated asynchroneously: the task will be sent to Flower. Some time may be needed before all the books and users have a working preview image. If you have a good book 📖, a kitten 🐱 or a cake 🍰, this is the perfect time to show them some attention 💖.
 
-### Optional settings
+### Valfria inställningar
 
 So you want to customize your preview images? Here are the options:
 

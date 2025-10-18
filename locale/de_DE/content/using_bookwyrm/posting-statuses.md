@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Das Schreiben auf BookWyrm beginnt mit einem Buch. Benutzer*innen können angefangene oder vor kurzem gelesene Bücher aus dem Abschnitt "Ihre Bücher" kommentieren oder von der Startseite eines Buches aus. Von dort aus können Benutzer*innen antworten und eine Unterhaltung starten. BookWyrm Beiträge können Formatierungen wie fett, kursiv und Links mit [Markdown](https://www.markdownguide.org/cheat-sheet/) beinhalten.

@@ -5,7 +5,7 @@ Pavadinimas: Sveiki atvykę Data: 2021-04-13
 „BookWyrm“ – tai socialinis tinklas, skirtas sekti savo skaitymą, kalbėti apie knygas, rašyti apžvalgas ir sužinoti, ką skaityti toliau. Federacija leidžia „BookWyrm“ naudotojams jungtis prie nedidelių, patikimų bendruomenių, kurios gali susijungti tarpusavyje ir su kitomis „ActivityPub“ paslaugomis, tokiomis kaip „Mastodon“ ir „Pleroma“.
 
 ## Funkcijos
-Kadangi projektas tebėra ankstyvojoje stadijoje, funkcijų kasdien daugėja, todėl yra daug erdvės pasiūlymams ir idėjoms. Atverkite [problemą](https://github.com/bookwyrm-social/bookwyrm/issues), kad pradėtumėte pokalbį!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Skelbimai apie knygas
     - Compose reviews, with or without ratings, which are aggregated in the book page
@@ -18,9 +18,10 @@ Kadangi projektas tebėra ankstyvojoje stadijoje, funkcijų kasdien daugėja, to
 - Track reading activity
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Create custom shelves
-    - Store started reading/finished reading dates, as well as progress updates along the way
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Update followers about reading activity (optionally, and with granular privacy controls)
     - Create lists of books which can be open to submissions from anyone, curated, or only edited by the creator
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Federation with ActivityPub
     - Broadcast and receive user statuses and activity
     - Share book data between instances to create a networked database of metadata

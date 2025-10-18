@@ -5,7 +5,7 @@ Title: Velkommen Date: 2021-04-13
 BookWyrm er et sosialt nettverk for å journalføre lesing, snakke om bøker, skrive omtaler, og finne ut hva mer du kan lese. Føderering gjør at BookWyrm-brukere i stand til å bli med i små, pålitelige samfunn som kan knytte seg til hverandre, og med andre ActivityPub-tjenester som Mastodon og Pleroma.
 
 ## Funksjoner
-Ettersom prosjektet fortsatt er i et tidlig stadie kommer det nye funksjoner hver dag, og det er stort rom for forslag og ideer. Åpne en [sak](https://github.com/bookwyrm-social/bookwyrm/issues) for å sette samtalen i gang!
+The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Poste om bøker
     - Skriv omtaler, med eller uten vurderinger, som samles på boksiden
@@ -18,9 +18,10 @@ Ettersom prosjektet fortsatt er i et tidlig stadie kommer det nye funksjoner hve
 - Spor leseaktivitet
     - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
     - Opprett tilpassede hyller
-    - Lagre datoer for oppstart/avslutning av lesing, samt fremdriftsoppdateringer underveis
+    - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Oppdater følgere om leseaktivitet (valgfritt, og med granulære personvernkontroller)
     - Opprett lister med bøker som kan åpnes for å kunne motta innsendte forslag fra hvem som helst, kurert, eller kun redigert av skaperen
+    - Create groups with other BookWyrm users and collaborate with group-owned lists
 - Føderering med ActivityPub
     - Kringkast og motta brukerstatuser og aktivitet
     - Del bokdata mellom instanser for å opprette en nettverksdatabase med metadata

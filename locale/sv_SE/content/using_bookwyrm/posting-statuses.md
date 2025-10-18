@@ -1,25 +1,25 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Posting on BookWyrm starts with a book. Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page. From there, users can reply and start a conversation. BookWyrm posts can include formatting like bold, italics and links using [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
 Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
 
-## Types of statuses
+## Typer av statusar
 
 ### User commentary
 
 There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.
 
-| Komponent     | Review | Comment | Quote | Reply |
+| Komponent     | Review | Comment | Quote | Svara |
 | ------------- | ------ | ------- | ----- | ----- |
 | Textfält      | ✔      | ✔       | ✔     | ✔     |
 | Spoiler alert | ✔      | ✔       | ✔     | ✔     |
 | Sidnummer     |        | ✔       | ✔     |       |
 | Quote         |        |         | ✔     |       |
 | Rating        | ✔      |         |       |       |
-| Title field   | ✔      |         |       |       |
+| Titelfält     | ✔      |         |       |       |
 
 #### Spoiler alerts
 
@@ -34,7 +34,7 @@ A star rating can be added to reviews, or added on its own by clicking the stars
 Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.
 
 ## Text
-Text can include:
+Texten kan inkludera:
 
 - Mentions (@user)
 - URLs (`http(s)://` is not displayed)
