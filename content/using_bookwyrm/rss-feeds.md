@@ -1,7 +1,7 @@
 ---
 Title: RSS Feeds
 Date: 2023-09-29
-Order: 3
+Order: 20
 ---
 
 BookWyrm is an _open_ platform and generally it's ok to integrate your books and bookshelves in BookWyrm with other things. We provide some [RSS feeds](https://cyber.harvard.edu/rss/rss.html) to help you do that.
