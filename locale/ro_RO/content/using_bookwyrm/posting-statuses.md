@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Postatul pe BookWyrm începe cu o carte. Utilizatorii pot comenta o carte citită recent sau în curs de citire din secțiunea „Cărțile dvs.” sau de pe pagina principală a unei cărți. De acolo, utilizatorii pot răspunde sau începe o conversație. Postările BookWyrm pot include text formatat precum bold, italic sau legături folosind [Markdown](https://www.markdownguide.org/cheat-sheet/).
