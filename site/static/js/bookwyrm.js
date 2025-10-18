@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var arr = current_location.split("/")
         var regx = /\/v[0-9\.]+/
         if (regx.test(current_location)) {
-            window.location = window.location.href.replace(regx,`${target_version}`)
+            window.location = window.location.href.replace(regx,`/${target_version}`)
         } else {
             window.location = `/${target_version}${current_location}`
         }
@@ -63,11 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Table of contents
     const $tocController = document.getElementById("toc");
-    $tocController.addEventListener('click', () => {
-        $tocController.classList.toggle('is-active');
-        const target = $tocController.dataset.target;
-        const $target = document.getElementById(target);
-        $target.classList.toggle('is-hidden-touch');
-    })
+    if ($tocController) {
+        $tocController.addEventListener('click', () => {
+            $tocController.classList.toggle('is-active');
+            const target = $tocController.dataset.target;
+            const $target = document.getElementById(target);
+            $target.classList.toggle('is-hidden-touch');
+        })
+    }
 
 });
