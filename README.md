@@ -18,9 +18,9 @@ Maintainers of this repository can keep translations aligned by regularly updati
 1. Translations are updated in Crowdin
 2. Crowdin pushes new translations to l10n_main as they are available
 3. In your fork, `pull` both `main` and `l10n_main` so they are up to date in your local repository
-4. Create a new fork from `main` (e.g. called `update_locales`)
-5. merge `l10n_main` into your fork
-6. make adjustment if necessary
+4. Create a new fork from `main` (e.g. called `update_locales`) and check it out
+5. merge `l10n_main`'s `locale` directory into your fork: `git checkout l10n_main -- locale`
+6. make adjustments if necessary
 7. push your local branch up to your remote and create a pull request
 8. pull the PR into `main`
 9. There is now a new reference file in en_US
