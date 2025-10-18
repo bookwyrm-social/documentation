@@ -3,7 +3,7 @@
 <head>
     <title>
         
-RSS Feeds
+Settings and Profile
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,7 +113,7 @@ RSS Feeds
             </li>
             
             <li>
-                <a href="/fr/settings.html" class="has-background-inherit" >Settings and Profile</a>
+                <a href="/fr/settings.html" class="has-background-inherit" class="is-active">Settings and Profile</a>
             </li>
             
             <li>
@@ -133,7 +133,7 @@ RSS Feeds
             </li>
             
             <li>
-                <a href="/fr/rss-feeds.html" class="has-background-inherit" class="is-active">RSS Feeds</a>
+                <a href="/fr/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
             </li>
             
             <li>
@@ -248,19 +248,33 @@ RSS Feeds
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#rss-locations">RSS Locations</a>
+                  <a class="navbar-item" href="#edit-profile">Edit Profile</a>
                   
                       
-                      <a class="navbar-item" href="#all-activity"><span class="pl-4">All Activity</span></a>
+                      <a class="navbar-item" href="#profile"><span class="pl-4">Profile</span></a>
                       
-                      <a class="navbar-item" href="#reviews"><span class="pl-4">Reviews</span></a>
+                      <a class="navbar-item" href="#display"><span class="pl-4">Display</span></a>
                       
-                      <a class="navbar-item" href="#quotes"><span class="pl-4">Quotes</span></a>
+                      <a class="navbar-item" href="#privacy"><span class="pl-4">Privacy</span></a>
                       
-                      <a class="navbar-item" href="#comments"><span class="pl-4">Comments</span></a>
-                      
-                      <a class="navbar-item" href="#shelves"><span class="pl-4">Shelves</span></a>
-                      
+                  
+              
+                  <a class="navbar-item" href="#change-password">Change Password</a>
+                  
+              
+                  <a class="navbar-item" href="#account-security">Account Security</a>
+                  
+              
+                  <a class="navbar-item" href="#aliases-and-moving-your-account">Aliases and moving your account</a>
+                  
+              
+                  <a class="navbar-item" href="#deactivating-or-deleting-your-account">Deactivating or deleting your account</a>
+                  
+              
+                  <a class="navbar-item" href="#importing-and-exporting-books">Importing and Exporting books</a>
+                  
+              
+                  <a class="navbar-item" href="#blocking-users">Blocking users</a>
                   
               
             </div>
@@ -273,30 +287,59 @@ RSS Feeds
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">RSS Feeds</h1>
+<h1 class="title is-1">Settings and Profile</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>BookWyrm is an <em>open</em> platform and generally it's ok to integrate your books and bookshelves in BookWyrm with other things. We provide some <a href="https://cyber.harvard.edu/rss/rss.html">RSS feeds</a> to help you do that.</p>
-<h2 id="rss-locations"><a class="headerlink" href="#rss-locations">RSS Locations</a></h2>
-<p>Currently, all RSS Feeds are relative to a someone's profile on their BookWyrm instance. So if your profile is at https://bookwyrm.social/user/mouse then all the rss feeds will be at a URL based on that.</p>
-<h3 id="all-activity"><a class="headerlink" href="#all-activity">All Activity</a></h3>
-<p>This is everything someone posts that's publicly visible.</p>
-<p>You can see all the <em>public</em> activity of a user at their profile url /rss. So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all activity at http://bookwyrm.social/user/mouse/rss</p>
-<p>BookWyrm is social - people quote books, chat with each other about books, etc. If you are looking for a more filtered view, the next locations might be useful.</p>
-<h3 id="reviews"><a class="headerlink" href="#reviews">Reviews</a></h3>
-<p>To get an RSS feed of every Review someone posts, add <code>/rss-reviews</code> to the end of their profile url.</p>
-<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Reviews at http://bookwyrm.social/user/mouse/rss-reviews</p>
-<h3 id="quotes"><a class="headerlink" href="#quotes">Quotes</a></h3>
-<p>To get a feed of every Quote someone posts, add <code>/rss-quotes</code> to the end of their profile url.</p>
-<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Quotes at http://bookwyrm.social/user/mouse/rss-quotes</p>
-<h3 id="comments"><a class="headerlink" href="#comments">Comments</a></h3>
-<p>To get a feed of every Comment someone posts, add <code>/rss-comments</code> to the end of their profile url.</p>
-<p>So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Comments at http://bookwyrm.social/user/mouse/rss-comments</p>
-<h3 id="shelves"><a class="headerlink" href="#shelves">Shelves</a></h3>
-<p>You might also want to get a feed of books being added to someone's bookshelves. You'll add <code>/rss</code> to the end of that bookshelf's url.</p>
-<p>So for bookshelf https://bookwyrm.social/user/mouse/books/read you can get an RSS feed of all books added at https://bookwyrm.social/user/mouse/books/read/rss</p>
+    <p>You can control your account and profile settings by activating the dropdown menu below your username and selecting <code>Settings</code>.</p>
+<h2 id="edit-profile"><a class="headerlink" href="#edit-profile">Edit Profile</a></h2>
+<h3 id="profile"><a class="headerlink" href="#profile">Profile</a></h3>
+<ul>
+<li>Upload or remove your user avatar</li>
+<li>Change your display name</li>
+<li>Create or edit your user summary (bio or description)</li>
+<li>Change your registered email address</li>
+</ul>
+<h3 id="display"><a class="headerlink" href="#display">Display</a></h3>
+<ul>
+<li>Choose whether to show reading goal prompt in feed</li>
+<li>Choose whether to show ratings in reviews, or have them hidden behind a toggle by default</li>
+<li>Choose whether BookWyrm should suggest users to follow</li>
+<li>Choose whether BookWyrm can suggest your user account to others</li>
+<li>Select your timezone - this affects the time stamps displayed to you</li>
+<li>Select your user interface language</li>
+<li>Select a theme - different instances will have different options, by default there are BookWyrm light and dark themes</li>
+</ul>
+<h3 id="privacy"><a class="headerlink" href="#privacy">Privacy</a></h3>
+<ul>
+<li>Choose whether followers must be approved by you before following your account</li>
+<li>Choose whether to hide followers and following on your user profile</li>
+<li>Choose your default post privacy. Find <a href="/privacy-controls.html">more detail about what the post privacy options mean</a> on the Privacy Controls page</li>
+</ul>
+<h2 id="change-password"><a class="headerlink" href="#change-password">Change Password</a></h2>
+<p>Here you can ...change your password</p>
+<h2 id="account-security"><a class="headerlink" href="#account-security">Account Security</a></h2>
+<p>We recommend you protect your account with second-factor authentication using an authenticator app.</p>
+<p>This section also allows you to see all the logged-in sessions for your user account, and terminate them. This can be a useful way to protect your account if you have, for example, lost a device, or do not recognise a session.</p>
+<h2 id="aliases-and-moving-your-account"><a class="headerlink" href="#aliases-and-moving-your-account">Aliases and moving your account</a></h2>
+<p>You can set an "alias" for your account, indicating that they represent the same "actor". This is usually done when you want to migrate your account from one fediverse account to another.</p>
+<p>You can also move (migrate) your account using <code>Move Account</code>. You must set the account you are moving <em>from</em> as an alias of the account you are moving <em>to</em> before attempting to move the account.</p>
+<p>Setting an alias is easily reversable. Moving your account is not - choose wisely!</p>
+<p>See <a href="user-migration.html">User Migration and Aliases</a> for more details.</p>
+<h2 id="deactivating-or-deleting-your-account"><a class="headerlink" href="#deactivating-or-deleting-your-account">Deactivating or deleting your account</a></h2>
+<p>Under <code>Delete Account</code> you can either deactivate or delete your account.</p>
+<p>Deactivating marks your account as no longer active and hides your profile page. You can re-activate your account in future.</p>
+<p>Deleting your account is irreversable. Your username will not be available to register in the future. Note that on deleting your account, BookWyrm will attempt to delete all user data and posts, however it is possible that federated servers may not process the deletion correctly.</p>
+<p>Books that were added by a deleted user will remain available as they conceptually exist separately from any individual user or shelf.</p>
+<h2 id="importing-and-exporting-books"><a class="headerlink" href="#importing-and-exporting-books">Importing and Exporting books</a></h2>
+<p>Under the <code>Data</code> heading, you can import and export book lists.</p>
+<p>See <a href="/adding-books.html">Adding Books</a> for more information about importing books. Choose <code>Export Book List</code> to export a CSV file including all the books on your shelves, books you have reviewed, and books with reading activity.</p>
+<p>You can also import or export a user account from this section. See <a href="user-migration.html">User Migration and Aliases</a> for more details.</p>
+<h2 id="blocking-users"><a class="headerlink" href="#blocking-users">Blocking users</a></h2>
+<p>You can block or unblock a user by selecting the ellipses (...) on the right of the "Follow/Unfollow" button on their profile.</p>
+<p>If you have blocked any users, they will be listed under <code>Blocked Users</code> and can be unblocked from there.</p>
+<p>Blocked users cannot see your profile, lists, or shelves, send you DMs, or see or interact with your posts.</p>
 </section>
 
             </section>
@@ -321,7 +364,7 @@ RSS Feeds
                     <a href="https://github.com/bookwyrm-social">BookWyrm sur GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/rss-feeds.md">Contribuer à cette page</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/settings.md">Contribuer à cette page</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">
