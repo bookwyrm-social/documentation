@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 La publication sur BookWyrm commence par un livre. Les utilisateurs peuvent commenter les livres en cours ou récemment lus depuis la section « Vos livres » ou depuis la page d'un livre. De là, les utilisateurs peuvent répondre et démarrer une conversation. Les posts sur BookWyrm peuvent inclure un formatage basique avec du gras, de l'italique et des liens, en utilisant [Markdown](https://www.markdownguide.org/cheat-sheet/).

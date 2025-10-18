@@ -1,7 +1,7 @@
 ---
 Title: Listor
 Date: 2025-05-26
-Order: 5
+Order: 6
 ---
 
 Lists in Bookwyrm are a way to organise and display similar books together.

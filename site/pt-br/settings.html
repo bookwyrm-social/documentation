@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>
+        
+Settings and Profile
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentação
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/pt-br/instances" class="navbar-item">
+                Registrar
+            </a>
+            <a href="https://joinbookwyrm.com/pt-br/get-involved" class="navbar-item">
+                Participe
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Suporte
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Código
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6 mt-4" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" selected>Português do Brasil</option>
+                
+                <option value="ro/" >Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="development" >development</option>
+                
+                <option value="v0.7.5" selected>v0.7.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/adding-books.html" class="has-background-inherit" >Adicionar livros</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/settings.html" class="has-background-inherit" class="is-active">Settings and Profile</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/optional_features.html" class="has-background-inherit" >Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/contributing.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/style_guide.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/translation.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.7.5/pt-br/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pt-br/permissions.html" class="has-background-inherit" >Permissões</a>
+            </li>
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column">
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">Settings and Profile</h1>
+
+                </header>
+                
+<section class="block content">
+    <p>You can control your account and profile settings by activating the dropdown menu below your username and selecting <code>Settings</code>.</p>
+<h2 id="edit-profile"><a class="headerlink" href="#edit-profile">Edit Profile</a></h2>
+<h3 id="profile"><a class="headerlink" href="#profile">Profile</a></h3>
+<ul>
+<li>Upload or remove your user avatar</li>
+<li>Change your display name</li>
+<li>Create or edit your user summary (bio or description)</li>
+<li>Change your registered email address</li>
+</ul>
+<h3 id="display"><a class="headerlink" href="#display">Display</a></h3>
+<ul>
+<li>Choose whether to show reading goal prompt in feed</li>
+<li>Choose whether to show ratings in reviews, or have them hidden behind a toggle by default</li>
+<li>Choose whether BookWyrm should suggest users to follow</li>
+<li>Choose whether BookWyrm can suggest your user account to others</li>
+<li>Select your timezone - this affects the time stamps displayed to you</li>
+<li>Select your user interface language</li>
+<li>Select a theme - different instances will have different options, by default there are BookWyrm light and dark themes</li>
+</ul>
+<h3 id="privacy"><a class="headerlink" href="#privacy">Privacy</a></h3>
+<ul>
+<li>Choose whether followers must be approved by you before following your account</li>
+<li>Choose whether to hide followers and following on your user profile</li>
+<li>Choose your default post privacy. Find <a href="/privacy-controls.html">more detail about what the post privacy options mean</a> on the Privacy Controls page</li>
+</ul>
+<h2 id="change-password"><a class="headerlink" href="#change-password">Change Password</a></h2>
+<p>Here you can ...change your password</p>
+<h2 id="account-security"><a class="headerlink" href="#account-security">Account Security</a></h2>
+<p>We recommend you protect your account with second-factor authentication using an authenticator app.</p>
+<p>This section also allows you to see all the logged-in sessions for your user account, and terminate them. This can be a useful way to protect your account if you have, for example, lost a device, or do not recognise a session.</p>
+<h2 id="aliases-and-moving-your-account"><a class="headerlink" href="#aliases-and-moving-your-account">Aliases and moving your account</a></h2>
+<p>You can set an "alias" for your account, indicating that they represent the same "actor". This is usually done when you want to migrate your account from one fediverse account to another.</p>
+<p>You can also move (migrate) your account using <code>Move Account</code>. You must set the account you are moving <em>from</em> as an alias of the account you are moving <em>to</em> before attempting to move the account.</p>
+<p>Setting an alias is easily reversable. Moving your account is not - choose wisely!</p>
+<p>See <a href="user-migration.html">User Migration and Aliases</a> for more details.</p>
+<h2 id="deactivating-or-deleting-your-account"><a class="headerlink" href="#deactivating-or-deleting-your-account">Deactivating or deleting your account</a></h2>
+<p>Under <code>Delete Account</code> you can either deactivate or delete your account.</p>
+<p>Deactivating marks your account as no longer active and hides your profile page. You can re-activate your account in future.</p>
+<p>Deleting your account is irreversable. Your username will not be available to register in the future. Note that on deleting your account, BookWyrm will attempt to delete all user data and posts, however it is possible that federated servers may not process the deletion correctly.</p>
+<p>Books that were added by a deleted user will remain available as they conceptually exist separately from any individual user or shelf.</p>
+<h2 id="importing-and-exporting-books"><a class="headerlink" href="#importing-and-exporting-books">Importing and Exporting books</a></h2>
+<p>Under the <code>Data</code> heading, you can import and export book lists.</p>
+<p>See <a href="/adding-books.html">Adding Books</a> for more information about importing books. Choose <code>Export Book List</code> to export a CSV file including all the books on your shelves, books you have reviewed, and books with reading activity.</p>
+<p>You can also import or export a user account from this section. See <a href="user-migration.html">User Migration and Aliases</a> for more details.</p>
+<h2 id="blocking-users"><a class="headerlink" href="#blocking-users">Blocking users</a></h2>
+<p>You can block or unblock a user by selecting the ellipses (...) on the right of the "Follow/Unfollow" button on their profile.</p>
+<p>If you have blocked any users, they will be listed under <code>Blocked Users</code> and can be unblocked from there.</p>
+<p>Blocked users cannot see your profile, lists, or shelves, send you DMs, or see or interact with your posts.</p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> é um software colaborativo e anti-corporativo mantido por <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Apoie a BookWyrm no <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Participe</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm no GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/settings.md">Contribua para esta página</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Saiba mais</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentação</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Falar com a administração</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licença</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "pt-br/";
+    var current_version = "v0.7.5";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>
