@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Posting statuses
+Posting Statuses
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,6 +88,8 @@ Posting statuses
                 
                 <option value="v0.7.5" selected>v0.7.5</option>
                 
+                <option value="v0.8.0" >v0.8.0</option>
+                
             </select>
         </div>
         
@@ -95,7 +97,11 @@ Posting statuses
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/v0.7.5/posting-statuses.html" class="has-background-inherit" class="is-active">Posting statuses</a>
+                <a href="/v0.7.5/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
             </li>
             
             <li>
@@ -103,11 +109,31 @@ Posting statuses
             </li>
             
             <li>
-                <a href="/v0.7.5/user-migration.html" class="has-background-inherit" >User migration and aliases</a>
+                <a href="/v0.7.5/settings.html" class="has-background-inherit" >Settings and Profile</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/posting-statuses.html" class="has-background-inherit" class="is-active">Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/groups.html" class="has-background-inherit" >Groups</a>
             </li>
             
             <li>
                 <a href="/v0.7.5/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
             </li>
             
         </ul>
@@ -214,7 +240,7 @@ Posting statuses
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Posting statuses</h1>
+<h1 class="title is-1">Posting Statuses</h1>
 
                 </header>
                 
@@ -223,7 +249,7 @@ Posting statuses
 Users can comment on in-progress or recently read books from the "Your books" section, or from a book's landing page.
 From there, users can reply and start a conversation.
 BookWyrm posts can include formatting like bold, italics and links using <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a>.</p>
-<p>If you're familiar with <a href="https://docs.joinmastodon.org/user/posting/">posting on Mastodon</a>, you'll find that BookWyrm statuses have analogous visibility settings, content warnings, and mentions. However, polls, custom emoji, and attachments are not supported yet.</p>
+<p>Bookwyrm statuses also have <a href="/privacy-controls.html">visibility settings</a> which control who is able to see and interact with them.</p>
 <h2 id="types-of-statuses"><a class="headerlink" href="#types-of-statuses">Types of statuses</a></h2>
 <h3 id="user-commentary"><a class="headerlink" href="#user-commentary">User commentary</a></h3>
 <p>There are three types of posts users can create directly in response to books: reviews, comments, and quotes. Comments respond to general aspects of a book, quotes pertain to specific passages, and reviews deal with books overall. Users can also reply to statuses.</p>
@@ -282,6 +308,14 @@ BookWyrm posts can include formatting like bold, italics and links using <a href
 </tr>
 </tbody>
 </table>
+<h4 id="spoiler-alerts"><a class="headerlink" href="#spoiler-alerts">Spoiler alerts</a></h4>
+<p>Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read.
+Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.</p>
+<h4 id="star-ratings"><a class="headerlink" href="#star-ratings">Star ratings</a></h4>
+<p>A star rating can be added to reviews, or added on its own by clicking the stars below a book.
+It is a 5-star scale, and half stars can be added by double clicking on the star.
+For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half.
+When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".</p>
 <h3 id="reading-status-updates"><a class="headerlink" href="#reading-status-updates">Reading status updates</a></h3>
 <p>Statuses are generated when a user indicates that they want to read, have started reading, or have finished reading a book.</p>
 <h2 id="text"><a class="headerlink" href="#text">Text</a></h2>

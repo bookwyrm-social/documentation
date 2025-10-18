@@ -88,6 +88,8 @@ Developer Environment
                 
                 <option value="v0.7.5" selected>v0.7.5</option>
                 
+                <option value="v0.8.0" >v0.8.0</option>
+                
             </select>
         </div>
         
@@ -246,7 +248,7 @@ Developer Environment
 
 <h3 id="configure-your-environment-settings"><a class="headerlink" href="#configure-your-environment-settings">Configure your environment settings</a></h3>
 <p>In <code>.env</code>:</p>
-<ol>
+<ol start="4">
 <li>change <code>DEBUG</code> to <code>true</code></li>
 <li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>). Otherwise, set <code>DOMAIN</code> to <code>localhost</code></li>
 <li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
@@ -257,7 +259,7 @@ Developer Environment
 <h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
 <p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate real values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
 <h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
-<ol>
+<ol start="8">
 <li>În linia de comandă, rulați:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Build the docker images</span>
@@ -265,7 +267,7 @@ Developer Environment
 ./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start the docker containers</span>
 </code></pre></div>
 
-<ol>
+<ol start="9">
 <li>Once the build is complete, you can access the instance at <code>http://localhost</code>, your ngrok domain, or <code>http://localhost:{PORT}</code>, depending on you domain and port configuration.</li>
 <li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
 </ol>
