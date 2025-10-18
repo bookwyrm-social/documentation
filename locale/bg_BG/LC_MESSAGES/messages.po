@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-08 10:16-0700\n"
-"PO-Revision-Date: 2025-05-31 23:28\n"
+"POT-Creation-Date: 2025-09-08 05:35+0000\n"
+"PO-Revision-Date: 2025-09-08 07:09\n"
 "Last-Translator: \n"
 "Language-Team: Bulgarian\n"
 "Language: bg_BG\n"
@@ -33,56 +33,92 @@ msgstr ""
 msgid "BookWyrm: Social Reading and Reviewing"
 msgstr ""
 
-#: templates/layout.html:35 templates/layout.html:39
+#: templates/layout.html:35 templates/layout.html:39 templates/layout.html:40
+#: templates/layout.html:48
 msgid "Join"
 msgstr "Присъединете се"
 
-#: templates/layout.html:38 templates/layout.html:42
+#: templates/layout.html:38 templates/layout.html:42 templates/layout.html:43
+#: templates/layout.html:51
 msgid "Get involved"
 msgstr "Участвайте"
 
-#: templates/layout.html:41 templates/layout.html:45
+#: templates/layout.html:41 templates/layout.html:45 templates/layout.html:46
+#: templates/layout.html:54
 msgid "Support"
 msgstr ""
 
-#: templates/layout.html:44 templates/layout.html:48
+#: templates/layout.html:44 templates/layout.html:48 templates/layout.html:49
+#: templates/layout.html:57
 msgid "Code"
 msgstr "Код"
 
 #: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
-#: templates/layout.html:130
+#: templates/layout.html:130 templates/layout.html:52 templates/layout.html:131
+#: templates/layout.html:137 templates/layout.html:35 templates/layout.html:138
+#: templates/layout.html:145 templates/layout.html:146
 msgid "Documentation"
 msgstr "Документация"
 
-#: templates/layout.html:95 templates/layout.html:101
+#: templates/layout.html:95 templates/layout.html:101 templates/layout.html:102
+#: templates/layout.html:108 templates/layout.html:109
+#: templates/layout.html:116 templates/layout.html:117
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 msgstr ""
 
-#: templates/layout.html:98 templates/layout.html:104
+#: templates/layout.html:98 templates/layout.html:104 templates/layout.html:105
+#: templates/layout.html:111 templates/layout.html:112
+#: templates/layout.html:119 templates/layout.html:120
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 msgstr ""
 
 #: templates/layout.html:102 templates/layout.html:108
+#: templates/layout.html:109 templates/layout.html:115
+#: templates/layout.html:116 templates/layout.html:123
+#: templates/layout.html:124
 msgid "Get Involved"
 msgstr "Участвайте"
 
 #: templates/layout.html:104 templates/layout.html:110
+#: templates/layout.html:111 templates/layout.html:117
+#: templates/layout.html:118 templates/layout.html:125
+#: templates/layout.html:126
 msgid "BookWyrm on GitHub"
 msgstr "BookWyrm в GitHub"
 
 #: templates/layout.html:107 templates/layout.html:113
+#: templates/layout.html:114 templates/layout.html:120
+#: templates/layout.html:121 templates/layout.html:128
+#: templates/layout.html:129
 msgid "Contribute to this page"
 msgstr "Допринесете за тази страница"
 
 #: templates/layout.html:122 templates/layout.html:128
+#: templates/layout.html:129 templates/layout.html:135
+#: templates/layout.html:136 templates/layout.html:143
+#: templates/layout.html:144
 msgid "Learn more"
 msgstr "Научете повече"
 
 #: templates/layout.html:127 templates/layout.html:133
+#: templates/layout.html:134 templates/layout.html:140
+#: templates/layout.html:141 templates/layout.html:148
+#: templates/layout.html:149
 msgid "Contact maintainer"
 msgstr "Свържете се с maintainer"
 
 #: templates/layout.html:130 templates/layout.html:136
+#: templates/layout.html:137 templates/layout.html:143
+#: templates/layout.html:144 templates/layout.html:151
+#: templates/layout.html:152
 msgid "License"
 msgstr "Лиценз"
+
+#: templates/layout.html:65
+msgid "This is the documentation for the current development code. Choose a version from the menu to see documentation for released versions since"
+msgstr ""
+
+#: templates/page.html:16
+msgid "Page Contents"
+msgstr ""
 

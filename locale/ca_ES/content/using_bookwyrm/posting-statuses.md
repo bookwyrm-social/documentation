@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Publicar a BookWyrm comença amb un llibre. Els usuaris poden comentar llibres en progrés o llegits fa poc des de la secció "Els teus llibres" o des de la pàgina d'inici d'un llibre. Des d'aquí, els usuaris poden respondre o iniciar una conversa. Les publicacions de BookWyrm pot incloure estils com negreta, cursiva i enllaços fent ús de [Markdown](https://www.markdownguide.org/cheat-sheet/).

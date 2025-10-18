@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Publicar en BookWyrm empieza con un libro. Usuarios pueden comentar sobre libros que están en leyendo o ya han acabado en la sección de "Tus Libros" o desde la página de inicio de un libro. Desde ahí, los usuarios pueden responder y empezar una conversación. Las publicaciones de BookWyrm incluyen formatos como negritas, itálicas y enlaces usando [lenguaje de marcado](https://www.markdownguide.org/cheat-sheet/).

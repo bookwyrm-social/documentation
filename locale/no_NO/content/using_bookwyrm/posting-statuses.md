@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Å poste på BookWyrm starter med en bok. Brukere kan kommentere på underveis eller nylig leste bøker fra «Dine bøker»-seksjonen, eller fra en boks landingsside. Derfra kan brukere svare på og starte nye samtaler. BookWyrm-innlegg kan inkludere formatering som fet skrift, kursiv og lenker ved bruk av [Markdown](https://www.markdownguide.org/cheat-sheet/).

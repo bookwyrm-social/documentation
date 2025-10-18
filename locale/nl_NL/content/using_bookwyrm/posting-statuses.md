@@ -1,5 +1,5 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 4
+Title: Posting Statuses Date: 2025-05-26 Order: 5
 - - -
 
 Plaatsen op BookWyrm begint met een boek. Gebruikers kunnen commentaar geven op de voortgang of recent gelezen boeken vanuit het "Jouw boeken" gedeelte, of vanaf de landingspagina van een boek. Vanaf daar kunnen gebruikers antwoorden en een gesprek beginnen. BookWyrm publicaties kunnen opmaak zoals dikgedrukt, schuingedrukt en koppelingen bevatten met behulp van [Markdown](https://www.markdownguide.org/cheat-sheet/).
