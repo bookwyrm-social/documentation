@@ -24,7 +24,8 @@ default_locale = "en_US"  # pylint: disable=invalid-name
 locales = []
 for dirpath, dirnames, filenames in os.walk(localedir):
     for dirname in dirnames:
-        locales.append(dirname)
+        if os.path.exists(f"{localedir}/{dirname}/LC_MESSAGES/messages.mo"):
+            locales.append(dirname)
     break
 
 all_translations = {}
