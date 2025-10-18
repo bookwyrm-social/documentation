@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-08 05:35+0000\n"
-"PO-Revision-Date: 2025-09-08 07:09\n"
+"POT-Creation-Date: 2025-10-18 10:28+0000\n"
+"PO-Revision-Date: 2025-10-18 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Greek\n"
 "Language: el_GR\n"
@@ -56,61 +56,61 @@ msgstr "Κώδικας"
 #: templates/layout.html:47 templates/layout.html:124 templates/layout.html:51
 #: templates/layout.html:130 templates/layout.html:52 templates/layout.html:131
 #: templates/layout.html:137 templates/layout.html:35 templates/layout.html:138
-#: templates/layout.html:145 templates/layout.html:146
+#: templates/layout.html:146 templates/layout.html:149
 msgid "Documentation"
 msgstr "Documentation"
 
 #: templates/layout.html:95 templates/layout.html:101 templates/layout.html:102
 #: templates/layout.html:108 templates/layout.html:109
-#: templates/layout.html:116 templates/layout.html:117
+#: templates/layout.html:117 templates/layout.html:120
 msgid "<strong>BookWyrm</strong> is collaborative, anti-corporate software maintained by <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 msgstr "<strong>Το BookWyrm</strong> είναι συνεργατικό, αντι-εταιρικό λογισμικό που συντηρείται από <a href='https://www.mousereeve.com/'>Mouse Reeve</a>."
 
 #: templates/layout.html:98 templates/layout.html:104 templates/layout.html:105
 #: templates/layout.html:111 templates/layout.html:112
-#: templates/layout.html:119 templates/layout.html:120
+#: templates/layout.html:120 templates/layout.html:123
 msgid "Support BookWyrm on <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 msgstr "Υποστηρίξτε το BookWyrm στο <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>."
 
 #: templates/layout.html:102 templates/layout.html:108
 #: templates/layout.html:109 templates/layout.html:115
-#: templates/layout.html:116 templates/layout.html:123
-#: templates/layout.html:124
+#: templates/layout.html:116 templates/layout.html:124
+#: templates/layout.html:127
 msgid "Get Involved"
 msgstr "Συμμετοχή"
 
 #: templates/layout.html:104 templates/layout.html:110
 #: templates/layout.html:111 templates/layout.html:117
-#: templates/layout.html:118 templates/layout.html:125
-#: templates/layout.html:126
+#: templates/layout.html:118 templates/layout.html:126
+#: templates/layout.html:129
 msgid "BookWyrm on GitHub"
 msgstr "BookWyrm on GitHub"
 
 #: templates/layout.html:107 templates/layout.html:113
 #: templates/layout.html:114 templates/layout.html:120
-#: templates/layout.html:121 templates/layout.html:128
-#: templates/layout.html:129
+#: templates/layout.html:121 templates/layout.html:129
+#: templates/layout.html:132
 msgid "Contribute to this page"
 msgstr "Συνεισφέρετε σε αυτή τη σελίδα"
 
 #: templates/layout.html:122 templates/layout.html:128
 #: templates/layout.html:129 templates/layout.html:135
-#: templates/layout.html:136 templates/layout.html:143
-#: templates/layout.html:144
+#: templates/layout.html:136 templates/layout.html:144
+#: templates/layout.html:147
 msgid "Learn more"
 msgstr "Μάθετε περισσότερα"
 
 #: templates/layout.html:127 templates/layout.html:133
 #: templates/layout.html:134 templates/layout.html:140
-#: templates/layout.html:141 templates/layout.html:148
-#: templates/layout.html:149
+#: templates/layout.html:141 templates/layout.html:149
+#: templates/layout.html:152
 msgid "Contact maintainer"
 msgstr "Επικοινωνία με συντηρητή"
 
 #: templates/layout.html:130 templates/layout.html:136
 #: templates/layout.html:137 templates/layout.html:143
-#: templates/layout.html:144 templates/layout.html:151
-#: templates/layout.html:152
+#: templates/layout.html:144 templates/layout.html:152
+#: templates/layout.html:155
 msgid "License"
 msgstr "Άδεια χρήσης"
 
@@ -120,5 +120,9 @@ msgstr ""
 
 #: templates/page.html:16
 msgid "Page Contents"
+msgstr ""
+
+#: templates/layout.html:115
+msgid "Can't find what you are looking for, or see something wrong? <a href='https://github.com/bookwyrm-social/documentation/issues'>Log an Issue to help us improve this documentation!</a>"
 msgstr ""
 
