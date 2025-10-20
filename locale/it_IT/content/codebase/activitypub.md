@@ -84,9 +84,9 @@ Questo metodo prende una stringa JSON di ActivityPub e cerca di trasformarla in 
 
 This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. This is how we process **outgoing** ActivityPub objects.
 
-### Example - Users
+### Esempio - Utenti
 
-A BookWyrm user [is defined in `models/user.py`](https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py):
+Un utente BookWyrm [ è definito in `models/user.py`](https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py):
 
 ```py
 class User(OrderedCollectionPageMixin, AbstractUser):
