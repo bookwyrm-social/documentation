@@ -21,7 +21,7 @@ The features are growing every month, and there is plenty of room for suggestion
     - Store started/stopped/finished reading dates, as well as progress updates along the way
     - Aggiorna chi ti segue sull'attività di lettura (opzionalmente, e con controlli sulla privacy)
     - Crea liste di libri che possono essere aperte al contributo di chiunque, curate o modificate solo dal creatore
-    - Create groups with other BookWyrm users and collaborate with group-owned lists
+    - Crea gruppi con altri utenti BookWyrm e collabora con liste gestite da gruppi
 - Federazione con Activitypub
     - Trasmetti e ricevi stati e attività dell'utente
     - Condividere i dati dei libri tra istanze per creare un database di metadati in rete
