@@ -39,7 +39,7 @@ It shows books that you've recently interacted with on Bookwyrm, and a search ba
 Currently, the search is limited to book titles (see issue [#3607](https://github.com/bookwyrm-social/bookwyrm/issues/3607)).
 Once you find the one you want, use the 'Add' button to add it to the List.
 
-### Notes
+### Note
 
 You can add a "Note" to each book in a List, which could be used to explain why it was added.
 Notes are added when a book is first added, or at any time with the 'Add notes' button.

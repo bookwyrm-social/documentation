@@ -120,3 +120,34 @@ This runs a local web server at `http://[::1]:8080/` so you can see what the doc
 ### nero
 
 This will run `black` to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in `content`.
+
+## Notes for documentation maintainers
+
+### Translations
+
+Keep translations aligned by regularly updating from Crowdin:
+
+1. Translations are updated in Crowdin
+2. Crowdin pushes new translations to l10n_main as they are available
+3. In your fork, `pull` both `main` and `l10n_main` so they are up to date in your local repository
+4. Create a new fork from `main` (e.g. called `update_locales`) and check it out
+5. merge `l10n_main`'s `locale` directory into your fork: `git checkout l10n_main -- locale`
+6. make adjustments if necessary
+7. push your local branch up to your remote and create a pull request
+8. pull the PR into `main`
+9. There is now a new reference file in en_US
+10. Using the changes in the new reference file, translations are updated in Crowdin...
+
+Locales for the language dropdown are listed in `i18n.py`. Generally we wait for a language to have 70% coverage in Crowdin before adding it to the list to avoid too much content remaining untranslated.
+
+### Updating when a new version is released
+
+When a new version of BookWyrm is released we need to create a new version of the docs:
+
+1. Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. `v0.8.0`.
+
+2. Add that branch name to the list of versions in `generate.py` in the `main` branch of the docs
+
+3. Check out every other version in turn, and merge the updated generation file into it so they all have the new branch listed: `git checkout main generate.py`. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.
+
+4. Merge the change in the `main` branch last - only merges into `main` trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect.

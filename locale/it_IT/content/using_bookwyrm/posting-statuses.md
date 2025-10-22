@@ -21,7 +21,7 @@ Ci sono tre tipi di post che gli utenti possono creare direttamente in risposta 
 | Valutazione      | ✔          |          |           |          |
 | Campo del titolo | ✔          |          |           |          |
 
-#### Spoiler alerts
+#### Allerte spoiler
 
 Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.
 
