@@ -166,11 +166,11 @@ Documentation
             </li>
             
             <li>
-                <a href="/v0.8.0/de/optional_features.html" class="has-background-inherit" >Optionale Funktionen</a>
+                <a href="/v0.8.0/de/external-storage.html" class="has-background-inherit" >External Storage</a>
             </li>
             
             <li>
-                <a href="/v0.8.0/de/external-storage.html" class="has-background-inherit" >External Storage</a>
+                <a href="/v0.8.0/de/optional_features.html" class="has-background-inherit" >Optionale Funktionen</a>
             </li>
             
             <li>
@@ -199,11 +199,11 @@ Documentation
             </li>
             
             <li>
-                <a href="/v0.8.0/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
+                <a href="/v0.8.0/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
             <li>
-                <a href="/v0.8.0/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.8.0/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
             </li>
             
         </ul>
@@ -279,6 +279,15 @@ Documentation
                       
                   
               
+                  <a class="navbar-item" href="#notes-for-documentation-maintainers">Notes for documentation maintainers</a>
+                  
+                      
+                      <a class="navbar-item" href="#translations"><span class="pl-4">Translations</span></a>
+                      
+                      <a class="navbar-item" href="#updating-when-a-new-version-is-released"><span class="pl-4">Updating when a new version is released</span></a>
+                      
+                  
+              
             </div>
           </div>
     </div>
@@ -313,26 +322,22 @@ Documentation
 <h3 id="clone-the-repository"><a class="headerlink" href="#clone-the-repository">Clone the repository</a></h3>
 <ol>
 <li>Make sure you have <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">a GitHub account</a>.</li>
-<li>
-<p>Create a "clone" or "fork" of the Documentation repository:</p>
+<li>Create a "clone" or "fork" of the Documentation repository:</li>
+</ol>
 <ul>
 <li>From the <strong>web interface</strong>, click "Fork" at the top of <a href="https://github.com/bookwyrm-social/documentation">this page</a></li>
 <li>If you are using <strong>GitHub Desktop</strong>, follow <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop">these instructions</a></li>
 <li>If you are using the command line, run:</li>
 </ul>
 <p><code>git clone https://github.com/bookwyrm-social/documentation.git</code></p>
-</li>
-</ol>
 <h3 id="create-a-new-branch-and-make-your-edits"><a class="headerlink" href="#create-a-new-branch-and-make-your-edits">Create a new branch and make your edits</a></h3>
 <p>To make changes:</p>
 <ol>
 <li><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue">Create a new branch</a> in your fork</li>
-<li>Make your edits in the <code>content</code> directory and <strong>commit</strong> your changes:<ul>
-<li><a href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">GitHub web interface</a></li>
-<li><a href="https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop">GitHub Desktop</a></li>
-<li>On the command line save your changes to the files and run <code>git commit</code></li>
-</ul>
-</li>
+<li>Make your edits in the <code>content</code> directory and <strong>commit</strong> your changes:
+   - <a href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">GitHub web interface</a>
+   - <a href="https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop">GitHub Desktop</a>
+   - On the command line save your changes to the files and run <code>git commit</code></li>
 </ol>
 <p>At this point you might want to see what your changes will look like when published. See <a href="#building-docs-locally">Building docs locally</a> below for instruction on how to preview your changes.</p>
 <h3 id="create-a-pull-request"><a class="headerlink" href="#create-a-pull-request">Create a pull request</a></h3>
@@ -377,6 +382,38 @@ Documentation
 <p>This runs a local web server at <code>http://[::1]:8080/</code> so you can see what the docs will look like.</p>
 <h3 id="black"><a class="headerlink" href="#black">black</a></h3>
 <p>This will run <code>black</code> to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in <code>content</code>.</p>
+<h2 id="notes-for-documentation-maintainers"><a class="headerlink" href="#notes-for-documentation-maintainers">Notes for documentation maintainers</a></h2>
+<h3 id="translations"><a class="headerlink" href="#translations">Translations</a></h3>
+<p>Keep translations aligned by regularly updating from Crowdin:</p>
+<ol>
+<li>Translations are updated in Crowdin</li>
+<li>Crowdin pushes new translations to l10n_main as they are available</li>
+<li>In your fork, <code>pull</code> both <code>main</code> and <code>l10n_main</code> so they are up to date in your local repository</li>
+<li>Create a new fork from <code>main</code> (e.g. called <code>update_locales</code>) and check it out</li>
+<li>merge <code>l10n_main</code>'s <code>locale</code> directory into your fork: <code>git checkout l10n_main -- locale</code></li>
+<li>make adjustments if necessary</li>
+<li>push your local branch up to your remote and create a pull request</li>
+<li>pull the PR into <code>main</code></li>
+<li>There is now a new reference file in en_US</li>
+<li>Using the changes in the new reference file, translations are updated in Crowdin...</li>
+</ol>
+<p>Locales for the language dropdown are listed in <code>i18n.py</code>. Generally we wait for a language to have 70% coverage in Crowdin before adding it to the list to avoid too much content remaining untranslated.</p>
+<h3 id="updating-when-a-new-version-is-released"><a class="headerlink" href="#updating-when-a-new-version-is-released">Updating when a new version is released</a></h3>
+<p>When a new version of BookWyrm is released we need to create a new version of the docs:</p>
+<ol>
+<li>
+<p>Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. <code>v0.8.0</code>.</p>
+</li>
+<li>
+<p>Add that branch name to the list of versions in <code>generate.py</code> in the <code>main</code> branch of the docs</p>
+</li>
+<li>
+<p>Check out every other version in turn, and merge the updated generation file into it so they all have the new branch listed: <code>git checkout main generate.py</code>. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.</p>
+</li>
+<li>
+<p>Merge the change in the <code>main</code> branch last - only merges into <code>main</code> trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect.</p>
+</li>
+</ol>
 </section>
 
             </section>
