@@ -1,12 +1,12 @@
 ---
-Title: Groups
+Title: Gruppi
 Date: 26-05-2025
 Order: 12
 ---
 
-You can join or create a Group with others on Bookwyrm.
-There are many things a group could be made for - a book club, a bunch of friends, whatever makes sense for you.
-Groups can curate book [Lists](lists.html) together, but that's about it right now.
+Puoi unirti o creare un Gruppo con altri su Bookwyrm.
+Ci sono molte ragioni per le quali un gruppo può essere creato - può servire ad un club di lettura, un gruppo di amici o per qualsiasi altro motivo abbia senso per te.
+I gruppi possono curare [Liste](lists.html) di libri assieme, per adesso è disponibile questa unica funzione.
 Currently, the Bookwyrm developers are focusing on other things, not groups, but they will be improved in the future.
 
 To find the groups page, first navigate to your profile, then open the 'Groups' tab.
@@ -24,7 +24,7 @@ Groups have the same privacy settings as posts and lists do, except they can't b
 Group membership always requires an invitation from the group's owner, even if it is marked Public.
 Per maggiori dettagli [leggi qui](/privacy-controls.html#groups).
 
-### Adding and removing users
+### Aggiungere e rimuovere utenti
 
 Groups are currently limited only to members on the current instance.
 To add members, search their username in the search bar, then click 'Invite'.
@@ -32,11 +32,11 @@ To remove members, click the 'Remove' button and then 'Confirm'.
 
 ## Group membership
 
-### Joining a group
+### Unirsi ad un gruppo
 
-To join a group, you must be on the same instance (website) and be invited by its owner.
-You will then receive a notification which lets you join.
-The group owner is marked with a star symbol.
+Per unirsi ad un gruppo, dovete essere sulla stessa istanza (sito web) ed essere invitati dal suo proprietario.
+Riceverai poi una notifica che ti permetterà di unirti al gruppo.
+Il proprietario del gruppo viene identificato tramite un simbolo a forma di stella.
 
 ### Using group Lists
 
