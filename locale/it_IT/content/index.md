@@ -5,7 +5,7 @@ Titolo: Benvenuto Data: 13-04-2021
 BookWyrm è un social network per monitorare la lettura, parlare di libri, scrivere recensioni, e scoprire cosa leggere dopo. La Federazione permette agli utenti di BookWyrm di unirsi a piccole comunità di fiducia che possono connettersi tra loro e con altri servizi ActivityPub come Mastodon e Pleroma.
 
 ## Funzionalità
-The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
+Le funzionalità vengono aggiunte ogni mese, e c'è un sacco di spazio per suggerimenti e idee. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
 
 - Pubblicazioni sui libri
     - Componi le recensioni, con o senza valutazioni, che vengono aggregate nella pagina del libro
