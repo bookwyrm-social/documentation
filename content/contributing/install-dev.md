@@ -8,6 +8,8 @@ Order: 5
 
 These instructions assume you are developing BookWyrm using Docker. You'll need to [install Docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to get started.
 
+_If you are contributing to BookWyrm in a dockerless development environment we would love for you to [help us update this guide](/documentation.html) to include instructions for setting up a dockerless development environment_.
+
 ## Setting up the developer environment
 
 ### Get the code
