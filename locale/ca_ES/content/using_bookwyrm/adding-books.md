@@ -6,9 +6,9 @@ Order: 3
 
 Hi ha diferents vies per tal d'afegir llibres a la teva instància de BookWyrm! Quan no trobis el llibre que estàs cercant, prova aquestes opcions per ordre -- és millor fer una importació que crear un des de zero.
 
-## Importing data about your books and reading
+## Important les dades dels teus llibres i finalitzant
 
-If you're coming to BookWyrm from another platform for tracking books and reading, you may want to import your books and reading data. Currently BookWyrm is capable of importing export files from the following platforms:
+Si veniu a BookWyrm des d'una altra plataforma per fer el seguiment dels llibres i la lectura, és possible que vulgueu importar els vostres llibres i les vostres dades de lectura. Actualment BookWyrm és capaç d'importar fitxers d'exportació des de les següents plataformes:
 
 * Calibre (CSV)
 * Goodreads (CSV)
@@ -17,9 +17,9 @@ If you're coming to BookWyrm from another platform for tracking books and readin
 * Storygraph (CSV)
 * OpenReads (CSV)
 
-Under 'Settings' navigate to 'Import Book List', select the matching data source, select your file and, if relevant, select whether to import reviews and what privacy setting to give them. When you press 'Import' a background task will begin to import your data. You will be notified when it has finished.
+A 'Configuració' navegueu a 'Importa la llista de llibres', seleccioneu la font de dades que coincideixi, seleccioneu el vostre fitxer i, si és rellevant, seleccioneu si voleu importar ressenyes i quina configuració de privadesa voleu donar-los. Quan premeu «Importa», una tasca en segon pla començarà a importar les vostres dades. Se't notificarà quan hagi acabat.
 
-It is important to understand that the import process does not import data directly from the other service - in many cases (e.g. Goodreads) this is not possible. When you import a data file, BookWyrm will search the local database, connected BookWyrm servers, and selected public data sources to find a match. For this reason, BookWyrm may not be able to import all of your data. We are always looking for new data sources with free and open APIs, especially for data about books in languages other than English. If you are aware of such a data source, please consider [creating an Issue](https://github.com/bookwyrm-social/bookwyrm/issues),
+És important entendre que el procés d'importació no importa dades directament de l'altre servei - en molts casos (per exemple, Goodreads) això no és possible. Quan importeu un fitxer de dades, BookWyrm cercarà la base de dades local, els servidors BookWyrm connectats i les fonts de dades públiques seleccionades per trobar una coincidència. For this reason, BookWyrm may not be able to import all of your data. We are always looking for new data sources with free and open APIs, especially for data about books in languages other than English. If you are aware of such a data source, please consider [creating an Issue](https://github.com/bookwyrm-social/bookwyrm/issues),
 
 ## Carregar llibres d'altres catàlegs
 
