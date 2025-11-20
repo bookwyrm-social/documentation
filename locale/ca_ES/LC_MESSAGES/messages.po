@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bookwyrm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-18 10:28+0000\n"
-"PO-Revision-Date: 2025-10-18 11:27\n"
+"PO-Revision-Date: 2025-11-20 06:56\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca_ES\n"
@@ -124,5 +124,5 @@ msgstr "Contingut de la pàgina"
 
 #: templates/layout.html:115
 msgid "Can't find what you are looking for, or see something wrong? <a href='https://github.com/bookwyrm-social/documentation/issues'>Log an Issue to help us improve this documentation!</a>"
-msgstr ""
+msgstr "No trobes el que busques, o veus alguna cosa malament? <a href='https://github.com/bookwyrm-social/documentation/issues'>Registra un problema per ajudar-nos a millorar aquesta documentació!</a>"
 
