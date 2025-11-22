@@ -1,37 +1,37 @@
 ---
-Title: User Migration and Aliases
+Title: Migracja użytkowników i aliasy
 Date: 2024-01-06
 Order: 21
 ---
 
-You can migrate your account between BookWyrm instances, and/or set up an _alias_ between any ActivityPub account and your BookWyrm acccount.
+Możesz przenosić swoje konto między instancjami BookWyrm i/lub ustawić _alias_ między dowolnym kontem ActivityPub i swoim kontem BookWyrm.
 
-## Exporting account data
+## Eksportowanie danych konta
 
-You can export your account data at any time, however there will be a limit on how often you can do this, set by your instance admin. When you create an export file a process will run in the background and you will be notified when it is completed and ready for download. Export files are in `tar.gz` format.
+Możesz eksportować dane swojego konta w dowolnym momencie, ale administrator instancji może ustawić limit częstotliwości wykonywania tego zadania. Podczas tworzenia pliku eksportu w tle zostanie uruchomiony proces i otrzymasz powiadomienie, gdy zostanie zakończony, a plik będzie gotowy do pobrania. Pliki eksportu mają format „tar.gz”.
 
-Account export files include:
+Pliki eksportu konta zawierają:
 
-- User profile and avatar
-- Most user settings
-- Reading goals
-- Shelves
-- Reading history
-- Book reviews
-- Statuses
-- Your own lists and saved lists
-- Which users you follow and block
+- Profil i obraz użytkownika
+- Większość ustawień użytkownika
+- Cele czytania
+- Półki
+- Historię czytania
+- Recenzje książek
+- Statusy
+- Twoje własne listy i zapisane listy
+- Obserwowanych i zablokowanych użytkowników
 
-Exports do _not_ include:
+Eksporty _nie_ zawierają:
 
-- Direct messages
-- Replies to your statuses
-- Groups
-- Favorites
+- Wiadomości bezpośrednich
+- Odpowiedzi na Twoje statusy
+- Grup
+- Ulubionych
 
-## Aliases
+## Aliasy
 
-An _alias_ indicates to ActivityPub software that two accounts represent and are controlled by the same person. You can assign any ActivityPub account as an alias of your BookWyrm account by navigating to `Settings - Aliases`.
+_Alias_ wskazuje oprogramowaniu ActivityPub, że dwa konta reprezentują tę samą osobę i należą do niej. Możesz przypisać dowolne konto ActivityPub jako alias swojego konta BookWyrm, przechodząc do „Ustawienia - Aliasy”.
 
 Setting an account as an alias is easily reversible, and is required to migrate accounts.
 
