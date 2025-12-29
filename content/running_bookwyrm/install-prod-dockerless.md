@@ -14,7 +14,7 @@ This install method assumes you already have ssl configured with certificates av
 - Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars)
 - Set your server up with appropriate firewalls for running a web application (this instruction set is tested against Ubuntu 20.04). Here are instructions for [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04)
 - Set up an email service (such as [Mailgun](https://documentation.mailgun.com/en/latest/quickstart.html)) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS
-- Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev gunicorn`
+- Install dependencies. On debian this could look like `apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev gunicorn gettext-base`
 
 ## Install and configure BookWyrm
 
@@ -26,7 +26,7 @@ Instructions for running BookWyrm in production without Docker:
 	`mkdir /opt/bookwyrm && cd /opt/bookwyrm`
 - Get the application code, note that this only clones the `production` branch:
     `git clone https://github.com/bookwyrm-social/bookwyrm.git --branch production --single-branch ./`
-- Create your environment variables file, `cp .env.example .env`, and update the following. Passwords should generally be enclosed in "quotation marks":
+- Create your environment variables file, `cp .env.example .env`, and update the following. Passwords should generally be enclosed in "quotation marks". You can use `bw-dev create_secrets` to generate passwords in `.env`-file:
     - `SECRET_KEY` | A difficult to guess, secret string of characters.
     - `DOMAIN` | Your web domain
     - `POSTGRES_PASSWORD` | Set a secure password for the database
@@ -45,17 +45,19 @@ mkdir /var/cache/nginx
 chown www-data:www-data /var/cache/nginx
 ```
 - Configure nginx
-    - Copy the server_config to nginx's conf.d: `cp nginx/server_config /etc/nginx/conf.d/server_config`
-    - Make a copy of the production template config and set it for use in nginx: `cp nginx/production /etc/nginx/sites-available/bookwyrm.conf`
-    - Update nginx `bookwyrm.conf`:
-        - Replace `your-domain.com` with your domain name everywhere in the file (including the lines that are currently commented out)
+    - Copy the server_config to nginx's conf.d: `cp nginx/locations /etc/nginx/conf.d/locations`
+    - Update nginx `/etc/nginx/conf.d/locations`:
         - Replace `/app` with your install directory `/opt/bookwyrm` everywhere in the file (including commented out)
-        - Uncomment [lines 23 to 111](https://github.com/bookwyrm-social/bookwyrm/blob/production/nginx/production#L23-L111) to enable
-            forwarding to HTTPS. You should have two `server` blocks enabled
-        - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations
-        - Change [line 4](https://github.com/chdorner/secretbearlibrary/blob/main/bookwyrm/bookwyrm-nginx.conf#L4) so that it says
-            `server localhost:8000`. You may choose a different port here if you wish
-        - If you are running another web-server on your host machine, you will need to follow the [reverse-proxy instructions](/reverse-proxy.html)
+    - Make a copy of the production template config and set it for use in nginx:
+        - Set env-variables for DOMAIN and MAX_UPLOAD_MiB so envsubst can populate nginx templates. For example `export DOMAIN=your-web-domain MAX_UPLOAD_MiB=100`
+        - `envsubst '$DOMAIN,$MAX_UPLOAD_MiB' < nginx/server_config > /etc/nginx/conf.d/server_config`
+        - `envsubst '$DOMAIN,$MAX_UPLOAD_MiB' < nginx/server_name > /etc/nginx/conf.d/server_name`
+        - `envsubst '$DOMAIN,$MAX_UPLOAD_MiB' < nginx/https.conf > /etc/nginx/sites-available/bookwyrm.conf`
+    - If you are running another web-server on your host machine, you should use following command to use nginx as reverse-proxy:
+        `envsubst '$DOMAIN,$MAX_UPLOAD_MiB' < nginx/reverse_proxy.conf > /etc/nginx/sites-available/bookwyrm.conf`
+    - Update nginx `/etc/nginx/sites-available/bookwyrm.conf`:
+        - Change the `ssl_certificate` and `ssl_certificate_key` paths to your fullchain and privkey locations if you are not using nginx as reverse-proxy
+        - Change upstream addresses in lines 4 and 7 to `server localhost:8000` and `server localhost:8888`. You may choose a different port here if you wish
     - Enable the nginx config:
         `ln -s /etc/nginx/sites-available/bookwyrm.conf /etc/nginx/sites-enabled/bookwyrm.conf`
      - Reload nginx: `systemctl reload nginx`
