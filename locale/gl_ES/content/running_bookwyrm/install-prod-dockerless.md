@@ -98,13 +98,13 @@ c6c35779-af3a-4091-b330-c026610920d6
 ```
 - The application should now be running at your domain. When you load the domain, you should get a configuration page to confirm your instance settings, and a form to create an admin account. Use your admin code to register.
 
-Congrats! You did it!! Configure your instance however you'd like.
+Parabéns! Conseguíchelo! Configura a túa instancia como máis che guste.
 
-## Finding log files
+## Atopar os ficheiros do rexistro
 
-Like all software, BookWyrm can contain bugs, and often these bugs are in the Python code and easiest to reproduce by getting more context from the logs.
+Como todo software, BookWyrm pode fallar, habitualmente estes problemas proceden do código Python e o xeito máis doado de reproducilos é obtendo máis contexto nos rexistros.
 
-If you use the provided `systemd` service configurations from `contrib/systemd` you will be able to read the logs with `journalctl`:
+Se usas o servizo `systemd` proporcionado as configuracións de `contrib/systemd` poderás ler os rexistros con `journalctl`:
 
 ``` { .sh }
 # viewing logs of the web process
