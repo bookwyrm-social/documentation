@@ -1,19 +1,19 @@
 - - -
-Title: Developer Environment Date: 2025-05-26 Order: 5
+Title: Entwicklungsumgebung Date: 2025-05-12 Order: 5
 - - -
 
 ## Voraussetzungen
 
-Diese Anweisungen gehen davon aus, dass du BookWyrm mit Docker entwickelst. Du musst [Docker](https://docs.docker.com/engine/install/) und [docker-compose](https://docs.docker.com/compose/install/) installieren, um loszulegen.
+Diese Anleitung geht davon aus, dass du BookWyrm mit Docker entwickelst. Du musst [Docker](https://docs.docker.com/engine/install/) und [docker-compose](https://docs.docker.com/compose/install/) installieren, bevor Du loslegst.
 
 ## Entwicklungsumgebung einrichten
 
-### Get the code
+### Den Quellcode erhalten
 
-1. Kopiere die [der BookWyrm-Codebasis von GitHub](https://github.com/bookwyrm-social/bookwyrm). Du kannst [einen Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) des Projekts erstellen und [verwende dann `git clone`, um den Code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) auf deinen Computer herunterzuladen.
-2. Gehe in das Verzeichnis, das den Code auf Ihrem Computer enthält. Du arbeitest von hier aus.
-3. Development occurs on the `main` branch, so ensure that is the branch you have checked out: `git checkout main`
-4. Richte deine Datei für Entwicklungsumgebungsvariablen durch Kopieren der Beispielumgebungsdatei (`.env.example`) in eine neue Datei namens `.env` ein. In der Kommandozeile kannst du das wie folgt tun:
+1. Kopiere den [BookWyrm-Quellcode von GitHub](https://github.com/bookwyrm-social/bookwyrm). Du kannst [einen Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) des Projekts erstellen und [dann `git clone` ausführen, um den Quellcode](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) auf deinen Computer herunterzuladen.
+2. Gehe in das Verzeichnis, das den Quellcodeode auf Ihrem Computer enthält. Von jetzt an arbeitest Du aus diesem Verzeichnis heraus.
+3. Die Entwicklung wird auf dem `main`-Branch durchgeführt. Stelle also sicher, dass du diesen Branch ausgecheckt hast: `git checkout main`
+4. Erstelle eine Datei für Umgebungsvariablen für die Entwicklung durch Kopieren der Beispieldatei für Umgebungsvariablen (`.env.example`) in eine neue Datei namens `.env` ein. Falls Du die Kommandozeile nutzt, kannst du das wie folgt tun:
 ``` { .sh }
 cp .env.example .env
 ```
