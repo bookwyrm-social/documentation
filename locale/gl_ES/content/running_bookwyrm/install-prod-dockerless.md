@@ -1,12 +1,12 @@
 ---
 Title: Installing Without Docker
-Date: 2023-8-19
+Date: 19-8-2023
 Order: 2
 ---
 
-This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.
+Este proxecto aínda é moi novo e, por agora, non é moi estable polo que actúa con tino cando o utilices en produción.
 
-This method of installation is more involved, and therefore is for more experienced admins. **Docker install is the recommended method** as there may not be much support available for Dockerless installation. If you have expertise in this area, we would love your help to improve this documentation!
+Esta forma de instalación require máis atención, polo que é máis axeitada para administradoras con experiencia. **Docker install is the recommended method** as there may not be much support available for Dockerless installation. If you have expertise in this area, we would love your help to improve this documentation!
 
 This install method assumes you already have ssl configured with certificates available.
 
@@ -107,18 +107,18 @@ Como todo software, BookWyrm pode fallar, habitualmente estes problemas proceden
 Se usas o servizo `systemd` proporcionado as configuracións de `contrib/systemd` poderás ler os rexistros con `journalctl`:
 
 ``` { .sh }
-# viewing logs of the web process
+# ver rexistros dos procesos web
 journalctl -u bookwyrm
 
-# viewing logs of the worker process
+# ver rexistros dos procesos das tarefas
 journalctl -u bookwyrm-worker
 
-# viewing logs of the scheduler process
+# ver rexistros dos procesos programados
 journalctl -u bookwyrm-scheduler
 ```
-Feel free to explore additional ways of slicing and dicing logs with flags documented in `journalctl --help`.
+Animámoste a explorar outros xeitos de examinar os rexistros usando os modificadores documentados en `journalctl --help`.
 
-While BookWyrm's application logs will most often be enough, you can find logs for other services like Nginx, PostgreSQL, or Redis are usually in `.log` files located somewhere in `/var/logs`.
+Aínda que os rexistros de BookWyrm adoitan abondar, podes mirar o rexistro de outros servizos como Nginx, PostgreSQL ou Redis, que adoitan ter ficheiros `.log` nalgún lugar dentro de `/var/logs`.
 
 ## Get Involved
 
