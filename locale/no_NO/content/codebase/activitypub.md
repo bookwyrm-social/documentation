@@ -1,10 +1,10 @@
 - - -
-Title: ActivityPub Date: 2025-04-21 Order: 1
+Tittel: ActivityPub Dato: 2025-04-21 Rekkefølge: 1
 - - -
 
 BookWyrm bruker [ActivityPub](http://activitypub.rocks/)-protokollen for å sende og motta brukeraktivitet mellom andre BookWyrm-instanser og andre tjenester som implementerer ActivityPub, som [Mastodon](https://joinmastodon.org/). For å håndtere bokdata, har BookWyrm en håndfull utvidede aktivitetstyper som ikke er en del av standarden, men er forståelige for andre BookWyrm-instanser.
 
-To view the ActivityPub data for a BookWyrm entity (user, book, list, etc) you can usually add `.json` to the end of the URL. e.g. `https://www.example.com/user/sam.json` and see the JSON in your web browser or via an http request (e.g. using `curl`).
+For å se ActivityPub-data for en BookWyrm enhet (bruker, bok, liste, osv.) kan du vanligvis legge til `.json` til slutten av URL-en. f.eks. `https://www.eksempel.no/user/ola.json` og se JSON-fila i nettleseren eller via en http-forespørsel (f.eks. ved bruk av `curl`).
 
 ## Aktiviteter og objekter
 
@@ -18,7 +18,7 @@ Interaksjoner for brukerrelasjoner følger standard ActivityPub-spesifikasjon.
 - `Update`: oppdaterer brukerens profil og innstillinger
 - `Delete`: deaktiverer en bruker
 - `Undo`: reverserer en `Follow` eller `Block`
-- `Move`: communicate that a user has changed their ID and has moved to a new server. Most ActivityPub software will "follow" the user to the new identity. BookWyrm sends a notification to followers and requires them to confirm they want to follow the user to their new identity.
+- `Flytt`: kommunisere at en bruker har endret sin ID og flyttet til en ny server. De fleste ActivityPub-programvare vil "følge" brukeren til den nye identiteten. BookWyrm sender et varsel til følgere og krever at de bekrefter at de vil følge brukeren sin nye identitet.
 
 ### Statuser
 #### Objekttyper
