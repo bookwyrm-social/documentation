@@ -128,7 +128,7 @@ Time before being logged out (in seconds). The default is equivalent to 30 days.
 - **Type**: Integer
 - **Default**: `100`
 
-Maximum allowed memory for file uploads. You can increase this if users are having trouble uploading BookWyrm export files. The real Django setting is `DATA_UPLOAD_MAX_MEMORY_SIZE`, however we use this setting in `.env` to allow instance admins to set the value [in mebibytes](https://en.wikipedia.org/wiki/Byte#Multiple-byte_units) rather than bytes.
+Maximum allowed memory for file uploads. You can increase this if users are having trouble uploading BookWyrm export files. El ajuste real de Django es `DATA_UPLOAD_MAX_MEMORY_SIZE`, sin embargo usamos este ajuste en `.env` para permitirles a los administradores de instancias establecer el valor [en mebibytes](https://en.wikipedia.org/wiki/Byte#Multiple-byte_units) en vez de bytes.
 
 ## Basic BookWyrm site settings
 

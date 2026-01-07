@@ -82,7 +82,7 @@ Questo metodo prende una stringa JSON di ActivityPub e cerca di trasformarla in 
 
 **`serializza`**
 
-This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. This is how we process **outgoing** ActivityPub objects.
+This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. Questo è il modo in cui elaboriamo oggetti ActivityPub **outgoing**.
 
 ### Esempio - Utenti
 
