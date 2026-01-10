@@ -1,153 +1,151 @@
 ---
-Title: Documentation
+Title: Documentação
 Date: 2025-04-09
 Order: 4
 ---
 
-The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.
+A documentação que você está lendo agora é mantida pela comunidade BookWyrm. Qualquer um pode contribuir com a documentação.
 
-## Suggesting an improvement
+## Sugerindo melhorias
 
-You can report an **error**, suggest an **improvement** or request an **addition** to the documentation by [creating an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) in [the documentation repository](https://github.com/bookwyrm-social/documentation).
+Você pode relatar **erros**, sugerir **melhorias**, ou solicitar uma **adição** à documentação [criando um issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) no [repositório da documentação](https://github.com/bookwyrm-social/documentation).
 
-## How the docs are made
+## Como a documentação é feita
 
-The Documentation [has its own GitHub repository](https://github.com/bookwyrm-social/documentation). Documentation is written in Markdown and we use [Jinja](https://jinja.palletsprojects.com/en/stable) and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).
+A documentação [possui seu próprio repositório GitHub](https://github.com/bookwyrm-social/documentation). A documentação é escrita em Markdown e usamos [Jinja](https://jinja.palletsprojects.com/en/stable) e Python para a converter em HTML. Um plugin Jinja é usado com Crowdin para criar traduções. Todos os arquivos fonte devem ser escritos em Inglês (US).
 
-All source files are saved in the `content` directory. Each section has a directory within that, with each page being represented by a single markdown file.
+Todos os arquivos fonte são salvos no diretório `content`. Cada seção tem um diretório dentro dele, com cada página sendo um único arquivo markdown.
 
-## Editing or creating a documentation page
+## Editando ou criando uma página da de documentação
 
-To edit or create a new page you will need to:
+Para criar ou editar uma nova página, você vai precisar de:
 
-1. clone [the GitHub repository](https://github.com/bookwyrm-social/documentation)
-2. work in the `content` directory to make your changes - either editing an existing markdown page or creating a new one
-3. create a new Pull Request
-4. respond to any reviews with further edits
-5. enjoy seeing your updates instantly published when your pull request is approved and merged
+1. clonar [o repositório do GitHub](https://github.com/bookwyrm-social/documentation)
+2. fazer suas mudanças no diretório `content` - seja editando uma página markdown existente, ou criando uma nova
+3. criar um novo Pull Request
+4. responder a quaisquer revisões com as edições necessárias
+5. comemorar ao ver suas atualizações instantaneamente publicadas quando seu pull request for aceito e aplicado
 
-If you have never used git or GitHub before, that may sound daunting, but let's break it down:
+Se você nunca usou git ou GitHub antes, isso tudo pode soar um tanto desafiador, mas, vamos simplificar:
 
-### Clone the repository
+### Clonar o repositório
 
-1. Make sure you have [a GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github).
-2. Create a "clone" or "fork" of the Documentation repository:
+1. Certifique-se de que você tem [uma conta GitHub](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github).
+2. Crie um "clone" ou "fork" do repositório da Documentação:
 
-   - From the **web interface**, click "Fork" at the top of [this page](https://github.com/bookwyrm-social/documentation)
-   - If you are using **GitHub Desktop**, follow [these instructions](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
-   - If you are using the command line, run:
+   - Na **interface web**, clique em "Fork", no topo da [esta página](https://github.com/bookwyrm-social/documentation)
+   - Se estiver usando o **GitHub Desktop**, siga [essas instruções](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
+   - Se você estiver usando a linha de comando, execute:
 
    `git clone https://github.com/bookwyrm-social/documentation.git`
 
-### Create a new branch and make your edits
+### Crie um novo branch e faça suas edições
 
-To make changes:
+Para fazer alterações:
 
-1. [Create a new branch](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) in your fork
-2. Make your edits in the `content` directory and **commit** your changes:
-   - [GitHub web interface](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
+1. [Crie um novo branch](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) no seu fork
+2. Faça suas edições no diretório `content` e faça um **commit** das suas alterações:
+   - [Interface GitHub web](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
    - [GitHub Desktop](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop)
-   - On the command line save your changes to the files and run `git commit`
+   - Na linha de comando, salve suas alterações nos arquivos e execute `git commit`
 
-At this point you might want to see what your changes will look like when published. See [Building docs locally](#building-docs-locally) below for instruction on how to preview your changes.
+A esse ponto, você deve querer ver como suas mudanças serão mostradas quando publicadas. Veja [Criando documentação localmente](#building-docs-locally) abaixo, para instruções sobre como pré-visualizar suas alterações.
 
-### Create a pull request
+### Criando um pull request
 
-Once you have completed your changes, [make a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to the docs repository.
+Assim que concluir suas alterações, [faça um pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) ao repositório da documentação.
 
-Your pull request will be reviewed and one of three things will happen:
+Seu pull request será revisado e uma das três coisas vai acontecer:
 
-1. It will be **merged** with no changes
-2. You will be asked to make **changes**
-3. It will be **rejected** and closed
+1. Ele será **incorporado** sem alterações
+2. Você será solicitado a fazer **alterações**
+3. Ele será **rejeitado** e fechado
 
-### Respond to reviews
+### Responder a revisões
 
-If you are asked to make changes, you can make them locally and `push` your local changes to your fork/clone on GitHub. This will automatically flow through to your pull request. Let the reviewer know when you have completed your updates so they can do another review and hopefully "pull" your changes.
+Se pedirem para fazer alterações, você pode fazê-las localmente e fazer `push` das suas mudanças locais para seu fork/clone no Github. This will automatically flow through to your pull request. Let the reviewer know when you have completed your updates so they can do another review and hopefully "pull" your changes.
 
-We welcome all contributions. It would be unusual for a contribution to the docs to be rejected immediately. This would only happen if your pull request introduces information that is wrong or misleading with no chance of being improved, or if it has been declared out of scope.
+Todas as contribuições são bem-vindas. Seria incomum que uma contribuição para a documentação fosse rejeitada imediatamente. Isso só aconteceria se seu pull request apresentasse informações erradas ou que são enganosas, sem chance de melhorias, ou se for declarado como fora de escopo.
 
-### Your changes are published
+### Suas alterações são publicadas
 
-When your pull request is merged, [the documentation](https://docs.joinbookwyrm.com/) is automatically updated. You may need to refresh your browser or use "incognito mode" to see the changes in your browser.
+Quando seu pull request é incorporado, [a documentação](https://docs.joinbookwyrm.com/) é atualizada automaticamente. Pode ser necessário recarregar a página ou usar o "modo anônimo" para ver as mudanças em seu navegador.
 
-## New pages
+## Novas páginas
 
-If you are adding a new page, you will need to add some metadata and may need to adjust other pages.
+Se estiver adicionando uma nova página, você precisará adicionar alguns metadados, e pode precisar ajustar outras páginas.
 
-At the top of each markdown file is the "frontmatter" in `toml` format:
+No topo de cada arquivo markdown está o "frontmatter" em formato `toml`:
 
 ```toml
-Title: Documentation
-Date: 2025-04-09
-Order: 4
+Título: Documentação
+Data: 2025-04-09
+Ordem: 4
 ```
 
-This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, `Contributing`), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.
+Esse exemplo mostra que a página é chamada "Documentação", deve ser a quarta página dentro de sua seção (neste caso, `Contribuindo`), e que a última atualização foi em 9 de Abril de 2025. Se você adicionar uma página em qualquer lugar que não seja no fim de uma seção, você vai precisar ajustar a ordem das outras páginas que aparecerem abaixo de sua nova página.
 
-This section is contained within a pair of triple dashes (`---`). In markdown, triple dashes can also be used to indicate a horizontal rule, however the BookWyrm docs parser can get confused by this. If you need a horizontal rule, enter it as HTML code directly with blank lines above and below:
+Esta seção está contida entre um par de traços triplos (`---`). Em markdown, traços triplos podem ser usados para indicar uma linha horizontal, no entanto, o parser de documentos do BookWyrm pode ficar confuso com isso. Se você precisar de uma linha horizontal, insira-a como código HTML diretamente com linhas vazias, acima e abaixo
 
 ```html
-
-<hr/>
-
+<0/>
 ```
 
-## Building docs locally
+## Criando documentação localmente
 
-You might want to see what your changes will look like before sending a pull request. The docs repository includes a development script like the main code repository, with the same name: `bw-dev`. You can use this to test what your changes will look like.
+Você pode querer ver como suas alterações serão mostradas antes de enviar um pull request. O repositório da documentação inclui um script de desenvolvimento igual ao do repositório de código principal, com o mesmo nome: `bw-dev`. Você pode usar isso para testar como suas alterações serão mostradas.
 
-Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you [use a virtual environment](https://docs.python.org/3/library/venv.html):
+Diferente do projeto principal, a documentação não é executada em um contêiner Docker. Se você quiser compilar o site da documentação localmente, você vai precisar instalar as dependências. É recomendado [usar um ambiente virtual](https://docs.python.org/3/library/venv.html):
 
 ```py
 python -m venv /path/to/new/virtual/environment
-source <venv>/bin/activate
+source <command>/bin/activate
 pip install -r requirements.txt
 ```
 
-There are a number of commands available by running `./bw-dev <command>`. The ones you are likely to want to use are:
+Você pode ver alguns comandos disponíveis ao executar `./bw-dev <venv>`. Os que você provavelmente quer, são:
 
 ### site:compile
 
-This will compile markdown files into html files using the `generate.py` script.
+Isso irá compilar arquivos markdown em arquivos html usando o script `generate.py`.
 
-When you run `site:compile` it will generate a large number of files in the `site` directory. Do not check these in or include them in your pull request: they will be re-generated on the documentation server when your pull request is merged.
+Quando você executar `site:compile`, irá gerar um grande número de arquivos no diretório `site`. Não os marque ou inclua em seu pull request: eles serão gerados novamente, no servidor da documentação, quando seu pull request for incorporado.
 
 ### site:serve
 
-This runs a local web server at `http://[::1]:8080/` so you can see what the docs will look like.
+Isso roda um servidor local em `http://[::1]:8080/` para que você possa ver como a documentação será apresentada.
 
 ### black
 
-This will run `black` to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in `content`.
+Isso irá executar o comando `black` para analisar seus arquivos e evitar erros usando nossas verificações automatizadas. É improvável que você vá precisar disso se estiver apenas atualizando os arquivos fonte da documentação em `content`.
 
-## Notes for documentation maintainers
+## Notas para mantenedores da documentação
 
-### Translations
+### Traduções
 
-Keep translations aligned by regularly updating from Crowdin:
+Mantenha traduções alinhadas atualizando regularmente do Crowdin:
 
-1. Translations are updated in Crowdin
-2. Crowdin pushes new translations to l10n_main as they are available
-3. In your fork, `pull` both `main` and `l10n_main` so they are up to date in your local repository
-4. Create a new fork from `main` (e.g. called `update_locales`) and check it out
-5. merge `l10n_main`'s `locale` directory into your fork: `git checkout l10n_main -- locale`
-6. make adjustments if necessary
-7. push your local branch up to your remote and create a pull request
-8. pull the PR into `main`
-9. There is now a new reference file in en_US
-10. Using the changes in the new reference file, translations are updated in Crowdin...
+1. Traduções são atualizadas no Crowdin
+2. Crowdin faz push de novas atualizações para o l10n_main assim que elas estiverem disponíveis
+3. No seu fork, faça `pull` tanto do `main`, quanto do `l10n_main` , para eles estarem atualizados em seu repositório local
+4. Crie um fork a partir do `main` (p. ex. chamado `update_locales`) e mude pare ele
+5. faça merge do diretório `locale` do  `l10n_main` no seu fork: `git checkout l10n_main -- locale`
+6. faça ajustes, se necessário
+7. faça push do seu branch local para o seu branch remoto e faça um pull request
+8. faça pull do PR para `main`
+9. Agora há um novo arquivo de referência em en_US
+10. Usando as alterações no novo arquivo de referência, as traduções são atualizadas no Crowdin...
 
-Locales for the language dropdown are listed in `i18n.py`. Generally we wait for a language to have 70% coverage in Crowdin before adding it to the list to avoid too much content remaining untranslated.
+Idiomas para o menu dropdown de idiomas, estão listados em `i18n.py`. Geralmente, esperamos que um idioma atinja 70% de cobertura no Crowdin antes de adicioná-lo à lista, para evitar deixar muito conteúdo sem tradução.
 
-### Updating when a new version is released
+### Atualizando quando uma nova versão for lançada
 
-When a new version of BookWyrm is released we need to create a new version of the docs:
+Quando uma nova versão do BookWyrm é lançada, precisamos criar uma versão da documentação.
 
-1. Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. `v0.8.0`.
+1. Adicione uma nova branch com o nome igual à nova tag de versão no BookWyrm. p. ex.: `v0.8.0`.
 
-2. Add that branch name to the list of versions in `generate.py` in the `main` branch of the docs
+2. Adicione o nome da branch na lista de versões em `generate.py` na branch `main` da documentação
 
-3. Check out every other version in turn, and merge the updated generation file into it so they all have the new branch listed: `git checkout main generate.py`. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.
+3. Faça checkout das outras versões e faça merge do arquivo de geração atualizado nelas para que todas tenham a nova branch listada: `git checkout main generate.py`. Em seguida, faça commit desta alteração, crie uma PR para fazer merge desta mudança na branch da versão na documentação, e faça merge dela. Isso garantirá que todas as páginas de todas as versões da documentação estarão listadas no menu dropdown.
 
-4. Merge the change in the `main` branch last - only merges into `main` trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect.
+4. Faça merge na branch main por último - apenas merges na main acionam a ação do GitHub de deploy no servidor da documentação. Se você fizer isso primeiro, as mudanças nas outras branches não terão efeito.
