@@ -63,7 +63,7 @@ Seu pull request será revisado e uma das três coisas vai acontecer:
 
 ### Responder a revisões
 
-Se pedirem para fazer alterações, você pode fazê-las localmente e fazer `push` das suas mudanças locais para seu fork/clone no Github. This will automatically flow through to your pull request. Let the reviewer know when you have completed your updates so they can do another review and hopefully "pull" your changes.
+Se pedirem para fazer alterações, você pode fazê-las localmente e fazer `push` das suas mudanças locais para seu fork/clone no Github. Isso aparecerá automaticamente na sua pull request. Avise o revisor quando terminar suas atualizações para que ele possa fazer outra revisão e, com sorte, aceitar suas mudanças.
 
 Todas as contribuições são bem-vindas. Seria incomum que uma contribuição para a documentação fosse rejeitada imediatamente. Isso só aconteceria se seu pull request apresentasse informações erradas ou que são enganosas, sem chance de melhorias, ou se for declarado como fora de escopo.
 
