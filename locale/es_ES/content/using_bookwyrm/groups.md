@@ -1,19 +1,19 @@
 ---
-Title: Groups
+Title: Grupos
 Date: 2025-05-26
 Order: 12
 ---
 
-You can join or create a Group with others on Bookwyrm.
-There are many things a group could be made for - a book club, a bunch of friends, whatever makes sense for you.
+Puedes unirte o crear un grupo con otras personas en Bookwyrm.
+Hay muchas cosas que un grupo puede hacer —un club de libros, un montón de amistades, todo lo que tenga sentido para ti—.
 Groups can curate book [Lists](lists.html) together, but that's about it right now.
 Currently, the Bookwyrm developers are focusing on other things, not groups, but they will be improved in the future.
 
 To find the groups page, first navigate to your profile, then open the 'Groups' tab.
 
-## Group administration
+## Administración de grupos
 
-### Creating a group
+### Crear un grupo
 
 On the top right of the groups page is the 'Create group' button.
 You will then need to give it a name and describe what it is about, before choosing its privacy setting.
@@ -30,9 +30,9 @@ Groups are currently limited only to members on the current instance.
 To add members, search their username in the search bar, then click 'Invite'.
 To remove members, click the 'Remove' button and then 'Confirm'.
 
-## Group membership
+## Miembros del grupo
 
-### Joining a group
+### Unirse a un grupo
 
 To join a group, you must be on the same instance (website) and be invited by its owner.
 You will then receive a notification which lets you join.
