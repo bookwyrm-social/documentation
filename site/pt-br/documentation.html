@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Documentation
+Documentação
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -201,7 +201,7 @@ Documentation
             </li>
             
             <li>
-                <a href="/pt-br/documentation.html" class="has-background-inherit" class="is-active">Documentation</a>
+                <a href="/pt-br/documentation.html" class="has-background-inherit" class="is-active">Documentação</a>
             </li>
             
             <li>
@@ -250,31 +250,31 @@ Documentation
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#suggesting-an-improvement">Suggesting an improvement</a>
+                  <a class="navbar-item" href="#sugerindo-melhorias">Sugerindo melhorias</a>
                   
               
-                  <a class="navbar-item" href="#how-the-docs-are-made">How the docs are made</a>
+                  <a class="navbar-item" href="#como-a-documentacao-e-feita">Como a documentação é feita</a>
                   
               
-                  <a class="navbar-item" href="#editing-or-creating-a-documentation-page">Editing or creating a documentation page</a>
+                  <a class="navbar-item" href="#editando-ou-criando-uma-pagina-da-de-documentacao">Editando ou criando uma página da de documentação</a>
                   
                       
-                      <a class="navbar-item" href="#clone-the-repository"><span class="pl-4">Clone the repository</span></a>
+                      <a class="navbar-item" href="#clonar-o-repositorio"><span class="pl-4">Clonar o repositório</span></a>
                       
-                      <a class="navbar-item" href="#create-a-new-branch-and-make-your-edits"><span class="pl-4">Create a new branch and make your edits</span></a>
+                      <a class="navbar-item" href="#crie-um-novo-branch-e-faca-suas-edicoes"><span class="pl-4">Crie um novo branch e faça suas edições</span></a>
                       
-                      <a class="navbar-item" href="#create-a-pull-request"><span class="pl-4">Create a pull request</span></a>
+                      <a class="navbar-item" href="#criando-um-pull-request"><span class="pl-4">Criando um pull request</span></a>
                       
-                      <a class="navbar-item" href="#respond-to-reviews"><span class="pl-4">Respond to reviews</span></a>
+                      <a class="navbar-item" href="#responder-a-revisoes"><span class="pl-4">Responder a revisões</span></a>
                       
-                      <a class="navbar-item" href="#your-changes-are-published"><span class="pl-4">Your changes are published</span></a>
+                      <a class="navbar-item" href="#suas-alteracoes-sao-publicadas"><span class="pl-4">Suas alterações são publicadas</span></a>
                       
-                  
-              
-                  <a class="navbar-item" href="#new-pages">New pages</a>
                   
               
-                  <a class="navbar-item" href="#building-docs-locally">Building docs locally</a>
+                  <a class="navbar-item" href="#novas-paginas">Novas páginas</a>
+                  
+              
+                  <a class="navbar-item" href="#criando-documentacao-localmente">Criando documentação localmente</a>
                   
                       
                       <a class="navbar-item" href="#sitecompile"><span class="pl-4">site:compile</span></a>
@@ -285,12 +285,12 @@ Documentation
                       
                   
               
-                  <a class="navbar-item" href="#notes-for-documentation-maintainers">Notes for documentation maintainers</a>
+                  <a class="navbar-item" href="#notas-para-mantenedores-da-documentacao">Notas para mantenedores da documentação</a>
                   
                       
-                      <a class="navbar-item" href="#translations"><span class="pl-4">Translations</span></a>
+                      <a class="navbar-item" href="#traducoes"><span class="pl-4">Traduções</span></a>
                       
-                      <a class="navbar-item" href="#updating-when-a-new-version-is-released"><span class="pl-4">Updating when a new version is released</span></a>
+                      <a class="navbar-item" href="#atualizando-quando-uma-nova-versao-for-lancada"><span class="pl-4">Atualizando quando uma nova versão for lançada</span></a>
                       
                   
               
@@ -304,120 +304,120 @@ Documentation
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Documentation</h1>
+<h1 class="title is-1">Documentação</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.</p>
-<h2 id="suggesting-an-improvement"><a class="headerlink" href="#suggesting-an-improvement">Suggesting an improvement</a></h2>
-<p>You can report an <strong>error</strong>, suggest an <strong>improvement</strong> or request an <strong>addition</strong> to the documentation by <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue">creating an issue</a> in <a href="https://github.com/bookwyrm-social/documentation">the documentation repository</a>.</p>
-<h2 id="how-the-docs-are-made"><a class="headerlink" href="#how-the-docs-are-made">How the docs are made</a></h2>
-<p>The Documentation <a href="https://github.com/bookwyrm-social/documentation">has its own GitHub repository</a>. Documentation is written in Markdown and we use <a href="https://jinja.palletsprojects.com/en/stable">Jinja</a> and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).</p>
-<p>All source files are saved in the <code>content</code> directory. Each section has a directory within that, with each page being represented by a single markdown file.</p>
-<h2 id="editing-or-creating-a-documentation-page"><a class="headerlink" href="#editing-or-creating-a-documentation-page">Editing or creating a documentation page</a></h2>
-<p>To edit or create a new page you will need to:</p>
+    <p>A documentação que você está lendo agora é mantida pela comunidade BookWyrm. Qualquer um pode contribuir com a documentação.</p>
+<h2 id="sugerindo-melhorias"><a class="headerlink" href="#sugerindo-melhorias">Sugerindo melhorias</a></h2>
+<p>Você pode relatar <strong>erros</strong>, sugerir <strong>melhorias</strong>, ou solicitar uma <strong>adição</strong> à documentação <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue">criando um issue</a> no <a href="https://github.com/bookwyrm-social/documentation">repositório da documentação</a>.</p>
+<h2 id="como-a-documentacao-e-feita"><a class="headerlink" href="#como-a-documentacao-e-feita">Como a documentação é feita</a></h2>
+<p>A documentação <a href="https://github.com/bookwyrm-social/documentation">possui seu próprio repositório GitHub</a>. A documentação é escrita em Markdown e usamos <a href="https://jinja.palletsprojects.com/en/stable">Jinja</a> e Python para a converter em HTML. Um plugin Jinja é usado com Crowdin para criar traduções. Todos os arquivos fonte devem ser escritos em Inglês (US).</p>
+<p>Todos os arquivos fonte são salvos no diretório <code>content</code>. Cada seção tem um diretório dentro dele, com cada página sendo um único arquivo markdown.</p>
+<h2 id="editando-ou-criando-uma-pagina-da-de-documentacao"><a class="headerlink" href="#editando-ou-criando-uma-pagina-da-de-documentacao">Editando ou criando uma página da de documentação</a></h2>
+<p>Para criar ou editar uma nova página, você vai precisar de:</p>
 <ol>
-<li>clone <a href="https://github.com/bookwyrm-social/documentation">the GitHub repository</a></li>
-<li>work in the <code>content</code> directory to make your changes - either editing an existing markdown page or creating a new one</li>
-<li>create a new Pull Request</li>
-<li>respond to any reviews with further edits</li>
-<li>enjoy seeing your updates instantly published when your pull request is approved and merged</li>
+<li>clonar <a href="https://github.com/bookwyrm-social/documentation">o repositório do GitHub</a></li>
+<li>fazer suas mudanças no diretório <code>content</code> - seja editando uma página markdown existente, ou criando uma nova</li>
+<li>criar um novo Pull Request</li>
+<li>responder a quaisquer revisões com as edições necessárias</li>
+<li>comemorar ao ver suas atualizações instantaneamente publicadas quando seu pull request for aceito e aplicado</li>
 </ol>
-<p>If you have never used git or GitHub before, that may sound daunting, but let's break it down:</p>
-<h3 id="clone-the-repository"><a class="headerlink" href="#clone-the-repository">Clone the repository</a></h3>
+<p>Se você nunca usou git ou GitHub antes, isso tudo pode soar um tanto desafiador, mas, vamos simplificar:</p>
+<h3 id="clonar-o-repositorio"><a class="headerlink" href="#clonar-o-repositorio">Clonar o repositório</a></h3>
 <ol>
-<li>Make sure you have <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">a GitHub account</a>.</li>
-<li>Create a "clone" or "fork" of the Documentation repository:</li>
+<li>Certifique-se de que você tem <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">uma conta GitHub</a>.</li>
+<li>Crie um "clone" ou "fork" do repositório da Documentação:</li>
 </ol>
 <ul>
-<li>From the <strong>web interface</strong>, click "Fork" at the top of <a href="https://github.com/bookwyrm-social/documentation">this page</a></li>
-<li>If you are using <strong>GitHub Desktop</strong>, follow <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop">these instructions</a></li>
-<li>If you are using the command line, run:</li>
+<li>Na <strong>interface web</strong>, clique em "Fork", no topo da <a href="https://github.com/bookwyrm-social/documentation">esta página</a></li>
+<li>Se estiver usando o <strong>GitHub Desktop</strong>, siga <a href="https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop">essas instruções</a></li>
+<li>Se você estiver usando a linha de comando, execute:</li>
 </ul>
 <p><code>git clone https://github.com/bookwyrm-social/documentation.git</code></p>
-<h3 id="create-a-new-branch-and-make-your-edits"><a class="headerlink" href="#create-a-new-branch-and-make-your-edits">Create a new branch and make your edits</a></h3>
-<p>To make changes:</p>
+<h3 id="crie-um-novo-branch-e-faca-suas-edicoes"><a class="headerlink" href="#crie-um-novo-branch-e-faca-suas-edicoes">Crie um novo branch e faça suas edições</a></h3>
+<p>Para fazer alterações:</p>
 <ol>
-<li><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue">Create a new branch</a> in your fork</li>
-<li>Make your edits in the <code>content</code> directory and <strong>commit</strong> your changes:
-   - <a href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">GitHub web interface</a>
+<li><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue">Crie um novo branch</a> no seu fork</li>
+<li>Faça suas edições no diretório <code>content</code> e faça um <strong>commit</strong> das suas alterações:
+   - <a href="https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files">Interface GitHub web</a>
    - <a href="https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop">GitHub Desktop</a>
-   - On the command line save your changes to the files and run <code>git commit</code></li>
+   - Na linha de comando, salve suas alterações nos arquivos e execute <code>git commit</code></li>
 </ol>
-<p>At this point you might want to see what your changes will look like when published. See <a href="#building-docs-locally">Building docs locally</a> below for instruction on how to preview your changes.</p>
-<h3 id="create-a-pull-request"><a class="headerlink" href="#create-a-pull-request">Create a pull request</a></h3>
-<p>Once you have completed your changes, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">make a pull request</a> to the docs repository.</p>
-<p>Your pull request will be reviewed and one of three things will happen:</p>
+<p>A esse ponto, você deve querer ver como suas mudanças serão mostradas quando publicadas. Veja <a href="#building-docs-locally">Criando documentação localmente</a> abaixo, para instruções sobre como pré-visualizar suas alterações.</p>
+<h3 id="criando-um-pull-request"><a class="headerlink" href="#criando-um-pull-request">Criando um pull request</a></h3>
+<p>Assim que concluir suas alterações, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">faça um pull request</a> ao repositório da documentação.</p>
+<p>Seu pull request será revisado e uma das três coisas vai acontecer:</p>
 <ol>
-<li>It will be <strong>merged</strong> with no changes</li>
-<li>You will be asked to make <strong>changes</strong></li>
-<li>It will be <strong>rejected</strong> and closed</li>
+<li>Ele será <strong>incorporado</strong> sem alterações</li>
+<li>Você será solicitado a fazer <strong>alterações</strong></li>
+<li>Ele será <strong>rejeitado</strong> e fechado</li>
 </ol>
-<h3 id="respond-to-reviews"><a class="headerlink" href="#respond-to-reviews">Respond to reviews</a></h3>
-<p>If you are asked to make changes, you can make them locally and <code>push</code> your local changes to your fork/clone on GitHub. This will automatically flow through to your pull request. Let the reviewer know when you have completed your updates so they can do another review and hopefully "pull" your changes.</p>
-<p>We welcome all contributions. It would be unusual for a contribution to the docs to be rejected immediately. This would only happen if your pull request introduces information that is wrong or misleading with no chance of being improved, or if it has been declared out of scope.</p>
-<h3 id="your-changes-are-published"><a class="headerlink" href="#your-changes-are-published">Your changes are published</a></h3>
-<p>When your pull request is merged, <a href="https://docs.joinbookwyrm.com/">the documentation</a> is automatically updated. You may need to refresh your browser or use "incognito mode" to see the changes in your browser.</p>
-<h2 id="new-pages"><a class="headerlink" href="#new-pages">New pages</a></h2>
-<p>If you are adding a new page, you will need to add some metadata and may need to adjust other pages.</p>
-<p>At the top of each markdown file is the "frontmatter" in <code>toml</code> format:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="p">:</span><span class="w"> </span><span class="n">Documentation</span>
-<span class="n">Date</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
-<span class="n">Order</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<h3 id="responder-a-revisoes"><a class="headerlink" href="#responder-a-revisoes">Responder a revisões</a></h3>
+<p>Se pedirem para fazer alterações, você pode fazê-las localmente e fazer <code>push</code> das suas mudanças locais para seu fork/clone no GitHub. Isso aparecerá automaticamente na sua pull request. Avise o revisor quando terminar suas atualizações para que ele possa fazer outra revisão e, com sorte, aceitar suas mudanças.</p>
+<p>Todas as contribuições são bem-vindas. Seria incomum que uma contribuição para a documentação fosse rejeitada imediatamente. Isso só aconteceria se seu pull request apresentasse informações erradas ou que são enganosas, sem chance de melhorias, ou se for declarado como fora de escopo.</p>
+<h3 id="suas-alteracoes-sao-publicadas"><a class="headerlink" href="#suas-alteracoes-sao-publicadas">Suas alterações são publicadas</a></h3>
+<p>Quando seu pull request é incorporado, <a href="https://docs.joinbookwyrm.com/">a documentação</a> é atualizada automaticamente. Pode ser necessário recarregar a página ou usar o "modo anônimo" para ver as mudanças em seu navegador.</p>
+<h2 id="novas-paginas"><a class="headerlink" href="#novas-paginas">Novas páginas</a></h2>
+<p>Se estiver adicionando uma nova página, você precisará adicionar alguns metadados, e pode precisar ajustar outras páginas.</p>
+<p>No topo de cada arquivo markdown está o "frontmatter" em formato <code>toml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Título</span><span class="p">:</span><span class="w"> </span><span class="n">Documentação</span>
+<span class="n">Data</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
+<span class="n">Ordem</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 </code></pre></div>
 
-<p>This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, <code>Contributing</code>), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.</p>
-<p>This section is contained within a pair of triple dashes (<code>---</code>). In markdown, triple dashes can also be used to indicate a horizontal rule, however the BookWyrm docs parser can get confused by this. If you need a horizontal rule, enter it as HTML code directly with blank lines above and below:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+<p>Esse exemplo mostra que a página é chamada "Documentação", deve ser a quarta página dentro de sua seção (neste caso, <code>Contribuindo</code>), e que a última atualização foi em 9 de Abril de 2025. Se você adicionar uma página em qualquer lugar que não seja no fim de uma seção, você vai precisar ajustar a ordem das outras páginas que aparecerem abaixo de sua nova página.</p>
+<p>Esta seção está contida entre um par de traços triplos (<code>---</code>). Em markdown, traços triplos podem ser usados para indicar uma linha horizontal, no entanto, o parser de documentos do BookWyrm pode ficar confuso com isso. Se você precisar de uma linha horizontal, insira-a como código HTML diretamente com linhas vazias, acima e abaixo</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">0</span><span class="p">/&gt;</span>
 </code></pre></div>
 
-<h2 id="building-docs-locally"><a class="headerlink" href="#building-docs-locally">Building docs locally</a></h2>
-<p>You might want to see what your changes will look like before sending a pull request. The docs repository includes a development script like the main code repository, with the same name: <code>bw-dev</code>. You can use this to test what your changes will look like.</p>
-<p>Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you <a href="https://docs.python.org/3/library/venv.html">use a virtual environment</a>:</p>
+<h2 id="criando-documentacao-localmente"><a class="headerlink" href="#criando-documentacao-localmente">Criando documentação localmente</a></h2>
+<p>Você pode querer ver como suas alterações serão mostradas antes de enviar um pull request. O repositório da documentação inclui um script de desenvolvimento igual ao do repositório de código principal, com o mesmo nome: <code>bw-dev</code>. Você pode usar isso para testar como suas alterações serão mostradas.</p>
+<p>Diferente do projeto principal, a documentação não é executada em um contêiner Docker. Se você quiser compilar o site da documentação localmente, você vai precisar instalar as dependências. É recomendado <a href="https://docs.python.org/3/library/venv.html">usar um ambiente virtual</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
-<span class="n">source</span> <span class="o">&lt;</span><span class="n">venv</span><span class="o">&gt;/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">source</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </code></pre></div>
 
-<p>There are a number of commands available by running <code>./bw-dev &lt;command&gt;</code>. The ones you are likely to want to use are:</p>
+<p>Você pode ver alguns comandos disponíveis ao executar <code>./bw-dev &lt;venv&gt;</code>. Os que você provavelmente quer, são:</p>
 <h3 id="sitecompile"><a class="headerlink" href="#sitecompile">site:compile</a></h3>
-<p>This will compile markdown files into html files using the <code>generate.py</code> script.</p>
-<p>When you run <code>site:compile</code> it will generate a large number of files in the <code>site</code> directory. Do not check these in or include them in your pull request: they will be re-generated on the documentation server when your pull request is merged.</p>
+<p>Isso irá compilar arquivos markdown em arquivos html usando o script <code>generate.py</code>.</p>
+<p>Quando você executar <code>site:compile</code>, irá gerar um grande número de arquivos no diretório <code>site</code>. Não os marque ou inclua em seu pull request: eles serão gerados novamente, no servidor da documentação, quando seu pull request for incorporado.</p>
 <h3 id="siteserve"><a class="headerlink" href="#siteserve">site:serve</a></h3>
-<p>This runs a local web server at <code>http://[::1]:8080/</code> so you can see what the docs will look like.</p>
+<p>Isso roda um servidor local em <code>http://[::1]:8080/</code> para que você possa ver como a documentação será apresentada.</p>
 <h3 id="black"><a class="headerlink" href="#black">black</a></h3>
-<p>This will run <code>black</code> to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in <code>content</code>.</p>
-<h2 id="notes-for-documentation-maintainers"><a class="headerlink" href="#notes-for-documentation-maintainers">Notes for documentation maintainers</a></h2>
-<h3 id="translations"><a class="headerlink" href="#translations">Translations</a></h3>
-<p>Keep translations aligned by regularly updating from Crowdin:</p>
+<p>Isso irá executar o comando <code>black</code> para analisar seus arquivos e evitar erros usando nossas verificações automatizadas. É improvável que você vá precisar disso se estiver apenas atualizando os arquivos fonte da documentação em <code>content</code>.</p>
+<h2 id="notas-para-mantenedores-da-documentacao"><a class="headerlink" href="#notas-para-mantenedores-da-documentacao">Notas para mantenedores da documentação</a></h2>
+<h3 id="traducoes"><a class="headerlink" href="#traducoes">Traduções</a></h3>
+<p>Mantenha traduções alinhadas atualizando regularmente do Crowdin:</p>
 <ol>
-<li>Translations are updated in Crowdin</li>
-<li>Crowdin pushes new translations to l10n_main as they are available</li>
-<li>In your fork, <code>pull</code> both <code>main</code> and <code>l10n_main</code> so they are up to date in your local repository</li>
-<li>Create a new fork from <code>main</code> (e.g. called <code>update_locales</code>) and check it out</li>
-<li>merge <code>l10n_main</code>'s <code>locale</code> directory into your fork: <code>git checkout l10n_main -- locale</code></li>
-<li>make adjustments if necessary</li>
-<li>push your local branch up to your remote and create a pull request</li>
-<li>pull the PR into <code>main</code></li>
-<li>There is now a new reference file in en_US</li>
-<li>Using the changes in the new reference file, translations are updated in Crowdin...</li>
+<li>Traduções são atualizadas no Crowdin</li>
+<li>Crowdin faz push de novas atualizações para o l10n_main assim que elas estiverem disponíveis</li>
+<li>No seu fork, faça <code>pull</code> tanto do <code>main</code>, quanto do <code>l10n_main</code> , para eles estarem atualizados em seu repositório local</li>
+<li>Crie um fork a partir do <code>main</code> (p. ex. chamado <code>update_locales</code>) e mude pare ele</li>
+<li>faça merge do diretório <code>locale</code> do  <code>l10n_main</code> no seu fork: <code>git checkout l10n_main -- locale</code></li>
+<li>faça ajustes, se necessário</li>
+<li>faça push do seu branch local para o seu branch remoto e faça um pull request</li>
+<li>faça pull do PR para <code>main</code></li>
+<li>Agora há um novo arquivo de referência em en_US</li>
+<li>Usando as alterações no novo arquivo de referência, as traduções são atualizadas no Crowdin...</li>
 </ol>
-<p>Locales for the language dropdown are listed in <code>i18n.py</code>. Generally we wait for a language to have 70% coverage in Crowdin before adding it to the list to avoid too much content remaining untranslated.</p>
-<h3 id="updating-when-a-new-version-is-released"><a class="headerlink" href="#updating-when-a-new-version-is-released">Updating when a new version is released</a></h3>
-<p>When a new version of BookWyrm is released we need to create a new version of the docs:</p>
+<p>Idiomas para o menu dropdown de idiomas, estão listados em <code>i18n.py</code>. Geralmente, esperamos que um idioma atinja 70% de cobertura no Crowdin antes de adicioná-lo à lista, para evitar deixar muito conteúdo sem tradução.</p>
+<h3 id="atualizando-quando-uma-nova-versao-for-lancada"><a class="headerlink" href="#atualizando-quando-uma-nova-versao-for-lancada">Atualizando quando uma nova versão for lançada</a></h3>
+<p>Quando uma nova versão do BookWyrm é lançada, precisamos criar uma versão da documentação.</p>
 <ol>
 <li>
-<p>Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. <code>v0.8.0</code>.</p>
+<p>Adicione uma nova branch com o nome igual à nova tag de versão no BookWyrm. p. ex.: <code>v0.8.0</code>.</p>
 </li>
 <li>
-<p>Add that branch name to the list of versions in <code>generate.py</code> in the <code>main</code> branch of the docs</p>
+<p>Adicione o nome da branch na lista de versões em <code>generate.py</code> na branch <code>main</code> da documentação</p>
 </li>
 <li>
-<p>Check out every other version in turn, and merge the updated generation file into it so they all have the new branch listed: <code>git checkout main generate.py</code>. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.</p>
+<p>Faça checkout das outras versões e faça merge do arquivo de geração atualizado nelas para que todas tenham a nova branch listada: <code>git checkout main generate.py</code>. Em seguida, faça commit desta alteração, crie uma PR para fazer merge desta mudança na branch da versão na documentação, e faça merge dela. Isso garantirá que todas as páginas de todas as versões da documentação estarão listadas no menu dropdown.</p>
 </li>
 <li>
-<p>Merge the change in the <code>main</code> branch last - only merges into <code>main</code> trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect.</p>
+<p>Faça merge na branch main por último - apenas merges na main acionam a ação do GitHub de deploy no servidor da documentação. Se você fizer isso primeiro, as mudanças nas outras branches não terão efeito.</p>
 </li>
 </ol>
 </section>

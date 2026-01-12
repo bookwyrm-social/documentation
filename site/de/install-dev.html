@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Developer Environment
+Entwicklungsumgebung
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -205,7 +205,7 @@ Developer Environment
             </li>
             
             <li>
-                <a href="/de/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
+                <a href="/de/install-dev.html" class="has-background-inherit" class="is-active">Entwicklungsumgebung</a>
             </li>
             
             <li>
@@ -245,10 +245,70 @@ Developer Environment
     <div class="navbar-start">
         <div class="navbar-item has-dropdown" id="toc" data-target="toc-dropdown">
             <a class="navbar-link">
-              Page Contents
+              Seiteninhalt
             </a>
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
+              
+                  <a class="navbar-item" href="#"></a>
+                  
               
                   <a class="navbar-item" href="#"></a>
                   
@@ -2105,20 +2165,20 @@ Developer Environment
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Developer Environment</h1>
+<h1 class="title is-1">Entwicklungsumgebung</h1>
 
                 </header>
                 
 <section class="block content">
     <h2 id="voraussetzungen"><a class="headerlink" href="#voraussetzungen">Voraussetzungen</a></h2>
-<p>Diese Anweisungen gehen davon aus, dass du BookWyrm mit Docker entwickelst. Du musst <a href="https://docs.docker.com/engine/install/">Docker</a> und <a href="https://docs.docker.com/compose/install/">docker-compose</a> installieren, um loszulegen.</p>
+<p>Diese Anleitung geht davon aus, dass du BookWyrm mit Docker entwickelst. Du musst <a href="https://docs.docker.com/engine/install/">Docker</a> und <a href="https://docs.docker.com/compose/install/">docker-compose</a> installieren, bevor Du loslegst.</p>
 <h2 id="entwicklungsumgebung-einrichten"><a class="headerlink" href="#entwicklungsumgebung-einrichten">Entwicklungsumgebung einrichten</a></h2>
-<h3 id="get-the-code"><a class="headerlink" href="#get-the-code">Get the code</a></h3>
+<h3 id="den-quellcode-erhalten"><a class="headerlink" href="#den-quellcode-erhalten">Den Quellcode erhalten</a></h3>
 <ol>
-<li>Kopiere die <a href="https://github.com/bookwyrm-social/bookwyrm">der BookWyrm-Codebasis von GitHub</a>. Du kannst <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">einen Fork</a> des Projekts erstellen und <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">verwende dann <code>git clone</code>, um den Code</a> auf deinen Computer herunterzuladen.</li>
-<li>Gehe in das Verzeichnis, das den Code auf Ihrem Computer enthält. Du arbeitest von hier aus.</li>
-<li>Development occurs on the <code>main</code> branch, so ensure that is the branch you have checked out: <code>git checkout main</code></li>
-<li>Richte deine Datei für Entwicklungsumgebungsvariablen durch Kopieren der Beispielumgebungsdatei (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. In der Kommandozeile kannst du das wie folgt tun:</li>
+<li>Kopiere den <a href="https://github.com/bookwyrm-social/bookwyrm">BookWyrm-Quellcode von GitHub</a>. Du kannst <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">einen Fork</a> des Projekts erstellen und <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">dann <code>git clone</code> ausführen, um den Quellcode</a> auf deinen Computer herunterzuladen.</li>
+<li>Gehe in das Verzeichnis, das den Quellcodeode auf Ihrem Computer enthält. Von jetzt an arbeitest Du aus diesem Verzeichnis heraus.</li>
+<li>Die Entwicklung wird auf dem <code>main</code>-Branch durchgeführt. Stelle also sicher, dass du diesen Branch ausgecheckt hast: <code>git checkout main</code></li>
+<li>Erstelle eine Datei für Umgebungsvariablen für die Entwicklung durch Kopieren der Beispieldatei für Umgebungsvariablen (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. Falls Du die Kommandozeile nutzt, kannst du das wie folgt tun:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 </code></pre></div>
@@ -2171,7 +2231,7 @@ Developer Environment
 <footer id="contentinfo" class="footer">
     <div class="container is-max-desktop">
         <div class="mb-6">
-            <p>Can't find what you are looking for, or see something wrong? <a href='https://github.com/bookwyrm-social/documentation/issues'>Log an Issue to help us improve this documentation!</a></p>
+            <p>Du kannst etwas nicht finden oder hast einen Fehler gefunden? <a href='https://github.com/bookwyrm-social/documentation/issues'>Erstelle einen Issue, um uns zu helfen die Dokumentation zu verbessern!</a></p>
         </div>
         <div class="columns">
             <div class="column content">

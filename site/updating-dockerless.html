@@ -269,7 +269,9 @@ there are changes available in the production branch.</p>
 <p>Run all the following commands, except otherwise noted, as the <code>bookwyrm</code> user:</p>
 <ol>
 <li>Pull in the latest changes on the <code>production</code> branch with <code>git pull</code></li>
-<li>Install potential new Python dependencies <code>venv/bin/pip install -r requirements.txt</code></li>
+<li>Install potential new Python dependencies:
+   - <code>./venv/bin/pip3 install --upgrade "pip&gt;=25.1.0"</code>
+   - <code>./venv/bin/pip3 install --group main</code></li>
 <li>Compile the themes with <code>venv/bin/python3 manage.py compile_themes</code></li>
 <li>Collecting all the static files with <code>venv/bin/python3 manage.py collectstatic --no-input</code> – this also uploads them to <a href="/external-storage.html">external storage</a> if you have this configured</li>
 <li>Migrate the database (it's advisable to create a backup before) with <code>venv/bin/python3 manage.py migrate</code></li>

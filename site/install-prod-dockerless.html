@@ -358,7 +358,8 @@ chown<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/cache
 <li>Make the python venv directory in your install dir:
     <code>python3 -m venv ./venv</code></li>
 <li>Install bookwyrm python dependencies with pip:
-    <code>./venv/bin/pip3 install -r requirements.txt</code></li>
+    <code>./venv/bin/pip3 install --upgrade "pip&gt;=25.1.0"</code>
+    <code>./venv/bin/pip3 install --group main</code></li>
 </ul>
 </li>
 <li>Make the bookwyrm postgresql database. Make sure to change the password to what you set in the <code>.env</code> config:
