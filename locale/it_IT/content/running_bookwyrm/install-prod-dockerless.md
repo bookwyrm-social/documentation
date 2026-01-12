@@ -59,7 +59,7 @@ chown www-data:www-data /var/cache/nginx
      - Ricarica nginx: `systemctl reload nginx`
 - Configura l'ambiente virtuale python
     - Make the python venv directory in your install dir: `python3 -m venv ./venv`
-    - Installa le dipendenze di python di bookwyrm con pip: `./venv/bin/pip3 install -r requirements.txt`
+    - Install bookwyrm python dependencies with pip: `./venv/bin/pip3 install --upgrade "pip>=25.1.0"` `./venv/bin/pip3 install --group main`
 - Crea il database postgresql di bookwyrm. Make sure to change the password to what you set in the `.env` config: `sudo -i -u postgres psql`
 
 ``` { .sql }
