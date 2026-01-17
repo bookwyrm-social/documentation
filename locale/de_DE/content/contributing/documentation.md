@@ -1,77 +1,77 @@
 ---
-Title: Documentation
+Title: Dokumentation
 Date: 2025-04-09
 Order: 4
 ---
 
-The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.
+Die Dokumentation, die du gerade liest, wird von der BookWyrm-Community gepflegt. Jede Person kann zur Dokumentation beitragen.
 
-## Suggesting an improvement
+## Eine Verbesserung vorschlagen
 
-You can report an **error**, suggest an **improvement** or request an **addition** to the documentation by [creating an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) in [the documentation repository](https://github.com/bookwyrm-social/documentation).
+Du kannst einen **Fehler** (engl. error) melden, eine **Verbesserung** (engl. improvement) vorschlagen oder eine **Ergänzung** (engl. addition) zur Dokumentation anfragen, indem du [einen Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) im [Dokumentations-Repository](https://github.com/bookwyrm-social/documentation) anlegst.
 
-## How the docs are made
+## Wie die Dokumentation erstellt wird
 
-The Documentation [has its own GitHub repository](https://github.com/bookwyrm-social/documentation). Documentation is written in Markdown and we use [Jinja](https://jinja.palletsprojects.com/en/stable) and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).
+Die Dokumentation [hat ihr eigenes GitHub-Repository](https://github.com/bookwyrm-social/documentation). Sie wird in Markdown verfasst und wir nutzen [Jinja](https://jinja.palletsprojects.com/en/stable) und ein Python-Skript, um sie in HTML umzuwandeln. Ein Jinja-Plugin wird gemeinsam mit Crowdin genutzt, um Übersetzungen zu erstellen. Alle Quelldateien der Dokumentation sollen in US-Englisch verfasst werden.
 
-All source files are saved in the `content` directory. Each section has a directory within that, with each page being represented by a single markdown file.
+Alle Quelldatein werden im `content`-Verzeichnis abgelegt. Jeder Abschnitt hat darin ein Verzeichnis, wobei jede Seite durch eine einzelne Markdown-Datei abgebildet wird.
 
-## Editing or creating a documentation page
+## Dokumentationsseiten bearbeiten oder anlegen
 
-To edit or create a new page you will need to:
+Um eine neue Seite anzulegen, ist Folgendes notwendig:
 
-1. clone [the GitHub repository](https://github.com/bookwyrm-social/documentation)
-2. work in the `content` directory to make your changes - either editing an existing markdown page or creating a new one
-3. create a new Pull Request
-4. respond to any reviews with further edits
-5. enjoy seeing your updates instantly published when your pull request is approved and merged
+1. klone [das GitHub-Repository](https://github.com/bookwyrm-social/documentation)
+2. arbeite im `content`-Verzeichnis, um deine Änderungen vorzunehmen – indem du entweder eine bestehende Markdown-Seite anpasst oder eine neue erstellst
+3. erstelle eine neue Pull Request
+4. nimm weitere Änderungen vor, wenn du Rückmeldungen erhältst
+5. genieße, wie deine Änderungen sofort veröffentlicht werden, sobald deine Pull Request angenommen und gemerget wurde
 
-If you have never used git or GitHub before, that may sound daunting, but let's break it down:
+Wenn du noch nie Git oder GitHub verwendet hast, mag das alles beängstigend klingen, aber lass es uns herunterbrechen:
 
-### Clone the repository
+### Klone das Repository
 
-1. Make sure you have [a GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github).
-2. Create a "clone" or "fork" of the Documentation repository:
+1. Stelle sicher, dass du [einen GitHub-Account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) hast.
+2. Erstelle einen "Klon" oder "Fork" des Dokumentations-Repositorys:
 
-   - From the **web interface**, click "Fork" at the top of [this page](https://github.com/bookwyrm-social/documentation)
-   - If you are using **GitHub Desktop**, follow [these instructions](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
-   - If you are using the command line, run:
+   - Auf der **Web-Oberfläche** klicke "Fork" am oberen Rand [dieser Seite](https://github.com/bookwyrm-social/documentation)
+   - Wenn du **GitHub Desktop** verwendest, folge [diesen Anweisungen](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
+   - Wenn du die Kommandozeile nutzt, führe aus:
 
    `git clone https://github.com/bookwyrm-social/documentation.git`
 
-### Create a new branch and make your edits
+### Einen neuen Branch erstellen und Änderungen vornehmen
 
-To make changes:
+Um Änderungen vorzunehmen:
 
-1. [Create a new branch](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) in your fork
-2. Make your edits in the `content` directory and **commit** your changes:
-   - [GitHub web interface](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
+1. [Erstelle einen neuen Branch](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) in deinem Fork
+2. Nimm deine Änderungen am `content`-Verzeichnis vor und **commite** sie:
+   - [GitHub-Web-Oberfläche](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files)
    - [GitHub Desktop](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop)
-   - On the command line save your changes to the files and run `git commit`
+   - In der Kommandozeile, speichere deine Änderungen an den Dateien und führe `git commit` aus
 
-At this point you might want to see what your changes will look like when published. See [Building docs locally](#building-docs-locally) below for instruction on how to preview your changes.
+An dieser Stelle wirst du vielleicht sehen wollen, wie deine Änderungen aussehen, wenn sie veröffentlicht werden. Schau dir [Dokumentation lokal bauen](#building-docs-locally) weiter unten an, um zu erfahren, wie du eine Vorschau deiner Änderungen ansehen kannst.
 
-### Create a pull request
+### Eine Pull Request erstellen
 
-Once you have completed your changes, [make a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to the docs repository.
+Wenn deine Änderungen abgeschlossen sind, [erstelle eine Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) an das Dokumentations-Repository.
 
-Your pull request will be reviewed and one of three things will happen:
+Deine Pull Request wird überprüft werden und eines der drei folgenden Szenarien wird eintreten:
 
-1. It will be **merged** with no changes
-2. You will be asked to make **changes**
-3. It will be **rejected** and closed
+1. Sie wird ohne Änderungen **übernommen** (engl. merged)
+2. Du wirst gebeten, **Änderungen** vorzunehmen
+3. Sie wird **abgelehnt** und geschlossen
 
-### Respond to reviews
+### Auf Überprüfungen reagieren
 
-If you are asked to make changes, you can make them locally and `push` your local changes to your fork/clone on GitHub. This will automatically flow through to your pull request. Let the reviewer know when you have completed your updates so they can do another review and hopefully "pull" your changes.
+Wenn du gebeten wirst, Änderungen vorzunehmen, kannst du dies lokal erledigen und deine lokalen Änderungen an deinen Fork/Klon auf Github senden (engl. `push`). Sie werden dann automatisch in deine Pull Request übernommen. Lass den\*die Reviewer\*in wissen, wenn du mit deinen Anpassungen fertig bist, damit die Person eine weitere Überprüfung starten und dann hoffentlich deine Änderungen zu sich holen (engl. `pull`) kann.
 
-We welcome all contributions. It would be unusual for a contribution to the docs to be rejected immediately. This would only happen if your pull request introduces information that is wrong or misleading with no chance of being improved, or if it has been declared out of scope.
+Wir heißen alle Beiträge willkommen. Es wäre ungewöhnlich, wenn ein Beitrag zur Dokumentation direkt abgelehnt würde. Das würde nur dann geschehen, wenn deine Pull Request Informationen einfügt, die falsch oder irreführend ohne Aussicht auf Besserung sind oder wenn festgestellt wird, dass sie aus dem Rahmen fällt.
 
-### Your changes are published
+### Deine Änderungen werden veröffentlicht
 
-When your pull request is merged, [the documentation](https://docs.joinbookwyrm.com/) is automatically updated. You may need to refresh your browser or use "incognito mode" to see the changes in your browser.
+Wenn deine Pull Request übernommen wird, wird [die Dokumentation](https://docs.joinbookwyrm.com/) automatisch aktualisiert. Es kann sein, dass du deinen Browser neu starten oder den "Inkognito-Modus" nutzen musst, um die Änderungen in deinem Browser zu sehen.
 
-## New pages
+## Neue Seiten
 
 If you are adding a new page, you will need to add some metadata and may need to adjust other pages.
 
