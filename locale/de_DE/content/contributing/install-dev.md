@@ -4,27 +4,27 @@ Title: Entwicklungsumgebung Date: 2025-05-12 Order: 5
 
 ## Voraussetzungen
 
-Diese Anleitung geht davon aus, dass du BookWyrm mit Docker entwickelst. Du musst [Docker](https://docs.docker.com/engine/install/) und [docker-compose](https://docs.docker.com/compose/install/) installieren, bevor Du loslegst.
+Diese Anleitung geht davon aus, dass du BookWyrm mit Docker entwickelst. Du musst [Docker](https://docs.docker.com/engine/install/) und [docker-compose](https://docs.docker.com/compose/install/) installieren, bevor du loslegst.
 
-_If you are contributing to BookWyrm in a dockerless development environment we would love for you to [help us update this guide](/documentation.html) to include instructions for setting up a dockerless development environment_.
+_Wenn du zu BookWyrm beiträgst, ohne Docker zu verwenden, würden wir uns freuen, wenn du uns helfen würdest, [diese Anleitung zu aktualisieren](/documentation.html), damit sie auch eine Hilfestellung enthält, wie eine Entwicklungsumgebung ohne Docker aufgesetzt werden kann_.
 
 ## Entwicklungsumgebung einrichten
 
-### Den Quellcode erhalten
+### Quellcode erhalten
 
 1. Kopiere den [BookWyrm-Quellcode von GitHub](https://github.com/bookwyrm-social/bookwyrm). Du kannst [einen Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) des Projekts erstellen und [dann `git clone` ausführen, um den Quellcode](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) auf deinen Computer herunterzuladen.
-2. Gehe in das Verzeichnis, das den Quellcodeode auf Ihrem Computer enthält. Von jetzt an arbeitest Du aus diesem Verzeichnis heraus.
+2. Gehe in das Verzeichnis auf deinem Computer, das den Quellcode enthält. Von jetzt an arbeitest du in diesem Verzeichnis.
 3. Die Entwicklung wird auf dem `main`-Branch durchgeführt. Stelle also sicher, dass du diesen Branch ausgecheckt hast: `git checkout main`
-4. Erstelle eine Datei für Umgebungsvariablen für die Entwicklung durch Kopieren der Beispieldatei für Umgebungsvariablen (`.env.example`) in eine neue Datei namens `.env` ein. Falls Du die Kommandozeile nutzt, kannst du das wie folgt tun:
+4. Erstelle eine Datei mit Umgebungsvariablen für die Entwicklung, indem du die Beispieldatei (`.env.example`) kopierst und als neue Datei namens `.env` einfügst. In der Kommandozeile kannst du das wie folgt tun:
 ``` { .sh }
 cp .env.example .env
 ```
 
-### Configure your environment settings
+### Umgebung konfigurieren
 
-In `.env`:
+In der Datei `.env`:
 
-4. change `DEBUG` to `true`
+4. Ändere `DEBUG` zu `true`
 5. If you use a tunneling/proxy service like [ngrok](https://ngrok.com), set `DOMAIN` to to the domain name you are using (e.g. `abcd-1234.ngrok-free.app`). Otherwise, set `DOMAIN` to `localhost`
 6. change `NGINX_SETUP` to `reverse_proxy` (this prevents BookWyrm trying to set up https certificates on your development machine)
 7. If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment `PORT` and set it (e.g. `PORT=1333`). If using `localhost` this is optional.
