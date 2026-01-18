@@ -1,21 +1,21 @@
 ---
 Title: Suivi de la file d'attente
 Date: 2022-11-23
-Order: 6
+Order: 7
 ---
 
-Il peut arriver que votre instance tourne au ralenti. Une solution est d'inspecter la file d'attente, afin de vérifier si des tâches sont bloquées. Lisez ce qui suit afin de savoir comment.
+Il peut arriver que votre instance tourne au ralenti. One option would be to inspect the queue to see whether some jobs hang. Lisez ce qui suit afin de savoir comment.
 
 ## Celery
 
-BookWyrm utilise [Celery](https://docs.celeryq.dev/en/stable/) pour la gestion des tâches en arrière‑plan.
+BookWyrm is using [Celery](https://docs.celeryq.dev/en/stable/) to manage background jobs.
 
 ## Flower
 
-Pour le suivi en temps réel des tâches de Celery, BookWyrm se repose sur [Flower](https://flower.readthedocs.io/en/latest/).
+To watch Celery jobs in real-time BookWyrm uses [Flower](https://flower.readthedocs.io/en/latest/).
 
-Si vous n'avez pas modifié [`docker-compose.yml`](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100) jusque là, vous trouverez ce service sur le [port 8888](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45). Pour référence : `https://MY_DOMAIN_NAME:8888/`.
+By default you can view flower logs from `https://example.com/flower/`. You will need to enter the login name and password from your `.env` file. Celery can help to troubleshoot problems you may be having with your task queue.
 
 ### Tâches
 
-Vous trouverez des tâches [annotées `@app.task`](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task) dans le code source.
+If you want to know which actions are sent to celery, you can find [`@app.task` annotated](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task) tasks in the codebase.
