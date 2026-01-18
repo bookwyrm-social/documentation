@@ -1,7 +1,7 @@
 ---
 Title: System Monitoring
 Date: 2021-04-18
-Order: 5
+Order: 4
 ---
 
 The `Admin > System` menu provides instance admins with a number of system monitoring features, and configuration options for background tasks.
