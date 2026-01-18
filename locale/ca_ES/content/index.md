@@ -5,7 +5,7 @@ Títol: Acollida Data: 2021-04-13
 BookWyrm és una xarxa social per monitorar la teva lectura, parlar de llibres, escriure ressenyes i descobrir que llegir a continuació. La federació permet als usuaris de BookWyrm unir-se a comunitats petites i confiables que poden connectar-se entre si i amb altres serveis ActivityPub com Mastodon i Pleroma.
 
 ## Funcionalitats
-The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
+Les característiques creixen cada mes, i hi ha molt espai per a suggeriments i idees. Obriu una [petició](https://github.com/bookwyrm-social/bookwyrm/issues) per a iniciar la conversa, o [trobeu una bona petició per començar](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) per a fer la vostra primera contribució!
 
 - Parla de llibres
     - Escriu ressenyes, amb valoració o sense, les quals seran agregades a la pàgina del llibre
@@ -18,10 +18,10 @@ The features are growing every month, and there is plenty of room for suggestion
 - Fes seguiment de la teva activitat de lectura
     - Guarda els llibres en les prestatgeries per defecte "per llegir", "llegint actualment", "lectura en pausa" i "llegit"
     - Crea prestatges personalitzats
-    - Store started/stopped/finished reading dates, as well as progress updates along the way
+    - Guarda les dates d'inici/pausa/finalització en la lectura, així com actualitzacions de progrés al llarg del camí
     - Actualitza l'activitat de lectura que veuen els teus seguidors (opcionalment i, amb control precís de privacitat)
     - Crea llistes de llibres que poden estar obertes a canvis per part de qualsevol usuari, usuaris seleccionats o només editables pel mateix creador
-    - Create groups with other BookWyrm users and collaborate with group-owned lists
+    - Crea grups amb altres usuaris de BookWyrm i col·labora amb les llistes del grup
 - Federació amb ActivityPub
     - Envia i rep estats i activitat d'usuaris
     - Comparteix dades de llibres entre instàncies per tal de crear una base de dades de metadades en xarxa
