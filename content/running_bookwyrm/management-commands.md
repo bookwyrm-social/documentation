@@ -41,3 +41,11 @@ Once confirmed, if an author is duplicated you can combine the two authors into 
 ```
 
 As for the editions, any extra information from the other author will be copied over to the canonical author and then the other author will be deleted. Any books written by the other author will be changed to be written by the canonical author. You can find the numbers to use in the command by visiting the page for an author and looking at the number in the URL.
+
+## Fixing ISBNs
+
+There was a bug in `v0.8.0` which erroneously created 11-digit ISBN10 entries in some circumstances. This was fixed in a data migration in `v0.8.1`, however for various reasons you may need to manually run a cleanup command to fix any incorrect ISBNs in your local database:
+
+```sh
+./bw-dev runweb python manage.py fix_isbn10_entries
+```
