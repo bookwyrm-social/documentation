@@ -4,51 +4,53 @@ Title: Entwicklungsumgebung Date: 2025-05-12 Order: 5
 
 ## Voraussetzungen
 
-Diese Anleitung geht davon aus, dass du BookWyrm mit Docker entwickelst. Du musst [Docker](https://docs.docker.com/engine/install/) und [docker-compose](https://docs.docker.com/compose/install/) installieren, bevor Du loslegst.
+Diese Anleitung geht davon aus, dass du BookWyrm mit Docker entwickelst. Du musst [Docker](https://docs.docker.com/engine/install/) und [docker-compose](https://docs.docker.com/compose/install/) installieren, bevor du loslegst.
+
+_Wenn du zu BookWyrm beiträgst, ohne Docker zu verwenden, würden wir uns freuen, wenn du uns helfen würdest, [diese Anleitung zu aktualisieren](/documentation.html), damit sie auch eine Hilfestellung enthält, wie eine Entwicklungsumgebung ohne Docker aufgesetzt werden kann_.
 
 ## Entwicklungsumgebung einrichten
 
-### Den Quellcode erhalten
+### Quellcode erhalten
 
 1. Kopiere den [BookWyrm-Quellcode von GitHub](https://github.com/bookwyrm-social/bookwyrm). Du kannst [einen Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) des Projekts erstellen und [dann `git clone` ausführen, um den Quellcode](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) auf deinen Computer herunterzuladen.
-2. Gehe in das Verzeichnis, das den Quellcodeode auf Ihrem Computer enthält. Von jetzt an arbeitest Du aus diesem Verzeichnis heraus.
+2. Gehe in das Verzeichnis auf deinem Computer, das den Quellcode enthält. Von jetzt an arbeitest du in diesem Verzeichnis.
 3. Die Entwicklung wird auf dem `main`-Branch durchgeführt. Stelle also sicher, dass du diesen Branch ausgecheckt hast: `git checkout main`
-4. Erstelle eine Datei für Umgebungsvariablen für die Entwicklung durch Kopieren der Beispieldatei für Umgebungsvariablen (`.env.example`) in eine neue Datei namens `.env` ein. Falls Du die Kommandozeile nutzt, kannst du das wie folgt tun:
+4. Erstelle eine Datei mit Umgebungsvariablen für die Entwicklung, indem du die Beispieldatei (`.env.example`) kopierst und als neue Datei namens `.env` einfügst. In der Kommandozeile kannst du das wie folgt tun:
 ``` { .sh }
 cp .env.example .env
 ```
 
-### Configure your environment settings
+### Umgebung konfigurieren
 
-In `.env`:
+In der Datei `.env`:
 
-4. change `DEBUG` to `true`
-5. If you use a tunneling/proxy service like [ngrok](https://ngrok.com), set `DOMAIN` to to the domain name you are using (e.g. `abcd-1234.ngrok-free.app`). Otherwise, set `DOMAIN` to `localhost`
-6. change `NGINX_SETUP` to `reverse_proxy` (this prevents BookWyrm trying to set up https certificates on your development machine)
-7. If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment `PORT` and set it (e.g. `PORT=1333`). If using `localhost` this is optional.
+4. Ändere `DEBUG` zu `true`
+5. Wenn du einen Tunneling-Dienst oder Proxy wie [ngrok](https://ngrok.com) verwendest, ändere die `DOMAIN` zu der Domain, die du verwendest (z. B. `abcd-1234.ngrok-free.app`). Andernfalls, ändere `DOMAIN` zu `localhost`
+6. Ändere `NGINX_SETUP` zu `reverse_proxy` (dies verhindert, dass BookWyrm versucht, HTTPS-Zertifikate auf deinem Entwicklungsgerät zu erstellen)
+7. Wenn du einen bestimmten Port verwenden möchtest (z. B. wenn du Anfragen durch ngrok tunnelst), entferne den Kommentar vor `PORT` und gib den Port an (z. B. `PORT=1333`). Wenn du `localhost` nutzt, ist dieser Schritt optional.
 
-Check that you have [all the required settings configured](/environment.html#required-environment-settings) before proceeding.
+Prüfe, ob du [alle notwendigen Einstellungen getroffen hast](/environment.html#required-environment-settings), bevor du fortfährst.
 
-If you try to register your admin account and see a message that `CSRF verification failed` you may have set your domain or port incorrectly.
+Wenn du versuchst, deinen Administrations-Account anzulegen, und eine Nachricht siehst, die `CSRF verification failed` lautet, kann es sein, dass du die Domain oder den Port falsch angegeben hast.
 
-### Email (optional)
+### E-Mail (optional)
 
-If you want to test sending emails, you will need to [set up appropriate real values](/environment.html#email-configuration) in the "Email config" section. You do not need to change anything for [the separate `EMAIL` setting](/environment.html#email).
+Wenn du ausprobieren möchtest, E-Mails zu versenden, wirst du [passende, echte Werte](/environment.html#email-configuration) im Bereich "E-Mail-Konfiguration" angeben müssen. Du musst nichts an der [separaten Einstellung `EMAIL`](/environment.html#email) ändern.
 
-### Build and run
+### Bauen und ausführen
 
 8. Führe Folgendes über die Kommandozeile aus:
 
 ``` { .sh }
-./bw-dev build            # Build the docker images
-./bw-dev setup            # Initialize the database and run migrations. Note the ADMIN key at the end of this output. You'll need it to register the first admin user.
-./bw-dev up               # Start the docker containers
+./bw-dev build            # Docker-Images bauen
+./bw-dev setup            # Datenbank initialisieren und Migrationen ausführen. Notiere dir den Administrations-Schlüssel am Ende der Ausgabe. Du wirst ihn brauchen, um einen Administrations-Account anzulegen.
+./bw-dev up               # Docker-Container starten
 ```
 
-9. Once the build is complete, you can access the instance at `http://localhost`, your ngrok domain, or `http://localhost:{PORT}`, depending on you domain and port configuration.
-10. You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".
+9. Sobald der Build abgeschlossen ist, kannst du die Instanz unter `http://localhost`, unter deiner ngrok-Domain oder unter `http://localhost:{PORT}` erreichen, abhängig von deiner Domain- und Port-Einstellung.
+10. Du kannst nun deinen Administrations-Schlüssel eingeben und einen Administrations-Account anlegen. Ab hier funktioniert alles so, wie es in "BookWyrm betreiben" beschrieben ist.
 
-Wenn du neugierig bist: das `./bw-dev` Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk `docker-compose build` oder `docker-compose up` laufen lassen, wenn du magst. `./bw-dev` sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Run it without arguments to get a list of available commands, read the [documentation page](/cli.html) for it, or open it up and look around to see exactly what each command is doing!
+Wenn du neugierig bist: Das `./bw-dev`-Kommando ist ein simples Shell-Script, das verschiedene andere Tools ansteuert. Du könntest es überspringen und direkt `docker-compose build` oder `docker-compose up` laufen lassen, wenn du möchtest. `./bw-dev` kombiniert diese Aufrufe der Einfachheit halber an einem gemeinsamen Ort. Führe das Skript ohne Argumente aus, um eine Liste der verfügbaren Kommandos zu erhalten, lies die [zugehörige Seite in der Dokumentation](/cli.html) oder öffne das Skript und sieh genau, was jedes Kommando tut!
 
 ## Modelle editieren oder erstellen
 
@@ -65,4 +67,4 @@ Jedes Mal, wenn du CSS oder JavaScript bearbeitest, musst du Djangos `collectsta
 ./bw-dev collectstatic
 ```
 
-Wenn du [yarn installierstt](https://yarnpkg.com/getting-started/install) haben, kannst du `yarn watch:static` ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis `bookwyrm/static` auszuführen.
+Wenn du [yarn installiert](https://yarnpkg.com/getting-started/install) hast, kannst du `yarn watch:static` ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis `bookwyrm/static` ausführen zu lassen.

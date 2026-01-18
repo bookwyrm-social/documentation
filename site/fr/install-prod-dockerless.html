@@ -162,6 +162,10 @@ Installation sans Docker
             </li>
             
             <li>
+                <a href="/v0.7.5/fr/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+            </li>
+            
+            <li>
                 <a href="/v0.7.5/fr/monitoring-queue.html" class="has-background-inherit" >Suivi de la file d'attente</a>
             </li>
             
@@ -296,7 +300,7 @@ chown<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/cache
 </li>
 <li>Configurez l'environnement virtuel python<ul>
 <li>Make the python venv directory in your install dir: <code>python3 -m venv ./venv</code></li>
-<li>Installez les dépendances python de bookwyrm avec pip : <code>./venv/bin/pip3 install -r requirements.txt</code></li>
+<li>Install bookwyrm python dependencies with pip: <code>./venv/bin/pip3 install --upgrade "pip&gt;=25.1.0"</code> <code>./venv/bin/pip3 install --group main</code></li>
 </ul>
 </li>
 <li>Créez la base de données postgresql de bookwyrm. Make sure to change the password to what you set in the <code>.env</code> config: <code>sudo -i -u postgres psql</code></li>
