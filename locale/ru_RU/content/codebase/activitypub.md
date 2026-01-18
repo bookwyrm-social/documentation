@@ -38,7 +38,7 @@ To view the ActivityPub data for a BookWyrm entity (user, book, list, etc) you c
     - Related to a book (of a custom status type that includes the field `inReplyToBook`),
     - Replies to existing statuses saved in the database
 
-- `Delete`: Removes a status
+- `Удалить`: Удаляет статус
 - `Like`: Creates a favorite on the status
 - `Announce`: Boosts the status into the actor's timeline
 - `Undo`: Reverses a `Like` or `Announce`
