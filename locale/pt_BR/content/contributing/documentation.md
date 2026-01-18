@@ -142,10 +142,7 @@ Idiomas para o menu dropdown de idiomas, estão listados em `i18n.py`. Geralment
 
 Quando uma nova versão do BookWyrm é lançada, precisamos criar uma versão da documentação.
 
-1. Adicione uma nova branch com o nome igual à nova tag de versão no BookWyrm. p. ex.: `v0.8.0`.
-
-2. Adicione o nome da branch na lista de versões em `generate.py` na branch `main` da documentação
-
-3. Faça checkout das outras versões e faça merge do arquivo de geração atualizado nelas para que todas tenham a nova branch listada: `git checkout main generate.py`. Em seguida, faça commit desta alteração, crie uma PR para fazer merge desta mudança na branch da versão na documentação, e faça merge dela. Isso garantirá que todas as páginas de todas as versões da documentação estarão listadas no menu dropdown.
-
-4. Faça merge na branch main por último - apenas merges na main acionam a ação do GitHub de deploy no servidor da documentação. Se você fizer isso primeiro, as mudanças nas outras branches não terão efeito.
+1. Adicione uma nova branch com o nome igual à nova tag de versão no BookWyrm. e.g. `v0.x.y`.
+2. Add that branch name to the list of versions in `generate.py`, and push your new branch to the repository.
+3. Check out every other version in turn, and merge the updated `generate.py` file into it so they all have the new branch listed: `git checkout v0.x.y generate.py`. Em seguida, faça commit desta alteração, crie uma PR para fazer merge desta mudança na branch da versão na documentação, e faça merge dela. Isso garantirá que todas as páginas de todas as versões da documentação estarão listadas no menu dropdown.
+4. Merge the new `generate.py` in the `main` branch last - only merges into `main` trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect until next time you update `main`.
