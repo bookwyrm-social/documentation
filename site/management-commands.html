@@ -271,6 +271,9 @@ Management Commands
                       
                   
               
+                  <a class="navbar-item" href="#fixing-isbns">Fixing ISBNs</a>
+                  
+              
             </div>
           </div>
     </div>
@@ -308,6 +311,10 @@ Management Commands
 </code></pre></div>
 
 <p>As for the editions, any extra information from the other author will be copied over to the canonical author and then the other author will be deleted. Any books written by the other author will be changed to be written by the canonical author. You can find the numbers to use in the command by visiting the page for an author and looking at the number in the URL.</p>
+<h2 id="fixing-isbns"><a class="headerlink" href="#fixing-isbns">Fixing ISBNs</a></h2>
+<p>There was a bug in <code>v0.8.0</code> which erroneously created 11-digit ISBN10 entries in some circumstances. This was fixed in a data migration in <code>v0.8.1</code>, however for various reasons you may need to manually run a cleanup command to fix any incorrect ISBNs in your local database:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>runweb<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>fix_isbn10_entries
+</code></pre></div>
 </section>
 
             </section>

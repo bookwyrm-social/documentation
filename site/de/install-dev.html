@@ -160,6 +160,10 @@ Entwicklungsumgebung
             </li>
             
             <li>
+                <a href="/de/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+            </li>
+            
+            <li>
                 <a href="/de/reverse-proxy.html" class="has-background-inherit" >Verwenden eines Reverse-Proxy</a>
             </li>
             
@@ -197,7 +201,7 @@ Entwicklungsumgebung
             </li>
             
             <li>
-                <a href="/de/documentation.html" class="has-background-inherit" >Documentation</a>
+                <a href="/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
             </li>
             
             <li>
@@ -2095,66 +2099,6 @@ Entwicklungsumgebung
                   <a class="navbar-item" href="#"></a>
                   
               
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
-                  <a class="navbar-item" href="#"></a>
-                  
-              
             </div>
           </div>
     </div>
@@ -2171,44 +2115,45 @@ Entwicklungsumgebung
                 
 <section class="block content">
     <h2 id="voraussetzungen"><a class="headerlink" href="#voraussetzungen">Voraussetzungen</a></h2>
-<p>Diese Anleitung geht davon aus, dass du BookWyrm mit Docker entwickelst. Du musst <a href="https://docs.docker.com/engine/install/">Docker</a> und <a href="https://docs.docker.com/compose/install/">docker-compose</a> installieren, bevor Du loslegst.</p>
+<p>Diese Anleitung geht davon aus, dass du BookWyrm mit Docker entwickelst. Du musst <a href="https://docs.docker.com/engine/install/">Docker</a> und <a href="https://docs.docker.com/compose/install/">docker-compose</a> installieren, bevor du loslegst.</p>
+<p><em>Wenn du zu BookWyrm beiträgst, ohne Docker zu verwenden, würden wir uns freuen, wenn du uns helfen würdest, <a href="/documentation.html">diese Anleitung zu aktualisieren</a>, damit sie auch eine Hilfestellung enthält, wie eine Entwicklungsumgebung ohne Docker aufgesetzt werden kann</em>.</p>
 <h2 id="entwicklungsumgebung-einrichten"><a class="headerlink" href="#entwicklungsumgebung-einrichten">Entwicklungsumgebung einrichten</a></h2>
-<h3 id="den-quellcode-erhalten"><a class="headerlink" href="#den-quellcode-erhalten">Den Quellcode erhalten</a></h3>
+<h3 id="quellcode-erhalten"><a class="headerlink" href="#quellcode-erhalten">Quellcode erhalten</a></h3>
 <ol>
 <li>Kopiere den <a href="https://github.com/bookwyrm-social/bookwyrm">BookWyrm-Quellcode von GitHub</a>. Du kannst <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">einen Fork</a> des Projekts erstellen und <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">dann <code>git clone</code> ausführen, um den Quellcode</a> auf deinen Computer herunterzuladen.</li>
-<li>Gehe in das Verzeichnis, das den Quellcodeode auf Ihrem Computer enthält. Von jetzt an arbeitest Du aus diesem Verzeichnis heraus.</li>
+<li>Gehe in das Verzeichnis auf deinem Computer, das den Quellcode enthält. Von jetzt an arbeitest du in diesem Verzeichnis.</li>
 <li>Die Entwicklung wird auf dem <code>main</code>-Branch durchgeführt. Stelle also sicher, dass du diesen Branch ausgecheckt hast: <code>git checkout main</code></li>
-<li>Erstelle eine Datei für Umgebungsvariablen für die Entwicklung durch Kopieren der Beispieldatei für Umgebungsvariablen (<code>.env.example</code>) in eine neue Datei namens <code>.env</code> ein. Falls Du die Kommandozeile nutzt, kannst du das wie folgt tun:</li>
+<li>Erstelle eine Datei mit Umgebungsvariablen für die Entwicklung, indem du die Beispieldatei (<code>.env.example</code>) kopierst und als neue Datei namens <code>.env</code> einfügst. In der Kommandozeile kannst du das wie folgt tun:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 </code></pre></div>
 
-<h3 id="configure-your-environment-settings"><a class="headerlink" href="#configure-your-environment-settings">Configure your environment settings</a></h3>
-<p>In <code>.env</code>:</p>
+<h3 id="umgebung-konfigurieren"><a class="headerlink" href="#umgebung-konfigurieren">Umgebung konfigurieren</a></h3>
+<p>In der Datei <code>.env</code>:</p>
 <ol start="4">
-<li>change <code>DEBUG</code> to <code>true</code></li>
-<li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>). Otherwise, set <code>DOMAIN</code> to <code>localhost</code></li>
-<li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
-<li>If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment <code>PORT</code> and set it (e.g. <code>PORT=1333</code>). If using <code>localhost</code> this is optional.</li>
+<li>Ändere <code>DEBUG</code> zu <code>true</code></li>
+<li>Wenn du einen Tunneling-Dienst oder Proxy wie <a href="https://ngrok.com">ngrok</a> verwendest, ändere die <code>DOMAIN</code> zu der Domain, die du verwendest (z. B. <code>abcd-1234.ngrok-free.app</code>). Andernfalls, ändere <code>DOMAIN</code> zu <code>localhost</code></li>
+<li>Ändere <code>NGINX_SETUP</code> zu <code>reverse_proxy</code> (dies verhindert, dass BookWyrm versucht, HTTPS-Zertifikate auf deinem Entwicklungsgerät zu erstellen)</li>
+<li>Wenn du einen bestimmten Port verwenden möchtest (z. B. wenn du Anfragen durch ngrok tunnelst), entferne den Kommentar vor <code>PORT</code> und gib den Port an (z. B. <code>PORT=1333</code>). Wenn du <code>localhost</code> nutzt, ist dieser Schritt optional.</li>
 </ol>
-<p>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding.</p>
-<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code> you may have set your domain or port incorrectly.</p>
-<h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
-<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate real values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
-<h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
+<p>Prüfe, ob du <a href="/environment.html#required-environment-settings">alle notwendigen Einstellungen getroffen hast</a>, bevor du fortfährst.</p>
+<p>Wenn du versuchst, deinen Administrations-Account anzulegen, und eine Nachricht siehst, die <code>CSRF verification failed</code> lautet, kann es sein, dass du die Domain oder den Port falsch angegeben hast.</p>
+<h3 id="e-mail-optional"><a class="headerlink" href="#e-mail-optional">E-Mail (optional)</a></h3>
+<p>Wenn du ausprobieren möchtest, E-Mails zu versenden, wirst du <a href="/environment.html#email-configuration">passende, echte Werte</a> im Bereich "E-Mail-Konfiguration" angeben müssen. Du musst nichts an der <a href="/environment.html#email">separaten Einstellung <code>EMAIL</code></a> ändern.</p>
+<h3 id="bauen-und-ausfuhren"><a class="headerlink" href="#bauen-und-ausfuhren">Bauen und ausführen</a></h3>
 <ol start="8">
 <li>Führe Folgendes über die Kommandozeile aus:</li>
 </ol>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Build the docker images</span>
-./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialize the database and run migrations. Note the ADMIN key at the end of this output. You&#39;ll need it to register the first admin user.</span>
-./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start the docker containers</span>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Docker-Images bauen</span>
+./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Datenbank initialisieren und Migrationen ausführen. Notiere dir den Administrations-Schlüssel am Ende der Ausgabe. Du wirst ihn brauchen, um einen Administrations-Account anzulegen.</span>
+./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Docker-Container starten</span>
 </code></pre></div>
 
 <ol start="9">
-<li>Once the build is complete, you can access the instance at <code>http://localhost</code>, your ngrok domain, or <code>http://localhost:{PORT}</code>, depending on you domain and port configuration.</li>
-<li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
+<li>Sobald der Build abgeschlossen ist, kannst du die Instanz unter <code>http://localhost</code>, unter deiner ngrok-Domain oder unter <code>http://localhost:{PORT}</code> erreichen, abhängig von deiner Domain- und Port-Einstellung.</li>
+<li>Du kannst nun deinen Administrations-Schlüssel eingeben und einen Administrations-Account anlegen. Ab hier funktioniert alles so, wie es in "BookWyrm betreiben" beschrieben ist.</li>
 </ol>
-<p>Wenn du neugierig bist: das <code>./bw-dev</code> Kommando ist ein simples Shell-Script, das verschiedene Tools ansteuert: darüber hinaus könntest du es überspringen und direk <code>docker-compose build</code> oder <code>docker-compose up</code> laufen lassen, wenn du magst. <code>./bw-dev</code> sammelt sie einfach an einem gemeinsamen Ort zur Bequemlichkeit. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
+<p>Wenn du neugierig bist: Das <code>./bw-dev</code>-Kommando ist ein simples Shell-Script, das verschiedene andere Tools ansteuert. Du könntest es überspringen und direkt <code>docker-compose build</code> oder <code>docker-compose up</code> laufen lassen, wenn du möchtest. <code>./bw-dev</code> kombiniert diese Aufrufe der Einfachheit halber an einem gemeinsamen Ort. Führe das Skript ohne Argumente aus, um eine Liste der verfügbaren Kommandos zu erhalten, lies die <a href="/cli.html">zugehörige Seite in der Dokumentation</a> oder öffne das Skript und sieh genau, was jedes Kommando tut!</p>
 <h2 id="modelle-editieren-oder-erstellen"><a class="headerlink" href="#modelle-editieren-oder-erstellen">Modelle editieren oder erstellen</a></h2>
 <p>Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenbankstruktur ändern. Damit diese Änderungen wirksam werden, musst du Djangos <code>makemigrations</code>-Befehl ausführen, um eine neue <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django Migrationsdatei</a>zu erstellen und dann diese <code>migrieren</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
@@ -2220,7 +2165,7 @@ Entwicklungsumgebung
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
-<p>Wenn du <a href="https://yarnpkg.com/getting-started/install">yarn installierstt</a> haben, kannst du <code>yarn watch:static</code> ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis <code>bookwyrm/static</code> auszuführen.</p>
+<p>Wenn du <a href="https://yarnpkg.com/getting-started/install">yarn installiert</a> hast, kannst du <code>yarn watch:static</code> ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis <code>bookwyrm/static</code> ausführen zu lassen.</p>
 </section>
 
             </section>

@@ -6,6 +6,8 @@ Title: Developer Environment Date: 2025-05-26 Order: 5
 
 Ces instructions supposent que vous développez BookWyrm en utilisant Docker. Vous devrez [installer Docker](https://docs.docker.com/engine/install/) et [docker-compose](https://docs.docker.com/compose/install/) avant toute chose.
 
+_If you are contributing to BookWyrm in a dockerless development environment we would love for you to [help us update this guide](/documentation.html) to include instructions for setting up a dockerless development environment_.
+
 ## Mise en place de l'environnement de développement
 
 ### Get the code
