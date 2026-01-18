@@ -12,8 +12,11 @@ To see your Lists, click 'Your Lists' below the title or navigate to your profil
 ## Creating a List
 
 To create a List, first select the 'Create List' button on the top right of the page.
-It needs a name, and you can optionally add a description.
-You will then choose how you'd like to curate the List.
+
+You can also create a new list from the **Lists** section in the sidebar of a book page. From the dropdown list select "Create new list...".
+
+When prompted, enter a list name, and you can optionally add a description.
+You will then choose how you would like to curate the List.
 
 ## List curation
 
@@ -34,10 +37,12 @@ See more details on the [privacy controls](/privacy-controls.html#lists) page.
 You can add books to any List that you own, "Open" Lists and group-curated Lists of Groups you are a part of.
 You can also suggest books to "Curated" Lists in the exact same way.
 
-There is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
+In the List page there is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
 It shows books that you've recently interacted with on Bookwyrm, and a search bar.
 Currently, the search is limited to book titles (see issue [#3607](https://github.com/bookwyrm-social/bookwyrm/issues/3607)).
 Once you find the one you want, use the 'Add' button to add it to the List.
+
+Alternatively, if you are on a book page, there is a side menu titled "Lists". From here you can select the list you want to add the book to using the dropdown menu under "Add to list", and pressing "Add".
 
 ### Notes
 
