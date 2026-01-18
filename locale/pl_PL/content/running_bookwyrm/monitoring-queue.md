@@ -1,10 +1,10 @@
 ---
 Title: Monitoring Queue
 Date: 2022-11-23
-Order: 6
+Order: 7
 ---
 
-There might be occurences where your instances behaves slowly. One option would be to inspect the queue to see, whether some jobs hang. Read on to learn how.
+There might be occurences where your instances behaves slowly. One option would be to inspect the queue to see whether some jobs hang. Read on to learn how.
 
 ## Celery
 
@@ -14,8 +14,8 @@ BookWyrm is using [Celery](https://docs.celeryq.dev/en/stable/) to manage backgr
 
 To watch Celery jobs in real-time BookWyrm uses [Flower](https://flower.readthedocs.io/en/latest/).
 
-In case you haven't tweaked the [`docker-compose.yml`](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100) you can find the service on [port 8888](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45). That is: `https://MY_DOMAIN_NAME:8888/`.
+By default you can view flower logs from `https://example.com/flower/`. You will need to enter the login name and password from your `.env` file. Celery can help to troubleshoot problems you may be having with your task queue.
 
 ### Tasks
 
-You can find [`@app.task` annotated](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task) tasks in the codebase.
+If you want to know which actions are sent to celery, you can find [`@app.task` annotated](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task) tasks in the codebase.
