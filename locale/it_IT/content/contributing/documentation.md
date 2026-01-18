@@ -144,10 +144,7 @@ Locales for the language dropdown are listed in `i18n.py`. Generally we wait for
 
 When a new version of BookWyrm is released we need to create a new version of the docs:
 
-1. Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. `v0.8.0`.
-
-2. Add that branch name to the list of versions in `generate.py` in the `main` branch of the docs
-
-3. Check out every other version in turn, and merge the updated generation file into it so they all have the new branch listed: `git checkout main generate.py`. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.
-
-4. Merge the change in the `main` branch last - only merges into `main` trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect.
+1. Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. `v0.x.y`.
+2. Add that branch name to the list of versions in `generate.py`, and push your new branch to the repository.
+3. Check out every other version in turn, and merge the updated `generate.py` file into it so they all have the new branch listed: `git checkout v0.x.y generate.py`. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.
+4. Merge the new `generate.py` in the `main` branch last - only merges into `main` trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect until next time you update `main`.
