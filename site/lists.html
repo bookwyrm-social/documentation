@@ -146,27 +146,15 @@ Lists
             
         </ul>
         
-        <h2 class="menu-label">Running BookWyrm</h2>
+        <h2 class="menu-label">Managing BookWyrm</h2>
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+                <a href="/users.html" class="has-background-inherit" >Managing users</a>
             </li>
             
             <li>
-                <a href="/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
-            </li>
-            
-            <li>
-                <a href="/updating.html" class="has-background-inherit" >Updating Your Instance</a>
-            </li>
-            
-            <li>
-                <a href="/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
-            </li>
-            
-            <li>
-                <a href="/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+                <a href="/federation.html" class="has-background-inherit" >Federation</a>
             </li>
             
             <li>
@@ -174,19 +162,11 @@ Lists
             </li>
             
             <li>
-                <a href="/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+                <a href="/system.html" class="has-background-inherit" >System Monitoring</a>
             </li>
             
             <li>
-                <a href="/external-storage.html" class="has-background-inherit" >External Storage</a>
-            </li>
-            
-            <li>
-                <a href="/optional_features.html" class="has-background-inherit" >Optional Features</a>
-            </li>
-            
-            <li>
-                <a href="/management-commands.html" class="has-background-inherit" >Management Commands</a>
+                <a href="/settings.html" class="has-background-inherit" >Instance Settings</a>
             </li>
             
         </ul>
@@ -220,6 +200,47 @@ Lists
             
             <li>
                 <a href="/codereview.html" class="has-background-inherit" >Code Review</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/optional_features.html" class="has-background-inherit" >Optional Features</a>
+            </li>
+            
+            <li>
+                <a href="/management-commands.html" class="has-background-inherit" >Management Commands</a>
             </li>
             
         </ul>
@@ -313,9 +334,10 @@ Lists
 <p>The Lists page is accessible from the 'Lists' tab on the main page.
 To see your Lists, click 'Your Lists' below the title or navigate to your profile to the Lists tab.</p>
 <h2 id="creating-a-list"><a class="headerlink" href="#creating-a-list">Creating a List</a></h2>
-<p>To create a List, first select the 'Create List' button on the top right of the page.
-It needs a name, and you can optionally add a description.
-You will then choose how you'd like to curate the List.</p>
+<p>To create a List, first select the 'Create List' button on the top right of the page.</p>
+<p>You can also create a new list from the <strong>Lists</strong> section in the sidebar of a book page. From the dropdown list select "Create new list...".</p>
+<p>When prompted, enter a list name, and you can optionally add a description.
+You will then choose how you would like to curate the List.</p>
 <h2 id="list-curation"><a class="headerlink" href="#list-curation">List curation</a></h2>
 <p>There are four options for List curation:</p>
 <ul>
@@ -330,10 +352,11 @@ See more details on the <a href="/privacy-controls.html#lists">privacy controls<
 <h2 id="adding-books-to-a-list"><a class="headerlink" href="#adding-books-to-a-list">Adding books to a List</a></h2>
 <p>You can add books to any List that you own, "Open" Lists and group-curated Lists of Groups you are a part of.
 You can also suggest books to "Curated" Lists in the exact same way.</p>
-<p>There is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
+<p>In the List page there is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
 It shows books that you've recently interacted with on Bookwyrm, and a search bar.
 Currently, the search is limited to book titles (see issue <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3607">#3607</a>).
 Once you find the one you want, use the 'Add' button to add it to the List.</p>
+<p>Alternatively, if you are on a book page, there is a side menu titled "Lists". From here you can select the list you want to add the book to using the dropdown menu under "Add to list", and pressing "Add".</p>
 <h3 id="notes"><a class="headerlink" href="#notes">Notes</a></h3>
 <p>You can add a "Note" to each book in a List, which could be used to explain why it was added.
 Notes are added when a book is first added, or at any time with the 'Add notes' button.
