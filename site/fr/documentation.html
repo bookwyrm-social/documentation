@@ -183,6 +183,10 @@ Documentation
                 <a href="/v0.8.2/fr/cli.html" class="has-background-inherit" >Outils en ligne de commande</a>
             </li>
             
+            <li>
+                <a href="/v0.8.2/fr/management-commands.html" class="has-background-inherit" >Management Commands</a>
+            </li>
+            
         </ul>
         
         <h2 class="menu-label">Contributing</h2>
@@ -407,18 +411,10 @@ Documentation
 <h3 id="updating-when-a-new-version-is-released"><a class="headerlink" href="#updating-when-a-new-version-is-released">Updating when a new version is released</a></h3>
 <p>When a new version of BookWyrm is released we need to create a new version of the docs:</p>
 <ol>
-<li>
-<p>Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. <code>v0.8.0</code>.</p>
-</li>
-<li>
-<p>Add that branch name to the list of versions in <code>generate.py</code> in the <code>main</code> branch of the docs</p>
-</li>
-<li>
-<p>Check out every other version in turn, and merge the updated generation file into it so they all have the new branch listed: <code>git checkout main generate.py</code>. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.</p>
-</li>
-<li>
-<p>Merge the change in the <code>main</code> branch last - only merges into <code>main</code> trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect.</p>
-</li>
+<li>Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. <code>v0.x.y</code>.</li>
+<li>Add that branch name to the list of versions in <code>generate.py</code>, and push your new branch to the repository.</li>
+<li>Check out every other version in turn, and merge the updated <code>generate.py</code> file into it so they all have the new branch listed: <code>git checkout v0.x.y generate.py</code>. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.</li>
+<li>Merge the new <code>generate.py</code> in the <code>main</code> branch last - only merges into <code>main</code> trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect until next time you update <code>main</code>.</li>
 </ol>
 </section>
 
