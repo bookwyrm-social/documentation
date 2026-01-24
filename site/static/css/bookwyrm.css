@@ -8,9 +8,6 @@
     .menu {
         background-color: var(--bulma-scheme-main-bis);
     }
-    .index-menu {
-        background-color: none;
-    }
 }
 
 @media (prefers-color-scheme: light) {
