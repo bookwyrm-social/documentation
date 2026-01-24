@@ -9,6 +9,22 @@
 
 
 {% block content %}
+
+<menu class="menu">
+    <p class="menu-label">Contents</p>
+    <ul class="menu-list">
+        {% for entry in toc %}
+        <li><a class="menu-item has-background-inherit" href="#{{entry.id}}">{{entry.name}}</a></li>
+        {% if entry.children %}
+            {% for child in entry.children %}
+            <li><a class="menu-item has-background-inherit" href="#{{child.id}}"><span class="pl-4">{{child.name}}</span></a></li>
+            {% endfor %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+</menu>
+
+
 <section class="block content">
     {{ content|safe }}
 </section>
