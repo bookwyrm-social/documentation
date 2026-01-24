@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Updating Without Docker
+Aktualisieren ohne Docker
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -149,6 +149,26 @@ Updating Without Docker
         <h2 class="menu-label">Managing BookWyrm</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/users.html" class="has-background-inherit" >Managing users</a>
+            </li>
+            
+            <li>
+                <a href="/de/federation.html" class="has-background-inherit" >Federation</a>
+            </li>
+            
+            <li>
+                <a href="/de/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/de/system.html" class="has-background-inherit" >System Monitoring</a>
+            </li>
+            
+            <li>
+                <a href="/de/settings.html" class="has-background-inherit" >Instance Settings</a>
+            </li>
+            
         </ul>
         
         <h2 class="menu-label">Contributing</h2>
@@ -184,7 +204,7 @@ Updating Without Docker
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/de/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+                <a href="/de/install-prod.html" class="has-background-inherit" >Produktiv-Installation</a>
             </li>
             
             <li>
@@ -196,7 +216,7 @@ Updating Without Docker
             </li>
             
             <li>
-                <a href="/de/updating-dockerless.html" class="has-background-inherit" class="is-active">Updating Without Docker</a>
+                <a href="/de/updating-dockerless.html" class="has-background-inherit" class="is-active">Aktualisieren ohne Docker</a>
             </li>
             
             <li>
@@ -212,7 +232,7 @@ Updating Without Docker
             </li>
             
             <li>
-                <a href="/de/external-storage.html" class="has-background-inherit" >External Storage</a>
+                <a href="/de/external-storage.html" class="has-background-inherit" >Externer Speicher</a>
             </li>
             
             <li>
@@ -261,24 +281,23 @@ Updating Without Docker
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Updating Without Docker</h1>
+<h1 class="title is-1">Aktualisieren ohne Docker</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>Follow this guide if you have a BookWyrm installation without Docker and
-there are changes available in the production branch.</p>
-<p>This guide assumes that your setup followed the latest <a href="/install-prod-dockerless.html">Installation without Docker</a> guide.</p>
-<p>Run all the following commands, except otherwise noted, as the <code>bookwyrm</code> user:</p>
+    <p>Folge dieser Anleitung, wenn du eine BookWyrm-Installation ohne Docker hast und Änderungen im <code>production</code>-Branch verfügbar sind.</p>
+<p>Diese Anleitung nimmt an, dass du beim Aufsetzen der aktuellsten <a href="/install-prod-dockerless.html">"Installation ohne Docker"</a>-Anleitung gefolgt bist.</p>
+<p>Führe alle folgenden Befehle, sofern nicht anders angegeben, als <code>bookwyrm</code>-Nutzer aus:</p>
 <ol>
-<li>Pull in the latest changes on the <code>production</code> branch with <code>git pull</code></li>
-<li>Install potential new Python dependencies:
+<li>Ziehe die neuesten Änderungen im <code>production</code>-Branch mit <code>git pull</code></li>
+<li>Installiere potenzielle neue Python-Abhängigkeiten:
    - <code>./venv/bin/pip3 install --upgrade "pip&gt;=25.1.0"</code>
    - <code>./venv/bin/pip3 install --group main</code></li>
-<li>Compile the themes with <code>venv/bin/python3 manage.py compile_themes</code></li>
-<li>Collecting all the static files with <code>venv/bin/python3 manage.py collectstatic --no-input</code> – this also uploads them to <a href="/external-storage.html">external storage</a> if you have this configured</li>
-<li>Migrate the database (it's advisable to create a backup before) with <code>venv/bin/python3 manage.py migrate</code></li>
-<li>Restart the <code>systemd</code> services with <code>sudo systemctl restart bookwyrm bookwyrm-worker bookwyrm-scheduler</code></li>
+<li>Kompiliere die Themes mit dem Befehl venv/bin/python3 manage.py compile_themes`</li>
+<li>Sammle alle statischen Dateien mit <code>venv/bin/python3 manage.py collectstatic --no-input</code> – dies lädt sie auch in <a href="/external-storage.html">externe Speicher</a> hoch, sofern du dies eingerichtet hast</li>
+<li>Migriere die Datenbank (es ist empfehlenswert, vorher eine Sicherung anzulegen) mit <code>venv/bin/python3 manage.py migrate</code></li>
+<li>Starte die <code>systemd</code>-Dienste neu mit <code>sudo systemctl restart bookwyrm bookwyrm-worker bookwyrm-scheduler</code></li>
 </ol>
 </section>
 

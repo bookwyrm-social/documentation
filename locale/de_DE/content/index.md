@@ -5,30 +5,30 @@ Title: Willkommen Date: 2021-04-13
 BookWyrm ist ein soziales Netzwerk, um deinen Lesefortschritt zu verfolgen, über Bücher zu sprechen, Rezensionen zu schreiben und Neues zu entdecken. Föderation ermöglicht es BookWyrm-Benutzer*innen, kleinen, vertrauenswürdigen Communities beizutreten, die sich untereinander und mit anderen ActivityPub-Diensten wie Mastodon und Pleroma verbinden können.
 
 ## Funktionen
-The features are growing every month, and there is plenty of room for suggestions and ideas. Open an [issue](https://github.com/bookwyrm-social/bookwyrm/issues) to get the conversation going, or [find a good first issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) to make your first contribution!
+Der Funktionsumfang nimmt mit jedem Monat zu, es gibt also jede Menge Raum für Vorschläge und Ideen. Erstelle einen [Issue](https://github.com/bookwyrm-social/bookwyrm/issues), um das Gespräch darüber in Gang zu setzen, oder [finde einen guten Einstiegs-Issue](https://github.com/bookwyrm-social/bookwyrm/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22), um deinen ersten Beitrag zu leisten!
 
 - Über Bücher schreiben
-    - Rezensionen mit oder ohne Bewertungen erstellen, die in der Buchseite zusammengefasst werden
-    - Verfasse andere Arten von Status zu Büchern, z. B.:
+    - Erstelle Rezensionen, mit oder ohne Bewertungen, die auf der Seite des Buchs gesammelt erscheinen
+    - Verfasse andere Arten von Beiträgen über Bücher, zum Beispiel:
         - Kommentare zu einem Buch
         - Zitate oder Auszüge
-    - Auf Status antworten
-    - Gesamte Rezensionen eines Buches über verbundene BookWyrm-Instanzen ansehen
+    - Antworte auf Beiträge
+    - Schaue alle Rezensionen zu einem Buch an, die auf den verschiedenen, verbundenen BookWyrm-Instanzen geteilt wurden
     - Unterscheide lokale und föderierte Rezensionen und Bewertungen in deinem Aktivitätsfeed
 - Leseaktivität verfolgen
-    - Shelve books on default "to-read," "currently reading," "stopped reading," and "read" shelves
+    - Sammle Bücher in den Regalen "Leseliste", "Liest gerade", "Aufgehört zu lesen" und "Gelesen"
     - Erstelle eigene Regale
-    - Store started/stopped/finished reading dates, as well as progress updates along the way
-    - Aktualisiere Follower über Leseaktivitäten (optional mit granularen Privatsphäreeinstellungen)
-    - Erstelle Listen von Büchern, die offen für Einreichungen von jedem, zusammengestellt, oder nur vom Ersteller bearbeitet werden können
-    - Create groups with other BookWyrm users and collaborate with group-owned lists
+    - Speichere, wann du begonnen/aufgehört/abgebrochen hast, ein Buch zu lesen, sowie deinen Fortschritt während des Lesens
+    - Halte deine Follower*innen über deine Leseaktivitäten auf dem Laufenden (optional, mit granularen Einstellungen zum Schutz deiner Privatsphäre)
+    - Erstelle Listen von Büchern, bei denen jede*r etwas einreichen kann, die kuratiert werden, oder die nur bearbeiten kann, wer sie angelegt hat
+    - Erstelle Gruppen mit anderen BookWyrm-Nutzer*innen und bearbeite mit ihnen gemeinsam Listen, die der Gruppe gehören
 - Föderation mit ActivityPub
-    - Übertrage und empfange Status von Nutzer*innen und ihre Aktivität
+    - Übertrage und empfange Beiträge und Aktivitätsmeldungen von Nutzer*innen
     - Teile Buchdaten zwischen Instanzen, um eine vernetzte Datenbank mit Metadaten zu erstellen
-    - Identifiziere freigegebene Bücher über Instanzen hinweg und aggregiere verwandte Inhalte
-    - Folge und interagiere mit Nutzer*innen aus mehreren BookWyrm-Instanzen
-    - Arbeite mit nicht-BookWyrm-ActivityPub-Diensten (derzeit wird Mastodon unterstützt) zusammen
+    - Finde über die Instanzen hinweg Bücher, die geteilt worden sind, und sammle verwandte Inhalte
+    - Folge und interagiere mit Nutzer*innen der diversen BookWyrm-Instanzen
+    - Arbeite mit anderen ActivityPub-Diensten jenseits von BookWyrm zusammen (derzeit wird Mastodon unterstützt)
 - Granulare Privatsphäreeinstellungen
-    - Privat, nur Follower und öffentliches Privatsphärelevel für Beiträge, Regale und Listen
-    - Option für die manuelle Genehmigung von Followern
+    - Privatsphärelevel für Beiträge, Regale und Listen: Privat, nur für Follower*innen, oder öffentlich
+    - Option für die manuelle Genehmigung von Follower*innen
     - Blockieren und Markieren für Moderation erlauben

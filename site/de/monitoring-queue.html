@@ -149,6 +149,26 @@
         <h2 class="menu-label">Managing BookWyrm</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/users.html" class="has-background-inherit" >Managing users</a>
+            </li>
+            
+            <li>
+                <a href="/de/federation.html" class="has-background-inherit" >Federation</a>
+            </li>
+            
+            <li>
+                <a href="/de/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/de/system.html" class="has-background-inherit" >System Monitoring</a>
+            </li>
+            
+            <li>
+                <a href="/de/settings.html" class="has-background-inherit" >Instance Settings</a>
+            </li>
+            
         </ul>
         
         <h2 class="menu-label">Contributing</h2>
@@ -184,7 +204,7 @@
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/de/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+                <a href="/de/install-prod.html" class="has-background-inherit" >Produktiv-Installation</a>
             </li>
             
             <li>
@@ -196,7 +216,7 @@
             </li>
             
             <li>
-                <a href="/de/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+                <a href="/de/updating-dockerless.html" class="has-background-inherit" >Aktualisieren ohne Docker</a>
             </li>
             
             <li>
@@ -212,7 +232,7 @@
             </li>
             
             <li>
-                <a href="/de/external-storage.html" class="has-background-inherit" >External Storage</a>
+                <a href="/de/external-storage.html" class="has-background-inherit" >Externer Speicher</a>
             </li>
             
             <li>
@@ -290,14 +310,14 @@
                 </header>
                 
 <section class="block content">
-    <p>Es kann passieren, dass deine Instanz langsam ist. Eine Option wäre die Warteschlange zu inspizieren, um zu sehen, ob einige Jobs hängen. Lies weiter, um zu erfahren, wie.</p>
+    <p>Es kann passieren, dass deine Instanz langsam ist. Eine Option wäre es, die Warteschlange zu inspizieren, um zu sehen, ob einige Jobs hängen. Lies weiter, um zu erfahren, wie.</p>
 <h2 id="celery"><a class="headerlink" href="#celery">Celery</a></h2>
-<p>BookWyrm verwendet <a href="https://docs.celeryq.dev/en/stable/">Celery</a> um Hintergrundjobs zu verwalten.</p>
+<p>BookWyrm verwendet <a href="https://docs.celeryq.dev/en/stable/">Celery</a>, um Hintergrundjobs zu verwalten.</p>
 <h2 id="flower"><a class="headerlink" href="#flower">Flower</a></h2>
 <p>Um Celery-Jobs in Echtzeit zu sehen, verwendet BookWyrm <a href="https://flower.readthedocs.io/en/latest/">Flower</a>.</p>
-<p>Falls Du <a href="https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100"><code>docker-compose.yml</code></a>  nicht geändert hast, findest Du den Service auf <a href="https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45">Port 8888</a>. Das ist: <code>https://MY_DOMAIN_NAME:8888/</code>.</p>
+<p>Standardmäßig kannst du Flower-Logs unter <code>https://example.com/flower/</code> einsehen. Du wirst den Login-Namen und das Passwort aus deiner <code>.env</code>-Datei eingeben müssen. Celery kann helfen, Probleme zu beheben, die du mit deiner Aufgabenwarteschlange hast.</p>
 <h3 id="aufgaben"><a class="headerlink" href="#aufgaben">Aufgaben</a></h3>
-<p>Du findest unter <a href="https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task"><code>@app.task</code> kommentiert</a> Aufgaben in der Codebase.</p>
+<p>Wenn du wissen willst, welche Aktionen an Celery weitergegeben werden, findest du Tasks, die mit <a href="https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task"><code>@app.task</code> annotiert wurden</a>, im Quelltext.</p>
 </section>
 
             </section>
