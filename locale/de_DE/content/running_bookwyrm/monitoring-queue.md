@@ -1,21 +1,21 @@
 ---
 Title: Überwachungswarteschlange
 Date: 2022-11-23
-Order: 6
+Order: 7
 ---
 
-Es kann passieren, dass deine Instanz langsam ist. Eine Option wäre die Warteschlange zu inspizieren, um zu sehen, ob einige Jobs hängen. Lies weiter, um zu erfahren, wie.
+Es kann passieren, dass deine Instanz langsam ist. Eine Option wäre es, die Warteschlange zu inspizieren, um zu sehen, ob einige Jobs hängen. Lies weiter, um zu erfahren, wie.
 
 ## Celery
 
-BookWyrm verwendet [Celery](https://docs.celeryq.dev/en/stable/) um Hintergrundjobs zu verwalten.
+BookWyrm verwendet [Celery](https://docs.celeryq.dev/en/stable/), um Hintergrundjobs zu verwalten.
 
 ## Flower
 
 Um Celery-Jobs in Echtzeit zu sehen, verwendet BookWyrm [Flower](https://flower.readthedocs.io/en/latest/).
 
-Falls Du [`docker-compose.yml`](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/docker-compose.yml#L87-L100)  nicht geändert hast, findest Du den Service auf [Port 8888](https://github.com/bookwyrm-social/bookwyrm/blob/dc14670a2ca7553317528d3384146d79df1f7413/.env.example#L42-L45). Das ist: `https://MY_DOMAIN_NAME:8888/`.
+Standardmäßig kannst du Flower-Logs unter `https://example.com/flower/` einsehen. Du wirst den Login-Namen und das Passwort aus deiner `.env`-Datei eingeben müssen. Celery kann helfen, Probleme zu beheben, die du mit deiner Aufgabenwarteschlange hast.
 
 ### Aufgaben
 
-Du findest unter [`@app.task` kommentiert](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task) Aufgaben in der Codebase.
+Wenn du wissen willst, welche Aktionen an Celery weitergegeben werden, findest du Tasks, die mit [`@app.task` annotiert wurden](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task), im Quelltext.

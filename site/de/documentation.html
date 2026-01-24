@@ -144,7 +144,7 @@ Dokumentation
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/v0.8.0/de/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+                <a href="/v0.8.0/de/install-prod.html" class="has-background-inherit" >Produktiv-Installation</a>
             </li>
             
             <li>
@@ -156,7 +156,7 @@ Dokumentation
             </li>
             
             <li>
-                <a href="/v0.8.0/de/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+                <a href="/v0.8.0/de/updating-dockerless.html" class="has-background-inherit" >Aktualisieren ohne Docker</a>
             </li>
             
             <li>
@@ -172,7 +172,7 @@ Dokumentation
             </li>
             
             <li>
-                <a href="/v0.8.0/de/external-storage.html" class="has-background-inherit" >External Storage</a>
+                <a href="/v0.8.0/de/external-storage.html" class="has-background-inherit" >Externer Speicher</a>
             </li>
             
             <li>
@@ -278,7 +278,7 @@ Dokumentation
                   <a class="navbar-item" href="#neue-seiten">Neue Seiten</a>
                   
               
-                  <a class="navbar-item" href="#building-docs-locally">Building docs locally</a>
+                  <a class="navbar-item" href="#die-dokumentation-lokal-bauen">Die Dokumentation lokal bauen</a>
                   
                       
                       <a class="navbar-item" href="#sitecompile"><span class="pl-4">site:compile</span></a>
@@ -289,12 +289,12 @@ Dokumentation
                       
                   
               
-                  <a class="navbar-item" href="#notes-for-documentation-maintainers">Notes for documentation maintainers</a>
+                  <a class="navbar-item" href="#hinweise-fur-dokumentations-maintainer">Hinweise für Dokumentations-Maintainer</a>
                   
                       
-                      <a class="navbar-item" href="#translations"><span class="pl-4">Translations</span></a>
+                      <a class="navbar-item" href="#ubersetzungen"><span class="pl-4">Übersetzungen</span></a>
                       
-                      <a class="navbar-item" href="#updating-when-a-new-version-is-released"><span class="pl-4">Updating when a new version is released</span></a>
+                      <a class="navbar-item" href="#updaten-wenn-eine-neue-version-veroffentlicht-wurde"><span class="pl-4">Updaten, wenn eine neue Version veröffentlicht wurde</span></a>
                       
                   
               
@@ -364,57 +364,57 @@ Dokumentation
 <h3 id="deine-anderungen-werden-veroffentlicht"><a class="headerlink" href="#deine-anderungen-werden-veroffentlicht">Deine Änderungen werden veröffentlicht</a></h3>
 <p>Wenn deine Pull Request übernommen wird, wird <a href="https://docs.joinbookwyrm.com/">die Dokumentation</a> automatisch aktualisiert. Es kann sein, dass du deinen Browser neu starten oder den "Inkognito-Modus" nutzen musst, um die Änderungen in deinem Browser zu sehen.</p>
 <h2 id="neue-seiten"><a class="headerlink" href="#neue-seiten">Neue Seiten</a></h2>
-<p>If you are adding a new page, you will need to add some metadata and may need to adjust other pages.</p>
-<p>At the top of each markdown file is the "frontmatter" in <code>toml</code> format:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="p">:</span><span class="w"> </span><span class="n">Documentation</span>
+<p>Wenn du eine neue Seite hinzufügst, wirst du einige Metadaten angeben und andere Seite anpassen müssen.</p>
+<p>Am Anfang jeder Markdown-Datei befindet sich die Titelei im <code>toml</code>-Format:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="p">:</span><span class="w"> </span><span class="n">Dokumentation</span>
 <span class="n">Date</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
 <span class="n">Order</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 </code></pre></div>
 
-<p>This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, <code>Contributing</code>), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.</p>
-<p>This section is contained within a pair of triple dashes (<code>---</code>). In markdown, triple dashes can also be used to indicate a horizontal rule, however the BookWyrm docs parser can get confused by this. If you need a horizontal rule, enter it as HTML code directly with blank lines above and below:</p>
+<p>Dieses Beispiel zeigt, dass die Seite "Dokumentation" heißt, in ihrem Abschnitt (in diesem Fall: "Wie mitmachen") an vierter Stelle angezeigt werden soll, und dass sie zuletzt am 9. April 2025 aktualisiert wurde. Wenn du die Seite nicht am Ende eines Abschnittes hinzufügst, wirst du die Reihenfolge (<code>order</code>) jeder Seite anpassen müssen, die unter deiner neuen Seite erscheinen soll.</p>
+<p>Die Titelei wird von einem Paar dreifacher Bindestriche (<code>---</code>) umschlossen. In Markdown können dreifache Bindestriche auch für eine horizontale Trennlinie verwendet werden, allerdings kann dies den Parser für die BookWyrm-Dokumentation verwirren. Wenn du eine horizontale Trennlinie brauchst, nutze hierfür direkt den HTML-Code mit einer Leerzeile davor und danach:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
 </code></pre></div>
 
-<h2 id="building-docs-locally"><a class="headerlink" href="#building-docs-locally">Building docs locally</a></h2>
-<p>You might want to see what your changes will look like before sending a pull request. The docs repository includes a development script like the main code repository, with the same name: <code>bw-dev</code>. You can use this to test what your changes will look like.</p>
-<p>Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you <a href="https://docs.python.org/3/library/venv.html">use a virtual environment</a>:</p>
+<h2 id="die-dokumentation-lokal-bauen"><a class="headerlink" href="#die-dokumentation-lokal-bauen">Die Dokumentation lokal bauen</a></h2>
+<p>Bevor du eine Pull Request einreichst, wirst du dir anschauen wollen, wie deine Änderungen am Ende aussehen werden. Das Dokumentations-Repository enthält – wie das Haupt-Quelltext-Repository – ein Entwicklungs-Skript mit demselben Namen: <code>bw-dev</code>. Du kannst es benutzen, um zu testen, wie deine Änderungen aussehen werden.</p>
+<p>Anders als im Hauptprojekt läuft die Dokumentation nicht in einem Docker-Container. Wenn du die Dokumentationsseite lokal kompilieren möchtest, wirst du alle Abhängigkeiten installieren müssen, und es ist empfehlenswert, <a href="https://docs.python.org/3/library/venv.html">eine virtuelle Umgebung</a> zu nutzen:</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
 <span class="n">source</span> <span class="o">&lt;</span><span class="n">venv</span><span class="o">&gt;/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </code></pre></div>
 
-<p>There are a number of commands available by running <code>./bw-dev &lt;command&gt;</code>. The ones you are likely to want to use are:</p>
+<p>Eine ganze Reihe von Befehlen ist verfügbar, wenn du <code>./bw-dev &lt;command&gt;</code> ausführst. Du wirst wahrscheinlich diese nutzen wollen:</p>
 <h3 id="sitecompile"><a class="headerlink" href="#sitecompile">site:compile</a></h3>
-<p>This will compile markdown files into html files using the <code>generate.py</code> script.</p>
-<p>When you run <code>site:compile</code> it will generate a large number of files in the <code>site</code> directory. Do not check these in or include them in your pull request: they will be re-generated on the documentation server when your pull request is merged.</p>
+<p>Dieser Befehl wird deine Markdown-Dateien mithilfe des Skripts <code>generator.py</code> zu HTML kompilieren.</p>
+<p>Wenn du <code>site:compile</code> ausführst, wird es im Verzeichnis <code>site</code> eine große Menge Dateien erzeugen. Checke diese nicht ein und füge sie nicht deiner Pull Request bei: Sie werden auf dem Dokumentations-Server neu generiert, wenn deine Pull Request übernommen wird.</p>
 <h3 id="siteserve"><a class="headerlink" href="#siteserve">site:serve</a></h3>
-<p>This runs a local web server at <code>http://[::1]:8080/</code> so you can see what the docs will look like.</p>
+<p>Dieser Befehl startet einen lokalen Web-Server unter <code>http://[::1]:8080/</code>, damit du dir ansehen kannst, wie die Dokumentation aussehen wird.</p>
 <h3 id="black"><a class="headerlink" href="#black">black</a></h3>
-<p>This will run <code>black</code> to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in <code>content</code>.</p>
-<h2 id="notes-for-documentation-maintainers"><a class="headerlink" href="#notes-for-documentation-maintainers">Notes for documentation maintainers</a></h2>
-<h3 id="translations"><a class="headerlink" href="#translations">Translations</a></h3>
-<p>Keep translations aligned by regularly updating from Crowdin:</p>
+<p>Dieser Befehl wird <code>black</code> ausführen, um deine Dateien zu analysieren und auftretende Probleme durch unsere automatischen Überprüfungen zu erkennen. Es ist unwahrscheinlich, dass du dies brauchen wirst, wenn du nur die Quelldateien der Dokumentation im Ordner <code>content</code> aktualisierst.</p>
+<h2 id="hinweise-fur-dokumentations-maintainer"><a class="headerlink" href="#hinweise-fur-dokumentations-maintainer">Hinweise für Dokumentations-Maintainer</a></h2>
+<h3 id="ubersetzungen"><a class="headerlink" href="#ubersetzungen">Übersetzungen</a></h3>
+<p>Halte Übersetzungen konsistent, indem du sie regelmäßig von Crowdin aktualisierst:</p>
 <ol>
-<li>Translations are updated in Crowdin</li>
-<li>Crowdin pushes new translations to l10n_main as they are available</li>
-<li>In your fork, <code>pull</code> both <code>main</code> and <code>l10n_main</code> so they are up to date in your local repository</li>
-<li>Create a new fork from <code>main</code> (e.g. called <code>update_locales</code>) and check it out</li>
-<li>merge <code>l10n_main</code>'s <code>locale</code> directory into your fork: <code>git checkout l10n_main -- locale</code></li>
-<li>make adjustments if necessary</li>
-<li>push your local branch up to your remote and create a pull request</li>
-<li>pull the PR into <code>main</code></li>
-<li>There is now a new reference file in en_US</li>
-<li>Using the changes in the new reference file, translations are updated in Crowdin...</li>
+<li>Übersetzungen werden in Crowdin aktualisiert</li>
+<li>Crowdin pusht neue Übersetzungen nach <code>l10n_main</code>, wenn sie verfügbar sind</li>
+<li>in deinem Fork, pulle sowohl <code>main</code> als auch <code>l10n_main</code>, sodass dein lokales Repository aktuell ist</li>
+<li>erstelle einen neuen Branch, der von <code>main</code> abzweigt (z. B. mit dem Namen <code>update_locales</code>), und checke ihn aus</li>
+<li>merge das Verzeichnis <code>locale</code> vonn <code>l10n_main</code> in deinen Fork: <code>git checkout l10n_main -- locale</code></li>
+<li>nimm Änderungen vor, falls dies nötig ist</li>
+<li>pushe deinen lokalen Branch zu deinem entfernten Repository und erstelle eine Pull Request</li>
+<li>übernimm die Pull Request in <code>main</code></li>
+<li>es gibt nun eine neue Referenzdatei in <code>en_US</code></li>
+<li>mit den Änderungen in der neuen Referenzdatei werden die Übersetzungen in Crowdin angepasst ...</li>
 </ol>
-<p>Locales for the language dropdown are listed in <code>i18n.py</code>. Generally we wait for a language to have 70% coverage in Crowdin before adding it to the list to avoid too much content remaining untranslated.</p>
-<h3 id="updating-when-a-new-version-is-released"><a class="headerlink" href="#updating-when-a-new-version-is-released">Updating when a new version is released</a></h3>
-<p>When a new version of BookWyrm is released we need to create a new version of the docs:</p>
+<p>Die Lokalisierungen für die Sprachauswahl sind in <code>i18n.py</code> aufgeführt. Im Allgemeinen warten wir, bis eine Sprache in Crowdin zu 70 % abgedeckt ist, bevor wir sie zur Liste hinzufügen, um zu vermeiden, dass zu viel Inhalt unübersetzt bleibt.</p>
+<h3 id="updaten-wenn-eine-neue-version-veroffentlicht-wurde"><a class="headerlink" href="#updaten-wenn-eine-neue-version-veroffentlicht-wurde">Updaten, wenn eine neue Version veröffentlicht wurde</a></h3>
+<p>Wenn eine neue Version von BookWyrm veröffentlicht wird, müssen wir eine neue Version der Dokumentation erstellen:</p>
 <ol>
-<li>Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. <code>v0.x.y</code>.</li>
-<li>Add that branch name to the list of versions in <code>generate.py</code>, and push your new branch to the repository.</li>
-<li>Check out every other version in turn, and merge the updated <code>generate.py</code> file into it so they all have the new branch listed: <code>git checkout v0.x.y generate.py</code>. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.</li>
-<li>Merge the new <code>generate.py</code> in the <code>main</code> branch last - only merges into <code>main</code> trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect until next time you update <code>main</code>.</li>
+<li>Füge einen Branch hinzu, dessen Name exakt dem neuen Versions-Tag in BookWyrm entspricht. Zum Beispiel <code>v0.x.y</code>.</li>
+<li>Füge den Namen des neuen Branches zur Liste der Versionen in <code>generate.py</code> hinzu und pushe deinen neuen Branch zum Repository.</li>
+<li>Wechsle nacheinander auf jede andere Version und merge die aktualisierte Datei <code>generate.py</code>, sodass sie alle den neuen Branch enthalten: <code>git checkout v0.x.y generate.py</code>. Dann commite diese Änderung, erstelle eine Pull Request, um die Änderung in den Branch dieser Version in der Dokumentation zu übernehmen, und übernimm sie. Das wird dafür sorgen, dass alle Seiten in allen Versionen der Dokumentation alle anderen Versionen im Auswahlmenü auflisten.</li>
+<li>Merge die neue <code>generate.py</code> zuletzt in den <code>main</code>-Branch – nur Übernahmen in <code>main</code> lösen GitHub-Actions aus, um die Dokumentation auf den Web-Server auszurollen. Falls du dies also zuerst erledigst, werden die Änderungen in den anderen Branches keinen Effekt haben, bis du das nächste Mal <code>main</code> aktualisierst.</li>
 </ol>
 </section>
 
