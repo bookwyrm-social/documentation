@@ -1,5 +1,5 @@
 - - -
-Title: External Storage Date: 2021-06-07 Order: 8
+Title: Externer Speicher Date: 2021-06-07 Order: 8
 - - -
 
 Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favicon, Standard-Avatar, etc.) und Medien (Benutzer-Avatare, Buchtitelbilder usw.), aber Sie können einen externen Speicherdienst verwenden, um diese Dateien zu bereitzustellen. BookWyrm verwendet `django-storages`, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.
@@ -8,23 +8,23 @@ Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favic
 
 ### Einrichtung
 
-Erstellen Sie einen Bucket in Ihrem S3-kompatiblen Dienst der Wahl, zusammen mit einer Zugangsschlüssel-ID und einem geheimen Zugriffsschlüssel. Diese können selbst gehostet sein, wie [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) oder [MinIO](https://min.io/) (GNU AGPL v3.0) oder kommerziell ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
+Erstelle einen Bucket in deinem S3-kompatiblen Dienst der Wahl, zusammen mit einer Zugangsschlüssel-ID und einem geheimen Zugriffsschlüssel. Diese können selbst gehostet sein, wie [Ceph](https://ceph.io/en/) (LGPL 2.1/3.0) oder [MinIO](https://min.io/) (GNU AGPL v3.0) oder kommerziell ([Scaleway](https://www.scaleway.com/en/docs/object-storage-feature/), [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key)…).
 
-Diese Anleitung wurde mit Scaleway Object Storage getestet. Wenn Sie einen anderen Dienst verwenden, teilen Sie bitte Ihre Erfahrungen (insbesondere wenn Sie andere Schritte unternehmen mussten), indem Sie einen Problembericht im [BookWyrm Dokumentations](https://github.com/bookwyrm-social/documentation)-Repository einreichen.
+Diese Anleitung wurde mit Scaleway Object Storage getestet. Wenn du einen anderen Dienst verwendest, teile bitte deine Erfahrungen (insbesondere wenn du andere Schritte unternehmen musstest), indem du einen Problembericht im [BookWyrm-Dokumentations-Repository](https://github.com/bookwyrm-social/documentation) einreichst.
 
 ### Was erwartet dich
 
 Wenn du eine neue BookWyrm-Instanz startest, wird der Prozess sein:
 
-- Richte deinen externen Speicherservice ein
+- Richte den externen Speicherdienst ein
 - Aktiviere externen Speicher auf BookWyrm
 - Starte deine BookWyrm-Instanz
-- Instanz Konnektor aktualisieren
+- Aktualisiere den Instanz-Konnektor
 
 Wenn du deine Instanz bereits gestartet hast und Bilder auf den lokalen Speicher hochgeladen wurden, wird der Prozess sein:
 
 - Richte den externen Speicherdienst ein
-- Kopiere die lokalen Medien auf externen Speicher
+- Kopiere die lokalen Medien auf den externen Speicher
 - Aktiviere externen Speicher auf BookWyrm
 - Starte die BookWyrm-Instanz neu
 - Instanz-Konnektor aktualisieren
