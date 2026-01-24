@@ -1,21 +1,20 @@
 ---
-Title: Updating Without Docker
+Title: Aktualisieren ohne Docker
 Date: 2023-01-29
 Order: 4
 ---
 
-Follow this guide if you have a BookWyrm installation without Docker and
-there are changes available in the production branch.
+Folge dieser Anleitung, wenn du eine BookWyrm-Installation ohne Docker hast und Änderungen im `production`-Branch verfügbar sind.
 
-This guide assumes that your setup followed the latest [Installation without Docker](/install-prod-dockerless.html) guide.
+Diese Anleitung nimmt an, dass du beim Aufsetzen der aktuellsten ["Installation ohne Docker"](/install-prod-dockerless.html)-Anleitung gefolgt bist.
 
-Run all the following commands, except otherwise noted, as the `bookwyrm` user:
+Führe alle folgenden Befehle, sofern nicht anders angegeben, als `bookwyrm`-Nutzer aus:
 
-1. Pull in the latest changes on the `production` branch with `git pull`
-2. Install potential new Python dependencies:
+1. Ziehe die neuesten Änderungen im `production`-Branch mit `git pull`
+2. Installiere potenzielle neue Python-Abhängigkeiten:
    - `./venv/bin/pip3 install --upgrade "pip>=25.1.0"`
    - `./venv/bin/pip3 install --group main`
-3. Compile the themes with `venv/bin/python3 manage.py compile_themes`
-4. Collecting all the static files with `venv/bin/python3 manage.py collectstatic --no-input` – this also uploads them to [external storage](/external-storage.html) if you have this configured
-5. Migrate the database (it's advisable to create a backup before) with `venv/bin/python3 manage.py migrate`
-6. Restart the `systemd` services with `sudo systemctl restart bookwyrm bookwyrm-worker bookwyrm-scheduler`
+3. Kompiliere die Themes mit dem Befehl venv/bin/python3 manage.py compile_themes\`
+4. Sammle alle statischen Dateien mit `venv/bin/python3 manage.py collectstatic --no-input` – dies lädt sie auch in [externe Speicher](/external-storage.html) hoch, sofern du dies eingerichtet hast
+5. Migriere die Datenbank (es ist empfehlenswert, vorher eine Sicherung anzulegen) mit `venv/bin/python3 manage.py migrate`
+6. Starte die `systemd`-Dienste neu mit `sudo systemctl restart bookwyrm bookwyrm-worker bookwyrm-scheduler`

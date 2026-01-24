@@ -73,19 +73,19 @@ Wenn deine Pull Request übernommen wird, wird [die Dokumentation](https://docs.
 
 ## Neue Seiten
 
-If you are adding a new page, you will need to add some metadata and may need to adjust other pages.
+Wenn du eine neue Seite hinzufügst, wirst du einige Metadaten angeben und andere Seite anpassen müssen.
 
-At the top of each markdown file is the "frontmatter" in `toml` format:
+Am Anfang jeder Markdown-Datei befindet sich die Titelei im `toml`-Format:
 
 ```toml
-Title: Documentation
+Title: Dokumentation
 Date: 2025-04-09
 Order: 4
 ```
 
-This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, `Contributing`), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.
+Dieses Beispiel zeigt, dass die Seite "Dokumentation" heißt, in ihrem Abschnitt (in diesem Fall: "Wie mitmachen") an vierter Stelle angezeigt werden soll, und dass sie zuletzt am 9. April 2025 aktualisiert wurde. Wenn du die Seite nicht am Ende eines Abschnittes hinzufügst, wirst du die Reihenfolge (`order`) jeder Seite anpassen müssen, die unter deiner neuen Seite erscheinen soll.
 
-This section is contained within a pair of triple dashes (`---`). In markdown, triple dashes can also be used to indicate a horizontal rule, however the BookWyrm docs parser can get confused by this. If you need a horizontal rule, enter it as HTML code directly with blank lines above and below:
+Die Titelei wird von einem Paar dreifacher Bindestriche (`---`) umschlossen. In Markdown können dreifache Bindestriche auch für eine horizontale Trennlinie verwendet werden, allerdings kann dies den Parser für die BookWyrm-Dokumentation verwirren. Wenn du eine horizontale Trennlinie brauchst, nutze hierfür direkt den HTML-Code mit einer Leerzeile davor und danach:
 
 ```html
 
@@ -93,11 +93,11 @@ This section is contained within a pair of triple dashes (`---`). In markdown, t
 
 ```
 
-## Building docs locally
+## Die Dokumentation lokal bauen
 
-You might want to see what your changes will look like before sending a pull request. The docs repository includes a development script like the main code repository, with the same name: `bw-dev`. You can use this to test what your changes will look like.
+Bevor du eine Pull Request einreichst, wirst du dir anschauen wollen, wie deine Änderungen am Ende aussehen werden. Das Dokumentations-Repository enthält – wie das Haupt-Quelltext-Repository – ein Entwicklungs-Skript mit demselben Namen: `bw-dev`. Du kannst es benutzen, um zu testen, wie deine Änderungen aussehen werden.
 
-Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you [use a virtual environment](https://docs.python.org/3/library/venv.html):
+Anders als im Hauptprojekt läuft die Dokumentation nicht in einem Docker-Container. Wenn du die Dokumentationsseite lokal kompilieren möchtest, wirst du alle Abhängigkeiten installieren müssen, und es ist empfehlenswert, [eine virtuelle Umgebung](https://docs.python.org/3/library/venv.html) zu nutzen:
 
 ```py
 python -m venv /path/to/new/virtual/environment
@@ -105,46 +105,46 @@ source <venv>/bin/activate
 pip install -r requirements.txt
 ```
 
-There are a number of commands available by running `./bw-dev <command>`. The ones you are likely to want to use are:
+Eine ganze Reihe von Befehlen ist verfügbar, wenn du `./bw-dev <command>` ausführst. Du wirst wahrscheinlich diese nutzen wollen:
 
 ### site:compile
 
-This will compile markdown files into html files using the `generate.py` script.
+Dieser Befehl wird deine Markdown-Dateien mithilfe des Skripts `generator.py` zu HTML kompilieren.
 
-When you run `site:compile` it will generate a large number of files in the `site` directory. Do not check these in or include them in your pull request: they will be re-generated on the documentation server when your pull request is merged.
+Wenn du `site:compile` ausführst, wird es im Verzeichnis `site` eine große Menge Dateien erzeugen. Checke diese nicht ein und füge sie nicht deiner Pull Request bei: Sie werden auf dem Dokumentations-Server neu generiert, wenn deine Pull Request übernommen wird.
 
 ### site:serve
 
-This runs a local web server at `http://[::1]:8080/` so you can see what the docs will look like.
+Dieser Befehl startet einen lokalen Web-Server unter `http://[::1]:8080/`, damit du dir ansehen kannst, wie die Dokumentation aussehen wird.
 
 ### black
 
-This will run `black` to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in `content`.
+Dieser Befehl wird `black` ausführen, um deine Dateien zu analysieren und auftretende Probleme durch unsere automatischen Überprüfungen zu erkennen. Es ist unwahrscheinlich, dass du dies brauchen wirst, wenn du nur die Quelldateien der Dokumentation im Ordner `content` aktualisierst.
 
-## Notes for documentation maintainers
+## Hinweise für Dokumentations-Maintainer
 
-### Translations
+### Übersetzungen
 
-Keep translations aligned by regularly updating from Crowdin:
+Halte Übersetzungen konsistent, indem du sie regelmäßig von Crowdin aktualisierst:
 
-1. Translations are updated in Crowdin
-2. Crowdin pushes new translations to l10n_main as they are available
-3. In your fork, `pull` both `main` and `l10n_main` so they are up to date in your local repository
-4. Create a new fork from `main` (e.g. called `update_locales`) and check it out
-5. merge `l10n_main`'s `locale` directory into your fork: `git checkout l10n_main -- locale`
-6. make adjustments if necessary
-7. push your local branch up to your remote and create a pull request
-8. pull the PR into `main`
-9. There is now a new reference file in en_US
-10. Using the changes in the new reference file, translations are updated in Crowdin...
+1. Übersetzungen werden in Crowdin aktualisiert
+2. Crowdin pusht neue Übersetzungen nach `l10n_main`, wenn sie verfügbar sind
+3. in deinem Fork, pulle sowohl `main` als auch `l10n_main`, sodass dein lokales Repository aktuell ist
+4. erstelle einen neuen Branch, der von `main` abzweigt (z. B. mit dem Namen `update_locales`), und checke ihn aus
+5. merge das Verzeichnis `locale` vonn `l10n_main` in deinen Fork: `git checkout l10n_main -- locale`
+6. nimm Änderungen vor, falls dies nötig ist
+7. pushe deinen lokalen Branch zu deinem entfernten Repository und erstelle eine Pull Request
+8. übernimm die Pull Request in `main`
+9. es gibt nun eine neue Referenzdatei in `en_US`
+10. mit den Änderungen in der neuen Referenzdatei werden die Übersetzungen in Crowdin angepasst ...
 
-Locales for the language dropdown are listed in `i18n.py`. Generally we wait for a language to have 70% coverage in Crowdin before adding it to the list to avoid too much content remaining untranslated.
+Die Lokalisierungen für die Sprachauswahl sind in `i18n.py` aufgeführt. Im Allgemeinen warten wir, bis eine Sprache in Crowdin zu 70 % abgedeckt ist, bevor wir sie zur Liste hinzufügen, um zu vermeiden, dass zu viel Inhalt unübersetzt bleibt.
 
-### Updating when a new version is released
+### Updaten, wenn eine neue Version veröffentlicht wurde
 
-When a new version of BookWyrm is released we need to create a new version of the docs:
+Wenn eine neue Version von BookWyrm veröffentlicht wird, müssen wir eine neue Version der Dokumentation erstellen:
 
-1. Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. `v0.x.y`.
-2. Add that branch name to the list of versions in `generate.py`, and push your new branch to the repository.
-3. Check out every other version in turn, and merge the updated `generate.py` file into it so they all have the new branch listed: `git checkout v0.x.y generate.py`. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.
-4. Merge the new `generate.py` in the `main` branch last - only merges into `main` trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect until next time you update `main`.
+1. Füge einen Branch hinzu, dessen Name exakt dem neuen Versions-Tag in BookWyrm entspricht. Zum Beispiel `v0.x.y`.
+2. Füge den Namen des neuen Branches zur Liste der Versionen in `generate.py` hinzu und pushe deinen neuen Branch zum Repository.
+3. Wechsle nacheinander auf jede andere Version und merge die aktualisierte Datei `generate.py`, sodass sie alle den neuen Branch enthalten: `git checkout v0.x.y generate.py`. Dann commite diese Änderung, erstelle eine Pull Request, um die Änderung in den Branch dieser Version in der Dokumentation zu übernehmen, und übernimm sie. Das wird dafür sorgen, dass alle Seiten in allen Versionen der Dokumentation alle anderen Versionen im Auswahlmenü auflisten.
+4. Merge die neue `generate.py` zuletzt in den `main`-Branch – nur Übernahmen in `main` lösen GitHub-Actions aus, um die Dokumentation auf den Web-Server auszurollen. Falls du dies also zuerst erledigst, werden die Änderungen in den anderen Branches keinen Effekt haben, bis du das nächste Mal `main` aktualisierst.
