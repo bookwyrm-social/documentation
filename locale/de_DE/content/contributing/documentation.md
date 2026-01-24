@@ -73,7 +73,7 @@ Wenn deine Pull Request übernommen wird, wird [die Dokumentation](https://docs.
 
 ## Neue Seiten
 
-If you are adding a new page, you will need to add some metadata and may need to adjust other pages.
+Wenn du eine neue Seite hinzufügst, wirst du einige Metadaten angeben und andere Seite anpassen müssen.
 
 At the top of each markdown file is the "frontmatter" in `toml` format:
 
