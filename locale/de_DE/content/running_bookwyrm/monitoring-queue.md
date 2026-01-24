@@ -4,18 +4,18 @@ Date: 2022-11-23
 Order: 7
 ---
 
-Es kann passieren, dass deine Instanz langsam ist. One option would be to inspect the queue to see whether some jobs hang. Lies weiter, um zu erfahren, wie.
+Es kann passieren, dass deine Instanz langsam ist. Eine Option wäre es, die Warteschlange zu inspizieren, um zu sehen, ob einige Jobs hängen. Lies weiter, um zu erfahren, wie.
 
 ## Celery
 
-BookWyrm is using [Celery](https://docs.celeryq.dev/en/stable/) to manage background jobs.
+BookWyrm verwendet [Celery](https://docs.celeryq.dev/en/stable/), um Hintergrundjobs zu verwalten.
 
 ## Flower
 
-To watch Celery jobs in real-time BookWyrm uses [Flower](https://flower.readthedocs.io/en/latest/).
+Um Celery-Jobs in Echtzeit zu sehen, verwendet BookWyrm [Flower](https://flower.readthedocs.io/en/latest/).
 
-By default you can view flower logs from `https://example.com/flower/`. You will need to enter the login name and password from your `.env` file. Celery can help to troubleshoot problems you may be having with your task queue.
+Standardmäßig kannst du Flower-Logs unter `https://example.com/flower/` einsehen. Du wirst den Login-Namen und das Passwort aus deiner `.env`-Datei eingeben müssen. Celery kann helfen, Probleme zu beheben, die du mit deiner Aufgabenwarteschlange hast.
 
 ### Aufgaben
 
-If you want to know which actions are sent to celery, you can find [`@app.task` annotated](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task) tasks in the codebase.
+Wenn du wissen willst, welche Aktionen an Celery weitergegeben werden, findest du Tasks, die mit [`@app.task` annotiert wurden](https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task), im Quelltext.
