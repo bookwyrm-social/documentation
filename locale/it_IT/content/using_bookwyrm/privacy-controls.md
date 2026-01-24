@@ -32,10 +32,10 @@ L'opzione predefinita.
 
 - Chiunque può vedere il tuo stato senza effettuare l'accesso.
 - Il tuo stato apparirà su:
-    - timeline pubbliche
-    - pagine di scoperta.
-    - la pagina del libro a cui è collegato.
-    - la timeline principale delle persone che ti seguono
+  - timeline pubbliche
+  - pagine di scoperta.
+  - la pagina del libro a cui è collegato.
+  - la timeline principale delle persone che ti seguono
 - Il tuo stato può essere condiviso (boostato) nelle timeline principali di altre persone.
 
 ### Non in elenco
@@ -91,16 +91,16 @@ Le raccolte sono pubbliche di default, ma puoi modificarle per renderle visibili
 
 - Chiunque può vedere la tua [Lista](/lists.html) senza effettuare l’accesso.
 - La tua lista apparirà su:
-    - la pagina Liste di scoperta (scheda Elenchi).
-    - le pagine che un libro contiene verranno visualizzate lateralmente sullo schermo.
-    - profilo utente.
+  - la pagina Liste di scoperta (scheda Elenchi).
+  - le pagine che un libro contiene verranno visualizzate lateralmente sullo schermo.
+  - profilo utente.
 - Chiunque può 'salvare' (segnalibro) la tua lista.
 
 ### Non in elenco
 
 - Attualmente non c’è alcuna differenza tra “Pubblico” e “Non in elenco” per le Liste.
-    In futuro, l’opzione “Non in elenco” nasconderà nella Lista dalle pagine scoperte e dalle pagine dei libri.
-    Per ulteriori dettagli, [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) vedi su GitHub.
+  In futuro, l’opzione “Non in elenco” nasconderà nella Lista dalle pagine scoperte e dalle pagine dei libri.
+  Per ulteriori dettagli, [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) vedi su GitHub.
 
 ### Follower
 
