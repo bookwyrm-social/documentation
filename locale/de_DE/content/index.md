@@ -27,8 +27,38 @@ Der Funktionsumfang nimmt mit jedem Monat zu, es gibt also jede Menge Raum für 
     - Teile Buchdaten zwischen Instanzen, um eine vernetzte Datenbank mit Metadaten zu erstellen
     - Finde über die Instanzen hinweg Bücher, die geteilt worden sind, und sammle verwandte Inhalte
     - Folge und interagiere mit Nutzer*innen der diversen BookWyrm-Instanzen
-    - Arbeite mit anderen ActivityPub-Diensten jenseits von BookWyrm zusammen (derzeit wird Mastodon unterstützt)
+    - Inter-operate with non-BookWyrm ActivityPub services like Mastodon and GoToSocial
 - Granulare Privatsphäreeinstellungen
     - Privatsphärelevel für Beiträge, Regale und Listen: Privat, nur für Follower*innen, oder öffentlich
     - Option für die manuelle Genehmigung von Follower*innen
     - Blockieren und Markieren für Moderation erlauben
+
+## Using this documentation
+
+### Navigation
+
+Use the menu on the left-hand side to find the section you are looking for.
+
+* _Using BookWyrm_ explains how to use BookWyrm as an ordinary user
+* You will need the _Running BookWyrm_ section if you want to administer a BookWyrm instance (server)
+* _Contributing_ explains how you can get involved in the project and contribute in various ways (you don't have to know how to code)
+* _Codebase_ provides more information about key aspects of BookWyrm's code
+* Consult the _Reference Guides_ if you need to know what a particular environment variable or `bw-dev` command does
+
+You can also change the language and version.
+
+### Translations
+
+Documentation is written in English (US) by default. When we have at least 70% coverage for a language in [BookWyrm's translation project](https://translate.joinbookwyrm.com/) it will be added to the list of available languages. If you notice some parts of a translated version are in English, you can [help us to translate them](https://translate.joinbookwyrm.com/). This can happen as we make changes and additions to the documentation.
+
+### Versioning
+
+Since version `0.7.5`, each BookWyrm version has a matching version in the documentation. This allows you to check the documentation as it applies to your specific BookWyrm version. If you are using a patch version with no matching documentation (e.g. `0.8.1`), this is a bugfix-only version and you should use the documentation for the preceding version (e.g. `0.8.0`).
+
+### Page table of contents
+
+There is also a drop-down menu on each page that displays a table of contents. You can use this to navigate directly to a particular section heading. This can be useful for very long pages like the Reference Guides. The table of contents menu does not appear on the homepage.
+
+### Smaller screens
+
+On smaller screens the side menu is hidden. Use the "hamburger menu" at the top right of the screen to make it visible.
