@@ -33,9 +33,9 @@ The features are growing every month, and there is plenty of room for suggestion
     - Mogelijkheid voor gebruikers om handmatig volgers goed te keuren
     - Blokkeren en markeren voor bemiddelen toestaan
 
-## Using this documentation
+## Deze documentatie gebruiken
 
-### Navigation
+### Navigatie
 
 Use the menu on the left-hand side to find the section you are looking for.
 
@@ -47,11 +47,11 @@ Use the menu on the left-hand side to find the section you are looking for.
 
 You can also change the language and version.
 
-### Translations
+### Vertalingen
 
-Documentation is written in English (US) by default. When we have at least 70% coverage for a language in [BookWyrm's translation project](https://translate.joinbookwyrm.com/) it will be added to the list of available languages. If you notice some parts of a translated version are in English, you can [help us to translate them](https://translate.joinbookwyrm.com/). This can happen as we make changes and additions to the documentation.
+Documentatie is standaard geschreven in het Engels (US). When we have at least 70% coverage for a language in [BookWyrm's translation project](https://translate.joinbookwyrm.com/) it will be added to the list of available languages. If you notice some parts of a translated version are in English, you can [help us to translate them](https://translate.joinbookwyrm.com/). This can happen as we make changes and additions to the documentation.
 
-### Versioning
+### Versiebeheer
 
 Since version `0.7.5`, each BookWyrm version has a matching version in the documentation. This allows you to check the documentation as it applies to your specific BookWyrm version. If you are using a patch version with no matching documentation (e.g. `0.8.1`), this is a bugfix-only version and you should use the documentation for the preceding version (e.g. `0.8.0`).
 
@@ -59,6 +59,6 @@ Since version `0.7.5`, each BookWyrm version has a matching version in the docum
 
 There is also a drop-down menu on each page that displays a table of contents. You can use this to navigate directly to a particular section heading. This can be useful for very long pages like the Reference Guides. The table of contents menu does not appear on the homepage.
 
-### Smaller screens
+### Kleinere schermen
 
-On smaller screens the side menu is hidden. Use the "hamburger menu" at the top right of the screen to make it visible.
+Op kleinere schermen is het zijmenu verborgen. Use the "hamburger menu" at the top right of the screen to make it visible.
