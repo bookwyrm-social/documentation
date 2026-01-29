@@ -1,18 +1,18 @@
 ---
-Title: Documentation
+Title: Documentatie
 Date: 2025-04-09
 Order: 4
 ---
 
-The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.
+Deze documentatie wordt onderhouden door de BookWyrm-community. Iedereen kan bijdragen aan de documentatie.
 
-## Suggesting an improvement
+## Een verbetering voorstellen
 
 You can report an **error**, suggest an **improvement** or request an **addition** to the documentation by [creating an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) in [the documentation repository](https://github.com/bookwyrm-social/documentation).
 
-## How the docs are made
+## Hoe de documentatie gemaakt wordt
 
-The Documentation [has its own GitHub repository](https://github.com/bookwyrm-social/documentation). Documentation is written in Markdown and we use [Jinja](https://jinja.palletsprojects.com/en/stable) and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).
+De documentatie heeft een [eigen GitHub-repository](https://github.com/bookwyrm-social/documentation). Documentation is written in Markdown and we use [Jinja](https://jinja.palletsprojects.com/en/stable) and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).
 
 All source files are saved in the `content` directory. Each section has a directory within that, with each page being represented by a single markdown file.
 
