@@ -1,12 +1,12 @@
 ---
-Title: Federation
+Title: Federatie
 Date: 2026-01-18
 Order: 2
 ---
 
-## Federation Settings
+## Federatie-instellingen
 
-Administrators and moderators can disable federation completely. This will prevent any further communication inwards or outwards, however existing data will be retained in the database. Disabling federation does not prevent connectors from importing books, however it will restrict all statuses (reviews, comments etc) to only users on your instance, or anything those users import manually (e.g. via a Goodreads CSV import).
+Administrators en moderators kunnen federatie volledig uitschakelen. This will prevent any further communication inwards or outwards, however existing data will be retained in the database. Disabling federation does not prevent connectors from importing books, however it will restrict all statuses (reviews, comments etc) to only users on your instance, or anything those users import manually (e.g. via a Goodreads CSV import).
 
 To disable federation, go to `Admin > Federation > Federation Settings`.
 
