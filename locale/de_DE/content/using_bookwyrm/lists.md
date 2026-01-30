@@ -1,80 +1,80 @@
 ---
-Title: Lists
+Title: Listen
 Date: 2025-05-26
 Order: 6
 ---
 
-Lists in Bookwyrm are a way to organise and display similar books together.
+In BookWyrm sind Listen eine Möglichkeit, ähnliche Bücher zu organisieren und gesammelt anzuzeigen.
 
-The Lists page is accessible from the 'Lists' tab on the main page.
-To see your Lists, click 'Your Lists' below the title or navigate to your profile to the Lists tab.
+Die Listen-Seite ist über den Reiter "Listen" auf der Hauptseite erreichbar.
+Um deine Listen einzusehen, klicke auf "Listen" neben der Überschrift oder navigiere zum gleichnamigen Reiter auf deiner Profil-Seite.
 
-## Creating a List
+## Eine Liste anlegen
 
-To create a List, first select the 'Create List' button on the top right of the page.
+Um eine Liste anzulegen, wähle die Schaltfläche "Liste erstellen" in der oberen rechten Ecke der Seite.
 
-You can also create a new list from the **Lists** section in the sidebar of a book page. From the dropdown list select "Create new list...".
+Du kannst eine Liste auch über den "Listen"-Bereich in der Seitenleiste auf einer Buchseite erstellen. Wähle aus der Liste den Eintrag "Neue Liste erstellen...".
 
-When prompted, enter a list name, and you can optionally add a description.
-You will then choose how you would like to curate the List.
+Wenn du danach gefragt wirst, gib einen Listennamen und optional eine Beschreibung ein.
+Du kannst dann auswählen, wie du die Liste kuratieren möchtest.
 
-## List curation
+## Listen kuratieren
 
-There are four options for List curation:
+Es gibt vier Möglichkeiten, eine Liste zu kuratieren:
 
-- **Closed**: Only you can add and remove books to this list.
-- **Curated**: Anyone can suggest books, subject to your approval.
-- **Open**: Anyone can add books to this list. Only you can remove them.
-- **Group**: [Group](/groups.html) members can add to and remove from this list .
+- **Geschlossen**: Nur du kannst Bücher hinzufügen oder entfernen.
+- **Kuratiert**: Jede\*r kann Bücher vorschlagen, du musst diese bestätigen.
+- **Offen**: Jede\*r kann Bücher hinzufügen. Nur du kannst sie entfernen.
+- **Gruppe**: Mitglieder einer [Gruppe](/groups.html) können Bücher zu dieser Liste hinzufügen und von dieser entfernen.
 
-## List privacy
+## Listen-Privatsphäre
 
-Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted, Followers and Private.
-See more details on the [privacy controls](/privacy-controls.html#lists) page.
+Listen haben ähnliche Privatsphäre-Levels wie andere Dinge in BookWyrm: Öffentlich, Ungelistet, Follower\*innen und Privat.
+Mehr Details findest du auf der Seite zu [Privatsphäre-Einstellungen](/privacy-controls.htmll#lists).
 
-## Adding books to a List
+## Bücher zu einer Liste hinzufügen
 
-You can add books to any List that you own, "Open" Lists and group-curated Lists of Groups you are a part of.
-You can also suggest books to "Curated" Lists in the exact same way.
+Du kannst Bücher zu jeder Liste hinzufügen, die du besitzt, sowie zu offenen Listen und solchen, die von Gruppen kuratiert werden, in denen du Mitglied bist.
+Du kannst auf demselben Weg Bücher für kuratierte Listen vorschlagen.
 
-In the List page there is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
-It shows books that you've recently interacted with on Bookwyrm, and a search bar.
-Currently, the search is limited to book titles (see issue [#3607](https://github.com/bookwyrm-social/bookwyrm/issues/3607)).
-Once you find the one you want, use the 'Add' button to add it to the List.
+Die Listen-Seite hat einen Seitenbereich (auf Mobilgeräten unten) mit dem Titel "Bücher hinzufügen" oder "Bücher vorschlagen".
+Er zeigt Bücher, mit denen du kürzlich auf BookWyrm interagiert hast, sowie eine Suchleiste.
+Momentan ist die Suche auf Buchtitel begrenzt (siehe Issue [#3607](https://github.com/bookwyrm-social/bookwyrm/issues/3607)).
+Sobald du findest, was du möchtest, nutze die "Hinzufügen"-Schaltfläche, um das Buch in die Liste aufzunehmen.
 
-Alternatively, if you are on a book page, there is a side menu titled "Lists". From here you can select the list you want to add the book to using the dropdown menu under "Add to list", and pressing "Add".
+Alternativ gibt es auf der Seite eines Buchs einen Seitenbereich namens "Listen". Hier kannst du unter "Zur Liste hinzufügen" die Liste auswählen, in die du das Buch aufnehmen möchtest, und dann auf "Hinzufügen" klicken.
 
-### Notes
+### Notizen
 
-You can add a "Note" to each book in a List, which could be used to explain why it was added.
-Notes are added when a book is first added, or at any time with the 'Add notes' button.
-They are displayed with the book when the List is viewed.
-To delete a note, edit it, remove everything in it, then press 'Save'.
+Du kannst jedem Buch auf einer Liste eine "Notiz" hinzufügen, die etwa erklären könnte, warum es aufgenommen wurde.
+Notizen werden hinzugefügt, wenn ein Buch erstmals aufgenommen wird, oder zu einem beliebigen späteren Zeitpunkt über die Schaltfläche "Notizen hinzufügen".
+Die Notizen erscheinen bei dem Buch, wenn die Liste angesehen wird.
+Um eine Notiz zu löschen, bearbeite sie, entferne sämtlichen Inhalt und klicke dann auf "Speichern".
 
-### List order
+### Listen-Reihenfolge
 
-The owner or curator of the List can set a custom display order for the books in it.
-By default, new books are added to the end of the List.
-The position of a book can be changed with the 'List position' box below each book.
+Die Person, die eine Liste besitzt oder kuratiert, kann eine eigene Anzeige-Reihenfolge für die Bücher festlegen.
+Von Haus aus werden neue Bücher am Ende der Liste hinzugefügt.
+Die Position eines Buches kann über das Feld "Listenposition" unter jedem Buch geändert werden.
 
-## Sorting Lists
+## Listen sortieren
 
-You can sort by the manually created list order, book title or average rating, in ascending and descending order.
+Du kannst Listen nach der händisch erstellten Reihenfolge, dem Buchtitel oder der durchschnittlichen Bewertung sortieren. Dies kann in aufsteigender oder absteigender Reihenfolge geschehen.
 
-## Lists sidetab on book pages
+## Seitenbereich "Listen" auf einer Buchseite
 
-There is a sidetab on each books page which shows the Lists it is in, if it is in any.
-This is great for finding similar books suggested by the community.
+Jede Buchseite hat einen Seitenbereich, der anzeigt, in welchen Listen das Buch ist, sofern es davon mindestens eine gibt.
+Das ist eine großartige Möglichkeit, ähnliche Bücher zu finden, die die Gemeinschaft vorschlägt.
 
-## Saving Lists
+## Listen speichern
 
-Lists can be 'saved' or bookmarked using the button in the top right when viewing it.
-There is a tab on the main Lists page which shows all your saved Lists, allowing you to find it later.
+Auf der Listenseite können Listen über die Schaltfläche in der oberen rechten Ecke als Lesezeichen gespeichert werden.
+Es gibt einen Reiter auf der Übersichtsseite aller Listen, der all deine gespeicherten Listen anzeigt, sodass du sie später wiederfindest.
 
-## Embedding Lists on other websites
+## Listen in andere Websites einbinden
 
-If you have a blog or personal website, you are able to embed a List from Bookwyrm onto it.
-Find the section 'Embed this list on a website' below sorting and adding books, then copy the embed code.
-This is in the form of an iframe and can be pasted directly into your website.
+Wenn du einen Blog oder eine persönliche Website hast, kannst du eine Liste von BookWyrm dort einbinden.
+Gehe dazu zum Bereich "Diese Liste auf einer Webseite einbetten" unter den Schaltflächen zur Sortierung und zum Hinzufügen von Büchern. Kopiere den Code zum Einbetten.
+Er erzeugt einen Iframe und kann direkt in deine Website kopiert werden.
 
 
