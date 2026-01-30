@@ -14,37 +14,37 @@ Bitte sei besonders vorsichtig, wenn du diese Befehle ausführst, da es im Falle
 
 ### Editionen zusammenführen
 
-If an edition of a book appears twice in the database and you are sure they are actually both referring to same edition, you can combine them into one with a command like this:
+Wenn eine Edition eines Buches zweimal in der Datenbank auftaucht und du sicher bist, dass sie tatsächlich dieselbe Edition meinen, kannst du sie mit einem Befehl wie diesem zusammenführen:
 
 ```
 ./bw-dev runweb python manage.py merge_editions --canonical=27 --other=38
 ```
 
-This will copy any missing information from edition 38 (the “other” edition) over to edition 27 (the “canonical” edition) and then delete the other edition. If any field of information is in both editions then the data from the canonical edition will be kept. If the other edition is in any lists or has any comments or reviews etc then these will all be updated to point to the canonical edition instead.
+Dies wird alle fehlenden Informationen von Edition 38 (die andere, engl. „other“) zu Edition 27 (die kanonische, engl. „canonical“) übertragen und dann die andere Edition löschen. Wenn es ein Feld in beiden Editionen gibt, werden die Daten der kanonischen Edition behalten. Wenn die andere Edition Teil einer Liste ist, Kommentare hat oder rezensiert wurde, werden diese Informationen künftig ebenfalls auf die kanonische Edition verweisen.
 
-You can find the numbers to use in the command by visiting the page for a book and looking at the number in the URL.
+Du kannst die Nummern für den Befehl herausfinden, indem du die Seite eines Buches besuchst und die Zahl in der URL anschaust.
 
-### Merging authors
+### Autor\*innen zusammenführen
 
-You can identify potential duplicate authors with `show_duplicate_authors`:
+Du kannst potenziell doppelte Autor\*innen mit `show_duplicate_authors` identifizieren:
 
 ```sh
 ./bw-dev runweb python manage.py show_duplicate_authors
 ```
 
-This will list all your _potential_ duplicate author records, based purely on their name, showing their birth and death dates if available, the count of books for each author, and a link to their page on your instance. Note that **you must check that these are actually duplicates** before merging them as they may be different authors with the same name.
+Dies wird alle _potenziell_ doppelten Autor_innen-Datensätze auflisten, basierend ausschließlich auf ihrem Namen. Ebenfalls angeführt werden ihre Lebensdaten, sofern vorhanden, die Anzahl der Bücher beider Autor_innen und ein Link zu ihren Seiten auf deiner Instanz. Beachte dass **du prüfen musst, ob es sich tatsächlich um Duplikate handelt**, bevor du sie zusammenführst, da es sich um unterschiedliche Autor\*innen mit demselben Namen handeln könnte.
 
-Once confirmed, if an author is duplicated you can combine the two authors into one with a command like this:
+Sobald du dies geprüft hast, kannst du doppelte Autor\*innen mit einem Befehl wie diesem zusammenführen:
 
 ```sh
 ./bw-dev runweb python manage.py merge_authors --canonical=7 --other=46
 ```
 
-As for the editions, any extra information from the other author will be copied over to the canonical author and then the other author will be deleted. Any books written by the other author will be changed to be written by the canonical author. You can find the numbers to use in the command by visiting the page for an author and looking at the number in the URL.
+Wie bei den Editionen werden zusätzliche Informationen des anderen Eintrags zum kanonischen Eintrag kopiert und dann wird der andere Eintrag gelöscht. Alle Bücher, die der_die andere Autor_in geschrieben hat, werden mit dem kanonischen Eintrag verknüpft. Du kannst die Nummern für den Befehl herausfinden, indem du die Seite der Autor\*innen besuchst und die Zahl in der URL anschaust.
 
-## Fixing ISBNs
+## ISBNs berichtigen
 
-There was a bug in `v0.8.0` which erroneously created 11-digit ISBN10 entries in some circumstances. This was fixed in a data migration in `v0.8.1`, however for various reasons you may need to manually run a cleanup command to fix any incorrect ISBNs in your local database:
+In Version 0.8.0 gab es einen Bug, der unter bestimmten Bedingungen ISBN10-Einträge mit 11 Stellen generierte. Dies wurde in einer Datenmigration in Version 0.8.1 behoben, aber aus diversen Gründen kann es notwendig sein, händisch einen Aufräumbefehl auszuführen, um alle fehlerhaften ISBNs in deiner lokalen Datenbank zu berichtigen:
 
 ```sh
 ./bw-dev runweb python manage.py fix_isbn10_entries
