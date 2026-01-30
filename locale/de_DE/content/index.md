@@ -27,38 +27,38 @@ Der Funktionsumfang nimmt mit jedem Monat zu, es gibt also jede Menge Raum für 
     - Teile Buchdaten zwischen Instanzen, um eine vernetzte Datenbank mit Metadaten zu erstellen
     - Finde über die Instanzen hinweg Bücher, die geteilt worden sind, und sammle verwandte Inhalte
     - Folge und interagiere mit Nutzer*innen der diversen BookWyrm-Instanzen
-    - Inter-operate with non-BookWyrm ActivityPub services like Mastodon and GoToSocial
+    - Interoperiere mit ActivityPub-Diensten jenseits von BookWyrm wie Mastodon und GoToSocial
 - Granulare Privatsphäreeinstellungen
     - Privatsphärelevel für Beiträge, Regale und Listen: Privat, nur für Follower*innen, oder öffentlich
     - Option für die manuelle Genehmigung von Follower*innen
     - Blockieren und Markieren für Moderation erlauben
 
-## Using this documentation
+## Dieses Handbuch verwenden
 
 ### Navigation
 
-Use the menu on the left-hand side to find the section you are looking for.
+Nutze das Menü auf der linken Seite, um den Abschnitt zu finden, den du suchst.
 
-* _Using BookWyrm_ explains how to use BookWyrm as an ordinary user
-* You will need the _Running BookWyrm_ section if you want to administer a BookWyrm instance (server)
-* _Contributing_ explains how you can get involved in the project and contribute in various ways (you don't have to know how to code)
-* _Codebase_ provides more information about key aspects of BookWyrm's code
-* Consult the _Reference Guides_ if you need to know what a particular environment variable or `bw-dev` command does
+* _BookWyrm benutzen_ erklärt, wie du BookWyrm als normale\*r Benutzer\*in bedienst
+* Du wirst den Bereich _BookWyrm betreiben_ benötigen, wenn du eine BookWyrm-Instanz (also einen eigenen Server) verwalten möchtest
+* _Beitragen_ erklärt, wie du dich am Projekt beteiligen und auf verschiedenen Wegen teilhaben kannst (du musst dazu nicht programmieren können)
+* _Codebasis_ beinhaltete weitere Informationen über Kernaspekte von BookWyrms Quelltext
+* Konsultiere die _Referenz_, wenn du wissen möchtest, was eine spezielle Umgebungsvariable oder ein `bw-dev`-Befehl bewirken
 
-You can also change the language and version.
+Du kannst auch die Sprache und die Version auswählen.
 
-### Translations
+### Übersetzungen
 
-Documentation is written in English (US) by default. When we have at least 70% coverage for a language in [BookWyrm's translation project](https://translate.joinbookwyrm.com/) it will be added to the list of available languages. If you notice some parts of a translated version are in English, you can [help us to translate them](https://translate.joinbookwyrm.com/). This can happen as we make changes and additions to the documentation.
+Das Handbuch wird von Haus auf Englisch (US) verfasst. Wenn wir mindestens 70 % Abdeckung für eine Sprache in [BookWyrms Übersetzungsprojekt](https://translate.joinbookwyrm.com/) erreichen, wird sie zur Liste der verfügbaren Sprachen hinzugefügt. Wenn du feststellst, dass Teile der übersetzten Version in Englisch sind, kannst du [uns helfen, sie zu übersetzen](https://translate.joinbookwyrm.com/). Das kann geschehen, während wir Änderungen am Handbuch vornehmen und weitere Dinge aufnehmen.
 
-### Versioning
+### Versionierung
 
-Since version `0.7.5`, each BookWyrm version has a matching version in the documentation. This allows you to check the documentation as it applies to your specific BookWyrm version. If you are using a patch version with no matching documentation (e.g. `0.8.1`), this is a bugfix-only version and you should use the documentation for the preceding version (e.g. `0.8.0`).
+Seit Version `0.7.5` hat jede BookWyrm-Version eine passende Version im Handbuch. Das erlaubt es dir, die Dokumentation zu deiner konkreten BookWyrm-Version einzusehen. Wenn du eine Patch-Version ohne passende Dokumentation (z. B. `0.8.1`) verwendest, handelt es sich hierbei um eine Version, die ausschließlich Fehler behoben hat. Du nutzt in diesem Fall die Dokumentation der vorherigen Version (z. B. `0.8.0`).
 
-### Page table of contents
+### Seitenverzeichnis
 
-There is also a drop-down menu on each page that displays a table of contents. You can use this to navigate directly to a particular section heading. This can be useful for very long pages like the Reference Guides. The table of contents menu does not appear on the homepage.
+Es gibt auf jeder Seite auch ein ausklappbares Menü, das ein Inhaltsverzeichnis anzeigt. Du kannst dieses nutzen, um direkt zu einer bestimmten Abschnittsüberschrift zu springen. Das kann bei besonders langen Seiten wie den Anleitungen in der Referenz nützlich sein. Das Inhaltsverzeichnis erscheint nicht auf der Startseite.
 
-### Smaller screens
+### Kleinere Bildschirme
 
-On smaller screens the side menu is hidden. Use the "hamburger menu" at the top right of the screen to make it visible.
+Auf kleineren Bildschirmen wird das Seitenmenü ausgeblendet. Nutze das "Hamburger-Icon" (drei horizontale Striche) am oberen rechten Seitenrand, um das Menü auszuklappen.
