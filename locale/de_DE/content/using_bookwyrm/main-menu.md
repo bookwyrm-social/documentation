@@ -1,13 +1,13 @@
 ---
-Title: Main Menu & Timelines
+Title: Hauptmenü und Zeitleisten
 Date: 2025-09-06
 Order: 1
 ---
 
-## Your Books view
+## Deine Bücher
 
-In the top-left of the page (or top of the page on mobile) you will find a small selection of your books.
-It will include up to 5 books, from your Currently Reading, Read and To Read reading status shelves.
+In der oberen linken Ecke der Seite (oder ganz oben auf Mobilgeräten) findest du eine kleine Auswahl deiner Bücher.
+Sie enthält bis zu 5 Bücher deiner Regale "Liest gerade", "Gelesen" und "Leseliste".
 
 To see all of them, you may need to _horizontally_ scroll, or pull on the horizontal scroll bar.
 
