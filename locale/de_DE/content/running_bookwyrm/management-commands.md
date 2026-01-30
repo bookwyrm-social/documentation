@@ -1,18 +1,18 @@
 ---
-Title: Management Commands
+Title: Verwaltungs-Befehle
 Date: 2023-04-26
 Order: 11
 ---
 
-In the `bookwyrm/management/commands` directory there are some commands to manipulate the instance’s database. Some of them are documented here.
+Im Verzeichnis `bookwyrm/management/commands` gibt es einige Befehle, um die Datenbank der Instanz zu bearbeiten. Einige davon werden hier dokumentiert.
 
-## Merging objects
+## Objekte zusammenführen
 
-Quite often an instance will end up with duplicate books and authors or editions that appear as separate books when they are actually just different editions of the same work. This can happen because of importing editions that don’t have shared identifiers or from user mistakes. There also was a bug prior to version 0.7.5 which created a large number of duplicate books, editions, and authors. Sadly there’s no user interface to correct this for the time being, but in cases where the books are important for your instance you can use these management commands to fix some of the problems if you are using at least version 0.6.2.
+Es geschieht recht oft, dass eine Instanz doppelte Bücher, Autor_innen oder Editionen vorhält, die zwar separat erscheinen, aber eigentlich nur verschiedene Editionen desselben Werks sind. Das passiert, wenn Editionen ohne gleichnamige Identifikationsmerkmale importiert werden oder Benutzer_innen Fehler machen. Es gab außerdem vor Version 0.7.5 einen Bug, der eine große Zahl doppelter Bücher, Editionen und Autor\*innen erstellte. Unglücklicherweise gibt es bis auf Weiteres keine Oberfläche, um dies zu korrigieren. In Fällen, in denen die Bücher wichtig für deine Instanz sind, kannst du aber diese Verwaltungs-Befehle nutzen, um manche der Probleme zu beheben. Voraussetzung hierfür ist Version 0.6.2 oder neuer.
 
-Please take extra care when using these commands because if you make a mistake there’s no way to undo it.
+Bitte sei besonders vorsichtig, wenn du diese Befehle ausführst, da es im Falle eines Fehlers keinen Weg gibt, die Aktion rückgängig zu machen.
 
-### Merging editions
+### Editionen zusammenführen
 
 If an edition of a book appears twice in the database and you are sure they are actually both referring to same edition, you can combine them into one with a command like this:
 
