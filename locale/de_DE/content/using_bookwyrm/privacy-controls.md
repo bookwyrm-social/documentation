@@ -1,57 +1,57 @@
 ---
-Title: Privacy Controls
+Title: Privatsphäre-Einstellungen
 Date: 2025-05-26
 Order: 7
 ---
 
-Bookwyrm has different privacy levels which let users control how public something is and who it is visible to.
-Do you want to share your reading with the internet, just your friends, or do you want to keep it private?
+BookWyrm hat verschiedene Privatsphäre-Level, die Nutzer\*innen entscheiden lassen, wie öffentlich etwas ist und wer es sehen kann.
+Möchtest du deine Leseaktivität mit dem gesamten Internet oder deinen Freund\*innen teilen oder sie lieber für dich behalten?
 
-There are four privacy levels: Public, Unlisted, Followers, and Private.
-Broadly speaking, Public is visible to anyone; Unlisted hides it from discovery pages; Followers is only visible to people who follow you; and Private is only visible to you.
-There are some slight differences in how these apply to different things in Bookwyrm.
+Es gibt vier Privatsphäre-Level: Öffentlich, Ungelistet, Follower\*innen und Privat.
+Ganz allgemein gesprochen ist Öffentliches für jede\*n sichtbar, Ungelistetes wird auf den Entdecken-Seiten verborgen; Follower\*innen-Inhalte können nur Menschen sehen, die dir folgen, und Privates ist nur für dich sichtbar.
+Es gibt ein paar feine Unterschiede darin, wie diese Level auf verschiedene Dinge in BookWyrm angewendet werden.
 
-Throughout the website, you can check what something's privacy level is by the icon next to it.
-Public is a globe, Unlisted is an open lock, Followers is a closed lock, and Private is an envelope.
+Das Privatsphäre-Level kannst du bei allem auf der Website am Symbol daneben erkennen.
+Öffentlich zeigt eine Weltkugel, Ungelistet markiert ein geöffnetes Schloss, Follower\*innen-Inhalte sind am verriegelten Schloss zu erkennen und Privates kennzeichnet ein Umschlag.
 
-Note: Anyone can just follow you and then be able to see all things you marked Followers-only.
-To limit this, go to `Settings - Edit Profile - Privacy` and enable 'Manually approve followers'.
-This allows you to vet follow requests, or limit them just to your friends.
+Hinweis: Jede\*r kann dir folgen und dann die Inhalte sehen, die du nur für Follower\*innen freigegeben hast.
+Um dies einzuschränken, gehe zu `Einstellungen - Privatsphäre` und aktiviere "Follower\*innen manuell bestätigen".
+Das erlaubt dir, Folgeanfragen zu überprüfen oder ausschließlich deine Freund\*innen zuzulassen.
 
-Other privacy settings are explained [at the bottom of this page](#privacy-related-settings).
+Andere Privatsphäre-Einstellungen werden [am Ende dieser Seite](#privacy-related-settings) erklärt.
 
-## Statuses
+## Beiträge
 
-On Bookwyrm, [statuses](/posting-statuses.html) can be posted at four different privacy levels, which restrict who can see it and if it's promoted on public pages.
-Each status has its own privacy level, so you can choose when to make it Public or Private, or set a default in settings.
-Note that it cannot be changed once it's published.
+Auf BookWyrm können [Beiträge](/posting-statuses.html) mit vier verschiedenen Privatsphäre-Levels veröffentlicht werden. Sie entscheiden, wer einen Beitrag sehen kann und ob er auf öffentlichen Seiten erscheint.
+Jeder Beitrag hat sein eigenes Privatsphäre-Level, du kannst also entscheiden, wann du ihn öffentlich oer privat schalten möchtest. In den Einstellungen kannst du ein Standard-Level festlegen.
+Beachte, dass das Privatsphäre-Level nicht geändert werden kann, sobald der Beitrag veröffentlicht wurde.
 
-### Public
+### Öffentlich
 
-The default option.
+Die Standardauswahl.
 
-- Anyone can see your status without logging in.
-- Your status will appear on:
-  - public timelines
-  - discovery pages.
-  - its related book's page.
-  - the home timeline of people who follow you
-- Your status can be **boosted** into other people's home timelines.
+- Jede\*r kann deinen Beitrag sehen, ohne sich anzumelden.
+- Dein Beitrag wird erscheinen:
+  - in öffentlichen Zeitleisten
+  - auf Entdecken-Seiten
+  - auf der Seite des zugehörigen Buches
+  - auf der Start-Zeitleiste von Personen, die dir folgen
+- Dein Status kann durch einen **Boost** in die Start-Zeitleiste anderer Menschen verbreitet werden.
 
-### Unlisted
+### Ungelistet
 
-The exact same as Public, but:
+Dasselbe Verhalten wie bei Öffentlich, nur:
 
-- Your status will **not** appear in public timelines or discover pages.
+- Dein Beitrag wird **nicht** in öffentlichen Zeitleisten oder auf Entdecken-Seiten auftauchen.
 
-### Followers
+### Follower\*innen
 
-- Only people who follow you can see your status in their timelines or related book's page.
-- Your status cannot be boosted.
+- Nur Personen, die dir folgen, können deinen Beitrag in ihren Zeitleisten oder auf der Seite des zugehörigen Buchs sehen.
+- Dein Beitrag kann nicht geboostet werden.
 
-### Private
+### Privat
 
-- Your status can only be seen by you, anyone **mentioned** in it, and anyone previously involved in the conversation.
+- Dein Beitrag kann nur von dir gesehen werden sowie von Personen, die darin **erwähnt** wurden oder schon vorher Teil der Konversation waren.
 - This is the privacy level used in Direct Messages.
 
 ## Shelves
