@@ -1,77 +1,77 @@
 ---
-Title: Settings and Profile
+Title: Einstellungen und Profil
 Date: 2025-10-12
 Order: 4
 ---
 
-You can control your account and profile settings by activating the dropdown menu below your username and selecting `Settings`.
+Du kannst deine Konto- und Profileinstellungen ändern, indem du auf deinen Namen klickst, das Menü ausklappst und "Einstellungen" auswählst.
 
-## Edit Profile
+## Profil bearbeiten
 
-### Profile
+### Profil
 
-- Upload or remove your user avatar
-- Change your display name
-- Create or edit your user summary (bio or description)
-- Change your registered email address
+- Lade einen Avatar hoch oder entferne ihn
+- Ändere deinen Anzeigenamen
+- Erstelle oder bearbeite deine Profil-Zusammenfassung (auch Biografie genannt)
+- Ändere die E-Mail-Adresse, mit der du dich registriert hast
 
-### Display
+### Anzeige
 
-- Choose whether to show reading goal prompt in feed
-- Choose whether to show ratings in reviews, or have them hidden behind a toggle by default
-- Choose whether BookWyrm should suggest users to follow
-- Choose whether BookWyrm can suggest your user account to others
-- Select your timezone - this affects the time stamps displayed to you
-- Select your user interface language
-- Select a theme - different instances will have different options, by default there are BookWyrm light and dark themes
+- Lege fest, ob die Leseziel-Erinnerung im Feed gezeigt werden soll
+- Lege fest, ob Bewertungen bei Rezensionen angezeigt werden sollen oder ob du standardmäßig einen Schalter umlegen musst, um sie zu sehen
+- Lege fest, ob dir BookWyrm Personen vorschlagen soll, denen du folgen kannst
+- Lege fest, ob BookWyrm dein Profil anderen Nutzer\*innen empfehlen darf
+- Wähle deine Zeitzone – das betrifft die Zeitstempel, die dir angezeigt werden
+- Wähle die Sprache der Oberfläche
+- Wähle ein Theme – unterschiedliche Instanzen haben unterschiedliche Optionen, standardmäßig gibt es ein helles und ein dunkles BookWyrm-Theme
 
-### Privacy
+### Privatsphäre
 
-- Choose whether followers must be approved by you before following your account
-- Choose whether to hide followers and following on your user profile
-- Choose your default post privacy. Find [more detail about what the post privacy options mean](/privacy-controls.html) on the Privacy Controls page
+- Lege fest, ob du Anfragen manuell überprüfen willst, bevor dir neue Personen folgen dürfen
+- Lege fest, ob deine Follower\*innen und die Personen, denen du folgst, auf deiner Profilseite zu sehen sein sollen
+- Lege das Standard-Privatsphäre-Level für deine Beiträge fest. Für [mehr Details zu Privatsphäre-Optionen für Beiträge](/privacy-controls.html) schau auf der Seite zu Privatsphäre-Einstellungen vorbei
 
-## Change Password
+## Passwort ändern
 
-Here you can ...change your password
+Hier kannst du … dein Passwort ändern.
 
-## Account Security
+## Kontosicherheit
 
-We recommend you protect your account with second-factor authentication using an authenticator app.
+Wir empfehlen, Zwei-Faktor-Authentifizierung für dein Konto zu aktivieren. Mithilfe einer Authentifizierungs-App kannst du so deine Logins mit einem zweiten Faktor absichern.
 
-This section also allows you to see all the logged-in sessions for your user account, and terminate them. This can be a useful way to protect your account if you have, for example, lost a device, or do not recognise a session.
+Dieser Bereich erlaubt dir außerdem, alle angemeldeten Sitzungen deines Kontos einzusehen und zu beenden. Das kann nützlich sein, um dein Konto zu schützen, wenn du zum Beispiel ein Gerät verloren hast oder dir eine Sitzung unbekannt vorkommt.
 
-## Aliases and moving your account
+## Aliase einrichten und deinen Account umziehen
 
-You can set an "alias" for your account, indicating that they represent the same "actor". This is usually done when you want to migrate your account from one fediverse account to another.
+Du kannst für deinen Account ein Alias einrichten, wodurch du zeigst, dass beide Accounts zur selben Person gehören. Das wird üblicherweise genutzt, wenn du von deinem alten Konto im Fediverse zu einem neuen wechseln willst.
 
-You can also move (migrate) your account using `Move Account`. You must set the account you are moving _from_ as an alias of the account you are moving _to_ before attempting to move the account.
+Du kannst auch dein gesamtes Konto umziehen. Setze hierfür das Konto, _von dem aus_ du wechselst, als ein Alias für den Account, _zu dem_ du umziehst, bevor du mit dem eigentlichen Umzug beginnst.
 
-Setting an alias is easily reversable. Moving your account is not - choose wisely!
+Ein Alias kann leicht wieder entfernt werden. Ein Konto umzuziehen dagegen kann nicht einfach rückgängig gemacht werden – also wähle weise!
 
-See [User Migration and Aliases](user-migration.html) for more details.
+Schau dir [Kontoumzug und Aliase](user-migration.html) an für mehr Details.
 
-## Deactivating or deleting your account
+## Konto deaktivieren oder löschen
 
-Under `Delete Account` you can either deactivate or delete your account.
+Unter "Account löschen" kannst du dein Konto entweder deaktivieren oder löschen.
 
-Deactivating marks your account as no longer active and hides your profile page. You can re-activate your account in future.
+Die Deaktivierung markiert dein Konto als nicht länger aktiv und verbirgt deine Profilseite. Du kannst dein Konto später reaktivieren.
 
-Deleting your account is irreversable. Your username will not be available to register in the future. Note that on deleting your account, BookWyrm will attempt to delete all user data and posts, however it is possible that federated servers may not process the deletion correctly.
+Das Löschen eines Kontos ist unumkehrbar. Dein Nutzer\*innenname wird zukünftig nicht mehr für die Registrierung bereitstehen. BookWyrm wird beim Löschen deines Kontos versuchen, alle deine Daten und Beiträge zu entfernen. Bitte beachte aber, dass es durch die Föderation vorkommen kann, dass föderierte Server die Löschung nicht korrekt ausführen.
 
-Books that were added by a deleted user will remain available as they conceptually exist separately from any individual user or shelf.
+Bücher, die durch ein gelöschtes Konto hinzugefügt worden sind, bleiben verfügbar, da sie von einzelnen Nutzer\*innen oder Regalen separat abgelegt werden.
 
-## Importing and Exporting books
+## Bücher importieren und exportieren
 
-Under the `Data` heading, you can import and export book lists.
+Unter der Überschrift "Daten" kannst du Bücherlisten importieren und exportieren.
 
-See [Adding Books](/adding-books.html) for more information about importing books. Choose `Export Book List` to export a CSV file including all the books on your shelves, books you have reviewed, and books with reading activity.
+Siehe [Bücher hinzufügen](/adding-books.html) für weitere Informationen zum Importieren von Büchern. Wähle "Bücherliste exportieren", um eine CSV-Datei mit allen Büchern zu erhalten, die in deinen Regalen stehen, die du bewertet hast oder zu denen du Leseaktivität gespeichert hast.
 
-You can also import or export a user account from this section. See [User Migration and Aliases](user-migration.html) for more details.
+Du kannst auch Konten in diesem Bereich importieren oder exportieren. Schau dir [Kontoumzug und Aliase](user-migration.html) an für mehr Details.
 
-## Blocking users
+## Nutzer\*innen blockieren
 
-You can block or unblock a user by selecting the ellipses (...) on the right of the "Follow/Unfollow" button on their profile.
+Du kannst Nutzer\*innen (ent-) blockieren, in dem du die Ellipse (…) rechts der "Folgen"-/"Entfolgen"-Schaltfläche in ihrem Profil anklickst.
 
 If you have blocked any users, they will be listed under `Blocked Users` and can be unblocked from there.
 
