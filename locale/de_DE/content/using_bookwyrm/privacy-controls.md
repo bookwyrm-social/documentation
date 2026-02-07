@@ -16,7 +16,7 @@ Das Privatsphäre-Level kannst du bei allem auf der Website am Symbol daneben er
 
 Hinweis: Jede\*r kann dir folgen und dann die Inhalte sehen, die du nur für Follower\*innen freigegeben hast.
 Um dies einzuschränken, gehe zu `Einstellungen - Privatsphäre` und aktiviere "Follower\*innen manuell bestätigen".
-Das erlaubt dir, Folgeanfragen zu überprüfen oder ausschließlich deine Freund\*innen zuzulassen.
+Das erlaubt dir, Folgeanfragen zu überprüfen oder nur deinen Freund\*innen zu gestatten, dir zu folgen.
 
 Andere Privatsphäre-Einstellungen werden [am Ende dieser Seite](#privacy-related-settings) erklärt.
 
@@ -52,104 +52,104 @@ Dasselbe Verhalten wie bei Öffentlich, nur:
 ### Privat
 
 - Dein Beitrag kann nur von dir gesehen werden sowie von Personen, die darin **erwähnt** wurden oder schon vorher Teil der Konversation waren.
-- This is the privacy level used in Direct Messages.
+- Das ist das Privatsphäre-Level, das bei Direktnachrichten zum Einsatz kommt.
 
-## Shelves
+## Regale
 
-Shelves are Public by default, but you can edit them to make them only visible to your followers or just yourself.
+Regale sind standardmäßig öffentlich, aber du kannst sie bearbeiten, um ihre Sichtbarkeit auf deine Follower\*innen oder dich selbst zu begrenzen.
 
-### Public / Unlisted
+### Öffentlich/Ungelistet
 
-- There is no difference between Public and Unlisted for Shelves. The Unlisted option may be removed in the future.
-- Anyone can see these shelves and all the books on them.
+- Es gibt bei Regalen keinen Unterschied zwischen Öffentlich und Ungelistet. Die Option Ungelistet könnte in der Zukunft entfernt werden.
+- Jede\*r kann diese Regale und alle Bücher darin sehen.
 
-### Followers
+### Follower\*innen
 
-- Only people who follow you will see this shelf and the books on it.
+- Nur Menschen, die dir folgen, können dieses Regal und die Bücher darin sehen.
 
-### Private
+### Privat
 
-- Only you will be able to see this shelf and the books on it.
+- Nur du kannst dieses Regal und die Bücher darin sehen.
 
-### All books shelf
+### Regal "Alle Bücher"
 
-- The 'All books' shelf is a default shelf which displays books from all visible shelves to the user viewing it.
+- Das Regal "Alle Bücher" wird automatisch erstellt und zeigt Bücher aller Regale, auf die du Zugriff hast.
 
-| User        | Books on Public shelves | Books on Unlisted shelves | Books on Followers-only shelves | Books on Private shelves |
-| ----------- | ----------------------- | ------------------------- | ------------------------------- | ------------------------ |
-| Anyone      | ✔                       | ✔                         |                                 |                          |
-| Follows you | ✔                       | ✔                         | ✔                               |                          |
-| Yourself    | ✔                       | ✔                         | ✔                               | ✔                        |
+| Nutzer\*in | Bücher in öffentlichen Regalen | Bücher in ungelisteten Regalen | Bücher in Regalen nur für Follower\*innen | Bücher in privaten Regalen |
+| ---------- | ------------------------------ | ------------------------------ | ----------------------------------------- | -------------------------- |
+| Jede\*r    | ✔                              | ✔                              |                                           |                            |
+| Folgt dir  | ✔                              | ✔                              | ✔                                         |                            |
+| Du selbst  | ✔                              | ✔                              | ✔                                         | ✔                          |
 
-### Implications
+### Implikationen
 
-- If you read a book, want to track it on Bookwyrm, but don't want anyone to know that you did, you'll need to put it on a new Private shelf, not a Public shelf.
+- Wenn du ein Buch liest und das auf BookWyrm nachverfolgen möchtest, aber nicht willst, dass andere darüber Bescheid wissen, musst du es in ein privates Regal legen, nicht in ein öffentliches.
 
-## Lists
+## Listen
 
-### Public
+### Öffentlich
 
-- Anyone can see your [List](/lists.html) without logging in.
-- Your List will appear on:
-  - the Lists discovery page (Lists tab).
-  - the pages of books that are in it, displayed on the side of the screen.
-  - your profile.
-- Anyone can 'save' (bookmark) your List.
+- Jede\*r kann deine [Liste](/lists.html) sehen, ohne sich anzumelden.
+- Deine Liste wird erscheinen:
+  - auf der Listen-Entdecken-Seite (Reiter "Listen")
+  - seitlich auf der Seite von Büchern, die darin enthalten sind
+  - auf deiner Profilseite
+- Jede\*r kann deine Liste "speichern", also ein Lesezeichen setzen.
 
-### Unlisted
+### Ungelistet
 
-- There is currently no difference between Public and Unlisted for Lists.
-  In the future, Unlisted will hide the List from the Lists discovery page and books pages.
-  For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) on GitHub.
+- Es gibt aktuell bei Listen keinen Unterschied zwischen Öffentlich und Ungelistet.
+  Zukünftig werden ungelistete Listen nicht mehr auf der Listen-Entdecken-Seite und auf Seiten zu Büchern auftauchen.
+  Siehe [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) auf GitHub für Details.
 
-### Followers
+### Follower\*innen
 
-- Only people who follow you can see your List on the aforementioned pages.
+- Nur Personen, die dir folgen, können deine Liste auf den oben genannten Seiten sehen.
 
-### Private
+### Privat
 
-- Only you can see your List on the aforementioned pages.
+- Nur du kannst deine Liste auf den oben genannten Seiten sehen.
 
-## Groups
+## Gruppen
 
-[Groups](/groups.html) have the same privacy settings as statuses and lists do, except they can't be Followers-only.
-Group membership always requires an invitation from the group's owner, even if it is marked Public.
-Note that currently, the Groups tab on a profile is only shown if the user viewing it is logged in (see [#3610](https://github.com/bookwyrm-social/bookwyrm/issues/3610)).
+[Gruppen](/groups.html) haben dieselben Privatsphäre-Levels wie Beiträge und Listen, bis auf dass sie nicht auf Follower\*innen begrenzt werden können.
+Die Gruppenmitgliedschaft bedarf immer einer Einladung der Person, der die Gruppe gehört, selbst wenn die Gruppe als öffentlich markiert wurde.
+Beachte, dass der Gruppen-Reiter auf einer Profilseite aktuell nur dann angezeigt wird, wenn du angemeldet bist (siehe [#3610](https://github.com/bookwyrm-social/bookwyrm/issues/3610)).
 
-### Public
+### Öffentlich
 
-- Anyone can view the Group page, members and its Lists (except for private Lists)
+- Jede\*r kann die Gruppenseite, die Mitglieder und die zugehörigen Listen (private ausgenommen) einsehen.
 
-- In the future it will be displayed on a Groups discovery page.
+- Zukünftig wird die Gruppe auf einer Gruppen-Entdecken-Seite erscheinen.
 
-### Unlisted
+### Ungelistet
 
-- Anyone can view the group page, members and its Lists (except for private Lists)
+- Jede\*r kann die Gruppenseite, die Mitglieder und die zugehörigen Listen (private ausgenommen) einsehen.
 
-### Private
+### Privat
 
-- Only members of the group can view the group page, members and its Lists
-- All the Groups Lists will also be private.
+- Nur Mitglieder der Gruppe können die Gruppenseite, die Mitglieder und die zugehörigen Listen einsehen.
+- Alle Listen der Gruppe sind ebenfalls privat.
 
-## Privacy related settings
+## Einstellungen zur Privatsphäre
 
-### Manually approve followers
+### Follower\*innen manuell bestätigen
 
-Found in `Settings - Edit Profile - Privacy`.
+Zu finden unter `Einstellungen - Profil bearbeiten - Privatsphäre`.
 
-When enabled, you will get a notification when someone wants to follow you, and you'll be able to choose whether or not to accept it.
-Useful if you want to check who they are or restrict your followers to only be your friends and people you know.
+Wenn dies aktiviert ist, erhältst du eine Benachrichtigung, wenn dir jemand folgen möchte, und du kannst entscheiden, ob du die Anfrage annehmen möchtest oder nicht.
+Das ist nützlich, wenn du immer prüfen willst, wer dir folgen möchte, oder du nur Freund\*innen und Leuten, die du kennst, erlauben möchtest, dir zu folgen.
 
-### Hide followers and following lists on profile
+### Folgende und Gefolgte im Profil ausblenden
 
-Found in `Settings - Edit Profile - Privacy`.
+Zu finden unter `Einstellungen - Profil bearbeiten - Privatsphäre`.
 
-By default, anyone can view the list of people you follow and who follow you.
-There are many reasons you might not want this, so Bookwyrm allows you to hide these lists.
+Standardmäßig kann jede Person einsehen, wem du folgst und wer dir folgt.
+Es gibt viele Gründe, warum du das lieber nicht wollen könntest, darum erlaubt BookWyrm, diese Listen auszublenden.
 
-### Show this account in suggested users
+### Diesen Account in vorgeschlagene Accounts einschließen
 
-Found in `Settings - Edit Profile - Display`.
+Zu finden unter `Einstellungen - Profil bearbeiten - Anzeige`.
 
-When enabled, your account may be suggested to other users and will be on the account directory.
+Wenn dies aktiviert ist, kann dein Profil anderen Personen vorgeschlagen werden. Es erscheint außerdem im Profilverzeichnis.
 
