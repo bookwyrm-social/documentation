@@ -73,6 +73,6 @@ Du kannst auch Konten in diesem Bereich importieren oder exportieren. Schau dir 
 
 Du kannst Nutzer\*innen (ent-) blockieren, in dem du die Ellipse (…) rechts der "Folgen"-/"Entfolgen"-Schaltfläche in ihrem Profil anklickst.
 
-If you have blocked any users, they will be listed under `Blocked Users` and can be unblocked from there.
+Wenn du Nutzer\*innen blockiert hast, werden sie unter "Gesperrte Benutzer\*innen" angezeigt und du kannst sie von dort entblockieren.
 
-Blocked users cannot see your profile, lists, or shelves, send you DMs, or see or interact with your posts.
+Blockierte Nutzer\*innen können dein Profil, deine Listen und deine Regale nicht sehen, dir keine Direktnachrichten schicken oder mit deinen Beiträgen interagieren.
