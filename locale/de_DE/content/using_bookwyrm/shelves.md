@@ -1,10 +1,10 @@
 ---
-Title: Shelves & Reading Status
+Title: Regale und Lesestatus
 Date: 2025-06-28
 Order: 2
 ---
 
-An integral part of managing your reading is organising your books and their read status.
+Ein wesentlicher Teil der Leseverwaltung besteht darin, deine Bücher und ihren Lesestatus zu organisieren.
 On Bookwyrm, you use Shelves for this.
 
 To get to the shelves page, select the 'Your Books' link at the top of the website.
