@@ -8,10 +8,10 @@ Order: 2
 
 Administrator\*innen und Moderator\*innen können die Föderation komplett deaktivieren. Das wird die gesamte zukünftige eingehende und ausgehende Kommunikation unterbinden. Bestehende Daten bleiben allerdings in der Datenbank erhalten. Die Föderation zu deaktivieren hält die Konnektoren nicht davon ab, Bücher zu importieren, aber es beschränkt alle Beiträge (Rezensionen, Kommentare etc.) auf Nutzer\*innen deiner Instanz und das, was sie händisch importieren (z. B. von Goodreads durch einen CSV-Import).
 
-Um die Föderation zu deaktivieren, gehe zu `Admin > Federation > Federation Settings`.
+Um die Föderation zu deaktivieren, gehe zu `Administration > Föderation > Föderationseinstellungen`.
 
 ## Föderierte Instanzen
 
-At `Admin > Federation > Federated Instances` you can see all instances connected to yours via federation. This list may be quite long, as it will include every ActivityPub server that has sent or received a status or object. This list will show you the instance domain and software the instance is running.
+Unter `Administration > Föderation > Föderierte Instanzen` siehst du alle Instanzen, die durch die Föderation mit deiner verbunden sind. Diese Liste kann recht lang werden, da sie jeden ActivityPub-Server enthält, der einen Beitrag oder ein Objekt mit deinem Server ausgetauscht hat. Die Liste wird dir die Domain der Instanz zeigen sowie die Software, die auf der Instanz läuft.
 
-You can click on the instance domain to find out more information about the instance including how many users have come from that instance. You can also block the instance completely from here.
+Du kannst auf die Instanz-Domain klicken, um weitere Informationen zur Instanz abzurufen, darunter die Anzahl der Nutzer\*innen, die von dieser Instanz kommen. Du kannst die Instanz von dieser Seite aus auch völlig blockieren.
