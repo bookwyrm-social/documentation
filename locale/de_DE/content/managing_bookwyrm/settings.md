@@ -1,23 +1,23 @@
 ---
-Title: Instance Settings
+Title: Instanzeinstellungen
 Date: 2021-04-18
 Order: 5
 ---
 
-## Announcements
+## Ankündigungen
 
-You can create an **Announcement** from `Admin > Instance Settings > Announcements`. Announcements appear as a banner at the top of every page until a user dismisses them. Announcements can be used for anything, but generally would be used to alert users to expected down time or changes to configuration.
+Du kannst **Ankündigungen** unter `Administration > Instanzeinstellungen > Ankündigungen` erstellen. Ankündigungen erscheinen als Banner am oberen Rand jeder Seite, bis sie von Nutzer\*innen weggeklickt werden. Ankündigungen können für beliebige Zwecke verwendet werden. Üblicherweise würde man sie einsetzen, um Nutzer\*innen auf geplante Wartungszeiträume oder Änderungen in der Konfiguration hinzuweisen.
 
-Announcements can be related to a particular date (e.g. a scheduled upgrade or down time), and you can also schedule the announcement itself to begin and/or end on a given date.
+Ankündigungen können sich auf ein bestimmtes Datum beziehen (z. B. eine geplante Aktualisierung oder Wartungsphase). Du kannst die Einblendung der Ankündigung so planen, dass sie zu einem bestimmten Datum beginnt und/oder endet.
 
-## Site Settings
+## Seiteneinstellungen
 
-When you first set up your instance you will be directed to the **Site Settings** page. Here you can edit your basic instance information including name, description, a code of conduct, and other details. This is also where you can upload a logo, set up footer details, and select a default theme.
+Wenn du deine Instanz erstmals aufsetzt, wirst du zur Seite **Seiteneinstellungen** weitergeleitet. Hier kannst du die grundlegenden Instanzinformationen wie Name, Beschreibung, Verhaltenskodex und weitere Details bearbeiten. Dies ist auch der Ort, um ein Logo hochzuladen, die Details im Fußbereich zu konfigurieren und ein Standard-Design zu setzen.
 
-## Registration
+## Registrierung
 
-The **Registration** page of the Instance Settings section is where you can enable or disable registration, decide whether to require users to confirm their email address, allow or disallow invite requests, and set a question for invite requests (useful for slowing down or identifying automated requests).
+Die Seite **Registrierung** in den Instanzeinstellungen erlaubt es, die Registrierung zu (de-)aktivieren. Hier kann auch festgelegt werden, ob Nutzer\*innen ihre E-Mail-Adressen bestätigen müssen und ob Einladungsanfragen erlaubt sind. Außerdem kannst du eine Frage formulieren, die angezeigt wird, wenn eine Einladung beantragt wird (nützlich, um automatische Anfragen zu verlangsamen oder zu erkennen).
 
-## Themes
+## Designs
 
-BookWyrm comes with default themes, however you can add your own custom theme. Themes should be `.scss` files.
+BookWyrm kommt mit vorinstallierten Designs, aber du kannst deine eigenen Designs hinzufügen. Designs sollten als `.scss`-Dateien hinterlegt werden.
