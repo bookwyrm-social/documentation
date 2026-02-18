@@ -1,18 +1,18 @@
 ---
-Title: Environment Variables
+Title: Umgebungsvariablen
 Date: 2025-04-28
 Order: 1
 ---
 
-BookWyrm servers require certain environment (`ENV`) variables in order to run correctly. These are set from a file named `.env` in the directory you run BookWyrm from. You will find most of these variabled described in the `.env.example` file in the main code repository. You should copy this as the basis of your `.env` file.
+BookWyrm-Server benötigen gewisse Umgebungsvariablen (engl. "environment", kurz `ENV`), um korrekt zu funktionieren. Diese werden in einer Datei namens `.env` gesetzt, die in dem Verzeichnis liegt, aus dem heraus du BookWyrm ausführst. Du wirst die meisten dieser Variablen in der Datei `.env.example` beschrieben finden, die im Hauptcoderepository liegt. Kopiere diese Datei und nutze sie als Basis für deine Datei `.env`.
 
-BookWyrm **instance administrators** should carefully check version release notes for any changes or additions to environment variables.
+**BookWyrm-Instanzadministrator\*innen** sollten aufmerksam die Veröffentlichungshinweise jeder Version auf Änderungen oder Erweiterungen der Umgebungsvariablen prüfen.
 
-Wherever possible BookWyrm **developers** should prefer to use `site.settings` when creating new configuration values rather than `ENV` values.
+Wo immer dies möglich ist, sollten **BookWyrm-Entwickler\*innen** `site.settings` gegenüber `ENV`-Werten bevorzugen, wenn sie neue Konfigurationsoptionen einführen.
 
-## Required settings
+## Notwendige Einstellungen
 
-The `env.example` file includes default values for core settings. These are designed to be safe defaults for production, apart from the default passwords. Docker users can run `./bw-dev create_secrets` to create safe and unique secrets for:
+Die Datei `.env.example` beinhaltet Standardwerte für die Kerneinstellungen. Diese sind als sichere Standardwerte für Produktivumgebungen ausgelegt, abgesehen von den Standardpasswörtern. Nutzer\*innen von Docker können `./bw-dev create_secrets` ausführen, um sichere und einzigartige Geheimnisse für folgende Variablen zu generieren:
 
 - `SECRET_KEY`
 - `POSTGRES_PASSWORD`
@@ -20,7 +20,7 @@ The `env.example` file includes default values for core settings. These are desi
 - `REDIS_BROKER_PASSWORD`
 - `FLOWER_PASSWORD`
 
-You _must_ assign an appropriate value to all of these settings, in your `.env` file:
+Du _musst_ jeder dieser Einstellungen in deiner `.env`-Datei angemessene Werte zuweisen:
 
 - `SECRET_KEY`
 - `DOMAIN`
@@ -28,7 +28,7 @@ You _must_ assign an appropriate value to all of these settings, in your `.env` 
   - `FLOWER_USER`
   - `FLOWER_PASSWORD`
   - `FLOWER_PORT`
-- Email (in development these may be blank strings but still need to be set):
+- E-Mail (dürfen in Entwicklungsumgebung leere Zeichenketten beinhalten, aber diese müssen nichtsdestotrotz gesetzt werden):
   - `EMAIL_HOST`
   - `EMAIL_PORT`
   - `EMAIL_HOST_USER`
@@ -49,54 +49,54 @@ You _must_ assign an appropriate value to all of these settings, in your `.env` 
   - `REDIS_ACTIVITY_PASSWORD`
   - `REDIS_BROKER_PASSWORD`
 
-When running BookWyrm in **development**:
+Wenn BookWyrm in einer **Entwicklungsumgebung** betrieben wird:
 
-- `NGINX_SETUP` **must** be set to `reverse_proxy`
-- `DEBUG` _should_ be set to `true`
-- `DOMAIN` may be `localhost`
+- `NGINX_SETUP` **muss** `reverse_proxy` zugewiesen werden
+- `DEBUG` _sollte_ `true` zugewiesen werden
+- `DOMAIN` darf `localhost` zugewiesen werden
 
-When running BookWyrm in **production**:
+Wenn BookWyrm in einer **Produktivumgebung** betrieben wird:
 
-- `DEBUG` **must** be set to `false`
-- `DOMAIN` **must not** be `localhost`
-- Email settings **must** be real and use a bulk email provider such as mailgun
+- `DEBUG` **muss** `false` zugewiesen werden
+- `DOMAIN` **darf nicht** `localhost` zugewiesen werden
+- E-Mail-Einstellungen **müssen** real sein und einen E-Mail-Provider für den Massenversand wie zum Beispiel mailgun verwenden
 
-## Django settings
+## Django-Einstellungen
 
-Learn more about each of these in [the Django reference documentation](https://docs.djangoproject.com/en/4.2/ref/settings).
+Lerne mehr über alle diese Einstellungen in [der Django-Referenz](https://docs.djangoproject.com/en/4.2/ref/settings).
 
 ### `ALLOWED_HOSTS`
 
-- **Type**: String of comma-separated values
-- **Default**: all
+- **Typ**: Zeichenkette kommaseparierter Werte
+- **Default**: alle
 
-A list of strings representing the host/domain names that this site can serve. This is a security measure to prevent HTTP Host header attacks, which are possible even under many seemingly-safe web server configurations.
+Eine Liste von Zeichenketten, die die Hosts und Domain-Namen representieren, unter denen diese Seite ausgeliefert werden darf. Dies ist eine Sicherheitsmaßnahme, um HTTP-Host-Header-Angriffe zu verhindern, die selbst bei vielen scheinbar sicheren Web-Server-Konfigurationen möglich sind.
 
-The default is to allow all hosts, but you should usually change this. e.g. `"localhost,bookwyrm.example.com"`
+Der Standard ist es, alle Hosts zuzulassen, aber du solltest dies ändern. Beispiel: `"localhost,bookwyrm.example.com"`
 
 ### `MEDIA_ROOT`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `images`
 
-Absolute filesystem path to the directory that will hold user-uploaded files. If running with Docker, remember that this is the directory location inside your container, not the host machine.
+Absoluter Dateipfad zu dem Verzeichnis, das von Nutzer\*innen hochgeladene Dateien enthält. Wenn Docker zum Einsatz kommt, denke daran, dass dieses Verzeichnis innerhalb deines Containers liegt, nicht auf der Host-Maschine.
 
 ### `SECRET_KEY`
 
-- **required**
-- **Type**: String
+- notwendig
+- **Typ**: Zeichenkette
 - **Default**: `"7(2w1sedok=aznpq)ta1mc4i%4h=xx@hxwx*o57ctsuml0x%fr"`
 
-A secret key for a particular BookWyrm instance. This is used to provide cryptographic signing, and should be set to a unique, unpredictable and long string.
+Ein geheimer Schlüssel für die jeweilige BookWyrm-Instanz. Er wird genutzt, um kryptographische Signaturen bereitzustellen, und sollte auf eine einzigartige, nicht vorhersagbare, lange Zeichenkette festgelegt werden.
 
-If you do not change the `SECRET_KEY` from `.env.example` BookWyrm will throw an error and refuse to start.
+Wenn du den `SECRET_KEY` in `.env.example` nicht änderst, wird BookWyrm eine Fehlermeldung zeigen und sich weigern, zu starten.
 
 ### `STATIC_ROOT`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `static`
 
-The absolute path to the directory where `collectstatic` will collect static files for deployment. If running with Docker, remember that this is the directory location inside your container, not the host machine.
+Der absolute Pfad zu dem Verzeichnis, in dem `collectstatic` alle statischen Dateien zur Auslieferung aufsammelt. Wenn Docker zum Einsatz kommt, denke daran, dass dieses Verzeichnis innerhalb deines Containers liegt, nicht auf der Host-Maschine.
 
 ### `DEBUG`
 
