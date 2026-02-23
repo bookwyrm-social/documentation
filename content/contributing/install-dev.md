@@ -57,6 +57,23 @@ Any time you edit the CSS or JavaScript, you will need to run Django's `collects
 
 If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
 
+## Run code-linters and formatters
+
+Before submitting patch, you should check ruff and other formatting tools. For those to work nicely, you should make sure you have development web-container and dev-tools build.
+
+```{ .sh}
+./bw-dev dev build # This is needed only once, if you haven't run dev stack previously
+./bw-dev dev build dev-tools # This is needed only once and if you change pyproject.toml or Dockerfile
+```
+
+After those commands, you can run formatters and pytest and mypy with bw-dev command:
+
+```{ .sh}
+./bw-dev formatters
+./bw-dev mypy
+./bw-dev pytest
+```
+
 ## Run development code behind ngrok or other tunneling/proxy service
 
 In `.env.dev`:
