@@ -100,57 +100,57 @@ Der absolute Pfad zu dem Verzeichnis, in dem `collectstatic` alle statischen Dat
 
 ### `DEBUG`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-`DEBUG` provides useful error information in the web interface for debugging on development servers.
+`DEBUG` stellt in der Weboberfläche nützliche Fehlerinformationen bereit, die zum Debuggen des Entwicklungsservers genutzt werden können.
 
-This should be set to `false` on production instances. **Never deploy a site into production `DEBUG` set to `true`!**
+In Produktivsystemen sollte `false` zugewiesen werden. **Stelle niemals eine Seite öffentlich zur Verfügung, bei der `DEBUG` auf `true` gesetzt wurde.**
 
-**NOTE:** For version 0.7.5 and earlier, `DEBUG` defaulted to `true`.
+**Hinweis:** Bis einschließlich Version 0.7.5 war der Standardwert für `DEBUG` `true`.
 
 ### `LANGUAGE_CODE`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `"en-us"`
 
-A string representing the default language code for this installation.
+Eine Zeichenkette, die die Standardsprache für diese Installation repräsentiert.
 
 ### `SESSION_COOKIE_AGE`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `2592000`
 
-Time before being logged out (in seconds). The default is equivalent to 30 days. In future this default is [likely to change to 1 year](https://github.com/bookwyrm-social/bookwyrm/issues/3082).
+Die Zeit, bis man abgemeldet wird (in Sekunden). Der Standardwert entspricht 30 Tagen. Zukünftig wird dieser Wert [voraussichtlich auf ein Jahr geändert](https://github.com/bookwyrm-social/bookwyrm/issues/3082).
 
 ### `DATA_UPLOAD_MAX_MEMORY_MiB`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `100`
 
-Maximum allowed memory for file uploads. You can increase this if users are having trouble uploading BookWyrm export files. The real Django setting is `DATA_UPLOAD_MAX_MEMORY_SIZE`, however we use this setting in `.env` to allow instance admins to set the value [in mebibytes](https://en.wikipedia.org/wiki/Byte#Multiple-byte_units) rather than bytes.
+Maximal erlaubter Speicher für Dateiuploads. Du kannst dies erhöhen, wenn Nutzer\*innen Probleme beim Upload von BookWyrm-Exportdateien feststellen. Die eigentliche Django-Einstellung ist `DATA_UPLOAD_MAX_MEMORY_SIZE`, allerdings nutzen wir in der `.env`-Datei diese Variable, um Instanz-Administrator\*innen zu erlauben, den Wert [in Mebibytes](https://en.wikipedia.org/wiki/Byte#Multiple-byte_units) anstelle von Bytes anzugeben.
 
-## Basic BookWyrm site settings
+## Grundlegende BookWyrm-Seiteneinstellungen
 
 ### `DEFAULT_LANGUAGE`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `English`
 
-Books will rank higher in search results on this instance if one of their `language` values matches this value.
+Bücher werden in Suchergebnissen priorisiert, wenn eine ihrer Sprachen (im Feld `language`) diesem Wert entspricht.
 
 ### `DOMAIN`
 
-- **required**
-- **Type**: String
-- **Default**: not set
+- **notwendig**
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The fully qualified domain name for your site. Do not include a protocol or port numbers. e.g. `example.com` or `subdomain.example.com`.
+Der Fully Qualified Domain Name deiner Website. Gib kein Protokoll und keinen Port an. Beispiel: `example.com` oder `subdomain.example.com`.
 
 ### `EMAIL`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
 Used in the `production` branch's `docker-compose.yml` file as the email to send to Certbot.
 
