@@ -593,61 +593,61 @@ Wenn es zu einem Buch kein Titelbild gibt, erstellen wir ein neues Titelbild. Di
 
 ## Telemetrie
 
-Use these settings to enable automatically sending telemetry to an OTLP-compatible service. Many of the main monitoring apps have OLTP collectors, including NewRelic, DataDog, and Honeycomb.io - consult their documentation for setup instructions.
+Nutze diese Einstellungen, um das automatische Senden von Telemetriedaten an OTLP-kompatible Dienste zu aktivieren. Viele der Haupt-Verwaltungsanwendungen haben OLTP-Konnektoren, einschließlich NewRelic, DataDog und Honeycomb.io – lies in ihren Dokumentationen nach, wie du sie aufsetzt.
 
 ### `OTEL_EXPORTER_OTLP_ENDPOINT`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-API endpoint for your provider.
+API-Endpunkt deines Anbieters.
 
 ### `OTEL_EXPORTER_OTLP_HEADERS`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Any headers required, usually authentication information.
+Alle Header, die benötigt werden, üblicherweise für Authentifizierungs-Informationen.
 
 ### `OTEL_SERVICE_NAME`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Service name is an arbitrary tag that is attached to any data sent, used to distinguish different sources. It can be useful for sending prod and dev metrics to the same place and keeping them separate, for instance.
+Der Dienstname ist ein arbiträrer Tag, der allen versendeten Daten hinzugefügt wird, um verschiedene Quellen zu unterscheiden. Er kann nützlich sein, um Produktiv- und Entwicklungsmetriken am selben Ort zu sammeln und sie dort zu trennen.
 
-## HTTP headers
+## HTTP-Header
 
 ### `HTTP_X_FORWARDED_PROTO`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-Setting this to `true` can compromise your site’s security. Ensure you fully understand your setup before changing it.
+Wenn du dies auf `true` setzt, kann das die Sicherheit deiner Website kompromittieren. Stelle sicher, dass du dein Setup komplett verstehst, bevor du dies änderst.
 
-Only use it if your proxy is "swallowing" whether the original request was made via https. Please [refer to the Django Documentation](https://docs.djangoproject.com/en/4.2/ref/settings/#secure-proxy-ssl-header) and assess the risks for your instance.
+Nutze es nur, wenn dein Proxy "verschluckt", ob die originäre Anfrage per HTTPS erfolgte. Bitte [sieh in der Django-Dokumentation nach](https://docs.djangoproject.com/en/4.2/ref/settings/#secure-proxy-ssl-header) und bewerte die Risiken für deine Instanz.
 
 ### `CSP_ADDITIONAL_HOSTS`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Additional hosts to allow in the `Content-Security-Policy`, "self" (should be `DOMAIN` with optionally ":" + `PORT`) and `AWS_S3_CUSTOM_DOMAIN` (if used) are added by default.  Value should be a comma-separated list of host names.
+Zusätzliche Hosts, die in der `Content-Security-Policy` erlaubt werden sollen; "self" (sollte `DOMAIN` mit optionalem Doppelpunkt und `PORT` sein) und `AWS_S3_CUSTOM_DOMAIN` (sofern verwendet) werden standardmäßig hinzugefügt.  Der Wert sollte eine kommaseparierte Liste von Hostnamen sein.
 
-## Multifactor (TOTP) authentication
+## Multifaktor-Authentifizierung (TOTP)
 
-Some of these configuration values may be moved to site.settings in future.
+Teile dieser Konfiguration könnten künftig zu `site.settings` verschoben werden.
 
 ### `TWO_FACTOR_LOGIN_VALIDITY_WINDOW`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `2`
 
-Sets the number of codes either side of which will be accepted. This should be a low number but you can increase it if your users are experiencing high network latency and their codes are expiring before they can complete the login process. With the default settings for this and `TWO_FACTOR_LOGIN_MAX_SECONDS`, users have up to 180 seconds to use a given login code and can use a valid code up to two before the current one.
+Setzt die Zeit, in der die Codes von beiden Seiten akzeptiert werden. Dies sollte eine niedrige Zahl sein, aber du kannst sie erhöhen, wenn deine Nutzer\*innen hohe Netzwerklatenzen erfahren und ihre Codes ablaufen, bevor sie den Login abschließen können. Mit der Standardeinstellung hierfür und `TWO_FACTOR_LOGIN_MAX_SECONDS` haben Nutzer\*innen bis zu 180 Sekunden, um einen Code zu verwenden. Sie können einen gültigen Code bis zu zwei vor dem aktuellen verwenden.
 
 ### `TWO_FACTOR_LOGIN_MAX_SECONDS`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `60`
 
-Time in seconds for which a user login code is valid.
+Zeit in Sekunden, für die ein Login-Code gültig ist.
