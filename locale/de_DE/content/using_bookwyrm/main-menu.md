@@ -1,123 +1,120 @@
 ---
-Title: Main Menu & Timelines
+Title: Hauptmenü und Zeitleisten
 Date: 2025-09-06
 Order: 1
 ---
 
-## Your Books view
+## "Deine Bücher" in der Seitenleiste
 
-In the top-left of the page (or top of the page on mobile) you will find a small selection of your books.
-It will include up to 5 books, from your Currently Reading, Read and To Read reading status shelves.
+In der oberen linken Ecke der Seite (oder ganz oben auf Mobilgeräten) findest du eine kleine Auswahl deiner Bücher.
+Sie enthält bis zu 5 Bücher deiner Regale "Liest gerade", "Gelesen" und "Leseliste".
 
-To see all of them, you may need to _horizontally_ scroll, or pull on the horizontal scroll bar.
+Um sie alle zu sehen, kann es sein, dass du _seitlich_ scrollen bzw. den Scroll-Balken seitlich verschieben musst.
 
-If you have 3 or 4 currently reading, the To Read section will not be displayed.
-Similarly, if all 5 are currently reading, the Read section won't be available either.
-However, if you have more than 5 currently reading, it will still only show 5 of them.
+Wenn du gerade 3 oder 4 Bücher list, wird die "Leseliste" nicht angezeigt.
+Analog ist auch die Liste der schon gelesenen Bücher nicht sichtbar, wenn du gerade 5 Bücher liest.
+Allerdings werden nur höchstens 5 Bücher angezeigt, auch wenn du gerade mehr als 5 liest.
 
-By clicking on one of these books, it becomes the focus of the interact and review section.
+Wenn du auf eines dieser Bücher klickst, rückt es in den Fokus des Bereiches zum Interagieren und Rezensieren.
 
-### Interact & Review section
+### Bereich zum Interagieren und Rezensieren
 
-Below the display of your books is a section that displays basic information about the selected book, and lets you interact with it.
-It includes:
+Unter deinen Büchern siehst gibt es einen Bereich, in dem die wichtigsten Informationen zum ausgewählten Buch angezeigt werden. Hier kannst du auch mit dem Buch interagieren.
+Der Bereich enthält:
 
-- The book's title, linking to its main page.
-- The name of the author, linking to the author's page.
-- The [update reading status](/shelves.html#updating-reading-status) button for that book.
-- Tabs to select a type of status you might want to [post about the book](/posting-statuses.html). The options are Review, Comment or Quote.
-- An input form for the selected type of status.
+- den Buchtitel, der auf die Buchseite verlinkt
+- den\*die Autor\*in, wobei der Name auf die Autor\*innenseite verlinkt
+- die Schaltfläche zur Aktualisierung des Lesestatus
+- einen Reiter zur Auswahl, welche Art von Beitrag du vielleicht [zum Buch veröffentlichen](/posting-statuses.html) möchtest (Optionen: Besprechen, Kommentieren, Zitieren)
+- ein Eingabeformular für den ausgewählten Beitragstyp
 
-On mobile, you can temporarily hide this section by pressing the X in the top-right corner of it.
+Auf Mobilgeräten kannst du diesen Bereich temporär ausblenden, indem du das X in der oberen rechten Ecke berührst.
 
-## Reading Goal
+## Leseziel
 
-If you scroll down below the Your Books and post form, you will see your progress towards your reading goal this year.
+Wenn du dich unterhalb der vorherigen Bereiche umsiehst, wirst du eine Fortschrittsanzeige für dein diesjähriges Leseziel entdecken.
 
-As a new user you will see a prompt to set your reading goal when you start using BookWyrm.
-Otherwise, you can set it by navigating to **Your Profile > Reading Goal**.
-Once set, that is also where you can see your progress and all the books you've read this year.
+Als neue\*r Benutzer\*in siehst du an dieser Stelle eine Aufforderung, dein Leseziel zu setzen, wenn du damit anfängst, BookWyrm zu nutzen.
+Stattdessen kannst du es auch festlegen, indem du zu **Profil > Leseziel** navigierst.
+Sobald es festgelegt ist, siehst du hier auch deinen Fortschritt und all die Bücher, die du dieses Jahr gelesen hast.
 
-Try setting a goal that is achievable, and will motivate you to read often.
+Suche dir ein Ziel, das erreichbar ist, dich aber gleichzeitig motiviert, oft zu lesen.
 
-## Search & Barcode Reader
+## Suche und Strichcode-Leser
 
-On the top of the home page is a search box, which lets you search for books, authors, users or [lists](/lists.html).
+Am oberen Ende der Startseite gibt es eine Suchleiste, mit der du nach Büchern, Autor\*innen, Benutzer\*innen und [Listen](/lists.html) Ausschau halten kannst.
 
-Beside it is a barcode reader which lets you easily find a book by scanning its ISBN barcode using the device camera.
-This is especially useful if you're in a bookstore or the library!
+Daneben gibt es einen Strichcode-Leser, der es dir erlaubt, ein Buch durch das Einscannen des ISBN-Strichcodes mit deiner Gerätekamera herauszusuchen.
+Das ist besonders nützlich, wenn du in einer Buchhandlung oder einer Bibliothek bist!
 
-## Timelines
+## Zeitleisten
 
-Timelines are filled with **statuses** from people you **follow** on Bookwyrm.
-It's how you keep up with what your friends are reading, reviewing and recommending.
-They take up 2/3 of the screen, or on mobile are found below the reading goal section.
+Zeitleisten sind gefüllt mit **Beiträgen** von Menschen, denen du auf BookWyrm **folgst**.
+So behältst du im Blick, was deine Freund\*innen lesen, bewerten und empfehlen.
+Die Zeitleisten nehmen zwei Drittel des Bildschirms ein. Auf Mobilgeräten sind sie unterhalb des Leseziels zu finden.
 
-### Following other users
+### Anderen Nutzer\*innen folgen
 
-As a new user, you will be suggested some accounts to follow.
-You can also search for your friend's username to find and follow them.
-If they are using a different BookWyrm website than you (for example, `bookwyrm.social` and `ramblingreaders.org`)
-then you can still follow them - but you will need to use their full account name including the instance domain name, like this:
+Als neue\*r Nutzer\*in werden dir einige Accounts zum Folgen vorgeschlagen.
+Du kannst auch nach dem Namen von Freund\*innen suchen, um ihnen zu folgen.
+Wenn sie eine andere BookWyrm-Website verwenden als du (zum Beispiel `bookwyrm.social` und `ramblingreaders.org`), kannst du ihnen dennoch folgen. Allerdings brauchst du hierfür ihren vollen Accountnamen einschließlich der Domain ihrer Instanz, also zum Beispiel:
 
-`user@example.com` or `arthur@ramblingreaders.org`
+`user@example.com` oder `arthur@ramblingreaders.org`
 
-### Home Timeline
+### Start-Zeitleiste
 
-Your Home Timeline is a chronological feed of all the statuses about books posted by people you follow.
-This includes their reading status updates (want to read, started reading, finished, etc), reviews, ratings, comments, and quotes that they've shared.
-Read more about [types of statuses here](/posting-statuses.html).
+Deine Start-Zeitleiste ist eine chronologische Liste aller Beiträge zu Büchern, verfasst von den Menschen, denen du folgst.
+Das beinhaltet Änderungen ihres Lesestatus (möchte lesen, hat mit dem Lesen begonnen, hat das Buch abgeschlossen etc.), Rezensionen, Bewertungen, Kommentare und Zitate, die sie geteilt haben.
+Erfahre hier mehr über [Arten von Beiträgen](/posting-statuses.html).
 
-Your Home Timeline also includes any statuses that people you follow have **boosted**.
-This is similar to reposting or reblogging on other platforms, and means that status has been shared into your Timeline.
-Boosting is the best way to share good reviews with your followers, and helps them find interesting people to follow.
-This is especially useful since there is no algorithm deciding what to show you,
-only the real humans that you've decided to follow.
+Deine Start-Zeitleiste beinhaltet auch alle Beiträge, die von Menschen, denen du folgst, geboostet wurden.
+Das ist ähnlich zum Reposten oder Rebloggen auf anderen Plattformen und bedeutet, dass der Beitrag in deiner Zeitleiste gestreut wurde.
+Boosten ist der beste Weg, um gute Rezensionen anderer mit deinen Follower\*innen zu teilen, und hilft ihnen, interessante Personen zum Folgen zu finden.
+Das ist besonders deshalb hilfreich, weil es keinen Algorithmus gibt, der entscheidet, was dir gezeigt wird – nur echte Menschen, bei denen du dich dazu entschieden hast, ihnen zu folgen.
 
-If you follow people on other fediverse apps, such as Mastodon, you will not find their normal text posts in your timeline.
-However, posts they boost or their replies to other posts will be included in it.
+Wenn du Menschen anderer Anwendungen des Fediverse folgst, etwa auf Mastodon, wirst du ihre normalen Textbeiträge nicht in deiner Zeitleiste finden.
+Wenn sie allerdings Beiträge boosten oder auf andere Beiträge antworten, landet dies in deiner Zeitleiste.
 
-### Books Timeline
+### Bücher-Zeitleiste
 
-Your Books Timeline is a chronological feed that collects statuses posted about books that you have in [your shelves](/shelves.html).
+Deine Bücher-Zeitleiste ist ein chronologischer Strom von Beiträgen, die zu Büchern in [deinen Regalen](/shelves.html) veröffentlicht wurden.
 
-It might not display _all_ statuses, if your BookWyrm website doesn't know about some
+Es kann sein, dass nicht _alle_ Beiträge angezeigt werden, wenn deine BookWyrm-Website über manche anderen Seiten nicht bescheid weiß.
 
-### Interacting with statuses
+### Mit Beiträgen interagieren
 
-You can reply to any status in your timeline to start a discussion, and boost or like the status.
-Under 'More Options' there is a link to send a direct message to the poster, report the status, or block them.
+Du kannst auf jeden Beitrag in deiner Zeitleiste reagieren, um eine Diskussion zu beginnen. Du kannst Beiträge auch boosten oder favorisieren.
+Unter "Mehr Optionen" gibt es einen Link, um der Person, die den Beitrag verfasst hat, eine Direktnachricht zu senden. Hier kannst du den Beitrag auch melden oder den\*die Verfasser\*in blockieren.
 
-### Filtering Timelines
+### Zeitleisten filtern
 
-Both timelines have a Filters menu which lets you filter what types of statuses you'd like to see in it.
-You can include or exclude Reviews, Comments, Quotations, or Everything Else (including reading status updates).
-Then click the 'Apply filters' button to reload the timeline with the new filters.
+Beide Zeitleisten haben ein Filter-Menü, das dir erlaubt, einzustellen, welche Arten von Beiträgen du darin sehen möchtest.
+Du kannst Rezensionen, Kommentare, Zitate oder Alles andere (einschließlich Änderungen des Lesestatus) einschließen oder ausschließen.
+Klicke dann auf die Schaltfläche "Filter anwenden", um die Zeitleiste mit den Filtern neu zu laden.
 
-A little badge called 'Filters are applied' will be shown after filters are changed,
-but this disappears after another page reload even though filters are still in effect.
+Eine kleine Notiz namens "Filter werden angewendet" erscheint, wenn die Filter geändert wurden, aber sie verschwindet, sobald du die Seite neu lädst – auch wenn deine Filter noch aktiv sind.
 
-## Navigation to other pages
+## Zu anderen Seiten navigieren
 
-There are many links within the main menu to navigate to other pages on BookWyrm.
+Es gibt im Hauptmenü viele Links, um zu anderen Seiten auf BookWyrm zu navigieren.
 
-### Top menu bar
+### Menü im Kopfbereich
 
-In the top bar is the search box to go to the search page, and links to [Lists](/lists.html), Discover (recent statuses from the local instance), and [Your Books](/shelves.html).
+Im Kopfbereich findest du die Suchleiste, die zur Suchseite führt, sowie Links zu den Seiten [Listen](/lists.html), Entdecken (aktuelle Beiträge deiner lokalen Instanz) und [Deine Bücher](/shelves.html).
 
-On the right hand side is your profile icon and name.
-When clicked, it has links to your Profile, the Directory of other users, your Direct Messages, Settings, and the Log Out button.
+Rechts siehst du dein Profilbild und deinen Namen.
+Nach einem Klick erscheinen Link zu deinem Profil, dem Verzeichnis anderer Accounts, deinen Direktnachrichten, den Einstellungen und der Schaltfläche zum Abmelden.
 
-On the far right is the Notifications button.
-It will display a number if you have unread notifications.
+Ganz rechts ist die Mitteilungs-Schaltfläche.
+Sie wird eine Zahl zeigen, wenn du ungelesene Benachrichtigungen hast.
 
-On mobile, some of these options will be collapsed into a 3 dots option which will show them.
+Auf Mobilgeräten sind manche dieser Optionen eingeklappt und werden gezeigt, wenn du das Drei-Punkte-Menü berührst.
 
-### Footer
+### Menü im Fußbereich
 
-The website footer also includes links related to the administration of the site, link to this documentation and to re-start the Guided Tour.
+Der Fußbereich der Website enthält ebenfalls Links. Dabei geht es um die Verwaltung der Website, den Link zu dieser Dokumentation und die Möglichkeit, die geführte Tour durch BookWyrm erneut zu starten.
 
-If you are using a free BookWyrm instance, there might be a link to financially support the admins in the footer.
-Public instances require many hours of management and up to several hundred dollars a year to run.
-If you like using your BookWyrm site, please consider supporting them to keep it online and running smoothly!
+Wenn du eine kostenfreie BookWyrm-Instanz nutzt, kann es sein, dass es im Fußbereich einen Link gibt, um die Administrator\*innen finanziell zu unterstützen.
+Öffentliche Instanzen brauchen viele Stunden Verwaltungsarbeit und bis zu mehrere hundert Dollar im Jahr für den Betrieb.
+Wenn du deine BookWyrm-Instanz gern nutzt, denke bitte darüber nach, ob du dabei unterstützen kannst, dass die Seite weiter reibungslos online bleiben kann!
 

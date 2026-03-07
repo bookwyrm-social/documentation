@@ -1,52 +1,52 @@
 ---
-Title: Groups
+Title: Gruppen
 Date: 2025-05-26
 Order: 12
 ---
 
-You can join or create a Group with others on Bookwyrm.
-There are many things a group could be made for - a book club, a bunch of friends, whatever makes sense for you.
-Groups can curate book [Lists](lists.html) together, but that's about it right now.
-Currently, the Bookwyrm developers are focusing on other things, not groups, but they will be improved in the future.
+Du kannst Gruppen mit anderen auf BookWyrm erstellen oder bestehenden Gruppen beitreten.
+Es gibt viele Dinge, für die eine Gruppe herhalten kann – einen Buchclub, eine Gruppe von Freund\*innen, was immer für dich Sinn ergibt.
+Gruppen können gemeinsam [Listen](lists.html) von Büchern kuratieren, aber das ist fürs Erste schon alles.
+Aktuell konzentrieren sich die Entwickler\*innen von BookWyrm auf andere Dinge. Die Gruppen-Funktionalität wird aber sicher in Zukunft noch verbessert werden.
 
-To find the groups page, first navigate to your profile, then open the 'Groups' tab.
+Um die Gruppenseite zu finden, navigiere zu deinem Profil und öffne dann den Reiter "Gruppen".
 
-## Group administration
+## Gruppen verwalten
 
-### Creating a group
+### Eine Gruppe erstellen
 
-On the top right of the groups page is the 'Create group' button.
-You will then need to give it a name and describe what it is about, before choosing its privacy setting.
+In der oberen rechten Ecke der Gruppenseite gibt es eine Schaltfläche mit der Aufschrift "Gruppe erstellen".
+Du wirst gebeten, der Gruppe einen Namen einzugeben und zu beschreiben, worum es geht, bevor du die Privatsphäre-Einstellungen auswählen kannst.
 
-### Group privacy
+### Gruppen-Privatsphäre
 
-Groups have the same privacy settings as posts and lists do, except they can't be Followers-only.
-Group membership always requires an invitation from the group's owner, even if it is marked Public.
-For more details, see [here](/privacy-controls.html#groups).
+Gruppen haben dieselben Privatsphäre-Einstellungen wie Beiträge und Listen, abgesehen davon, dass sie nicht auf Follower\*innen beschränkt werden können.
+Um Teil der Gruppe zu werden, braucht es immer eine Einladung der Person, die die Gruppe besitzt – selbst dann, wenn die Gruppe als öffentlich ausgewiesen wurde.
+Lies [hier](/privacy-controls.html#groups) für weitere Details.
 
-### Adding and removing users
+### Nutzer\*innen hinzufügen und entfernen
 
-Groups are currently limited only to members on the current instance.
-To add members, search their username in the search bar, then click 'Invite'.
-To remove members, click the 'Remove' button and then 'Confirm'.
+Gruppen sind aktuell auf Mitglieder der gleichen Instanz beschränkt.
+Um Mitglieder hinzuzufügen, suche in der Suchleiste nach ihrem Namen und klicke dann auf "Einladen".
+Um Mitglieder zu entfernen, klicke auf die Schaltfläche "Entfernen" und dann auf "Bestätigen".
 
-## Group membership
+## Gruppenmitgliedschaft
 
-### Joining a group
+### Einer Gruppe beitreten
 
-To join a group, you must be on the same instance (website) and be invited by its owner.
-You will then receive a notification which lets you join.
-The group owner is marked with a star symbol.
+Um einer Gruppe beizutreten, musst du dich auf derselben Instanz (Website) befinden und von der Person eingeladen werden, die die Gruppe besitzt.
+Du wirst dann eine Benachrichtigung erhalten, die dir erlaubt, beizutreten.
+Die Person, die die Gruppe besitzt, erkennst du an einem Sternsymbol.
 
-### Using group Lists
+### Gruppen-Listen nutzen
 
-Group Lists work very similarly to normal Lists, except they are curated by all members of a Group.
-They can be created by any member of a group from the group's homepage.
+Gruppen-Listen funktionieren sehr ähnlich wie normale Listen, nur dass sie durch alle Mitglieder einer Gruppe kuratiert werden.
+Sie können durch jedes Mitglied einer Gruppe über die Gruppen-Startseite erstellt werden.
 
-## Related ideas and discussion on GitHub
+## Verwandte Ideen und Diskussionen auf GitHub
 
-Allow users to request to join public groups ([#1840](https://github.com/bookwyrm-social/bookwyrm/issues/1840) on GitHub)
+Erlaube Nutzer\*innen, den Beitritt zu öffentlichen Gruppen anzufragen ([#1840](https://github.com/bookwyrm-social/bookwyrm/issues/1840) auf GitHub)
 
-Allow groups to have multiple admins/owners ([#1841](https://github.com/bookwyrm-social/bookwyrm/issues/1841) on GitHub)
+Erlaube mehrere Administrator\*innen/Besitzer\*innen für eine Gruppe ([#1841](https://github.com/bookwyrm-social/bookwyrm/issues/1841) auf GitHub)
 
-Allow groups to include users from multiple instances (ActivityPub) ([#1548](https://github.com/bookwyrm-social/bookwyrm/issues/1548) on GitHub)
+Erlaube Gruppen, Mitglieder verschiedener Instanzen aufzunehmen (ActivityPub) ([#1548](https://github.com/bookwyrm-social/bookwyrm/issues/1548) auf GitHub)
