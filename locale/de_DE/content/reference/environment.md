@@ -1,18 +1,18 @@
 ---
-Title: Environment Variables
+Title: Umgebungsvariablen
 Date: 2025-04-28
 Order: 1
 ---
 
-BookWyrm servers require certain environment (`ENV`) variables in order to run correctly. These are set from a file named `.env` in the directory you run BookWyrm from. You will find most of these variabled described in the `.env.example` file in the main code repository. You should copy this as the basis of your `.env` file.
+BookWyrm-Server benötigen gewisse Umgebungsvariablen (engl. "environment", kurz `ENV`), um korrekt zu funktionieren. Diese werden in einer Datei namens `.env` gesetzt, die in dem Verzeichnis liegt, aus dem heraus du BookWyrm ausführst. Du wirst die meisten dieser Variablen in der Datei `.env.example` beschrieben finden, die im Hauptcoderepository liegt. Kopiere diese Datei und nutze sie als Basis für deine Datei `.env`.
 
-BookWyrm **instance administrators** should carefully check version release notes for any changes or additions to environment variables.
+**BookWyrm-Instanzadministrator\*innen** sollten aufmerksam die Veröffentlichungshinweise jeder Version auf Änderungen oder Erweiterungen der Umgebungsvariablen prüfen.
 
-Wherever possible BookWyrm **developers** should prefer to use `site.settings` when creating new configuration values rather than `ENV` values.
+Wo immer dies möglich ist, sollten **BookWyrm-Entwickler\*innen** `site.settings` gegenüber `ENV`-Werten bevorzugen, wenn sie neue Konfigurationsoptionen einführen.
 
-## Required settings
+## Notwendige Einstellungen
 
-The `env.example` file includes default values for core settings. These are designed to be safe defaults for production, apart from the default passwords. Docker users can run `./bw-dev create_secrets` to create safe and unique secrets for:
+Die Datei `.env.example` beinhaltet Standardwerte für die Kerneinstellungen. Diese sind als sichere Standardwerte für Produktivumgebungen ausgelegt, abgesehen von den Standardpasswörtern. Nutzer\*innen von Docker können `./bw-dev create_secrets` ausführen, um sichere und einzigartige Geheimnisse für folgende Variablen zu generieren:
 
 - `SECRET_KEY`
 - `POSTGRES_PASSWORD`
@@ -20,7 +20,7 @@ The `env.example` file includes default values for core settings. These are desi
 - `REDIS_BROKER_PASSWORD`
 - `FLOWER_PASSWORD`
 
-You _must_ assign an appropriate value to all of these settings, in your `.env` file:
+Du _musst_ jeder dieser Einstellungen in deiner `.env`-Datei angemessene Werte zuweisen:
 
 - `SECRET_KEY`
 - `DOMAIN`
@@ -28,7 +28,7 @@ You _must_ assign an appropriate value to all of these settings, in your `.env` 
   - `FLOWER_USER`
   - `FLOWER_PASSWORD`
   - `FLOWER_PORT`
-- Email (in development these may be blank strings but still need to be set):
+- E-Mail (dürfen in Entwicklungsumgebung leere Zeichenketten beinhalten, aber diese müssen nichtsdestotrotz gesetzt werden):
   - `EMAIL_HOST`
   - `EMAIL_PORT`
   - `EMAIL_HOST_USER`
@@ -49,605 +49,605 @@ You _must_ assign an appropriate value to all of these settings, in your `.env` 
   - `REDIS_ACTIVITY_PASSWORD`
   - `REDIS_BROKER_PASSWORD`
 
-When running BookWyrm in **development**:
+Wenn BookWyrm in einer **Entwicklungsumgebung** betrieben wird:
 
-- `NGINX_SETUP` **must** be set to `reverse_proxy`
-- `DEBUG` _should_ be set to `true`
-- `DOMAIN` may be `localhost`
+- `NGINX_SETUP` **muss** `reverse_proxy` zugewiesen werden
+- `DEBUG` _sollte_ `true` zugewiesen werden
+- `DOMAIN` darf `localhost` zugewiesen werden
 
-When running BookWyrm in **production**:
+Wenn BookWyrm in einer **Produktivumgebung** betrieben wird:
 
-- `DEBUG` **must** be set to `false`
-- `DOMAIN` **must not** be `localhost`
-- Email settings **must** be real and use a bulk email provider such as mailgun
+- `DEBUG` **muss** `false` zugewiesen werden
+- `DOMAIN` **darf nicht** `localhost` zugewiesen werden
+- E-Mail-Einstellungen **müssen** real sein und einen E-Mail-Provider für den Massenversand wie zum Beispiel mailgun verwenden
 
-## Django settings
+## Django-Einstellungen
 
-Learn more about each of these in [the Django reference documentation](https://docs.djangoproject.com/en/4.2/ref/settings).
+Lerne mehr über alle diese Einstellungen in [der Django-Referenz](https://docs.djangoproject.com/en/4.2/ref/settings).
 
 ### `ALLOWED_HOSTS`
 
-- **Type**: String of comma-separated values
-- **Default**: all
+- **Typ**: Zeichenkette kommaseparierter Werte
+- **Default**: alle
 
-A list of strings representing the host/domain names that this site can serve. This is a security measure to prevent HTTP Host header attacks, which are possible even under many seemingly-safe web server configurations.
+Eine Liste von Zeichenketten, die die Hosts und Domain-Namen representieren, unter denen diese Seite ausgeliefert werden darf. Dies ist eine Sicherheitsmaßnahme, um HTTP-Host-Header-Angriffe zu verhindern, die selbst bei vielen scheinbar sicheren Web-Server-Konfigurationen möglich sind.
 
-The default is to allow all hosts, but you should usually change this. e.g. `"localhost,bookwyrm.example.com"`
+Der Standard ist es, alle Hosts zuzulassen, aber du solltest dies ändern. Beispiel: `"localhost,bookwyrm.example.com"`
 
 ### `MEDIA_ROOT`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `images`
 
-Absolute filesystem path to the directory that will hold user-uploaded files. If running with Docker, remember that this is the directory location inside your container, not the host machine.
+Absoluter Dateipfad zu dem Verzeichnis, das von Nutzer\*innen hochgeladene Dateien enthält. Wenn Docker zum Einsatz kommt, denke daran, dass dieses Verzeichnis innerhalb deines Containers liegt, nicht auf der Host-Maschine.
 
 ### `SECRET_KEY`
 
-- **required**
-- **Type**: String
+- notwendig
+- **Typ**: Zeichenkette
 - **Default**: `"7(2w1sedok=aznpq)ta1mc4i%4h=xx@hxwx*o57ctsuml0x%fr"`
 
-A secret key for a particular BookWyrm instance. This is used to provide cryptographic signing, and should be set to a unique, unpredictable and long string.
+Ein geheimer Schlüssel für die jeweilige BookWyrm-Instanz. Er wird genutzt, um kryptographische Signaturen bereitzustellen, und sollte auf eine einzigartige, nicht vorhersagbare, lange Zeichenkette festgelegt werden.
 
-If you do not change the `SECRET_KEY` from `.env.example` BookWyrm will throw an error and refuse to start.
+Wenn du den `SECRET_KEY` in `.env.example` nicht änderst, wird BookWyrm eine Fehlermeldung zeigen und sich weigern, zu starten.
 
 ### `STATIC_ROOT`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `static`
 
-The absolute path to the directory where `collectstatic` will collect static files for deployment. If running with Docker, remember that this is the directory location inside your container, not the host machine.
+Der absolute Pfad zu dem Verzeichnis, in dem `collectstatic` alle statischen Dateien zur Auslieferung aufsammelt. Wenn Docker zum Einsatz kommt, denke daran, dass dieses Verzeichnis innerhalb deines Containers liegt, nicht auf der Host-Maschine.
 
 ### `DEBUG`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-`DEBUG` provides useful error information in the web interface for debugging on development servers.
+`DEBUG` stellt in der Weboberfläche nützliche Fehlerinformationen bereit, die zum Debuggen des Entwicklungsservers genutzt werden können.
 
-This should be set to `false` on production instances. **Never deploy a site into production `DEBUG` set to `true`!**
+In Produktivsystemen sollte `false` zugewiesen werden. **Stelle niemals eine Seite öffentlich zur Verfügung, bei der `DEBUG` auf `true` gesetzt wurde.**
 
-**NOTE:** For version 0.7.5 and earlier, `DEBUG` defaulted to `true`.
+**Hinweis:** Bis einschließlich Version 0.7.5 war der Standardwert für `DEBUG` `true`.
 
 ### `LANGUAGE_CODE`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `"en-us"`
 
-A string representing the default language code for this installation.
+Eine Zeichenkette, die die Standardsprache für diese Installation repräsentiert.
 
 ### `SESSION_COOKIE_AGE`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `2592000`
 
-Time before being logged out (in seconds). The default is equivalent to 30 days. In future this default is [likely to change to 1 year](https://github.com/bookwyrm-social/bookwyrm/issues/3082).
+Die Zeit, bis man abgemeldet wird (in Sekunden). Der Standardwert entspricht 30 Tagen. Zukünftig wird dieser Wert [voraussichtlich auf ein Jahr geändert](https://github.com/bookwyrm-social/bookwyrm/issues/3082).
 
 ### `DATA_UPLOAD_MAX_MEMORY_MiB`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `100`
 
-Maximum allowed memory for file uploads. You can increase this if users are having trouble uploading BookWyrm export files. The real Django setting is `DATA_UPLOAD_MAX_MEMORY_SIZE`, however we use this setting in `.env` to allow instance admins to set the value [in mebibytes](https://en.wikipedia.org/wiki/Byte#Multiple-byte_units) rather than bytes.
+Maximal erlaubter Speicher für Dateiuploads. Du kannst dies erhöhen, wenn Nutzer\*innen Probleme beim Upload von BookWyrm-Exportdateien feststellen. Die eigentliche Django-Einstellung ist `DATA_UPLOAD_MAX_MEMORY_SIZE`, allerdings nutzen wir in der `.env`-Datei diese Variable, um Instanz-Administrator\*innen zu erlauben, den Wert [in Mebibytes](https://en.wikipedia.org/wiki/Byte#Multiple-byte_units) anstelle von Bytes anzugeben.
 
-## Basic BookWyrm site settings
+## Grundlegende BookWyrm-Seiteneinstellungen
 
 ### `DEFAULT_LANGUAGE`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `English`
 
-Books will rank higher in search results on this instance if one of their `language` values matches this value.
+Bücher werden in Suchergebnissen priorisiert, wenn eine ihrer Sprachen (im Feld `language`) diesem Wert entspricht.
 
 ### `DOMAIN`
 
-- **required**
-- **Type**: String
-- **Default**: not set
+- **notwendig**
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The fully qualified domain name for your site. Do not include a protocol or port numbers. e.g. `example.com` or `subdomain.example.com`.
+Der Fully Qualified Domain Name deiner Website. Gib kein Protokoll und keinen Port an. Beispiel: `example.com` oder `subdomain.example.com`.
 
 ### `EMAIL`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Used in the `production` branch's `docker-compose.yml` file as the email to send to Certbot.
+Die Adresse wird in der `docker-compose.yml`-Datei des `production`-Branches an Certbot weitergereicht.
 
 ### `NGINX_SETUP`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `https`
-- **Options**: `https`, `reverse_proxy`
+- **Optionen**: `https`, `reverse_proxy`
 
-Indicates how to set the `nginx` configuration. `https` assumes all traffic should be handled by BookWyrm's nginx container and will attempt to set up a certbot HTTPS certificate, whereas `reverse_proxy` assumes traffic is being proxied by a web server between BookWyrm and the outside world. In development you should always set this to `reverse_proxy`.
+Signalisiert die `nginx`-Konfiguration. `https` nimmt an, dass der gesamte Datenverkehr durch BookWyrms `nginx`-Container gehandhabt wird. In dieser Konfiguration wird versucht, mit Certbot ein HTTPS-Zertifikat zu erstellen. `reverse_proxy` dagegen nimmt an, dass der Datenverkehr von einem vorgeschalteten Webserver zwischen BookWyrm und der Außenwelt gehandhabt wird. In der Entwicklungsumgebung sollte immer `reverse_proxy` gesetzt werden.
 
 ### `PORT`
 
-- **Type**: Integer
-- **Default**: `443`, or if domain is `localhost`, `80`.
+- **Typ**: Integer
+- **Default**: `443`, oder `80`, wenn die Domain `localhost` entspricht.
 
-The port used to communicate with the web. Note that this is different to Django's `PORT`.
+Der Port, der für die Kommunikation im Web genutzt wird. Beachte, dass diese Einstellung sich von Djangos `PORT` unterscheidet.
 
 ### `USE_HTTPS`
 
-This variable is deprecated after `v0.7.5`. It is assumed that your instance is using HTTPS unless the domain is `localhost`.
+Diese Variable wurde nach Version `v0.7.5` obsolet. Es wird angenommen, dass deine Instanz HTTPS verwendet, sofern die Domain nicht `localhost` ist.
 
-## Searching
+## Suchen
 
-These configurations may be moved to `site.settings` in future.
+Diese Konfiguration kann künftig zu `site.settings` verschoben werden.
 
 ### `SEARCH_TIMEOUT`
 
-- **Type**: Integer
-- **Default** `8`
+- **Typ**: Integer
+- **Default**: `8`
 
-The total time in seconds that the instance will spend searching connectors.
+Die Höchstdauer in Sekunden, die die Instanz nutzen wird, um über Konnektoren Inhalte zu suchen.
 
 ### `QUERY_TIMEOUT`
 
-- **Type**: Integer
-- **Default** `5`
+- **Typ**: Integer
+- **Default**: `5`
 
-Timeout for a query to an individual connector.
+Zeitbeschränkung für eine Anfrage an einen einzelnen Konnektor.
 
-## Postgres configuration
+## Postgres-Konfiguration
 
-The primary database for BookWyrm uses Postgres.
+Die Hauptdatenbank für BookWyrm nutzt Postgres.
 
 ### `PGPORT`
 
-- **Type**: Integer
-- **Default** `5432`
+- **Typ**: Integer
+- **Default**: `5432`
 
-The port to connect to the Postgres server. Same as Django's `PORT`.
+Der Port, um sich mit dem Postgres-Server zu verbinden. Entspricht Djangos `PORT`.
 
 ### `POSTGRES_PASSWORD`
 
-- **Type**: String
-- **Default** `bookwyrm`
+- **Typ**: Zeichenkette
+- **Default**: `bookwyrm`
 
-Password for the database. Set this to a strong password string between quotation marks to avoid problems with certain characters being misinterpreted.
+Passwort für die Datenbank. Lege hier ein starkes Passwort fest. Setze es in Anführungszeichen, um Probleme mit der Fehlinterpretation gewisser Zeichen zu vermeiden.
 
-**Do not use either of the default values from `.env` or `settings.py`** as they are publicly known.
+**Nutze weder die Standardwerte aus `.env` noch aus `setings.py`**, da diese öffentlich bekannt sind.
 
 ### `POSTGRES_USER`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `bookwyrm`
 
-The name of your database user. Same as Django's `USER`.
+Der Name deines Datenbankbenutzers. Entspricht Djangos `USER`.
 
 ### `POSTGRES_DB`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `bookwyrm`
 
-The name of your database.
+Der Name deiner Datenbank.
 
 ### `POSTGRES_HOST`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `localhost`
 
-The host server for your database. If not set or a blank string, defaults to localhost. Same as Django's `HOST`.
+Der Host-Server deiner Datenbank. Wird dieser Wert nicht gesetzt oder leer gelassen, wird `localhost` angenommen. Entspricht Djangos `HOST`.
 
 ## Redis
 
-Redis is used to manage both activity streams and background jobs.
+Redis wird verwendet, um sowohl Aktivitätsströme als auch Hintergrundaufgaben zu verwalten.
 
 ### `MAX_STREAM_LENGTH`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `200`
 
-The maximum length for Redis streams. If a stream grows longer than this, Redis will discard the oldest items in order to not exceed the `MAX_STREAM_LENGTH`.
+Die Maximallänge für Redis-Streams. Wird ein Stream größer, wird Redis die ältesten Elemente verwerfen, um die `MAX_STREAM_LENGTH` nicht zu überschreiten.
 
-See the [Redis `XTRIM` documentation](https://redis.io/docs/latest/commands/xtrim/) for more detail.
+Siehe [Redis-`XTRIM`-Dokumentation](https://redis.io/docs/latest/commands/xtrim/) für weitere Details.
 
 ### `REDIS_ACTIVITY_HOST`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `localhost`
 
-Redis server host. If not set, this defaults to `localhost` but if you are using Docker it should usually be set to `redis_activity` so that you are using the Redis container of that name.
+Der Redis-Server-Host. Wird als `localhost` angenommen, sofern nichts anderes angegeben wird. Wenn du Docker verwendest, sollte der Wert üblicherweise `redis_activity` sein, damit du den gleichnamigen Redis-Container verwendest.
 
 ### `REDIS_ACTIVITY_PORT`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `6379`
 
-The port your Redis server uses.
+Der Port, den dein Redis-Server verwendet.
 
 ### `REDIS_ACTIVITY_PASSWORD`
 
-- **Type**: String
-- **Default**: Empty string
+- **Typ**: Zeichenkette
+- **Default**: leer
 
-Password for your Redis database.
+Das Passwort für deine Redis-Datenbank.
 
 ### `REDIS_ACTIVITY_DB_INDEX`
 
-- **Type**: Integer
-- **Default**: not set
+- **Typ**: Integer
+- **Default**: nicht gesetzt
 
-If you are not using the default Docker setup with a separate Redis server for activity streams, you should set the `REDIS_ACTIVITY_DB_INDEX` to indicate which Redis database is being used for BookWyrm activity streams.
+Wenn du nicht das Standard-Docker-Setup mit separatem Redis-Server für Aktivitäts-Streams verwendest, solltest du `REDIS_ACTIVITY_DB_INDEX` setzen, um zu signalisieren, welche Redis-Datenbank für BookWyrms Aktivitätsströme verwendet wird.
 
 ### `REDIS_ACTIVITY_URL`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-If you are using an external Redis database or want to use a unix socket, you can override all the other Redis settings by explictly setting the full `REDIS_ACTIVITY_URL`.
+Wenn du eine externe Redis-Datenbank oder einen Unix-Socket verwendest, kannst du alle anderen Redis-Einstellungen überschreiben, indem du die volle `REDIS_ACTIVITY_URL` setzt.
 
-e.g. `"redis://username:top_secret_pass@example.com:6380/0"`
+Beispiel: `"redis://username:top_secret_pass@example.com:6380/0"`
 
 ### `REDIS_BROKER_HOST`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `localhost`
 
-Redis Celery server host. If not set this defaults to `localhost` but if using Docker should usually be set to `redis_broker` so that you are using the Redis container of that name.
+Der Redis-Celery-Server-Host. Wird als `localhost` angenommen, sofern nichts anderes angegeben wird. Wenn du Docker verwendest, sollte der Wert üblicherweise `redis_broker` sein, damit du den gleichnamigen Redis-Container verwendest.
 
 ### `REDIS_BROKER_PORT`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `6379`
 
-The port your Redis Celery server uses.
+Der Port, den dein Redis-Celery-Server verwendet.
 
 ### `REDIS_BROKER_PASSWORD`
 
-- **Type**: String
-- **Default**: Empty string
+- **Typ**: Zeichenkette
+- **Default**: leer
 
-Password for your Redis Celery database.
+Das Passwort für deine Redis-Celery-Datenbank.
 
 ### `REDIS_BROKER_DB_INDEX`
 
-- **Type**: Integer
-- **Default**: not set
+- **Typ**: Integer
+- **Default**: nicht gesetzt
 
-If you are not using the default Docker setup with a separate Redis server for Celery, you should set the `REDIS_ACTIVITY_DB_INDEX` to indicate which Redis database is being used for BookWyrm activity streams.
+Wenn du nicht das Standard-Docker-Setup mit separatem Redis-Server für Celery verwendest, solltest du `REDIS_ACTIVITY_DB_INDEX` setzen, um zu signalisieren, welche Redis-Datenbank für BookWyrms Aktivitätsströme verwendet wird.
 
 ### `REDIS_BROKER_URL`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-If you are using an external Redis database or want to use a unix socket, you can override all the other Redis settings for your Celery database by explictly setting the full `REDIS_BROKER_URL`.
+Wenn du eine externe Redis-Datenbank oder einen Unix-Socket verwendest, kannst du alle anderen Redis-Einstellungen für deine Celery-Datenbank überschreiben, indem du die volle `REDIS_BROKER_URL` setzt.
 
-e.g. `"redis://username:top_secret_pass@example.com:6380/0"`
+Beispiel: `"redis://username:top_secret_pass@example.com:6380/0"`
 
 ## Flower
 
-Flower provides a web UI for monitoring Celery tasks.
+Flower stellt eine Weboberfläche zur Verfügung, um Celery-Tasks zu überwachen.
 
 ### `FLOWER_PORT`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `8888`
 
-Port for Flower site used to monitor Celery at `https://example.com/flower`.
+Der Port für die Flower-Seite, um Celery unter `https://example.com/flower` zu überwachen.
 
 ### `FLOWER_USER`
 
-- **required**
-- **Type**: String
-- **Default**: not set
+- **notwendig**
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The user for your Flower interface.
+Der Nutzer deiner Flower-Instanz.
 
 ### `FLOWER_PASSWORD`
 
-- **required**
-- **Type**: String
-- **Default**: not set
+- **notwendig**
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The password for your Flower monitoring interface. Flower can see all messages passing through your server so it is important that you set this to a strong, unique password and keep it secure.
+Das Passwort für deine Flower-Überwachungsoberfläche. Flower kann alle Nachrichten sehen, die deinen Server erreichen, daher ist es wichtig, dass du ein starkes, einzigartiges Passwort setzt und dieses sicher verwahrst.
 
-## Email configuration
+## E-Mail-Konfiguration
 
 ### `EMAIL_HOST`
 
-- **required**
-- **Type**: String
-- **Default**: not set
+- **notwendig**
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The smtp address of your email host. e.g. `smtp.mailgun.org`. Always check the terms and conditions of your email provider before using them for sending large volumes of mail. You probably need something like Mailgun.
+Die SMTP-Adresse deines E-Mail-Hosts. Beispiel: `smtp.mailgun.org`. Prüfe stets die Nutzungsbedingungen deines E-Mail-Anbieters, bevor du deinen Account nutzt, um große Mengen E-Mails zu versenden. Du wirst vermutlich einen Dienst wie Mailgun benötigen.
 
 ### `EMAIL_PORT`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `587`
 
-The port for your email provider's smtp server.
+Der SMTP-Server-Port deines E-Mail-Anbieters.
 
 ### `EMAIL_HOST_USER`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The username for your email provider. Usually in the form of a full email address e.g. `mail@your.domain.here`
+Der Nutzername deines E-Mail-Anbieters. Normalerweise eine volle E-Mail-Adresse wie `mail@your.domain.here`.
 
 ### `EMAIL_HOST_PASSWORD`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The password for your email provider account.
+Das Passwort für den Account bei deinem E-Mail-Anbieter.
 
 ### `EMAIL_USE_TLS`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `true`
 
-Whether your smtp connection uses TLS. Check that you are using the correct `EMAIL_PORT` for this.
+Ob deine SMTP-Verbidung TLS nutzt. Prüfem hierfür, ob du den richtigen `EMAIL_PORT` verwendest.
 
 ### `EMAIL_USE_SSL`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-Whether your smtp connection uses SSL. Check that you are using the correct `EMAIL_PORT` for this.
+Ob deine SMTP-Verbidung SSL nutzt. Prüfem hierfür, ob du den richtigen `EMAIL_PORT` verwendest.
 
 ### `EMAIL_SENDER_NAME`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `admin`
 
-The first part of the email address for emails sent by your BookWyrm instance. e.g. **`admin`**@example.com.
+Der erste Teil der E-Mail-Adresse für Nachrichten, die deine BookWyrm-Instanz versendet. Beispiel: **`admin`**@example.com.
 
 ### `EMAIL_SENDER_DOMAIN`
 
-- **Type**: String
-- **Default**: Same as `DOMAIN`
+- **Typ**: Zeichenkette
+- **Default**: wie `DOMAIN`
 
-The domain of the email address for emails sent by your BookWyrm instance. e.g. admin@**`example.com`**.
+Die Domain der E-Mail-Adresse für Nachrichten, die deine BookWyrm-Instanz versendet. Beispiel: admin@**`example.com`**.
 
-## S3 object storage
+## S3-Object-Storage
 
 ### `USE_S3`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-Indicates whether you are using S3 object storage for images and static files.
+Zeigt an, ob du S3-Object-Storage für Bilder und statische Dateien nutzt.
 
 ### `USE_S3_FOR_EXPORTS`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-Indicates whether you are using S3 object storage for user export and import files. By default `USE_S3` does not include user import and exports. It is safer to use the default local storage for these, along with the regular file deletion job running. On larger instances local storage may cause performance issues and you may prefer to set this to `true`.
+Zeigt an, ob du S3-Object-Storage für Dateien bei Kontoexporten und -importen nutzt. Standardmäßig beinhaltet `USE_S3` Kontoimporte und -exporte nicht. Es ist sicherer, hierfür den lokalen Speicher zu verwenden und den normalen Dateilöschvorgang regelmäßig auszuführen. Auf größeren Instanzen kann der lokale Speicher Performanzprobleme hervorrufen und es kann sich anbieten, diesen Wert auf `true` zu setzen.
 
 ### `S3_SIGNED_URL_EXPIRY`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `900`
 
-Number of seconds before signed S3 urls expire. This is currently only used for user export files. This should only be as long as is required for a user download to complete once the user has clicked on the "download" button after the export has been processed.
+Die Anzahl an Sekunden, bevor signierte S3-URLs ablaufen. Dies wird aktuell nur für Konto-Exportdateien verwendet. Der Wert sollte nur so groß sein, wie es notwendig ist, um als Nutzer\*in einen Download abzuschließen, nachdem man bei Abschluss eines Exports auf "Herunterladen" geklickt hat.
 
 ### `AWS_ACCESS_KEY_ID`
 
-- **required** if using S3 storage
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn S3-Speicher zum Einsatz kommt
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Access key for S3 storage of all types.
+Zugriffsschlüssel für S3-Speicher aller Art.
 
 ### `AWS_DEFAULT_ACL`
 
-- **required** if using Backblaze storage
-- **Type**: String
+- **notwendig**, wenn Backblaze-Speicher zum Einsatz kommt
+- **Typ**: Zeichenkette
 - **Default**: "public-read"
 
-Backblaze (B2) does not recognise "public-read" as a default ACL setting, so Backblaze users should set this to an empty string.
+Backblaze (B2) erkennt "public-read" nicht als eine Standard-ACL-Einstellung an. Backblaze-Nutzer\*innen sollten daher eine leere Zeichenkette angeben.
 
 ### `AWS_SECRET_ACCESS_KEY`
 
-- **required** if using S3 storage
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn S3-Speicher zum Einsatz kommt
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Secret key for S3 storage of all types.
+Geheimer Schlüssel für S3-Speicher aller Art.
 
 ### `AWS_STORAGE_BUCKET_NAME`
 
-- **required** if using S3 storage
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn S3-Speicher zum Einsatz kommt
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The bucket name you are using. e.g. `"example-bucket-name"`
+Der Bucket-Name, den du nutzt. Beispiel: `"example-bucket-name"`
 
 ### `AWS_S3_REGION_NAME`
 
-- **required** if using S3 storage
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn S3-Speicher zum Einsatz kommt
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The S3 region name. e.g. `"eu-west-1"` for AWS, `"fr-par"` for Scaleway, `"nyc3"` for Digital Ocean or `"cluster-id"` for Linode.
+Der S3-Regionenname. Beispiel: `"eu-west-1"` für AWS, `"fr-par"` für Scaleway, `"nyc3"` für Digital Ocean oder `"cluster-id"` für Linode.
 
 ### `AWS_S3_CUSTOM_DOMAIN`
 
-- **required** if using non-AWS S3 storage (e.g. Scaleway or Digital Ocean Spaces)
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn S3-Storage zum Einsatz kommt, der nicht von AWS betrieben wird (z. B. Scaleway oder Digital Ocean Spaces)
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The domain that will serve the assets. e.g. `"example-bucket-name.s3.fr-par.scw.cloud"`
+Die Domain, unter der Assets ausgeliefert werden. Beispiel: `"example-bucket-name.s3.fr-par.scw.cloud"`
 
 ### `AWS_S3_URL_PROTOCOL`
 
-- **Type**: String
-- **Default**: Same as `PROTOCOL` plus a colon e.g. "http:"
+- **Typ**: Zeichenkette
+- **Default**: wie `PROTOCOL` mit Doppelpunkt, also etwa "http:"
 
-Protocol for your S3 storage. Defaults to `https:` in production. You do not need to set this unless you want to override the default behaviour.
+Protokoll für den S3-Speicher. Wird in der Produktivumgebung standardmäßig als `https:` angenommen. Du musst dies nicht setzen, sofern du das Standardverhalten nicht überschreiben möchtest.
 
 ### `AWS_S3_ENDPOINT_URL`
 
-- **required** if using non-AWS S3 storage (e.g. Scaleway or Digital Ocean Spaces)
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn S3-Storage zum Einsatz kommt, der nicht von AWS betrieben wird (z. B. Scaleway oder Digital Ocean Spaces)
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The S3 API endpoint. e.g. `"https://s3.fr-par.scw.cloud"`
+Der S3-API-Endpunkt. Beispiel: `"https://s3.fr-par.scw.cloud"`
 
-## Azure blob storage
+## Azure-Blob-Storage
 
-These values are required if you are using [Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-get-info).
+Diese Werte werden benötigt, wenn [Azure-Blob-Storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-get-info) zum Einsatz kommt.
 
 ### `USE_AZURE`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
 ### `AZURE_ACCOUNT_NAME`
 
-- **required** if using Azure storage
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn Azure-Speicher zum Einsatz kommt
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-e.g. `"example-account-name"`
+Beispiel: `"example-account-name"`
 
 ### `AZURE_ACCOUNT_KEY`
 
-- **required** if using Azure storage
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn Azure-Speicher zum Einsatz kommt
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-e.g. `"Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=="`
+Beispiel: `"Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=="`
 
 ### `AZURE_CONTAINER`
 
-- **required** if using Azure storage
-- **Type**: String
-- **Default**: not set
+- **notwendig**, wenn Azure-Speicher zum Einsatz kommt
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-The unique name for your container. e.g. `"example-blob-container-name"`.
+Der einzigartige Name deines Containers. Beispiel: `"example-blob-container-name"`.
 
 ### `AZURE_CUSTOM_DOMAIN`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-You can use a [custom domain](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal) with Azure blob storage but this is not required. e.g. `"example-account-name.blob.core.windows.net"`.
+Du kannst eine [eigene Domain](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal) für den Azure-Blob-Storage nutzen, aber dies ist nicht notwendig. Beispiel: `"example-account-name.blob.core.windows.net"`.
 
-## Image generation
+## Bildgenerierung
 
-Some of these configuration values may be moved to site.settings in future.
+Teile dieser Konfiguration könnten künftig zu `site.settings` verschoben werden.
 
 ### `ENABLE_THUMBNAIL_GENERATION`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-Whether to enable generation of thumbnail images for book covers. Setting this to `true` will provide a boost to performance in terms of rendering images, however it comes at the price of 4-5 times more file storage required for book covers. For this reason it is set to `false` by default.
+Ob die Generierung von Vorschaubildern für Buch-Titelbilder aktiviert werden soll. Wenn du dies auf `true` setzt, wird die Performanz beim Rendern der Bilder verbessert. Allerdings wird für das Speichern der Titelbilder 4- bis 5-mal soviel Speicher benötigt. Aus diesem Grund ist der Standardwert `false`.
 
 ### `ENABLE_PREVIEW_IMAGES`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-This setting allows the server to generate preview images that can be used as OpenGraph images (or Twitter card image). These previews are generated for the book (every time the title, cover or author changes, or a new public review with rating is published), the user (every time the name or avatar is changed), and the website (every time the site name, tagline or logo are changed). See [Optional Features](/optional_features.html) for more information.
+Diese Einstellung erlaubt es dem Server, Vorschaubilder zu generieren, die als OpenGraph-Bilder (auch als Twitter-Card-Bilder bekannt) genutzt werden. Diese Vorschaubilder werden für Bücher (jedes Mal, wenn sich der Titel, das Vorschaubild oder der\*die Autor\*in ändern oder wenn eine neue öffentliche Bewertung veröffentlicht wird), Konten (jedes Mal, wenn sich der Name oder Avatar ändert) und die Website (jedes Mal, wenn sich der Seitenname, die Beschreibung oder das Logo ändert) generiert. Siehe [Optionale Features](/optional_features.html) für weitere Informationen.
 
 ### `PREVIEW_BG_COLOR`
 
-- **Type**: String
-- default: `use_dominant_color_light`
+- **Typ**: Zeichenkette
+- **Default**: `use_dominant_color_light`
 
-The background color for preview images. You can specify RGB tuple or RGB hex strings, or `use_dominant_color_light` / `use_dominant_color_dark`.
+Die Hintergrundfarbe für Vorschaubilder. Du kannst ein RGB-Tupel oder RGB-Hex-Werte angeben oder `use_dominant_color_light`/`use_dominant_color_dark` angeben.
 
 ### `PREVIEW_TEXT_COLOR`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `#363636`
 
-The text color for preview images. If `PREVIEW_BG_COLOR` is `use_dominant_color_dark`, this should be set to `#fff`.
+Die Textfarbe für Vorschaubilder. Wenn die `PREVIEW_BG_COLOR` auf `use_dominant_color_dark` gesetzt ist, sollte dies `#fff` sein.
 
 ### `PREVIEW_IMG_WIDTH`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `1200`
 
-Width for preview images, in pixels.
+Breite für Vorschaubilder in Pixeln.
 
 ### `PREVIEW_IMG_HEIGHT`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `630`
 
-Height for preview images, in pixels.
+Höhe für Vorschaubilder in Pixeln.
 
 ### `PREVIEW_DEFAULT_COVER_COLOR`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `#002549`
 
-If there is no cover image for a book, we create a default cover. This setting determines the color of that default book cover.
+Wenn es zu einem Buch kein Titelbild gibt, erstellen wir ein neues Titelbild. Diese Einstellung bestimmt die Farbe dieses neuen Titelbilds.
 
 ### `PREVIEW_DEFAULT_FONT`
 
-- **Type**: String
+- **Typ**: Zeichenkette
 - **Default**: `Source Han Sans`
 
-If there is no cover image for a book, we create a default cover. This setting determines the font used on that default book cover.
+Wenn es zu einem Buch kein Titelbild gibt, erstellen wir ein neues Titelbild. Diese Einstellung bestimmt die Schriftart dieses neuen Titelbilds.
 
-## Telemetry
+## Telemetrie
 
-Use these settings to enable automatically sending telemetry to an OTLP-compatible service. Many of the main monitoring apps have OLTP collectors, including NewRelic, DataDog, and Honeycomb.io - consult their documentation for setup instructions.
+Nutze diese Einstellungen, um das automatische Senden von Telemetriedaten an OTLP-kompatible Dienste zu aktivieren. Viele der Haupt-Verwaltungsanwendungen haben OLTP-Konnektoren, einschließlich NewRelic, DataDog und Honeycomb.io – lies in ihren Dokumentationen nach, wie du sie aufsetzt.
 
 ### `OTEL_EXPORTER_OTLP_ENDPOINT`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-API endpoint for your provider.
+API-Endpunkt deines Anbieters.
 
 ### `OTEL_EXPORTER_OTLP_HEADERS`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Any headers required, usually authentication information.
+Alle Header, die benötigt werden, üblicherweise für Authentifizierungs-Informationen.
 
 ### `OTEL_SERVICE_NAME`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Service name is an arbitrary tag that is attached to any data sent, used to distinguish different sources. It can be useful for sending prod and dev metrics to the same place and keeping them separate, for instance.
+Der Dienstname ist ein arbiträrer Tag, der allen versendeten Daten hinzugefügt wird, um verschiedene Quellen zu unterscheiden. Er kann nützlich sein, um Produktiv- und Entwicklungsmetriken am selben Ort zu sammeln und sie dort zu trennen.
 
-## HTTP headers
+## HTTP-Header
 
 ### `HTTP_X_FORWARDED_PROTO`
 
-- **Type**: Boolean
+- **Typ**: Boolean
 - **Default**: `false`
 
-Setting this to `true` can compromise your site’s security. Ensure you fully understand your setup before changing it.
+Wenn du dies auf `true` setzt, kann das die Sicherheit deiner Website kompromittieren. Stelle sicher, dass du dein Setup komplett verstehst, bevor du dies änderst.
 
-Only use it if your proxy is "swallowing" whether the original request was made via https. Please [refer to the Django Documentation](https://docs.djangoproject.com/en/4.2/ref/settings/#secure-proxy-ssl-header) and assess the risks for your instance.
+Nutze es nur, wenn dein Proxy "verschluckt", ob die originäre Anfrage per HTTPS erfolgte. Bitte [sieh in der Django-Dokumentation nach](https://docs.djangoproject.com/en/4.2/ref/settings/#secure-proxy-ssl-header) und bewerte die Risiken für deine Instanz.
 
 ### `CSP_ADDITIONAL_HOSTS`
 
-- **Type**: String
-- **Default**: not set
+- **Typ**: Zeichenkette
+- **Default**: nicht gesetzt
 
-Additional hosts to allow in the `Content-Security-Policy`, "self" (should be `DOMAIN` with optionally ":" + `PORT`) and `AWS_S3_CUSTOM_DOMAIN` (if used) are added by default.  Value should be a comma-separated list of host names.
+Zusätzliche Hosts, die in der `Content-Security-Policy` erlaubt werden sollen; "self" (sollte `DOMAIN` mit optionalem Doppelpunkt und `PORT` sein) und `AWS_S3_CUSTOM_DOMAIN` (sofern verwendet) werden standardmäßig hinzugefügt.  Der Wert sollte eine kommaseparierte Liste von Hostnamen sein.
 
-## Multifactor (TOTP) authentication
+## Multifaktor-Authentifizierung (TOTP)
 
-Some of these configuration values may be moved to site.settings in future.
+Teile dieser Konfiguration könnten künftig zu `site.settings` verschoben werden.
 
 ### `TWO_FACTOR_LOGIN_VALIDITY_WINDOW`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `2`
 
-Sets the number of codes either side of which will be accepted. This should be a low number but you can increase it if your users are experiencing high network latency and their codes are expiring before they can complete the login process. With the default settings for this and `TWO_FACTOR_LOGIN_MAX_SECONDS`, users have up to 180 seconds to use a given login code and can use a valid code up to two before the current one.
+Setzt die Zeit, in der die Codes von beiden Seiten akzeptiert werden. Dies sollte eine niedrige Zahl sein, aber du kannst sie erhöhen, wenn deine Nutzer\*innen hohe Netzwerklatenzen erfahren und ihre Codes ablaufen, bevor sie den Login abschließen können. Mit der Standardeinstellung hierfür und `TWO_FACTOR_LOGIN_MAX_SECONDS` haben Nutzer\*innen bis zu 180 Sekunden, um einen Code zu verwenden. Sie können einen gültigen Code bis zu zwei vor dem aktuellen verwenden.
 
 ### `TWO_FACTOR_LOGIN_MAX_SECONDS`
 
-- **Type**: Integer
+- **Typ**: Integer
 - **Default**: `60`
 
-Time in seconds for which a user login code is valid.
+Zeit in Sekunden, für die ein Login-Code gültig ist.

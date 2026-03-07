@@ -4,53 +4,53 @@ Date: 2021-04-18
 Order: 3
 ---
 
-## User actions
+## Nutzer\*innen-Aktionen
 
-### Blocking
+### Blockieren
 
-Users have the option to block other users on their own, without a moderator intervening. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.
+Nutzer\*innen können andere Nutzer\*innen selbstständig blockieren, ohne dass ein\*e Moderator\*in eingreift. In der Verwaltungsansicht "Föderierte Instanzen" können Administrator\*innen einsehen, wie viele Nutzer\*innen einer Instanz von lokalen Nutzer\*innen blockiert worden sind.
 
-### Reports
+### Melden
 
-Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.
+Nutzer\*innen können Beiträge oder Nutzer\*innen melden. Bei Beiträgen geht das über die Schaltfläche "Mehr Optionen" im Fußbereich eines Posts, bei Konten über die (Ent-)Folgen-Schaltfläche. Wenn eine Meldung eingeht, erhalten alle Nutzer\*innen mit Administrations-Berechtigungen eine Benachrichtigung.
 
-To manage reports, go to `Admin > Moderation > Reports`.
+Um Meldungen einzusehen, gehe zu `Administration > Moderation > Meldungen`.
 
-When a report is made, there are a few options how the moderator can respond.
+Moderator\*innen haben unterschiedliche Optionen, auf Meldungen zu reagieren:
 
-- Send a direct message to the reported user.
-- Delete the reported status.
-- Deactivate the user. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.
+- Der gemeldeten Person eine Direktnachricht senden.
+- Den gemeldeten Beitrag löschen.
+- Das Konto deaktivieren. Bei lokalen Nutzer\*innen sorgt das dafür, dass sie sich nicht mehr einloggen können und ihr Konto nicht mehr in der Anwendung angezeigt wird. Für Nutzer\*innen anderer Instanzen wird der Server alle eingehenden Aktivitäten dieses Kontos ablehnen. Das Konto wird außerdem nicht in der Suche auftauchen.
 
-## Auto-moderation
+## Automatisierte Moderation
 
-Auto-moderation rules will create reports for any local user or status with fields matching the provided string. Users or statuses that have already been reported (regardless of whether the report was resolved) will not be flagged. To set up auto-moderation, go to `Admin > Moderation > Auto-Moderation Rules`.
+Regeln für die automatisierte Moderation bewirken, dass Berichte erstellt werden über lokale Benutzer\*innen oder Beiträge, die die angegebene Zeichenkette in irgendeinem Feld nutzen. Nutzer\*innen und Beiträge, die schon gemeldet worden sind (unabhängig davon, ob die Meldung bearbeitet und abgeschlossen wurde), werden nicht markiert. Um Regeln für die automatisierte Moderation zu erstellen, gehe zu `Administration > Moderation > Regeln für automatisierte Moderation`.
 
-## Instance-level moderation
+## Moderation auf Instanzebene
 
-### Manual instance blocks
+### Instanzen händisch sperren
 
-Moderators can block entire instances. This will prevent any activities from coming in from that instance, and deactivate all accounts from that instance locally. To block an instance go to `Admin > Federated Instances` and find the instance you wish to block. See `Managing BookWyrm > Federation` for more information.
+Moderator\*innen können gesamte Instanzen sperren. Das verhindert, dass Aktivitäten von dieser Instanz eintreffen, und deaktiviert alle Konten der Instanz lokal. Um eine Instanz zu sperren, gehe zu `Administration > Föderation > Föderierte Instanzen` und suche nach der Instanz, die du sperren möchtest. Weitere Informationen dazu gibt es unter `BookWyrm verwalten > Föderation`.
 
-If the instance is un-blocked, all the users who were deactivated by the block will be re-activated.
+Wenn die Instanz entsperrt wird, werden alle deaktivierten Konten wieder aktiviert.
 
-### FediBlock lists
+### FediBlock-Listen
 
-Moderators can also upload _FediBlock_ formatted blocklists to block servers in bulk. To do this, go to `Federation > Federated Instances` and click on "Add instance".
+Moderator\*innen können außerdem Sperrlisten im Format _FediBlock_ hochladen, um Server gesammelt zu sperren. Gehe hierfü zu `Föderation > Föderierte Instanzen` und klicke auf "Instanz hinzufügen".
 
-### Email and IP block lists
+### Sperrlisten für E-Mails und IPs
 
-You can block signups from a given email domain at `Admin > Moderation > Email Blocklist`. When someone tries to register with an email from a domain in your email blocklist, no account will be created. The registration process will appear to have worked.
+Du kannst Anmeldungen mit einer gegebenen E-Mail-Domain unter `Administration > Moderation > E-Mail-Sperrliste` sperren. Wenn jemand versucht, sich mit einer E-Mail-Adresse einer gesperrten Domain anzumelden, wird kein Account angelegt. Der Registrierungsprozess wird so wirken, als habe er funktioniert.
 
-An IP block list will block all traffic from the IP address. Requests to any part of your instance from these IPs will receive a 404 response.
+Eine Sperrliste für IP-Adressen wird sämtlichen Datenverkehr von dieser IP-Adresse sperren. Anfragen von dieser IP-Adresse nach jedem Teil deiner Instanz werden mit einer 404-Rückmeldung beantwortet.
 
-### Link Domains
+### Link-Domains
 
-Users can add a link to a book download for any book. Link domains must be approved before they are shown on book pages in order to avoid spam and malicious links. You can approve link domains at `Admin > Moderation > Link Domains`.
+Nutzer\*innen können jedem Buch einen Download-Link hinzufügen. Die Domains dieser Links müssen genehmigt werden, bevor sie auf den Buchseiten erscheinen, um Spam und bösartige Links zu vermeiden. Du kannst Link-Domains unter `Administration > Moderation > Link-Domains` genehmigen.
 
-## Disabling federation
+## Föderation deaktivieren
 
-Administrators and moderators can disable federation completely. This will prevent any further communication inwards or outwards, however existing data will be retained in the database. Disabling federation does not prevent connectors from importing books, however it will restrict all statuses (reviews, comments etc) to only users on your instance, or anything those users import manually (e.g. via a Goodreads CSV import).
+Administrator\*innen und Moderator\*innen können die Föderation komplett deaktivieren. Das wird die gesamte zukünftige eingehende und ausgehende Kommunikation unterbinden. Bestehende Daten bleiben allerdings in der Datenbank erhalten. Die Föderation zu deaktivieren hält die Konnektoren nicht davon ab, Bücher zu importieren, aber es beschränkt alle Beiträge (Rezensionen, Kommentare etc.) auf Nutzer\*innen deiner Instanz und das, was sie händisch importieren (z. B. von Goodreads durch einen CSV-Import).
 
-To disable federation, go to `Admin > Federation > Federation Settings`.
+Um die Föderation zu deaktivieren, gehe zu `Administration > Föderation > Föderationseinstellungen`.
 

@@ -27,8 +27,38 @@ Der Funktionsumfang nimmt mit jedem Monat zu, es gibt also jede Menge Raum für 
     - Teile Buchdaten zwischen Instanzen, um eine vernetzte Datenbank mit Metadaten zu erstellen
     - Finde über die Instanzen hinweg Bücher, die geteilt worden sind, und sammle verwandte Inhalte
     - Folge und interagiere mit Nutzer*innen der diversen BookWyrm-Instanzen
-    - Arbeite mit anderen ActivityPub-Diensten jenseits von BookWyrm zusammen (derzeit wird Mastodon unterstützt)
+    - Interoperiere mit ActivityPub-Diensten jenseits von BookWyrm wie Mastodon und GoToSocial
 - Granulare Privatsphäreeinstellungen
     - Privatsphärelevel für Beiträge, Regale und Listen: Privat, nur für Follower*innen, oder öffentlich
     - Option für die manuelle Genehmigung von Follower*innen
     - Blockieren und Markieren für Moderation erlauben
+
+## Dieses Handbuch verwenden
+
+### Navigation
+
+Nutze das Menü auf der linken Seite, um den Abschnitt zu finden, den du suchst.
+
+* _BookWyrm benutzen_ erklärt, wie du BookWyrm als normale\*r Benutzer\*in bedienst
+* Du wirst den Bereich _BookWyrm betreiben_ benötigen, wenn du eine BookWyrm-Instanz (also einen eigenen Server) verwalten möchtest
+* _Beitragen_ erklärt, wie du dich am Projekt beteiligen und auf verschiedenen Wegen teilhaben kannst (du musst dazu nicht programmieren können)
+* _Codebasis_ beinhaltete weitere Informationen über Kernaspekte von BookWyrms Quelltext
+* Konsultiere die _Referenz_, wenn du wissen möchtest, was eine spezielle Umgebungsvariable oder ein `bw-dev`-Befehl bewirken
+
+Du kannst auch die Sprache und die Version auswählen.
+
+### Übersetzungen
+
+Das Handbuch wird von Haus auf Englisch (US) verfasst. Wenn wir mindestens 70 % Abdeckung für eine Sprache in [BookWyrms Übersetzungsprojekt](https://translate.joinbookwyrm.com/) erreichen, wird sie zur Liste der verfügbaren Sprachen hinzugefügt. Wenn du feststellst, dass Teile der übersetzten Version in Englisch sind, kannst du [uns helfen, sie zu übersetzen](https://translate.joinbookwyrm.com/). Das kann geschehen, während wir Änderungen am Handbuch vornehmen und weitere Dinge aufnehmen.
+
+### Versionierung
+
+Seit Version `0.7.5` hat jede BookWyrm-Version eine passende Version im Handbuch. Das erlaubt es dir, die Dokumentation zu deiner konkreten BookWyrm-Version einzusehen. Wenn du eine Patch-Version ohne passende Dokumentation (z. B. `0.8.1`) verwendest, handelt es sich hierbei um eine Version, die ausschließlich Fehler behoben hat. Du nutzt in diesem Fall die Dokumentation der vorherigen Version (z. B. `0.8.0`).
+
+### Seitenverzeichnis
+
+Es gibt auf jeder Seite auch ein ausklappbares Menü, das ein Inhaltsverzeichnis anzeigt. Du kannst dieses nutzen, um direkt zu einer bestimmten Abschnittsüberschrift zu springen. Das kann bei besonders langen Seiten wie den Anleitungen in der Referenz nützlich sein. Das Inhaltsverzeichnis erscheint nicht auf der Startseite.
+
+### Kleinere Bildschirme
+
+Auf kleineren Bildschirmen wird das Seitenmenü ausgeblendet. Nutze das "Hamburger-Icon" (drei horizontale Striche) am oberen rechten Seitenrand, um das Menü auszuklappen.

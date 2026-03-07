@@ -1,86 +1,86 @@
 ---
-Title: Shelves & Reading Status
+Title: Regale und Lesestatus
 Date: 2025-06-28
 Order: 2
 ---
 
-An integral part of managing your reading is organising your books and their read status.
-On Bookwyrm, you use Shelves for this.
+Ein wesentlicher Teil der Leseverwaltung besteht darin, deine Bücher und ihren Lesestatus zu organisieren.
+Auf BookWyrm nutzt du hierfür Regale.
 
-To get to the shelves page, select the 'Your Books' link at the top of the website.
-The tabs are your shelves, as well as an 'All books' view.
+Um zur Regal-Seite zu gelangen, wähle den Link "Deine Bücher" am oberen Ende der Website.
+Deine Regale bilden hier je einen Reiter. Dazu kommt ein Regal "Alle Bücher".
 
-## Reading Status Shelves
+## Regale zum Lesestatus
 
-Bookwyrm comes with four default shelves: To Read, Currently Reading, Read and Stopped Reading.
-These are used to track the reading status of each of your books.
+BookWyrm hat vier Standard-Regale: Leseliste, Liest gerade, Gelesen und Aufgehört zu lesen.
+Diese werden verwendet, um den Lesestatus jedes deiner Bücher zu verfolgen.
 
-### Updating reading status
+### Den Lesestatus aktualisieren
 
-When browsing books on Bookwyrm, there is a button below or beside each book, used to update its reading status.
+Wenn du in den Büchern auf BookWyrm stöberst, findest du unter oder neben jedem Buch eine Schaltfläche, mit der du den Lesestatus des Buches anpassen kannst.
 
-For each book, BookWyrm expects the reading flow of `Not shelved` -> `To read` -> `Currently reading` -> `Read`.
-The default option for the button will move the book to the next stage in the sequence.
-For example, a new book is 'Not shelved' yet, so the button will suggest adding it to your 'To read' shelf.
-Once on 'To read', the next step is to start reading it, which will move it to 'Currently reading'.
+Für jedes Buch nimmt BookWyrm folgenden Lesefluss an: "Nicht im Regal" → "Leseliste" → "Liest gerade" → "Gelesen".
+Die Voreinstellung befördert das Buch zur nächsten Station in dieser Reihe.
+Wenn ein Buch zum Beispiel noch nicht in einem deiner Regale steht, wird die Schaltfläche vorschlagen, es zu deiner Leseliste hinzuzufügen.
+Sobald es sich dort findet, ist der nächste Schritt, mit dem Lesen anzufangen, was das Buch zu "Liest gerade" verschiebt.
 
-At any time, you can use the dropdown arrow to skip steps in the sequence and manually select any reading status for the book.
-There is also an option to add it to your 'Stopped Reading' shelf, for books you do not want to finish (DNF).
+Zu jeder Zeit kannst du den Pfeil nach unten verwenden, um Schritte in der Reihe zu überspringen und händisch den nächsten Lesestatus für das Buch festzulegen.
+Es gibt außerdem die Option, das Buch in das Regal "Aufgehört zu lesen" zu verschieben. Dieses Regal ist für Bücher gedacht, die du nicht beenden möchtest (engl. "did not finish", kurz DNF).
 
-### Only on one status shelf
+### Nur in einem Statusregal
 
-A book can only be on one of the four reading status shelves at a time.
-When you update your reading progress, the book is moved from one shelf to the next.
-This means that if you're reading a book for a second time, it will be put on Currently Reading and not on Read, even though you had read it before.
+Ein Buch kann sich zu jeder Zeit nur in einem der vier Lesestatus befinden.
+Wenn du deinen Lesefortschritt aktualisierst, wird das Buch von einem Regal zum nächsten verschoben.
+Das bedeutet, dass ein Buch, das du zum zweiten Mal liest, in "Liest gerade" zu finden ist und nicht in "Gelesen", auch wenn du es schon einmal gelesen hast.
 
-### Reading activity dates
+### Daten zur Leseaktivität
 
-When starting and finishing a book, you are prompted to confirm the start and finish dates.
-These can be seen on a books page under the 'Your reading activity' subtitle.
-If you manually add read dates, keep in mind that it won't automatically shelve the book.
+Wenn du ein Buch beginnst oder beendest, wirst du gebeten, die zugehörigen Daten zu bestätigen.
+Diese Daten erscheinen auf einer Bücherseite unter der Unterüberschrift "Deine Leseaktivität".
+Wenn du händisch Lesedaten hinzufügst, denke daran, dass dies das Buch nicht automatisch in ein Regal verschiebt.
 
-### Posting status updates
+### Statusaktualisierungen veröffentlichen
 
-In the same pop-up screen you confirm reading dates, you have the option to post a reading status update to your feed.
-These will appear in the feeds of people who follow you, and have similar [visibility settings](/privacy-controls.html) as most things in Bookwyrm.
+Im selben Fenster, in dem du die Lesedaten bestätigst, hast du die Möglichkeit, eine Aktualisierung des Lesestatus in deinem Feed zu veröffentlichen.
+Diese Aktualisierung wird im Feed der Leute auftauchen, die dir folgen, und haben ähnliche [Sichtbarkeits-Einstellungen](/privacy-controls.html) wie die meiste Dinge auf BookWyrm.
 
-### Finish reading or stop reading?
+### Gelesen oder aufgehört zu lesen?
 
-Use 'Finish reading' when you've finished reading a book.
+Nutze "Gelesen", wenn du das Lesen eines Buches erfolgreich abgeschlossen hast.
 
-'Stop reading' is for books you don't want to keep reading, also known as a DNF (did not finish).
+"Aufgehört zu lesen" ist für die Bücher bestimmt, bei denen du nicht weiterlese möchtest (engl. "did not finish", kurz DNF).
 
-## Custom Shelves
+## Eigene Regale
 
-Custom shelves are completely separate from the reading status shelves.
+Deine eigenen Regale sind vollkommen unabhängig von den Lesestatus-Regalen.
 
-### Adding books to custom shelves
+### Bücher zu eigenen Regalen hinzufügen
 
-You can add any book to a custom shelf by using the dropdown menu on the shelf/reading status button.
-Once you've created new shelves, they will be displayed there and selecting one will add it.
+Du kannst jedes Buch zu einem eigenen Regal hinzufügen, wenn du das Dropdown-Menü bei der Schaltfläche zum Regal/Lesestatus ausklappst.
+Sobald du neue Regale angelegt hast, erscheinen diese im Dropdown-Menü. Wählst du ein Regal aus, fügst du das Buch diesem Regal hinzu.
 
-### On multiple custom shelves
+### Auf mehreren eigenen Regalen
 
-As opposed to the built-in reading status shelves, a book can be on multiple custom shelves at once.
-It could also be on a reading status shelf at the same time as one or more custom shelves, or just on a custom shelf.
+Im Gegensatz zu den eingebauten Regalen für den Lesestatus können Bücher in mehreren eigenen Regalen gleichzeitig erscheinen.
+Ein Buch kann auch gleichzeitig in einem Lesestatus-Regal und in einem oder mehreren eigenen Regalen auftauchen – oder ausschließlich auf einem eigenen Regal.
 
-## Editing shelf descriptions
+## Regalbeschreibungen bearbeiten
 
-You can add a description to any shelf by selecting the shelf and then 'Edit shelf'.
+Du kannst jedem Regal eine Beschreibung hinzufügen, indem du das Regal auswählst und dann auf "Regal bearbeiten" klickst.
 
-## Filtering your books
+## Bücher filtern
 
-Currently, the only available filter is by keyword, which searches against the title and author.
+Momentan basiert der einzige verfügbare Filter auf Schlüsselworten, die in den Feldern Titel und Autor\*in gesucht werden.
 
-## Shelf Privacy
+## Regal-Privatsphäre
 
-By default, your shelves are all Public.
-To restrict a shelf to Followers-only or Private, navigate to it and select 'Edit shelf'.
-For more information, see the [privacy controls](/privacy-controls.html) page.
+Standardmäßig sind alle deine Regale öffentlich.
+Um ein Regal auf Follower\*innen zu begrenzen oder privat zu schalten, navigiere zum regal und wähle dann "Regal bearbeiten".
+Mehr Details findest du auf der Seite zu [Privatsphäre-Einstellungen](/privacy-controls.htmll#lists).
 
-## All Books View
+## Ansicht "Alle Bücher"
 
-The default tab on the 'Your books' page is 'All books'.
-It simply displays any book that is on at least one of your shelves.
-Books on Follower-only shelves will only be displayed there to you and your followers, and books on Private shelves only to you.
+Wenn du die Seite "Deine Bücher" besuchst, ist der Reiter "Alle Bücher" vorausgewählt.
+Er zeigt einfach jedes Buch, das in mindestens einem deiner Regale liegt.
+Bücher in Regalen, die auf Follower\*innen beschränkt sind, werden nur dir und deinen Follower\*innen angezeigt. Bücher in privaten Regalen sind nur für dich sichtbar.
 
