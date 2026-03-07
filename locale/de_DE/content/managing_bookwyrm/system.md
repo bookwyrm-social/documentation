@@ -1,41 +1,41 @@
 ---
-Title: System Monitoring
+Title: Systemüberwachung
 Date: 2021-04-18
 Order: 4
 ---
 
-The `Admin > System` menu provides instance admins with a number of system monitoring features, and configuration options for background tasks.
+Das Menü `Administration > System` bietet Instanz-Administrator\*innen eine Reihe an Funktionen für die Systemüberwachung sowie Konfigurationsoptionen für Aufgaben, die im Hintergrund ausgeführt werden.
 
-## Imports
+## Importe
 
-From the **Imports** page you can manage imports for books and both imports and exports for users. user exports are disabled by default. From this page you can monitor and, if necessary, cancel Book and User imports if they are causing errors, as well as setting limits on how often users can run imports. This is important if your instance is suffering performance problems due to a large number of import or export background jobs.
+Auf der Seite **Importe** kannst du Buch-Importe sowie Exporte und Importe von Konten verwalten. Exporte von Konten sind standardmäßig deaktiviert. Auf dieser Seite kannst du Buch- und Konto-Importe überwachen und abbrechen, falls sie Fehler verursachen. Außerdem kannst du begrenzen, wie oft Nutzer\*innen Importe ausführen können. Das ist wichtig, wenn deine Instanz Performanzprobleme erleidet, weil im Hintergrund eine große Zahl an Import- und Exportprozessen läuft.
 
-## Celery Status
+## Celery-Status
 
-The **Celery Status** page provides an overview of celery tasks and can provide an indication of which queues may be causing issues if your instance has become slow. From this page you can also clear entire queues and tasks, however this is generally a last resort as it may lead to data loss.
+Die Seite **Celery-Status** gibt einen Überblick über die Celery-Aufgaben und kann anzeigen, welche Warteschlangen verantwortlich sein könnten, falls deine Instanz langsamer wird. Auf dieser Seite kannst du auch gesamte Warteschlagen und Aufgaben leeren – allerdings nur als allerletzte Option, weil es zu Datenverlust führen kann.
 
-## Scheduled Tasks
+## Geplante Aufgaben
 
-You can monitor tasks schedules at `Admin > System > Scheduled Tasks`. Tasks are triggered from other pages.
+Du kannst Aufgaben unter `Administration > System > Geplante Aufgaben` überblicken. Aufgaben werden auf anderen Seiten ausgelöst.
 
-## Email configuration
+## E-Mail-Konfiguration
 
-Check your outgoing email configuration here, and trigger a test email. This page may move in future.
+Prüfe hier deine Konfigurationen für ausgehende E-Mails. Du kannst auch eine Test-E-Mail versenden. Es kann sein, dass diese Seite in Zukunft an eine andere Stelle umzieht.
 
-## Connectors
+## Konnektoren
 
-Connectors are sources of data about books and authors. From this page you can enable or disable connectors, and set their priority. Other BookWyrm servers, Inventaire, and Open Library are enabled by default.
+Konnektoren sind Datenquellen für Bücher und Autor\*innen. Auf dieser Seite kannst du Konnektoren (de-)aktivieren und ihre Priorität festlegen. Andere BookWyrm-Server, Inventaier und Open Library sind standardmäßig aktiviert.
 
-The priority determines the order in which search results appear. The highest priority is 1. The default priority is 2. Connector settings only determine whether a connector will be used to deliver search results. To handle federation and moderation, see `Admin > Federation` or `Admin > Moderation`.
+Die Priorität bestimmt, in welcher Reihenfolge Suchergebnisse erscheinen. Die höchste Priorität ist 1. Die Standardpriorität ist 2. Konnektoreneinstellungen bestimmen nur, ob ein Konnektor verwendet wird, um Suchergebnisse auszuliefern. Um die Föderation und Moderation zu konfigurieren, siehe `Administration > Föderation` oder `Administration > Moderation`.
 
-## Files maintenance
+## Dateiverwaltung
 
-This section is where you can configure a number of background jobs related to export and import files, and book cover images.
+In diesem Bereich kannst du eine Reihe von Hintergrundaufgaben einrichten, die Import- und Exportdateien sowie Buch-Cover betreffen.
 
-At **Schedule file deletion** you can schedule a regular job to delete user import and export files that have reached their expiry age. The expiry age is determined at **Export file expiration**.
+Unter **Löschung von Dateien planen** kannst du die regelmäßige Aufgabe einrichten, Dateien von Kontoim- und -exporten zu löschen, die ihr Verfallsdatum erreicht haben. Das Verfallsdatum wird unter **Ablaufdatum der Exportdateien** festgelegt.
 
-The **Find book covers from connectors** section can help you with two different but related problems.
+Der Abschnitt **Titelbilder über Connectoren abrufen** kann dir helfen, zwei unterschiedliche aber verwandte Probleme zu lösen.
 
-With **Find missing covers** you can set up a regular job to check for any books in your local database that do not have a cover image listed. This job searches Connectors for cover images they may be able to provide. This will, for example, enable you to pull in a cover image from a connected BookWyrm instance where it has recently been uploaded but there has not been any trigger for your instance to add the updated cover image. This can be resource intensive as it will run a search for every book in your database without a cover, so be cautious about how often you set this job to run.
+Mit **Fehlende Titelbilder finden** kannst du eine regelmäßige Aufgabe einrichten, in der lokalen Datenbank nach allen Büchern zu suchen, die keine Angabe zum Titelbild enthalten. Diese Aufgabe sucht über die Konnektoren nach Titelbildern, die sie zur Verfügung stellen können. Das erlaubt es beispielsweise, ein Titelbild einer verknüpften BookWyrm-Instanz zu nutzen, auf der es kürzlich hochgeladen wurde, ohne dass es eine Nachricht an deine Instanz gab, das aktualisierte Titelbild hinzuzufügen. Dieser Vorgang kann ressourcenintensiv sein, da er für jedes Buch in deiner Datenbank, das kein Titelbild hat, einen Suchprozess anstößt, also bedenke dies, wenn du einstellst, wie oft die Aufgabe ausgeführt werden soll.
 
-The **Fix broken book cover filepaths** can be triggered, but not scheduled as a regular job. Most administrators will not need to run this job. This is designed to fix problems from server migrations where book records list a cover image, but the file does not exist in your file storage.
+**Finde fehlerhafte Dateipfade für Titelbilder** kann händisch ausgelöst werden, aber nicht als regelmäßige Aufgabe eingeplant werden. Die meisten Administrator\*innen werden diese Aufgabe nicht ausführen müssen. Sie wurde eingerichtet, um Probleme mit Server-Migrationen zu beheben, bei denen Buchdatensätze ein Titelbild aufführen, das nicht im Dateispeicher existiert.

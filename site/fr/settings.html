@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Settings and Profile
+Instance Settings
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -144,11 +144,11 @@ Settings and Profile
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/v0.8.2/fr/moderation.html" class="has-background-inherit" >Modération</a>
+                <a href="/v0.8.2/fr/reverse-proxy.html" class="has-background-inherit" ></a>
             </li>
             
             <li>
-                <a href="/v0.8.2/fr/reverse-proxy.html" class="has-background-inherit" ></a>
+                <a href="/v0.8.2/fr/moderation.html" class="has-background-inherit" >Modération</a>
             </li>
             
             <li>
@@ -201,19 +201,19 @@ Settings and Profile
             </li>
             
             <li>
-                <a href="/v0.8.2/fr/documentation.html" class="has-background-inherit" >Documentation</a>
-            </li>
-            
-            <li>
                 <a href="/v0.8.2/fr/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
-                <a href="/v0.8.2/fr/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.8.2/fr/documentation.html" class="has-background-inherit" >Documentation</a>
             </li>
             
             <li>
                 <a href="/v0.8.2/fr/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/v0.8.2/fr/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -254,33 +254,16 @@ Settings and Profile
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#edit-profile">Edit Profile</a>
-                  
-                      
-                      <a class="navbar-item" href="#profile"><span class="pl-4">Profile</span></a>
-                      
-                      <a class="navbar-item" href="#display"><span class="pl-4">Display</span></a>
-                      
-                      <a class="navbar-item" href="#privacy"><span class="pl-4">Privacy</span></a>
-                      
+                  <a class="navbar-item" href="#announcements">Announcements</a>
                   
               
-                  <a class="navbar-item" href="#change-password">Change Password</a>
+                  <a class="navbar-item" href="#site-settings">Site Settings</a>
                   
               
-                  <a class="navbar-item" href="#account-security">Account Security</a>
+                  <a class="navbar-item" href="#registration">Registration</a>
                   
               
-                  <a class="navbar-item" href="#aliases-and-moving-your-account">Aliases and moving your account</a>
-                  
-              
-                  <a class="navbar-item" href="#deactivating-or-deleting-your-account">Deactivating or deleting your account</a>
-                  
-              
-                  <a class="navbar-item" href="#importing-and-exporting-books">Importing and Exporting books</a>
-                  
-              
-                  <a class="navbar-item" href="#blocking-users">Blocking users</a>
+                  <a class="navbar-item" href="#themes">Themes</a>
                   
               
             </div>
@@ -293,59 +276,20 @@ Settings and Profile
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Settings and Profile</h1>
+<h1 class="title is-1">Instance Settings</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>You can control your account and profile settings by activating the dropdown menu below your username and selecting <code>Settings</code>.</p>
-<h2 id="edit-profile"><a class="headerlink" href="#edit-profile">Edit Profile</a></h2>
-<h3 id="profile"><a class="headerlink" href="#profile">Profile</a></h3>
-<ul>
-<li>Upload or remove your user avatar</li>
-<li>Change your display name</li>
-<li>Create or edit your user summary (bio or description)</li>
-<li>Change your registered email address</li>
-</ul>
-<h3 id="display"><a class="headerlink" href="#display">Display</a></h3>
-<ul>
-<li>Choose whether to show reading goal prompt in feed</li>
-<li>Choose whether to show ratings in reviews, or have them hidden behind a toggle by default</li>
-<li>Choose whether BookWyrm should suggest users to follow</li>
-<li>Choose whether BookWyrm can suggest your user account to others</li>
-<li>Select your timezone - this affects the time stamps displayed to you</li>
-<li>Select your user interface language</li>
-<li>Select a theme - different instances will have different options, by default there are BookWyrm light and dark themes</li>
-</ul>
-<h3 id="privacy"><a class="headerlink" href="#privacy">Privacy</a></h3>
-<ul>
-<li>Choose whether followers must be approved by you before following your account</li>
-<li>Choose whether to hide followers and following on your user profile</li>
-<li>Choose your default post privacy. Find <a href="/privacy-controls.html">more detail about what the post privacy options mean</a> on the Privacy Controls page</li>
-</ul>
-<h2 id="change-password"><a class="headerlink" href="#change-password">Change Password</a></h2>
-<p>Here you can ...change your password</p>
-<h2 id="account-security"><a class="headerlink" href="#account-security">Account Security</a></h2>
-<p>We recommend you protect your account with second-factor authentication using an authenticator app.</p>
-<p>This section also allows you to see all the logged-in sessions for your user account, and terminate them. This can be a useful way to protect your account if you have, for example, lost a device, or do not recognise a session.</p>
-<h2 id="aliases-and-moving-your-account"><a class="headerlink" href="#aliases-and-moving-your-account">Aliases and moving your account</a></h2>
-<p>You can set an "alias" for your account, indicating that they represent the same "actor". This is usually done when you want to migrate your account from one fediverse account to another.</p>
-<p>You can also move (migrate) your account using <code>Move Account</code>. You must set the account you are moving <em>from</em> as an alias of the account you are moving <em>to</em> before attempting to move the account.</p>
-<p>Setting an alias is easily reversable. Moving your account is not - choose wisely!</p>
-<p>See <a href="user-migration.html">User Migration and Aliases</a> for more details.</p>
-<h2 id="deactivating-or-deleting-your-account"><a class="headerlink" href="#deactivating-or-deleting-your-account">Deactivating or deleting your account</a></h2>
-<p>Under <code>Delete Account</code> you can either deactivate or delete your account.</p>
-<p>Deactivating marks your account as no longer active and hides your profile page. You can re-activate your account in future.</p>
-<p>Deleting your account is irreversable. Your username will not be available to register in the future. Note that on deleting your account, BookWyrm will attempt to delete all user data and posts, however it is possible that federated servers may not process the deletion correctly.</p>
-<p>Books that were added by a deleted user will remain available as they conceptually exist separately from any individual user or shelf.</p>
-<h2 id="importing-and-exporting-books"><a class="headerlink" href="#importing-and-exporting-books">Importing and Exporting books</a></h2>
-<p>Under the <code>Data</code> heading, you can import and export book lists.</p>
-<p>See <a href="/adding-books.html">Adding Books</a> for more information about importing books. Choose <code>Export Book List</code> to export a CSV file including all the books on your shelves, books you have reviewed, and books with reading activity.</p>
-<p>You can also import or export a user account from this section. See <a href="user-migration.html">User Migration and Aliases</a> for more details.</p>
-<h2 id="blocking-users"><a class="headerlink" href="#blocking-users">Blocking users</a></h2>
-<p>You can block or unblock a user by selecting the ellipses (...) on the right of the "Follow/Unfollow" button on their profile.</p>
-<p>If you have blocked any users, they will be listed under <code>Blocked Users</code> and can be unblocked from there.</p>
-<p>Blocked users cannot see your profile, lists, or shelves, send you DMs, or see or interact with your posts.</p>
+    <h2 id="announcements"><a class="headerlink" href="#announcements">Announcements</a></h2>
+<p>You can create an <strong>Announcement</strong> from <code>Admin &gt; Instance Settings &gt; Announcements</code>. Announcements appear as a banner at the top of every page until a user dismisses them. Announcements can be used for anything, but generally would be used to alert users to expected down time or changes to configuration.</p>
+<p>Announcements can be related to a particular date (e.g. a scheduled upgrade or down time), and you can also schedule the announcement itself to begin and/or end on a given date.</p>
+<h2 id="site-settings"><a class="headerlink" href="#site-settings">Site Settings</a></h2>
+<p>When you first set up your instance you will be directed to the <strong>Site Settings</strong> page. Here you can edit your basic instance information including name, description, a code of conduct, and other details. This is also where you can upload a logo, set up footer details, and select a default theme.</p>
+<h2 id="registration"><a class="headerlink" href="#registration">Registration</a></h2>
+<p>The <strong>Registration</strong> page of the Instance Settings section is where you can enable or disable registration, decide whether to require users to confirm their email address, allow or disallow invite requests, and set a question for invite requests (useful for slowing down or identifying automated requests).</p>
+<h2 id="themes"><a class="headerlink" href="#themes">Themes</a></h2>
+<p>BookWyrm comes with default themes, however you can add your own custom theme. Themes should be <code>.scss</code> files.</p>
 </section>
 
             </section>
@@ -373,7 +317,7 @@ Settings and Profile
                     <a href="https://github.com/bookwyrm-social">BookWyrm sur GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/settings.md">Contribuer à cette page</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/managing_bookwyrm/settings.md">Contribuer à cette page</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">

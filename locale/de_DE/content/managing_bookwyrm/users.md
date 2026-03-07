@@ -1,28 +1,28 @@
 ---
-Title: Managing users
+Title: Nutzer\*innen verwalten
 Date: 2026-01-18
 Order: 1
 ---
 
-## Managing individual users
+## Einzelne Nutzer\*innen verwalten
 
-Administrators and moderators can manage indidual users from `Settings > Manage Users > Users`. This page shows all users in your database including local, federated, and deleted users. You can filter/search for indivual users, and by clicking on their username you will see the management page for an individual user. From here you may:
+Administrator\*innen und Moderator\*innen können einzelne Nutzer\*innen unter `Administration > Benutzer*innen verwalten > Benutzer*innen` verwalten. Diese Seite zeigt alle Nutzer\*innen in deiner Datenbank einschließlich lokalen, föderierten und gelöschten Nutzer\*innen. Du kannst nach einzelnen Nutzer\*innen suchen und filtern. Durch Klicken auf einen Nutzer\*innennamen siehst du die Verwaltungsseite für einzelne Nutzer\*innen. Hier kannst du:
 
-- Send a direct message
-- Suspend the user
-- Permanently delete the user
-- Change their access level (e.g. to upgrade an editor to a moderator).
+- eine Direktnachricht senden
+- die Nutzer\*innen sperren
+- die Nutzer\*innen dauerhaft löschen
+- ihr Zugangslevel ändern (z. B., um eine\*n Editor\*in in den Status Moderator\*in zu erheben)
 
-## Invites
+## Einladungen
 
-From `Settings > Manage Users > Invites` you can see all invite requests and invite codes.
+Unter `Administration > Benutzer\*innen verwalten > Einladungen` kannst du alle Einladungsanfragen und -codes einsehen.
 
-**Invite Requests** are requests from potential users who would like to join. These requests can be made when _Allow invite requests_ is ticked in `Admin > Instance settings > Registration`. From the _Invite Requests_ tab you can choose to _Send invite_ to allow the user to join, or _Ignore_ if you do not want to allow them to join your instance.
+**Einladungsanfragen** werden von potenziellen Nutzer\*innen gestellt, die gern beitreten würden. Diese Anfragen können gestellt werden, wenn unter `Administration > Instanzeinstellungen > Registrierung` die Option _Einladungsanfragen zulassen_ angewählt wurde. Im Reiter _Einladungsanfragen_ kannst du auswählen, ob du eine _Einladung senden_ möchtest, damit die Person beitreten kann, oder ob du die Anfrage _Ignorieren_ möchtest, wenn du der Person nicht erlauben möchtest, deiner Instanz beizutreten.
 
-From the **Invites** tab you can create invite links to send or publish. You can set an expiry date, and a maximum number of uses for each link.
+Im Reiter **Einladungen** kannst du Einladungslinks erstellen, die du versenden oder veröffentlichen kannst. Du kannst ein Ablaufdatum und eine Höchstzahl setzen, wie oft jeder Link verwendet werden darf.
 
-## Force Password Reset
+## Zurücksetzen des Passworts erzwingen
 
-From the **Force Password Reset** page you can force a password reset for any group of users by category (user, editor, moderator, etc) or for all users. This may be required, for example, if you believe you may have had a security incident potentially compromising user passwords.
+Auf der Seite **Zurücksetzen des Passworts erzwingen** kannst du dies für Gruppen von Nutzer\*innen nach Kategorie (Nutzer\*in, Editor\*in, Moderator\*in etc.) oder für alle Nutzer\*innen bewirken. Das kann zum Beispiel notwendig sein, wenn du glaubst, dass ein Sicherheitsvorfall potenziell die Passwörter der Nutzer\*innen kompromittiert hat.
 
-Note that if you select "All users", you will also be logged out and required to reset your password.
+Beachte, dass du ebenfalls ausgeloggt wirst und dein Passwort zurücksetzen musst, wenn du "Alle Nutzer\*innen" auswählst.

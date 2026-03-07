@@ -1,59 +1,59 @@
 ---
-Title: User Migration and Aliases
+Title: Kontoumzug und Aliase
 Date: 2024-01-06
 Order: 21
 ---
 
-You can migrate your account between BookWyrm instances, and/or set up an _alias_ between any ActivityPub account and your BookWyrm acccount.
+Du kannst mit deinem Konto zwischen BookWyrm-Instanzen umziehen und/oder _Aliase_ zwischen deinem ActivityPub-Konto und deinem BookWyrm-Konto definieren.
 
-## Exporting account data
+## Kontodaten exportieren
 
-You can export your account data at any time, however there will be a limit on how often you can do this, set by your instance admin. When you create an export file a process will run in the background and you will be notified when it is completed and ready for download. Export files are in `tar.gz` format.
+Du kannst deine Kontodaten jederzeit exportieren, allerdings legen die Administrator\*innen deiner Instanz eine Begrenzung fest, wie oft das möglich ist. Wenn du eine Exportdatei anlegst, wird ein Hintergrundprozess angestoßen. Du wirst benachrichtigt, wenn dieser Prozess beendet ist und dein Download bereitsteht. Exportdateien haben das Format `tar.gz`.
 
-Account export files include:
+Exporte von Kontodaten beinhalten:
 
-- User profile and avatar
-- Most user settings
-- Reading goals
-- Shelves
-- Reading history
-- Book reviews
-- Statuses
-- Your own lists and saved lists
-- Which users you follow and block
+- Nutzer\*innenprofil und -avatar
+- die meisten Einstellungen
+- Leseziele
+- Regale
+- Lesehistorie
+- Buchrezensionen
+- Beiträge
+- deine eigenen und von dir gespeicherte Listen
+- welchen Nutzer\*innen du folgst und welche du blockiert hast
 
-Exports do _not_ include:
+Exporte beinhalten _nicht_:
 
-- Direct messages
-- Replies to your statuses
-- Groups
-- Favorites
+- Direktnachrichten
+- Antworten auf deine Beiträge
+- Gruppen
+- Favoriten
 
-## Aliases
+## Aliase
 
-An _alias_ indicates to ActivityPub software that two accounts represent and are controlled by the same person. You can assign any ActivityPub account as an alias of your BookWyrm account by navigating to `Settings - Aliases`.
+Ein _Alias_ zeigt der ActivityPub-Software, dass zwei Konten dieselbe Person repräsentieren und von dieser kontrolliert werden. Du kannst ein ActivityPub-Konto als Alias für dein BookWyrm-Konto setzen, indem du zu `Einstellungen – Aliase` navigierst.
 
-Setting an account as an alias is easily reversible, and is required to migrate accounts.
+Ein Konto als Alias festzulegen lässt sich einfach rückgängig machen. Es wird benötigt, um Konten umzuziehen.
 
-## Moving an account
+## Ein Konto umziehen
 
-You can "move" an account from one to another at `Settings - Move Account`. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.
+Du kannst von einem Konto zu einem anderen umziehen unter `Einstellungen – Account umziehen`. Wenn du umziehst, werden deine Follower\*innen benachrichtigt und zu deinem neuen (Ziel-)Konto umgeleitet – das umfasst auch Follower\*innen von Nicht-BookWyrm-Servern. Wenn du auch deine Nutzer\*innendaten umziehen möchtest, sieh dir "Kontodaten importieren" weiter unten an.
 
-Your old (origin) account will be marked as moved and will not be discoverable or usable unless you undo the move, which you can do at any time, however any followers who have migrated their follow from the old account to the new account will no longer be following your old account.
+Dein altes (Herkunfts-)Konto wird als "umgezogen" markiert und wird nicht mehr entdeckt oder in Suchen gefunden werden können, sofern du den Umzug nicht rückgängig machst. Dies ist jederzeit möglich, aber alle Follower\*innen, die ihre Folge-Beziehung zum neuen Konto migriert haben, werden deinem alten Konto nicht länger folgen.
 
-You _must_ set the old (source) user as an alias of the new (target) user in the settings of the target account for a `Move` to work.
+Du _musst_ in den Einstellungen das alte (Herkunfts-)Konto als Alias des neuen (Ziel-)Kontos festlegen, damit ein Umzug funktioniert.
 
-## Importing account data
+## Kontodaten importieren
 
-Once you have an export file you can import it into another BookWyrm instance. To do so, you must first set the new (target) account as an alias of the old (source) account, or `Move` the old account to the new one.
+Sobald du eine Export-Datei hast, kannst du sie in eine andere BookWyrm-Instanz importieren. Dazu musst du zuerst das neue (Ziel-)Konto als Alias des alten (Herkunfts-)Kontos festlegen oder das alte Konto zum neuen umziehen.
 
-It is important to read the instructions on the account import page as some data will be overwritten if selected. There is also a limit on how often you can import user data.
+Es ist wichtig, die Anleitung auf der Seite zum Kontoimport genau zu lesen, da manche Daten überschrieben werden, wenn dies nicht anders ausgewählt wird. Es gibt auch eine Begrenzung, wie oft du Kontodaten importieren kannst.
 
-- Go to `Settings - Import BookWyrm Account`
-- Select your export file
-- Untick any data options you do not wish to import
-- Click 'Import'
+- Gehe zu `Einstellungen – BookWyrm-Konto importieren`
+- Wähle deine Exportdatei
+- Wähle jede Datenoption ab, die du nicht importieren möchtest
+- Klicke auf "Importieren"
 
-Your import will run in the background and you will be notified when it is completed.
+Der Import wird im Hintergrund ausgeführt und du erhältst eine Benachrichtigung, wenn er abgeschlossen ist.
 
-If you import data from an account on the same server, all posts (comments, reviews, quotations) will be re-assigned to the new user.
+Wenn du Daten von einem Konto auf demselben Server importierst, werden alle Beiträge (Kommentare, Rezensionen, Zitate) dem neuen Konto zugewiesen.
