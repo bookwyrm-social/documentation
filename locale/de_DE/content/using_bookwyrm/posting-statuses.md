@@ -1,37 +1,37 @@
 - - -
-Title: Posting Statuses Date: 2025-05-26 Order: 5
+Title: Beiträge veröffentlichen Date: 2025-05-26 Order: 5
 - - -
 
-Das Schreiben auf BookWyrm beginnt mit einem Buch. Benutzer*innen können angefangene oder vor kurzem gelesene Bücher aus dem Abschnitt "Ihre Bücher" kommentieren oder von der Startseite eines Buches aus. Von dort aus können Benutzer*innen antworten und eine Unterhaltung starten. BookWyrm Beiträge können Formatierungen wie fett, kursiv und Links mit [Markdown](https://www.markdownguide.org/cheat-sheet/) beinhalten.
+Das Schreiben auf BookWyrm beginnt mit einem Buch. Benutzer*innen können angefangene oder vor kurzem gelesene Bücher aus dem Abschnitt "Deine Bücher" oder von der Startseite eines Buches aus kommentieren. Von dort aus können Benutzer*innen antworten und eine Unterhaltung starten. BookWyrm-Beiträge können Formatierungen wie fett, kursiv und Links mit [Markdown](https://www.markdownguide.org/cheat-sheet/) beinhalten.
 
-Bookwyrm statuses also have [visibility settings](/privacy-controls.html) which control who is able to see and interact with them.
+BookWyrm-Beiträge haben außerdem [Sichtbarkeits-Einstellungen](/privacy-controls.html), die bestimmen, wer Beiträge sehen und mit ihnen interagieren kann.
 
-## Typen von Status
+## Arten von Beiträgen
 
 ### Kommentare von Nutzer*innen
 
-Es gibt drei Arten von Beiträgen, auf die Benutzer*innen direkt auf Bücher antworten können: Rezensionen, Kommentare und Zitate. Kommentare reagieren auf allgemeine Aspekte eines Buches, Zitate beziehen sich auf bestimmte Passagen und Rezensionen befassen sich mit Büchern insgesamt. Benutzer*innen können auch auf Status antworten.
+Es gibt drei Arten von Beiträgen, mit denen Benutzer\*innen direkt auf Bücher antworten können: Rezensionen, Kommentare und Zitate. Kommentare reagieren auf allgemeine Aspekte eines Buches, Zitate beziehen sich auf bestimmte Passagen und Rezensionen befassen sich mit Büchern insgesamt. Benutzer*innen können auch auf Beiträge antworten.
 
-| Komponente      | Rezensionen | Kommentar | Zitat | Antwort |
-| --------------- | ----------- | --------- | ----- | ------- |
-| Textfeld        | ✔           | ✔         | ✔     | ✔       |
-| Spoiler-Warnung | ✔           | ✔         | ✔     | ✔       |
-| Seitennummer    |             | ✔         | ✔     |         |
-| Zitat           |             |           | ✔     |         |
-| Bewertung       | ✔           |           |       |         |
-| Titelfeld       | ✔           |           |       |         |
+| Komponente      | Rezension | Kommentar | Zitat | Antwort |
+| --------------- | --------- | --------- | ----- | ------- |
+| Textfeld        | ✔         | ✔         | ✔     | ✔       |
+| Spoiler-Warnung | ✔         | ✔         | ✔     | ✔       |
+| Seitennummer    |           | ✔         | ✔     |         |
+| Zitat           |           |           | ✔     |         |
+| Bewertung       | ✔         |           |       |         |
+| Titelfeld       | ✔         |           |       |         |
 
-#### Spoiler alerts
+#### Spoiler-Warnungen
 
-Spoiler alerts (also known as content warnings) are useful to give people a warning before they read a status that might spoil the plot of a book they want to read. Usually just putting "contains spoilers" or something similar is sufficient, but you can be more specific, especially if your status discusses potentially sensitive topics.
+Spoiler-Warnungen (auch bekannt als Inhaltswarnungen) sind nützlich, um Menschen zu warnen, bevor sie einen Beitrag lesen, der ihnen den Inhalt eines Buches vorwegnehmen könnte, das sie noch lesen möchten. Normalerweise reicht es aus, einfach "enthält Spoiler" oder etwas Ähnliches aufzunehmen, aber du kannst konkreter werden, insbesondere wenn dein Beitrag sensible Themen diskutiert.
 
-#### Star ratings
+#### Sternebewertungen
 
-A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
+Eine Sternebewertung kann Rezensionen beigefügt oder eigenständig vergeben werden, indem du auf die Sterne unter einem Buch klickst. Es ist eine 5-Sterne-Skala, wobei halbe Sterne durch doppeltes Klicken auf einen Stern hinzugefügt werden können. Wenn du zum Beispiel 2,5 Sterne vergeben möchtest, würdest du auf 3 Sterne klicken und dann erneut auf den dritten Stern, um ihn zu halbieren. Beim Ansehen eines Buches oder einer Rezension werden die Sternebewertungen verborgen, bis du "Bewertung anzeigen" ausgewählt hast.
 
 ### Lesestatusaktualisierungen
 
-Der Status wird generiert, wenn ein*e Benutzer*in angibt, dass sie lesen will, begonnen hat oder ein Buch gelesen hat.
+Der Status wird generiert, wenn ein*e Benutzer*in angibt, dass er*sie ein Buch lesen möchte, zu lesen begonnen oder ein Buch fertig gelesen hat.
 
 ## Text
 Text kann beinhalten:

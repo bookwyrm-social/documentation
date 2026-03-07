@@ -3,7 +3,7 @@
 <head>
     <title>
         
-User Migration and Aliases
+Kontoumzug und Aliase
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -99,11 +99,11 @@ User Migration and Aliases
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/v0.7.5/de/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+                <a href="/v0.7.5/de/main-menu.html" class="has-background-inherit" >Hauptmenü und Zeitleisten</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+                <a href="/v0.7.5/de/shelves.html" class="has-background-inherit" >Regale und Lesestatus</a>
             </li>
             
             <li>
@@ -111,31 +111,31 @@ User Migration and Aliases
             </li>
             
             <li>
-                <a href="/v0.7.5/de/settings.html" class="has-background-inherit" >Settings and Profile</a>
+                <a href="/v0.7.5/de/settings.html" class="has-background-inherit" >Einstellungen und Profil</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+                <a href="/v0.7.5/de/posting-statuses.html" class="has-background-inherit" >Beiträge veröffentlichen</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/lists.html" class="has-background-inherit" >Lists</a>
+                <a href="/v0.7.5/de/lists.html" class="has-background-inherit" >Listen</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+                <a href="/v0.7.5/de/privacy-controls.html" class="has-background-inherit" >Privatsphäre-Einstellungen</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/groups.html" class="has-background-inherit" >Groups</a>
+                <a href="/v0.7.5/de/groups.html" class="has-background-inherit" >Gruppen</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+                <a href="/v0.7.5/de/rss-feeds.html" class="has-background-inherit" >RSS-Feeds</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/user-migration.html" class="has-background-inherit" class="is-active">User Migration and Aliases</a>
+                <a href="/v0.7.5/de/user-migration.html" class="has-background-inherit" class="is-active">Kontoumzug und Aliase</a>
             </li>
             
         </ul>
@@ -156,11 +156,11 @@ User Migration and Aliases
             </li>
             
             <li>
-                <a href="/v0.7.5/de/updating-dockerless.html" class="has-background-inherit" >Aktualisieren ohne Docker</a>
+                <a href="/v0.7.5/de/reverse-proxy.html" class="has-background-inherit" >Verwenden eines Reverse-Proxy</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/reverse-proxy.html" class="has-background-inherit" >Verwenden eines Reverse-Proxy</a>
+                <a href="/v0.7.5/de/updating-dockerless.html" class="has-background-inherit" >Aktualisieren ohne Docker</a>
             </li>
             
             <li>
@@ -184,7 +184,7 @@ User Migration and Aliases
             </li>
             
             <li>
-                <a href="/v0.7.5/de/management-commands.html" class="has-background-inherit" >Management Commands</a>
+                <a href="/v0.7.5/de/management-commands.html" class="has-background-inherit" >Verwaltungs-Befehle</a>
             </li>
             
         </ul>
@@ -201,19 +201,19 @@ User Migration and Aliases
             </li>
             
             <li>
-                <a href="/v0.7.5/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
-            </li>
-            
-            <li>
                 <a href="/v0.7.5/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" >Entwicklungsumgebung</a>
+                <a href="/v0.7.5/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
             </li>
             
             <li>
                 <a href="/v0.7.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" >Entwicklungsumgebung</a>
             </li>
             
         </ul>
@@ -238,51 +238,51 @@ User Migration and Aliases
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">User Migration and Aliases</h1>
+<h1 class="title is-1">Kontoumzug und Aliase</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>You can migrate your account between BookWyrm instances, and/or set up an <em>alias</em> between any ActivityPub account and your BookWyrm acccount.</p>
-<h2 id="exporting-account-data"><a class="headerlink" href="#exporting-account-data">Exporting account data</a></h2>
-<p>You can export your account data at any time, however there will be a limit on how often you can do this, set by your instance admin. When you create an export file a process will run in the background and you will be notified when it is completed and ready for download. Export files are in <code>tar.gz</code> format.</p>
-<p>Account export files include:</p>
+    <p>Du kannst mit deinem Konto zwischen BookWyrm-Instanzen umziehen und/oder <em>Aliase</em> zwischen deinem ActivityPub-Konto und deinem BookWyrm-Konto definieren.</p>
+<h2 id="kontodaten-exportieren"><a class="headerlink" href="#kontodaten-exportieren">Kontodaten exportieren</a></h2>
+<p>Du kannst deine Kontodaten jederzeit exportieren, allerdings legen die Administrator*innen deiner Instanz eine Begrenzung fest, wie oft das möglich ist. Wenn du eine Exportdatei anlegst, wird ein Hintergrundprozess angestoßen. Du wirst benachrichtigt, wenn dieser Prozess beendet ist und dein Download bereitsteht. Exportdateien haben das Format <code>tar.gz</code>.</p>
+<p>Exporte von Kontodaten beinhalten:</p>
 <ul>
-<li>User profile and avatar</li>
-<li>Most user settings</li>
-<li>Reading goals</li>
-<li>Shelves</li>
-<li>Reading history</li>
-<li>Book reviews</li>
-<li>Statuses</li>
-<li>Your own lists and saved lists</li>
-<li>Which users you follow and block</li>
+<li>Nutzer*innenprofil und -avatar</li>
+<li>die meisten Einstellungen</li>
+<li>Leseziele</li>
+<li>Regale</li>
+<li>Lesehistorie</li>
+<li>Buchrezensionen</li>
+<li>Beiträge</li>
+<li>deine eigenen und von dir gespeicherte Listen</li>
+<li>welchen Nutzer*innen du folgst und welche du blockiert hast</li>
 </ul>
-<p>Exports do <em>not</em> include:</p>
+<p>Exporte beinhalten <em>nicht</em>:</p>
 <ul>
-<li>Direct messages</li>
-<li>Replies to your statuses</li>
-<li>Groups</li>
-<li>Favorites</li>
+<li>Direktnachrichten</li>
+<li>Antworten auf deine Beiträge</li>
+<li>Gruppen</li>
+<li>Favoriten</li>
 </ul>
-<h2 id="aliases"><a class="headerlink" href="#aliases">Aliases</a></h2>
-<p>An <em>alias</em> indicates to ActivityPub software that two accounts represent and are controlled by the same person. You can assign any ActivityPub account as an alias of your BookWyrm account by navigating to <code>Settings - Aliases</code>.</p>
-<p>Setting an account as an alias is easily reversible, and is required to migrate accounts.</p>
-<h2 id="moving-an-account"><a class="headerlink" href="#moving-an-account">Moving an account</a></h2>
-<p>You can "move" an account from one to another at <code>Settings - Move Account</code>. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.</p>
-<p>Your old (origin) account will be marked as moved and will not be discoverable or usable unless you undo the move, which you can do at any time, however any followers who have migrated their follow from the old account to the new account will no longer be following your old account.</p>
-<p>You <em>must</em> set the old (source) user as an alias of the new (target) user in the settings of the target account for a <code>Move</code> to work.</p>
-<h2 id="importing-account-data"><a class="headerlink" href="#importing-account-data">Importing account data</a></h2>
-<p>Once you have an export file you can import it into another BookWyrm instance. To do so, you must first set the new (target) account as an alias of the old (source) account, or <code>Move</code> the old account to the new one.</p>
-<p>It is important to read the instructions on the account import page as some data will be overwritten if selected. There is also a limit on how often you can import user data.</p>
+<h2 id="aliase"><a class="headerlink" href="#aliase">Aliase</a></h2>
+<p>Ein <em>Alias</em> zeigt der ActivityPub-Software, dass zwei Konten dieselbe Person repräsentieren und von dieser kontrolliert werden. Du kannst ein ActivityPub-Konto als Alias für dein BookWyrm-Konto setzen, indem du zu <code>Einstellungen – Aliase</code> navigierst.</p>
+<p>Ein Konto als Alias festzulegen lässt sich einfach rückgängig machen. Es wird benötigt, um Konten umzuziehen.</p>
+<h2 id="ein-konto-umziehen"><a class="headerlink" href="#ein-konto-umziehen">Ein Konto umziehen</a></h2>
+<p>Du kannst von einem Konto zu einem anderen umziehen unter <code>Einstellungen – Account umziehen</code>. Wenn du umziehst, werden deine Follower*innen benachrichtigt und zu deinem neuen (Ziel-)Konto umgeleitet – das umfasst auch Follower*innen von Nicht-BookWyrm-Servern. Wenn du auch deine Nutzer*innendaten umziehen möchtest, sieh dir "Kontodaten importieren" weiter unten an.</p>
+<p>Dein altes (Herkunfts-)Konto wird als "umgezogen" markiert und wird nicht mehr entdeckt oder in Suchen gefunden werden können, sofern du den Umzug nicht rückgängig machst. Dies ist jederzeit möglich, aber alle Follower*innen, die ihre Folge-Beziehung zum neuen Konto migriert haben, werden deinem alten Konto nicht länger folgen.</p>
+<p>Du <em>musst</em> in den Einstellungen das alte (Herkunfts-)Konto als Alias des neuen (Ziel-)Kontos festlegen, damit ein Umzug funktioniert.</p>
+<h2 id="kontodaten-importieren"><a class="headerlink" href="#kontodaten-importieren">Kontodaten importieren</a></h2>
+<p>Sobald du eine Export-Datei hast, kannst du sie in eine andere BookWyrm-Instanz importieren. Dazu musst du zuerst das neue (Ziel-)Konto als Alias des alten (Herkunfts-)Kontos festlegen oder das alte Konto zum neuen umziehen.</p>
+<p>Es ist wichtig, die Anleitung auf der Seite zum Kontoimport genau zu lesen, da manche Daten überschrieben werden, wenn dies nicht anders ausgewählt wird. Es gibt auch eine Begrenzung, wie oft du Kontodaten importieren kannst.</p>
 <ul>
-<li>Go to <code>Settings - Import BookWyrm Account</code></li>
-<li>Select your export file</li>
-<li>Untick any data options you do not wish to import</li>
-<li>Click 'Import'</li>
+<li>Gehe zu <code>Einstellungen – BookWyrm-Konto importieren</code></li>
+<li>Wähle deine Exportdatei</li>
+<li>Wähle jede Datenoption ab, die du nicht importieren möchtest</li>
+<li>Klicke auf "Importieren"</li>
 </ul>
-<p>Your import will run in the background and you will be notified when it is completed.</p>
-<p>If you import data from an account on the same server, all posts (comments, reviews, quotations) will be re-assigned to the new user.</p>
+<p>Der Import wird im Hintergrund ausgeführt und du erhältst eine Benachrichtigung, wenn er abgeschlossen ist.</p>
+<p>Wenn du Daten von einem Konto auf demselben Server importierst, werden alle Beiträge (Kommentare, Rezensionen, Zitate) dem neuen Konto zugewiesen.</p>
 </section>
 
             </section>

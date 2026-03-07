@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Moderacja
+Moderation
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -156,11 +156,11 @@ Moderacja
             </li>
             
             <li>
-                <a href="/v0.7.5/pl/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+                <a href="/v0.7.5/pl/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/pl/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+                <a href="/v0.7.5/pl/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
             </li>
             
             <li>
@@ -201,19 +201,19 @@ Moderacja
             </li>
             
             <li>
-                <a href="/v0.7.5/pl/documentation.html" class="has-background-inherit" >Documentation</a>
-            </li>
-            
-            <li>
                 <a href="/v0.7.5/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.7.5/pl/documentation.html" class="has-background-inherit" >Documentation</a>
             </li>
             
             <li>
                 <a href="/v0.7.5/pl/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -238,23 +238,39 @@ Moderacja
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Moderacja</h1>
+<h1 class="title is-1">Moderation</h1>
 
                 </header>
                 
 <section class="block content">
-    <h2 id="blokowanie"><a class="headerlink" href="#blokowanie">Blokowanie</a></h2>
-<p>Użytkownicy mają możliwość samodzielnego zablokowania pozostałych użytkowników bez interwencji moderatora. Z panelu administracyjnego "Sfederowane serwery" administratorzy mogą zobaczyć, ilu użytkowników z instancji zostało zablokowanych przez użytkowników lokalnych.</p>
-<h2 id="zgoszenia"><a class="headerlink" href="#zgoszenia">Zgłoszenia</a></h2>
-<p>Użytkownicy mogą zgłaszać statusy lub użytkowników z menu "więcej opcji" w stopce wpisu oraz przycisków obserwuj/nie obserwuj. Gdy zgłoszenie zostaje utworzone, wszyscy użytkownicy z uprawnieniami administratora otrzymają powiadomienie.</p>
-<p>Wówczas, istnieje kilka sposobów, w jakie moderacja może postąpić.
-- Wysłanie bezpośredniej wiadomości do zgłoszonego użytkownika.
-- Usunięcie zgłoszonego statusu.
-- Dezaktywacja użytkownika. Dla użytkowników lokalnych spowoduje to, że nie będą mogli się oni zalogować, a ich konto nie zostanie wyświetlone w aplikacji. Dla użytkowników zdalnych serwer odrzuci jakiekolwiek przychodzące aktywności od tych użytkowników i nie zostaną oni wyświetlenie w wyszukiwaniu.</p>
-<h2 id="moderacja-na-poziomie-instancji"><a class="headerlink" href="#moderacja-na-poziomie-instancji">Moderacja na poziomie instancji</a></h2>
-<p>Moderatorzy mogą zablokować całe instancje. Zapobiegnie to odbieraniu jakichkolwiek aktywności przychodzących od tej instancji oraz lokalnie dezaktywuje wszystkie konta z tej instancji.</p>
-<p>Jeśli instancja zostanie odblokowana, wszyscy zdezaktywowani użytkownicy zostaną aktywowani ponownie.</p>
-<p>Moderatorzy mogą również przesyłać listy blokowania wielu serwerów.</p>
+    <h2 id="user-actions"><a class="headerlink" href="#user-actions">User actions</a></h2>
+<h3 id="blocking"><a class="headerlink" href="#blocking">Blocking</a></h3>
+<p>Users have the option to block other users on their own, without a moderator intervening. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.</p>
+<h3 id="reports"><a class="headerlink" href="#reports">Reports</a></h3>
+<p>Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.</p>
+<p>To manage reports, go to <code>Admin &gt; Moderation &gt; Reports</code>.</p>
+<p>When a report is made, there are a few options how the moderator can respond.</p>
+<ul>
+<li>Send a direct message to the reported user.</li>
+<li>Delete the reported status.</li>
+<li>Deactivate the user. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.</li>
+</ul>
+<h2 id="auto-moderation"><a class="headerlink" href="#auto-moderation">Auto-moderation</a></h2>
+<p>Auto-moderation rules will create reports for any local user or status with fields matching the provided string. Users or statuses that have already been reported (regardless of whether the report was resolved) will not be flagged. To set up auto-moderation, go to <code>Admin &gt; Moderation &gt; Auto-Moderation Rules</code>.</p>
+<h2 id="instance-level-moderation"><a class="headerlink" href="#instance-level-moderation">Instance-level moderation</a></h2>
+<h3 id="manual-instance-blocks"><a class="headerlink" href="#manual-instance-blocks">Manual instance blocks</a></h3>
+<p>Moderators can block entire instances. This will prevent any activities from coming in from that instance, and deactivate all accounts from that instance locally. To block an instance go to <code>Admin &gt; Federated Instances</code> and find the instance you wish to block. See <code>Managing BookWyrm &gt; Federation</code> for more information.</p>
+<p>If the instance is un-blocked, all the users who were deactivated by the block will be re-activated.</p>
+<h3 id="fediblock-lists"><a class="headerlink" href="#fediblock-lists">FediBlock lists</a></h3>
+<p>Moderators can also upload <em>FediBlock</em> formatted blocklists to block servers in bulk. To do this, go to <code>Federation &gt; Federated Instances</code> and click on "Add instance".</p>
+<h3 id="email-and-ip-block-lists"><a class="headerlink" href="#email-and-ip-block-lists">Email and IP block lists</a></h3>
+<p>You can block signups from a given email domain at <code>Admin &gt; Moderation &gt; Email Blocklist</code>. When someone tries to register with an email from a domain in your email blocklist, no account will be created. The registration process will appear to have worked.</p>
+<p>An IP block list will block all traffic from the IP address. Requests to any part of your instance from these IPs will receive a 404 response.</p>
+<h3 id="link-domains"><a class="headerlink" href="#link-domains">Link Domains</a></h3>
+<p>Users can add a link to a book download for any book. Link domains must be approved before they are shown on book pages in order to avoid spam and malicious links. You can approve link domains at <code>Admin &gt; Moderation &gt; Link Domains</code>.</p>
+<h2 id="disabling-federation"><a class="headerlink" href="#disabling-federation">Disabling federation</a></h2>
+<p>Administrators and moderators can disable federation completely. This will prevent any further communication inwards or outwards, however existing data will be retained in the database. Disabling federation does not prevent connectors from importing books, however it will restrict all statuses (reviews, comments etc) to only users on your instance, or anything those users import manually (e.g. via a Goodreads CSV import).</p>
+<p>To disable federation, go to <code>Admin &gt; Federation &gt; Federation Settings</code>.</p>
 </section>
 
             </section>
@@ -279,7 +295,7 @@ Moderacja
                     <a href="https://github.com/bookwyrm-social">BookWyrm na GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/running_bookwyrm/moderation.md">Udziel się na tej stronie</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/managing_bookwyrm/moderation.md">Udziel się na tej stronie</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">

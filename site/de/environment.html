@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Environment Variables
+Umgebungsvariablen
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -99,11 +99,11 @@ Environment Variables
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/v0.7.5/de/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+                <a href="/v0.7.5/de/main-menu.html" class="has-background-inherit" >Hauptmenü und Zeitleisten</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+                <a href="/v0.7.5/de/shelves.html" class="has-background-inherit" >Regale und Lesestatus</a>
             </li>
             
             <li>
@@ -111,31 +111,31 @@ Environment Variables
             </li>
             
             <li>
-                <a href="/v0.7.5/de/settings.html" class="has-background-inherit" >Settings and Profile</a>
+                <a href="/v0.7.5/de/settings.html" class="has-background-inherit" >Einstellungen und Profil</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+                <a href="/v0.7.5/de/posting-statuses.html" class="has-background-inherit" >Beiträge veröffentlichen</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/lists.html" class="has-background-inherit" >Lists</a>
+                <a href="/v0.7.5/de/lists.html" class="has-background-inherit" >Listen</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+                <a href="/v0.7.5/de/privacy-controls.html" class="has-background-inherit" >Privatsphäre-Einstellungen</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/groups.html" class="has-background-inherit" >Groups</a>
+                <a href="/v0.7.5/de/groups.html" class="has-background-inherit" >Gruppen</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+                <a href="/v0.7.5/de/rss-feeds.html" class="has-background-inherit" >RSS-Feeds</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+                <a href="/v0.7.5/de/user-migration.html" class="has-background-inherit" >Kontoumzug und Aliase</a>
             </li>
             
         </ul>
@@ -156,11 +156,11 @@ Environment Variables
             </li>
             
             <li>
-                <a href="/v0.7.5/de/updating-dockerless.html" class="has-background-inherit" >Aktualisieren ohne Docker</a>
+                <a href="/v0.7.5/de/reverse-proxy.html" class="has-background-inherit" >Verwenden eines Reverse-Proxy</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/reverse-proxy.html" class="has-background-inherit" >Verwenden eines Reverse-Proxy</a>
+                <a href="/v0.7.5/de/updating-dockerless.html" class="has-background-inherit" >Aktualisieren ohne Docker</a>
             </li>
             
             <li>
@@ -184,7 +184,7 @@ Environment Variables
             </li>
             
             <li>
-                <a href="/v0.7.5/de/management-commands.html" class="has-background-inherit" >Management Commands</a>
+                <a href="/v0.7.5/de/management-commands.html" class="has-background-inherit" >Verwaltungs-Befehle</a>
             </li>
             
         </ul>
@@ -201,19 +201,19 @@ Environment Variables
             </li>
             
             <li>
-                <a href="/v0.7.5/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
-            </li>
-            
-            <li>
                 <a href="/v0.7.5/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" >Entwicklungsumgebung</a>
+                <a href="/v0.7.5/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
             </li>
             
             <li>
                 <a href="/v0.7.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
+            </li>
+            
+            <li>
+                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" >Entwicklungsumgebung</a>
             </li>
             
         </ul>
@@ -238,16 +238,16 @@ Environment Variables
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Environment Variables</h1>
+<h1 class="title is-1">Umgebungsvariablen</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>BookWyrm servers require certain environment (<code>ENV</code>) variables in order to run correctly. These are set from a file named <code>.env</code> in the directory you run BookWyrm from. You will find most of these variabled described in the <code>.env.example</code> file in the main code repository. You should copy this as the basis of your <code>.env</code> file.</p>
-<p>BookWyrm <strong>instance administrators</strong> should carefully check version release notes for any changes or additions to environment variables.</p>
-<p>Wherever possible BookWyrm <strong>developers</strong> should prefer to use <code>site.settings</code> when creating new configuration values rather than <code>ENV</code> values.</p>
-<h2 id="required-settings"><a class="headerlink" href="#required-settings">Required settings</a></h2>
-<p>The <code>env.example</code> file includes default values for core settings. These are designed to be safe defaults for production, apart from the default passwords. Docker users can run <code>./bw-dev create_secrets</code> to create safe and unique secrets for:</p>
+    <p>BookWyrm-Server benötigen gewisse Umgebungsvariablen (engl. "environment", kurz <code>ENV</code>), um korrekt zu funktionieren. Diese werden in einer Datei namens <code>.env</code> gesetzt, die in dem Verzeichnis liegt, aus dem heraus du BookWyrm ausführst. Du wirst die meisten dieser Variablen in der Datei <code>.env.example</code> beschrieben finden, die im Hauptcoderepository liegt. Kopiere diese Datei und nutze sie als Basis für deine Datei <code>.env</code>.</p>
+<p><strong>BookWyrm-Instanzadministrator*innen</strong> sollten aufmerksam die Veröffentlichungshinweise jeder Version auf Änderungen oder Erweiterungen der Umgebungsvariablen prüfen.</p>
+<p>Wo immer dies möglich ist, sollten <strong>BookWyrm-Entwickler*innen</strong> <code>site.settings</code> gegenüber <code>ENV</code>-Werten bevorzugen, wenn sie neue Konfigurationsoptionen einführen.</p>
+<h2 id="notwendige-einstellungen"><a class="headerlink" href="#notwendige-einstellungen">Notwendige Einstellungen</a></h2>
+<p>Die Datei <code>.env.example</code> beinhaltet Standardwerte für die Kerneinstellungen. Diese sind als sichere Standardwerte für Produktivumgebungen ausgelegt, abgesehen von den Standardpasswörtern. Nutzer*innen von Docker können <code>./bw-dev create_secrets</code> ausführen, um sichere und einzigartige Geheimnisse für folgende Variablen zu generieren:</p>
 <ul>
 <li><code>SECRET_KEY</code></li>
 <li><code>POSTGRES_PASSWORD</code></li>
@@ -255,7 +255,7 @@ Environment Variables
 <li><code>REDIS_BROKER_PASSWORD</code></li>
 <li><code>FLOWER_PASSWORD</code></li>
 </ul>
-<p>You <em>must</em> assign an appropriate value to all of these settings, in your <code>.env</code> file:</p>
+<p>Du <em>musst</em> jeder dieser Einstellungen in deiner <code>.env</code>-Datei angemessene Werte zuweisen:</p>
 <ul>
 <li><code>SECRET_KEY</code></li>
 <li><code>DOMAIN</code></li>
@@ -263,7 +263,7 @@ Environment Variables
 <li><code>FLOWER_USER</code></li>
 <li><code>FLOWER_PASSWORD</code></li>
 <li><code>FLOWER_PORT</code></li>
-<li>Email (in development these may be blank strings but still need to be set):</li>
+<li>E-Mail (dürfen in Entwicklungsumgebung leere Zeichenketten beinhalten, aber diese müssen nichtsdestotrotz gesetzt werden):</li>
 <li><code>EMAIL_HOST</code></li>
 <li><code>EMAIL_PORT</code></li>
 <li><code>EMAIL_HOST_USER</code></li>
@@ -284,504 +284,504 @@ Environment Variables
 <li><code>REDIS_ACTIVITY_PASSWORD</code></li>
 <li><code>REDIS_BROKER_PASSWORD</code></li>
 </ul>
-<p>When running BookWyrm in <strong>development</strong>:</p>
+<p>Wenn BookWyrm in einer <strong>Entwicklungsumgebung</strong> betrieben wird:</p>
 <ul>
-<li><code>NGINX_SETUP</code> <strong>must</strong> be set to <code>reverse_proxy</code></li>
-<li><code>DEBUG</code> <em>should</em> be set to <code>true</code></li>
-<li><code>DOMAIN</code> may be <code>localhost</code></li>
+<li><code>NGINX_SETUP</code> <strong>muss</strong> <code>reverse_proxy</code> zugewiesen werden</li>
+<li><code>DEBUG</code> <em>sollte</em> <code>true</code> zugewiesen werden</li>
+<li><code>DOMAIN</code> darf <code>localhost</code> zugewiesen werden</li>
 </ul>
-<p>When running BookWyrm in <strong>production</strong>:</p>
+<p>Wenn BookWyrm in einer <strong>Produktivumgebung</strong> betrieben wird:</p>
 <ul>
-<li><code>DEBUG</code> <strong>must</strong> be set to <code>false</code></li>
-<li><code>DOMAIN</code> <strong>must not</strong> be <code>localhost</code></li>
-<li>Email settings <strong>must</strong> be real and use a bulk email provider such as mailgun</li>
+<li><code>DEBUG</code> <strong>muss</strong> <code>false</code> zugewiesen werden</li>
+<li><code>DOMAIN</code> <strong>darf nicht</strong> <code>localhost</code> zugewiesen werden</li>
+<li>E-Mail-Einstellungen <strong>müssen</strong> real sein und einen E-Mail-Provider für den Massenversand wie zum Beispiel mailgun verwenden</li>
 </ul>
-<h2 id="django-settings"><a class="headerlink" href="#django-settings">Django settings</a></h2>
-<p>Learn more about each of these in <a href="https://docs.djangoproject.com/en/4.2/ref/settings">the Django reference documentation</a>.</p>
+<h2 id="django-einstellungen"><a class="headerlink" href="#django-einstellungen">Django-Einstellungen</a></h2>
+<p>Lerne mehr über alle diese Einstellungen in <a href="https://docs.djangoproject.com/en/4.2/ref/settings">der Django-Referenz</a>.</p>
 <h3 id="allowed_hosts"><a class="headerlink" href="#allowed_hosts"><code>ALLOWED_HOSTS</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String of comma-separated values</li>
-<li><strong>Default</strong>: all</li>
+<li><strong>Typ</strong>: Zeichenkette kommaseparierter Werte</li>
+<li><strong>Default</strong>: alle</li>
 </ul>
-<p>A list of strings representing the host/domain names that this site can serve. This is a security measure to prevent HTTP Host header attacks, which are possible even under many seemingly-safe web server configurations.</p>
-<p>The default is to allow all hosts, but you should usually change this. e.g. <code>"localhost,bookwyrm.example.com"</code></p>
+<p>Eine Liste von Zeichenketten, die die Hosts und Domain-Namen representieren, unter denen diese Seite ausgeliefert werden darf. Dies ist eine Sicherheitsmaßnahme, um HTTP-Host-Header-Angriffe zu verhindern, die selbst bei vielen scheinbar sicheren Web-Server-Konfigurationen möglich sind.</p>
+<p>Der Standard ist es, alle Hosts zuzulassen, aber du solltest dies ändern. Beispiel: <code>"localhost,bookwyrm.example.com"</code></p>
 <h3 id="media_root"><a class="headerlink" href="#media_root"><code>MEDIA_ROOT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>images</code></li>
 </ul>
-<p>Absolute filesystem path to the directory that will hold user-uploaded files. If running with Docker, remember that this is the directory location inside your container, not the host machine.</p>
+<p>Absoluter Dateipfad zu dem Verzeichnis, das von Nutzer*innen hochgeladene Dateien enthält. Wenn Docker zum Einsatz kommt, denke daran, dass dieses Verzeichnis innerhalb deines Containers liegt, nicht auf der Host-Maschine.</p>
 <h3 id="secret_key"><a class="headerlink" href="#secret_key"><code>SECRET_KEY</code></a></h3>
 <ul>
-<li><strong>required</strong></li>
-<li><strong>Type</strong>: String</li>
+<li>notwendig</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>"7(2w1sedok=aznpq)ta1mc4i%4h=xx@hxwx*o57ctsuml0x%fr"</code></li>
 </ul>
-<p>A secret key for a particular BookWyrm instance. This is used to provide cryptographic signing, and should be set to a unique, unpredictable and long string.</p>
-<p>If you do not change the <code>SECRET_KEY</code> from <code>.env.example</code> BookWyrm will throw an error and refuse to start.</p>
+<p>Ein geheimer Schlüssel für die jeweilige BookWyrm-Instanz. Er wird genutzt, um kryptographische Signaturen bereitzustellen, und sollte auf eine einzigartige, nicht vorhersagbare, lange Zeichenkette festgelegt werden.</p>
+<p>Wenn du den <code>SECRET_KEY</code> in <code>.env.example</code> nicht änderst, wird BookWyrm eine Fehlermeldung zeigen und sich weigern, zu starten.</p>
 <h3 id="static_root"><a class="headerlink" href="#static_root"><code>STATIC_ROOT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>static</code></li>
 </ul>
-<p>The absolute path to the directory where <code>collectstatic</code> will collect static files for deployment. If running with Docker, remember that this is the directory location inside your container, not the host machine.</p>
+<p>Der absolute Pfad zu dem Verzeichnis, in dem <code>collectstatic</code> alle statischen Dateien zur Auslieferung aufsammelt. Wenn Docker zum Einsatz kommt, denke daran, dass dieses Verzeichnis innerhalb deines Containers liegt, nicht auf der Host-Maschine.</p>
 <h3 id="debug"><a class="headerlink" href="#debug"><code>DEBUG</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
-<p><code>DEBUG</code> provides useful error information in the web interface for debugging on development servers.</p>
-<p>This should be set to <code>false</code> on production instances. <strong>Never deploy a site into production <code>DEBUG</code> set to <code>true</code>!</strong></p>
-<p><strong>NOTE:</strong> For version 0.7.5 and earlier, <code>DEBUG</code> defaulted to <code>true</code>.</p>
+<p><code>DEBUG</code> stellt in der Weboberfläche nützliche Fehlerinformationen bereit, die zum Debuggen des Entwicklungsservers genutzt werden können.</p>
+<p>In Produktivsystemen sollte <code>false</code> zugewiesen werden. <strong>Stelle niemals eine Seite öffentlich zur Verfügung, bei der <code>DEBUG</code> auf <code>true</code> gesetzt wurde.</strong></p>
+<p><strong>Hinweis:</strong> Bis einschließlich Version 0.7.5 war der Standardwert für <code>DEBUG</code> <code>true</code>.</p>
 <h3 id="language_code"><a class="headerlink" href="#language_code"><code>LANGUAGE_CODE</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>"en-us"</code></li>
 </ul>
-<p>A string representing the default language code for this installation.</p>
+<p>Eine Zeichenkette, die die Standardsprache für diese Installation repräsentiert.</p>
 <h3 id="session_cookie_age"><a class="headerlink" href="#session_cookie_age"><code>SESSION_COOKIE_AGE</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>2592000</code></li>
 </ul>
-<p>Time before being logged out (in seconds). The default is equivalent to 30 days. In future this default is <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3082">likely to change to 1 year</a>.</p>
+<p>Die Zeit, bis man abgemeldet wird (in Sekunden). Der Standardwert entspricht 30 Tagen. Zukünftig wird dieser Wert <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3082">voraussichtlich auf ein Jahr geändert</a>.</p>
 <h3 id="data_upload_max_memory_mib"><a class="headerlink" href="#data_upload_max_memory_mib"><code>DATA_UPLOAD_MAX_MEMORY_MiB</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>100</code></li>
 </ul>
-<p>Maximum allowed memory for file uploads. You can increase this if users are having trouble uploading BookWyrm export files. The real Django setting is <code>DATA_UPLOAD_MAX_MEMORY_SIZE</code>, however we use this setting in <code>.env</code> to allow instance admins to set the value <a href="https://en.wikipedia.org/wiki/Byte#Multiple-byte_units">in mebibytes</a> rather than bytes.</p>
-<h2 id="basic-bookwyrm-site-settings"><a class="headerlink" href="#basic-bookwyrm-site-settings">Basic BookWyrm site settings</a></h2>
+<p>Maximal erlaubter Speicher für Dateiuploads. Du kannst dies erhöhen, wenn Nutzer*innen Probleme beim Upload von BookWyrm-Exportdateien feststellen. Die eigentliche Django-Einstellung ist <code>DATA_UPLOAD_MAX_MEMORY_SIZE</code>, allerdings nutzen wir in der <code>.env</code>-Datei diese Variable, um Instanz-Administrator*innen zu erlauben, den Wert <a href="https://en.wikipedia.org/wiki/Byte#Multiple-byte_units">in Mebibytes</a> anstelle von Bytes anzugeben.</p>
+<h2 id="grundlegende-bookwyrm-seiteneinstellungen"><a class="headerlink" href="#grundlegende-bookwyrm-seiteneinstellungen">Grundlegende BookWyrm-Seiteneinstellungen</a></h2>
 <h3 id="default_language"><a class="headerlink" href="#default_language"><code>DEFAULT_LANGUAGE</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>English</code></li>
 </ul>
-<p>Books will rank higher in search results on this instance if one of their <code>language</code> values matches this value.</p>
+<p>Bücher werden in Suchergebnissen priorisiert, wenn eine ihrer Sprachen (im Feld <code>language</code>) diesem Wert entspricht.</p>
 <h3 id="domain"><a class="headerlink" href="#domain"><code>DOMAIN</code></a></h3>
 <ul>
-<li><strong>required</strong></li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong></li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The fully qualified domain name for your site. Do not include a protocol or port numbers. e.g. <code>example.com</code> or <code>subdomain.example.com</code>.</p>
+<p>Der Fully Qualified Domain Name deiner Website. Gib kein Protokoll und keinen Port an. Beispiel: <code>example.com</code> oder <code>subdomain.example.com</code>.</p>
 <h3 id="email"><a class="headerlink" href="#email"><code>EMAIL</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>Used in the <code>production</code> branch's <code>docker-compose.yml</code> file as the email to send to Certbot.</p>
+<p>Die Adresse wird in der <code>docker-compose.yml</code>-Datei des <code>production</code>-Branches an Certbot weitergereicht.</p>
 <h3 id="nginx_setup"><a class="headerlink" href="#nginx_setup"><code>NGINX_SETUP</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>https</code></li>
-<li><strong>Options</strong>: <code>https</code>, <code>reverse_proxy</code></li>
+<li><strong>Optionen</strong>: <code>https</code>, <code>reverse_proxy</code></li>
 </ul>
-<p>Indicates how to set the <code>nginx</code> configuration. <code>https</code> assumes all traffic should be handled by BookWyrm's nginx container and will attempt to set up a certbot HTTPS certificate, whereas <code>reverse_proxy</code> assumes traffic is being proxied by a web server between BookWyrm and the outside world. In development you should always set this to <code>reverse_proxy</code>.</p>
+<p>Signalisiert die <code>nginx</code>-Konfiguration. <code>https</code> nimmt an, dass der gesamte Datenverkehr durch BookWyrms <code>nginx</code>-Container gehandhabt wird. In dieser Konfiguration wird versucht, mit Certbot ein HTTPS-Zertifikat zu erstellen. <code>reverse_proxy</code> dagegen nimmt an, dass der Datenverkehr von einem vorgeschalteten Webserver zwischen BookWyrm und der Außenwelt gehandhabt wird. In der Entwicklungsumgebung sollte immer <code>reverse_proxy</code> gesetzt werden.</p>
 <h3 id="port"><a class="headerlink" href="#port"><code>PORT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
-<li><strong>Default</strong>: <code>443</code>, or if domain is <code>localhost</code>, <code>80</code>.</li>
+<li><strong>Typ</strong>: Integer</li>
+<li><strong>Default</strong>: <code>443</code>, oder <code>80</code>, wenn die Domain <code>localhost</code> entspricht.</li>
 </ul>
-<p>The port used to communicate with the web. Note that this is different to Django's <code>PORT</code>.</p>
+<p>Der Port, der für die Kommunikation im Web genutzt wird. Beachte, dass diese Einstellung sich von Djangos <code>PORT</code> unterscheidet.</p>
 <h3 id="use_https"><a class="headerlink" href="#use_https"><code>USE_HTTPS</code></a></h3>
-<p>This variable is deprecated after <code>v0.7.5</code>. It is assumed that your instance is using HTTPS unless the domain is <code>localhost</code>.</p>
-<h2 id="searching"><a class="headerlink" href="#searching">Searching</a></h2>
-<p>These configurations may be moved to <code>site.settings</code> in future.</p>
+<p>Diese Variable wurde nach Version <code>v0.7.5</code> obsolet. Es wird angenommen, dass deine Instanz HTTPS verwendet, sofern die Domain nicht <code>localhost</code> ist.</p>
+<h2 id="suchen"><a class="headerlink" href="#suchen">Suchen</a></h2>
+<p>Diese Konfiguration kann künftig zu <code>site.settings</code> verschoben werden.</p>
 <h3 id="search_timeout"><a class="headerlink" href="#search_timeout"><code>SEARCH_TIMEOUT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
-<li><strong>Default</strong> <code>8</code></li>
+<li><strong>Typ</strong>: Integer</li>
+<li><strong>Default</strong>: <code>8</code></li>
 </ul>
-<p>The total time in seconds that the instance will spend searching connectors.</p>
+<p>Die Höchstdauer in Sekunden, die die Instanz nutzen wird, um über Konnektoren Inhalte zu suchen.</p>
 <h3 id="query_timeout"><a class="headerlink" href="#query_timeout"><code>QUERY_TIMEOUT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
-<li><strong>Default</strong> <code>5</code></li>
+<li><strong>Typ</strong>: Integer</li>
+<li><strong>Default</strong>: <code>5</code></li>
 </ul>
-<p>Timeout for a query to an individual connector.</p>
-<h2 id="postgres-configuration"><a class="headerlink" href="#postgres-configuration">Postgres configuration</a></h2>
-<p>The primary database for BookWyrm uses Postgres.</p>
+<p>Zeitbeschränkung für eine Anfrage an einen einzelnen Konnektor.</p>
+<h2 id="postgres-konfiguration"><a class="headerlink" href="#postgres-konfiguration">Postgres-Konfiguration</a></h2>
+<p>Die Hauptdatenbank für BookWyrm nutzt Postgres.</p>
 <h3 id="pgport"><a class="headerlink" href="#pgport"><code>PGPORT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
-<li><strong>Default</strong> <code>5432</code></li>
+<li><strong>Typ</strong>: Integer</li>
+<li><strong>Default</strong>: <code>5432</code></li>
 </ul>
-<p>The port to connect to the Postgres server. Same as Django's <code>PORT</code>.</p>
+<p>Der Port, um sich mit dem Postgres-Server zu verbinden. Entspricht Djangos <code>PORT</code>.</p>
 <h3 id="postgres_password"><a class="headerlink" href="#postgres_password"><code>POSTGRES_PASSWORD</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong> <code>bookwyrm</code></li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: <code>bookwyrm</code></li>
 </ul>
-<p>Password for the database. Set this to a strong password string between quotation marks to avoid problems with certain characters being misinterpreted.</p>
-<p><strong>Do not use either of the default values from <code>.env</code> or <code>settings.py</code></strong> as they are publicly known.</p>
+<p>Passwort für die Datenbank. Lege hier ein starkes Passwort fest. Setze es in Anführungszeichen, um Probleme mit der Fehlinterpretation gewisser Zeichen zu vermeiden.</p>
+<p><strong>Nutze weder die Standardwerte aus <code>.env</code> noch aus <code>setings.py</code></strong>, da diese öffentlich bekannt sind.</p>
 <h3 id="postgres_user"><a class="headerlink" href="#postgres_user"><code>POSTGRES_USER</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>bookwyrm</code></li>
 </ul>
-<p>The name of your database user. Same as Django's <code>USER</code>.</p>
+<p>Der Name deines Datenbankbenutzers. Entspricht Djangos <code>USER</code>.</p>
 <h3 id="postgres_db"><a class="headerlink" href="#postgres_db"><code>POSTGRES_DB</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>bookwyrm</code></li>
 </ul>
-<p>The name of your database.</p>
+<p>Der Name deiner Datenbank.</p>
 <h3 id="postgres_host"><a class="headerlink" href="#postgres_host"><code>POSTGRES_HOST</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>localhost</code></li>
 </ul>
-<p>The host server for your database. If not set or a blank string, defaults to localhost. Same as Django's <code>HOST</code>.</p>
+<p>Der Host-Server deiner Datenbank. Wird dieser Wert nicht gesetzt oder leer gelassen, wird <code>localhost</code> angenommen. Entspricht Djangos <code>HOST</code>.</p>
 <h2 id="redis"><a class="headerlink" href="#redis">Redis</a></h2>
-<p>Redis is used to manage both activity streams and background jobs.</p>
+<p>Redis wird verwendet, um sowohl Aktivitätsströme als auch Hintergrundaufgaben zu verwalten.</p>
 <h3 id="max_stream_length"><a class="headerlink" href="#max_stream_length"><code>MAX_STREAM_LENGTH</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>200</code></li>
 </ul>
-<p>The maximum length for Redis streams. If a stream grows longer than this, Redis will discard the oldest items in order to not exceed the <code>MAX_STREAM_LENGTH</code>.</p>
-<p>See the <a href="https://redis.io/docs/latest/commands/xtrim/">Redis <code>XTRIM</code> documentation</a> for more detail.</p>
+<p>Die Maximallänge für Redis-Streams. Wird ein Stream größer, wird Redis die ältesten Elemente verwerfen, um die <code>MAX_STREAM_LENGTH</code> nicht zu überschreiten.</p>
+<p>Siehe <a href="https://redis.io/docs/latest/commands/xtrim/">Redis-<code>XTRIM</code>-Dokumentation</a> für weitere Details.</p>
 <h3 id="redis_activity_host"><a class="headerlink" href="#redis_activity_host"><code>REDIS_ACTIVITY_HOST</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>localhost</code></li>
 </ul>
-<p>Redis server host. If not set, this defaults to <code>localhost</code> but if you are using Docker it should usually be set to <code>redis_activity</code> so that you are using the Redis container of that name.</p>
+<p>Der Redis-Server-Host. Wird als <code>localhost</code> angenommen, sofern nichts anderes angegeben wird. Wenn du Docker verwendest, sollte der Wert üblicherweise <code>redis_activity</code> sein, damit du den gleichnamigen Redis-Container verwendest.</p>
 <h3 id="redis_activity_port"><a class="headerlink" href="#redis_activity_port"><code>REDIS_ACTIVITY_PORT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>6379</code></li>
 </ul>
-<p>The port your Redis server uses.</p>
+<p>Der Port, den dein Redis-Server verwendet.</p>
 <h3 id="redis_activity_password"><a class="headerlink" href="#redis_activity_password"><code>REDIS_ACTIVITY_PASSWORD</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: Empty string</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: leer</li>
 </ul>
-<p>Password for your Redis database.</p>
+<p>Das Passwort für deine Redis-Datenbank.</p>
 <h3 id="redis_activity_db_index"><a class="headerlink" href="#redis_activity_db_index"><code>REDIS_ACTIVITY_DB_INDEX</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Integer</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>If you are not using the default Docker setup with a separate Redis server for activity streams, you should set the <code>REDIS_ACTIVITY_DB_INDEX</code> to indicate which Redis database is being used for BookWyrm activity streams.</p>
+<p>Wenn du nicht das Standard-Docker-Setup mit separatem Redis-Server für Aktivitäts-Streams verwendest, solltest du <code>REDIS_ACTIVITY_DB_INDEX</code> setzen, um zu signalisieren, welche Redis-Datenbank für BookWyrms Aktivitätsströme verwendet wird.</p>
 <h3 id="redis_activity_url"><a class="headerlink" href="#redis_activity_url"><code>REDIS_ACTIVITY_URL</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>If you are using an external Redis database or want to use a unix socket, you can override all the other Redis settings by explictly setting the full <code>REDIS_ACTIVITY_URL</code>.</p>
-<p>e.g. <code>"redis://username:top_secret_pass@example.com:6380/0"</code></p>
+<p>Wenn du eine externe Redis-Datenbank oder einen Unix-Socket verwendest, kannst du alle anderen Redis-Einstellungen überschreiben, indem du die volle <code>REDIS_ACTIVITY_URL</code> setzt.</p>
+<p>Beispiel: <code>"redis://username:top_secret_pass@example.com:6380/0"</code></p>
 <h3 id="redis_broker_host"><a class="headerlink" href="#redis_broker_host"><code>REDIS_BROKER_HOST</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>localhost</code></li>
 </ul>
-<p>Redis Celery server host. If not set this defaults to <code>localhost</code> but if using Docker should usually be set to <code>redis_broker</code> so that you are using the Redis container of that name.</p>
+<p>Der Redis-Celery-Server-Host. Wird als <code>localhost</code> angenommen, sofern nichts anderes angegeben wird. Wenn du Docker verwendest, sollte der Wert üblicherweise <code>redis_broker</code> sein, damit du den gleichnamigen Redis-Container verwendest.</p>
 <h3 id="redis_broker_port"><a class="headerlink" href="#redis_broker_port"><code>REDIS_BROKER_PORT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>6379</code></li>
 </ul>
-<p>The port your Redis Celery server uses.</p>
+<p>Der Port, den dein Redis-Celery-Server verwendet.</p>
 <h3 id="redis_broker_password"><a class="headerlink" href="#redis_broker_password"><code>REDIS_BROKER_PASSWORD</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: Empty string</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: leer</li>
 </ul>
-<p>Password for your Redis Celery database.</p>
+<p>Das Passwort für deine Redis-Celery-Datenbank.</p>
 <h3 id="redis_broker_db_index"><a class="headerlink" href="#redis_broker_db_index"><code>REDIS_BROKER_DB_INDEX</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Integer</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>If you are not using the default Docker setup with a separate Redis server for Celery, you should set the <code>REDIS_ACTIVITY_DB_INDEX</code> to indicate which Redis database is being used for BookWyrm activity streams.</p>
+<p>Wenn du nicht das Standard-Docker-Setup mit separatem Redis-Server für Celery verwendest, solltest du <code>REDIS_ACTIVITY_DB_INDEX</code> setzen, um zu signalisieren, welche Redis-Datenbank für BookWyrms Aktivitätsströme verwendet wird.</p>
 <h3 id="redis_broker_url"><a class="headerlink" href="#redis_broker_url"><code>REDIS_BROKER_URL</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>If you are using an external Redis database or want to use a unix socket, you can override all the other Redis settings for your Celery database by explictly setting the full <code>REDIS_BROKER_URL</code>.</p>
-<p>e.g. <code>"redis://username:top_secret_pass@example.com:6380/0"</code></p>
+<p>Wenn du eine externe Redis-Datenbank oder einen Unix-Socket verwendest, kannst du alle anderen Redis-Einstellungen für deine Celery-Datenbank überschreiben, indem du die volle <code>REDIS_BROKER_URL</code> setzt.</p>
+<p>Beispiel: <code>"redis://username:top_secret_pass@example.com:6380/0"</code></p>
 <h2 id="flower"><a class="headerlink" href="#flower">Flower</a></h2>
-<p>Flower provides a web UI for monitoring Celery tasks.</p>
+<p>Flower stellt eine Weboberfläche zur Verfügung, um Celery-Tasks zu überwachen.</p>
 <h3 id="flower_port"><a class="headerlink" href="#flower_port"><code>FLOWER_PORT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>8888</code></li>
 </ul>
-<p>Port for Flower site used to monitor Celery at <code>https://example.com/flower</code>.</p>
+<p>Der Port für die Flower-Seite, um Celery unter <code>https://example.com/flower</code> zu überwachen.</p>
 <h3 id="flower_user"><a class="headerlink" href="#flower_user"><code>FLOWER_USER</code></a></h3>
 <ul>
-<li><strong>required</strong></li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong></li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The user for your Flower interface.</p>
+<p>Der Nutzer deiner Flower-Instanz.</p>
 <h3 id="flower_password"><a class="headerlink" href="#flower_password"><code>FLOWER_PASSWORD</code></a></h3>
 <ul>
-<li><strong>required</strong></li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong></li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The password for your Flower monitoring interface. Flower can see all messages passing through your server so it is important that you set this to a strong, unique password and keep it secure.</p>
-<h2 id="email-configuration"><a class="headerlink" href="#email-configuration">Email configuration</a></h2>
+<p>Das Passwort für deine Flower-Überwachungsoberfläche. Flower kann alle Nachrichten sehen, die deinen Server erreichen, daher ist es wichtig, dass du ein starkes, einzigartiges Passwort setzt und dieses sicher verwahrst.</p>
+<h2 id="e-mail-konfiguration"><a class="headerlink" href="#e-mail-konfiguration">E-Mail-Konfiguration</a></h2>
 <h3 id="email_host"><a class="headerlink" href="#email_host"><code>EMAIL_HOST</code></a></h3>
 <ul>
-<li><strong>required</strong></li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong></li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The smtp address of your email host. e.g. <code>smtp.mailgun.org</code>. Always check the terms and conditions of your email provider before using them for sending large volumes of mail. You probably need something like Mailgun.</p>
+<p>Die SMTP-Adresse deines E-Mail-Hosts. Beispiel: <code>smtp.mailgun.org</code>. Prüfe stets die Nutzungsbedingungen deines E-Mail-Anbieters, bevor du deinen Account nutzt, um große Mengen E-Mails zu versenden. Du wirst vermutlich einen Dienst wie Mailgun benötigen.</p>
 <h3 id="email_port"><a class="headerlink" href="#email_port"><code>EMAIL_PORT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>587</code></li>
 </ul>
-<p>The port for your email provider's smtp server.</p>
+<p>Der SMTP-Server-Port deines E-Mail-Anbieters.</p>
 <h3 id="email_host_user"><a class="headerlink" href="#email_host_user"><code>EMAIL_HOST_USER</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The username for your email provider. Usually in the form of a full email address e.g. <code>mail@your.domain.here</code></p>
+<p>Der Nutzername deines E-Mail-Anbieters. Normalerweise eine volle E-Mail-Adresse wie <code>mail@your.domain.here</code>.</p>
 <h3 id="email_host_password"><a class="headerlink" href="#email_host_password"><code>EMAIL_HOST_PASSWORD</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The password for your email provider account.</p>
+<p>Das Passwort für den Account bei deinem E-Mail-Anbieter.</p>
 <h3 id="email_use_tls"><a class="headerlink" href="#email_use_tls"><code>EMAIL_USE_TLS</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>true</code></li>
 </ul>
-<p>Whether your smtp connection uses TLS. Check that you are using the correct <code>EMAIL_PORT</code> for this.</p>
+<p>Ob deine SMTP-Verbidung TLS nutzt. Prüfem hierfür, ob du den richtigen <code>EMAIL_PORT</code> verwendest.</p>
 <h3 id="email_use_ssl"><a class="headerlink" href="#email_use_ssl"><code>EMAIL_USE_SSL</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
-<p>Whether your smtp connection uses SSL. Check that you are using the correct <code>EMAIL_PORT</code> for this.</p>
+<p>Ob deine SMTP-Verbidung SSL nutzt. Prüfem hierfür, ob du den richtigen <code>EMAIL_PORT</code> verwendest.</p>
 <h3 id="email_sender_name"><a class="headerlink" href="#email_sender_name"><code>EMAIL_SENDER_NAME</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>admin</code></li>
 </ul>
-<p>The first part of the email address for emails sent by your BookWyrm instance. e.g. <strong><code>admin</code></strong>@example.com.</p>
+<p>Der erste Teil der E-Mail-Adresse für Nachrichten, die deine BookWyrm-Instanz versendet. Beispiel: <strong><code>admin</code></strong>@example.com.</p>
 <h3 id="email_sender_domain"><a class="headerlink" href="#email_sender_domain"><code>EMAIL_SENDER_DOMAIN</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: Same as <code>DOMAIN</code></li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: wie <code>DOMAIN</code></li>
 </ul>
-<p>The domain of the email address for emails sent by your BookWyrm instance. e.g. admin@<strong><code>example.com</code></strong>.</p>
-<h2 id="s3-object-storage"><a class="headerlink" href="#s3-object-storage">S3 object storage</a></h2>
+<p>Die Domain der E-Mail-Adresse für Nachrichten, die deine BookWyrm-Instanz versendet. Beispiel: admin@<strong><code>example.com</code></strong>.</p>
+<h2 id="s3-object-storage"><a class="headerlink" href="#s3-object-storage">S3-Object-Storage</a></h2>
 <h3 id="use_s3"><a class="headerlink" href="#use_s3"><code>USE_S3</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
-<p>Indicates whether you are using S3 object storage for images and static files.</p>
+<p>Zeigt an, ob du S3-Object-Storage für Bilder und statische Dateien nutzt.</p>
 <h3 id="use_s3_for_exports"><a class="headerlink" href="#use_s3_for_exports"><code>USE_S3_FOR_EXPORTS</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
-<p>Indicates whether you are using S3 object storage for user export and import files. By default <code>USE_S3</code> does not include user import and exports. It is safer to use the default local storage for these, along with the regular file deletion job running. On larger instances local storage may cause performance issues and you may prefer to set this to <code>true</code>.</p>
+<p>Zeigt an, ob du S3-Object-Storage für Dateien bei Kontoexporten und -importen nutzt. Standardmäßig beinhaltet <code>USE_S3</code> Kontoimporte und -exporte nicht. Es ist sicherer, hierfür den lokalen Speicher zu verwenden und den normalen Dateilöschvorgang regelmäßig auszuführen. Auf größeren Instanzen kann der lokale Speicher Performanzprobleme hervorrufen und es kann sich anbieten, diesen Wert auf <code>true</code> zu setzen.</p>
 <h3 id="s3_signed_url_expiry"><a class="headerlink" href="#s3_signed_url_expiry"><code>S3_SIGNED_URL_EXPIRY</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>900</code></li>
 </ul>
-<p>Number of seconds before signed S3 urls expire. This is currently only used for user export files. This should only be as long as is required for a user download to complete once the user has clicked on the "download" button after the export has been processed.</p>
+<p>Die Anzahl an Sekunden, bevor signierte S3-URLs ablaufen. Dies wird aktuell nur für Konto-Exportdateien verwendet. Der Wert sollte nur so groß sein, wie es notwendig ist, um als Nutzer*in einen Download abzuschließen, nachdem man bei Abschluss eines Exports auf "Herunterladen" geklickt hat.</p>
 <h3 id="aws_access_key_id"><a class="headerlink" href="#aws_access_key_id"><code>AWS_ACCESS_KEY_ID</code></a></h3>
 <ul>
-<li><strong>required</strong> if using S3 storage</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn S3-Speicher zum Einsatz kommt</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>Access key for S3 storage of all types.</p>
+<p>Zugriffsschlüssel für S3-Speicher aller Art.</p>
 <h3 id="aws_default_acl"><a class="headerlink" href="#aws_default_acl"><code>AWS_DEFAULT_ACL</code></a></h3>
 <ul>
-<li><strong>required</strong> if using Backblaze storage</li>
-<li><strong>Type</strong>: String</li>
+<li><strong>notwendig</strong>, wenn Backblaze-Speicher zum Einsatz kommt</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: "public-read"</li>
 </ul>
-<p>Backblaze (B2) does not recognise "public-read" as a default ACL setting, so Backblaze users should set this to an empty string.</p>
+<p>Backblaze (B2) erkennt "public-read" nicht als eine Standard-ACL-Einstellung an. Backblaze-Nutzer*innen sollten daher eine leere Zeichenkette angeben.</p>
 <h3 id="aws_secret_access_key"><a class="headerlink" href="#aws_secret_access_key"><code>AWS_SECRET_ACCESS_KEY</code></a></h3>
 <ul>
-<li><strong>required</strong> if using S3 storage</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn S3-Speicher zum Einsatz kommt</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>Secret key for S3 storage of all types.</p>
+<p>Geheimer Schlüssel für S3-Speicher aller Art.</p>
 <h3 id="aws_storage_bucket_name"><a class="headerlink" href="#aws_storage_bucket_name"><code>AWS_STORAGE_BUCKET_NAME</code></a></h3>
 <ul>
-<li><strong>required</strong> if using S3 storage</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn S3-Speicher zum Einsatz kommt</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The bucket name you are using. e.g. <code>"example-bucket-name"</code></p>
+<p>Der Bucket-Name, den du nutzt. Beispiel: <code>"example-bucket-name"</code></p>
 <h3 id="aws_s3_region_name"><a class="headerlink" href="#aws_s3_region_name"><code>AWS_S3_REGION_NAME</code></a></h3>
 <ul>
-<li><strong>required</strong> if using S3 storage</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn S3-Speicher zum Einsatz kommt</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The S3 region name. e.g. <code>"eu-west-1"</code> for AWS, <code>"fr-par"</code> for Scaleway, <code>"nyc3"</code> for Digital Ocean or <code>"cluster-id"</code> for Linode.</p>
+<p>Der S3-Regionenname. Beispiel: <code>"eu-west-1"</code> für AWS, <code>"fr-par"</code> für Scaleway, <code>"nyc3"</code> für Digital Ocean oder <code>"cluster-id"</code> für Linode.</p>
 <h3 id="aws_s3_custom_domain"><a class="headerlink" href="#aws_s3_custom_domain"><code>AWS_S3_CUSTOM_DOMAIN</code></a></h3>
 <ul>
-<li><strong>required</strong> if using non-AWS S3 storage (e.g. Scaleway or Digital Ocean Spaces)</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn S3-Storage zum Einsatz kommt, der nicht von AWS betrieben wird (z. B. Scaleway oder Digital Ocean Spaces)</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The domain that will serve the assets. e.g. <code>"example-bucket-name.s3.fr-par.scw.cloud"</code></p>
+<p>Die Domain, unter der Assets ausgeliefert werden. Beispiel: <code>"example-bucket-name.s3.fr-par.scw.cloud"</code></p>
 <h3 id="aws_s3_url_protocol"><a class="headerlink" href="#aws_s3_url_protocol"><code>AWS_S3_URL_PROTOCOL</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: Same as <code>PROTOCOL</code> plus a colon e.g. "http:"</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: wie <code>PROTOCOL</code> mit Doppelpunkt, also etwa "http:"</li>
 </ul>
-<p>Protocol for your S3 storage. Defaults to <code>https:</code> in production. You do not need to set this unless you want to override the default behaviour.</p>
+<p>Protokoll für den S3-Speicher. Wird in der Produktivumgebung standardmäßig als <code>https:</code> angenommen. Du musst dies nicht setzen, sofern du das Standardverhalten nicht überschreiben möchtest.</p>
 <h3 id="aws_s3_endpoint_url"><a class="headerlink" href="#aws_s3_endpoint_url"><code>AWS_S3_ENDPOINT_URL</code></a></h3>
 <ul>
-<li><strong>required</strong> if using non-AWS S3 storage (e.g. Scaleway or Digital Ocean Spaces)</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn S3-Storage zum Einsatz kommt, der nicht von AWS betrieben wird (z. B. Scaleway oder Digital Ocean Spaces)</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The S3 API endpoint. e.g. <code>"https://s3.fr-par.scw.cloud"</code></p>
-<h2 id="azure-blob-storage"><a class="headerlink" href="#azure-blob-storage">Azure blob storage</a></h2>
-<p>These values are required if you are using <a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-account-get-info">Azure Blob Storage</a>.</p>
+<p>Der S3-API-Endpunkt. Beispiel: <code>"https://s3.fr-par.scw.cloud"</code></p>
+<h2 id="azure-blob-storage"><a class="headerlink" href="#azure-blob-storage">Azure-Blob-Storage</a></h2>
+<p>Diese Werte werden benötigt, wenn <a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-account-get-info">Azure-Blob-Storage</a> zum Einsatz kommt.</p>
 <h3 id="use_azure"><a class="headerlink" href="#use_azure"><code>USE_AZURE</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
 <h3 id="azure_account_name"><a class="headerlink" href="#azure_account_name"><code>AZURE_ACCOUNT_NAME</code></a></h3>
 <ul>
-<li><strong>required</strong> if using Azure storage</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn Azure-Speicher zum Einsatz kommt</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>e.g. <code>"example-account-name"</code></p>
+<p>Beispiel: <code>"example-account-name"</code></p>
 <h3 id="azure_account_key"><a class="headerlink" href="#azure_account_key"><code>AZURE_ACCOUNT_KEY</code></a></h3>
 <ul>
-<li><strong>required</strong> if using Azure storage</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn Azure-Speicher zum Einsatz kommt</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>e.g. <code>"Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=="</code></p>
+<p>Beispiel: <code>"Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=="</code></p>
 <h3 id="azure_container"><a class="headerlink" href="#azure_container"><code>AZURE_CONTAINER</code></a></h3>
 <ul>
-<li><strong>required</strong> if using Azure storage</li>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>notwendig</strong>, wenn Azure-Speicher zum Einsatz kommt</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>The unique name for your container. e.g. <code>"example-blob-container-name"</code>.</p>
+<p>Der einzigartige Name deines Containers. Beispiel: <code>"example-blob-container-name"</code>.</p>
 <h3 id="azure_custom_domain"><a class="headerlink" href="#azure_custom_domain"><code>AZURE_CUSTOM_DOMAIN</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>You can use a <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal">custom domain</a> with Azure blob storage but this is not required. e.g. <code>"example-account-name.blob.core.windows.net"</code>.</p>
-<h2 id="image-generation"><a class="headerlink" href="#image-generation">Image generation</a></h2>
-<p>Some of these configuration values may be moved to site.settings in future.</p>
+<p>Du kannst eine <a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal">eigene Domain</a> für den Azure-Blob-Storage nutzen, aber dies ist nicht notwendig. Beispiel: <code>"example-account-name.blob.core.windows.net"</code>.</p>
+<h2 id="bildgenerierung"><a class="headerlink" href="#bildgenerierung">Bildgenerierung</a></h2>
+<p>Teile dieser Konfiguration könnten künftig zu <code>site.settings</code> verschoben werden.</p>
 <h3 id="enable_thumbnail_generation"><a class="headerlink" href="#enable_thumbnail_generation"><code>ENABLE_THUMBNAIL_GENERATION</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
-<p>Whether to enable generation of thumbnail images for book covers. Setting this to <code>true</code> will provide a boost to performance in terms of rendering images, however it comes at the price of 4-5 times more file storage required for book covers. For this reason it is set to <code>false</code> by default.</p>
+<p>Ob die Generierung von Vorschaubildern für Buch-Titelbilder aktiviert werden soll. Wenn du dies auf <code>true</code> setzt, wird die Performanz beim Rendern der Bilder verbessert. Allerdings wird für das Speichern der Titelbilder 4- bis 5-mal soviel Speicher benötigt. Aus diesem Grund ist der Standardwert <code>false</code>.</p>
 <h3 id="enable_preview_images"><a class="headerlink" href="#enable_preview_images"><code>ENABLE_PREVIEW_IMAGES</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
-<p>This setting allows the server to generate preview images that can be used as OpenGraph images (or Twitter card image). These previews are generated for the book (every time the title, cover or author changes, or a new public review with rating is published), the user (every time the name or avatar is changed), and the website (every time the site name, tagline or logo are changed). See <a href="/optional_features.html">Optional Features</a> for more information.</p>
+<p>Diese Einstellung erlaubt es dem Server, Vorschaubilder zu generieren, die als OpenGraph-Bilder (auch als Twitter-Card-Bilder bekannt) genutzt werden. Diese Vorschaubilder werden für Bücher (jedes Mal, wenn sich der Titel, das Vorschaubild oder der*die Autor*in ändern oder wenn eine neue öffentliche Bewertung veröffentlicht wird), Konten (jedes Mal, wenn sich der Name oder Avatar ändert) und die Website (jedes Mal, wenn sich der Seitenname, die Beschreibung oder das Logo ändert) generiert. Siehe <a href="/optional_features.html">Optionale Features</a> für weitere Informationen.</p>
 <h3 id="preview_bg_color"><a class="headerlink" href="#preview_bg_color"><code>PREVIEW_BG_COLOR</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li>default: <code>use_dominant_color_light</code></li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: <code>use_dominant_color_light</code></li>
 </ul>
-<p>The background color for preview images. You can specify RGB tuple or RGB hex strings, or <code>use_dominant_color_light</code> / <code>use_dominant_color_dark</code>.</p>
+<p>Die Hintergrundfarbe für Vorschaubilder. Du kannst ein RGB-Tupel oder RGB-Hex-Werte angeben oder <code>use_dominant_color_light</code>/<code>use_dominant_color_dark</code> angeben.</p>
 <h3 id="preview_text_color"><a class="headerlink" href="#preview_text_color"><code>PREVIEW_TEXT_COLOR</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>#363636</code></li>
 </ul>
-<p>The text color for preview images. If <code>PREVIEW_BG_COLOR</code> is <code>use_dominant_color_dark</code>, this should be set to <code>#fff</code>.</p>
+<p>Die Textfarbe für Vorschaubilder. Wenn die <code>PREVIEW_BG_COLOR</code> auf <code>use_dominant_color_dark</code> gesetzt ist, sollte dies <code>#fff</code> sein.</p>
 <h3 id="preview_img_width"><a class="headerlink" href="#preview_img_width"><code>PREVIEW_IMG_WIDTH</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>1200</code></li>
 </ul>
-<p>Width for preview images, in pixels.</p>
+<p>Breite für Vorschaubilder in Pixeln.</p>
 <h3 id="preview_img_height"><a class="headerlink" href="#preview_img_height"><code>PREVIEW_IMG_HEIGHT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>630</code></li>
 </ul>
-<p>Height for preview images, in pixels.</p>
+<p>Höhe für Vorschaubilder in Pixeln.</p>
 <h3 id="preview_default_cover_color"><a class="headerlink" href="#preview_default_cover_color"><code>PREVIEW_DEFAULT_COVER_COLOR</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>#002549</code></li>
 </ul>
-<p>If there is no cover image for a book, we create a default cover. This setting determines the color of that default book cover.</p>
+<p>Wenn es zu einem Buch kein Titelbild gibt, erstellen wir ein neues Titelbild. Diese Einstellung bestimmt die Farbe dieses neuen Titelbilds.</p>
 <h3 id="preview_default_font"><a class="headerlink" href="#preview_default_font"><code>PREVIEW_DEFAULT_FONT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
 <li><strong>Default</strong>: <code>Source Han Sans</code></li>
 </ul>
-<p>If there is no cover image for a book, we create a default cover. This setting determines the font used on that default book cover.</p>
-<h2 id="telemetry"><a class="headerlink" href="#telemetry">Telemetry</a></h2>
-<p>Use these settings to enable automatically sending telemetry to an OTLP-compatible service. Many of the main monitoring apps have OLTP collectors, including NewRelic, DataDog, and Honeycomb.io - consult their documentation for setup instructions.</p>
+<p>Wenn es zu einem Buch kein Titelbild gibt, erstellen wir ein neues Titelbild. Diese Einstellung bestimmt die Schriftart dieses neuen Titelbilds.</p>
+<h2 id="telemetrie"><a class="headerlink" href="#telemetrie">Telemetrie</a></h2>
+<p>Nutze diese Einstellungen, um das automatische Senden von Telemetriedaten an OTLP-kompatible Dienste zu aktivieren. Viele der Haupt-Verwaltungsanwendungen haben OLTP-Konnektoren, einschließlich NewRelic, DataDog und Honeycomb.io – lies in ihren Dokumentationen nach, wie du sie aufsetzt.</p>
 <h3 id="otel_exporter_otlp_endpoint"><a class="headerlink" href="#otel_exporter_otlp_endpoint"><code>OTEL_EXPORTER_OTLP_ENDPOINT</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>API endpoint for your provider.</p>
+<p>API-Endpunkt deines Anbieters.</p>
 <h3 id="otel_exporter_otlp_headers"><a class="headerlink" href="#otel_exporter_otlp_headers"><code>OTEL_EXPORTER_OTLP_HEADERS</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>Any headers required, usually authentication information.</p>
+<p>Alle Header, die benötigt werden, üblicherweise für Authentifizierungs-Informationen.</p>
 <h3 id="otel_service_name"><a class="headerlink" href="#otel_service_name"><code>OTEL_SERVICE_NAME</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>Service name is an arbitrary tag that is attached to any data sent, used to distinguish different sources. It can be useful for sending prod and dev metrics to the same place and keeping them separate, for instance.</p>
-<h2 id="http-headers"><a class="headerlink" href="#http-headers">HTTP headers</a></h2>
+<p>Der Dienstname ist ein arbiträrer Tag, der allen versendeten Daten hinzugefügt wird, um verschiedene Quellen zu unterscheiden. Er kann nützlich sein, um Produktiv- und Entwicklungsmetriken am selben Ort zu sammeln und sie dort zu trennen.</p>
+<h2 id="http-header"><a class="headerlink" href="#http-header">HTTP-Header</a></h2>
 <h3 id="http_x_forwarded_proto"><a class="headerlink" href="#http_x_forwarded_proto"><code>HTTP_X_FORWARDED_PROTO</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Boolean</li>
+<li><strong>Typ</strong>: Boolean</li>
 <li><strong>Default</strong>: <code>false</code></li>
 </ul>
-<p>Setting this to <code>true</code> can compromise your site’s security. Ensure you fully understand your setup before changing it.</p>
-<p>Only use it if your proxy is "swallowing" whether the original request was made via https. Please <a href="https://docs.djangoproject.com/en/4.2/ref/settings/#secure-proxy-ssl-header">refer to the Django Documentation</a> and assess the risks for your instance.</p>
+<p>Wenn du dies auf <code>true</code> setzt, kann das die Sicherheit deiner Website kompromittieren. Stelle sicher, dass du dein Setup komplett verstehst, bevor du dies änderst.</p>
+<p>Nutze es nur, wenn dein Proxy "verschluckt", ob die originäre Anfrage per HTTPS erfolgte. Bitte <a href="https://docs.djangoproject.com/en/4.2/ref/settings/#secure-proxy-ssl-header">sieh in der Django-Dokumentation nach</a> und bewerte die Risiken für deine Instanz.</p>
 <h3 id="csp_additional_hosts"><a class="headerlink" href="#csp_additional_hosts"><code>CSP_ADDITIONAL_HOSTS</code></a></h3>
 <ul>
-<li><strong>Type</strong>: String</li>
-<li><strong>Default</strong>: not set</li>
+<li><strong>Typ</strong>: Zeichenkette</li>
+<li><strong>Default</strong>: nicht gesetzt</li>
 </ul>
-<p>Additional hosts to allow in the <code>Content-Security-Policy</code>, "self" (should be <code>DOMAIN</code> with optionally ":" + <code>PORT</code>) and <code>AWS_S3_CUSTOM_DOMAIN</code> (if used) are added by default.  Value should be a comma-separated list of host names.</p>
-<h2 id="multifactor-totp-authentication"><a class="headerlink" href="#multifactor-totp-authentication">Multifactor (TOTP) authentication</a></h2>
-<p>Some of these configuration values may be moved to site.settings in future.</p>
+<p>Zusätzliche Hosts, die in der <code>Content-Security-Policy</code> erlaubt werden sollen; "self" (sollte <code>DOMAIN</code> mit optionalem Doppelpunkt und <code>PORT</code> sein) und <code>AWS_S3_CUSTOM_DOMAIN</code> (sofern verwendet) werden standardmäßig hinzugefügt.  Der Wert sollte eine kommaseparierte Liste von Hostnamen sein.</p>
+<h2 id="multifaktor-authentifizierung-totp"><a class="headerlink" href="#multifaktor-authentifizierung-totp">Multifaktor-Authentifizierung (TOTP)</a></h2>
+<p>Teile dieser Konfiguration könnten künftig zu <code>site.settings</code> verschoben werden.</p>
 <h3 id="two_factor_login_validity_window"><a class="headerlink" href="#two_factor_login_validity_window"><code>TWO_FACTOR_LOGIN_VALIDITY_WINDOW</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>2</code></li>
 </ul>
-<p>Sets the number of codes either side of which will be accepted. This should be a low number but you can increase it if your users are experiencing high network latency and their codes are expiring before they can complete the login process. With the default settings for this and <code>TWO_FACTOR_LOGIN_MAX_SECONDS</code>, users have up to 180 seconds to use a given login code and can use a valid code up to two before the current one.</p>
+<p>Setzt die Zeit, in der die Codes von beiden Seiten akzeptiert werden. Dies sollte eine niedrige Zahl sein, aber du kannst sie erhöhen, wenn deine Nutzer*innen hohe Netzwerklatenzen erfahren und ihre Codes ablaufen, bevor sie den Login abschließen können. Mit der Standardeinstellung hierfür und <code>TWO_FACTOR_LOGIN_MAX_SECONDS</code> haben Nutzer*innen bis zu 180 Sekunden, um einen Code zu verwenden. Sie können einen gültigen Code bis zu zwei vor dem aktuellen verwenden.</p>
 <h3 id="two_factor_login_max_seconds"><a class="headerlink" href="#two_factor_login_max_seconds"><code>TWO_FACTOR_LOGIN_MAX_SECONDS</code></a></h3>
 <ul>
-<li><strong>Type</strong>: Integer</li>
+<li><strong>Typ</strong>: Integer</li>
 <li><strong>Default</strong>: <code>60</code></li>
 </ul>
-<p>Time in seconds for which a user login code is valid.</p>
+<p>Zeit in Sekunden, für die ein Login-Code gültig ist.</p>
 </section>
 
             </section>

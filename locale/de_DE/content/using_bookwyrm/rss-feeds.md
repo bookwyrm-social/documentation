@@ -1,43 +1,43 @@
 ---
-Title: RSS Feeds
+Title: RSS-Feeds
 Date: 2023-09-29
 Order: 20
 ---
 
-BookWyrm is an _open_ platform and generally it's ok to integrate your books and bookshelves in BookWyrm with other things. We provide some [RSS feeds](https://cyber.harvard.edu/rss/rss.html) to help you do that.
+BookWyrm ist eine _offene_ Plattform und es ist allgemein in Ordnung, deine Bücher und Regale in BookWyrm mit anderen Dingen zu verknüpfen. Wir stellen verschiedene [RSS-Feeds](https://cyber.harvard.edu/rss/rss.html) bereit, die dir dabei helfen.
 
-## RSS Locations
+## RSS-Endpunkte
 
-Currently, all RSS Feeds are relative to a someone's profile on their BookWyrm instance. So if your profile is at https://bookwyrm.social/user/mouse then all the rss feeds will be at a URL based on that.
+Aktuell sind alle RSS-Feeds relativ zu deinem Profil auf deinem BookWyrm-Server. Wenn dein Profil also unter `https://bookwyrm.social/user/mouse` verfügbar ist, basieren die Links zu allen RSS-Feeds darauf basieren.
 
-### All Activity
+### Alle Aktivitäten
 
-This is everything someone posts that's publicly visible.
+Dieser Feed enthält alle öffentlichen Beiträge, die jemand veröffentlicht.
 
-You can see all the _public_ activity of a user at their profile url /rss. So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all activity at http://bookwyrm.social/user/mouse/rss
+Du kannst die gesamte _öffentliche_ Aktivität einer Person sehen, wenn du an ihre Profil-URL `/rss` anhängst. Für das Profil unter `http://bookwyrm.social/user/mouse` erhältst du den RSS-Feed aller Aktivitäten also unter `http://bookwyrm.social/user/mouse/rss`.
 
-BookWyrm is social - people quote books, chat with each other about books, etc. If you are looking for a more filtered view, the next locations might be useful.
+BookWyrm ist sozial – Menschen zitieren aus Büchern, chatten miteinander etc. Wenn du dir eine aufgeräumtere Ansicht wünschst, sind die nächsten Endpunkte vielleicht hilfreich.
 
-### Reviews
+### Rezensionen
 
-To get an RSS feed of every Review someone posts, add `/rss-reviews` to the end of their profile url.
+Um einen RSS-Feed aller Rezensionen einer Person zu erhalten, hänge der Profil-URL einfach `/rss-reviews` an.
 
-So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Reviews at http://bookwyrm.social/user/mouse/rss-reviews
+Für das Profil unter `http://bookwyrm.social/user/mouse` erhältst du den RSS-Feed der Rezensionen also unter `http://bookwyrm.social/user/mouse/rss-reviews`.
 
-### Quotes
+### Zitate
 
-To get a feed of every Quote someone posts, add `/rss-quotes` to the end of their profile url.
+Um einen Feed aller Zitate zu erhalten, die jemand veröffentlicht, hänge der Profil-URL einfach `/rss-quotes` an.
 
-So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Quotes at http://bookwyrm.social/user/mouse/rss-quotes
+Für das Profil unter `http://bookwyrm.social/user/mouse` erhältst du den RSS-Feed der Zitate also unter `http://bookwyrm.social/user/mouse/rss-quotes`.
 
-### Comments
+### Kommentare
 
-To get a feed of every Comment someone posts, add `/rss-comments` to the end of their profile url.
+Um einen Feed aller Kommentare zu erhalten, die jemand veröffentlicht, hänge der Profil-URL einfach `/rss-comments` an.
 
-So for user profile http://bookwyrm.social/user/mouse you can get an rss feed of all Comments at http://bookwyrm.social/user/mouse/rss-comments
+Für das Profil unter `http://bookwyrm.social/user/mouse` erhältst du den RSS-Feed der Kommentare also unter `http://bookwyrm.social/user/mouse/rss-comments`.
 
-### Shelves
+### Regale
 
-You might also want to get a feed of books being added to someone's bookshelves. You'll add `/rss` to the end of that bookshelf's url.
+Vielleicht möchtest du einen Feed der Bücher erhalten, die jemandes Regal hinzugefügt werden. Hänge hierzu der URL des Regals einfach `/rss` an.
 
-So for bookshelf https://bookwyrm.social/user/mouse/books/read you can get an RSS feed of all books added at https://bookwyrm.social/user/mouse/books/read/rss
+Für das Regal unter `https://bookwyrm.social/user/mouse/books/read` erhältst du den RSS-Feed also unter `https://bookwyrm.social/user/mouse/books/read/rss`.
