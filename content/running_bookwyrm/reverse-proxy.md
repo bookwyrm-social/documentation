@@ -108,3 +108,34 @@ If everything worked correctly, your BookWyrm instance should now be externally 
 *Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
 
 *Note: the location of the ssl certificates may vary depending on the OS of your server*
+
+
+#### Caddy
+
+[Caddy](https://caddyserver.com) is an alternative reverse-proxy server that is simple to use and can manage TLS certificate renewals and static file serving automatically. This guide assumes that you already have a Caddy server running and it has access to the bookwyrm docker network.
+
+To use Caddy instead of nginx as the Reverse-Proxy server, make the following changes:
+
+- In `nginx/default.conf`:
+    - Comment out the two default servers
+    - Uncomment the server labeled Reverse-Proxy server
+    - Replace `your-domain.com` with your domain name
+    
+- In `docker-compose.yml`:
+    - In `services` -> `nginx` -> `ports`, comment out the default ports and add `- 8001:8001`
+    - In `services` -> `nginx` -> `volumes`, comment out the two volumes that begin `./certbot/`
+    - In `services`, comment out the `certbot` service
+
+- In your Caddyfile add your bookwyrm subdomain:
+```Caddyfile
+your.domain {
+    reverse_proxy /images/* localhost:8001
+    reverse_proxy /static/* localhost:8001
+    reverse_proxy localhost:8000
+}
+``
+If you were to give `container_name`s to the `nginx` and `web` containers in `docker-compose.yml`, then you could comment out the `ports` sections and use the container names in place of `localhost`. This would secure the raw services from being accessible directly from the outside world.
+
+Caddy will set the headers needed by default for you so there is no further configuration necessary.
+
+It should also be possible to share the static and images volumes with caddy and use caddy's inbuilt file server to server these directly, but this is beyond the scope of this guide.
