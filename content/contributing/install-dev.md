@@ -29,7 +29,7 @@ cp .env.example .env
 
 ```{ .sh }
 ./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
-./bw-dev dev up --build -d    # Build and start development stack
+./bw-dev dev up --build       # Build and start development stack
 ./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
