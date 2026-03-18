@@ -131,7 +131,7 @@ Halte Übersetzungen konsistent, indem du sie regelmäßig von Crowdin aktualisi
 2. Crowdin pusht neue Übersetzungen nach `l10n_main`, wenn sie verfügbar sind
 3. in deinem Fork, pulle sowohl `main` als auch `l10n_main`, sodass dein lokales Repository aktuell ist
 4. erstelle einen neuen Branch, der von `main` abzweigt (z. B. mit dem Namen `update_locales`), und checke ihn aus
-5. merge das Verzeichnis `locale` vonn `l10n_main` in deinen Fork: `git checkout l10n_main -- locale`
+5. merge das Verzeichnis `locale` von `l10n_main` in deinen Fork: `git checkout l10n_main -- locale`
 6. nimm Änderungen vor, falls dies nötig ist
 7. pushe deinen lokalen Branch zu deinem entfernten Repository und erstelle eine Pull Request
 8. übernimm die Pull Request in `main`
