@@ -315,13 +315,12 @@ The static files are stored in a Docker volume that several BookWyrm services ac
 <ul>
 <li>In <code>.env</code>:<ul>
 <li>change <code>NGINX_SETUP=reverse_proxy</code></li>
-<li>set <code>PORT=8001</code></li>
-<li>set <code>USE_HTTPS=true</code> if your webserver in front of bookwyrm handles the https</li>
+<li>set <code>PORT=8001</code> or another port number of your choice</li>
 </ul>
 </li>
 </ul>
 <p>At this point, you can follow, the <a href="#server-setup">setup</a> instructions as listed.
-Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code> directly).</p>
+Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code> directly as this is handled by your proxy server).</p>
 <p>Steps for setting up a reverse-proxy are server dependent.</p>
 <h4 id="nginx"><a class="headerlink" href="#nginx">Nginx</a></h4>
 <p>Before you can set up nginx, you will need to locate your nginx configuration directory, which is dependent on your platform and how you installed nginx.
@@ -403,8 +402,8 @@ See <a href="http://nginx.org/en/docs/beginners_guide.html">nginx's guide</a> fo
 <li>restart nginx</li>
 </ul>
 <p>If everything worked correctly, your BookWyrm instance should now be externally accessible.</p>
-<p><em>Note: the <code>proxy_set_header Host $host;</code> is essential; if you do not include it, incoming messages from federated servers will be rejected.</em></p>
-<p><em>Note: the location of the ssl certificates may vary depending on the OS of your server</em></p>
+<p><em><strong>Note</strong>: the <code>proxy_set_header Host $host;</code> is essential; if you do not include it, incoming messages from federated servers will be rejected.</em></p>
+<p><em><strong>Note</strong>: the location of the ssl certificates may vary depending on the OS of your server*</em></p>
 </section>
 
             </section>
