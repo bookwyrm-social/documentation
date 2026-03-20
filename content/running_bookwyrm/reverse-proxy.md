@@ -14,11 +14,10 @@ To run BookWyrm behind a reverse-proxy, make the following changes:
 
 - In `.env`:
     - change `NGINX_SETUP=reverse_proxy`
-    - set `PORT=8001`
-    - set `USE_HTTPS=true` if your webserver in front of bookwyrm handles the https
+    - set `PORT=8001` or another port number of your choice
 
 At this point, you can follow, the [setup](#server-setup) instructions as listed.
-Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https` directly).
+Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https` directly as this is handled by your proxy server).
 
 Steps for setting up a reverse-proxy are server dependent.
 
@@ -105,6 +104,6 @@ server {
 
 If everything worked correctly, your BookWyrm instance should now be externally accessible.
 
-*Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
+_**Note**: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected._
 
-*Note: the location of the ssl certificates may vary depending on the OS of your server*
+_**Note**: the location of the ssl certificates may vary depending on the OS of your server*_
