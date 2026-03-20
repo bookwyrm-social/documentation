@@ -1,5 +1,5 @@
 - - -
-Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 4
+Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 5
 - - -
 
 ## Rularea BookWyrm în spatele unui Reverse-Proxy
@@ -9,16 +9,11 @@ Configurația BookWyrm de bază are deja un server nginx care redirecționează 
 
 Pentru a rula BookWyrm în spatele unui reverse-proxy, faceți următoarele schimbări:
 
-- În `nginx/default.conf`:
-    - Comentați cele două servere implicite
-    - Decomentați server-ul etichetat „Reverse-Proxy server”
-    - Înlocuiți `your-domain.com` cu numele domeniului dvs.
-- În `docker-compose.yml`:
-    - În `services` -> `nginx` -> `ports`, comentați porturile implicite și adăugați `- 8001:8001`
-    - În `services` -> `nginx` -> `volumes`, comentați cele două volume care încep `./certbot/`
-    - În `services`, comentați serviciul `certbot`
+- In `.env`:
+    - change `NGINX_SETUP=reverse_proxy`
+    - set `PORT=8001` or another port number of your choice
 
-În acest moment, puteți urmări instrucțiunile [setup](#server-setup) listate. Odată ce Docker rulează, puteți accesa instanța dvs. de BookWyrm la `http://localhost:8001` (**NOTĂ:** serverul dvs. nu este accesibil prin `https`).
+În acest moment, puteți urmări instrucțiunile [setup](#server-setup) listate. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https` directly as this is handled by your proxy server).
 
 Pașii pentru configurarea unui reverse-proxy sunt independenți de server.
 
@@ -36,7 +31,7 @@ server {
     server_name your-domain.com www.your-domain.com;
 
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
     }
@@ -81,7 +76,7 @@ server {
     server_name your.domain;
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
     }
@@ -104,7 +99,6 @@ server {
 
 Dacă totul a funcționat corect, instanța dvs. BookWyrm ar trebui să fie acum accesibilă din exterior.
 
-*Notă: `proxy_set_header Host $host;` este esențial; dacă nu-l includeți, mesajele primite de la serverele federate vor fi respinse.*
+_**Note**: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected._
 
-*Notă: locația certificatelor SSL poate varia în funcție de SO (sistemul de operare) al serverului dvs.*
-
+_**Note**: the location of the ssl certificates may vary depending on the OS of your server*_

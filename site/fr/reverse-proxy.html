@@ -3,7 +3,7 @@
 <head>
     <title>
         
-
+Using a Reverse-Proxy
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -144,10 +144,6 @@
         <ul class="menu-list has-background-inherit">
             
             <li>
-                <a href="/v0.8.2/fr/reverse-proxy.html" class="has-background-inherit" class="is-active"></a>
-            </li>
-            
-            <li>
                 <a href="/v0.8.2/fr/moderation.html" class="has-background-inherit" >Modération</a>
             </li>
             
@@ -165,6 +161,10 @@
             
             <li>
                 <a href="/v0.8.2/fr/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/v0.8.2/fr/reverse-proxy.html" class="has-background-inherit" class="is-active">Using a Reverse-Proxy</a>
             </li>
             
             <li>
@@ -903,7 +903,7 @@
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1"></h1>
+<h1 class="title is-1">Using a Reverse-Proxy</h1>
 
                 </header>
                 
@@ -913,20 +913,13 @@
 <p>La configuration par défaut de BookWyrm a déjà un serveur Nginx qui sert de proxy pour les requêtes vers l'application Django gérant le SSL et servant directement les fichiers statiques. Les fichiers statiques sont stockés dans un volume Docker accessible par plusieurs services BookWyrm, il est donc déconseillé de complétement retirer ce serveur.</p>
 <p>Pour faire fonctionner BookWyrm derrière un proxy inverse, les changements suivants doivent être faits :</p>
 <ul>
-<li>Dans <code>nginx/default.conf</code> :<ul>
-<li>Décommenter les deux blocs "server" par défaut</li>
-<li>Décommenter le bloc "server" nommé "Reverse-Proxy server"</li>
-<li>Remplacer <code>your-domain.com</code> par votre nom de domaine</li>
-</ul>
-</li>
-<li>Dans <code>docker-compose.yml</code> :<ul>
-<li>Dans <code>services</code> -&gt; <code>nginx</code> -&gt; <code>ports</code>, décommenter le port par défaut et ajouter <code>- 8001:8001</code></li>
-<li>Dans <code>services</code> -&gt; <code>nginx</code> -&gt; <code>volumes</code>, décommenter les deux volumes commançant par <code>./certbot/</code></li>
-<li>Dans <code>services</code>, décommenter le service <code>certbot</code></li>
+<li>In <code>.env</code>:<ul>
+<li>change <code>NGINX_SETUP=reverse_proxy</code></li>
+<li>set <code>PORT=8001</code> or another port number of your choice</li>
 </ul>
 </li>
 </ul>
-<p>À partir de là, il est possible de suivre <a href="#server-setup">les instructions d'installation</a> telles quelles. Une fois Docker lancé, il est possible d'accéder à l'instance BookWyrm à l'adresse <code>http://localhost:8001</code> (<strong>IMPORTANT:</strong> le serveur n'est pas accessible via <code>https</code>).</p>
+<p>À partir de là, il est possible de suivre <a href="#server-setup">les instructions d'installation</a> telles quelles. Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code> directly as this is handled by your proxy server).</p>
 <p>Les étapes pour configurer un proxy inverse dépendent du serveur.</p>
 <h4 id="nginx"><a class="headerlink" href="#nginx">Nginx</a></h4>
 <p>Avant de pouvoir configurer Nginx, il faudra trouver son dossier de configuration, qui dépend de la plateforme et de la manière dont Nginx a été installé. Voir <a href="http://nginx.org/en/docs/beginners_guide.html">le guide de Nginx</a> pour plus de détails.</p>
@@ -939,7 +932,7 @@
 <span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">your-domain.com</span><span class="w"> </span><span class="s">www.your-domain.com</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8000</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8001</span><span class="p">;</span>
 <span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
 <span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
@@ -983,7 +976,7 @@
 <span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">your.domain</span><span class="p">;</span>
 <span class="w">    </span><span class="kn">add_header</span><span class="w"> </span><span class="s">Strict-Transport-Security</span><span class="w"> </span><span class="s">&quot;max-age=31536000</span><span class="p">;</span><span class="w"> </span><span class="kn">includeSubDomains&quot;</span><span class="w"> </span><span class="s">always</span><span class="p">;</span>
 <span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8000</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8001</span><span class="p">;</span>
 <span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
 <span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
@@ -1007,8 +1000,8 @@
 <li>Redémarrer Nginx</li>
 </ul>
 <p>Si tout fonctionne correctement, l'instance BookWyrm devrait à présent être accessible depuis l'extérieur.</p>
-<p><em>Note : le <code>proxy_set_header Host $host;</code> est essentiel ; s'il n'est pas inclus, les messages en provenance des serveurs fédérés seront rejetés.</em></p>
-<p><em>Note : l'emplacement des certificats SSL peut varier selon le système d'exploitation de votre serveur</em></p>
+<p><em><strong>Note</strong>: the <code>proxy_set_header Host $host;</code> is essential; if you do not include it, incoming messages from federated servers will be rejected.</em></p>
+<p><em><strong>Note</strong>: the location of the ssl certificates may vary depending on the OS of your server*</em></p>
 </section>
 
             </section>
