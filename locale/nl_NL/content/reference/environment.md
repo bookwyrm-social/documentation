@@ -1,5 +1,5 @@
 ---
-Title: Environment Variables
+Title: Omgevingsvariabelen
 Date: 2025-04-28
 Order: 1
 ---

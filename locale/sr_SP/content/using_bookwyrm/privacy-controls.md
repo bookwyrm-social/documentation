@@ -32,10 +32,10 @@ The default option.
 
 - Anyone can see your status without logging in.
 - Your status will appear on:
-    - public timelines
-    - discovery pages.
-    - its related book's page.
-    - the home timeline of people who follow you
+  - public timelines
+  - discovery pages.
+  - its related book's page.
+  - the home timeline of people who follow you
 - Your status can be **boosted** into other people's home timelines.
 
 ### Unlisted
@@ -91,16 +91,16 @@ Shelves are Public by default, but you can edit them to make them only visible t
 
 - Свако може да види твоју [Листу](/lists.html) без потребе за логином.
 - Your List will appear on:
-    - the Lists discovery page (Lists tab).
-    - the pages of books that are in it, displayed on the side of the screen.
-    - your profile.
+  - the Lists discovery page (Lists tab).
+  - the pages of books that are in it, displayed on the side of the screen.
+  - your profile.
 - Anyone can 'save' (bookmark) your List.
 
 ### Unlisted
 
 - There is currently no difference between Public and Unlisted for Lists.
-    In the future, Unlisted will hide the List from the Lists discovery page and books pages.
-    For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) on GitHub.
+  In the future, Unlisted will hide the List from the Lists discovery page and books pages.
+  For details, see [#3265](https://github.com/bookwyrm-social/bookwyrm/issues/3265) on GitHub.
 
 ### Followers
 
