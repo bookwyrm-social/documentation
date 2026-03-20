@@ -187,11 +187,11 @@ Using a Reverse-Proxy
             </li>
             
             <li>
-                <a href="/ro/reverse-proxy.html" class="has-background-inherit" class="is-active">Using a Reverse-Proxy</a>
+                <a href="/ro/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
             </li>
             
             <li>
-                <a href="/ro/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+                <a href="/ro/reverse-proxy.html" class="has-background-inherit" class="is-active">Using a Reverse-Proxy</a>
             </li>
             
             <li>
@@ -908,20 +908,13 @@ Using a Reverse-Proxy
 <p>Configurația BookWyrm de bază are deja un server nginx care redirecționează cererile către aplicația Django care se ocupă de SSL și deservește în mod direct fișierele statice. Fișierele statice sunt stocate într-un volum Docker la care au acces mai multe servicii BookWrym, deci nu este recomandat să înlăturați complet acest server.</p>
 <p>Pentru a rula BookWyrm în spatele unui reverse-proxy, faceți următoarele schimbări:</p>
 <ul>
-<li>În <code>nginx/default.conf</code>:<ul>
-<li>Comentați cele două servere implicite</li>
-<li>Decomentați server-ul etichetat „Reverse-Proxy server”</li>
-<li>Înlocuiți <code>your-domain.com</code> cu numele domeniului dvs.</li>
-</ul>
-</li>
-<li>În <code>docker-compose.yml</code>:<ul>
-<li>În <code>services</code> -&gt; <code>nginx</code> -&gt; <code>ports</code>, comentați porturile implicite și adăugați <code>- 8001:8001</code></li>
-<li>În <code>services</code> -&gt; <code>nginx</code> -&gt; <code>volumes</code>, comentați cele două volume care încep <code>./certbot/</code></li>
-<li>În <code>services</code>, comentați serviciul <code>certbot</code></li>
+<li>In <code>.env</code>:<ul>
+<li>change <code>NGINX_SETUP=reverse_proxy</code></li>
+<li>set <code>PORT=8001</code> or another port number of your choice</li>
 </ul>
 </li>
 </ul>
-<p>În acest moment, puteți urmări instrucțiunile <a href="#server-setup">setup</a> listate. Odată ce Docker rulează, puteți accesa instanța dvs. de BookWyrm la <code>http://localhost:8001</code> (<strong>NOTĂ:</strong> serverul dvs. nu este accesibil prin <code>https</code>).</p>
+<p>În acest moment, puteți urmări instrucțiunile <a href="#server-setup">setup</a> listate. Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code> directly as this is handled by your proxy server).</p>
 <p>Pașii pentru configurarea unui reverse-proxy sunt independenți de server.</p>
 <h4 id="nginx"><a class="headerlink" href="#nginx">Nginx</a></h4>
 <p>Înainte de a putea configura nginx, veți avea nevoie să localizați dosarul dvs. de configurare nginx, care este dependent de platforma dvs. și de cum ați instalat nginx. Vedeți <a href="http://nginx.org/en/docs/beginners_guide.html">ghidul nginx</a> pentru detalii.</p>
@@ -934,7 +927,7 @@ Using a Reverse-Proxy
 <span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">your-domain.com</span><span class="w"> </span><span class="s">www.your-domain.com</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8000</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8001</span><span class="p">;</span>
 <span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
 <span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
@@ -978,7 +971,7 @@ Using a Reverse-Proxy
 <span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">your.domain</span><span class="p">;</span>
 <span class="w">    </span><span class="kn">add_header</span><span class="w"> </span><span class="s">Strict-Transport-Security</span><span class="w"> </span><span class="s">&quot;max-age=31536000</span><span class="p">;</span><span class="w"> </span><span class="kn">includeSubDomains&quot;</span><span class="w"> </span><span class="s">always</span><span class="p">;</span>
 <span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8000</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:8001</span><span class="p">;</span>
 <span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
 <span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
@@ -1002,8 +995,8 @@ Using a Reverse-Proxy
 <li>reporniți nginx</li>
 </ul>
 <p>Dacă totul a funcționat corect, instanța dvs. BookWyrm ar trebui să fie acum accesibilă din exterior.</p>
-<p><em>Notă: <code>proxy_set_header Host $host;</code> este esențial; dacă nu-l includeți, mesajele primite de la serverele federate vor fi respinse.</em></p>
-<p><em>Notă: locația certificatelor SSL poate varia în funcție de SO (sistemul de operare) al serverului dvs.</em></p>
+<p><em><strong>Note</strong>: the <code>proxy_set_header Host $host;</code> is essential; if you do not include it, incoming messages from federated servers will be rejected.</em></p>
+<p><em><strong>Note</strong>: the location of the ssl certificates may vary depending on the OS of your server*</em></p>
 </section>
 
             </section>

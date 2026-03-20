@@ -1,5 +1,5 @@
 - - -
-Título: Utilizando un Proxy Inverso Fecha: 2021-05-11 Orden: 4
+Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 5
 - - -
 
 ## Ejecutar BookWyrm detrás de un Proxy Inverso
@@ -9,16 +9,11 @@ La configuración predeterminada de BookWyrm ya tiene un servidor nginx que env�
 
 Para ejecutar BookWyrm detrás de un proxy inverso, haz los siguientes cambios:
 
-- En `nginx/default.conf`:
-    - Comentar los dos servidores por defecto
-    - Descomentar el servidor etiquetado como 'Reverse-Proxy'
-    - Reemplaza `your-domain.com` con tu nombre de dominio
-- En `docker-compose.yml`:
-    - En `services` -> `nginx` -> `ports`, comenta los puertos por defecto y agrega `- 8001:8001`
-    - En `services` -> `nginx` -> `volumes`, comento los dos volúmenes que empiecen con `./certbot/`
-    - En `services`, comenta el servicio `certbot`
+- In `.env`:
+    - change `NGINX_SETUP=reverse_proxy`
+    - set `PORT=8001` or another port number of your choice
 
-En este punto, puedes seguir, las instrucciones de [configuración](#server-setup) tal y como se listan. Una vez que docker se esté ejecutando, puedes acceder a tu instancia de BookWyrm en `http://localhost:8001` (**NOTA:** tu servidor no es accesible a través de `https`).
+En este punto, puedes seguir, las instrucciones de [configuración](#server-setup) tal y como se listan. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https` directly as this is handled by your proxy server).
 
 Los pasos para configurar un proxy inverso son dependientes del servidor.
 
@@ -36,7 +31,7 @@ server {
     server_name your-domain.com www.your-domain.com;
 
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
     }
@@ -81,7 +76,7 @@ server {
     server_name your.domain;
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
     }
@@ -104,7 +99,6 @@ server {
 
 Si todo funciona correctamente, ahora tu instancia de BookWyrm debería ser accesible externamente.
 
-*Nota: el servidor `proxy_set_header $host;` es esencial; si no lo incluyes, los mensajes entrantes de servidores federados serán rechazados.*
+_**Note**: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected._
 
-*Nota: la ubicación de los certificados ssl puede variar dependiendo del sistema operativo de tu servidor.*
-
+_**Note**: the location of the ssl certificates may vary depending on the OS of your server*_

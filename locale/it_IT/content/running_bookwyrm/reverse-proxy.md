@@ -1,5 +1,5 @@
 - - -
-Titolo: Usare un Proxy inverso Data: 2021-05-11 Ordine: 4
+Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 5
 - - -
 
 ## Avvio di BookWyrm Dietro un Proxy inverso
@@ -9,16 +9,11 @@ La configurazione predefinita di BookWyrm ha già un server nginx che i proxy ri
 
 Per eseguire BookWyrm dietro un proxy inverso, effettuare le seguenti modifiche:
 
-- In `nginx/default.conf`:
-    - Commenta i due server predefiniti
-    - Annulla il commento del server etichettato Server Reverse-Proxy
-    - Sostituisci `your-domain.com` con il tuo nome di dominio
-- In `docker-compose.yml`:
-    - In `services` -> `nginx` -> `ports`, commenta le porte predefinite e aggiungi `- 8001:8001`
-    - Nei servizi `` -> `nginx` -> `volumi`commenta i due volumi che iniziano `./certbot/`
-    - In `services`, commenta il servizio `certbot`
+- In `.env`:
+    - change `NGINX_SETUP=reverse_proxy`
+    - set `PORT=8001` or another port number of your choice
 
-A questo punto, puoi seguire, le istruzioni di configurazione [](#server-setup) come elencate. Una volta avviato il docker, puoi accedere alla tua istanza BookWyrm su `http://localhost:8001` (**NOTA:** il tuo server non è accessibile su `https`).
+A questo punto, puoi seguire, le istruzioni di configurazione [](#server-setup) come elencate. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https` directly as this is handled by your proxy server).
 
 I passaggi per configurare un proxy inverso dipendono dal server.
 
@@ -33,10 +28,10 @@ Per configurare il server:
 
 ``` { .nginx }
 server {
-    server_name your-domain.com www.your-domain. om;
+    server_name your-domain.com www.your-domain.com;
 
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
     }
@@ -53,35 +48,35 @@ server {
         proxy_set_header Host $host;
     }
 
-    ascolta [::]:80 ssl;
-    ascolta 80 ssl;
+    listen [::]:80 ssl;
+    listen 80 ssl;
 }
 ```
 
 Per impostare con un blocco ssl:
 ``` { .nginx }
 server {
-    server_name your. omain;
+    server_name your.domain;
 
     listen [::]:80;
     listen 80;
-    add_header Strict-Transport-Security "max-age=31536000; ncludeSubDomains" sempre;
-    riscrivere ^ ↓ ://$server_name$request_uri;
-    location / { return 301 ↓ ://$host$request_uri; }
+    add_header Strict-Transport-Security "max-age=31536000;includeSubDomains" always;
+    rewrite ^ https://$server_name$request_uri;
+    location / { return 301 https://$host$request_uri; }
 }
 
-# Codice SSL
-ssl_certificate /etc/letsencrypt/live/your. omain/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey. em;
+# SSL code
+ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem;
 
 server {
     listen [::]:443 ssl http2;
-    ascolta 443 ssl http2;
+    listen 443 ssl http2;
 
-    server_name tuo. omain;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" sempre;
+    server_name your.domain;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
     }
@@ -104,7 +99,6 @@ server {
 
 Se tutto funzionava correttamente, ora la tua istanza BookWyrm dovrebbe essere accessibile esternamente.
 
-*Nota: l'host `proxy_set_header $host;` è essenziale; se non lo includi, i messaggi in arrivo da server federati saranno rifiutati.*
+_**Note**: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected._
 
-*Nota: la posizione dei certificati ssl può variare a seconda del sistema operativo del server*
-
+_**Note**: the location of the ssl certificates may vary depending on the OS of your server*_
