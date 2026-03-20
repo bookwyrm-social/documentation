@@ -1,5 +1,5 @@
 - - -
-Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 4
+Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 5
 - - -
 
 ## Running BookWyrm Behind a Reverse-Proxy
@@ -9,16 +9,11 @@ The default BookWyrm configuration already has an nginx server that proxies requ
 
 To run BookWyrm behind a reverse-proxy, make the following changes:
 
-- In `nginx/default.conf`:
-    - Comment out the two default servers
-    - Uncomment the server labeled Reverse-Proxy server
-    - Replace `your-domain.com` with your domain name
-- In `docker-compose.yml`:
-    - In `services` -> `nginx` -> `ports`, comment out the default ports and add `- 8001:8001`
-    - In `services` -> `nginx` -> `volumes`, comment out the two volumes that begin `./certbot/`
-    - In `services`, comment out the `certbot` service
+- In `.env`:
+    - change `NGINX_SETUP=reverse_proxy`
+    - set `PORT=8001` or another port number of your choice
 
-At this point, you can follow, the [setup](#server-setup) instructions as listed. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https`).
+At this point, you can follow, the [setup](#server-setup) instructions as listed. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https` directly as this is handled by your proxy server).
 
 Steps for setting up a reverse-proxy are server dependent.
 
@@ -32,12 +27,11 @@ To set up your server:
 - In your nginx `servers` directory, create a new file named after your domain containing the following information:
 
 ``` { .nginx }
-:::nginx linenums=false
 server {
     server_name your-domain.com www.your-domain.com;
 
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
     }
@@ -61,8 +55,6 @@ server {
 
 To set up with an ssl block:
 ``` { .nginx }
-:::nginx linenums=false
-
 server {
     server_name your.domain;
 
@@ -84,7 +76,7 @@ server {
     server_name your.domain;
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
     }
@@ -107,7 +99,6 @@ server {
 
 If everything worked correctly, your BookWyrm instance should now be externally accessible.
 
-*Note: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected.*
+_**Note**: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected._
 
-*Note: the location of the ssl certificates may vary depending on the OS of your server*
-
+_**Note**: the location of the ssl certificates may vary depending on the OS of your server*_
