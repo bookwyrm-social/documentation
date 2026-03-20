@@ -257,44 +257,54 @@ Developer Environment
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 </code></pre></div>
 
-<h3 id="configure-your-environment-settings"><a class="headerlink" href="#configure-your-environment-settings">Configure your environment settings</a></h3>
-<p>In <code>.env</code>:</p>
-<ol start="4">
-<li>change <code>DEBUG</code> to <code>true</code></li>
-<li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>). Otherwise, set <code>DOMAIN</code> to <code>localhost</code></li>
-<li>change <code>NGINX_SETUP</code> to <code>reverse_proxy</code> (this prevents BookWyrm trying to set up https certificates on your development machine)</li>
-<li>If you need to use a particular port (e.g. if you are tunneling via ngrok), uncomment <code>PORT</code> and set it (e.g. <code>PORT=1333</code>). If using <code>localhost</code> this is optional.</li>
-</ol>
-<p>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding.</p>
-<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code> you may have set your domain or port incorrectly.</p>
-<h3 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h3>
-<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate real values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>.</p>
 <h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
-<ol start="8">
+<ol>
 <li>În linia de comandă, rulați:</li>
 </ol>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>build<span class="w">            </span><span class="c1"># Build the docker images</span>
-./bw-dev<span class="w"> </span>setup<span class="w">            </span><span class="c1"># Initialize the database and run migrations. Note the ADMIN key at the end of this output. You&#39;ll need it to register the first admin user.</span>
-./bw-dev<span class="w"> </span>up<span class="w">               </span><span class="c1"># Start the docker containers</span>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>create_secrets<span class="w">       </span><span class="c1"># Create the secrets file with random values. You only need to do this once.</span>
+./bw-dev<span class="w"> </span>dev<span class="w"> </span>up<span class="w"> </span>--build<span class="w">       </span><span class="c1"># Build and start development stack</span>
+./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>admin_code<span class="w">       </span><span class="c1"># Shows the admin-code for initial setup. You only need to do this once.</span>
 </code></pre></div>
 
-<ol start="9">
-<li>Once the build is complete, you can access the instance at <code>http://localhost</code>, your ngrok domain, or <code>http://localhost:{PORT}</code>, depending on you domain and port configuration.</li>
+<ol>
+<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>.</li>
 <li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
 </ol>
 <p>Dacă sunteți curios: comanda <code>./bw-dev</code> este un simplu script shell care rulează multe alte comenzi: deasupra, ați putea sări peste ea și rula <code>docker-compose build</code> sau <code>docker-compose up</code> direct dacă doriți. <code>./bw-dev</code> doar le colectează într-un singur loc pentru conveniență. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
 <h2 id="editati-sau-configurati-modele"><a class="headerlink" href="#editati-sau-configurati-modele">Editați sau configurați modele</a></h2>
 <p>Dacă schimbați sau creați un model, veți schimba probabil structura bazei de date. Pentru ca aceste schimbă să aibă efect va trebui să rulați comanda Django <code>makemigrations</code> pentru a crea un nou <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">fișier de migrare Django</a> și apoi <code>migrate</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
-./bw-dev<span class="w"> </span>migrate
+./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
 </code></pre></div>
 
 <h2 id="editati-fisiere-statice"><a class="headerlink" href="#editati-fisiere-statice">Editați fișiere statice</a></h2>
 <p>De fiecare dată când editați CSS sau JavaScript, va trebui să rulați comanda Django <code>collectstatic</code> pentru ca schimbările dvs. să aibă efect:</p>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>collectstatic
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <p>Dacă aveți <a href="https://yarnpkg.com/getting-started/install">yarn instalat</a>, puteți rula <code>yarn watch:static</code> pentru a rula automat scriptul precedent de fiecare dată când o schimbare are loc în dosarul <code>bookwyrm/static</code>.</p>
+<h2 id="run-code-linters-and-formatters"><a class="headerlink" href="#run-code-linters-and-formatters">Run code-linters and formatters</a></h2>
+<p>Before submitting patch, you should check ruff and other formatting tools. For those to work nicely, you should make sure you have development web-container and dev-tools build.</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>build<span class="w"> </span><span class="c1"># This is needed only once, if you haven&#39;t run dev stack previously</span>
+./bw-dev<span class="w"> </span>dev<span class="w"> </span>build<span class="w"> </span>dev-tools<span class="w"> </span><span class="c1"># This is needed only once and if you change pyproject.toml or Dockerfile</span>
+</code></pre></div>
+
+<p>After those commands, you can run formatters and pytest and mypy with bw-dev command:</p>
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>formatters
+./bw-dev<span class="w"> </span>mypy
+./bw-dev<span class="w"> </span>pytest
+</code></pre></div>
+
+<h2 id="run-development-code-behind-ngrok-or-other-tunnelingproxy-service"><a class="headerlink" href="#run-development-code-behind-ngrok-or-other-tunnelingproxy-service">Run development code behind ngrok or other tunneling/proxy service</a></h2>
+<p>In <code>.env.dev</code>:</p>
+<ol>
+<li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>).</li>
+<li>If you need to use a particular port other than 1333, change PORT to wanted port (e.g. <code>PORT=1333</code>).</li>
+</ol>
+<p>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding.</p>
+<p>If you try to register your admin account and see a message that <code>CSRF verification failed</code> you may have set your domain or port incorrectly.</p>
+<h2 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h2>
+<p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate real values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>. These settings are in <code>.env</code> -file</p>
 </section>
 
             </section>
