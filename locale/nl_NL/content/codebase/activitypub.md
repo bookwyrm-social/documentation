@@ -1,5 +1,5 @@
 - - -
-Title: ActivityPub Date: 2025-04-21 Order: 1
+Titel: ActivityPub Datum: 2025-04-21 Volgorde: 1
 - - -
 
 BookWyrm maakt gebruik van het [ActivityPub](http://activitypub.rocks/) protocol voor het verzenden en ontvangen van gebruikersactiviteit tussen andere BookWyrm instanties en andere diensten die ActivityPub implementeren zoals [Mastodon](https://joinmastodon.org/). Om gegevens van boeken te verwerken heeft BookWyrm een handvol uitgebreide activiteitstypen die niet deel zijn van de standaard, maar leesbaar zijn voor andere BookWyrm instanties.

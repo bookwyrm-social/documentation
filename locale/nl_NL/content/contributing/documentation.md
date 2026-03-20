@@ -1,18 +1,18 @@
 ---
-Title: Documentation
+Title: Documentatie
 Date: 2025-04-09
 Order: 4
 ---
 
-The documentation you are reading right now is maintained by the BookWyrm community. Anyone can contribute to the docs.
+Deze documentatie wordt onderhouden door de BookWyrm-community. Iedereen kan bijdragen aan de documentatie.
 
-## Suggesting an improvement
+## Een verbetering voorstellen
 
 You can report an **error**, suggest an **improvement** or request an **addition** to the documentation by [creating an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) in [the documentation repository](https://github.com/bookwyrm-social/documentation).
 
-## How the docs are made
+## Hoe de documentatie gemaakt wordt
 
-The Documentation [has its own GitHub repository](https://github.com/bookwyrm-social/documentation). Documentation is written in Markdown and we use [Jinja](https://jinja.palletsprojects.com/en/stable) and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).
+De documentatie heeft een [eigen GitHub-repository](https://github.com/bookwyrm-social/documentation). Documentation is written in Markdown and we use [Jinja](https://jinja.palletsprojects.com/en/stable) and a Python script to convert that into HTML. A Jinja plugin is used with Crowdin to create translations. All documentation source files should be written in English (US).
 
 All source files are saved in the `content` directory. Each section has a directory within that, with each page being represented by a single markdown file.
 
@@ -144,10 +144,7 @@ Locales for the language dropdown are listed in `i18n.py`. Generally we wait for
 
 When a new version of BookWyrm is released we need to create a new version of the docs:
 
-1. Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. `v0.8.0`.
-
-2. Add that branch name to the list of versions in `generate.py` in the `main` branch of the docs
-
-3. Check out every other version in turn, and merge the updated generation file into it so they all have the new branch listed: `git checkout main generate.py`. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.
-
-4. Merge the change in the `main` branch last - only merges into `main` trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect.
+1. Add a new branch with a name exactly matching the new version tag in BookWyrm. e.g. `v0.x.y`.
+2. Add that branch name to the list of versions in `generate.py`, and push your new branch to the repository.
+3. Check out every other version in turn, and merge the updated `generate.py` file into it so they all have the new branch listed: `git checkout v0.x.y generate.py`. Then commit this change, create a PR to merge this change into the version's branch in the docs, and merge it. This will ensure that all pages in all versions of the docs have every other version listed in the dropdown menu.
+4. Merge the new `generate.py` in the `main` branch last - only merges into `main` trigger the GitHub action to deploy to the docs web server so if you do this first, the changes in other branches will have no effect until next time you update `main`.

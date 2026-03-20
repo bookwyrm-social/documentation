@@ -12,8 +12,11 @@ To see your Lists, click 'Your Lists' below the title or navigate to your profil
 ## إنشاء قائمة
 
 To create a List, first select the 'Create List' button on the top right of the page.
-It needs a name, and you can optionally add a description.
-You will then choose how you'd like to curate the List.
+
+You can also create a new list from the **Lists** section in the sidebar of a book page. From the dropdown list select "Create new list...".
+
+When prompted, enter a list name, and you can optionally add a description.
+You will then choose how you would like to curate the List.
 
 ## List curation
 
@@ -34,10 +37,12 @@ Lists have similar privacy levels as other things in Bookwyrm: Public, Unlisted,
 يمكنك إضافة كتب إلى أي قائمة تملكها، قوائم "مفتوحة" وقوائم المجموعات التي تحميها مجموعات من المجموعات التي أنت جزء منها.
 You can also suggest books to "Curated" Lists in the exact same way.
 
-هناك قائمة جانبية (في أسفل الجوال) بعنوان "إضافة الكتب" أو "اقتراح الكتب".
+In the List page there is a side menu (at the bottom on mobile) titled "Add books" or "Suggest books".
 ويظهر الكتب التي تفاعلت معها مؤخرا على Bookwyrm و شريط البحث.
 حاليا يقتصر البحث على عناوين الكتب (انظر المشكلة [#3607](https://github.com/bookwyrm-social/bookwyrm/issues/3607)).
 Once you find the one you want, use the 'Add' button to add it to the List.
+
+Alternatively, if you are on a book page, there is a side menu titled "Lists". From here you can select the list you want to add the book to using the dropdown menu under "Add to list", and pressing "Add".
 
 ### الملاحظات
 
