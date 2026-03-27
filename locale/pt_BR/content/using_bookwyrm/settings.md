@@ -17,19 +17,19 @@ Você pode controlar sua conta e as configurações do seu perfil ativando o men
 
 ### Exibição
 
-- Choose whether to show reading goal prompt in feed
-- Choose whether to show ratings in reviews, or have them hidden behind a toggle by default
-- Choose whether BookWyrm should suggest users to follow
-- Choose whether BookWyrm can suggest your user account to others
-- Select your timezone - this affects the time stamps displayed to you
-- Select your user interface language
-- Select a theme - different instances will have different options, by default there are BookWyrm light and dark themes
+- Escolher se quer mostrar a meta de leitura no feed
+- Escolher se quer que avaliações mostrem notas, ou se quer as manter ocultas por padrão, as exibindo apenas ao clicar
+- Escolher se o BookWyrm deve sugerir usuários para seguir
+- Escolher se o BookWyrm pode sugerir sua conta para outros usuários
+- Escolher seu fuso horário - isso afeta os horários exibidos para você
+- Escolher o idioma da interface
+- Escolher um tema - instâncias diferentes tem opções diferentes. Por padrão, há os temas claros e escuros do BookWyrm
 
 ### Privacidade
 
-- Escolha se seguidores devem ser aprovados por você antes de seguirem sua conta
-- Escolha se quer ocultar seus seguidores e seguindo em seu perfil
-- Escolha sua privacidade padrão de posts. Encontre [mais detalhes sobre o que a privacidade de posts significa](/privacy-controls.html) na página de Controles de privacidade
+- Escolher se seguidores devem ser aprovados por você antes de seguirem sua conta
+- Escolher se quer ocultar seus seguidores e seguindo em seu perfil
+- Escolher sua privacidade padrão de posts. Encontre [mais detalhes sobre o que a privacidade de posts significa](/privacy-controls.html) na página de Controles de privacidade
 
 ## Trocar Senha
 
