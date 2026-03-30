@@ -173,6 +173,35 @@ Documentation
             
         </ul>
         
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/pl/contributing.html" class="has-background-inherit" >Udzielanie się</a>
+            </li>
+            
+            <li>
+                <a href="/pl/translation.html" class="has-background-inherit" >Tłumaczenia</a>
+            </li>
+            
+            <li>
+                <a href="/pl/documentation.html" class="has-background-inherit" class="is-active">Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/pl/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+        </ul>
+        
         <h2 class="menu-label">Running BookWyrm</h2>
         <ul class="menu-list has-background-inherit">
             
@@ -193,11 +222,11 @@ Documentation
             </li>
             
             <li>
-                <a href="/pl/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+                <a href="/pl/moderation.html" class="has-background-inherit" >Moderacja</a>
             </li>
             
             <li>
-                <a href="/pl/moderation.html" class="has-background-inherit" >Moderacja</a>
+                <a href="/pl/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
             </li>
             
             <li>
@@ -205,11 +234,11 @@ Documentation
             </li>
             
             <li>
-                <a href="/pl/external-storage.html" class="has-background-inherit" >External Storage</a>
+                <a href="/pl/optional_features.html" class="has-background-inherit" >Optional features</a>
             </li>
             
             <li>
-                <a href="/pl/optional_features.html" class="has-background-inherit" >Optional features</a>
+                <a href="/pl/external-storage.html" class="has-background-inherit" >External Storage</a>
             </li>
             
             <li>
@@ -218,35 +247,6 @@ Documentation
             
             <li>
                 <a href="/pl/management-commands.html" class="has-background-inherit" >Management Commands</a>
-            </li>
-            
-        </ul>
-        
-        <h2 class="menu-label">Contributing</h2>
-        <ul class="menu-list has-background-inherit">
-            
-            <li>
-                <a href="/pl/contributing.html" class="has-background-inherit" >Udzielanie się</a>
-            </li>
-            
-            <li>
-                <a href="/pl/translation.html" class="has-background-inherit" >Tłumaczenia</a>
-            </li>
-            
-            <li>
-                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
-                <a href="/pl/documentation.html" class="has-background-inherit" class="is-active">Documentation</a>
-            </li>
-            
-            <li>
-                <a href="/pl/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
-            </li>
-            
-            <li>
-                <a href="/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -399,9 +399,9 @@ Documentation
 <h2 id="new-pages"><a class="headerlink" href="#new-pages">New pages</a></h2>
 <p>If you are adding a new page, you will need to add some metadata and may need to adjust other pages.</p>
 <p>At the top of each markdown file is the "frontmatter" in <code>toml</code> format:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="p">:</span><span class="w"> </span><span class="n">Documentation</span>
-<span class="n">Date</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
-<span class="n">Order</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="err">:</span><span class="w"> </span><span class="n">Documentation</span>
+<span class="n">Date</span><span class="err">:</span><span class="w"> </span><span class="n">2025-04-09</span>
+<span class="n">Order</span><span class="err">:</span><span class="w"> </span><span class="n">4</span>
 </code></pre></div>
 
 <p>This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, <code>Contributing</code>), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.</p>

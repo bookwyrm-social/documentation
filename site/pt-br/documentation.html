@@ -119,7 +119,7 @@ Documentação
             </li>
             
             <li>
-                <a href="/pt-br/settings.html" class="has-background-inherit" >Settings and Profile</a>
+                <a href="/pt-br/settings.html" class="has-background-inherit" >Configurações e Perfil</a>
             </li>
             
             <li>
@@ -173,55 +173,6 @@ Documentação
             
         </ul>
         
-        <h2 class="menu-label">Running BookWyrm</h2>
-        <ul class="menu-list has-background-inherit">
-            
-            <li>
-                <a href="/pt-br/install-prod.html" class="has-background-inherit" >Installing in Production</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/updating.html" class="has-background-inherit" >Updating Your Instance</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/external-storage.html" class="has-background-inherit" >External Storage</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/optional_features.html" class="has-background-inherit" >Optional features</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/cli.html" class="has-background-inherit" >Command Line Tool</a>
-            </li>
-            
-            <li>
-                <a href="/pt-br/management-commands.html" class="has-background-inherit" >Management Commands</a>
-            </li>
-            
-        </ul>
-        
         <h2 class="menu-label">Contributing</h2>
         <ul class="menu-list has-background-inherit">
             
@@ -242,11 +193,60 @@ Documentação
             </li>
             
             <li>
-                <a href="/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+                <a href="/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
             <li>
-                <a href="/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/pt-br/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/optional_features.html" class="has-background-inherit" >Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+            <li>
+                <a href="/pt-br/management-commands.html" class="has-background-inherit" >Management Commands</a>
             </li>
             
         </ul>
@@ -399,9 +399,9 @@ Documentação
 <h2 id="novas-paginas"><a class="headerlink" href="#novas-paginas">Novas páginas</a></h2>
 <p>Se estiver adicionando uma nova página, você precisará adicionar alguns metadados, e pode precisar ajustar outras páginas.</p>
 <p>No topo de cada arquivo markdown está o "frontmatter" em formato <code>toml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Título</span><span class="p">:</span><span class="w"> </span><span class="n">Documentação</span>
-<span class="n">Data</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
-<span class="n">Ordem</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<div class="highlight"><pre><span></span><code><span class="n">T</span><span class="err">í</span><span class="n">tulo</span><span class="err">:</span><span class="w"> </span><span class="n">Documenta</span><span class="err">çã</span><span class="n">o</span>
+<span class="n">Data</span><span class="err">:</span><span class="w"> </span><span class="n">2025-04-09</span>
+<span class="n">Ordem</span><span class="err">:</span><span class="w"> </span><span class="n">4</span>
 </code></pre></div>
 
 <p>Esse exemplo mostra que a página é chamada "Documentação", deve ser a quarta página dentro de sua seção (neste caso, <code>Contribuindo</code>), e que a última atualização foi em 9 de Abril de 2025. Se você adicionar uma página em qualquer lugar que não seja no fim de uma seção, você vai precisar ajustar a ordem das outras páginas que aparecerem abaixo de sua nova página.</p>

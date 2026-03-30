@@ -173,6 +173,39 @@ ActivityPub
             
         </ul>
         
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/codereview.html" class="has-background-inherit" >Code Review</a>
+            </li>
+            
+        </ul>
+        
         <h2 class="menu-label">Running BookWyrm</h2>
         <ul class="menu-list has-background-inherit">
             
@@ -210,39 +243,6 @@ ActivityPub
             
             <li>
                 <a href="/management-commands.html" class="has-background-inherit" >Management Commands</a>
-            </li>
-            
-        </ul>
-        
-        <h2 class="menu-label">Contributing</h2>
-        <ul class="menu-list has-background-inherit">
-            
-            <li>
-                <a href="/contributing.html" class="has-background-inherit" >How to Contribute</a>
-            </li>
-            
-            <li>
-                <a href="/translation.html" class="has-background-inherit" >Translations</a>
-            </li>
-            
-            <li>
-                <a href="/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
-                <a href="/documentation.html" class="has-background-inherit" >Documentation</a>
-            </li>
-            
-            <li>
-                <a href="/install-dev.html" class="has-background-inherit" >Developer Environment</a>
-            </li>
-            
-            <li>
-                <a href="/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
-            </li>
-            
-            <li>
-                <a href="/codereview.html" class="has-background-inherit" >Code Review</a>
             </li>
             
         </ul>
@@ -398,7 +398,7 @@ ActivityPub
 <p>This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. This is how we process <strong>outgoing</strong> ActivityPub objects.</p>
 <h3 id="example-users"><a class="headerlink" href="#example-users">Example - Users</a></h3>
 <p>A BookWyrm user <a href="https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py">is defined in <code>models/user.py</code></a>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;a user who wants to read books&quot;&quot;&quot;</span>
 </code></pre></div>
 
@@ -410,7 +410,7 @@ ActivityPub
 
 <p>The data class definition for <code>activitypub.Person</code> is at <code>/activitypub/person.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">ActivityObject</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">(</span><span class="n">ActivityObject</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;actor activitypub json&quot;&quot;&quot;</span>
 
     <span class="n">preferredUsername</span><span class="p">:</span> <span class="nb">str</span>
