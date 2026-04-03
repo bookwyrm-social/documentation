@@ -15,14 +15,14 @@ Ensure you are aware of and agree to our [Code of Conduct](https://github.com/bo
 Please note that the BookWyrm project is licensed under the [Anti-capitalist Software License](https://github.com/bookwyrm-social/bookwyrm/blob/main/LICENSE.md). This license will apply to any contributions you make.
 
 ### Generative "AI"
-Meaningful human interaction is the whole point of BookWyrm. We do not accept AI-generated code or documentation. If you unsure how something in BookWyrm works, please ask for help – we are keen to help other humans to understand and contribute to the project.
+Meaningful human interaction is the whole point of BookWyrm. We do not accept AI-generated code or documentation. If you are unsure how something in BookWyrm works, please ask for help – we are keen to help other humans to understand and contribute to the project.
 
 ## Where to ask for and offer help
 
 ### Matrix
 If you have a question or suggestion about anything to do with BookWyrm, the best place for a quick response is [our Matrix chat room](https://app.element.io/#/room/#bookwyrm:matrix.org).
 
-If you are a maintainer of a BookWyrm server (aka "instance"), you can also ask to join the Matrix chat room specifically for instance admins.
+If you are a maintainer of a BookWyrm server (aka "instance"), you can also ask to join the additional Matrix chat room specifically for instance admins.
 
 ### GitHub
 You can create a GitHub issue to [improve our documentation](https://github.com/bookwyrm-social/documentation/issues), or to [report a bug or request a new feature in the main project](https://github.com/bookwyrm-social/bookwyrm).
@@ -32,11 +32,9 @@ You can create a GitHub issue to [improve our documentation](https://github.com/
 There are many ways you can contribute to this project, regardless of your technical or coding expertise.
 
 ### Report things that are confusing
-We want BookWyrm to be a fun experience that is intuitive to understand. If you're confused by something, it's probably because it is confusing! We are always keen to improve our [documentation](https://docs.joinbookwyrm.com) and Guided Tour as well as the platform itself.
+We want BookWyrm to be a fun experience that is intuitive to understand. If you're confused by something, it's probably because it is confusing! You can help improve our [documentation](https://docs.joinbookwyrm.com) and Guided Tour as well as the platform itself.
 
 ### Report bugs
-Sometimes things don't work the way we intended. We would love to have fewer bugs, but we can only fix them if we know about them.
-
 You can [report bugs](https://github.com/bookwyrm-social/bookwyrm/issues) by clicking "New Issue". The more information you can provide, the easier it will be to understand the problem and squash that bug!
 
 It's a good idea to search the Issues for key words associated with your bug first because someone else may have already reported it.
@@ -57,7 +55,7 @@ Check out the [Guide to the developer environment](https://docs.joinbookwyrm.com
 ### Create and update documentation
 Good documentation is crucial so that people know how to use, contribute to, and administer BookWyrm. No matter how you are involved with BookWyrm, your perspective is valuable and you can contribute to our documentation. Find out more about [how you can contribute to the docs](/contributing/documentation.html).
 
-### Translate BookWyrm into international languages
+### Translate BookWyrm
 Books are written in many languages, and BookWyrm should be too. If you know more than one language, you might be able to help us to [translate BookWyrm](https://translate.joinbookwyrm.com/). Find out [more about translation](/translation.html).
 
 ### Test draft versions
