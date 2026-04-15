@@ -2,7 +2,7 @@
 Title: How to Contribute Date: 2025-04-9 Order: 1
 - - -
 
-## Before you start
+## Voordat u begint
 
 Our goal is to make BookWyrm a kind and welcoming place where everyone can contribute to the success of the project.
 
