@@ -15,20 +15,23 @@ _If you are contributing to BookWyrm in a dockerless development environment we 
 1. Eskura ezazu [GitHub-etik BookWyrm-en kode-basea](https://github.com/bookwyrm-social/bookwyrm). Paketearen [fork bat sortu](https://docs.github.com/en/get-started/quickstart/fork-a-repo) dezakezu, ondotik [erabili `git clone` kodea deskargatzeko](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) zure ordenagailuan.
 2. Joan zure ordenagailuko kodea duen direktoriora, orain direktorio honetatik lan egingo duzu.
 3. Development occurs on the `main` branch, so ensure that is the branch you have checked out: `git checkout main`
-4. Konfigura ezazu zure garapen-inguruneko aldagaien artxiboa, inguruneko adibide-fitxategia (`.env.example`) `.env` izeneko fitxategi berri batean kopiatuz. Komando-lerroan, hori egin dezakezu idatziz:
+4. Set up your development environment variables file by copying the example environment files (`.env.example` and `.env.dev.example`) into new files named `.env` and `env.dev`. Komando-lerroan, hori egin dezakezu idatziz:
 
 ```{ .sh }
 cp .env.example .env
+cp .env.dev.example .env.dev
 ```
+
+Most environment variables are set in the `.env` file, used in production, but for some development workflows that is overridden by the `env.dev` file. When developing for BookWyrm, you will need both files.
 
 ### Build and run
 
 1. Komando-lerroan, exekutatu:
 
 ```{ .sh }
-./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
-./bw-dev dev up --build       # Build and start development stack
-./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev create_secrets # Create the secrets file with random values. You only need to do this once.
+./bw-dev dev up --build # Build and start development stack
+./bw-dev rundev python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
 1. Once the build is complete, you can access the instance at `http://localhost:1333`.
