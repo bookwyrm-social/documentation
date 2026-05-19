@@ -8,7 +8,13 @@ Ci potrebbero essere eventi dove le tue istanze si comportano lentamente. One op
 
 ## Celery
 
-BookWyrm is using [Celery](https://docs.celeryq.dev/en/stable/) to manage background jobs.
+BookWyrm usa [Celery](https://docs.celeryq.dev/en/stable/) per gestire le operazioni in secondo piano.
+
+Normalmente questo [usa gevent](https://docs.celeryq.dev/en/stable/userguide/concurrency/gevent.html) per compiere 1000 operazioni conteporanee con greenlet per un singolo processore. Questo permette di gestire un alto numero di processi pur limitando Celery all'uso di un solo core CPU, riducendo il rischio di sovraccarico a CPU e RAM. Se la tua istanza BookWyrm ha bisogno di più processori, puoi aumentarli con il flag [`--scale`](https://docs.docker.com/reference/cli/docker/compose/up/) applicato al servizio `celery_worker`:
+
+```sh
+./bw-dev up --scale celery_worker=3
+```
 
 ## Flower
 

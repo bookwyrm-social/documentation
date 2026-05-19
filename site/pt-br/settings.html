@@ -3,7 +3,7 @@
 <head>
     <title>
         
-Instance Settings
+Configurações e Perfil
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -187,11 +187,11 @@ Instance Settings
             </li>
             
             <li>
-                <a href="/v0.8.5/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
+                <a href="/v0.8.5/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
             </li>
             
             <li>
-                <a href="/v0.8.5/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+                <a href="/v0.8.5/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
             </li>
             
             <li>
@@ -236,11 +236,11 @@ Instance Settings
             </li>
             
             <li>
-                <a href="/v0.8.5/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+                <a href="/v0.8.5/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
             <li>
-                <a href="/v0.8.5/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.8.5/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
@@ -281,16 +281,33 @@ Instance Settings
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#announcements">Announcements</a>
+                  <a class="navbar-item" href="#editar-perfil">Editar Perfil</a>
+                  
+                      
+                      <a class="navbar-item" href="#perfil"><span class="pl-4">Perfil</span></a>
+                      
+                      <a class="navbar-item" href="#exibicao"><span class="pl-4">Exibição</span></a>
+                      
+                      <a class="navbar-item" href="#privacidade"><span class="pl-4">Privacidade</span></a>
+                      
                   
               
-                  <a class="navbar-item" href="#site-settings">Site Settings</a>
+                  <a class="navbar-item" href="#trocar-senha">Trocar Senha</a>
                   
               
-                  <a class="navbar-item" href="#registration">Registration</a>
+                  <a class="navbar-item" href="#seguranca-da-conta">Segurança da conta</a>
                   
               
-                  <a class="navbar-item" href="#themes">Themes</a>
+                  <a class="navbar-item" href="#apelidos-e-migracao-de-conta">Apelidos e migração de conta</a>
+                  
+              
+                  <a class="navbar-item" href="#desativando-ou-deletando-sua-conta">Desativando ou deletando sua conta</a>
+                  
+              
+                  <a class="navbar-item" href="#importando-e-exportando-livros">Importando e Exportando livros</a>
+                  
+              
+                  <a class="navbar-item" href="#bloqueando-usuarios">Bloqueando usuários</a>
                   
               
             </div>
@@ -303,20 +320,59 @@ Instance Settings
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Instance Settings</h1>
+<h1 class="title is-1">Configurações e Perfil</h1>
 
                 </header>
                 
 <section class="block content">
-    <h2 id="announcements"><a class="headerlink" href="#announcements">Announcements</a></h2>
-<p>You can create an <strong>Announcement</strong> from <code>Admin &gt; Instance Settings &gt; Announcements</code>. Announcements appear as a banner at the top of every page until a user dismisses them. Announcements can be used for anything, but generally would be used to alert users to expected down time or changes to configuration.</p>
-<p>Announcements can be related to a particular date (e.g. a scheduled upgrade or down time), and you can also schedule the announcement itself to begin and/or end on a given date.</p>
-<h2 id="site-settings"><a class="headerlink" href="#site-settings">Site Settings</a></h2>
-<p>When you first set up your instance you will be directed to the <strong>Site Settings</strong> page. Here you can edit your basic instance information including name, description, a code of conduct, and other details. This is also where you can upload a logo, set up footer details, and select a default theme.</p>
-<h2 id="registration"><a class="headerlink" href="#registration">Registration</a></h2>
-<p>The <strong>Registration</strong> page of the Instance Settings section is where you can enable or disable registration, decide whether to require users to confirm their email address, allow or disallow invite requests, and set a question for invite requests (useful for slowing down or identifying automated requests).</p>
-<h2 id="themes"><a class="headerlink" href="#themes">Themes</a></h2>
-<p>BookWyrm comes with default themes, however you can add your own custom theme. Themes should be <code>.scss</code> files.</p>
+    <p>Você pode controlar sua conta e as configurações do seu perfil ativando o menu suspenso abaixo do seu nome de usuário e clicando em <code>Configurações</code>.</p>
+<h2 id="editar-perfil"><a class="headerlink" href="#editar-perfil">Editar Perfil</a></h2>
+<h3 id="perfil"><a class="headerlink" href="#perfil">Perfil</a></h3>
+<ul>
+<li>Fazer upload ou remover seu avatar de usuário</li>
+<li>Trocar seu nome de exibição</li>
+<li>Criar ou editar seu resumo de usuário (bio ou descrição)</li>
+<li>Trocar seu endereço de email cadastrado</li>
+</ul>
+<h3 id="exibicao"><a class="headerlink" href="#exibicao">Exibição</a></h3>
+<ul>
+<li>Escolher se quer mostrar a meta de leitura no feed</li>
+<li>Escolher se quer que avaliações mostrem notas, ou se quer as manter ocultas por padrão, as exibindo apenas ao clicar</li>
+<li>Escolher se o BookWyrm deve sugerir usuários para seguir</li>
+<li>Escolher se o BookWyrm pode sugerir sua conta para outros usuários</li>
+<li>Escolher seu fuso horário - isso afeta os horários exibidos para você</li>
+<li>Escolher o idioma da interface</li>
+<li>Escolher um tema - instâncias diferentes tem opções diferentes. Por padrão, há os temas claros e escuros do BookWyrm</li>
+</ul>
+<h3 id="privacidade"><a class="headerlink" href="#privacidade">Privacidade</a></h3>
+<ul>
+<li>Escolher se seguidores devem ser aprovados por você antes de seguirem sua conta</li>
+<li>Escolher se quer ocultar seus seguidores e seguindo em seu perfil</li>
+<li>Escolher sua privacidade padrão de posts. Encontre <a href="/privacy-controls.html">mais detalhes sobre o que a privacidade de posts significa</a> na página de Controles de privacidade</li>
+</ul>
+<h2 id="trocar-senha"><a class="headerlink" href="#trocar-senha">Trocar Senha</a></h2>
+<p>Aqui você pode ...trocar sua senha</p>
+<h2 id="seguranca-da-conta"><a class="headerlink" href="#seguranca-da-conta">Segurança da conta</a></h2>
+<p>Recomendamos que você proteja sua conta com autenticação de dois fatores, usando um app autenticador.</p>
+<p>Esta seção também permite ver todas as suas sessões logadas em sua conta, e as encerrar. Esse pode ser um jeito útil de proteger sua conta se você, por exemplo, perdeu um dispositivo ou não reconhece uma sessão.</p>
+<h2 id="apelidos-e-migracao-de-conta"><a class="headerlink" href="#apelidos-e-migracao-de-conta">Apelidos e migração de conta</a></h2>
+<p>Você pode definir um "apelido" para a sua conta, indicando que representam o mesmo "ator". Isso geralmente é feito quando você quer migrar sua conta de uma instância do fediverso para outra.</p>
+<p>Você também pode mover (migrar) sua conta usando <code>Mover Conta</code>. Você deve definir a conta <em>de onde</em> você está migrando como um apelido da conta <em>para qual</em> você está migrando, antes de tentar mover uma conta.</p>
+<p>Definir um apelido é incrivelmente reversível. Migrar sua conta, não é - escolha sabiamente!</p>
+<p>Veja <a href="user-migration.html">Migração de Usuário e Apelidos</a> para mais detalhes.</p>
+<h2 id="desativando-ou-deletando-sua-conta"><a class="headerlink" href="#desativando-ou-deletando-sua-conta">Desativando ou deletando sua conta</a></h2>
+<p>Em <code>Deletar Conta</code>, você pode desativar ou deletar sua conta.</p>
+<p>Desativar marca sua conta como inativa e oculta a página do seu perfil. Você pode reativar sua conta, no futuro.</p>
+<p>Deletar sua conta é irreversível. Seu nome de usuário não estará disponível para uso no futuro. Note que na exclusão de sua conta, BookWyrm tentará excluir todos os dados e posts do usuário, no entanto, é possível que servidores federados não processem a exclusão da conta corretamente.</p>
+<p>Livros adicionados por um usuário deletado permanecerão disponíveis contanto que existam conceitualmente, separadamente de qualquer indivíduo ou estante.</p>
+<h2 id="importando-e-exportando-livros"><a class="headerlink" href="#importando-e-exportando-livros">Importando e Exportando livros</a></h2>
+<p>Na seção <code>Dados</code>, você pode importar e exportar listas de livros.</p>
+<p>Veja  <a href="/adding-books.html">Adicionando Livros</a> para mais informações sobre importar livros. Selecione <code>Exportar Lista de Livros</code> para exportar um arquivo CSV incluindo todos os livros de suas estantes, livros que você avaliou, e livros com atividade de leitura.</p>
+<p>Você também pode importar ou exportar uma conta de usuário nesta seção. Veja <a href="user-migration.html">Migração de Usuário e Apelidos</a> para mais detalhes.</p>
+<h2 id="bloqueando-usuarios"><a class="headerlink" href="#bloqueando-usuarios">Bloqueando usuários</a></h2>
+<p>Você pode bloquear ou desbloquear um usuário clicando nas reticências (...) na direita dos botões "Seguir/Deixar de seguir" no perfil dele.</p>
+<p>Se você bloqueou algum usuário, ele será listado abaixo de <code>Usuários Bloqueados</code> e pode ser desbloqueado por aqui.</p>
+<p>Usuários bloqueados não podem ver seu perfil, listas, estantes, te enviar DMs, ou ver ou interagir com seus posts.</p>
 </section>
 
             </section>
@@ -344,7 +400,7 @@ Instance Settings
                     <a href="https://github.com/bookwyrm-social">BookWyrm no GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/managing_bookwyrm/settings.md">Contribua para esta página</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/settings.md">Contribua para esta página</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">
