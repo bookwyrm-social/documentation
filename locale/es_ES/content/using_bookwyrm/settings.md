@@ -6,16 +6,16 @@ Order: 4
 
 You can control your account and profile settings by activating the dropdown menu below your username and selecting `Settings`.
 
-## Edit Profile
+## Editar perfil
 
-### Profile
+### Perfil
 
 - Upload or remove your user avatar
 - Change your display name
 - Create or edit your user summary (bio or description)
 - Change your registered email address
 
-### Display
+### Apariencia
 
 - Choose whether to show reading goal prompt in feed
 - Choose whether to show ratings in reviews, or have them hidden behind a toggle by default
@@ -25,17 +25,17 @@ You can control your account and profile settings by activating the dropdown men
 - Select your user interface language
 - Select a theme - different instances will have different options, by default there are BookWyrm light and dark themes
 
-### Privacy
+### Privacidad
 
 - Choose whether followers must be approved by you before following your account
 - Choose whether to hide followers and following on your user profile
 - Choose your default post privacy. Find [more detail about what the post privacy options mean](/privacy-controls.html) on the Privacy Controls page
 
-## Change Password
+## Cambiar contraseña
 
 Here you can ...change your password
 
-## Account Security
+## Seguridad de la cuenta
 
 We recommend you protect your account with second-factor authentication using an authenticator app.
 

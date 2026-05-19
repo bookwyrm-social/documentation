@@ -8,7 +8,13 @@ There might be occurences where your instances behaves slowly. One option would 
 
 ## Celery
 
-BookWyrm is using [Celery](https://docs.celeryq.dev/en/stable/) to manage background jobs.
+BookWyrm uses [Celery](https://docs.celeryq.dev/en/stable/) to manage background jobs.
+
+By default this [uses gevent](https://docs.celeryq.dev/en/stable/userguide/concurrency/gevent.html) to run 1000 concurrent tasks with greenlet under a single worker. This allow for high throughput of tasks whilst restricting Celery to using a single CPU core, reducing the risk of CPU and RAM overload. If your BookWyrm instance requires more workers, you can increase this with the [`--scale`](https://docs.docker.com/reference/cli/docker/compose/up/) flag applied to the `celery_worker` service:
+
+```sh
+./bw-dev up --scale celery_worker=3
+```
 
 ## Blomma
 
