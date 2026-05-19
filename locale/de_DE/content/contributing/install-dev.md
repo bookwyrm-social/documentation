@@ -15,20 +15,23 @@ _Wenn du zu BookWyrm beiträgst, ohne Docker zu verwenden, würden wir uns freue
 1. Kopiere den [BookWyrm-Quellcode von GitHub](https://github.com/bookwyrm-social/bookwyrm). Du kannst [einen Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) des Projekts erstellen und [dann `git clone` ausführen, um den Quellcode](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) auf deinen Computer herunterzuladen.
 2. Gehe in das Verzeichnis auf deinem Computer, das den Quellcode enthält. Von jetzt an arbeitest du in diesem Verzeichnis.
 3. Die Entwicklung wird auf dem `main`-Branch durchgeführt. Stelle also sicher, dass du diesen Branch ausgecheckt hast: `git checkout main`
-4. Erstelle eine Datei mit Umgebungsvariablen für die Entwicklung, indem du die Beispieldatei (`.env.example`) kopierst und als neue Datei namens `.env` einfügst. In der Kommandozeile kannst du das wie folgt tun:
+4. Set up your development environment variables file by copying the example environment files (`.env.example` and `.env.dev.example`) into new files named `.env` and `env.dev`. In der Kommandozeile kannst du das wie folgt tun:
 
 ```{ .sh }
 cp .env.example .env
+cp .env.dev.example .env.dev
 ```
+
+Most environment variables are set in the `.env` file, used in production, but for some development workflows that is overridden by the `env.dev` file. When developing for BookWyrm, you will need both files.
 
 ### Bauen und ausführen
 
 1. Führe Folgendes über die Kommandozeile aus:
 
 ```{ .sh }
-./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
-./bw-dev dev up --build       # Build and start development stack
-./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev create_secrets # Create the secrets file with random values. You only need to do this once.
+./bw-dev dev up --build # Build and start development stack
+./bw-dev rundev python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
 1. Once the build is complete, you can access the instance at `http://localhost:1333`.
