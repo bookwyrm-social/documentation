@@ -355,7 +355,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 </code></pre></div>
 
 <ol>
-<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>.</li>
+<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>. If you have removed the <code>PORT</code> value in <code>.env.dev</code> this will be <code>http://localhost</code>. If you have changed the port, swap out <code>1333</code> for the port you are using.</li>
 <li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
 </ol>
 <p>If you're curious: the <code>./bw-dev</code> command is a simple shell script runs various other tools: above, you could skip it and run <code>docker-compose build</code> or <code>docker-compose up</code> directly if you like. <code>./bw-dev</code> just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
