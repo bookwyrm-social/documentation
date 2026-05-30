@@ -1,5 +1,5 @@
 - - -
-Title: Stilleitfaden Date: 2021-10-20 Order: 4
+Title: Style Guide Date: 2021-10-20 Order: 3
 - - -
 
 ## Pull Requests
@@ -10,6 +10,8 @@ Wenn du nicht weißt, wie man etwas fixt oder etwas nicht schaffst: Kein Problem
 
 Pull-Anfragen müssen alle automatisierten Prüfungen bestehen, bevor sie übernommen werden können - dazu gehören Stil-Prüfungen, globale Linter, eine Sicherheitsprüfung und Unit-Tests.
 
+There are several `./bw-dev` commands you may find helpful for linting and testing prior to pushing your pull request. See [Command Line Tool](cli.html) for all the options available.
+
 ## Linten
 
 ### Global
@@ -18,9 +20,19 @@ Wir verwenden [EditorConfig](https://editorconfig.org), um konsistente Einrücku
 
 ### Python
 
-BookWyrm verwendet den [Black](https://github.com/psf/black) Code-Formatierer, um die Python Codebasis konsistent zu gestalten. Alle neuen Pull-Requests werden mit GitHub-Aktionen überprüft und Sie können Code-Stilprobleme automatisch beheben, indem du `./bw-dev black` ausführst
+#### Formatting and linting
 
-Code wird auch mit Pylint mittels GitHub-Aktionen überprüft. Pylint-Warnungen müssen bearbeitet werden, bevor Pull-Anfragen übernommen werden, aber es liegt im Ermessen, ob der Vorschlag verwendet werden oder die Warnung unterdrückt werden sollte. Um eine Warnung zu unterdrücken, füge einen Kommentar am Ende oder über der Zeile mit der Warnung hinzu: `# pylint: disable=Name-der-Warnung`
+BookWyrm uses [ruff](https://docs.astral.sh/ruff) for both code linting (checking for errors) and formatting (ensuring code style is consistent). All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev ruff`. For linting errors, you can try `./bw-dev ruff-fix` to automatically fix errors, though this may not always be possible.
+
+Ruff linting warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. See [the Ruff projects's documentation on suppressing warnings](https://docs.astral.sh/ruff/linter/#comments) using code comments.
+
+The BookWyrm project previously used `Black` for formatting and `Pylint` for linting. You may notice artefacts such as pylint suppression comments in older code. We are still refining our linting rules so if something seems confusing or not quite right, don't hesitate to ask for advice.
+
+#### Type checking
+
+We are gradually rolling out [static type checking](https://en.wikipedia.org/wiki/Type_system) across the BookWyrm code base. This is a long term project. Whilst it is not compulsory to formally define types in new code, it is strongly recommended. This will help to avoid some more subtle bugs that may not be identified in tests.
+
+We currently use [mypy](https://www.mypy-lang.org) as our static type checker. Find out more about how to use mypy at [the `mypy` project documentation](https://mypy.readthedocs.io/en/stable/).
 
 ### Vorlagen (HTML)
 
@@ -38,7 +50,7 @@ Wir verwenden [stylelint](https://stylelint.io), um alle CSS-Regeln zu überprü
 
 Bookwyrm hat zum Ziel, so umfassend und zugänglich wie möglich zu sein.
 
-Überprüfen Sie die [Checkliste für inklusives Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist [A11Y-101](https://www.a11y-101.com/development) ebenfalls eine nützliche Quelle. Weitere Informationen darüber, wie du deine Seitenvorlagen mehrsprachig erstellst, findest du im [Abschnitt Übersetzungen](/translations.html).
+Überprüfen Sie die [Checkliste für inklusives Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist [A11Y-101](https://www.a11y-101.com/development) ebenfalls eine nützliche Quelle. For information on how to make your page templates multi-lingual, see the [Translations section](/translation.html).
 
 Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, sind:
 
@@ -51,3 +63,7 @@ Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, 
 
 * Verwende ein `<button>` Element für alles, was existiert, um eine JavaScript-Aktion auszulösen (z.B. ein Formular verstecken oder enthüllen) oder eine `POST`-Anfrage senden (z.B. ein Formular übermitteln)
 * Verwende ein `<a>`-Element für alles, was eine `GET`-Anfrage auslöst. Normalerweise sollte ein Ankerelement (`<a>`) nicht als Button (`class="button"`) dargestellt werden, obwohl es einige Ausnahmen gibt, wie z. B. "Abbrechen"-Buttons. Falls Sie Zweifel haben, fragen Sie in Ihrer Pull-Anfrage um Rat
+
+#### Translations
+
+BookWyrm is an international project and aims to be inclusive of as many languages as possible. All user-facing messages and templates should follow the advice on [translations and gendered language](translation.html).
