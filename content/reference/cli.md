@@ -8,7 +8,7 @@ Bookwyrm developers and instance managers can use the `bw-dev` script for common
 
 Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
 
-Some commands only run in development environments, most can be run in either development or production, and a small number should only be run in production. Development commands run in a dedicated Docker environment configured in `docker-compose.dev.yml`, whereas production commands run in the production environment configured in `docker-compose.yml`. Production containers and volumes have the prefix `bookwyrm`, and development containers and volumes are prefixed with `dev-wyrm`
+Some commands only run in development environments, most can be run in either development or production, and a small number should only be run in production. Development commands run in a dedicated Docker environment configured in `docker-compose.dev.yml`, whereas production commands run in the production environment configured in `docker-compose.yml`. Production containers and volumes have names starting with `bookwyrm`, and development containers and volumes start with `dev-wyrm`
 
 ## Development commands
 
@@ -18,23 +18,23 @@ In the standard BookWyrm docker configuration, `dev-wyrm` uses a bind mount to l
 
 ### devcommand _args_
 
-You can use `devcommand` to run an arbitrary `docker compose` command against the development environment. e.g. `./bw-dev devcommand restart`. This is equivalent to [runweb](#runweb-args), but for development.
+You can use `devcommand` to run an arbitrary `docker compose` command with development-related flags e.g. `./bw-dev devcommand restart`.
 
-### makemigrations [appname migration number]
+### makemigrations
 
-Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`
+Runs Django's `makemigrations` command inside your Docker container. If you have changed the database structure in a development branch you will need to run this for your changes to have effect.
+
+If your production BookWyrm has diverged from the production code for some reason and you need to use `makemigrations`, you will need to run this command against the development database, then `build` against production. See [this issue for more detail](https://github.com/bookwyrm-social/bookwyrm/issues/3919).
 
 ### pytest [args]
 
-Run tests with `pytest`. You can add pytest arguments to this command to check only a certain directory or file, or include logging (`s`), omit coverage reports (`--no-cov`) etc.
-
-If your production BookWyrm has diverged from the production code for some reason and you need to use `makemigrations`, you will need to run this command against the development database, then `build` against production. See [this issue for more detail](https://github.com/bookwyrm-social/bookwyrm/issues/3919).
+Run tests with `pytest`. You can add pytest arguments to this command to check only a certain directory or file, or include logging (`-s`), omit coverage reports (`--no-cov`) etc.
 
 ### Internationalisation and localisation
 
 #### makemessages
 
-Creates message files for all translation strings. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/5.2/ref/django-admin/#makemessages).
+Finds all translation strings in the app and puts them in the one reference file, `locale/en_US/LC_MESSAGES/django.po`. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/5.2/ref/django-admin/#makemessages).
 
 #### compilemessages
 
@@ -159,9 +159,9 @@ Equivalent to [`docker compose down`](https://docs.docker.com/reference/cli/dock
 
 Equivalent to `docker-compose build`.
 
-### migrate
+### migrate [appname migration number]
 
-Runs Django's `migrate` command inside your Docker container. You always need to run this after `makemigrations`, but it also run automatically if using `./bw-dev [dev] up`.
+Runs Django's `migrate` command inside your Docker container. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`. You always need to run this after `makemigrations`, but it also runs automatically wxhen using `./bw-dev [dev] up`.
 
 ### runweb _args_
 
