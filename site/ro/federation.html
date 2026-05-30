@@ -203,11 +203,11 @@ Federation
             </li>
             
             <li>
-                <a href="/v0.8.0/ro/documentation.html" class="has-background-inherit" >Documentation</a>
+                <a href="/v0.8.0/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
-                <a href="/v0.8.0/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
+                <a href="/v0.8.0/ro/documentation.html" class="has-background-inherit" >Documentation</a>
             </li>
             
             <li>
@@ -258,6 +258,16 @@ Federation
               
                   <a class="navbar-item" href="#federation-settings">Federation Settings</a>
                   
+                      
+                      <a class="navbar-item" href="#require-signed-get-requests"><span class="pl-4">Require signed GET requests</span></a>
+                      
+                      <a class="navbar-item" href="#disable-federation"><span class="pl-4">Disable federation</span></a>
+                      
+                      <a class="navbar-item" href="#prevent-unauthenticated-views"><span class="pl-4">Prevent unauthenticated views</span></a>
+                      
+                      <a class="navbar-item" href="#block-incoming-search"><span class="pl-4">Block incoming search</span></a>
+                      
+                  
               
                   <a class="navbar-item" href="#federated-instances">Federated Instances</a>
                   
@@ -278,8 +288,18 @@ Federation
                 
 <section class="block content">
     <h2 id="federation-settings"><a class="headerlink" href="#federation-settings">Federation Settings</a></h2>
+<p>To adjust these settings, go to <code>Admin &gt; Federation &gt; Federation Settings</code>. By default they are all disabled.</p>
+<h3 id="require-signed-get-requests"><a class="headerlink" href="#require-signed-get-requests">Require signed GET requests</a></h3>
+<p>Instances with this setting enabled will reject all anonymous ActivityPub requests from federated instances. That is, all requests must use signed HTTP headers. BookWyrm has been signing <code>GET</code> requests for ActivityPub data since 2022, but without this setting your instance will not check incoming signatures. This will impact <em>all</em> ActivityPub traffic. Whilst Mastodon and other major Fediverse systems also sign GET requests as a matter of course, this is not the case for all Fediverse software</p>
+<p>This is roughly equivalent to Mastodon's 'secure mode' or <code>AUTHORIZED_FETCH</code>, though BookWyrm does not check JSON-LD signatures. You can find <a href="https://hub.sunny.garden/2023/06/28/what-does-authorized_fetch-actually-do/">a detailed explainer of AUTHORIZED_FETCH here</a>.</p>
+<h3 id="disable-federation"><a class="headerlink" href="#disable-federation">Disable federation</a></h3>
 <p>Administrators and moderators can disable federation completely. This will prevent any further communication inwards or outwards, however existing data will be retained in the database. Disabling federation does not prevent connectors from importing books, however it will restrict all statuses (reviews, comments etc) to only users on your instance, or anything those users import manually (e.g. via a Goodreads CSV import).</p>
-<p>To disable federation, go to <code>Admin &gt; Federation &gt; Federation Settings</code>.</p>
+<h3 id="prevent-unauthenticated-views"><a class="headerlink" href="#prevent-unauthenticated-views">Prevent unauthenticated views</a></h3>
+<p>Technically this setting is not related to federation, but it is also found in the "Federation settings" section of the admin interface.</p>
+<p><em>Prevent unauthenticated views</em> requires viewers to log in for every page other than the absolute basics required to manage logins, invites, and essential instance information pages. It also hides the "recent books" from the homepage. Enabling this setting should ensure that only your instance's users can view pages on your instance such as the Directory, Lists, and user profile pages.</p>
+<p><strong>Note:</strong> User profiles for your instance's users on federated instances may still be viewable on those instances even with this setting enabled.</p>
+<h3 id="block-incoming-search"><a class="headerlink" href="#block-incoming-search">Block incoming search</a></h3>
+<p>Enabling this setting will prevent any federated servers from being able to use your instance's search endpoint. It is equivalent to disabling all BookWyrm <a href="system.html#connectors">Connectors</a>, but in reverse. It is <strong>strongly discouraged</strong> to enable this setting, however administrators concerned about revealing which books are in the local database, or experiencing disruptive bot activity, may wish to do so. If enabled, this is likely to lead to more duplicate works and editions within the BookWyrm federation.</p>
 <h2 id="federated-instances"><a class="headerlink" href="#federated-instances">Federated Instances</a></h2>
 <p>At <code>Admin &gt; Federation &gt; Federated Instances</code> you can see all instances connected to yours via federation. This list may be quite long, as it will include every ActivityPub server that has sent or received a status or object. This list will show you the instance domain and software the instance is running.</p>
 <p>You can click on the instance domain to find out more information about the instance including how many users have come from that instance. You can also block the instance completely from here.</p>
