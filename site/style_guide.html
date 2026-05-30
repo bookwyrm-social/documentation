@@ -333,12 +333,18 @@ Style Guide
 <p>So you want to contribute code to BookWyrm: that rules! If there's an open issue that you'd like to fix, it's helpful to comment on the issue so work doesn't get duplicated. Try to keep the scope of pull requests small and focused on a single topic. That way it's easier to review, and if one part needs changes, it won't hold up the other parts.</p>
 <p>If you aren't sure how to fix something, or you aren't able to get around to it, that's totally okay, just leave a comment on the pull request and we'll figure it out 💖.</p>
 <p>Pull requests have to pass all the automated checks before they can be merged - this includes style checks, global linters, a security check, and unit tests.</p>
+<p>There are several <code>./bw-dev</code> commands you may find helpful for linting and testing prior to pushing your pull request. See <a href="cli.html">Command Line Tool</a> for all the options available.</p>
 <h2 id="linting"><a class="headerlink" href="#linting">Linting</a></h2>
 <h3 id="global"><a class="headerlink" href="#global">Global</a></h3>
 <p>We use <a href="https://editorconfig.org">EditorConfig</a> to maintain consistent indenting and line endings.</p>
 <h3 id="python"><a class="headerlink" href="#python">Python</a></h3>
-<p>BookWyrm uses the <a href="https://github.com/psf/black">Black</a> code formatter to keep the Python codebase consistent styled. All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running <code>./bw-dev black</code></p>
-<p>Code is also checked with Pylint using GitHub Actions. Pylint warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. To suppress a warning, add a comment at the end of or on the line above the warnings: <code># pylint: disable=warning-name</code></p>
+<h4 id="formatting-and-linting"><a class="headerlink" href="#formatting-and-linting">Formatting and linting</a></h4>
+<p>BookWyrm uses <a href="https://docs.astral.sh/ruff">ruff</a> for both code linting (checking for errors) and formatting (ensuring code style is consistent). All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running <code>./bw-dev ruff</code>. For linting errors, you can try <code>./bw-dev ruff-fix</code> to automatically fix errors, though this may not always be possible.</p>
+<p>Ruff linting warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. See <a href="https://docs.astral.sh/ruff/linter/#comments">the Ruff projects's documentation on suppressing warnings</a> using code comments.</p>
+<p>The BookWyrm project previously used <code>Black</code> for formatting and <code>Pylint</code> for linting. You may notice artefacts such as pylint suppression comments in older code. We are still refining our linting rules so if something seems confusing or not quite right, don't hesitate to ask for advice.</p>
+<h4 id="type-checking"><a class="headerlink" href="#type-checking">Type checking</a></h4>
+<p>We are gradually rolling out <a href="https://en.wikipedia.org/wiki/Type_system">static type checking</a> across the BookWyrm code base. This is a long term project. Whilst it is not compulsory to formally define types in new code, it is strongly recommended. This will help to avoid some more subtle bugs that may not be identified in tests.</p>
+<p>We currently use <a href="https://www.mypy-lang.org">mypy</a> as our static type checker. Find out more about how to use mypy at <a href="https://mypy.readthedocs.io/en/stable/">the <code>mypy</code> project documentation</a>.</p>
 <h3 id="templates-html"><a class="headerlink" href="#templates-html">Templates (HTML)</a></h3>
 <p>Your pull request will also be checked by the <a href="https://www.curlylint.org">curlylint</a> linter for Django templates.</p>
 <h3 id="css"><a class="headerlink" href="#css">CSS</a></h3>
@@ -359,6 +365,8 @@ Style Guide
 <li>Use a <code>&lt;button&gt;</code> element for anything that exists to trigger a JavaScript action (e.g. hiding or unhiding a form) or sends a <code>POST</code> request (e.g. submitting a form)</li>
 <li>Use an <code>&lt;a&gt;</code> element for anything that triggers a <code>GET</code> request. Usually, an anchor (<code>&lt;a&gt;</code>) element should not be styled as a button (<code>class="button"</code>), though there are some exceptions, such as "Cancel" buttons. If in doubt, ask for advice in your pull request</li>
 </ul>
+<h4 id="translations"><a class="headerlink" href="#translations">Translations</a></h4>
+<p>BookWyrm is an international project and aims to be inclusive of as many languages as possible. All user-facing messages and templates should follow the advice on <a href="translation.html">translations and gendered language</a>.</p>
 </section>
 
             </section>
