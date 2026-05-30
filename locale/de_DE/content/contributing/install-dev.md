@@ -34,7 +34,7 @@ Most environment variables are set in the `.env` file, used in production, but f
 ./bw-dev rundev python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
-1. Once the build is complete, you can access the instance at `http://localhost:1333`.
+1. Once the build is complete, you can access the instance at `http://localhost:1333`. If you have removed the `PORT` value in `.env.dev` this will be `http://localhost`. If you have changed the port, swap out `1333` for the port you are using.
 2. Du kannst nun deinen Administrations-Schlüssel eingeben und einen Administrations-Account anlegen. Ab hier funktioniert alles so, wie es in "BookWyrm betreiben" beschrieben ist.
 
 Wenn du neugierig bist: Das `./bw-dev`-Kommando ist ein simples Shell-Script, das verschiedene andere Tools ansteuert. Du könntest es überspringen und direkt `docker-compose build` oder `docker-compose up` laufen lassen, wenn du möchtest. `./bw-dev` kombiniert diese Aufrufe der Einfachheit halber an einem gemeinsamen Ort. Führe das Skript ohne Argumente aus, um eine Liste der verfügbaren Kommandos zu erhalten, lies die [zugehörige Seite in der Dokumentation](/cli.html) oder öffne das Skript und sieh genau, was jedes Kommando tut!
