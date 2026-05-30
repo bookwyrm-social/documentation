@@ -203,11 +203,11 @@ Style Guide
             </li>
             
             <li>
-                <a href="/v0.7.5/fr/documentation.html" class="has-background-inherit" >Documentation</a>
+                <a href="/v0.7.5/fr/style_guide.html" class="has-background-inherit" class="is-active">Style Guide</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/fr/style_guide.html" class="has-background-inherit" class="is-active">Style Guide</a>
+                <a href="/v0.7.5/fr/documentation.html" class="has-background-inherit" >Documentation</a>
             </li>
             
             <li>
@@ -249,12 +249,18 @@ Style Guide
 <p>Vous voulez contribuer au code de BookWyrm, c’est génial ! S'il y a un problème ouvert que vous souhaitez corriger, il est préférable de laisser un commentaire dans la conversation pour que le travail ne soit pas dupliqué. Essayez de limiter la portée des pull requests et de concentrer votre attention sur un seul sujet. Comme ça elle est plus facile à relire, et si une partie a besoin de changements elle ne retardera pas les autres parties.</p>
 <p>Si vous ne savez pas comment régler un problème, ou que vous n'êtes plus disponible pour le faire, ne vous en faites pas. Laissez simplement un commentaire sur la pull request et nous allons prendre le relais 💖.</p>
 <p>Les pull requests doivent valider tous les tests automatiques avant d'être fusionnées, ça inclut des vérifications de style, des linters globaux, un test de sécurité et des tests unitaires.</p>
+<p>There are several <code>./bw-dev</code> commands you may find helpful for linting and testing prior to pushing your pull request. See <a href="cli.html">Command Line Tool</a> for all the options available.</p>
 <h2 id="lint"><a class="headerlink" href="#lint">Lint</a></h2>
 <h3 id="global"><a class="headerlink" href="#global">Global</a></h3>
 <p>Nous utilisons <a href="https://editorconfig.org">EditorConfig</a> pour maintenir la cohérence de l’indentation et des fins de lignes.</p>
 <h3 id="python"><a class="headerlink" href="#python">Python</a></h3>
-<p>BookWyrm utilise le formateur de code <a href="https://github.com/psf/black">Black</a> pour maintenir la cohérence de la base de code Python. Toutes les nouvelles pull requests sont vérifiées avec des actions GitHub, et vous pouvez corriger automatiquement les problèmes de style de code en exécutant <code>./bw-dev black</code></p>
-<p>Le code est également vérifié avec Pylint via une action GitHub. Les avertissements de Pylint doivent être traités avant que les pull requests soient fusionnées, mais c'est une question de jugement si la suggestion doit être utilisée, ou l'avertissement supprimé. Pour supprimer un avertissement, ajoutez un commentaire à la fin ou sur la ligne précédant les avertissements : <code># pylint: disable=nom-de-la-regle</code></p>
+<h4 id="formatting-and-linting"><a class="headerlink" href="#formatting-and-linting">Formatting and linting</a></h4>
+<p>BookWyrm uses <a href="https://docs.astral.sh/ruff">ruff</a> for both code linting (checking for errors) and formatting (ensuring code style is consistent). All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running <code>./bw-dev ruff</code>. For linting errors, you can try <code>./bw-dev ruff-fix</code> to automatically fix errors, though this may not always be possible.</p>
+<p>Ruff linting warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. See <a href="https://docs.astral.sh/ruff/linter/#comments">the Ruff projects's documentation on suppressing warnings</a> using code comments.</p>
+<p>The BookWyrm project previously used <code>Black</code> for formatting and <code>Pylint</code> for linting. You may notice artefacts such as pylint suppression comments in older code. We are still refining our linting rules so if something seems confusing or not quite right, don't hesitate to ask for advice.</p>
+<h4 id="type-checking"><a class="headerlink" href="#type-checking">Type checking</a></h4>
+<p>We are gradually rolling out <a href="https://en.wikipedia.org/wiki/Type_system">static type checking</a> across the BookWyrm code base. This is a long term project. Whilst it is not compulsory to formally define types in new code, it is strongly recommended. This will help to avoid some more subtle bugs that may not be identified in tests.</p>
+<p>We currently use <a href="https://www.mypy-lang.org">mypy</a> as our static type checker. Find out more about how to use mypy at <a href="https://mypy.readthedocs.io/en/stable/">the <code>mypy</code> project documentation</a>.</p>
 <h3 id="gabarits-html"><a class="headerlink" href="#gabarits-html">Gabarits (HTML)</a></h3>
 <p>Votre pull request sera également vérifiée par le linter <a href="https://www.curlylint.org">curlylint</a> pour les gabarits Django.</p>
 <h3 id="css"><a class="headerlink" href="#css">CSS</a></h3>
@@ -263,7 +269,7 @@ Style Guide
 <p><a href="https://eslint.org">ESLint</a> vérifie toute modification effectuée en JavaScript. Si ESLint n'aime pas votre JavaScript (même fonctionnel), vérifiez le message linter pour le problème exact.</p>
 <h2 id="design-inclusif"><a class="headerlink" href="#design-inclusif">Design inclusif</a></h2>
 <p>BookWyrm aspire à être aussi inclusif et accessible que possible.</p>
-<p>Lorsque vous contribuez du code, vérifiez la <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">checklist Inclusive Web Design</a> avant de proposer votre pull request. Pour des conseils sur l'accessibilité, <a href="https://www.a11y-101.com/development">A11Y-101</a> est également une ressource utile. Pour plus d'informations sur la manière de rendre vos gabarits de page multilingues, voir <a href="/translations.html">la section Traductions</a>.</p>
+<p>Lorsque vous contribuez du code, vérifiez la <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">checklist Inclusive Web Design</a> avant de proposer votre pull request. Pour des conseils sur l'accessibilité, <a href="https://www.a11y-101.com/development">A11Y-101</a> est également une ressource utile. For information on how to make your page templates multi-lingual, see the <a href="/translation.html">Translations section</a>.</p>
 <p>Quelques particularités à garder en tête pour la contribution au code de BookWyrm :</p>
 <h3 id="formulaires"><a class="headerlink" href="#formulaires">Formulaires</a></h3>
 <ul>
@@ -275,6 +281,8 @@ Style Guide
 <li>Utilisez un élément <code>&lt;button&gt;</code> pour tout ce qui a pour but de déclencher une action JavaScript (par ex. cacher ou révéler un formulaire) ou envoyer une requête <code>POST</code> (par ex. soumettre un formulaire)</li>
 <li>Utilisez un élément <code>&lt;a&gt;</code> pour tout ce qui déclenche une requête <code>GET</code>. Habituellement, un lien (<code>&lt;a&gt;</code>) ne doit pas avoir l’apparence d’un bouton (<code>class="button"</code>), bien qu'il y ait quelques exceptions comme les boutons "Annuler". En cas de doute, demandez conseil dans votre pull request</li>
 </ul>
+<h4 id="translations"><a class="headerlink" href="#translations">Translations</a></h4>
+<p>BookWyrm is an international project and aims to be inclusive of as many languages as possible. All user-facing messages and templates should follow the advice on <a href="translation.html">translations and gendered language</a>.</p>
 </section>
 
             </section>

@@ -203,11 +203,11 @@ Externer Speicher
             </li>
             
             <li>
-                <a href="/v0.7.5/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
+                <a href="/v0.7.5/de/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/style_guide.html" class="has-background-inherit" >Stilleitfaden</a>
+                <a href="/v0.7.5/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
             </li>
             
             <li>
@@ -286,7 +286,7 @@ Externer Speicher
 <li>Für Linode Object Storage sollte dies die Cluster-Domain sein, z. B. <code>"eu-central-1.linodeobjects.com"</code></li>
 </ul>
 <p>Bei vielen S3-kompatiblen Diensten ist die <code>ACL</code> standardmäßig <code>"public-read"</code>, und das ist auch der Standard in BookWyrm. Wenn du Backblaze (B2) verwendest, musst du die Standard-ACL in deiner <code>.env</code>-Datei leer lassen:</p>
-<div class="highlight"><pre><span></span><code>AWS_DEFAULT_ACL=&quot;&quot;
+<div class="highlight"><pre><span></span><code><span class="nv">AWS_DEFAULT_ACL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 </code></pre></div>
 
 <h3 id="kopieren-lokaler-medien-auf-externen-speicher"><a class="headerlink" href="#kopieren-lokaler-medien-auf-externen-speicher">Kopieren lokaler Medien auf externen Speicher</a></h3>
@@ -297,10 +297,17 @@ Externer Speicher
 
 <h3 id="aktivierung-des-externen-speichers-fur-bookwyrm"><a class="headerlink" href="#aktivierung-des-externen-speichers-fur-bookwyrm">Aktivierung des externen Speichers für BookWyrm</a></h3>
 <p>Um den S3-kompatiblen externen Speicher zu aktivieren, musst du deine <code>.env</code>-Datei bearbeiten, indem der Eigenschaftswert für <code>USE_S3</code> von <code>false</code> zu <code>true</code> geändert wird:</p>
-<div class="highlight"><pre><span></span><code>USE_S3=true
+<div class="highlight"><pre><span></span><code><span class="nv">USE_S3</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 
 <p><strong>Beachte</strong> dass nach <code>v0.7.5</code> angenommen wird, dass aller Datenverkehr über HTTPS läuft. Du musst also sicherstellen, dass dein externer Speicher ebenfalls über HTTPS ausgeliefert wird.</p>
+<p>From BookWyrm version <code>0.8.5</code> all user export files are saved to the local file system by default, even if you are using S3 storage for everything else. This choice was made to avoid inadvertently serving user export files in public buckets and to reduce network traffic to S3 storage for files that are unlikely to be needed more than once.</p>
+<p>Old user export and import files can be <a href="system.html#files-maintenance">automatically deleted using a scheduled job</a>, to ensure your local storage does not fill up with old export files.</p>
+<p>Whilst local storage is the default and recommended, you can use s3 for these files as well. If you wish to use S3 storage for user export and import files, you also need to set <code>USE_S3_FOR_EXPORTS</code> to <code>true</code> in your <code>.env</code> config file:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">USE_S3</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">USE_S3_FOR_EXPORTS</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+
 <h4 id="statische-assets"><a class="headerlink" href="#statische-assets">Statische Assets</a></h4>
 <p>Danach musst du folgende Befehle ausführen, um die Themes zu kompilieren und alle statischen Assets in deinen S3-Bucket zu kopieren:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>compile_themes
@@ -333,7 +340,7 @@ Externer Speicher
 <p>Keine Ausgabe bedeutet, dass alles glatt lief.</p>
 <h3 id="zusatzliche-schritte-fur-nutzerinnen-von-linode-object-storage"><a class="headerlink" href="#zusatzliche-schritte-fur-nutzerinnen-von-linode-object-storage">Zusätzliche Schritte für Nutzer*innen von Linode Object Storage</a></h3>
 <p>Für Linode musst du eine Änderung an der <code>.env</code>-Datei vornehmen, um sicherzustellen, dass die generierten Links zu deinen Storage-Objekten korrekt sind. Wenn du diesen Schritt auslässt, werden alle Links zu Bildern und statischen Dateien (wie CSS) kaputt sein. Um dies zu beheben, musst du den Bucket-Name zur <code>AWS_S3_CUSTOM_DOMAIN</code> hinzufügen. Wenn dein <code>AWS_STORAGE_BUCKET_NAME</code> <code>"my-bookwyrm-bucket"</code> lautet, ändere die Domain zu:</p>
-<div class="highlight"><pre><span></span><code>AWS_S3_CUSTOM_DOMAIN=my-bookwyrm-bucket.cluster-id.linodeobjects.com
+<div class="highlight"><pre><span></span><code><span class="nv">AWS_S3_CUSTOM_DOMAIN</span><span class="o">=</span>my-bookwyrm-bucket.cluster-id.linodeobjects.com
 </code></pre></div>
 
 <p><em>Beachte</em>: Ab diesem Zeitpunkt werden <code>bw-dev copy</code> oder <code>sync</code> Objekte an einem falschen Ort deines Objekt-Storage ablegen. Wenn du sie also nutzen musst, kehre die letzte Änderung um, führe den Befehl aus und nimm die Änderung danach erneut vor.</p>
