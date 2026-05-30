@@ -203,11 +203,11 @@ Developer Environment
             </li>
             
             <li>
-                <a href="/v0.7.5/fr/style_guide.html" class="has-background-inherit" >Style Guide</a>
+                <a href="/v0.7.5/fr/documentation.html" class="has-background-inherit" >Documentation</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/fr/documentation.html" class="has-background-inherit" >Documentation</a>
+                <a href="/v0.7.5/fr/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
@@ -271,7 +271,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 </code></pre></div>
 
 <ol>
-<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>.</li>
+<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>. If you have removed the <code>PORT</code> value in <code>.env.dev</code> this will be <code>http://localhost</code>. If you have changed the port, swap out <code>1333</code> for the port you are using.</li>
 <li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
 </ol>
 <p>Pour les curieux·ses : la commande <code>./bw-dev</code> est un simple script shell qui exécute divers autres outils ; au lieu des commandes ci-dessus, vous auriez pu exécuter <code>docker-compose build</code> ou <code>docker-compose up</code> directement si vous le souhaitez. <code>./bw-dev</code> les rassemble dans un seul endroit pour plus de commodité. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
