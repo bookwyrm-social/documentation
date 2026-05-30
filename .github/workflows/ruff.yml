@@ -1,0 +1,11 @@
+name: Python Formatting (run `ruff check --fix` to fix)
+
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: astral-sh/ruff-action@v4.0.0
+      - run: ruff check
+      - run: ruff format --check
