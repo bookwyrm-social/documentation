@@ -1,4 +1,4 @@
-name: Python Formatting (run `ruff check --fix` to fix)
+name: Python Formatting and Linting (run `ruff check --fix` to fix)
 
 on: [pull_request]
 
