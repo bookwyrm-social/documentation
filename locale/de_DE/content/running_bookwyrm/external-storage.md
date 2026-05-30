@@ -51,7 +51,7 @@ Wenn dein S3-kompatibler Dienst Amazon AWS ist, solltest du startklar sein. Wenn
 
 Bei vielen S3-kompatiblen Diensten ist die `ACL` standardmäßig `"public-read"`, und das ist auch der Standard in BookWyrm. Wenn du Backblaze (B2) verwendest, musst du die Standard-ACL in deiner `.env`-Datei leer lassen:
 
-```
+```sh
 AWS_DEFAULT_ACL=""
 ```
 
@@ -69,11 +69,22 @@ Diese Aufgabe wird mit dem Befehl erledigt:
 
 Um den S3-kompatiblen externen Speicher zu aktivieren, musst du deine `.env`-Datei bearbeiten, indem der Eigenschaftswert für `USE_S3` von `false` zu `true` geändert wird:
 
-```
+```sh
 USE_S3=true
 ```
 
 **Beachte** dass nach `v0.7.5` angenommen wird, dass aller Datenverkehr über HTTPS läuft. Du musst also sicherstellen, dass dein externer Speicher ebenfalls über HTTPS ausgeliefert wird.
+
+From BookWyrm version `0.8.5` all user export files are saved to the local file system by default, even if you are using S3 storage for everything else. This choice was made to avoid inadvertently serving user export files in public buckets and to reduce network traffic to S3 storage for files that are unlikely to be needed more than once.
+
+Old user export and import files can be [automatically deleted using a scheduled job](system.html#files-maintenance), to ensure your local storage does not fill up with old export files.
+
+Whilst local storage is the default and recommended, you can use s3 for these files as well. If you wish to use S3 storage for user export and import files, you also need to set `USE_S3_FOR_EXPORTS` to `true` in your `.env` config file:
+
+```sh
+USE_S3=true
+USE_S3_FOR_EXPORTS=true
+```
 
 #### Statische Assets
 
@@ -122,7 +133,7 @@ Keine Ausgabe bedeutet, dass alles glatt lief.
 
 Für Linode musst du eine Änderung an der `.env`-Datei vornehmen, um sicherzustellen, dass die generierten Links zu deinen Storage-Objekten korrekt sind. Wenn du diesen Schritt auslässt, werden alle Links zu Bildern und statischen Dateien (wie CSS) kaputt sein. Um dies zu beheben, musst du den Bucket-Name zur `AWS_S3_CUSTOM_DOMAIN` hinzufügen. Wenn dein `AWS_STORAGE_BUCKET_NAME` `"my-bookwyrm-bucket"` lautet, ändere die Domain zu:
 
-```
+```sh
 AWS_S3_CUSTOM_DOMAIN=my-bookwyrm-bucket.cluster-id.linodeobjects.com
 ```
 
