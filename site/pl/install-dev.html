@@ -162,11 +162,11 @@ Developer Environment
             </li>
             
             <li>
-                <a href="/v0.8.2/pl/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+                <a href="/v0.8.2/pl/moderation.html" class="has-background-inherit" >Moderacja</a>
             </li>
             
             <li>
-                <a href="/v0.8.2/pl/moderation.html" class="has-background-inherit" >Moderacja</a>
+                <a href="/v0.8.2/pl/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
             </li>
             
             <li>
@@ -203,11 +203,11 @@ Developer Environment
             </li>
             
             <li>
-                <a href="/v0.8.2/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
+                <a href="/v0.8.2/pl/documentation.html" class="has-background-inherit" >Documentation</a>
             </li>
             
             <li>
-                <a href="/v0.8.2/pl/documentation.html" class="has-background-inherit" >Documentation</a>
+                <a href="/v0.8.2/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
             </li>
             
             <li>
@@ -2679,7 +2679,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 </code></pre></div>
 
 <ol>
-<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>.</li>
+<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>. If you have removed the <code>PORT</code> value in <code>.env.dev</code> this will be <code>http://localhost</code>. If you have changed the port, swap out <code>1333</code> for the port you are using.</li>
 <li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
 </ol>
 <p>Dla ciekawskich: polecenie <code>./bw-dev</code> to prosty skrypt uruchamiający wiele różnych narzędzi: powyżej możesz pominąć je i wykonać <code>docker-compose build</code> lub <code>docker-compose up</code> bezpośrednio, jeśli chcesz. <code>./bw-dev</code> po prostu gromadzi je wszystkie w jednym miejscu. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>

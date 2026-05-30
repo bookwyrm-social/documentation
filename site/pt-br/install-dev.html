@@ -162,11 +162,11 @@ Developer Environment
             </li>
             
             <li>
-                <a href="/v0.8.2/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+                <a href="/v0.8.2/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
             </li>
             
             <li>
-                <a href="/v0.8.2/pt-br/moderation.html" class="has-background-inherit" >Moderation</a>
+                <a href="/v0.8.2/pt-br/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
             </li>
             
             <li>
@@ -2661,7 +2661,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 </code></pre></div>
 
 <ol>
-<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>.</li>
+<li>Once the build is complete, you can access the instance at <code>http://localhost:1333</code>. If you have removed the <code>PORT</code> value in <code>.env.dev</code> this will be <code>http://localhost</code>. If you have changed the port, swap out <code>1333</code> for the port you are using.</li>
 <li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
 </ol>
 <p>Se estiver curiosa: o comando <code>./bw-dev</code> é um shell script simples que executa várias ferramentas: no exemplo acima, você poderia pular o script e executar <code>docker-compose build</code> ou <code>docker-compose up</code> diretamente, se preferir. <code>./bw-dev</code> só junta esses comandos em um só, por conveniência. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
