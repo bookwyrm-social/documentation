@@ -161,7 +161,7 @@ Equivalent to `docker-compose build`.
 
 ### migrate [appname migration number]
 
-Runs Django's `migrate` command inside your Docker container. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`. You always need to run this after `makemigrations`, but it also runs automatically wxhen using `./bw-dev [dev] up`.
+Runs Django's `migrate` command inside your Docker container. Optionally, you can specify a specific migration to run, e.g. `./bw-dev makemigrations bookwyrm 0108`. You always need to run this after `makemigrations`, but it also runs automatically when using `./bw-dev [dev] up`.
 
 ### runweb _args_
 
