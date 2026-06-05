@@ -34,7 +34,7 @@ Run tests with `pytest`. You can add pytest arguments to this command to check o
 
 #### makemessages
 
-Finds all translation strings in the app and puts them in the one reference file, `locale/en_US/LC_MESSAGES/django.po`. After you have run `makemessages` you need to run `compilemessages` to compile the translations. See [Django's makemessages](https://docs.djangoproject.com/en/5.2/ref/django-admin/#makemessages).
+Finds all translation strings in the app and puts them in the one reference file, `locale/en_US/LC_MESSAGES/django.po`. После запуска команды `makemessages` необходимо запустить команду `compilemessages` для компиляции переводов. See [Django's makemessages](https://docs.djangoproject.com/en/5.2/ref/django-admin/#makemessages).
 
 #### compilemessages
 
