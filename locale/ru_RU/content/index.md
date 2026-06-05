@@ -47,7 +47,7 @@ Use the menu on the left-hand side to find the section you are looking for.
 
 You can also change the language and version.
 
-### Translations
+### Переводы
 
 Documentation is written in English (US) by default. When we have at least 70% coverage for a language in [BookWyrm's translation project](https://translate.joinbookwyrm.com/) it will be added to the list of available languages. If you notice some parts of a translated version are in English, you can [help us to translate them](https://translate.joinbookwyrm.com/). This can happen as we make changes and additions to the documentation.
 
