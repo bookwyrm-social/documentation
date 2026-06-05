@@ -123,12 +123,12 @@ This will run `black` to lint your files and avoid any issues with our automated
 
 ## Notes for documentation maintainers
 
-### Translations
+### Переводы
 
-Keep translations aligned by regularly updating from Crowdin:
+Следите за согласованностью переводов, регулярно обновляя их из Crowdin:
 
-1. Translations are updated in Crowdin
-2. Crowdin pushes new translations to l10n_main as they are available
+1. Переводы обновляются в Crowdin
+2. Crowdin добавляет новые переводы в репозиторий l10n_main по мере их появления
 3. In your fork, `pull` both `main` and `l10n_main` so they are up to date in your local repository
 4. Create a new fork from `main` (e.g. called `update_locales`) and check it out
 5. merge `l10n_main`'s `locale` directory into your fork: `git checkout l10n_main -- locale`
