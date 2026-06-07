@@ -31,7 +31,7 @@ Most environment variables are set in the `.env` file, used in production, but f
 ```{ .sh }
 ./bw-dev create_secrets # Create the secrets file with random values. You only need to do this once.
 ./bw-dev dev up --build # Build and start development stack
-./bw-dev rundev python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev dev runweb python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
 1. Un cop la creació s'ha completat, pots accedir a la instància a través de `http://localhost:1333` i crear un usuari administrador. Si has esborrat el valor de `PORT` a `.env.dev`, per defecte serà `http://localhost`. Si has modificat el port, canvia a `1333` per al port que estiguis usant.
