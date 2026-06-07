@@ -1,4 +1,4 @@
-""" generate html files """
+"""generate html files"""
 
 from glob import glob
 import os
@@ -103,7 +103,6 @@ def format_markdown(file_path):
         dashed_header_format = first_line == "---\n"
 
     with open(file_path, "r", encoding="utf-8") as markdown_content:
-
         md = Markdown(
             extensions=["tables", "fenced_code", "codehilite", "toc", "sane_lists"],
             extension_configs={
