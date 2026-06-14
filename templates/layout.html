@@ -24,6 +24,9 @@
     <meta name="twitter:image:alt" content="BookWyrm Logo">
 
     <meta charset="UTF-8">
+    <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+
 </head>
 <body>
 <nav class="navbar container is-max-desktop" aria-label="main navigation">
@@ -56,6 +59,10 @@
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 {{ _("Code") }}
             </a>
+        </div>
+        <div class="navbar-end">
+            <pagefind-modal-trigger class="navbar-item"></pagefind-modal-trigger>
+            <pagefind-modal></pagefind-modal>
         </div>
     </div>
 </nav>
