@@ -63,6 +63,10 @@ jobs:
         run: |
           python generate.py ${{ matrix.version }}
 
+      - name: Add search indexes
+        run: |
+          python -m pagefind --site site
+
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_user_name: BookWyrm Bot
