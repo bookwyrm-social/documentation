@@ -75,9 +75,9 @@ Wenn deine Pull Request übernommen wird, wird [die Dokumentation](https://docs.
 
 Wenn du eine neue Seite hinzufügst, wirst du einige Metadaten angeben und andere Seite anpassen müssen.
 
-Am Anfang jeder Markdown-Datei befindet sich die Titelei im `toml`-Format:
+At the top of each markdown file is the "frontmatter" in `yaml` format:
 
-```toml
+```yaml
 Title: Dokumentation
 Date: 2025-04-09
 Order: 4
@@ -102,7 +102,7 @@ Anders als im Hauptprojekt läuft die Dokumentation nicht in einem Docker-Contai
 ```py
 python -m venv /path/to/new/virtual/environment
 source <venv>/bin/activate
-pip install -r requirements.txt
+python -m pip install .
 ```
 
 Eine ganze Reihe von Befehlen ist verfügbar, wenn du `./bw-dev <command>` ausführst. Du wirst wahrscheinlich diese nutzen wollen:
@@ -117,9 +117,9 @@ Wenn du `site:compile` ausführst, wird es im Verzeichnis `site` eine große Men
 
 Dieser Befehl startet einen lokalen Web-Server unter `http://[::1]:8080/`, damit du dir ansehen kannst, wie die Dokumentation aussehen wird.
 
-### black
+### ruff
 
-Dieser Befehl wird `black` ausführen, um deine Dateien zu analysieren und auftretende Probleme durch unsere automatischen Überprüfungen zu erkennen. Es ist unwahrscheinlich, dass du dies brauchen wirst, wenn du nur die Quelldateien der Dokumentation im Ordner `content` aktualisierst.
+We use [ruff](https://docs.astral.sh/ruff/) for linting and formatting. Ensure that you run `./bw-dev ruff` before pushing your pull request if you made any changes to Python files in the documentation repository. You can try auto-fixing any linting issues with `./bw-dev ruff-fix`.
 
 ## Hinweise für Dokumentations-Maintainer
 
