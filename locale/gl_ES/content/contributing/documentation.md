@@ -75,7 +75,7 @@ When your pull request is merged, [the documentation](https://docs.joinbookwyrm.
 
 If you are adding a new page, you will need to add some metadata and may need to adjust other pages.
 
-At the top of each markdown file is the "frontmatter" in `yaml` format:
+Na parte superior da cada ficheiro markdown está o «frontmatter» en formato `yaml`:
 
 ```yaml
 Title: Documentation
