@@ -13,7 +13,7 @@ set -x
 
 case "$CMD" in
     site:compile)
-        python3 generate.py
+        python3 src/generate.py
         ;;
     site:serve)
         cd site
@@ -37,8 +37,12 @@ case "$CMD" in
         xgettext --no-wrap --join-existing --language=C --from-code=UTF-8 --keyword=_ --output=locale/en_US/LC_MESSAGES/messages.po `find templates -name "*.html"`
         sed -i -e "s/Content-Type: text\/plain; charset=CHARSET/Content-Type: text\/plain; charset=UTF-8/g" locale/en_US/LC_MESSAGES/messages.po
         ;;
-    black)
-        black .
+    ruff)
+        ruff format
+        ruff check
+        ;;
+    ruff-fix)
+        ruff check --fix
         ;;
     *)
         set +x # No need to echo echo
@@ -48,7 +52,8 @@ case "$CMD" in
         echo "    messages:generate [locale]"
         echo "    messages:compile [locale]"
         echo "    messages:update"
-        echo "    black"
+        echo "    ruff"
+        echo "    ruff-fix"
 
         ;;
 esac
