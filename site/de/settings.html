@@ -3,13 +3,14 @@
 <head>
     <title>
         
-Einstellungen und Profil
+Instanzeinstellungen
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v0.8.5">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
@@ -24,6 +25,8 @@ Einstellungen und Profil
     <meta name="twitter:image:alt" content="BookWyrm Logo">
 
     <meta charset="UTF-8">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+
 </head>
 <body>
 <nav class="navbar container is-max-desktop" aria-label="main navigation">
@@ -56,6 +59,10 @@ Einstellungen und Profil
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 Code
             </a>
+        </div>
+        <div class="navbar-end">
+            <pagefind-modal-trigger class="navbar-item"></pagefind-modal-trigger>
+            <pagefind-modal></pagefind-modal>
         </div>
     </div>
 </nav>
@@ -168,11 +175,40 @@ Einstellungen und Profil
             </li>
             
             <li>
-                <a href="/de/admin-settings.html" class="has-background-inherit" >Instanzeinstellungen</a>
+                <a href="/de/settings.html" class="has-background-inherit" class="is-active">Instanzeinstellungen</a>
             </li>
             
             <li>
-                <a href="/de/settings.html" class="has-background-inherit" class="is-active">Instanzeinstellungen</a>
+                <a href="/de/admin-settings.html" class="has-background-inherit" >Instanzeinstellungen</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/de/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/de/translation.html" class="has-background-inherit" >Übersetzungen</a>
+            </li>
+            
+            <li>
+                <a href="/de/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
+            </li>
+            
+            <li>
+                <a href="/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
             </li>
             
         </ul>
@@ -226,35 +262,6 @@ Einstellungen und Profil
             
         </ul>
         
-        <h2 class="menu-label">Contributing</h2>
-        <ul class="menu-list has-background-inherit">
-            
-            <li>
-                <a href="/de/contributing.html" class="has-background-inherit" >How to Contribute</a>
-            </li>
-            
-            <li>
-                <a href="/de/translation.html" class="has-background-inherit" >Übersetzungen</a>
-            </li>
-            
-            <li>
-                <a href="/de/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
-                <a href="/de/documentation.html" class="has-background-inherit" >Dokumentation</a>
-            </li>
-            
-            <li>
-                <a href="/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
-            </li>
-            
-            <li>
-                <a href="/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
-            </li>
-            
-        </ul>
-        
         <h2 class="menu-label">Codebase</h2>
         <ul class="menu-list has-background-inherit">
             
@@ -295,33 +302,16 @@ Einstellungen und Profil
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#profil-bearbeiten">Profil bearbeiten</a>
-                  
-                      
-                      <a class="navbar-item" href="#profil"><span class="pl-4">Profil</span></a>
-                      
-                      <a class="navbar-item" href="#anzeige"><span class="pl-4">Anzeige</span></a>
-                      
-                      <a class="navbar-item" href="#privatsphare"><span class="pl-4">Privatsphäre</span></a>
-                      
+                  <a class="navbar-item" href="#ankundigungen">Ankündigungen</a>
                   
               
-                  <a class="navbar-item" href="#passwort-andern">Passwort ändern</a>
+                  <a class="navbar-item" href="#seiteneinstellungen">Seiteneinstellungen</a>
                   
               
-                  <a class="navbar-item" href="#kontosicherheit">Kontosicherheit</a>
+                  <a class="navbar-item" href="#registrierung">Registrierung</a>
                   
               
-                  <a class="navbar-item" href="#aliase-einrichten-und-deinen-account-umziehen">Aliase einrichten und deinen Account umziehen</a>
-                  
-              
-                  <a class="navbar-item" href="#konto-deaktivieren-oder-loschen">Konto deaktivieren oder löschen</a>
-                  
-              
-                  <a class="navbar-item" href="#bucher-importieren-und-exportieren">Bücher importieren und exportieren</a>
-                  
-              
-                  <a class="navbar-item" href="#nutzerinnen-blockieren">Nutzer*innen blockieren</a>
+                  <a class="navbar-item" href="#designs">Designs</a>
                   
               
             </div>
@@ -334,59 +324,20 @@ Einstellungen und Profil
             <section class="section">
                 <header class="content block column is-offset-one-quarter pl-2">
                     
-<h1 class="title is-1">Einstellungen und Profil</h1>
+<h1 class="title is-1">Instanzeinstellungen</h1>
 
                 </header>
                 
 <section class="block content">
-    <p>Du kannst deine Konto- und Profileinstellungen ändern, indem du auf deinen Namen klickst, das Menü ausklappst und "Einstellungen" auswählst.</p>
-<h2 id="profil-bearbeiten"><a class="headerlink" href="#profil-bearbeiten">Profil bearbeiten</a></h2>
-<h3 id="profil"><a class="headerlink" href="#profil">Profil</a></h3>
-<ul>
-<li>Lade einen Avatar hoch oder entferne ihn</li>
-<li>Ändere deinen Anzeigenamen</li>
-<li>Erstelle oder bearbeite deine Profil-Zusammenfassung (auch Biografie genannt)</li>
-<li>Ändere die E-Mail-Adresse, mit der du dich registriert hast</li>
-</ul>
-<h3 id="anzeige"><a class="headerlink" href="#anzeige">Anzeige</a></h3>
-<ul>
-<li>Lege fest, ob die Leseziel-Erinnerung im Feed gezeigt werden soll</li>
-<li>Lege fest, ob Bewertungen bei Rezensionen angezeigt werden sollen oder ob du standardmäßig einen Schalter umlegen musst, um sie zu sehen</li>
-<li>Lege fest, ob dir BookWyrm Personen vorschlagen soll, denen du folgen kannst</li>
-<li>Lege fest, ob BookWyrm dein Profil anderen Nutzer*innen empfehlen darf</li>
-<li>Wähle deine Zeitzone – das betrifft die Zeitstempel, die dir angezeigt werden</li>
-<li>Wähle die Sprache der Oberfläche</li>
-<li>Wähle ein Theme – unterschiedliche Instanzen haben unterschiedliche Optionen, standardmäßig gibt es ein helles und ein dunkles BookWyrm-Theme</li>
-</ul>
-<h3 id="privatsphare"><a class="headerlink" href="#privatsphare">Privatsphäre</a></h3>
-<ul>
-<li>Lege fest, ob du Anfragen manuell überprüfen willst, bevor dir neue Personen folgen dürfen</li>
-<li>Lege fest, ob deine Follower*innen und die Personen, denen du folgst, auf deiner Profilseite zu sehen sein sollen</li>
-<li>Lege das Standard-Privatsphäre-Level für deine Beiträge fest. Für <a href="/privacy-controls.html">mehr Details zu Privatsphäre-Optionen für Beiträge</a> schau auf der Seite zu Privatsphäre-Einstellungen vorbei</li>
-</ul>
-<h2 id="passwort-andern"><a class="headerlink" href="#passwort-andern">Passwort ändern</a></h2>
-<p>Hier kannst du … dein Passwort ändern.</p>
-<h2 id="kontosicherheit"><a class="headerlink" href="#kontosicherheit">Kontosicherheit</a></h2>
-<p>Wir empfehlen, Zwei-Faktor-Authentifizierung für dein Konto zu aktivieren. Mithilfe einer Authentifizierungs-App kannst du so deine Logins mit einem zweiten Faktor absichern.</p>
-<p>Dieser Bereich erlaubt dir außerdem, alle angemeldeten Sitzungen deines Kontos einzusehen und zu beenden. Das kann nützlich sein, um dein Konto zu schützen, wenn du zum Beispiel ein Gerät verloren hast oder dir eine Sitzung unbekannt vorkommt.</p>
-<h2 id="aliase-einrichten-und-deinen-account-umziehen"><a class="headerlink" href="#aliase-einrichten-und-deinen-account-umziehen">Aliase einrichten und deinen Account umziehen</a></h2>
-<p>Du kannst für deinen Account ein Alias einrichten, wodurch du zeigst, dass beide Accounts zur selben Person gehören. Das wird üblicherweise genutzt, wenn du von deinem alten Konto im Fediverse zu einem neuen wechseln willst.</p>
-<p>Du kannst auch dein gesamtes Konto umziehen. Setze hierfür das Konto, <em>von dem aus</em> du wechselst, als ein Alias für den Account, <em>zu dem</em> du umziehst, bevor du mit dem eigentlichen Umzug beginnst.</p>
-<p>Ein Alias kann leicht wieder entfernt werden. Ein Konto umzuziehen dagegen kann nicht einfach rückgängig gemacht werden – also wähle weise!</p>
-<p>Schau dir <a href="user-migration.html">Kontoumzug und Aliase</a> an für mehr Details.</p>
-<h2 id="konto-deaktivieren-oder-loschen"><a class="headerlink" href="#konto-deaktivieren-oder-loschen">Konto deaktivieren oder löschen</a></h2>
-<p>Unter "Account löschen" kannst du dein Konto entweder deaktivieren oder löschen.</p>
-<p>Die Deaktivierung markiert dein Konto als nicht länger aktiv und verbirgt deine Profilseite. Du kannst dein Konto später reaktivieren.</p>
-<p>Das Löschen eines Kontos ist unumkehrbar. Dein Nutzer*innenname wird zukünftig nicht mehr für die Registrierung bereitstehen. BookWyrm wird beim Löschen deines Kontos versuchen, alle deine Daten und Beiträge zu entfernen. Bitte beachte aber, dass es durch die Föderation vorkommen kann, dass föderierte Server die Löschung nicht korrekt ausführen.</p>
-<p>Bücher, die durch ein gelöschtes Konto hinzugefügt worden sind, bleiben verfügbar, da sie von einzelnen Nutzer*innen oder Regalen separat abgelegt werden.</p>
-<h2 id="bucher-importieren-und-exportieren"><a class="headerlink" href="#bucher-importieren-und-exportieren">Bücher importieren und exportieren</a></h2>
-<p>Unter der Überschrift "Daten" kannst du Bücherlisten importieren und exportieren.</p>
-<p>Siehe <a href="/adding-books.html">Bücher hinzufügen</a> für weitere Informationen zum Importieren von Büchern. Wähle "Bücherliste exportieren", um eine CSV-Datei mit allen Büchern zu erhalten, die in deinen Regalen stehen, die du bewertet hast oder zu denen du Leseaktivität gespeichert hast.</p>
-<p>Du kannst auch Konten in diesem Bereich importieren oder exportieren. Schau dir <a href="user-migration.html">Kontoumzug und Aliase</a> an für mehr Details.</p>
-<h2 id="nutzerinnen-blockieren"><a class="headerlink" href="#nutzerinnen-blockieren">Nutzer*innen blockieren</a></h2>
-<p>Du kannst Nutzer*innen (ent-) blockieren, in dem du die Ellipse (…) rechts der "Folgen"-/"Entfolgen"-Schaltfläche in ihrem Profil anklickst.</p>
-<p>Wenn du Nutzer*innen blockiert hast, werden sie unter "Gesperrte Benutzer*innen" angezeigt und du kannst sie von dort entblockieren.</p>
-<p>Blockierte Nutzer*innen können dein Profil, deine Listen und deine Regale nicht sehen, dir keine Direktnachrichten schicken oder mit deinen Beiträgen interagieren.</p>
+    <h2 id="ankundigungen"><a class="headerlink" href="#ankundigungen">Ankündigungen</a></h2>
+<p>Du kannst <strong>Ankündigungen</strong> unter <code>Administration &gt; Instanzeinstellungen &gt; Ankündigungen</code> erstellen. Ankündigungen erscheinen als Banner am oberen Rand jeder Seite, bis sie von Nutzer*innen weggeklickt werden. Ankündigungen können für beliebige Zwecke verwendet werden. Üblicherweise würde man sie einsetzen, um Nutzer*innen auf geplante Wartungszeiträume oder Änderungen in der Konfiguration hinzuweisen.</p>
+<p>Ankündigungen können sich auf ein bestimmtes Datum beziehen (z. B. eine geplante Aktualisierung oder Wartungsphase). Du kannst die Einblendung der Ankündigung so planen, dass sie zu einem bestimmten Datum beginnt und/oder endet.</p>
+<h2 id="seiteneinstellungen"><a class="headerlink" href="#seiteneinstellungen">Seiteneinstellungen</a></h2>
+<p>Wenn du deine Instanz erstmals aufsetzt, wirst du zur Seite <strong>Seiteneinstellungen</strong> weitergeleitet. Hier kannst du die grundlegenden Instanzinformationen wie Name, Beschreibung, Verhaltenskodex und weitere Details bearbeiten. Dies ist auch der Ort, um ein Logo hochzuladen, die Details im Fußbereich zu konfigurieren und ein Standard-Design zu setzen.</p>
+<h2 id="registrierung"><a class="headerlink" href="#registrierung">Registrierung</a></h2>
+<p>Die Seite <strong>Registrierung</strong> in den Instanzeinstellungen erlaubt es, die Registrierung zu (de-)aktivieren. Hier kann auch festgelegt werden, ob Nutzer*innen ihre E-Mail-Adressen bestätigen müssen und ob Einladungsanfragen erlaubt sind. Außerdem kannst du eine Frage formulieren, die angezeigt wird, wenn eine Einladung beantragt wird (nützlich, um automatische Anfragen zu verlangsamen oder zu erkennen).</p>
+<h2 id="designs"><a class="headerlink" href="#designs">Designs</a></h2>
+<p>BookWyrm kommt mit vorinstallierten Designs, aber du kannst deine eigenen Designs hinzufügen. Designs sollten als <code>.scss</code>-Dateien hinterlegt werden.</p>
 </section>
 
             </section>
@@ -414,7 +365,7 @@ Einstellungen und Profil
                     <a href="https://github.com/bookwyrm-social">BookWyrm auf GitHub</a>
                 </p>
                 <p>
-                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/using_bookwyrm/settings.md">Zu dieser Seite beitragen</a>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/managing_bookwyrm/settings.md">Zu dieser Seite beitragen</a>
                 </p>
                 <p>
                     <a href="https://twitter.com/BookWyrmSocial" target="_blank">

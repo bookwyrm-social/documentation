@@ -7,9 +7,10 @@ Documentation
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v0.8.5">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
@@ -24,6 +25,8 @@ Documentation
     <meta name="twitter:image:alt" content="BookWyrm Logo">
 
     <meta charset="UTF-8">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+
 </head>
 <body>
 <nav class="navbar container is-max-desktop" aria-label="main navigation">
@@ -56,6 +59,10 @@ Documentation
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 Kod źródłowy
             </a>
+        </div>
+        <div class="navbar-end">
+            <pagefind-modal-trigger class="navbar-item"></pagefind-modal-trigger>
+            <pagefind-modal></pagefind-modal>
         </div>
     </div>
 </nav>
@@ -168,11 +175,40 @@ Documentation
             </li>
             
             <li>
-                <a href="/pl/admin-settings.html" class="has-background-inherit" >Instance Settings</a>
+                <a href="/pl/settings.html" class="has-background-inherit" >Instance Settings</a>
             </li>
             
             <li>
-                <a href="/pl/settings.html" class="has-background-inherit" >Instance Settings</a>
+                <a href="/pl/admin-settings.html" class="has-background-inherit" >Instance Settings</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/pl/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/pl/translation.html" class="has-background-inherit" >Tłumaczenia</a>
+            </li>
+            
+            <li>
+                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/pl/documentation.html" class="has-background-inherit" class="is-active">Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/pl/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
@@ -222,35 +258,6 @@ Documentation
             
             <li>
                 <a href="/pl/management-commands.html" class="has-background-inherit" >Management Commands</a>
-            </li>
-            
-        </ul>
-        
-        <h2 class="menu-label">Contributing</h2>
-        <ul class="menu-list has-background-inherit">
-            
-            <li>
-                <a href="/pl/contributing.html" class="has-background-inherit" >How to Contribute</a>
-            </li>
-            
-            <li>
-                <a href="/pl/translation.html" class="has-background-inherit" >Tłumaczenia</a>
-            </li>
-            
-            <li>
-                <a href="/pl/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
-                <a href="/pl/documentation.html" class="has-background-inherit" class="is-active">Documentation</a>
-            </li>
-            
-            <li>
-                <a href="/pl/install-dev.html" class="has-background-inherit" >Developer Environment</a>
-            </li>
-            
-            <li>
-                <a href="/pl/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
@@ -326,7 +333,7 @@ Documentation
                       
                       <a class="navbar-item" href="#siteserve"><span class="pl-4">site:serve</span></a>
                       
-                      <a class="navbar-item" href="#black"><span class="pl-4">black</span></a>
+                      <a class="navbar-item" href="#ruff"><span class="pl-4">ruff</span></a>
                       
                   
               
@@ -406,10 +413,10 @@ Documentation
 <p>When your pull request is merged, <a href="https://docs.joinbookwyrm.com/">the documentation</a> is automatically updated. You may need to refresh your browser or use "incognito mode" to see the changes in your browser.</p>
 <h2 id="new-pages"><a class="headerlink" href="#new-pages">New pages</a></h2>
 <p>If you are adding a new page, you will need to add some metadata and may need to adjust other pages.</p>
-<p>At the top of each markdown file is the "frontmatter" in <code>toml</code> format:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="err">:</span><span class="w"> </span><span class="n">Documentation</span>
-<span class="n">Date</span><span class="err">:</span><span class="w"> </span><span class="n">2025-04-09</span>
-<span class="n">Order</span><span class="err">:</span><span class="w"> </span><span class="n">4</span>
+<p>At the top of each markdown file is the "frontmatter" in <code>yaml</code> format:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Documentation</span>
+<span class="nt">Date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-04-09</span>
+<span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 </code></pre></div>
 
 <p>This example shows that the page is called  "Documentation", should be the fourth page within its section (in this case, <code>Contributing</code>), and that it was last updated on 9 April 2025. If you add a page anywhere other than at the end of a section, you will need to adjust the order of every page that appears below your new page.</p>
@@ -422,7 +429,7 @@ Documentation
 <p>Unlike the main project, the documentation does not run in a Docker container. If you want to compile the documentation site locally you will need to install the dependencies, and it is recommended that you <a href="https://docs.python.org/3/library/venv.html">use a virtual environment</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
 <span class="n">source</span> <span class="o">&lt;</span><span class="n">venv</span><span class="o">&gt;/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
 </code></pre></div>
 
 <p>There are a number of commands available by running <code>./bw-dev &lt;command&gt;</code>. The ones you are likely to want to use are:</p>
@@ -431,8 +438,8 @@ Documentation
 <p>When you run <code>site:compile</code> it will generate a large number of files in the <code>site</code> directory. Do not check these in or include them in your pull request: they will be re-generated on the documentation server when your pull request is merged.</p>
 <h3 id="siteserve"><a class="headerlink" href="#siteserve">site:serve</a></h3>
 <p>This runs a local web server at <code>http://[::1]:8080/</code> so you can see what the docs will look like.</p>
-<h3 id="black"><a class="headerlink" href="#black">black</a></h3>
-<p>This will run <code>black</code> to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in <code>content</code>.</p>
+<h3 id="ruff"><a class="headerlink" href="#ruff">ruff</a></h3>
+<p>We use <a href="https://docs.astral.sh/ruff/">ruff</a> for linting and formatting. Ensure that you run <code>./bw-dev ruff</code> before pushing your pull request if you made any changes to Python files in the documentation repository. You can try auto-fixing any linting issues with <code>./bw-dev ruff-fix</code>.</p>
 <h2 id="notes-for-documentation-maintainers"><a class="headerlink" href="#notes-for-documentation-maintainers">Notes for documentation maintainers</a></h2>
 <h3 id="translations"><a class="headerlink" href="#translations">Translations</a></h3>
 <p>Keep translations aligned by regularly updating from Crowdin:</p>

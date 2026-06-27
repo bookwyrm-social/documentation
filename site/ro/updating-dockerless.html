@@ -7,9 +7,10 @@ Updating Without Docker
 
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
     <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
     <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v076">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v0.8.5">
 
     <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
 
@@ -24,6 +25,8 @@ Updating Without Docker
     <meta name="twitter:image:alt" content="BookWyrm Logo">
 
     <meta charset="UTF-8">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+
 </head>
 <body>
 <nav class="navbar container is-max-desktop" aria-label="main navigation">
@@ -56,6 +59,10 @@ Updating Without Docker
             <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
                 Cod
             </a>
+        </div>
+        <div class="navbar-end">
+            <pagefind-modal-trigger class="navbar-item"></pagefind-modal-trigger>
+            <pagefind-modal></pagefind-modal>
         </div>
     </div>
 </nav>
@@ -168,11 +175,40 @@ Updating Without Docker
             </li>
             
             <li>
-                <a href="/ro/admin-settings.html" class="has-background-inherit" >Instance Settings</a>
+                <a href="/ro/settings.html" class="has-background-inherit" >Instance Settings</a>
             </li>
             
             <li>
-                <a href="/ro/settings.html" class="has-background-inherit" >Instance Settings</a>
+                <a href="/ro/admin-settings.html" class="has-background-inherit" >Instance Settings</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/ro/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/ro/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
@@ -222,35 +258,6 @@ Updating Without Docker
             
             <li>
                 <a href="/ro/management-commands.html" class="has-background-inherit" >Management Commands</a>
-            </li>
-            
-        </ul>
-        
-        <h2 class="menu-label">Contributing</h2>
-        <ul class="menu-list has-background-inherit">
-            
-            <li>
-                <a href="/ro/contributing.html" class="has-background-inherit" >How to Contribute</a>
-            </li>
-            
-            <li>
-                <a href="/ro/translation.html" class="has-background-inherit" >Translations</a>
-            </li>
-            
-            <li>
-                <a href="/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
-                <a href="/ro/documentation.html" class="has-background-inherit" >Documentation</a>
-            </li>
-            
-            <li>
-                <a href="/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
-            </li>
-            
-            <li>
-                <a href="/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
