@@ -188,3 +188,30 @@
         .highlight .il { color: #DFBFFF } /* Literal.Number.Integer.Long */
     }
 }
+
+/*  pagefind dark mode override */
+@media (prefers-color-scheme: dark) {
+    :root {
+      --pf-text: #e5e5e5;
+      --pf-text-secondary: #a0a0a0;
+      --pf-text-muted: #949494;
+      --pf-background: #1a1a1a;
+      --pf-border: #333;
+      --pf-border-focus: #555;
+      --pf-skeleton: #2a2a2a;
+      --pf-skeleton-shine: #333;
+      --pf-hover: #252525;
+      --pf-mark: #e5e5e5;
+      --pf-scroll-shadow: rgba(255, 255, 255, 0.1);
+      --pf-outline-focus: #58a6ff;
+
+      --pf-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --pf-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+      --pf-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+
+      --pf-error-bg: #2a1a1a;
+      --pf-error-border: #5c2828;
+      --pf-error-text: #f87171;
+      --pf-error-text-secondary: #ef4444;
+    }
+  }
