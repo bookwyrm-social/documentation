@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/generate.py
+src/i18n.py
+src/BookWyrm_documentation.egg-info/PKG-INFO
+src/BookWyrm_documentation.egg-info/SOURCES.txt
+src/BookWyrm_documentation.egg-info/dependency_links.txt
+src/BookWyrm_documentation.egg-info/requires.txt
+src/BookWyrm_documentation.egg-info/top_level.txt
+src/plugins/add_header_links.py

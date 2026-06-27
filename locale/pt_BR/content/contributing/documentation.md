@@ -75,9 +75,9 @@ Quando seu pull request é incorporado, [a documentação](https://docs.joinbook
 
 Se estiver adicionando uma nova página, você precisará adicionar alguns metadados, e pode precisar ajustar outras páginas.
 
-No topo de cada arquivo markdown está o "frontmatter" em formato `toml`:
+At the top of each markdown file is the "frontmatter" in `yaml` format:
 
-```toml
+```yaml
 Título: Documentação
 Data: 2025-04-09
 Ordem: 4
@@ -99,8 +99,8 @@ Diferente do projeto principal, a documentação não é executada em um contêi
 
 ```py
 python -m venv /path/to/new/virtual/environment
-source <command>/bin/activate
-pip install -r requirements.txt
+source <venv>/bin/activate
+python -m pip install .
 ```
 
 Você pode ver alguns comandos disponíveis ao executar `./bw-dev <venv>`. Os que você provavelmente quer, são:
@@ -115,9 +115,9 @@ Quando você executar `site:compile`, irá gerar um grande número de arquivos n
 
 Isso roda um servidor local em `http://[::1]:8080/` para que você possa ver como a documentação será apresentada.
 
-### black
+### ruff
 
-Isso irá executar o comando `black` para analisar seus arquivos e evitar erros usando nossas verificações automatizadas. É improvável que você vá precisar disso se estiver apenas atualizando os arquivos fonte da documentação em `content`.
+We use [ruff](https://docs.astral.sh/ruff/) for linting and formatting. Ensure that you run `./bw-dev ruff` before pushing your pull request if you made any changes to Python files in the documentation repository. You can try auto-fixing any linting issues with `./bw-dev ruff-fix`.
 
 ## Notas para mantenedores da documentação
 

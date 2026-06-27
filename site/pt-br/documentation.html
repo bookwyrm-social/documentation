@@ -162,11 +162,40 @@ Documentação
             </li>
             
             <li>
-                <a href="/v0.8.5/pt-br/admin-settings.html" class="has-background-inherit" >Instance Settings</a>
+                <a href="/v0.8.5/pt-br/settings.html" class="has-background-inherit" >Instance Settings</a>
             </li>
             
             <li>
-                <a href="/v0.8.5/pt-br/settings.html" class="has-background-inherit" >Instance Settings</a>
+                <a href="/v0.8.5/pt-br/admin-settings.html" class="has-background-inherit" >Instance Settings</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/v0.8.5/pt-br/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/v0.8.5/pt-br/translation.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/v0.8.5/pt-br/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/v0.8.5/pt-br/documentation.html" class="has-background-inherit" class="is-active">Documentação</a>
+            </li>
+            
+            <li>
+                <a href="/v0.8.5/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/v0.8.5/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
@@ -216,35 +245,6 @@ Documentação
             
             <li>
                 <a href="/v0.8.5/pt-br/management-commands.html" class="has-background-inherit" >Management Commands</a>
-            </li>
-            
-        </ul>
-        
-        <h2 class="menu-label">Contributing</h2>
-        <ul class="menu-list has-background-inherit">
-            
-            <li>
-                <a href="/v0.8.5/pt-br/contributing.html" class="has-background-inherit" >How to Contribute</a>
-            </li>
-            
-            <li>
-                <a href="/v0.8.5/pt-br/translation.html" class="has-background-inherit" ></a>
-            </li>
-            
-            <li>
-                <a href="/v0.8.5/pt-br/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
-                <a href="/v0.8.5/pt-br/documentation.html" class="has-background-inherit" class="is-active">Documentação</a>
-            </li>
-            
-            <li>
-                <a href="/v0.8.5/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
-            </li>
-            
-            <li>
-                <a href="/v0.8.5/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
         </ul>
@@ -320,7 +320,7 @@ Documentação
                       
                       <a class="navbar-item" href="#siteserve"><span class="pl-4">site:serve</span></a>
                       
-                      <a class="navbar-item" href="#black"><span class="pl-4">black</span></a>
+                      <a class="navbar-item" href="#ruff"><span class="pl-4">ruff</span></a>
                       
                   
               
@@ -400,10 +400,10 @@ Documentação
 <p>Quando seu pull request é incorporado, <a href="https://docs.joinbookwyrm.com/">a documentação</a> é atualizada automaticamente. Pode ser necessário recarregar a página ou usar o "modo anônimo" para ver as mudanças em seu navegador.</p>
 <h2 id="novas-paginas"><a class="headerlink" href="#novas-paginas">Novas páginas</a></h2>
 <p>Se estiver adicionando uma nova página, você precisará adicionar alguns metadados, e pode precisar ajustar outras páginas.</p>
-<p>No topo de cada arquivo markdown está o "frontmatter" em formato <code>toml</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Título</span><span class="p">:</span><span class="w"> </span><span class="n">Documentação</span>
-<span class="n">Data</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
-<span class="n">Ordem</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<p>At the top of each markdown file is the "frontmatter" in <code>yaml</code> format:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Título</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Documentação</span>
+<span class="nt">Data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-04-09</span>
+<span class="nt">Ordem</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 </code></pre></div>
 
 <p>Esse exemplo mostra que a página é chamada "Documentação", deve ser a quarta página dentro de sua seção (neste caso, <code>Contribuindo</code>), e que a última atualização foi em 9 de Abril de 2025. Se você adicionar uma página em qualquer lugar que não seja no fim de uma seção, você vai precisar ajustar a ordem das outras páginas que aparecerem abaixo de sua nova página.</p>
@@ -415,8 +415,8 @@ Documentação
 <p>Você pode querer ver como suas alterações serão mostradas antes de enviar um pull request. O repositório da documentação inclui um script de desenvolvimento igual ao do repositório de código principal, com o mesmo nome: <code>bw-dev</code>. Você pode usar isso para testar como suas alterações serão mostradas.</p>
 <p>Diferente do projeto principal, a documentação não é executada em um contêiner Docker. Se você quiser compilar o site da documentação localmente, você vai precisar instalar as dependências. É recomendado <a href="https://docs.python.org/3/library/venv.html">usar um ambiente virtual</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
-<span class="n">source</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">source</span> <span class="o">&lt;</span><span class="n">venv</span><span class="o">&gt;/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
 </code></pre></div>
 
 <p>Você pode ver alguns comandos disponíveis ao executar <code>./bw-dev &lt;venv&gt;</code>. Os que você provavelmente quer, são:</p>
@@ -425,8 +425,8 @@ Documentação
 <p>Quando você executar <code>site:compile</code>, irá gerar um grande número de arquivos no diretório <code>site</code>. Não os marque ou inclua em seu pull request: eles serão gerados novamente, no servidor da documentação, quando seu pull request for incorporado.</p>
 <h3 id="siteserve"><a class="headerlink" href="#siteserve">site:serve</a></h3>
 <p>Isso roda um servidor local em <code>http://[::1]:8080/</code> para que você possa ver como a documentação será apresentada.</p>
-<h3 id="black"><a class="headerlink" href="#black">black</a></h3>
-<p>Isso irá executar o comando <code>black</code> para analisar seus arquivos e evitar erros usando nossas verificações automatizadas. É improvável que você vá precisar disso se estiver apenas atualizando os arquivos fonte da documentação em <code>content</code>.</p>
+<h3 id="ruff"><a class="headerlink" href="#ruff">ruff</a></h3>
+<p>We use <a href="https://docs.astral.sh/ruff/">ruff</a> for linting and formatting. Ensure that you run <code>./bw-dev ruff</code> before pushing your pull request if you made any changes to Python files in the documentation repository. You can try auto-fixing any linting issues with <code>./bw-dev ruff-fix</code>.</p>
 <h2 id="notas-para-mantenedores-da-documentacao"><a class="headerlink" href="#notas-para-mantenedores-da-documentacao">Notas para mantenedores da documentação</a></h2>
 <h3 id="traducoes"><a class="headerlink" href="#traducoes">Traduções</a></h3>
 <p>Mantenha traduções alinhadas atualizando regularmente do Crowdin:</p>
