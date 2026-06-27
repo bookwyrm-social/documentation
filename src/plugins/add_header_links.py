@@ -1,4 +1,4 @@
-""" Adds permalinks to headers """
+"""Adds permalinks to headers"""
 
 from html.parser import HTMLParser
 from urllib.parse import quote as url_quote
