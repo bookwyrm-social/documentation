@@ -31,7 +31,7 @@ Most environment variables are set in the `.env` file, used in production, but f
 ```{ .sh }
 ./bw-dev create_secrets # Create the secrets file with random values. You only need to do this once.
 ./bw-dev dev up --build # Build and start development stack
-./bw-dev rundev python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev dev runweb python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
 1. Once the build is complete, you can access the instance at `http://localhost:1333`. If you have removed the `PORT` value in `.env.dev` this will be `http://localhost`. If you have changed the port, swap out `1333` for the port you are using.

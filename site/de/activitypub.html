@@ -2991,7 +2991,7 @@ ActivityPub
 <p>Diese Methode nimmt ein BookWyrm-Objekt und wandelt es mit Hilfe der Datenklassen-Definitionen in eine valide ActivityPub-JSON-Zeichenkette um. So verarbeiten wir <strong>ausgehende</strong> ActivityPub-Objekte.</p>
 <h3 id="beispiel-nutzerinnen"><a class="headerlink" href="#beispiel-nutzerinnen">Beispiel: Nutzer*innen</a></h3>
 <p>Ein<em>e BookWyrm-Nutzer</em>in wird <a href="https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py">in <code>models/user.py</code> definiert</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;a user who wants to read books&quot;&quot;&quot;</span>
 </code></pre></div>
 
@@ -3003,7 +3003,7 @@ ActivityPub
 
 <p>Die Definition der Datenklasse für<code>activitypub.Person</code> findet sich in <code>/activitypub/person.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">ActivityObject</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">(</span><span class="n">ActivityObject</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;actor activitypub json&quot;&quot;&quot;</span>
 
     <span class="n">preferredUsername</span><span class="p">:</span> <span class="nb">str</span>
