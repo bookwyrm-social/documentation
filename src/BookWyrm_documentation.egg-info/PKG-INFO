@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: BookWyrm-documentation
+Version: 0.8.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Jinja2>=3.1.6
+Requires-Dist: Markdown>=3.9.0
+Requires-Dist: pagefind[extended]>=1.5.2
+Requires-Dist: PyYAML>=6.0.2
+Requires-Dist: pygments>=2.20.0
+Requires-Dist: ruff>=0.15.15
+Dynamic: license-file
+
+# BookWyrm Documentation
+
+You can view the documentation at [docs.joinbookwyrm.com](https://docs.joinbookwyrm.com).
+
+View the main BookWyrm repository at [github.com/bookwyrm-social/bookwyrm](https://github.com/bookwyrm-social/bookwyrm)
+
+## Contributing
+
+More information on contributing to the docs is available [within the docs themselves]([https://docs.joinbookwyrm.com/documentation.html):
+
+* [Editing or creating a page](https://docs.joinbookwyrm.com/documentation.html#editing-or-creating-a-documentation-page)
+* [Building the docs locally to test the output](https://docs.joinbookwyrm.com/documentation.html#building-docs-locally)

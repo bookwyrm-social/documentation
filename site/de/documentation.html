@@ -291,7 +291,7 @@ Dokumentation
                       
                       <a class="navbar-item" href="#siteserve"><span class="pl-4">site:serve</span></a>
                       
-                      <a class="navbar-item" href="#black"><span class="pl-4">black</span></a>
+                      <a class="navbar-item" href="#ruff"><span class="pl-4">ruff</span></a>
                       
                   
               
@@ -371,10 +371,10 @@ Dokumentation
 <p>Wenn deine Pull Request übernommen wird, wird <a href="https://docs.joinbookwyrm.com/">die Dokumentation</a> automatisch aktualisiert. Es kann sein, dass du deinen Browser neu starten oder den "Inkognito-Modus" nutzen musst, um die Änderungen in deinem Browser zu sehen.</p>
 <h2 id="neue-seiten"><a class="headerlink" href="#neue-seiten">Neue Seiten</a></h2>
 <p>Wenn du eine neue Seite hinzufügst, wirst du einige Metadaten angeben und andere Seite anpassen müssen.</p>
-<p>Am Anfang jeder Markdown-Datei befindet sich die Titelei im <code>toml</code>-Format:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="p">:</span><span class="w"> </span><span class="n">Dokumentation</span>
-<span class="n">Date</span><span class="p">:</span><span class="w"> </span><span class="mi">2025-04-09</span>
-<span class="n">Order</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<p>At the top of each markdown file is the "frontmatter" in <code>yaml</code> format:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dokumentation</span>
+<span class="nt">Date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-04-09</span>
+<span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 </code></pre></div>
 
 <p>Dieses Beispiel zeigt, dass die Seite "Dokumentation" heißt, in ihrem Abschnitt (in diesem Fall: "Wie mitmachen") an vierter Stelle angezeigt werden soll, und dass sie zuletzt am 9. April 2025 aktualisiert wurde. Wenn du die Seite nicht am Ende eines Abschnittes hinzufügst, wirst du die Reihenfolge (<code>order</code>) jeder Seite anpassen müssen, die unter deiner neuen Seite erscheinen soll.</p>
@@ -387,7 +387,7 @@ Dokumentation
 <p>Anders als im Hauptprojekt läuft die Dokumentation nicht in einem Docker-Container. Wenn du die Dokumentationsseite lokal kompilieren möchtest, wirst du alle Abhängigkeiten installieren müssen, und es ist empfehlenswert, <a href="https://docs.python.org/3/library/venv.html">eine virtuelle Umgebung</a> zu nutzen:</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
 <span class="n">source</span> <span class="o">&lt;</span><span class="n">venv</span><span class="o">&gt;/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
 </code></pre></div>
 
 <p>Eine ganze Reihe von Befehlen ist verfügbar, wenn du <code>./bw-dev &lt;command&gt;</code> ausführst. Du wirst wahrscheinlich diese nutzen wollen:</p>
@@ -396,8 +396,8 @@ Dokumentation
 <p>Wenn du <code>site:compile</code> ausführst, wird es im Verzeichnis <code>site</code> eine große Menge Dateien erzeugen. Checke diese nicht ein und füge sie nicht deiner Pull Request bei: Sie werden auf dem Dokumentations-Server neu generiert, wenn deine Pull Request übernommen wird.</p>
 <h3 id="siteserve"><a class="headerlink" href="#siteserve">site:serve</a></h3>
 <p>Dieser Befehl startet einen lokalen Web-Server unter <code>http://[::1]:8080/</code>, damit du dir ansehen kannst, wie die Dokumentation aussehen wird.</p>
-<h3 id="black"><a class="headerlink" href="#black">black</a></h3>
-<p>Dieser Befehl wird <code>black</code> ausführen, um deine Dateien zu analysieren und auftretende Probleme durch unsere automatischen Überprüfungen zu erkennen. Es ist unwahrscheinlich, dass du dies brauchen wirst, wenn du nur die Quelldateien der Dokumentation im Ordner <code>content</code> aktualisierst.</p>
+<h3 id="ruff"><a class="headerlink" href="#ruff">ruff</a></h3>
+<p>We use <a href="https://docs.astral.sh/ruff/">ruff</a> for linting and formatting. Ensure that you run <code>./bw-dev ruff</code> before pushing your pull request if you made any changes to Python files in the documentation repository. You can try auto-fixing any linting issues with <code>./bw-dev ruff-fix</code>.</p>
 <h2 id="hinweise-fur-dokumentations-maintainer"><a class="headerlink" href="#hinweise-fur-dokumentations-maintainer">Hinweise für Dokumentations-Maintainer</a></h2>
 <h3 id="ubersetzungen"><a class="headerlink" href="#ubersetzungen">Übersetzungen</a></h3>
 <p>Halte Übersetzungen konsistent, indem du sie regelmäßig von Crowdin aktualisierst:</p>

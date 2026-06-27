@@ -15,6 +15,9 @@ Please note that the BookWyrm project is licensed under the [Anti-capitalist Sof
 ### Generative "AI"
 Meaningful human interaction is the whole point of BookWyrm. We do not accept AI-generated code or documentation. If you are unsure how something in BookWyrm works, please ask for help – we are keen to help other humans to understand and contribute to the project.
 
+### Project governance
+Bigger-picture and non-technical decision-making is coordinated on our [Loomio](https://decisions.joinbookwyrm.com/explore) group. Everyone who uses BookWyrm is encouraged to take part.
+
 ## Where to ask for and offer help
 
 ### Matrix
