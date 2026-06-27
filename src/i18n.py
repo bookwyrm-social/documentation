@@ -1,10 +1,11 @@
-""" handle internationalization """
+"""handle internationalization"""
 
 import os
 import gettext as gettextlib
 import threading
 
-localedir = os.path.join(os.path.dirname(__file__), "locale")
+localedir = os.path.join(os.path.split(os.path.dirname(__file__))[0], "locale")
+print(localedir)
 DOMAIN = "messages"
 thread_local_data = threading.local()
 thread_local_data.locale = "en_US"
