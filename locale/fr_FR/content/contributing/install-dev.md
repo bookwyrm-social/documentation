@@ -45,7 +45,7 @@ Si vous créez ou modifiez un modèle, vous changerez probablement la structure 
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev migrate
 ```
 
 ## Édition des fichiers statiques
@@ -53,7 +53,7 @@ Si vous créez ou modifiez un modèle, vous changerez probablement la structure 
 Chaque fois que vous éditez du CSS ou du JavaScript, vous devrez exécuter la commande `collectstatic` de Django pour que vos changements aient un effet :
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev collectstatic
 ```
 
 Si vous avez [installé yarn](https://yarnpkg.com/getting-started/install), vous pouvez exécuter `yarn watch:static` qui va exécuter automatiquement le script précédent à chaque fois qu'un changement se produit dans le répertoire `bookwyrm/static`.

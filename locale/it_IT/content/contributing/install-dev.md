@@ -45,7 +45,7 @@ Se cambi o crei un modello, probabilmente dovrai cambiare la struttura del datab
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev migrate
 ```
 
 ## Modifica file statici
@@ -53,7 +53,7 @@ Se cambi o crei un modello, probabilmente dovrai cambiare la struttura del datab
 Ogni volta che modifichi il CSS o il JavaScript, dovrai eseguire nuovamente il comando `collectstatic` di Django affinché le modifiche abbiano effetto:
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev collectstatic
 ```
 
 Se hai [installato yarn](https://yarnpkg.com/getting-started/install), puoi eseguire `yarn watch:static` per far partire automaticamente lo script precedente ogni volta che viene rilevata una modifica nella cartella `bookwyrm/static`.

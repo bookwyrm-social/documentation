@@ -28,7 +28,7 @@ cp .env.example .env
 ```{ .sh }
 ./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
 ./bw-dev dev up --build       # Build and start development stack
-./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev dev runweb python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
 1. Once the build is complete, you can access the instance at `http://localhost:1333`.
@@ -42,7 +42,7 @@ Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev migrate
 ```
 
 ## Editant fitxers estàtics
@@ -50,7 +50,7 @@ Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base
 Sempre que editeu el CSS o el JavaScript, haureu de tornar a executar l'ordre `collectstatic` a fi que els canvis tinguin efecte:
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev collectstatic
 ```
 
 Si heu [instal·lat el Yarn](https://yarnpkg.com/getting-started/install), podeu executar `yarn watch:static` a fi que s'executi de forma automàtica l'script anterior cada cop que hi hagi un canvi al directori `bookwyrm/static`.
