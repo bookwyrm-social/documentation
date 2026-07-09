@@ -1,6 +1,6 @@
 ---
 Title: Developer Environment
-Date: 2026-02-22
+Date: 2026-07-09
 Order: 5
 ---
 
@@ -47,7 +47,7 @@ If you change or create a model, you will probably change the database structure
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev migrate
+./bw-dev dev migrate
 ```
 
 ## Editing static files
@@ -55,7 +55,7 @@ If you change or create a model, you will probably change the database structure
 Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 
 ```{ .sh }
-./bw-dev collectstatic
+./bw-dev dev collectstatic
 ```
 
 If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.

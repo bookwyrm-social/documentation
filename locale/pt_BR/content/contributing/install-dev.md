@@ -45,7 +45,7 @@ Se você quiser editar ou criar um modelo, você provavelmente vai alterar a est
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev migrate
+./bw-dev dev migrate
 ```
 
 ## Editando arquivos estáticos
@@ -53,7 +53,7 @@ Se você quiser editar ou criar um modelo, você provavelmente vai alterar a est
 Toda vez que você alterar o CSS ou o JavaScript, você precisará rodar o comando `collectstatic`do Django para que as alterações passem a funcionar:
 
 ```{ .sh }
-./bw-dev collectstatic
+./bw-dev dev collectstatic
 ```
 
 Se você tiver o [yarn instalado](https://yarnpkg.com/getting-started/install), você pode executar `yarn watch:static` para executar automaticamente o script toda vez que houver alguma mudança no diretório `bookwyrm/static`.
