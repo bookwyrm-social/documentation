@@ -4,7 +4,7 @@ Title: Command Line Tool Date: 2021-11-11 Order: 9
 
 Розробники і менеджери bookwyrm можуть використовувати скрипт `bw-dev` для загальних завдань. Це може зробити команди коротшими, зручнішими до запам'ятання, і складніше робити помилки.
 
-Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
+Once you have installed Bookwyrm [in production](install-prod.html) or [in development](https://docs.joinbookwyrm.com/install-dev.html#setting-up-the-developer-environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
 
 ## Docker shortcuts
 
