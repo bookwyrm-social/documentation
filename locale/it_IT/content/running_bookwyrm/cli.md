@@ -78,7 +78,7 @@ Genera un'anteprima per siti, utenti e libri. Può richiedere un po' di tempo se
 
 ### remove_remote_user_preview_images
 
-Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
+Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html#removing-preview-images-for-remote-users)
 
 ### generate_thumbnails
 
