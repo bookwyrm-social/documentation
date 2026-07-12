@@ -101,4 +101,4 @@ Si tout fonctionne correctement, l'instance BookWyrm devrait à présent être a
 
 _**Note**: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected._
 
-_**Note**: the location of the ssl certificates may vary depending on the OS of your server*_
+_**Note**: the location of the ssl certificates may vary depending on the OS of your server_
