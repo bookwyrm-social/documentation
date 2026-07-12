@@ -78,7 +78,7 @@ Genera un'anteprima per siti, utenti e libri. Può richiedere un po' di tempo se
 
 ### remove_remote_user_preview_images
 
-Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html#removing-preview-images-for-remote-users)
+Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
 
 ### generate_thumbnails
 
@@ -142,7 +142,7 @@ BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase c
 
 ### stylelint
 
-BookWyrm uses [Stylelint](https://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
+BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelintprettier` before committing changes to scripts to automatically format your code.
 
 ### formatters
 

@@ -413,7 +413,7 @@ Command Line Tool
                 
 <section class="block content">
     <p>Bookwyrm developers and instance managers can use the <code>bw-dev</code> script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.</p>
-<p>Once you have installed Bookwyrm <a href="installing-in-production.html">in production</a> or <a href="https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment">in development</a>, you can run the script from the command line with <code>./bw-dev</code> followed by the subcommand you want to run.</p>
+<p>Once you have installed Bookwyrm <a href="install-prod.html">in production</a> or <a href="https://docs.joinbookwyrm.com/install-dev.html#setting-up-the-developer-environment">in development</a>, you can run the script from the command line with <code>./bw-dev</code> followed by the subcommand you want to run.</p>
 <p>Some commands only run in development environments, most can be run in either development or production, and a small number should only be run in production. Development commands run in a dedicated Docker environment configured in <code>docker-compose.dev.yml</code>, whereas production commands run in the production environment configured in <code>docker-compose.yml</code>. Production containers and volumes have names starting with <code>bookwyrm</code>, and development containers and volumes start with <code>dev-wyrm</code></p>
 <h2 id="development-commands"><a class="headerlink" href="#development-commands">Development commands</a></h2>
 <p>These commands always run in the <code>dev-wyrm</code> container, without needing to use the <code>dev</code> prefix. They generally are commands that interact with the local file system.</p>
@@ -527,7 +527,7 @@ docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
 <h3 id="generate_preview_images"><a class="headerlink" href="#generate_preview_images">generate_preview_images</a></h3>
 <p>Generate preview images for site, users, and books. This can take a while if you have a large database. See <a href="/optional_features.html">Optional Features: Generating preview images</a></p>
 <h3 id="remove_remote_user_preview_images"><a class="headerlink" href="#remove_remote_user_preview_images">remove_remote_user_preview_images</a></h3>
-<p>Remove generated preview images for remote users. See <a href="/optional_features.html">Optional Features: Removing preview images for remote users</a></p>
+<p>Remove generated preview images for remote users. See <a href="/optional_features.html#removing-preview-images-for-remote-users">Optional Features: Removing preview images for remote users</a></p>
 <h3 id="set_cors_to_s3-filename"><a class="headerlink" href="#set_cors_to_s3-filename">set_cors_to_s3 filename</a></h3>
 <p>Copy a CORS rules JSON file to your S3 bucket, where <code>filename</code> is the name of your JSON file (e.g. <code>./bw-dev set_cors_to_s3 cors.json</code>)</p>
 <h3 id="remove_2fa-username"><a class="headerlink" href="#remove_2fa-username">remove_2fa <em>username</em></a></h3>

@@ -54,7 +54,7 @@ I contributi al codice vengono accolti con piacere! Se non sei sicuro di dove in
 Check out the [Guide to the developer environment](https://docs.joinbookwyrm.com/install-dev.html) and our code [style guide](https://docs.joinbookwyrm.com/style_guide.html).
 
 ### Create and update documentation
-Good documentation is crucial so that people know how to use, contribute to, and administer BookWyrm. No matter how you are involved with BookWyrm, your perspective is valuable and you can contribute to our documentation. Find out more about [how you can contribute to the docs](/documentation.html).
+Good documentation is crucial so that people know how to use, contribute to, and administer BookWyrm. No matter how you are involved with BookWyrm, your perspective is valuable and you can contribute to our documentation. Find out more about [how you can contribute to the docs](/contributing/documentation.html).
 
 ### Translate BookWyrm
 Books are written in many languages, and BookWyrm should be too. If you know more than one language, you might be able to help us to [translate BookWyrm](https://translate.joinbookwyrm.com/). Find out [more about translation](/translation.html).
