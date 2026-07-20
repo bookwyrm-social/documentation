@@ -1,5 +1,5 @@
 - - -
-Title: Developer Environment Date: 2026-02-22 Order: 5
+Title: Developer Environment Date: 2026-07-20 Order: 5
 - - -
 
 ## Wymagania wstępne
@@ -45,7 +45,7 @@ Zmieniając lub tworząc model prawdopodobnie ulegnie zmianie struktura bazy dan
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev dev migrate
 ```
 
 ## Edytowanie plików statycznych
@@ -53,7 +53,7 @@ Zmieniając lub tworząc model prawdopodobnie ulegnie zmianie struktura bazy dan
 Za każdym razem, gdy edytujesz CSS lub JavaScript, należy ponownie uruchomić polecenie Django `collectstatic`, aby miany zostały zastosowane:
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev dev collectstatic
 ```
 
 Jeśli [zainstalowano yarn](https://yarnpkg.com/getting-started/install), możesz wykonać `yarn watch:static`, aby automatycznie wykonać poprzedni skrypt za każdym razem, gdy zajdzie zmiana w katalogu `bookwyrm/static`.

@@ -75,9 +75,9 @@ When your pull request is merged, [the documentation](https://docs.joinbookwyrm.
 
 If you are adding a new page, you will need to add some metadata and may need to adjust other pages.
 
-At the top of each markdown file is the "frontmatter" in `toml` format:
+At the top of each markdown file is the "frontmatter" in `yaml` format:
 
-```toml
+```yaml
 Title: Documentation
 Date: 2025-04-09
 Order: 4
@@ -102,7 +102,7 @@ Unlike the main project, the documentation does not run in a Docker container. I
 ```py
 python -m venv /path/to/new/virtual/environment
 source <venv>/bin/activate
-pip install -r requirements.txt
+python -m pip install .
 ```
 
 There are a number of commands available by running `./bw-dev <command>`. The ones you are likely to want to use are:
@@ -117,9 +117,9 @@ When you run `site:compile` it will generate a large number of files in the `sit
 
 This runs a local web server at `http://[::1]:8080/` so you can see what the docs will look like.
 
-### black
+### ruff
 
-This will run `black` to lint your files and avoid any issues with our automated checks. You are unlikely to need this if you are simply updating the documentation source files in `content`.
+We use [ruff](https://docs.astral.sh/ruff/) for linting and formatting. Ensure that you run `./bw-dev ruff` before pushing your pull request if you made any changes to Python files in the documentation repository. You can try auto-fixing any linting issues with `./bw-dev ruff-fix`.
 
 ## Notes for documentation maintainers
 
