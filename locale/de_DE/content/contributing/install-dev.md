@@ -1,5 +1,5 @@
 - - -
-Title: Developer Environment Date: 2026-02-22 Order: 5
+Title: Developer Environment Date: 2026-07-20 Order: 5
 - - -
 
 ## Voraussetzungen
@@ -45,7 +45,7 @@ Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenba
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev dev migrate
 ```
 
 ## Statische Dateien editieren
@@ -53,7 +53,7 @@ Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenba
 Jedes Mal, wenn du CSS oder JavaScript bearbeitest, musst du Djangos `collectstatic`-Befehl erneut ausführen, damit deine Änderungen wirksam werden:
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev dev collectstatic
 ```
 
 Wenn du [yarn installiert](https://yarnpkg.com/getting-started/install) hast, kannst du `yarn watch:static` ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis `bookwyrm/static` ausführen zu lassen.
