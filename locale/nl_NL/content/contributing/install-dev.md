@@ -42,7 +42,7 @@ Als je een model wijzigt of creëert, dan verander je waarschijnlijk de structuu
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev dev migrate
+./bw-dev migrate
 ```
 
 ## Statische bestanden bewerken
@@ -50,7 +50,7 @@ Als je een model wijzigt of creëert, dan verander je waarschijnlijk de structuu
 Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 
 ```{ .sh }
-./bw-dev dev collectstatic
+./bw-dev collectstatic
 ```
 
 If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.

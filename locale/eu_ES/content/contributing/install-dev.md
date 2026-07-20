@@ -42,7 +42,7 @@ Eredu bat aldatzen edo sortzen baduzu, seguruenik datu-basearen egitura aldatuko
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev dev migrate
+./bw-dev migrate
 ```
 
 ## Fitxategi estatikoak editatzea
@@ -50,7 +50,7 @@ Eredu bat aldatzen edo sortzen baduzu, seguruenik datu-basearen egitura aldatuko
 CSS edo JavaScript kodea editatzen duzun bakoitzean, berriro exekutatu beharko duzu `collectstatic` komandoa, zure aldaketek eragina izan dezaten:
 
 ```{ .sh }
-./bw-dev dev collectstatic
+./bw-dev collectstatic
 ```
 
 [yarn instalatuta](https://yarnpkg.com/getting-started/install) baduzu, exekuta dezakezu `yarn watch:static`, `bookwyrm/static` errepertorioan aldaketa bat gertatzen den bakoitzean aurreko scripta automatikoki exekutatzeko.

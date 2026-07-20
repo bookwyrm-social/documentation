@@ -42,7 +42,7 @@ Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev dev migrate
+./bw-dev migrate
 ```
 
 ## Editant fitxers estàtics
@@ -50,7 +50,7 @@ Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base
 Sempre que editeu el CSS o el JavaScript, haureu de tornar a executar l'ordre `collectstatic` a fi que els canvis tinguin efecte:
 
 ```{ .sh }
-./bw-dev dev collectstatic
+./bw-dev collectstatic
 ```
 
 Si heu [instal·lat el Yarn](https://yarnpkg.com/getting-started/install), podeu executar `yarn watch:static` a fi que s'executi de forma automàtica l'script anterior cada cop que hi hagi un canvi al directori `bookwyrm/static`.

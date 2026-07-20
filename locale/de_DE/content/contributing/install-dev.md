@@ -45,7 +45,7 @@ Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenba
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev dev migrate
+./bw-dev migrate
 ```
 
 ## Statische Dateien editieren
@@ -53,7 +53,7 @@ Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenba
 Jedes Mal, wenn du CSS oder JavaScript bearbeitest, musst du Djangos `collectstatic`-Befehl erneut ausführen, damit deine Änderungen wirksam werden:
 
 ```{ .sh }
-./bw-dev dev collectstatic
+./bw-dev collectstatic
 ```
 
 Wenn du [yarn installiert](https://yarnpkg.com/getting-started/install) hast, kannst du `yarn watch:static` ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis `bookwyrm/static` ausführen zu lassen.
