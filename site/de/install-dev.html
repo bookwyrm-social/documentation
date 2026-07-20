@@ -2707,12 +2707,12 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 <h2 id="modelle-editieren-oder-erstellen"><a class="headerlink" href="#modelle-editieren-oder-erstellen">Modelle editieren oder erstellen</a></h2>
 <p>Wenn du ein Modell änderst oder erstellst, wird sich wahrscheinlich die Datenbankstruktur ändern. Damit diese Änderungen wirksam werden, musst du Djangos <code>makemigrations</code>-Befehl ausführen, um eine neue <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django Migrationsdatei</a>zu erstellen und dann diese <code>migrieren</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
-./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+./bw-dev<span class="w"> </span>dev<span class="w"> </span>migrate
 </code></pre></div>
 
 <h2 id="statische-dateien-editieren"><a class="headerlink" href="#statische-dateien-editieren">Statische Dateien editieren</a></h2>
 <p>Jedes Mal, wenn du CSS oder JavaScript bearbeitest, musst du Djangos <code>collectstatic</code>-Befehl erneut ausführen, damit deine Änderungen wirksam werden:</p>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <p>Wenn du <a href="https://yarnpkg.com/getting-started/install">yarn installiert</a> hast, kannst du <code>yarn watch:static</code> ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis <code>bookwyrm/static</code> ausführen zu lassen.</p>
