@@ -1,5 +1,5 @@
 - - -
-Title: Developer Environment Date: 2026-02-22 Order: 5
+Title: Developer Environment Date: 2026-07-20 Order: 5
 - - -
 
 ## Aurrebaldintzak
@@ -15,23 +15,26 @@ _If you are contributing to BookWyrm in a dockerless development environment we 
 1. Eskura ezazu [GitHub-etik BookWyrm-en kode-basea](https://github.com/bookwyrm-social/bookwyrm). Paketearen [fork bat sortu](https://docs.github.com/en/get-started/quickstart/fork-a-repo) dezakezu, ondotik [erabili `git clone` kodea deskargatzeko](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) zure ordenagailuan.
 2. Joan zure ordenagailuko kodea duen direktoriora, orain direktorio honetatik lan egingo duzu.
 3. Development occurs on the `main` branch, so ensure that is the branch you have checked out: `git checkout main`
-4. Konfigura ezazu zure garapen-inguruneko aldagaien artxiboa, inguruneko adibide-fitxategia (`.env.example`) `.env` izeneko fitxategi berri batean kopiatuz. Komando-lerroan, hori egin dezakezu idatziz:
+4. Set up your development environment variables file by copying the example environment files (`.env.example` and `.env.dev.example`) into new files named `.env` and `env.dev`. Komando-lerroan, hori egin dezakezu idatziz:
 
 ```{ .sh }
 cp .env.example .env
+cp .env.dev.example .env.dev
 ```
+
+Most environment variables are set in the `.env` file, used in production, but for some development workflows that is overridden by the `env.dev` file. When developing for BookWyrm, you will need both files.
 
 ### Build and run
 
 1. Komando-lerroan, exekutatu:
 
 ```{ .sh }
-./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
-./bw-dev dev up --build       # Build and start development stack
-./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev create_secrets # Create the secrets file with random values. You only need to do this once.
+./bw-dev dev up --build # Build and start development stack
+./bw-dev dev runweb python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
-1. Once the build is complete, you can access the instance at `http://localhost:1333`.
+1. Once the build is complete, you can access the instance at `http://localhost:1333`. If you have removed the `PORT` value in `.env.dev` this will be `http://localhost`. If you have changed the port, swap out `1333` for the port you are using.
 2. You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".
 
 Kuriosa bazara: `./bw-dev` komandoa shell skript soil bat da eta beste hainbat tresna exekutatzen ditu: aurreko komandoen ordez, zuk `docker-compose build` edo `docker-compose up` exekutatzen ahal zenuen zuzenean, nahi izanez gero. `./bw-dev` komandoak leku bakar batean biltzen ditu erosotasun gehiagorako. Run it without arguments to get a list of available commands, read the [documentation page](/cli.html) for it, or open it up and look around to see exactly what each command is doing!
@@ -42,7 +45,7 @@ Eredu bat aldatzen edo sortzen baduzu, seguruenik datu-basearen egitura aldatuko
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev dev migrate
 ```
 
 ## Fitxategi estatikoak editatzea
@@ -50,7 +53,7 @@ Eredu bat aldatzen edo sortzen baduzu, seguruenik datu-basearen egitura aldatuko
 CSS edo JavaScript kodea editatzen duzun bakoitzean, berriro exekutatu beharko duzu `collectstatic` komandoa, zure aldaketek eragina izan dezaten:
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev dev collectstatic
 ```
 
 [yarn instalatuta](https://yarnpkg.com/getting-started/install) baduzu, exekuta dezakezu `yarn watch:static`, `bookwyrm/static` errepertorioan aldaketa bat gertatzen den bakoitzean aurreko scripta automatikoki exekutatzeko.

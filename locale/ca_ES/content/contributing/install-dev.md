@@ -1,5 +1,5 @@
 - - -
-Title: Developer Environment Date: 2026-02-22 Order: 5
+Title: Developer Environment Date: 2026-07-20 Order: 5
 - - -
 
 ## Requisits previs
@@ -15,23 +15,26 @@ _If you are contributing to BookWyrm in a dockerless development environment we 
 1. Aconsegueix una còpia del [codi base de BookWyrm a GitHub](https://github.com/bookwyrm-social/bookwyrm). Pots [crear una derivació](https://docs.github.com/en/get-started/quickstart/fork-a-repo) del repositori i, llavors [utilitzar `git clone` per descarregar el codi](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) a l'ordinador.
 2. Ves al directori que conté el codi al teu ordinador, treballaràs des d'aquí d'ara en endavant.
 3. Development occurs on the `main` branch, so ensure that is the branch you have checked out: `git checkout main`
-4. Configura el teu fitxer de variables d'entorn de desenvolupament copiant el fitxer d'entorn d'exemple (`.env.example`) a un nou fitxer anomenat `.env`. A la línia de comandes, pots fer-ho mitjançant:
+4. Set up your development environment variables file by copying the example environment files (`.env.example` and `.env.dev.example`) into new files named `.env` and `env.dev`. A la línia de comandes, pots fer-ho mitjançant:
 
 ```{ .sh }
 cp .env.example .env
+cp .env.dev.example .env.dev
 ```
+
+Most environment variables are set in the `.env` file, used in production, but for some development workflows that is overridden by the `env.dev` file. When developing for BookWyrm, you will need both files.
 
 ### Build and run
 
 1. A la línia de comandes, executa:
 
 ```{ .sh }
-./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
-./bw-dev dev up --build       # Build and start development stack
-./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev create_secrets # Create the secrets file with random values. You only need to do this once.
+./bw-dev dev up --build # Build and start development stack
+./bw-dev dev runweb python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
-1. Once the build is complete, you can access the instance at `http://localhost:1333`.
+1. Un cop la creació s'ha completat, pots accedir a la instància a través de `http://localhost:1333` i crear un usuari administrador. Si has esborrat el valor de `PORT` a `.env.dev`, per defecte serà `http://localhost`. Si has modificat el port, canvia a `1333` per al port que estiguis usant.
 2. You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".
 
 Si ets curiós: el comandament `./bw-dev` és un senzill script que fa funcionar unes altres eines: a sobre, pots ometre o iniciar directament `docker-composer build` o `docker-composer up` si vols. `./bw-dev` els recull tots a un lloc comú per comoditat. Run it without arguments to get a list of available commands, read the [documentation page](/cli.html) for it, or open it up and look around to see exactly what each command is doing!
@@ -42,7 +45,7 @@ Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev dev migrate
 ```
 
 ## Editant fitxers estàtics
@@ -50,7 +53,7 @@ Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base
 Sempre que editeu el CSS o el JavaScript, haureu de tornar a executar l'ordre `collectstatic` a fi que els canvis tinguin efecte:
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev dev collectstatic
 ```
 
 Si heu [instal·lat el Yarn](https://yarnpkg.com/getting-started/install), podeu executar `yarn watch:static` a fi que s'executi de forma automàtica l'script anterior cada cop que hi hagi un canvi al directori `bookwyrm/static`.

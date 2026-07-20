@@ -1,5 +1,5 @@
 - - -
-Title: Developer Environment Date: 2026-02-22 Order: 5
+Title: Developer Environment Date: 2026-07-20 Order: 5
 - - -
 
 ## Vereisten
@@ -15,23 +15,26 @@ _If you are contributing to BookWyrm in a dockerless development environment we 
 1. Krijg een kopie van [de BookWyrm codebase van GitHub](https://github.com/bookwyrm-social/bookwyrm). You can [create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository, and then [use `git clone` to download the code](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) to your computer.
 2. Go to the directory which contains the code on your computer, you'll be working from there from here on out.
 3. Development occurs on the `main` branch, so ensure that is the branch you have checked out: `git checkout main`
-4. Set up your development environment variables file by copying the example environment file (`.env.example`) into a new file named `.env`. In de opdrachtregel kun je dit doen met:
+4. Set up your development environment variables file by copying the example environment files (`.env.example` and `.env.dev.example`) into new files named `.env` and `env.dev`. In de opdrachtregel kun je dit doen met:
 
 ```{ .sh }
 cp .env.example .env
+cp .env.dev.example .env.dev
 ```
+
+Most environment variables are set in the `.env` file, used in production, but for some development workflows that is overridden by the `env.dev` file. When developing for BookWyrm, you will need both files.
 
 ### Build and run
 
 1. Voer op de opdrachtregel het volgende uit:
 
 ```{ .sh }
-./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
-./bw-dev dev up --build       # Build and start development stack
-./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev create_secrets # Create the secrets file with random values. You only need to do this once.
+./bw-dev dev up --build # Build and start development stack
+./bw-dev dev runweb python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
-1. Once the build is complete, you can access the instance at `http://localhost:1333`.
+1. Once the build is complete, you can access the instance at `http://localhost:1333`. If you have removed the `PORT` value in `.env.dev` this will be `http://localhost`. If you have changed the port, swap out `1333` for the port you are using.
 2. You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".
 
 If you're curious: the `./bw-dev` command is a simple shell script runs various other tools: above, you could skip it and run `docker-compose build` or `docker-compose up` directly if you like. `./bw-dev` just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the [documentation page](/cli.html) for it, or open it up and look around to see exactly what each command is doing!
@@ -42,7 +45,7 @@ Als je een model wijzigt of creëert, dan verander je waarschijnlijk de structuu
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev dev migrate
 ```
 
 ## Statische bestanden bewerken
@@ -50,7 +53,7 @@ Als je een model wijzigt of creëert, dan verander je waarschijnlijk de structuu
 Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev dev collectstatic
 ```
 
 If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.
