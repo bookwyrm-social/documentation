@@ -27,7 +27,7 @@ Spoiler-Warnungen (auch bekannt als Inhaltswarnungen) sind nützlich, um Mensche
 
 #### Sternebewertungen
 
-Eine Sternebewertung kann Rezensionen beigefügt oder eigenständig vergeben werden, indem du auf die Sterne unter einem Buch klickst. Es ist eine 5-Sterne-Skala, wobei halbe Sterne durch doppeltes Klicken auf einen Stern hinzugefügt werden können. Wenn du zum Beispiel 2,5 Sterne vergeben möchtest, würdest du auf 3 Sterne klicken und dann erneut auf den dritten Stern, um ihn zu halbieren. Beim Ansehen eines Buches oder einer Rezension werden die Sternebewertungen verborgen, bis du "Bewertung anzeigen" ausgewählt hast.
+Eine Sternebewertung kann Rezensionen beigefügt oder eigenständig vergeben werden, indem du auf die Sterne unter einem Buch klickst. Star ratings can include half-stars. So you can click on the first half of the third star to rate something 2.5 stars. The minimum rating is one half of a star, or 0.5 stars. Beim Ansehen eines Buches oder einer Rezension werden die Sternebewertungen verborgen, bis du "Bewertung anzeigen" ausgewählt hast.
 
 ### Lesestatusaktualisierungen
 
