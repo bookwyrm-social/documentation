@@ -45,7 +45,7 @@ Dacă schimbați sau creați un model, veți schimba probabil structura bazei de
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev migrate
+./bw-dev rundev python manage.py migrate
 ```
 
 ## Editați fișiere statice
@@ -53,7 +53,7 @@ Dacă schimbați sau creați un model, veți schimba probabil structura bazei de
 De fiecare dată când editați CSS sau JavaScript, va trebui să rulați comanda Django `collectstatic` pentru ca schimbările dvs. să aibă efect:
 
 ```{ .sh }
-./bw-dev collectstatic
+./bw-dev rundev python manage.py collectstatic
 ```
 
 Dacă aveți [yarn instalat](https://yarnpkg.com/getting-started/install), puteți rula `yarn watch:static` pentru a rula automat scriptul precedent de fiecare dată când o schimbare are loc în dosarul `bookwyrm/static`.

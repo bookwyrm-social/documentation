@@ -28,7 +28,7 @@ cp .env.example .env
 ```{ .sh }
 ./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
 ./bw-dev dev up --build       # Build and start development stack
-./bw-dev dev runweb python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
 1. Once the build is complete, you can access the instance at `http://localhost:1333`.
@@ -42,7 +42,7 @@ If you change or create a model, you will probably change the database structure
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev migrate
+./bw-dev rundev python manage.py migrate
 ```
 
 ## Editing static files
@@ -50,7 +50,7 @@ If you change or create a model, you will probably change the database structure
 Any time you edit the CSS or JavaScript, you will need to run Django's `collectstatic` command again in order for your changes to have effect:
 
 ```{ .sh }
-./bw-dev collectstatic
+./bw-dev rundev python manage.py collectstatic
 ```
 
 If you have [installed yarn](https://yarnpkg.com/getting-started/install), you can run `yarn watch:static` to automatically run the previous script every time a change occurs in `bookwyrm/static` directory.

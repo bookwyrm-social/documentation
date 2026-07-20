@@ -28,7 +28,7 @@ cp .env.example .env
 ```{ .sh }
 ./bw-dev create_secrets       # Create the secrets file with random values. You only need to do this once.
 ./bw-dev dev up --build       # Build and start development stack
-./bw-dev dev runweb python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev rundev python manage.py admin_code       # Shows the admin-code for initial setup. You only need to do this once.
 ```
 
 1. Once the build is complete, you can access the instance at `http://localhost:1333`.
@@ -42,7 +42,7 @@ Eredu bat aldatzen edo sortzen baduzu, seguruenik datu-basearen egitura aldatuko
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev migrate
+./bw-dev rundev python manage.py migrate
 ```
 
 ## Fitxategi estatikoak editatzea
@@ -50,7 +50,7 @@ Eredu bat aldatzen edo sortzen baduzu, seguruenik datu-basearen egitura aldatuko
 CSS edo JavaScript kodea editatzen duzun bakoitzean, berriro exekutatu beharko duzu `collectstatic` komandoa, zure aldaketek eragina izan dezaten:
 
 ```{ .sh }
-./bw-dev collectstatic
+./bw-dev rundev python manage.py collectstatic
 ```
 
 [yarn instalatuta](https://yarnpkg.com/getting-started/install) baduzu, exekuta dezakezu `yarn watch:static`, `bookwyrm/static` errepertorioan aldaketa bat gertatzen den bakoitzean aurreko scripta automatikoki exekutatzeko.
