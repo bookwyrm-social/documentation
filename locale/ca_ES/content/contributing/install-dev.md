@@ -1,5 +1,5 @@
 - - -
-Title: Developer Environment Date: 2026-02-22 Order: 5
+Title: Developer Environment Date: 2026-07-20 Order: 5
 - - -
 
 ## Requisits previs
@@ -45,7 +45,7 @@ Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base
 
 ```{ .sh }
 ./bw-dev makemigrations
-./bw-dev rundev python manage.py migrate
+./bw-dev dev migrate
 ```
 
 ## Editant fitxers estàtics
@@ -53,7 +53,7 @@ Si modifiqueu o creeu un model, és probable que canvieu l'estructura de la base
 Sempre que editeu el CSS o el JavaScript, haureu de tornar a executar l'ordre `collectstatic` a fi que els canvis tinguin efecte:
 
 ```{ .sh }
-./bw-dev rundev python manage.py collectstatic
+./bw-dev dev collectstatic
 ```
 
 Si heu [instal·lat el Yarn](https://yarnpkg.com/getting-started/install), podeu executar `yarn watch:static` a fi que s'executi de forma automàtica l'script anterior cada cop que hi hagi un canvi al directori `bookwyrm/static`.
