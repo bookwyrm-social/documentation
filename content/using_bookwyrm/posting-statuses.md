@@ -34,7 +34,7 @@ Usually just putting "contains spoilers" or something similar is sufficient, but
 #### Star ratings
 
 A star rating can be added to reviews, or added on its own by clicking the stars below a book.
-Star ratings can include half-stars. So you can click on the firts half of the third star to rate something 2.5 stars.
+Star ratings can include half-stars. So you can click on the first half of the third star to rate something 2.5 stars.
 The minimum rating is one half of a star, or 0.5 stars.
 When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
