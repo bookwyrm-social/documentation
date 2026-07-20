@@ -6,7 +6,7 @@ Order: 2
 
 Bookwyrm developers and instance managers can use the `bw-dev` script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.
 
-Once you have installed Bookwyrm [in production](installing-in-production.html) or [in development](https://docs.joinbookwyrm.com/developer-environment.html#setting_up_the_developer_environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
+Once you have installed Bookwyrm [in production](install-prod.html) or [in development](https://docs.joinbookwyrm.com/install-dev.html#setting-up-the-developer-environment), you can run the script from the command line with `./bw-dev` followed by the subcommand you want to run.
 
 Some commands only run in development environments, most can be run in either development or production, and a small number should only be run in production. Development commands run in a dedicated Docker environment configured in `docker-compose.dev.yml`, whereas production commands run in the production environment configured in `docker-compose.yml`. Production containers and volumes have names starting with `bookwyrm`, and development containers and volumes start with `dev-wyrm`
 
@@ -76,7 +76,7 @@ BookWyrm uses [Prettier](https://prettier.io/) to keep the JavaScript codebase c
 
 #### stylelint
 
-BookWyrm uses [Stylelint](uhttps://stylelint.io/) to keep the CSS files consistently styled. Run `stylelint` before committing changes to scripts to automatically format your code.
+BookWyrm uses [Stylelint](https://stylelint.io/) to keep the CSS files consistently styled. Run `stylelint` before committing changes to scripts to automatically format your code.
 
 #### formatters
 
@@ -215,7 +215,7 @@ Generate preview images for site, users, and books. This can take a while if you
 
 ### remove_remote_user_preview_images
 
-Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html)
+Remove generated preview images for remote users. See [Optional Features: Removing preview images for remote users](/optional_features.html#removing-preview-images-for-remote-users)
 
 ### set_cors_to_s3 filename
 
