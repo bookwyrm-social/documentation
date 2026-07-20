@@ -180,39 +180,6 @@ Developer Environment
             
         </ul>
         
-        <h2 class="menu-label">Contributing</h2>
-        <ul class="menu-list has-background-inherit">
-            
-            <li>
-                <a href="/contributing.html" class="has-background-inherit" >How to Contribute</a>
-            </li>
-            
-            <li>
-                <a href="/translation.html" class="has-background-inherit" >Translations</a>
-            </li>
-            
-            <li>
-                <a href="/style_guide.html" class="has-background-inherit" >Style Guide</a>
-            </li>
-            
-            <li>
-                <a href="/documentation.html" class="has-background-inherit" >Documentation</a>
-            </li>
-            
-            <li>
-                <a href="/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
-            </li>
-            
-            <li>
-                <a href="/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
-            </li>
-            
-            <li>
-                <a href="/codereview.html" class="has-background-inherit" >Code Review</a>
-            </li>
-            
-        </ul>
-        
         <h2 class="menu-label">Running BookWyrm</h2>
         <ul class="menu-list has-background-inherit">
             
@@ -250,6 +217,39 @@ Developer Environment
             
             <li>
                 <a href="/management-commands.html" class="has-background-inherit" >Management Commands</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/install-dev.html" class="has-background-inherit" class="is-active">Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+            <li>
+                <a href="/codereview.html" class="has-background-inherit" >Code Review</a>
             </li>
             
         </ul>
@@ -369,12 +369,12 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 <h2 id="editing-or-creating-models"><a class="headerlink" href="#editing-or-creating-models">Editing or creating Models</a></h2>
 <p>If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's <code>makemigrations</code> command to create a new <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django migrations file</a>, and then <code>migrate</code> it:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
-./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+./bw-dev<span class="w"> </span>dev<span class="w"> </span>migrate
 </code></pre></div>
 
 <h2 id="editing-static-files"><a class="headerlink" href="#editing-static-files">Editing static files</a></h2>
 <p>Any time you edit the CSS or JavaScript, you will need to run Django's <code>collectstatic</code> command again in order for your changes to have effect:</p>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <p>If you have <a href="https://yarnpkg.com/getting-started/install">installed yarn</a>, you can run <code>yarn watch:static</code> to automatically run the previous script every time a change occurs in <code>bookwyrm/static</code> directory.</p>
