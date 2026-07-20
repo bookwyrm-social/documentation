@@ -278,12 +278,12 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 <h2 id="editando-e-criando-modelos-models"><a class="headerlink" href="#editando-e-criando-modelos-models">Editando e criando Modelos (Models)</a></h2>
 <p>Se você quiser editar ou criar um modelo, você provavelmente vai alterar a estrutura do banco de dados. Para que essas alterações funcionem, você precisará executar o comando <code>makemigrations</code> do Django para criar um novo <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">arquivo de migrações do Django</a> e então <code>migrá-lo</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
-./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+./bw-dev<span class="w"> </span>dev<span class="w"> </span>migrate
 </code></pre></div>
 
 <h2 id="editando-arquivos-estaticos"><a class="headerlink" href="#editando-arquivos-estaticos">Editando arquivos estáticos</a></h2>
 <p>Toda vez que você alterar o CSS ou o JavaScript, você precisará rodar o comando <code>collectstatic</code>do Django para que as alterações passem a funcionar:</p>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <p>Se você tiver o <a href="https://yarnpkg.com/getting-started/install">yarn instalado</a>, você pode executar <code>yarn watch:static</code> para executar automaticamente o script toda vez que houver alguma mudança no diretório <code>bookwyrm/static</code>.</p>
