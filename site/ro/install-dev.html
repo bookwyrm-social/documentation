@@ -2636,12 +2636,12 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 <h2 id="editati-sau-configurati-modele"><a class="headerlink" href="#editati-sau-configurati-modele">Editați sau configurați modele</a></h2>
 <p>Dacă schimbați sau creați un model, veți schimba probabil structura bazei de date. Pentru ca aceste schimbă să aibă efect va trebui să rulați comanda Django <code>makemigrations</code> pentru a crea un nou <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">fișier de migrare Django</a> și apoi <code>migrate</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
-./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+./bw-dev<span class="w"> </span>dev<span class="w"> </span>migrate
 </code></pre></div>
 
 <h2 id="editati-fisiere-statice"><a class="headerlink" href="#editati-fisiere-statice">Editați fișiere statice</a></h2>
 <p>De fiecare dată când editați CSS sau JavaScript, va trebui să rulați comanda Django <code>collectstatic</code> pentru ca schimbările dvs. să aibă efect:</p>
-<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>rundev<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>collectstatic
+<div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <p>Dacă aveți <a href="https://yarnpkg.com/getting-started/install">yarn instalat</a>, puteți rula <code>yarn watch:static</code> pentru a rula automat scriptul precedent de fiecare dată când o schimbare are loc în dosarul <code>bookwyrm/static</code>.</p>
