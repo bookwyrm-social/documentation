@@ -736,7 +736,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### book
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -845,7 +845,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [bnfId](#bnfid), [goodreadsKey](#goodreadskey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [goodreadsKey](#goodreadskey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### firstPublishedDate
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -867,7 +867,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### gutenbergId
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -878,7 +878,7 @@ Type: `String`
 
 Used on: [Author](#author)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### inReplyToBook
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -900,7 +900,7 @@ Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series
 
 Note: Inventaire identifiers are [often, but not necessarily the same as wikidata ids](https://wiki.inventaire.io/wiki/Entities_data#Data_sources)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### isbn10
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -911,7 +911,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### isbn13
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -922,7 +922,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### isfdb
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -933,7 +933,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### isni
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -944,7 +944,7 @@ Type: `String`
 
 Used on: [Author](#author)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### languages
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -975,7 +975,7 @@ Type: `String`
 
 Used on: [Work](#work)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### librarythingKey
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -986,7 +986,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 
 ### librisKey
@@ -998,7 +998,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [oclcNumber](#oclcnumber), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 Used on: [Author](#author), [Review](#review)
 
@@ -1020,7 +1020,7 @@ Type: `String`
 
 Used on: [Edition](#edition)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [openlibraryKey](openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
 
 
 ### openlibraryKey
@@ -1032,7 +1032,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](oclcnumber), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [viaf](#viaf), [wikidata](#wikidata)
 
 ### order
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -1290,7 +1290,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](oclcnumber), [openlibraryKey](#openlibrarykey), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [wikidata](#wikidata)
 
 ### website
 _Included in version 1.0 of the BookWyrm vocabulary_
@@ -1310,7 +1310,7 @@ Type: `String`
 
 Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf)
+See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf)
 
 ### wikipediaLink
 _Included in version 1.0 of the BookWyrm vocabulary_
