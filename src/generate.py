@@ -2,6 +2,7 @@
 
 from glob import glob
 import os
+import re
 import sys
 
 from jinja2 import Environment, FileSystemLoader
@@ -14,6 +15,11 @@ env = Environment(loader=FileSystemLoader("templates/"), extensions=["jinja2.ext
 
 env.install_gettext_translations(i18n)
 
+
+def bw_slugify(value: str, separator: str) -> str:
+    """ Slugify a string, to make it URL friendly. """
+    value = re.sub(r'[^\w\s-]', '', value).strip()
+    return re.sub(r'[{}\s]+'.format(separator), separator, value)
 
 def get_page_metadata(locale_slug, page, version_slug=False):
     """title/order etc for a page
@@ -107,7 +113,11 @@ def format_markdown(file_path):
             extensions=["tables", "fenced_code", "codehilite", "toc", "sane_lists"],
             extension_configs={
                 "codehilite": {"css_class": "highlight"},
-                "toc": {"anchorlink": True, "anchorlink_class": "headerlink"},
+                "toc": {
+                    "permalink": True,
+                    "permalink_class": "anchor ml-2",
+                    "slugify": bw_slugify
+                    },
             },
         )
 
