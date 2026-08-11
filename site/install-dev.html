@@ -303,31 +303,31 @@ Developer Environment
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#prerequisites">Prerequisites</a>
+                  <a class="navbar-item" href="#Prerequisites">Prerequisites</a>
                   
               
-                  <a class="navbar-item" href="#setting-up-the-developer-environment">Setting up the developer environment</a>
+                  <a class="navbar-item" href="#Setting-up-the-developer-environment">Setting up the developer environment</a>
                   
                       
-                      <a class="navbar-item" href="#get-the-code"><span class="pl-4">Get the code</span></a>
+                      <a class="navbar-item" href="#Get-the-code"><span class="pl-4">Get the code</span></a>
                       
-                      <a class="navbar-item" href="#build-and-run"><span class="pl-4">Build and run</span></a>
+                      <a class="navbar-item" href="#Build-and-run"><span class="pl-4">Build and run</span></a>
                       
                   
               
-                  <a class="navbar-item" href="#editing-or-creating-models">Editing or creating Models</a>
+                  <a class="navbar-item" href="#Editing-or-creating-Models">Editing or creating Models</a>
                   
               
-                  <a class="navbar-item" href="#editing-static-files">Editing static files</a>
+                  <a class="navbar-item" href="#Editing-static-files">Editing static files</a>
                   
               
-                  <a class="navbar-item" href="#run-code-linters-and-formatters">Run code-linters and formatters</a>
+                  <a class="navbar-item" href="#Run-code-linters-and-formatters">Run code-linters and formatters</a>
                   
               
-                  <a class="navbar-item" href="#run-development-code-behind-ngrok-or-other-tunnelingproxy-service">Run development code behind ngrok or other tunneling/proxy service</a>
+                  <a class="navbar-item" href="#Run-development-code-behind-ngrok-or-other-tunnelingproxy-service">Run development code behind ngrok or other tunneling/proxy service</a>
                   
               
-                  <a class="navbar-item" href="#email-optional">Email (optional)</a>
+                  <a class="navbar-item" href="#Email-optional">Email (optional)</a>
                   
               
             </div>
@@ -345,11 +345,11 @@ Developer Environment
                 </header>
                 
 <section class="block content">
-    <h2 id="prerequisites"><a class="headerlink" href="#prerequisites">Prerequisites</a></h2>
+    <h2 id="Prerequisites">Prerequisites<a class="anchor ml-2" href="#Prerequisites" title="Permanent link">&para;</a></h2>
 <p>These instructions assume you are developing BookWyrm using Docker. You'll need to <a href="https://docs.docker.com/engine/install/">install Docker</a> and <a href="https://docs.docker.com/compose/install/">docker-compose</a> to get started.</p>
 <p><em>If you are contributing to BookWyrm in a dockerless development environment we would love for you to <a href="/documentation.html">help us update this guide</a> to include instructions for setting up a dockerless development environment</em>.</p>
-<h2 id="setting-up-the-developer-environment"><a class="headerlink" href="#setting-up-the-developer-environment">Setting up the developer environment</a></h2>
-<h3 id="get-the-code"><a class="headerlink" href="#get-the-code">Get the code</a></h3>
+<h2 id="Setting-up-the-developer-environment">Setting up the developer environment<a class="anchor ml-2" href="#Setting-up-the-developer-environment" title="Permanent link">&para;</a></h2>
+<h3 id="Get-the-code">Get the code<a class="anchor ml-2" href="#Get-the-code" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Get a copy of <a href="https://github.com/bookwyrm-social/bookwyrm">the BookWyrm codebase from GitHub</a>. You can <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">create a fork</a> of the repository, and then <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">use <code>git clone</code> to download the code</a> to your computer.</li>
 <li>Go to the directory which contains the code on your computer, you'll be working from there from here on out.</li>
@@ -361,7 +361,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 </code></pre></div>
 
 <p>Most environment variables are set in the <code>.env</code> file, used in production, but for some development workflows that is overridden by the <code>env.dev</code> file. When developing for BookWyrm, you will need both files.</p>
-<h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
+<h3 id="Build-and-run">Build and run<a class="anchor ml-2" href="#Build-and-run" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the command line, run:</li>
 </ol>
@@ -375,19 +375,19 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 <li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
 </ol>
 <p>If you're curious: the <code>./bw-dev</code> command is a simple shell script runs various other tools: above, you could skip it and run <code>docker-compose build</code> or <code>docker-compose up</code> directly if you like. <code>./bw-dev</code> just collects them into one common place for convenience. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
-<h2 id="editing-or-creating-models"><a class="headerlink" href="#editing-or-creating-models">Editing or creating Models</a></h2>
+<h2 id="Editing-or-creating-Models">Editing or creating Models<a class="anchor ml-2" href="#Editing-or-creating-Models" title="Permanent link">&para;</a></h2>
 <p>If you change or create a model, you will probably change the database structure. For these changes to have effect you will need to run Django's <code>makemigrations</code> command to create a new <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">Django migrations file</a>, and then <code>migrate</code> it:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h2 id="editing-static-files"><a class="headerlink" href="#editing-static-files">Editing static files</a></h2>
+<h2 id="Editing-static-files">Editing static files<a class="anchor ml-2" href="#Editing-static-files" title="Permanent link">&para;</a></h2>
 <p>Any time you edit the CSS or JavaScript, you will need to run Django's <code>collectstatic</code> command again in order for your changes to have effect:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <p>If you have <a href="https://yarnpkg.com/getting-started/install">installed yarn</a>, you can run <code>yarn watch:static</code> to automatically run the previous script every time a change occurs in <code>bookwyrm/static</code> directory.</p>
-<h2 id="run-code-linters-and-formatters"><a class="headerlink" href="#run-code-linters-and-formatters">Run code-linters and formatters</a></h2>
+<h2 id="Run-code-linters-and-formatters">Run code-linters and formatters<a class="anchor ml-2" href="#Run-code-linters-and-formatters" title="Permanent link">&para;</a></h2>
 <p>Before submitting patch, you should check ruff and other formatting tools. For those to work nicely, you should make sure you have development web-container and dev-tools build.</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>build<span class="w"> </span><span class="c1"># This is needed only once, if you haven&#39;t run dev stack previously</span>
 ./bw-dev<span class="w"> </span>dev<span class="w"> </span>build<span class="w"> </span>dev-tools<span class="w"> </span><span class="c1"># This is needed only once and if you change pyproject.toml or Dockerfile</span>
@@ -399,7 +399,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 ./bw-dev<span class="w"> </span>pytest
 </code></pre></div>
 
-<h2 id="run-development-code-behind-ngrok-or-other-tunnelingproxy-service"><a class="headerlink" href="#run-development-code-behind-ngrok-or-other-tunnelingproxy-service">Run development code behind ngrok or other tunneling/proxy service</a></h2>
+<h2 id="Run-development-code-behind-ngrok-or-other-tunnelingproxy-service">Run development code behind ngrok or other tunneling/proxy service<a class="anchor ml-2" href="#Run-development-code-behind-ngrok-or-other-tunnelingproxy-service" title="Permanent link">&para;</a></h2>
 <p>In <code>.env.dev</code>:</p>
 <ol>
 <li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>).</li>
@@ -407,7 +407,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 </ol>
 <p>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding.</p>
 <p>If you try to register your admin account and see a message that <code>CSRF verification failed</code> you may have set your domain or port incorrectly.</p>
-<h2 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h2>
+<h2 id="Email-optional">Email (optional)<a class="anchor ml-2" href="#Email-optional" title="Permanent link">&para;</a></h2>
 <p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate real values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>. These settings are in <code>.env</code> -file</p>
 </section>
 

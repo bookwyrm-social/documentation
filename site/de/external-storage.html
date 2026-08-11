@@ -291,6 +291,10 @@ Externer Speicher
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -3758,11 +3762,11 @@ Externer Speicher
                 
 <section class="block content">
     <p>Standardmäßig verwendet BookWyrm lokalen Speicher für statische Assets (Favicon, Standard-Avatar, etc.) und Medien (Benutzer-Avatare, Buchtitelbilder usw.), aber Sie können einen externen Speicherdienst verwenden, um diese Dateien zu bereitzustellen. BookWyrm verwendet <code>django-storages</code>, um externen Speicher wie S3-kompatible Dienste, Apache Libcloud oder SFTP anzubinden.</p>
-<h2 id="s3-kompatibler-speicher"><a class="headerlink" href="#s3-kompatibler-speicher">S3-kompatibler Speicher</a></h2>
-<h3 id="einrichtung"><a class="headerlink" href="#einrichtung">Einrichtung</a></h3>
+<h2 id="S3-kompatibler-Speicher">S3-kompatibler Speicher<a class="anchor ml-2" href="#S3-kompatibler-Speicher" title="Permanent link">&para;</a></h2>
+<h3 id="Einrichtung">Einrichtung<a class="anchor ml-2" href="#Einrichtung" title="Permanent link">&para;</a></h3>
 <p>Erstelle einen Bucket in deinem S3-kompatiblen Dienst der Wahl, zusammen mit einer Zugangsschlüssel-ID und einem geheimen Zugriffsschlüssel. Diese können selbst gehostet sein, wie <a href="https://ceph.io/en/">Ceph</a> (LGPL 2.1/3.0) oder <a href="https://min.io/">MinIO</a> (GNU AGPL v3.0) oder kommerziell (<a href="https://www.scaleway.com/en/docs/object-storage-feature/">Scaleway</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key">Digital Ocean</a>…).</p>
 <p>Diese Anleitung wurde mit Scaleway Object Storage getestet. Wenn du einen anderen Dienst verwendest, teile bitte deine Erfahrungen (insbesondere wenn du andere Schritte unternehmen musstest), indem du einen Problembericht im <a href="https://github.com/bookwyrm-social/documentation">BookWyrm-Dokumentations-Repository</a> einreichst.</p>
-<h3 id="was-erwartet-dich"><a class="headerlink" href="#was-erwartet-dich">Was erwartet dich</a></h3>
+<h3 id="Was-erwartet-dich">Was erwartet dich<a class="anchor ml-2" href="#Was-erwartet-dich" title="Permanent link">&para;</a></h3>
 <p>Wenn du eine neue BookWyrm-Instanz startest, wird der Prozess sein:</p>
 <ul>
 <li>Richte den externen Speicherdienst ein</li>
@@ -3778,7 +3782,7 @@ Externer Speicher
 <li>Starte die BookWyrm-Instanz neu</li>
 <li>Aktualisiere den Instanz-Konnektor</li>
 </ul>
-<h3 id="bookwyrm-einstellungen"><a class="headerlink" href="#bookwyrm-einstellungen">BookWyrm-Einstellungen</a></h3>
+<h3 id="BookWyrm-Einstellungen">BookWyrm-Einstellungen<a class="anchor ml-2" href="#BookWyrm-Einstellungen" title="Permanent link">&para;</a></h3>
 <p>Bearbeite die <code>.env</code>-Datei, indem du die folgenden Zeilen auskommentierst:</p>
 <ul>
 <li><code>AWS_ACCESS_KEY_ID</code>: Deine Zugangsschlüssel-ID</li>
@@ -3801,13 +3805,13 @@ Externer Speicher
 <div class="highlight"><pre><span></span><code><span class="nv">AWS_DEFAULT_ACL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 </code></pre></div>
 
-<h3 id="kopieren-lokaler-medien-auf-externen-speicher"><a class="headerlink" href="#kopieren-lokaler-medien-auf-externen-speicher">Kopieren lokaler Medien auf externen Speicher</a></h3>
+<h3 id="Kopieren-lokaler-Medien-auf-externen-Speicher">Kopieren lokaler Medien auf externen Speicher<a class="anchor ml-2" href="#Kopieren-lokaler-Medien-auf-externen-Speicher" title="Permanent link">&para;</a></h3>
 <p>Wenn die BookWyrm-Instanz bereits läuft und Medien hochgeladen wurden (Benutzer-Avatare, Buchtitelbilder…), musst du hochgeladene Medien in deinen Bucket migrieren.</p>
 <p>Diese Aufgabe wird mit dem Befehl erledigt:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>copy_media_to_s3
 </code></pre></div>
 
-<h3 id="aktivierung-des-externen-speichers-fur-bookwyrm"><a class="headerlink" href="#aktivierung-des-externen-speichers-fur-bookwyrm">Aktivierung des externen Speichers für BookWyrm</a></h3>
+<h3 id="Aktivierung-des-externen-Speichers-für-BookWyrm">Aktivierung des externen Speichers für BookWyrm<a class="anchor ml-2" href="#Aktivierung-des-externen-Speichers-für-BookWyrm" title="Permanent link">&para;</a></h3>
 <p>Um den S3-kompatiblen externen Speicher zu aktivieren, musst du deine <code>.env</code>-Datei bearbeiten, indem der Eigenschaftswert für <code>USE_S3</code> von <code>false</code> zu <code>true</code> geändert wird:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">USE_S3</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
@@ -3820,13 +3824,13 @@ Externer Speicher
 <span class="nv">USE_S3_FOR_EXPORTS</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 
-<h4 id="statische-assets"><a class="headerlink" href="#statische-assets">Statische Assets</a></h4>
+<h4 id="Statische-Assets">Statische Assets<a class="anchor ml-2" href="#Statische-Assets" title="Permanent link">&para;</a></h4>
 <p>Danach musst du folgende Befehle ausführen, um die Themes zu kompilieren und alle statischen Assets in deinen S3-Bucket zu kopieren:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>compile_themes
 ./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
-<h4 id="cors-einstellungen"><a class="headerlink" href="#cors-einstellungen">CORS-Einstellungen</a></h4>
+<h4 id="CORS-Einstellungen">CORS-Einstellungen<a class="anchor ml-2" href="#CORS-Einstellungen" title="Permanent link">&para;</a></h4>
 <p>Sobald die statischen Assets gesammelt sind, musst du CORS für deinen Bucket einrichten.</p>
 <p>Einige Dienste wie Digital Ocean bieten eine Schnittstelle, um es einzurichten, siehe <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: Wie man CORS konfiguriert</a>.</p>
 <p>Wenn dein Dienst keine Schnittstelle zur Verfügung stellt, kannst du CORS trotzdem mit der Befehlszeile einrichten.</p>
@@ -3850,18 +3854,18 @@ Externer Speicher
 </code></pre></div>
 
 <p>Keine Ausgabe bedeutet, dass alles glatt lief.</p>
-<h3 id="zusatzliche-schritte-fur-nutzerinnen-von-linode-object-storage"><a class="headerlink" href="#zusatzliche-schritte-fur-nutzerinnen-von-linode-object-storage">Zusätzliche Schritte für Nutzer*innen von Linode Object Storage</a></h3>
+<h3 id="Zusätzliche-Schritte-für-Nutzerinnen-von-Linode-Object-Storage">Zusätzliche Schritte für Nutzer*innen von Linode Object Storage<a class="anchor ml-2" href="#Zusätzliche-Schritte-für-Nutzerinnen-von-Linode-Object-Storage" title="Permanent link">&para;</a></h3>
 <p>Für Linode musst du eine Änderung an der <code>.env</code>-Datei vornehmen, um sicherzustellen, dass die generierten Links zu deinen Storage-Objekten korrekt sind. Wenn du diesen Schritt auslässt, werden alle Links zu Bildern und statischen Dateien (wie CSS) kaputt sein. Um dies zu beheben, musst du den Bucket-Name zur <code>AWS_S3_CUSTOM_DOMAIN</code> hinzufügen. Wenn dein <code>AWS_STORAGE_BUCKET_NAME</code> <code>"my-bookwyrm-bucket"</code> lautet, ändere die Domain zu:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">AWS_S3_CUSTOM_DOMAIN</span><span class="o">=</span>my-bookwyrm-bucket.cluster-id.linodeobjects.com
 </code></pre></div>
 
 <p><em>Beachte</em>: Ab diesem Zeitpunkt werden <code>bw-dev copy</code> oder <code>sync</code> Objekte an einem falschen Ort deines Objekt-Storage ablegen. Wenn du sie also nutzen musst, kehre die letzte Änderung um, führe den Befehl aus und nimm die Änderung danach erneut vor.</p>
-<h3 id="dateien-fur-den-export-und-import-von-accounts"><a class="headerlink" href="#dateien-fur-den-export-und-import-von-accounts">Dateien für den Export und Import von Accounts</a></h3>
+<h3 id="Dateien-für-den-Export-und-Import-von-Accounts">Dateien für den Export und Import von Accounts<a class="anchor ml-2" href="#Dateien-für-den-Export-und-Import-von-Accounts" title="Permanent link">&para;</a></h3>
 <p>Nach <code>v0.7.5</code> werden Dateien für den Export und Import von Accounts im lokalen Speicher abgelegt, auch wenn <code>USE_S3</code> auf <code>true</code> gesetzt wurde. Allgemein ist es sicherer, für diese Dateien den lokalen Speicher zu verwenden und den Speicherbedarf unter Kontrolle zu behalten, indem ein Task eingerichtet wird, der periodisch alte Export- und Importdateien löscht.</p>
 <p>Wenn du eine große Instanz betreibst, kann es sein, dass du die Nutzung von S3 für diese Dateien bevorzugst. In diesem Fall musst du die Umgebungsvariable <code>USE_S3_FOR_EXPORTS</code> auf <code>true</code> setzen.</p>
-<h3 id="neue-instanz"><a class="headerlink" href="#neue-instanz">Neue Instanz</a></h3>
+<h3 id="Neue-Instanz">Neue Instanz<a class="anchor ml-2" href="#Neue-Instanz" title="Permanent link">&para;</a></h3>
 <p>Wenn du eine neue BookWyrm-Instanz aufsetzt, kannst du jetzt zur Einrichtungsanleitung zurückkehren: [<a href="install-prod.html">Docker</a>] [<a href="install-prod-dockerless.html">Dockerless</a>]. Wenn nicht, lese weiter.</p>
-<h3 id="starte-deine-instanz-neu"><a class="headerlink" href="#starte-deine-instanz-neu">Starte deine Instanz neu</a></h3>
+<h3 id="Starte-deine-Instanz-neu">Starte deine Instanz neu<a class="anchor ml-2" href="#Starte-deine-Instanz-neu" title="Permanent link">&para;</a></h3>
 <p>Sobald die Medienmigration abgeschlossen und die statischen Assets gesammelt wurden, kannst du die neue <code>.env</code>-Konfiguration laden und die Instanz neustarten mit:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
@@ -3876,7 +3880,7 @@ Externer Speicher
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>sync_media_to_s3
 </code></pre></div>
 
-<h3 id="instanz-konnektor-aktualisieren"><a class="headerlink" href="#instanz-konnektor-aktualisieren">Instanz-Konnektor aktualisieren</a></h3>
+<h3 id="Instanz-Konnektor-aktualisieren">Instanz-Konnektor aktualisieren<a class="anchor ml-2" href="#Instanz-Konnektor-aktualisieren" title="Permanent link">&para;</a></h3>
 <p><em>Hinweis: Du kannst diesen Schritt überspringen, wenn du eine aktualisierte Version von BookWyrm verwendest; im September 2021 wurde der "Selbst-Steckverbinder" in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a> entfernt</em></p>
 <p>Damit die richtige URL für die Anzeige lokaler Buchsuchergebnisse verwendet wird, müssen wir den Wert für die URL-Basis der Titelbilder ändern.</p>
 <p>Konnektor-Daten können über die Django-Admin-Schnittstelle unter der URL <code>http://MY_DOMAIN_NAME/admin</code> aufgerufen werden. Der Konnektor für deine eigene Instanz ist der erste Datensatz in der Datenbank, damit du auf den Konnektor mit dieser URL zugreifen kannst: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>

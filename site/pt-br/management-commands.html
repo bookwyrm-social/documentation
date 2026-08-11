@@ -291,6 +291,10 @@ Management Commands
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/pt-br/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -307,16 +311,16 @@ Management Commands
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#merging-objects">Merging objects</a>
+                  <a class="navbar-item" href="#Merging-objects">Merging objects</a>
                   
                       
-                      <a class="navbar-item" href="#merging-editions"><span class="pl-4">Merging editions</span></a>
+                      <a class="navbar-item" href="#Merging-editions"><span class="pl-4">Merging editions</span></a>
                       
-                      <a class="navbar-item" href="#merging-authors"><span class="pl-4">Merging authors</span></a>
+                      <a class="navbar-item" href="#Merging-authors"><span class="pl-4">Merging authors</span></a>
                       
                   
               
-                  <a class="navbar-item" href="#fixing-isbns">Fixing ISBNs</a>
+                  <a class="navbar-item" href="#Fixing-ISBNs">Fixing ISBNs</a>
                   
               
             </div>
@@ -335,17 +339,17 @@ Management Commands
                 
 <section class="block content">
     <p>In the <code>bookwyrm/management/commands</code> directory there are some commands to manipulate the instance’s database. Some of them are documented here.</p>
-<h2 id="merging-objects"><a class="headerlink" href="#merging-objects">Merging objects</a></h2>
+<h2 id="Merging-objects">Merging objects<a class="anchor ml-2" href="#Merging-objects" title="Permanent link">&para;</a></h2>
 <p>Quite often an instance will end up with duplicate books and authors or editions that appear as separate books when they are actually just different editions of the same work. This can happen because of importing editions that don’t have shared identifiers or from user mistakes. There also was a bug prior to version 0.7.5 which created a large number of duplicate books, editions, and authors. Sadly there’s no user interface to correct this for the time being, but in cases where the books are important for your instance you can use these management commands to fix some of the problems if you are using at least version 0.6.2.</p>
 <p>Please take extra care when using these commands because if you make a mistake there’s no way to undo it.</p>
-<h3 id="merging-editions"><a class="headerlink" href="#merging-editions">Merging editions</a></h3>
+<h3 id="Merging-editions">Merging editions<a class="anchor ml-2" href="#Merging-editions" title="Permanent link">&para;</a></h3>
 <p>If an edition of a book appears twice in the database and you are sure they are actually both referring to same edition, you can combine them into one with a command like this:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev runweb python manage.py merge_editions --canonical=27 --other=38
 </code></pre></div>
 
 <p>This will copy any missing information from edition 38 (the “other” edition) over to edition 27 (the “canonical” edition) and then delete the other edition. If any field of information is in both editions then the data from the canonical edition will be kept. If the other edition is in any lists or has any comments or reviews etc then these will all be updated to point to the canonical edition instead.</p>
 <p>You can find the numbers to use in the command by visiting the page for a book and looking at the number in the URL.</p>
-<h3 id="merging-authors"><a class="headerlink" href="#merging-authors">Merging authors</a></h3>
+<h3 id="Merging-authors">Merging authors<a class="anchor ml-2" href="#Merging-authors" title="Permanent link">&para;</a></h3>
 <p>You can identify potential duplicate authors with <code>show_duplicate_authors</code>:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>runweb<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>show_duplicate_authors
 </code></pre></div>
@@ -356,7 +360,7 @@ Management Commands
 </code></pre></div>
 
 <p>As for the editions, any extra information from the other author will be copied over to the canonical author and then the other author will be deleted. Any books written by the other author will be changed to be written by the canonical author. You can find the numbers to use in the command by visiting the page for an author and looking at the number in the URL.</p>
-<h2 id="fixing-isbns"><a class="headerlink" href="#fixing-isbns">Fixing ISBNs</a></h2>
+<h2 id="Fixing-ISBNs">Fixing ISBNs<a class="anchor ml-2" href="#Fixing-ISBNs" title="Permanent link">&para;</a></h2>
 <p>There was a bug in <code>v0.8.0</code> which erroneously created 11-digit ISBN10 entries in some circumstances. This was fixed in a data migration in <code>v0.8.1</code>, however for various reasons you may need to manually run a cleanup command to fix any incorrect ISBNs in your local database:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>runweb<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>fix_isbn10_entries
 </code></pre></div>

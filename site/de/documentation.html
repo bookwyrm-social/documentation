@@ -291,6 +291,10 @@ Dokumentation
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -307,31 +311,31 @@ Dokumentation
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#eine-verbesserung-vorschlagen">Eine Verbesserung vorschlagen</a>
+                  <a class="navbar-item" href="#Eine-Verbesserung-vorschlagen">Eine Verbesserung vorschlagen</a>
                   
               
-                  <a class="navbar-item" href="#wie-die-dokumentation-erstellt-wird">Wie die Dokumentation erstellt wird</a>
+                  <a class="navbar-item" href="#Wie-die-Dokumentation-erstellt-wird">Wie die Dokumentation erstellt wird</a>
                   
               
-                  <a class="navbar-item" href="#dokumentationsseiten-bearbeiten-oder-anlegen">Dokumentationsseiten bearbeiten oder anlegen</a>
+                  <a class="navbar-item" href="#Dokumentationsseiten-bearbeiten-oder-anlegen">Dokumentationsseiten bearbeiten oder anlegen</a>
                   
                       
-                      <a class="navbar-item" href="#klone-das-repository"><span class="pl-4">Klone das Repository</span></a>
+                      <a class="navbar-item" href="#Klone-das-Repository"><span class="pl-4">Klone das Repository</span></a>
                       
-                      <a class="navbar-item" href="#einen-neuen-branch-erstellen-und-anderungen-vornehmen"><span class="pl-4">Einen neuen Branch erstellen und Änderungen vornehmen</span></a>
+                      <a class="navbar-item" href="#Einen-neuen-Branch-erstellen-und-Änderungen-vornehmen"><span class="pl-4">Einen neuen Branch erstellen und Änderungen vornehmen</span></a>
                       
-                      <a class="navbar-item" href="#eine-pull-request-erstellen"><span class="pl-4">Eine Pull Request erstellen</span></a>
+                      <a class="navbar-item" href="#Eine-Pull-Request-erstellen"><span class="pl-4">Eine Pull Request erstellen</span></a>
                       
-                      <a class="navbar-item" href="#auf-uberprufungen-reagieren"><span class="pl-4">Auf Überprüfungen reagieren</span></a>
+                      <a class="navbar-item" href="#Auf-Überprüfungen-reagieren"><span class="pl-4">Auf Überprüfungen reagieren</span></a>
                       
-                      <a class="navbar-item" href="#deine-anderungen-werden-veroffentlicht"><span class="pl-4">Deine Änderungen werden veröffentlicht</span></a>
+                      <a class="navbar-item" href="#Deine-Änderungen-werden-veröffentlicht"><span class="pl-4">Deine Änderungen werden veröffentlicht</span></a>
                       
-                  
-              
-                  <a class="navbar-item" href="#neue-seiten">Neue Seiten</a>
                   
               
-                  <a class="navbar-item" href="#die-dokumentation-lokal-bauen">Die Dokumentation lokal bauen</a>
+                  <a class="navbar-item" href="#Neue-Seiten">Neue Seiten</a>
+                  
+              
+                  <a class="navbar-item" href="#Die-Dokumentation-lokal-bauen">Die Dokumentation lokal bauen</a>
                   
                       
                       <a class="navbar-item" href="#sitecompile"><span class="pl-4">site:compile</span></a>
@@ -342,12 +346,12 @@ Dokumentation
                       
                   
               
-                  <a class="navbar-item" href="#hinweise-fur-dokumentations-maintainer">Hinweise für Dokumentations-Maintainer</a>
+                  <a class="navbar-item" href="#Hinweise-für-Dokumentations-Maintainer">Hinweise für Dokumentations-Maintainer</a>
                   
                       
-                      <a class="navbar-item" href="#ubersetzungen"><span class="pl-4">Übersetzungen</span></a>
+                      <a class="navbar-item" href="#Übersetzungen"><span class="pl-4">Übersetzungen</span></a>
                       
-                      <a class="navbar-item" href="#updaten-wenn-eine-neue-version-veroffentlicht-wurde"><span class="pl-4">Updaten, wenn eine neue Version veröffentlicht wurde</span></a>
+                      <a class="navbar-item" href="#Updaten-wenn-eine-neue-Version-veröffentlicht-wurde"><span class="pl-4">Updaten, wenn eine neue Version veröffentlicht wurde</span></a>
                       
                   
               
@@ -367,12 +371,12 @@ Dokumentation
                 
 <section class="block content">
     <p>Die Dokumentation, die du gerade liest, wird von der BookWyrm-Community gepflegt. Jede Person kann zur Dokumentation beitragen.</p>
-<h2 id="eine-verbesserung-vorschlagen"><a class="headerlink" href="#eine-verbesserung-vorschlagen">Eine Verbesserung vorschlagen</a></h2>
+<h2 id="Eine-Verbesserung-vorschlagen">Eine Verbesserung vorschlagen<a class="anchor ml-2" href="#Eine-Verbesserung-vorschlagen" title="Permanent link">&para;</a></h2>
 <p>Du kannst einen <strong>Fehler</strong> (engl. error) melden, eine <strong>Verbesserung</strong> (engl. improvement) vorschlagen oder eine <strong>Ergänzung</strong> (engl. addition) zur Dokumentation anfragen, indem du <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue">einen Issue</a> im <a href="https://github.com/bookwyrm-social/documentation">Dokumentations-Repository</a> anlegst.</p>
-<h2 id="wie-die-dokumentation-erstellt-wird"><a class="headerlink" href="#wie-die-dokumentation-erstellt-wird">Wie die Dokumentation erstellt wird</a></h2>
+<h2 id="Wie-die-Dokumentation-erstellt-wird">Wie die Dokumentation erstellt wird<a class="anchor ml-2" href="#Wie-die-Dokumentation-erstellt-wird" title="Permanent link">&para;</a></h2>
 <p>Die Dokumentation <a href="https://github.com/bookwyrm-social/documentation">hat ihr eigenes GitHub-Repository</a>. Sie wird in Markdown verfasst und wir nutzen <a href="https://jinja.palletsprojects.com/en/stable">Jinja</a> und ein Python-Skript, um sie in HTML umzuwandeln. Ein Jinja-Plugin wird gemeinsam mit Crowdin genutzt, um Übersetzungen zu erstellen. Alle Quelldateien der Dokumentation sollen in US-Englisch verfasst werden.</p>
 <p>Alle Quelldatein werden im <code>content</code>-Verzeichnis abgelegt. Jeder Abschnitt hat darin ein Verzeichnis, wobei jede Seite durch eine einzelne Markdown-Datei abgebildet wird.</p>
-<h2 id="dokumentationsseiten-bearbeiten-oder-anlegen"><a class="headerlink" href="#dokumentationsseiten-bearbeiten-oder-anlegen">Dokumentationsseiten bearbeiten oder anlegen</a></h2>
+<h2 id="Dokumentationsseiten-bearbeiten-oder-anlegen">Dokumentationsseiten bearbeiten oder anlegen<a class="anchor ml-2" href="#Dokumentationsseiten-bearbeiten-oder-anlegen" title="Permanent link">&para;</a></h2>
 <p>Um eine neue Seite anzulegen, ist Folgendes notwendig:</p>
 <ol>
 <li>klone <a href="https://github.com/bookwyrm-social/documentation">das GitHub-Repository</a></li>
@@ -382,7 +386,7 @@ Dokumentation
 <li>genieße, wie deine Änderungen sofort veröffentlicht werden, sobald deine Pull Request angenommen und gemerget wurde</li>
 </ol>
 <p>Wenn du noch nie Git oder GitHub verwendet hast, mag das alles beängstigend klingen, aber lass es uns herunterbrechen:</p>
-<h3 id="klone-das-repository"><a class="headerlink" href="#klone-das-repository">Klone das Repository</a></h3>
+<h3 id="Klone-das-Repository">Klone das Repository<a class="anchor ml-2" href="#Klone-das-Repository" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Stelle sicher, dass du <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">einen GitHub-Account</a> hast.</li>
 <li>Erstelle einen "Klon" oder "Fork" des Dokumentations-Repositorys:</li>
@@ -393,7 +397,7 @@ Dokumentation
 <li>Wenn du die Kommandozeile nutzt, führe aus:</li>
 </ul>
 <p><code>git clone https://github.com/bookwyrm-social/documentation.git</code></p>
-<h3 id="einen-neuen-branch-erstellen-und-anderungen-vornehmen"><a class="headerlink" href="#einen-neuen-branch-erstellen-und-anderungen-vornehmen">Einen neuen Branch erstellen und Änderungen vornehmen</a></h3>
+<h3 id="Einen-neuen-Branch-erstellen-und-Änderungen-vornehmen">Einen neuen Branch erstellen und Änderungen vornehmen<a class="anchor ml-2" href="#Einen-neuen-Branch-erstellen-und-Änderungen-vornehmen" title="Permanent link">&para;</a></h3>
 <p>Um Änderungen vorzunehmen:</p>
 <ol>
 <li><a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue">Erstelle einen neuen Branch</a> in deinem Fork</li>
@@ -403,7 +407,7 @@ Dokumentation
    - In der Kommandozeile, speichere deine Änderungen an den Dateien und führe <code>git commit</code> aus</li>
 </ol>
 <p>An dieser Stelle wirst du vielleicht sehen wollen, wie deine Änderungen aussehen, wenn sie veröffentlicht werden. Schau dir <a href="#building-docs-locally">Dokumentation lokal bauen</a> weiter unten an, um zu erfahren, wie du eine Vorschau deiner Änderungen ansehen kannst.</p>
-<h3 id="eine-pull-request-erstellen"><a class="headerlink" href="#eine-pull-request-erstellen">Eine Pull Request erstellen</a></h3>
+<h3 id="Eine-Pull-Request-erstellen">Eine Pull Request erstellen<a class="anchor ml-2" href="#Eine-Pull-Request-erstellen" title="Permanent link">&para;</a></h3>
 <p>Wenn deine Änderungen abgeschlossen sind, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">erstelle eine Pull Request</a> an das Dokumentations-Repository.</p>
 <p>Deine Pull Request wird überprüft werden und eines der drei folgenden Szenarien wird eintreten:</p>
 <ol>
@@ -411,12 +415,12 @@ Dokumentation
 <li>Du wirst gebeten, <strong>Änderungen</strong> vorzunehmen</li>
 <li>Sie wird <strong>abgelehnt</strong> und geschlossen</li>
 </ol>
-<h3 id="auf-uberprufungen-reagieren"><a class="headerlink" href="#auf-uberprufungen-reagieren">Auf Überprüfungen reagieren</a></h3>
+<h3 id="Auf-Überprüfungen-reagieren">Auf Überprüfungen reagieren<a class="anchor ml-2" href="#Auf-Überprüfungen-reagieren" title="Permanent link">&para;</a></h3>
 <p>Wenn du gebeten wirst, Änderungen vorzunehmen, kannst du dies lokal erledigen und deine lokalen Änderungen an deinen Fork/Klon auf Github senden (engl. <code>push</code>). Sie werden dann automatisch in deine Pull Request übernommen. Lass den*die Reviewer*in wissen, wenn du mit deinen Anpassungen fertig bist, damit die Person eine weitere Überprüfung starten und dann hoffentlich deine Änderungen zu sich holen (engl. <code>pull</code>) kann.</p>
 <p>Wir heißen alle Beiträge willkommen. Es wäre ungewöhnlich, wenn ein Beitrag zur Dokumentation direkt abgelehnt würde. Das würde nur dann geschehen, wenn deine Pull Request Informationen einfügt, die falsch oder irreführend ohne Aussicht auf Besserung sind oder wenn festgestellt wird, dass sie aus dem Rahmen fällt.</p>
-<h3 id="deine-anderungen-werden-veroffentlicht"><a class="headerlink" href="#deine-anderungen-werden-veroffentlicht">Deine Änderungen werden veröffentlicht</a></h3>
+<h3 id="Deine-Änderungen-werden-veröffentlicht">Deine Änderungen werden veröffentlicht<a class="anchor ml-2" href="#Deine-Änderungen-werden-veröffentlicht" title="Permanent link">&para;</a></h3>
 <p>Wenn deine Pull Request übernommen wird, wird <a href="https://docs.joinbookwyrm.com/">die Dokumentation</a> automatisch aktualisiert. Es kann sein, dass du deinen Browser neu starten oder den "Inkognito-Modus" nutzen musst, um die Änderungen in deinem Browser zu sehen.</p>
-<h2 id="neue-seiten"><a class="headerlink" href="#neue-seiten">Neue Seiten</a></h2>
+<h2 id="Neue-Seiten">Neue Seiten<a class="anchor ml-2" href="#Neue-Seiten" title="Permanent link">&para;</a></h2>
 <p>Wenn du eine neue Seite hinzufügst, wirst du einige Metadaten angeben und andere Seite anpassen müssen.</p>
 <p>At the top of each markdown file is the "frontmatter" in <code>yaml</code> format:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dokumentation</span>
@@ -429,7 +433,7 @@ Dokumentation
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
 </code></pre></div>
 
-<h2 id="die-dokumentation-lokal-bauen"><a class="headerlink" href="#die-dokumentation-lokal-bauen">Die Dokumentation lokal bauen</a></h2>
+<h2 id="Die-Dokumentation-lokal-bauen">Die Dokumentation lokal bauen<a class="anchor ml-2" href="#Die-Dokumentation-lokal-bauen" title="Permanent link">&para;</a></h2>
 <p>Bevor du eine Pull Request einreichst, wirst du dir anschauen wollen, wie deine Änderungen am Ende aussehen werden. Das Dokumentations-Repository enthält – wie das Haupt-Quelltext-Repository – ein Entwicklungs-Skript mit demselben Namen: <code>bw-dev</code>. Du kannst es benutzen, um zu testen, wie deine Änderungen aussehen werden.</p>
 <p>Anders als im Hauptprojekt läuft die Dokumentation nicht in einem Docker-Container. Wenn du die Dokumentationsseite lokal kompilieren möchtest, wirst du alle Abhängigkeiten installieren müssen, und es ist empfehlenswert, <a href="https://docs.python.org/3/library/venv.html">eine virtuelle Umgebung</a> zu nutzen:</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">virtual</span><span class="o">/</span><span class="n">environment</span>
@@ -438,15 +442,15 @@ Dokumentation
 </code></pre></div>
 
 <p>Eine ganze Reihe von Befehlen ist verfügbar, wenn du <code>./bw-dev &lt;command&gt;</code> ausführst. Du wirst wahrscheinlich diese nutzen wollen:</p>
-<h3 id="sitecompile"><a class="headerlink" href="#sitecompile">site:compile</a></h3>
+<h3 id="sitecompile">site:compile<a class="anchor ml-2" href="#sitecompile" title="Permanent link">&para;</a></h3>
 <p>Dieser Befehl wird deine Markdown-Dateien mithilfe des Skripts <code>generator.py</code> zu HTML kompilieren.</p>
 <p>Wenn du <code>site:compile</code> ausführst, wird es im Verzeichnis <code>site</code> eine große Menge Dateien erzeugen. Checke diese nicht ein und füge sie nicht deiner Pull Request bei: Sie werden auf dem Dokumentations-Server neu generiert, wenn deine Pull Request übernommen wird.</p>
-<h3 id="siteserve"><a class="headerlink" href="#siteserve">site:serve</a></h3>
+<h3 id="siteserve">site:serve<a class="anchor ml-2" href="#siteserve" title="Permanent link">&para;</a></h3>
 <p>Dieser Befehl startet einen lokalen Web-Server unter <code>http://[::1]:8080/</code>, damit du dir ansehen kannst, wie die Dokumentation aussehen wird.</p>
-<h3 id="ruff"><a class="headerlink" href="#ruff">ruff</a></h3>
+<h3 id="ruff">ruff<a class="anchor ml-2" href="#ruff" title="Permanent link">&para;</a></h3>
 <p>We use <a href="https://docs.astral.sh/ruff/">ruff</a> for linting and formatting. Ensure that you run <code>./bw-dev ruff</code> before pushing your pull request if you made any changes to Python files in the documentation repository. You can try auto-fixing any linting issues with <code>./bw-dev ruff-fix</code>.</p>
-<h2 id="hinweise-fur-dokumentations-maintainer"><a class="headerlink" href="#hinweise-fur-dokumentations-maintainer">Hinweise für Dokumentations-Maintainer</a></h2>
-<h3 id="ubersetzungen"><a class="headerlink" href="#ubersetzungen">Übersetzungen</a></h3>
+<h2 id="Hinweise-für-Dokumentations-Maintainer">Hinweise für Dokumentations-Maintainer<a class="anchor ml-2" href="#Hinweise-für-Dokumentations-Maintainer" title="Permanent link">&para;</a></h2>
+<h3 id="Übersetzungen">Übersetzungen<a class="anchor ml-2" href="#Übersetzungen" title="Permanent link">&para;</a></h3>
 <p>Halte Übersetzungen konsistent, indem du sie regelmäßig von Crowdin aktualisierst:</p>
 <ol>
 <li>Übersetzungen werden in Crowdin aktualisiert</li>
@@ -461,7 +465,7 @@ Dokumentation
 <li>mit den Änderungen in der neuen Referenzdatei werden die Übersetzungen in Crowdin angepasst ...</li>
 </ol>
 <p>Die Lokalisierungen für die Sprachauswahl sind in <code>i18n.py</code> aufgeführt. Im Allgemeinen warten wir, bis eine Sprache in Crowdin zu 70 % abgedeckt ist, bevor wir sie zur Liste hinzufügen, um zu vermeiden, dass zu viel Inhalt unübersetzt bleibt.</p>
-<h3 id="updaten-wenn-eine-neue-version-veroffentlicht-wurde"><a class="headerlink" href="#updaten-wenn-eine-neue-version-veroffentlicht-wurde">Updaten, wenn eine neue Version veröffentlicht wurde</a></h3>
+<h3 id="Updaten-wenn-eine-neue-Version-veröffentlicht-wurde">Updaten, wenn eine neue Version veröffentlicht wurde<a class="anchor ml-2" href="#Updaten-wenn-eine-neue-Version-veröffentlicht-wurde" title="Permanent link">&para;</a></h3>
 <p>Wenn eine neue Version von BookWyrm veröffentlicht wird, müssen wir eine neue Version der Dokumentation erstellen:</p>
 <ol>
 <li>Füge einen Branch hinzu, dessen Name exakt dem neuen Versions-Tag in BookWyrm entspricht. Zum Beispiel <code>v0.x.y</code>.</li>

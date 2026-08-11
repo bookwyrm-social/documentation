@@ -291,6 +291,10 @@ Systemüberwachung
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -307,22 +311,22 @@ Systemüberwachung
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#importe">Importe</a>
+                  <a class="navbar-item" href="#Importe">Importe</a>
                   
               
-                  <a class="navbar-item" href="#celery-status">Celery-Status</a>
+                  <a class="navbar-item" href="#Celery-Status">Celery-Status</a>
                   
               
-                  <a class="navbar-item" href="#geplante-aufgaben">Geplante Aufgaben</a>
+                  <a class="navbar-item" href="#Geplante-Aufgaben">Geplante Aufgaben</a>
                   
               
-                  <a class="navbar-item" href="#e-mail-konfiguration">E-Mail-Konfiguration</a>
+                  <a class="navbar-item" href="#E-Mail-Konfiguration">E-Mail-Konfiguration</a>
                   
               
-                  <a class="navbar-item" href="#konnektoren">Konnektoren</a>
+                  <a class="navbar-item" href="#Konnektoren">Konnektoren</a>
                   
               
-                  <a class="navbar-item" href="#dateiverwaltung">Dateiverwaltung</a>
+                  <a class="navbar-item" href="#Dateiverwaltung">Dateiverwaltung</a>
                   
               
             </div>
@@ -341,18 +345,18 @@ Systemüberwachung
                 
 <section class="block content">
     <p>Das Menü <code>Administration &gt; System</code> bietet Instanz-Administrator*innen eine Reihe an Funktionen für die Systemüberwachung sowie Konfigurationsoptionen für Aufgaben, die im Hintergrund ausgeführt werden.</p>
-<h2 id="importe"><a class="headerlink" href="#importe">Importe</a></h2>
+<h2 id="Importe">Importe<a class="anchor ml-2" href="#Importe" title="Permanent link">&para;</a></h2>
 <p>Auf der Seite <strong>Importe</strong> kannst du Buch-Importe sowie Exporte und Importe von Konten verwalten. Exporte von Konten sind standardmäßig deaktiviert. Auf dieser Seite kannst du Buch- und Konto-Importe überwachen und abbrechen, falls sie Fehler verursachen. Außerdem kannst du begrenzen, wie oft Nutzer*innen Importe ausführen können. Das ist wichtig, wenn deine Instanz Performanzprobleme erleidet, weil im Hintergrund eine große Zahl an Import- und Exportprozessen läuft.</p>
-<h2 id="celery-status"><a class="headerlink" href="#celery-status">Celery-Status</a></h2>
+<h2 id="Celery-Status">Celery-Status<a class="anchor ml-2" href="#Celery-Status" title="Permanent link">&para;</a></h2>
 <p>Die Seite <strong>Celery-Status</strong> gibt einen Überblick über die Celery-Aufgaben und kann anzeigen, welche Warteschlangen verantwortlich sein könnten, falls deine Instanz langsamer wird. Auf dieser Seite kannst du auch gesamte Warteschlagen und Aufgaben leeren – allerdings nur als allerletzte Option, weil es zu Datenverlust führen kann.</p>
-<h2 id="geplante-aufgaben"><a class="headerlink" href="#geplante-aufgaben">Geplante Aufgaben</a></h2>
+<h2 id="Geplante-Aufgaben">Geplante Aufgaben<a class="anchor ml-2" href="#Geplante-Aufgaben" title="Permanent link">&para;</a></h2>
 <p>Du kannst Aufgaben unter <code>Administration &gt; System &gt; Geplante Aufgaben</code> überblicken. Aufgaben werden auf anderen Seiten ausgelöst.</p>
-<h2 id="e-mail-konfiguration"><a class="headerlink" href="#e-mail-konfiguration">E-Mail-Konfiguration</a></h2>
+<h2 id="E-Mail-Konfiguration">E-Mail-Konfiguration<a class="anchor ml-2" href="#E-Mail-Konfiguration" title="Permanent link">&para;</a></h2>
 <p>Prüfe hier deine Konfigurationen für ausgehende E-Mails. Du kannst auch eine Test-E-Mail versenden. Es kann sein, dass diese Seite in Zukunft an eine andere Stelle umzieht.</p>
-<h2 id="konnektoren"><a class="headerlink" href="#konnektoren">Konnektoren</a></h2>
+<h2 id="Konnektoren">Konnektoren<a class="anchor ml-2" href="#Konnektoren" title="Permanent link">&para;</a></h2>
 <p>Konnektoren sind Datenquellen für Bücher und Autor*innen. Auf dieser Seite kannst du Konnektoren (de-)aktivieren und ihre Priorität festlegen. Andere BookWyrm-Server, Inventaier und Open Library sind standardmäßig aktiviert.</p>
 <p>Die Priorität bestimmt, in welcher Reihenfolge Suchergebnisse erscheinen. Die höchste Priorität ist 1. Die Standardpriorität ist 2. Konnektoreneinstellungen bestimmen nur, ob ein Konnektor verwendet wird, um Suchergebnisse auszuliefern. Um die Föderation und Moderation zu konfigurieren, siehe <code>Administration &gt; Föderation</code> oder <code>Administration &gt; Moderation</code>.</p>
-<h2 id="dateiverwaltung"><a class="headerlink" href="#dateiverwaltung">Dateiverwaltung</a></h2>
+<h2 id="Dateiverwaltung">Dateiverwaltung<a class="anchor ml-2" href="#Dateiverwaltung" title="Permanent link">&para;</a></h2>
 <p>In diesem Bereich kannst du eine Reihe von Hintergrundaufgaben einrichten, die Import- und Exportdateien sowie Buch-Cover betreffen.</p>
 <p>Unter <strong>Löschung von Dateien planen</strong> kannst du die regelmäßige Aufgabe einrichten, Dateien von Kontoim- und -exporten zu löschen, die ihr Verfallsdatum erreicht haben. Das Verfallsdatum wird unter <strong>Ablaufdatum der Exportdateien</strong> festgelegt.</p>
 <p>Der Abschnitt <strong>Titelbilder über Connectoren abrufen</strong> kann dir helfen, zwei unterschiedliche aber verwandte Probleme zu lösen.</p>

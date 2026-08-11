@@ -291,6 +291,10 @@ Using a Reverse-Proxy
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/ro/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -925,7 +929,7 @@ Using a Reverse-Proxy
                 </header>
                 
 <section class="block content">
-    <h2 id="rularea-bookwyrm-in-spatele-unui-reverse-proxy"><a class="headerlink" href="#rularea-bookwyrm-in-spatele-unui-reverse-proxy">Rularea BookWyrm în spatele unui Reverse-Proxy</a></h2>
+    <h2 id="Rularea-BookWyrm-în-spatele-unui-Reverse-Proxy">Rularea BookWyrm în spatele unui Reverse-Proxy<a class="anchor ml-2" href="#Rularea-BookWyrm-în-spatele-unui-Reverse-Proxy" title="Permanent link">&para;</a></h2>
 <p>Dacă rulați un alt server web pe mașina dvs., trebuie să-l configurați să transmită cererile web către BookWyrm.</p>
 <p>Configurația BookWyrm de bază are deja un server nginx care redirecționează cererile către aplicația Django care se ocupă de SSL și deservește în mod direct fișierele statice. Fișierele statice sunt stocate într-un volum Docker la care au acces mai multe servicii BookWrym, deci nu este recomandat să înlăturați complet acest server.</p>
 <p>Pentru a rula BookWyrm în spatele unui reverse-proxy, faceți următoarele schimbări:</p>
@@ -938,7 +942,7 @@ Using a Reverse-Proxy
 </ul>
 <p>În acest moment, puteți urmări instrucțiunile <a href="#server-setup">setup</a> listate. Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code> directly as this is handled by your proxy server).</p>
 <p>Pașii pentru configurarea unui reverse-proxy sunt independenți de server.</p>
-<h4 id="nginx"><a class="headerlink" href="#nginx">Nginx</a></h4>
+<h4 id="Nginx">Nginx<a class="anchor ml-2" href="#Nginx" title="Permanent link">&para;</a></h4>
 <p>Înainte de a putea configura nginx, veți avea nevoie să localizați dosarul dvs. de configurare nginx, care este dependent de platforma dvs. și de cum ați instalat nginx. Vedeți <a href="http://nginx.org/en/docs/beginners_guide.html">ghidul nginx</a> pentru detalii.</p>
 <p>Pentru a configura serverul dvs.:</p>
 <ul>

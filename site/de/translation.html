@@ -291,6 +291,10 @@
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -1309,13 +1313,13 @@
                 </header>
                 
 <section class="block content">
-    <h2 id="zu-ubersetzungen-beitragen"><a class="headerlink" href="#zu-ubersetzungen-beitragen">Zu Übersetzungen beitragen</a></h2>
+    <h2 id="Zu-Übersetzungen-beitragen">Zu Übersetzungen beitragen<a class="anchor ml-2" href="#Zu-Übersetzungen-beitragen" title="Permanent link">&para;</a></h2>
 <p>Du kannst dem BookWyrm Übersetzungsprojekt unter <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a> beitreten.</p>
-<h2 id="geschlechtsneutrale-sprache"><a class="headerlink" href="#geschlechtsneutrale-sprache">Geschlechtsneutrale Sprache</a></h2>
+<h2 id="Geschlechtsneutrale-Sprache">Geschlechtsneutrale Sprache<a class="anchor ml-2" href="#Geschlechtsneutrale-Sprache" title="Permanent link">&para;</a></h2>
 <p>Wo immer möglich, sollten BookWyrm Übersetzungen geschlechtsneutrale Sprache verwenden. Dies gilt auch dann, wenn eine Sprache als neutrales Geschlecht voreingestellt ist oder wenn sie etwas Ähnliches wie "he/she" verwendet. Es ist auch wichtig, dass Übersetzungen klar, präzise und lesbar für einen Screenreader sind und manchmal stehen diese Ziele im Widerspruch zueinander; es gibt nicht die eine perfekte Lösung und diese hängt von der Sprache ab.</p>
 <p>Als Leitfaden versuche, einen höheren Wert auf inklusive und geschlechtsneutrale Sprache zu legen als auf formale Korrektheit oder offiziell anerkannte Stilführer. Im Englischen zum Beispiel benötigen viele formale Leitfäden ein einzelnes "she"- oder "he"-Pronomen, um für eine Person verwendet zu werden, aber es wäre besser, in BookWyrm das geschlechtsneutrale singuläre "they" zu verwenden.</p>
 <p>Wenn du nicht sicher bist, wie du am besten an ein Übersetzungsproblem herangehen kannst, kommentiere die Übersetzung oder öffne ein <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">-Diskussionsthema</a>, um weitergehende Fragen zu stellen.</p>
-<h2 id="vorlagen-ubersetzbar-machen"><a class="headerlink" href="#vorlagen-ubersetzbar-machen">Vorlagen übersetzbar machen</a></h2>
+<h2 id="Vorlagen-übersetzbar-machen">Vorlagen übersetzbar machen<a class="anchor ml-2" href="#Vorlagen-übersetzbar-machen" title="Permanent link">&para;</a></h2>
 <p>Bookwyrm nutzt die Django-Übersetzungsfunktionalität, um den Seiteninhalt je nach der von den Benutzer*innen gewählten Anzeigesprache ändern zu können. Die Django-Dokumentation <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">bietet hilfreiche Erklärungen</a> wie das funktioniert, aber hier ist eine Kurzversion:</p>
 <ul>
 <li>alle Template-Texte sollten Übersetzungstexte enthalten</li>
@@ -1323,7 +1327,7 @@
 <li>Wenn der Textblock wörtlicher Text ist, kannst du das Template-Tag <code>{% trans %}</code> verwenden</li>
 <li>Wenn der Textblock Variablen enthält, solltest du das Template-Tag-Paar <code>{% blocktrans %}</code> und <code>{% endblocktrans %}</code> verwenden. Wenn du Leerzeichen oder Zeilenumbrüche einbaust, nutze <code>gekürzt</code>, um es automatisch zu entfernen, wenn die Sprachdatei generiert wird: <code>{% blocktrans trimmed %}</code></li>
 </ul>
-<h3 id="beispiele"><a class="headerlink" href="#beispiele">Beispiele</a></h3>
+<h3 id="Beispiele">Beispiele<a class="anchor ml-2" href="#Beispiele" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>

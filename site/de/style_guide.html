@@ -291,6 +291,10 @@ Style Guide
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -2464,43 +2468,43 @@ Style Guide
                 </header>
                 
 <section class="block content">
-    <h2 id="pull-requests"><a class="headerlink" href="#pull-requests">Pull Requests</a></h2>
+    <h2 id="Pull-Requests">Pull Requests<a class="anchor ml-2" href="#Pull-Requests" title="Permanent link">&para;</a></h2>
 <p>Du möchstest also Code zu BookWyrm hinzufügen: Das ist klasse! Wenn es ein offenes Problem gibt, dass du beheben möchtest, ist es hilfreich, das Problem zu kommentieren, damit die Arbeit nicht dupliziert wird. Versuche den Umfang von Pull Requests kleinzuhalten und konzentriere dich auf ein einzelnes Thema. Auf diese Weise ist es einfacher zu überprüfen und wenn ein Teil Änderungen braucht, wird er die anderen Teile nicht aufhalten.</p>
 <p>Wenn du nicht weißt, wie man etwas fixt oder etwas nicht schaffst: Kein Problem. Hinterlasse einen Kommentar im Pull Request und wir versuchen es, herauszufinden 💖.</p>
 <p>Pull-Anfragen müssen alle automatisierten Prüfungen bestehen, bevor sie übernommen werden können - dazu gehören Stil-Prüfungen, globale Linter, eine Sicherheitsprüfung und Unit-Tests.</p>
 <p>There are several <code>./bw-dev</code> commands you may find helpful for linting and testing prior to pushing your pull request. See <a href="cli.html">Command Line Tool</a> for all the options available.</p>
-<h2 id="linten"><a class="headerlink" href="#linten">Linten</a></h2>
-<h3 id="global"><a class="headerlink" href="#global">Global</a></h3>
+<h2 id="Linten">Linten<a class="anchor ml-2" href="#Linten" title="Permanent link">&para;</a></h2>
+<h3 id="Global">Global<a class="anchor ml-2" href="#Global" title="Permanent link">&para;</a></h3>
 <p>Wir verwenden <a href="https://editorconfig.org">EditorConfig</a>, um konsistente Einrückungen und Zeilenenden zu erhalten.</p>
-<h3 id="python"><a class="headerlink" href="#python">Python</a></h3>
-<h4 id="formatting-and-linting"><a class="headerlink" href="#formatting-and-linting">Formatting and linting</a></h4>
+<h3 id="Python">Python<a class="anchor ml-2" href="#Python" title="Permanent link">&para;</a></h3>
+<h4 id="Formatting-and-linting">Formatting and linting<a class="anchor ml-2" href="#Formatting-and-linting" title="Permanent link">&para;</a></h4>
 <p>BookWyrm uses <a href="https://docs.astral.sh/ruff">ruff</a> for both code linting (checking for errors) and formatting (ensuring code style is consistent). All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running <code>./bw-dev ruff</code>. For linting errors, you can try <code>./bw-dev ruff-fix</code> to automatically fix errors, though this may not always be possible.</p>
 <p>Ruff linting warnings must be addressed before pull requests are merged, but it's a judgement call if the suggestion should be used, or the warning suppressed. See <a href="https://docs.astral.sh/ruff/linter/#comments">the Ruff projects's documentation on suppressing warnings</a> using code comments.</p>
 <p>The BookWyrm project previously used <code>Black</code> for formatting and <code>Pylint</code> for linting. You may notice artefacts such as pylint suppression comments in older code. We are still refining our linting rules so if something seems confusing or not quite right, don't hesitate to ask for advice.</p>
-<h4 id="type-checking"><a class="headerlink" href="#type-checking">Type checking</a></h4>
+<h4 id="Type-checking">Type checking<a class="anchor ml-2" href="#Type-checking" title="Permanent link">&para;</a></h4>
 <p>We are gradually rolling out <a href="https://en.wikipedia.org/wiki/Type_system">static type checking</a> across the BookWyrm code base. This is a long term project. Whilst it is not compulsory to formally define types in new code, it is strongly recommended. This will help to avoid some more subtle bugs that may not be identified in tests.</p>
 <p>We currently use <a href="https://www.mypy-lang.org">mypy</a> as our static type checker. Find out more about how to use mypy at <a href="https://mypy.readthedocs.io/en/stable/">the <code>mypy</code> project documentation</a>.</p>
-<h3 id="vorlagen-html"><a class="headerlink" href="#vorlagen-html">Vorlagen (HTML)</a></h3>
+<h3 id="Vorlagen-HTML">Vorlagen (HTML)<a class="anchor ml-2" href="#Vorlagen-HTML" title="Permanent link">&para;</a></h3>
 <p>Dein Pull-Request wird auch durch den <a href="https://www.curlylint.org">curlylint</a>-Linter für Django-Templates überprüft.</p>
-<h3 id="css"><a class="headerlink" href="#css">CSS</a></h3>
+<h3 id="CSS">CSS<a class="anchor ml-2" href="#CSS" title="Permanent link">&para;</a></h3>
 <p>Wir verwenden <a href="https://stylelint.io">stylelint</a>, um alle CSS-Regeln zu überprüfen. Wie bei Pylint <a href="https://stylelint.io/user-guide/ignore-code">kannst du styelint</a> für eine bestimmte Regel deaktivieren, aber du benötigst dafür eine gute Rechtfertigung.</p>
-<h3 id="javascript"><a class="headerlink" href="#javascript">JavaScript</a></h3>
+<h3 id="JavaScript">JavaScript<a class="anchor ml-2" href="#JavaScript" title="Permanent link">&para;</a></h3>
 <p><a href="https://eslint.org">ESLint</a> überprüft alle von Ihnen vorgenommenen JavaScript-Änderungen. Falls ESLint dein funktionierendes JavaScript nicht mag, überprüfe die Linter-Meldung auf das genaue Problem.</p>
-<h2 id="inklusives-design"><a class="headerlink" href="#inklusives-design">Inklusives Design</a></h2>
+<h2 id="Inklusives-Design">Inklusives Design<a class="anchor ml-2" href="#Inklusives-Design" title="Permanent link">&para;</a></h2>
 <p>Bookwyrm hat zum Ziel, so umfassend und zugänglich wie möglich zu sein.</p>
 <p>Überprüfen Sie die <a href="https://github.com/bookwyrm-social/bookwyrm/discussions/1354">Checkliste für inklusives Web Design</a> bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist <a href="https://www.a11y-101.com/development">A11Y-101</a> ebenfalls eine nützliche Quelle. For information on how to make your page templates multi-lingual, see the <a href="/translation.html">Translations section</a>.</p>
 <p>Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, sind:</p>
-<h3 id="formulare"><a class="headerlink" href="#formulare">Formulare</a></h3>
+<h3 id="Formulare">Formulare<a class="anchor ml-2" href="#Formulare" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Verwende nur <code>input[type="checkbox"]</code> oder <code>input[type="radio"]</code> in <code>&lt;label&gt;</code></li>
 <li>Wenn du die Checkboxen und die Radiobuttons nicht innerhalb des <code>&lt;label&gt;</code>platzierst, sollte das <code>&lt;label&gt;</code> <em>nach</em> dem Element platziert werden, auf das es sich bezieht</li>
 </ul>
-<h3 id="buttons-und-links"><a class="headerlink" href="#buttons-und-links">Buttons und Links</a></h3>
+<h3 id="Buttons-und-Links">Buttons und Links<a class="anchor ml-2" href="#Buttons-und-Links" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Verwende ein <code>&lt;button&gt;</code> Element für alles, was existiert, um eine JavaScript-Aktion auszulösen (z.B. ein Formular verstecken oder enthüllen) oder eine <code>POST</code>-Anfrage senden (z.B. ein Formular übermitteln)</li>
 <li>Verwende ein <code>&lt;a&gt;</code>-Element für alles, was eine <code>GET</code>-Anfrage auslöst. Normalerweise sollte ein Ankerelement (<code>&lt;a&gt;</code>) nicht als Button (<code>class="button"</code>) dargestellt werden, obwohl es einige Ausnahmen gibt, wie z. B. "Abbrechen"-Buttons. Falls Sie Zweifel haben, fragen Sie in Ihrer Pull-Anfrage um Rat</li>
 </ul>
-<h4 id="translations"><a class="headerlink" href="#translations">Translations</a></h4>
+<h4 id="Translations">Translations<a class="anchor ml-2" href="#Translations" title="Permanent link">&para;</a></h4>
 <p>BookWyrm is an international project and aims to be inclusive of as many languages as possible. All user-facing messages and templates should follow the advice on <a href="translation.html">translations and gendered language</a>.</p>
 </section>
 

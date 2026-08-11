@@ -291,6 +291,10 @@ ActivityPub
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -2967,8 +2971,8 @@ ActivityPub
 <section class="block content">
     <p>BookWyrm verwendet das <a href="http://activitypub.rocks/">ActivityPub</a>-Protokoll, um Benutzer*innenaktivitäten zwischen anderen BookWyrm-Instanzen und anderen Diensten, die ActivityPub implementieren (wie <a href="https://joinmastodon.org/">Mastodon</a>), zu senden und zu empfangen. Um Buchdaten zu handhaben, hat BookWyrm eine Handvoll erweiterter Aktivitätstypen, die nicht zum Standard gehören, aber für andere BookWyrm-Instanzen lesbar sind.</p>
 <p>Um die AktivityPub-Daten zu einer BookWyrm-Entität (Nutzer*in, Buch, Liste, etc.) einzusehen, kannst du der URL die Endung <code>.json</code> anfügen. Beispiel: <code>https://www.example.com/user/sam.json</code>. Das JSON kannst du in deinem Browser ansehen oder mittels HTTP-Request anfragen (z. B. mit <code>curl</code>).</p>
-<h2 id="aktivitaten-und-objekte"><a class="headerlink" href="#aktivitaten-und-objekte">Aktivitäten und Objekte</a></h2>
-<h3 id="benutzerinnen-und-beziehungen"><a class="headerlink" href="#benutzerinnen-und-beziehungen">Benutzer*innen und Beziehungen</a></h3>
+<h2 id="Aktivitäten-und-Objekte">Aktivitäten und Objekte<a class="anchor ml-2" href="#Aktivitäten-und-Objekte" title="Permanent link">&para;</a></h2>
+<h3 id="Benutzerinnen-und-Beziehungen">Benutzer*innen und Beziehungen<a class="anchor ml-2" href="#Benutzerinnen-und-Beziehungen" title="Permanent link">&para;</a></h3>
 <p>Benutzer*innenbeziehungsinteraktionen folgen der Standard ActivityPub Spezifikation.</p>
 <ul>
 <li><code>Folgen</code>: Anfrage, die Beiträge einer Person zu erhalten und solche Beiträge einzusehen, die auf Follower*innen beschränkt sind</li>
@@ -2980,15 +2984,15 @@ ActivityPub
 <li><code>Rückgängig</code>: Nimmt <code>Folgen</code> oder <code>Blocken</code> zurück</li>
 <li><code>Umziehen</code>: Kommuniziert, dass ein<em>e Nutzer</em>in die ID gewechselt hat und zu einem neuen Server umgezogen ist. Die meisten ActivityPub-Plattformen werden dem neuen Konto am neuen Ort folgen. BookWyrm sendet Nutzer*innen eine Benachrichtigung und fordert sie auf, zu bestätigen, dass sie auch dem neuen Konto am neuen Ort folgen wollen.</li>
 </ul>
-<h3 id="beitrage"><a class="headerlink" href="#beitrage">Beiträge</a></h3>
-<h4 id="objekttypen"><a class="headerlink" href="#objekttypen">Objekttypen</a></h4>
+<h3 id="Beiträge">Beiträge<a class="anchor ml-2" href="#Beiträge" title="Permanent link">&para;</a></h3>
+<h4 id="Objekttypen">Objekttypen<a class="anchor ml-2" href="#Objekttypen" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>Notiz</code>: Bei Diensten wie Mastodon, ist <code>Notiz</code>en der primäre Typ des Status. Sie enthalten einen Text, Anhänge, können Benutzer erwähnen und Antworten auf Status jeder Art sein. In BookWyrm können <code>Notiz</code>en nur als direkte Nachrichten oder als Antworten auf andere Status erstellt werden.</li>
 <li><code>Rezension</code>: Eine Rezension ist ein Status, der sich auf ein Buch bezieht (angezeigt durch das <code>inReplyToBook</code>-Feld), welches einen Titel, Text sowie die numerische Bewertung auf einer Skala von 0 (keine Bewertung) bis 5 enthält.</li>
 <li><code>Kommentar</code>: Ein Kommentar zu einem Buch erwähnt ein Buch und hat einen Text.</li>
 <li><code>Zitat</code>: Ein Zitat enthält einen Text, einen Auszug aus dem Buch und erwähnt ein Buch.</li>
 </ul>
-<h4 id="aktivitaten"><a class="headerlink" href="#aktivitaten">Aktivitäten</a></h4>
+<h4 id="Aktivitäten">Aktivitäten<a class="anchor ml-2" href="#Aktivitäten" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><code>Erstellen</code>: Speichert einen neuen Status in der Datenbank.</p>
@@ -3006,37 +3010,37 @@ ActivityPub
 <li><code>Ankündigung</code>: Teilt den Status in der Zeitleiste des Akteurs</li>
 <li><code>Rückgängig</code>: Reversiert <code>Gefällt</code> oder <code>Ankündigung</code></li>
 </ul>
-<h3 id="sammlungen"><a class="headerlink" href="#sammlungen">Sammlungen</a></h3>
+<h3 id="Sammlungen">Sammlungen<a class="anchor ml-2" href="#Sammlungen" title="Permanent link">&para;</a></h3>
 <p>Bücher und Listen von Benutzern werden durch <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection"><code>Sortierte Sammlung</code></a> repräsentiert</p>
-<h4 id="objekte"><a class="headerlink" href="#objekte">Objekte</a></h4>
+<h4 id="Objekte">Objekte<a class="anchor ml-2" href="#Objekte" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>Regal</code>: Buchsammlung eines Benutzers. Standardmäßig hat jede<em>r Nutzer</em>in die Regale <code>Leseliste</code>, <code>Liest gerade</code> <code>Aufgehört zu lesen</code> und <code>Gelesen</code>, die verwendet werden, um den Lesefortschritt zu verfolgen.</li>
 <li><code>Liste</code>: Eine Sammlung von Büchern, zu der auch andere Personen als die, die die Liste erstellt hat, Bücher beitragen können.</li>
 </ul>
-<h4 id="aktivitaten_1"><a class="headerlink" href="#aktivitaten_1">Aktivitäten</a></h4>
+<h4 id="Aktivitäten_1">Aktivitäten<a class="anchor ml-2" href="#Aktivitäten_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>Erstellen</code>: Fügt der Datenbank ein Regal oder eine Liste hinzu.</li>
 <li><code>Löschen</code>: Entfernt ein Regal oder eine Liste.</li>
 <li><code>Hinzufügen</code>: Fügt ein Buch zu einem Regal oder einer Liste hinzu.</li>
 <li><code>Entfernen</code>: Entfernt ein Buch aus einem Regal oder einer Liste.</li>
 </ul>
-<h2 id="alternative-serialisierung"><a class="headerlink" href="#alternative-serialisierung">Alternative Serialisierung</a></h2>
+<h2 id="Alternative-Serialisierung">Alternative Serialisierung<a class="anchor ml-2" href="#Alternative-Serialisierung" title="Permanent link">&para;</a></h2>
 <p>Weil BookWyrm eigene Objekttypen (<code>Rezension</code>, <code>Kommentar</code>, <code>Zitat</code>) benutzt, die nicht von ActivityPub unterstützt werden, werden Beiträge in Standardtypen umgewandelt, wenn sie an Nicht-BookWyrm-Dienste gesendet oder darin angezeigt werden. <code>Rezension</code>en werden in <code>Artikel</code> umgewandelt und <code>Kommentar</code>e und <code>Zitat</code>e werden in <code>Notiz</code>en mit einem Link zu dem Buch und dem Titelbild als Anhang konvertiert.</p>
 <p>Das kann sich in der Zukunft zugunsten der ActivityPub-konformeren <a href="https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type">erweiterten Objekttypen</a> ändern, die neben den ActivityPub-Typen aufgeführt werden.</p>
-<h2 id="modelle-mit-activitypub-anbindung-erstellen"><a class="headerlink" href="#modelle-mit-activitypub-anbindung-erstellen">Modelle mit ActivityPub-Anbindung erstellen</a></h2>
+<h2 id="Modelle-mit-ActivityPub-Anbindung-erstellen">Modelle mit ActivityPub-Anbindung erstellen<a class="anchor ml-2" href="#Modelle-mit-ActivityPub-Anbindung-erstellen" title="Permanent link">&para;</a></h2>
 <p>Die Weise, auf die BookWyrm ActivityPub-Objekte sendet und empfängt, kann Entwickler*innen verwirren, die neu bei BookWyrm sind. Sie wird hauptsächlich bestimmt durch:</p>
 <ul>
 <li>Funktionen und <a href="https://docs.python.org/3/library/dataclasses.html">Datenklassen</a>, die im Verzeichnis <a href="https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub">activitypub</a> umrissen werden</li>
 <li>das <a href="https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40">ActivityPubMixin</a> und seine Kinder für Modelle, die für ActivityPub-Anfragen serialisierbar sein müssen</li>
 </ul>
-<h3 id="daten-in-activitypub-json-de-serialisieren"><a class="headerlink" href="#daten-in-activitypub-json-de-serialisieren">Daten in ActivityPub-JSON (de-)serialisieren</a></h3>
+<h3 id="Daten-in-ActivityPub-JSON-de-serialisieren">Daten in ActivityPub-JSON (de-)serialisieren<a class="anchor ml-2" href="#Daten-in-ActivityPub-JSON-de-serialisieren" title="Permanent link">&para;</a></h3>
 <p>BookWyrm muss wissen, wie die Daten eines Modells in ein ActivityPub-JSON-LD-Objekt <em>serialisiert</em> werden sollen.</p>
 <p>Die Datei <code>/activitypub/base_activity.py</code> stellt die Kernfunktionen bereit, um ActivityPub-JSON-LD-Zeichenketten in nutzbare Django-Objekte umzuwandeln und anders herum. Wir erreichen das, indem wir in <code>bookwyrm/activitypub</code> eine Datenklasse anlegen und definieren, wie das Modell serialisiert werden soll. Hierzu geben wir im Modell einen Wert für <code>activity_serializer</code> an, der zur relevanten Datenklasse zeigt. Von <code>ActivityObject</code> erben wir <code>id</code> und <code>type</code> sowie <em>Klassenmethoden</em>:</p>
 <p><strong><code>to_model</code></strong></p>
 <p>Diese Methode nimmt eine ActivityPub-JSON-Zeichenkette und versucht, sie in ein BookWyrm-Objekt umzuwandeln, wobei nach Möglichkeit ein existierendes Objekt gefunden wird. So verarbeiten wir <strong>eingehende</strong> ActivityPub-Objekte.</p>
 <p><strong><code>serialize</code></strong></p>
 <p>Diese Methode nimmt ein BookWyrm-Objekt und wandelt es mit Hilfe der Datenklassen-Definitionen in eine valide ActivityPub-JSON-Zeichenkette um. So verarbeiten wir <strong>ausgehende</strong> ActivityPub-Objekte.</p>
-<h3 id="beispiel-nutzerinnen"><a class="headerlink" href="#beispiel-nutzerinnen">Beispiel: Nutzer*innen</a></h3>
+<h3 id="Beispiel-Nutzerinnen">Beispiel: Nutzer*innen<a class="anchor ml-2" href="#Beispiel-Nutzerinnen" title="Permanent link">&para;</a></h3>
 <p>Ein<em>e BookWyrm-Nutzer</em>in wird <a href="https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py">in <code>models/user.py</code> definiert</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;a user who wants to read books&quot;&quot;&quot;</span>

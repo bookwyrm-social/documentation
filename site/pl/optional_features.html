@@ -291,6 +291,10 @@ Optional features
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/pl/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -1724,7 +1728,7 @@ Optional features
                 
 <section class="block content">
     <p>Niektóre z funkcji BookWyrm należy aktywować, aby były dostępne.</p>
-<h2 id="generowanie-obrazow-podgladu"><a class="headerlink" href="#generowanie-obrazow-podgladu">Generowanie obrazów podglądu</a></h2>
+<h2 id="Generowanie-obrazów-podglądu">Generowanie obrazów podglądu<a class="anchor ml-2" href="#Generowanie-obrazów-podglądu" title="Permanent link">&para;</a></h2>
 <p>Domyślnie BookWyrm używa logo instancji (lub domyślnego logo) jako obrazu podglądu OpenGraph. Możesz jednak włączyć generowanie obrazów podglądu dla książek, użytkowników oraz strony internetowej.</p>
 <p>The preview images will be sized for large OpenGraph images (used by Twitter under the name of <code>summary_large_image</code>). W zależności od typu obrazu zawartością będzie:</p>
 <ul>
@@ -1738,13 +1742,13 @@ Optional features
 <li>obraz użytkownika: gdy wyświetlana nazwa lub awatar ulegną zmianie</li>
 <li>obraz książki: gdy tytuł(y), autorzy lub okładka ulegnie zmianie lub zostanie dodana nowa ocena</li>
 </ul>
-<h3 id="aktywacja-podgladow-obrazow"><a class="headerlink" href="#aktywacja-podgladow-obrazow">Aktywacja podglądów obrazów</a></h3>
+<h3 id="Aktywacja-podglądów-obrazów">Aktywacja podglądów obrazów<a class="anchor ml-2" href="#Aktywacja-podglądów-obrazów" title="Permanent link">&para;</a></h3>
 <p>Aby aktywować tę funkcję z domyślnymi ustawieniami, należy usunąć znacznik komentarza (usunąć <code>#</code> z przodu) wiersza <code>ENABLE_PREVIEW_IMAGES=true</code> w pliku <code>.env</code>. Wszystkie wspomniane nowe zdarzenia aktualizacji spowodują wygenerowanie odpowiedniego obrazu.</p>
 <p>Examples for these images can be viewed on the <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">feature’s pull request’s description</a>.</p>
-<h3 id="generowanie-obrazow-podgladu_1"><a class="headerlink" href="#generowanie-obrazow-podgladu_1">Generowanie obrazów podglądu</a></h3>
+<h3 id="Generowanie-obrazów-podglądu_1">Generowanie obrazów podglądu<a class="anchor ml-2" href="#Generowanie-obrazów-podglądu_1" title="Permanent link">&para;</a></h3>
 <p>Jeśli aktywujesz to ustawienie po uruchomieniu instancji, niektóre obrazy mogą nie zostać wygenerowane. Zostało dodane polecenie do automatyzacji generowania obrazów. In order to prevent a ressource hog by generating <strong>A LOT</strong> of images, you have to pass the argument <code>--all</code> (or <code>-a</code>) to start the generation of the preview images for all users and books. Bez tego argumentu zostanie wygenerowany tylko podgląd witryny.</p>
 <p>User and book preview images will be generated asynchroneously: the task will be sent to Flower. Może minąć trochę czasu zanim wszystkie książki oraz użytkownicy będą mieć działające obrazy podglądu. Jeśli masz dobrą książkę 📖, zwierzątko 🐱 lub przekąskę 🍰 to jest to idealny moment na poświecenie im trochę uwagi 💖.</p>
-<h3 id="ustawienia-opcjonalne"><a class="headerlink" href="#ustawienia-opcjonalne">Ustawienia opcjonalne</a></h3>
+<h3 id="Ustawienia-opcjonalne">Ustawienia opcjonalne<a class="anchor ml-2" href="#Ustawienia-opcjonalne" title="Permanent link">&para;</a></h3>
 <p>Chcesz dostosować swoje obrazy podglądu? Oto dostępne opcje:</p>
 <ul>
 <li><code>PREVIEW_BG_COLOR</code> definiuje kolor tła dla obrazu podglądu. Możesz podać wartość koloru, taką jak <code>#b00cc0</code> lub użyć wartości <code>use_dominant_color_light</code> lub <code>use_dominant_color_dark</code>. Pozwoli to na wyodrębnienie dominującego koloru z okładki książki oraz użycie do odpowiednio w jasnym i ciemnym motywie.</li>
@@ -1753,7 +1757,7 @@ Optional features
 <li><code>PREVIEW_DEFAULT_COVER_COLOR</code> definiuje color książek bez okładki.</li>
 </ul>
 <p>All the color variables accept values that can be recognized as colors by Pillow’s <code>ImageColor</code> module: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Learn more about Pillow color names</a>.</p>
-<h3 id="removing-preview-images-for-remote-users"><a class="headerlink" href="#removing-preview-images-for-remote-users">Removing preview images for remote users</a></h3>
+<h3 id="Removing-preview-images-for-remote-users">Removing preview images for remote users<a class="anchor ml-2" href="#Removing-preview-images-for-remote-users" title="Permanent link">&para;</a></h3>
 <p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in terms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>remove_remote_user_preview_images
 </code></pre></div>

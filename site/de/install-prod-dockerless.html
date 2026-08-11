@@ -291,6 +291,10 @@ Installation ohne Docker
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/de/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -307,16 +311,16 @@ Installation ohne Docker
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#servereinrichtung">Servereinrichtung</a>
+                  <a class="navbar-item" href="#Servereinrichtung">Servereinrichtung</a>
                   
               
-                  <a class="navbar-item" href="#bookwyrm-installieren-und-konfigurieren">BookWyrm installieren und konfigurieren</a>
+                  <a class="navbar-item" href="#BookWyrm-installieren-und-konfigurieren">BookWyrm installieren und konfigurieren</a>
                   
               
-                  <a class="navbar-item" href="#log-dateien-finden">Log-Dateien finden</a>
+                  <a class="navbar-item" href="#Log-Dateien-finden">Log-Dateien finden</a>
                   
               
-                  <a class="navbar-item" href="#mitmachen">Mitmachen</a>
+                  <a class="navbar-item" href="#Mitmachen">Mitmachen</a>
                   
               
             </div>
@@ -337,14 +341,14 @@ Installation ohne Docker
     <p>Dieses Projekt ist noch jung und im Moment nicht sehr stabil und deshalb solltest du bei der Verwendung in Produktion mit Vorsicht vorgehen.</p>
 <p>Diese Installationsmethode ist komplexer und daher nur für erfahrenere Administrator<em>innen gedacht. </em><em>Die Docker-Installation ist die empfohlene Methode</em>*, weil Unterstützung für die Installation ohne Docker nur eingeschränkt verfügbar ist. Wenn du Expertise in diesem Bereich hast, fänden wir deine Hilfe beim Verbessern dieser Dokumentation großartig!</p>
 <p>Diese Installationsmethode setzt voraus, dass du bereits SSL mit gültigen Zertifikaten eingerichtet hast.</p>
-<h2 id="servereinrichtung"><a class="headerlink" href="#servereinrichtung">Servereinrichtung</a></h2>
+<h2 id="Servereinrichtung">Servereinrichtung<a class="anchor ml-2" href="#Servereinrichtung" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Hole dir eine Domain und konfiguriere DNS für deinen Server. Du musst die Nameserver deiner Domain bei deinem DNS-Provider auf den Server verweisen lassen, auf dem du BookWyrm betreibst. Hier sind Anweisungen für <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Setze deinen Server mit geeigneter Firewall für den Betrieb einer Web-Anwendung auf (diese Anleitung wurde mit Ubuntu 20.04 getestet). Hier ist eine Anleitung für <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Richte einen E-Mail-Dienst (wie <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) und die entsprechenden SMTP/DNS-Einstellungen ein. Benutze die Dokumentation des Dienstes für die Konfiguration deines DNS</li>
 <li>Installiere die Abhängigkeiten. Unter Debian könnte das so aussehen: <code>apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev gunicorn gettext-base</code></li>
 </ul>
-<h2 id="bookwyrm-installieren-und-konfigurieren"><a class="headerlink" href="#bookwyrm-installieren-und-konfigurieren">BookWyrm installieren und konfigurieren</a></h2>
+<h2 id="BookWyrm-installieren-und-konfigurieren">BookWyrm installieren und konfigurieren<a class="anchor ml-2" href="#BookWyrm-installieren-und-konfigurieren" title="Permanent link">&para;</a></h2>
 <p>Der <code>production</code>-Branch von BookWyrm enthält eine Reihe von Werkzeugen, die nicht auf dem <code>main</code>-Branch sind, aber für den Betrieb in der Produktion geeignet sind. Beispiele sind die <code>docker-compose</code>-Änderungen, um die Standardbefehle oder die Konfiguration von Containern zu aktualisieren, und individuelle Änderungen an der Container-Konfiguration, um Dinge wie SSL oder regelmäßige Sicherungen zu aktivieren. Nicht alle diese Änderungen wirken sich auf die Installation ohne Docker aus, aber der <code>production</code>-Branch wird immer noch empfohlen</p>
 <p>Anleitung für das Ausführen von BookWyrm in Produktion ohne Docker:</p>
 <ul>
@@ -447,7 +451,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li>Die Anwendung sollte nun unter deiner Domain laufen. Wenn du die Domain aufrufst, solltest du eine Konfigurationsseite sehen, um deine Instanz-Einstellungen zu bestätigen, sowie ein Formular für das Anlegen eines Administrations-Accounts. Benutze deinen Admin-Code, um dich zu registrieren.</li>
 </ul>
 <p>Gratulation! Du hast es geschafft!! Richte deine Instanz ganz nach deinen Wünschen ein.</p>
-<h2 id="log-dateien-finden"><a class="headerlink" href="#log-dateien-finden">Log-Dateien finden</a></h2>
+<h2 id="Log-Dateien-finden">Log-Dateien finden<a class="anchor ml-2" href="#Log-Dateien-finden" title="Permanent link">&para;</a></h2>
 <p>Wie alle Software kann BookWyrm Bugs enthalten, und oft verstecken sich diese Bugs im Python-Code. Sie sind am einfachsten zu reproduzieren, wenn wir mehr Kontext aus den Log-Dateien erhalten.</p>
 <p>Wenn du die vorgegebenen <code>systemd</code>-Dienstkonfigurationen aus <code>contrib/systemd</code> verwendest, wirst du die Logs mit <code>journalctl</code> auslesen können:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Log-Dateien des Web-Prozesses ansehen</span>
@@ -462,7 +466,7 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>bookwyrm-scheduler
 
 <p>Erkunde gern weitere Wege, um die Logs mit den Flags aufzuteilen, die in <code>journalctl --help</code> angegeben sind.</p>
 <p>Auch wenn BookWyrms Anwendungs-Logs oft genügen, kannst du die Logs anderer Dienste wie Nginx, PostgreSQL oder Redis normalerweise in <code>.log</code>-Dateien irgendwo in <code>/var/logs</code> finden.</p>
-<h2 id="mitmachen"><a class="headerlink" href="#mitmachen">Mitmachen</a></h2>
+<h2 id="Mitmachen">Mitmachen<a class="anchor ml-2" href="#Mitmachen" title="Permanent link">&para;</a></h2>
 <p>Siehe <a href="https://joinbookwyrm.com/get-involved/">Mitmachen</a> für Details.</p>
 </section>
 

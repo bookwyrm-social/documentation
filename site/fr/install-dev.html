@@ -291,6 +291,10 @@ Developer Environment
         <h2 class="menu-label">BookWyrm Vocabulary</h2>
         <ul class="menu-list has-background-inherit">
             
+            <li>
+                <a href="/fr/bookwyrm-vocabulary.html" class="has-background-inherit" >BookWyrm Vocabulary v1.0</a>
+            </li>
+            
         </ul>
         
     </nav>
@@ -2749,11 +2753,11 @@ Developer Environment
                 </header>
                 
 <section class="block content">
-    <h2 id="prerequis"><a class="headerlink" href="#prerequis">Prérequis</a></h2>
+    <h2 id="Prérequis">Prérequis<a class="anchor ml-2" href="#Prérequis" title="Permanent link">&para;</a></h2>
 <p>Ces instructions supposent que vous développez BookWyrm en utilisant Docker. Vous devrez <a href="https://docs.docker.com/engine/install/">installer Docker</a> et <a href="https://docs.docker.com/compose/install/">docker-compose</a> avant toute chose.</p>
 <p><em>If you are contributing to BookWyrm in a dockerless development environment we would love for you to <a href="/documentation.html">help us update this guide</a> to include instructions for setting up a dockerless development environment</em>.</p>
-<h2 id="mise-en-place-de-lenvironnement-de-developpement"><a class="headerlink" href="#mise-en-place-de-lenvironnement-de-developpement">Mise en place de l'environnement de développement</a></h2>
-<h3 id="get-the-code"><a class="headerlink" href="#get-the-code">Get the code</a></h3>
+<h2 id="Mise-en-place-de-lenvironnement-de-développement">Mise en place de l'environnement de développement<a class="anchor ml-2" href="#Mise-en-place-de-lenvironnement-de-développement" title="Permanent link">&para;</a></h2>
+<h3 id="Get-the-code">Get the code<a class="anchor ml-2" href="#Get-the-code" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Obtenez une copie de <a href="https://github.com/bookwyrm-social/bookwyrm">la base code de BookWyrm depuis GitHub</a>. Vous pouvez <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">créer un fork</a> du dépôt, puis <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">utiliser <code>git clone</code> pour télécharger le code</a> sur votre ordinateur.</li>
 <li>Allez dans le répertoire qui contient le code sur votre ordinateur, vous travaillerez désormais à partir de ce répertoire.</li>
@@ -2765,7 +2769,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 </code></pre></div>
 
 <p>Most environment variables are set in the <code>.env</code> file, used in production, but for some development workflows that is overridden by the <code>env.dev</code> file. When developing for BookWyrm, you will need both files.</p>
-<h3 id="build-and-run"><a class="headerlink" href="#build-and-run">Build and run</a></h3>
+<h3 id="Build-and-run">Build and run<a class="anchor ml-2" href="#Build-and-run" title="Permanent link">&para;</a></h3>
 <ol>
 <li>En ligne de commande, exécutez :</li>
 </ol>
@@ -2779,19 +2783,19 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 <li>You can now enter your admin key and create an admin user. From here everything is the same as described in "Running BookWyrm".</li>
 </ol>
 <p>Pour les curieux·ses : la commande <code>./bw-dev</code> est un simple script shell qui exécute divers autres outils ; au lieu des commandes ci-dessus, vous auriez pu exécuter <code>docker-compose build</code> ou <code>docker-compose up</code> directement si vous le souhaitez. <code>./bw-dev</code> les rassemble dans un seul endroit pour plus de commodité. Run it without arguments to get a list of available commands, read the <a href="/cli.html">documentation page</a> for it, or open it up and look around to see exactly what each command is doing!</p>
-<h2 id="edition-ou-creation-du-modele-de-donnees"><a class="headerlink" href="#edition-ou-creation-du-modele-de-donnees">Édition ou création du modèle de données</a></h2>
+<h2 id="Édition-ou-création-du-modèle-de-données">Édition ou création du modèle de données<a class="anchor ml-2" href="#Édition-ou-création-du-modèle-de-données" title="Permanent link">&para;</a></h2>
 <p>Si vous créez ou modifiez un modèle, vous changerez probablement la structure de la base de données. Pour que ces changements aient des effets, vous devrez utiliser la commande <code>makemigrations</code> de Django pour créer un nouveau <a href="https://docs.djangoproject.com/en/3.2/topics/migrations">fichier de migration Django</a>, puis la commande <code>migrate</code> pour le migrer :</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>makemigrations
 ./bw-dev<span class="w"> </span>dev<span class="w"> </span>migrate
 </code></pre></div>
 
-<h2 id="edition-des-fichiers-statiques"><a class="headerlink" href="#edition-des-fichiers-statiques">Édition des fichiers statiques</a></h2>
+<h2 id="Édition-des-fichiers-statiques">Édition des fichiers statiques<a class="anchor ml-2" href="#Édition-des-fichiers-statiques" title="Permanent link">&para;</a></h2>
 <p>Chaque fois que vous éditez du CSS ou du JavaScript, vous devrez exécuter la commande <code>collectstatic</code> de Django pour que vos changements aient un effet :</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
 <p>Si vous avez <a href="https://yarnpkg.com/getting-started/install">installé yarn</a>, vous pouvez exécuter <code>yarn watch:static</code> qui va exécuter automatiquement le script précédent à chaque fois qu'un changement se produit dans le répertoire <code>bookwyrm/static</code>.</p>
-<h2 id="run-code-linters-and-formatters"><a class="headerlink" href="#run-code-linters-and-formatters">Run code-linters and formatters</a></h2>
+<h2 id="Run-code-linters-and-formatters">Run code-linters and formatters<a class="anchor ml-2" href="#Run-code-linters-and-formatters" title="Permanent link">&para;</a></h2>
 <p>Before submitting patch, you should check ruff and other formatting tools. For those to work nicely, you should make sure you have development web-container and dev-tools build.</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>dev<span class="w"> </span>build<span class="w"> </span><span class="c1"># This is needed only once, if you haven&#39;t run dev stack previously</span>
 ./bw-dev<span class="w"> </span>dev<span class="w"> </span>build<span class="w"> </span>dev-tools<span class="w"> </span><span class="c1"># This is needed only once and if you change pyproject.toml or Dockerfile</span>
@@ -2803,7 +2807,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 ./bw-dev<span class="w"> </span>pytest
 </code></pre></div>
 
-<h2 id="run-development-code-behind-ngrok-or-other-tunnelingproxy-service"><a class="headerlink" href="#run-development-code-behind-ngrok-or-other-tunnelingproxy-service">Run development code behind ngrok or other tunneling/proxy service</a></h2>
+<h2 id="Run-development-code-behind-ngrok-or-other-tunnelingproxy-service">Run development code behind ngrok or other tunneling/proxy service<a class="anchor ml-2" href="#Run-development-code-behind-ngrok-or-other-tunnelingproxy-service" title="Permanent link">&para;</a></h2>
 <p>In <code>.env.dev</code>:</p>
 <ol>
 <li>If you use a tunneling/proxy service like <a href="https://ngrok.com">ngrok</a>, set <code>DOMAIN</code> to to the domain name you are using (e.g. <code>abcd-1234.ngrok-free.app</code>).</li>
@@ -2811,7 +2815,7 @@ cp<span class="w"> </span>.env.dev.example<span class="w"> </span>.env.dev
 </ol>
 <p>Check that you have <a href="/environment.html#required-environment-settings">all the required settings configured</a> before proceeding.</p>
 <p>If you try to register your admin account and see a message that <code>CSRF verification failed</code> you may have set your domain or port incorrectly.</p>
-<h2 id="email-optional"><a class="headerlink" href="#email-optional">Email (optional)</a></h2>
+<h2 id="Email-optional">Email (optional)<a class="anchor ml-2" href="#Email-optional" title="Permanent link">&para;</a></h2>
 <p>If you want to test sending emails, you will need to <a href="/environment.html#email-configuration">set up appropriate real values</a> in the "Email config" section. You do not need to change anything for <a href="/environment.html#email">the separate <code>EMAIL</code> setting</a>. These settings are in <code>.env</code> -file</p>
 </section>
 

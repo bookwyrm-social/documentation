@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>
+        
+BookWyrm Vocabulary v1.0
+
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="/pagefind/pagefind-component-ui.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bulma.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/bookwyrm.css?v0.8.5">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bookwyrm Documentation">
+    <meta name="og:title" content="Bookwyrm Documentation">
+    <meta name="twitter:description" content="Documentation for using and contributing to BookWyrm">
+    <meta name="og:description" content="Documentation for using and contributing to BookWyrm">
+
+    <meta name="twitter:image" content="">
+    <meta name="og:image" content="">
+    <meta name="twitter:image:alt" content="BookWyrm Logo">
+
+    <meta charset="UTF-8">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+
+</head>
+<body>
+<nav class="navbar container is-max-desktop" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://joinbookwyrm.com/">
+            <img class="image logo" src="/static/images/logo-small.png" alt="Go back to the homepage">
+        </a>
+        <a href="/" class="navbar-item has-text-link has-text-weight-bold">
+            Documentație
+        </a>
+        <a role="button" class="navbar-burger" data-target="main-nav" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-nav">
+        <div class="navbar-start">
+            <a href="https://joinbookwyrm.com/ro/instances" class="navbar-item">
+                Alăturați-vă
+            </a>
+            <a href="https://joinbookwyrm.com/ro/get-involved" class="navbar-item">
+                Implicați-vă
+            </a>
+            <a href="https://www.patreon.com/bookwyrm" class="navbar-item">
+                Susțineți
+            </a>
+            <a href="https://github.com/bookwyrm-social/bookwyrm" class="navbar-item">
+                Cod
+            </a>
+        </div>
+        <div class="navbar-end">
+            <pagefind-modal-trigger class="navbar-item"></pagefind-modal-trigger>
+            <pagefind-modal></pagefind-modal>
+        </div>
+    </div>
+</nav>
+
+<div class="message is-warning">
+    <div class="message-body has-text-centered">
+        This is the documentation for the current development code. Choose a version from the menu to see documentation for released versions since <strong>v0.7.5</strong>.
+    </div>
+</div>
+
+
+<div class="columns">
+    <nav class="menu column is-one-quarter is-hidden-touch pl-6" id="menu">
+        <h2 class="menu-label">Language & Version</a></h2>
+        <div class="select">
+            <select aria-label="Select a language" id="language_selection">
+                
+                <option value="" >English (US)</option>
+                
+                <option value="de/" >Deutsch</option>
+                
+                <option value="fr/" >Français</option>
+                
+                <option value="pl/" >Polski</option>
+                
+                <option value="pt-br/" >Português do Brasil</option>
+                
+                <option value="ro/" selected>Română</option>
+                
+          </select>
+        </div>
+        <div class="select">
+            <select aria-label="Previous versions" id="version_selection">
+                
+                <option value="development" >development</option>
+                
+                <option value="v0.7.5" >v0.7.5</option>
+                
+                <option value="v0.8.0" >v0.8.0</option>
+                
+                <option value="v0.8.2" >v0.8.2</option>
+                
+                <option value="v0.8.5" >v0.8.5</option>
+                
+            </select>
+        </div>
+        
+        <h2 class="menu-label">Using BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/main-menu.html" class="has-background-inherit" >Main Menu & Timelines</a>
+            </li>
+            
+            <li>
+                <a href="/ro/shelves.html" class="has-background-inherit" >Shelves & Reading Status</a>
+            </li>
+            
+            <li>
+                <a href="/ro/adding-books.html" class="has-background-inherit" >Adding Books</a>
+            </li>
+            
+            <li>
+                <a href="/ro/settings.html" class="has-background-inherit" >Settings and Profile</a>
+            </li>
+            
+            <li>
+                <a href="/ro/posting-statuses.html" class="has-background-inherit" >Posting Statuses</a>
+            </li>
+            
+            <li>
+                <a href="/ro/lists.html" class="has-background-inherit" >Lists</a>
+            </li>
+            
+            <li>
+                <a href="/ro/privacy-controls.html" class="has-background-inherit" >Privacy Controls</a>
+            </li>
+            
+            <li>
+                <a href="/ro/groups.html" class="has-background-inherit" >Groups</a>
+            </li>
+            
+            <li>
+                <a href="/ro/rss-feeds.html" class="has-background-inherit" >RSS Feeds</a>
+            </li>
+            
+            <li>
+                <a href="/ro/user-migration.html" class="has-background-inherit" >User Migration and Aliases</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Managing BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/users.html" class="has-background-inherit" >Managing users</a>
+            </li>
+            
+            <li>
+                <a href="/ro/federation.html" class="has-background-inherit" >Federation</a>
+            </li>
+            
+            <li>
+                <a href="/ro/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/ro/system.html" class="has-background-inherit" >System Monitoring</a>
+            </li>
+            
+            <li>
+                <a href="/ro/admin-settings.html" class="has-background-inherit" >Instance Settings</a>
+            </li>
+            
+            <li>
+                <a href="/ro/settings.html" class="has-background-inherit" >Instance Settings</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Contributing</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/contributing.html" class="has-background-inherit" >How to Contribute</a>
+            </li>
+            
+            <li>
+                <a href="/ro/translation.html" class="has-background-inherit" >Translations</a>
+            </li>
+            
+            <li>
+                <a href="/ro/style_guide.html" class="has-background-inherit" >Style Guide</a>
+            </li>
+            
+            <li>
+                <a href="/ro/documentation.html" class="has-background-inherit" >Documentation</a>
+            </li>
+            
+            <li>
+                <a href="/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+            </li>
+            
+            <li>
+                <a href="/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Running BookWyrm</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/install-prod.html" class="has-background-inherit" >Installing in Production</a>
+            </li>
+            
+            <li>
+                <a href="/ro/install-prod-dockerless.html" class="has-background-inherit" >Installing Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/ro/updating.html" class="has-background-inherit" >Updating Your Instance</a>
+            </li>
+            
+            <li>
+                <a href="/ro/updating-dockerless.html" class="has-background-inherit" >Updating Without Docker</a>
+            </li>
+            
+            <li>
+                <a href="/ro/reverse-proxy.html" class="has-background-inherit" >Using a Reverse-Proxy</a>
+            </li>
+            
+            <li>
+                <a href="/ro/moderation.html" class="has-background-inherit" >Moderation</a>
+            </li>
+            
+            <li>
+                <a href="/ro/monitoring-queue.html" class="has-background-inherit" >Monitoring Queue</a>
+            </li>
+            
+            <li>
+                <a href="/ro/optional_features.html" class="has-background-inherit" >Optional features</a>
+            </li>
+            
+            <li>
+                <a href="/ro/external-storage.html" class="has-background-inherit" >External Storage</a>
+            </li>
+            
+            <li>
+                <a href="/ro/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+            <li>
+                <a href="/ro/management-commands.html" class="has-background-inherit" >Management Commands</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Codebase</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/permissions.html" class="has-background-inherit" ></a>
+            </li>
+            
+            <li>
+                <a href="/ro/activitypub.html" class="has-background-inherit" >ActivityPub</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">Reference Guides</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/environment.html" class="has-background-inherit" >Environment Variables</a>
+            </li>
+            
+            <li>
+                <a href="/ro/cli.html" class="has-background-inherit" >Command Line Tool</a>
+            </li>
+            
+        </ul>
+        
+        <h2 class="menu-label">BookWyrm Vocabulary</h2>
+        <ul class="menu-list has-background-inherit">
+            
+            <li>
+                <a href="/ro/bookwyrm-vocabulary.html" class="has-background-inherit" class="is-active">BookWyrm Vocabulary v1.0</a>
+            </li>
+            
+        </ul>
+        
+    </nav>
+
+    <div class="column pt-0">
+        
+
+<nav class="navbar is-dark" role="table-of-contents-navigation" aria-label="dropdown navigation">
+    <div class="navbar-start">
+        <div class="navbar-item has-dropdown" id="toc" data-target="toc-dropdown">
+            <a class="navbar-link">
+              Page Contents
+            </a>
+
+            <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
+              
+                  <a class="navbar-item" href="#Extended-Object-book-types">Extended Object book types</a>
+                  
+                      
+                      <a class="navbar-item" href="#Core-book-type-properties"><span class="pl-4">Core book type properties</span></a>
+                      
+                      <a class="navbar-item" href="#Extended-book-type-properties"><span class="pl-4">Extended book type properties</span></a>
+                      
+                      <a class="navbar-item" href="#Work"><span class="pl-4">Work</span></a>
+                      
+                      <a class="navbar-item" href="#Edition"><span class="pl-4">Edition</span></a>
+                      
+                      <a class="navbar-item" href="#Author"><span class="pl-4">Author</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#Extended-Object-collection-item-types">Extended Object collection item types</a>
+                  
+                      
+                      <a class="navbar-item" href="#ShelfItem"><span class="pl-4">ShelfItem</span></a>
+                      
+                      <a class="navbar-item" href="#ListItem"><span class="pl-4">ListItem</span></a>
+                      
+                      <a class="navbar-item" href="#SuggestionListItem"><span class="pl-4">SuggestionListItem</span></a>
+                      
+                      <a class="navbar-item" href="#SeriesBook"><span class="pl-4">SeriesBook</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#Extended-Note-Types">Extended Note Types</a>
+                  
+                      
+                      <a class="navbar-item" href="#GeneratedNote"><span class="pl-4">GeneratedNote</span></a>
+                      
+                      <a class="navbar-item" href="#Comment"><span class="pl-4">Comment</span></a>
+                      
+                      <a class="navbar-item" href="#Quotation"><span class="pl-4">Quotation</span></a>
+                      
+                      <a class="navbar-item" href="#Example_8"><span class="pl-4">Example</span></a>
+                      
+                      <a class="navbar-item" href="#Rating"><span class="pl-4">Rating</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#Extended-Article-types">Extended Article types</a>
+                  
+                      
+                      <a class="navbar-item" href="#Review"><span class="pl-4">Review</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#Extended-OrderedCollection-types">Extended OrderedCollection types</a>
+                  
+                      
+                      <a class="navbar-item" href="#OrderedCollection-extended-properties"><span class="pl-4">OrderedCollection extended properties</span></a>
+                      
+                      <a class="navbar-item" href="#Shelf"><span class="pl-4">Shelf</span></a>
+                      
+                      <a class="navbar-item" href="#BookList"><span class="pl-4">BookList</span></a>
+                      
+                      <a class="navbar-item" href="#SuggestionList"><span class="pl-4">SuggestionList</span></a>
+                      
+                      <a class="navbar-item" href="#Series"><span class="pl-4">Series</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#Properties_15">Properties</a>
+                  
+                      
+                      <a class="navbar-item" href="#aasin"><span class="pl-4">aasin</span></a>
+                      
+                      <a class="navbar-item" href="#aliases"><span class="pl-4">aliases</span></a>
+                      
+                      <a class="navbar-item" href="#alternativeNames"><span class="pl-4">alternativeNames</span></a>
+                      
+                      <a class="navbar-item" href="#approved"><span class="pl-4">approved</span></a>
+                      
+                      <a class="navbar-item" href="#asin"><span class="pl-4">asin</span></a>
+                      
+                      <a class="navbar-item" href="#authors"><span class="pl-4">authors</span></a>
+                      
+                      <a class="navbar-item" href="#bio"><span class="pl-4">bio</span></a>
+                      
+                      <a class="navbar-item" href="#bnfId"><span class="pl-4">bnfId</span></a>
+                      
+                      <a class="navbar-item" href="#book"><span class="pl-4">book</span></a>
+                      
+                      <a class="navbar-item" href="#born"><span class="pl-4">born</span></a>
+                      
+                      <a class="navbar-item" href="#cover"><span class="pl-4">cover</span></a>
+                      
+                      <a class="navbar-item" href="#curation"><span class="pl-4">curation</span></a>
+                      
+                      <a class="navbar-item" href="#description"><span class="pl-4">description</span></a>
+                      
+                      <a class="navbar-item" href="#died"><span class="pl-4">died</span></a>
+                      
+                      <a class="navbar-item" href="#editionRank"><span class="pl-4">editionRank</span></a>
+                      
+                      <a class="navbar-item" href="#editions"><span class="pl-4">editions</span></a>
+                      
+                      <a class="navbar-item" href="#fileLinks"><span class="pl-4">fileLinks</span></a>
+                      
+                      <a class="navbar-item" href="#finnaKey"><span class="pl-4">finnaKey</span></a>
+                      
+                      <a class="navbar-item" href="#firstPublishedDate"><span class="pl-4">firstPublishedDate</span></a>
+                      
+                      <a class="navbar-item" href="#goodreadsKey"><span class="pl-4">goodreadsKey</span></a>
+                      
+                      <a class="navbar-item" href="#gutenbergId"><span class="pl-4">gutenbergId</span></a>
+                      
+                      <a class="navbar-item" href="#inReplyToBook"><span class="pl-4">inReplyToBook</span></a>
+                      
+                      <a class="navbar-item" href="#inventaireId"><span class="pl-4">inventaireId</span></a>
+                      
+                      <a class="navbar-item" href="#isbn10"><span class="pl-4">isbn10</span></a>
+                      
+                      <a class="navbar-item" href="#isbn13"><span class="pl-4">isbn13</span></a>
+                      
+                      <a class="navbar-item" href="#isfdb"><span class="pl-4">isfdb</span></a>
+                      
+                      <a class="navbar-item" href="#isni"><span class="pl-4">isni</span></a>
+                      
+                      <a class="navbar-item" href="#languages"><span class="pl-4">languages</span></a>
+                      
+                      <a class="navbar-item" href="#lastEditedBy"><span class="pl-4">lastEditedBy</span></a>
+                      
+                      <a class="navbar-item" href="#lccn"><span class="pl-4">lccn</span></a>
+                      
+                      <a class="navbar-item" href="#librarythingKey"><span class="pl-4">librarythingKey</span></a>
+                      
+                      <a class="navbar-item" href="#librisKey"><span class="pl-4">librisKey</span></a>
+                      
+                      <a class="navbar-item" href="#notes"><span class="pl-4">notes</span></a>
+                      
+                      <a class="navbar-item" href="#oclcNumber"><span class="pl-4">oclcNumber</span></a>
+                      
+                      <a class="navbar-item" href="#openlibraryKey"><span class="pl-4">openlibraryKey</span></a>
+                      
+                      <a class="navbar-item" href="#order"><span class="pl-4">order</span></a>
+                      
+                      <a class="navbar-item" href="#owner"><span class="pl-4">owner</span></a>
+                      
+                      <a class="navbar-item" href="#pages"><span class="pl-4">pages</span></a>
+                      
+                      <a class="navbar-item" href="#physicalFormat"><span class="pl-4">physicalFormat</span></a>
+                      
+                      <a class="navbar-item" href="#physicalFormatDetail"><span class="pl-4">physicalFormatDetail</span></a>
+                      
+                      <a class="navbar-item" href="#position"><span class="pl-4">position</span></a>
+                      
+                      <a class="navbar-item" href="#positionMode"><span class="pl-4">positionMode</span></a>
+                      
+                      <a class="navbar-item" href="#progress"><span class="pl-4">progress</span></a>
+                      
+                      <a class="navbar-item" href="#progressMode"><span class="pl-4">progressMode</span></a>
+                      
+                      <a class="navbar-item" href="#publishedDate"><span class="pl-4">publishedDate</span></a>
+                      
+                      <a class="navbar-item" href="#publishers"><span class="pl-4">publishers</span></a>
+                      
+                      <a class="navbar-item" href="#quote"><span class="pl-4">quote</span></a>
+                      
+                      <a class="navbar-item" href="#rating"><span class="pl-4">rating</span></a>
+                      
+                      <a class="navbar-item" href="#readingStatus"><span class="pl-4">readingStatus</span></a>
+                      
+                      <a class="navbar-item" href="#series"><span class="pl-4">series</span></a>
+                      
+                      <a class="navbar-item" href="#seriesBooks"><span class="pl-4">seriesBooks</span></a>
+                      
+                      <a class="navbar-item" href="#seriesNumber"><span class="pl-4">seriesNumber</span></a>
+                      
+                      <a class="navbar-item" href="#sortTitle"><span class="pl-4">sortTitle</span></a>
+                      
+                      <a class="navbar-item" href="#subjectPlaces"><span class="pl-4">subjectPlaces</span></a>
+                      
+                      <a class="navbar-item" href="#subjects"><span class="pl-4">subjects</span></a>
+                      
+                      <a class="navbar-item" href="#subtitle"><span class="pl-4">subtitle</span></a>
+                      
+                      <a class="navbar-item" href="#title"><span class="pl-4">title</span></a>
+                      
+                      <a class="navbar-item" href="#viaf"><span class="pl-4">viaf</span></a>
+                      
+                      <a class="navbar-item" href="#website"><span class="pl-4">website</span></a>
+                      
+                      <a class="navbar-item" href="#wikidata"><span class="pl-4">wikidata</span></a>
+                      
+                      <a class="navbar-item" href="#wikipediaLink"><span class="pl-4">wikipediaLink</span></a>
+                      
+                      <a class="navbar-item" href="#work"><span class="pl-4">work</span></a>
+                      
+                  
+              
+            </div>
+          </div>
+    </div>
+  </nav>
+
+
+        <div class="container is-max-desktop">
+            <section class="section">
+                <header class="content block column is-offset-one-quarter pl-2">
+                    
+<h1 class="title is-1">BookWyrm Vocabulary v1.0</h1>
+
+                </header>
+                
+<section class="block content">
+    <DIV class="notification is-danger is-light">
+
+<p><strong>Note:</strong> This vocabulary is a draft and may change.</p>
+<p>BookWyrm servers do not currently send activities in the format shown in these examples, nor reference this vocabulary.</p>
+
+</DIV>
+
+<p>BookWyrm uses the Core and Extended types and properties outlined in the <a href="https://www.w3.org/TR/activitystreams-vocabulary">Activity Streams 2.0 Vocabulary</a>.</p>
+<p>This page outlines a set of extended object types and properties for BookWyrm, where the Activity Streams Vocabulary is not sufficient for BookWyrm's needs.</p>
+<h2 id="Extended-Object-book-types">Extended Object book types<a class="anchor ml-2" href="#Extended-Object-book-types" title="Permanent link">&para;</a></h2>
+<p>The basic BookWyrm types are all extensions of the core Activity Streams <a href="https://www.w3.org/ns/activitystreams#Object">Object</a> type.</p>
+<h3 id="Core-book-type-properties">Core book type properties<a class="anchor ml-2" href="#Core-book-type-properties" title="Permanent link">&para;</a></h3>
+<p>All types in this section (<a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a>) have all the properties of <a href="https://www.w3.org/ns/activitystreams#Object">Object</a>.</p>
+<p>In addition, all types in this section have the following properties:</p>
+<ul>
+<li><a href="#openlibrarykey">openlibraryKey</a>: <code>String</code></li>
+<li><a href="#inventaireid">inventaireId</a>: <code>String</code></li>
+<li><a href="#finnakey">finnaKey</a>: <code>String</code></li>
+<li><a href="#libriskey">librisKey</a>: <code>String</code></li>
+<li><a href="#librarythingkey">librarythingKey</a>: <code>String</code></li>
+<li><a href="#goodreadskey">goodreadsKey</a>: <code>String</code></li>
+<li><a href="#bnfid">bnfId</a>: <code>String</code></li>
+<li><a href="#viaf">viaf</a>: <code>String</code></li>
+<li><a href="#wikidata">wikidata</a>: <code>String</code></li>
+<li><a href="#asin">asin</a>: <code>String</code></li>
+<li><a href="#aasin">aasin</a>: <code>String</code></li>
+<li><a href="#isfdb">isfdb</a>: <code>String</code></li>
+<li><a href="#lasteditedby">lastEditedBy</a>: <code>@id</code></li>
+</ul>
+<h3 id="Extended-book-type-properties">Extended book type properties<a class="anchor ml-2" href="#Extended-book-type-properties" title="Permanent link">&para;</a></h3>
+<p>In addition to the core properties above, <a href="#work">Work</a> and <a href="#edition">Edition</a> types have the following extended properties:</p>
+<ul>
+<li><a href="#title">title</a>: <code>String</code></li>
+<li><a href="#sorttitle">sortTitle</a>: <code>String</code></li>
+<li><a href="#subtitle">subtitle</a>: <code>String</code></li>
+<li><a href="#description">description</a>: <code>String</code></li>
+<li><a href="#languages">languages</a>: <code>Array</code></li>
+<li><a href="#series_1">series</a>: <code>String</code></li>
+<li><a href="#seriesnumber">seriesNumber</a>: <code>String</code></li>
+<li><a href="#seriesbooks">seriesBooks</a>: <code>Array</code></li>
+<li><a href="#subjects">subjects</a>: <code>Array</code></li>
+<li><a href="#subjectplaces">subjectPlaces</a>: <code>Array</code></li>
+<li><a href="#authors">authors</a>: <code>Array</code></li>
+<li><a href="#firstpublisheddate">firstPublishedDate</a>: <code>String</code></li>
+<li><a href="#publisheddate">publishedDate</a>: <code>String</code></li>
+<li><a href="#filelinks">fileLinks</a>: <code>Array</code></li>
+<li><a href="#cover">cover</a>: <code>Document</code></li>
+</ul>
+<h3 id="Work">Work<a class="anchor ml-2" href="#Work" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A bibliographic work, which manifests in the form of one or more <a href="#edition">Edition</a>s.</p>
+<h4 id="Properties">Properties<a class="anchor ml-2" href="#Properties" title="Permanent link">&para;</a></h4>
+<p>Inherits all the <a href="https://www.w3.org/ns/activitystreams#Object">Object</a>, <a href="#core-book-type-properties">Core book type</a> and <a href="#extended-book-type-properties">Extended book type</a> properties.</p>
+<p>In addition, a <code>Work</code> has the following extended properties:</p>
+<ul>
+<li><a href="#lccn">lccn</a>: <code>String</code></li>
+<li><a href="#editions">editions</a>: <code>Array</code></li>
+</ul>
+<h4 id="Example">Example<a class="anchor ml-2" href="#Example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3id.org/bookwyrm/ns&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/book/5988&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Work&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://example.com/author/417&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;first_published_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;published_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Piranesi&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sort_title&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subtitle&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**From the *New York Times* bestselling author of *Jonathan Strange &amp; Mr. Norrell*, an intoxicating, hypnotic new novel set in a dreamlike alternative reality.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;languages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;series_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subjects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;English literature&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;subject_places&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;openlibrary_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OL20893680W&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;librarything_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;goodreads_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;attachment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/images/covers/10226290-M.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Image&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;lccn&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;editions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://example.com/book/5989&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="Edition">Edition<a class="anchor ml-2" href="#Edition" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The manifestation of a <a href="#work">Work</a> as a specific edition.</p>
+<h4 id="Properties_1">Properties<a class="anchor ml-2" href="#Properties_1" title="Permanent link">&para;</a></h4>
+<p>Inherits all the <a href="https://www.w3.org/ns/activitystreams#Object">Object</a>, <a href="#core-book-type-properties">Core book type</a> and <a href="#extended-book-type-properties">Extended book type</a> properties.</p>
+<p>In addition, an <code>Edition</code> has the following extended properties:</p>
+<ul>
+<li><a href="#work_1">work</a>: <code>@id</code></li>
+<li><a href="#isbn10">isbn10</a>: <code>String</code></li>
+<li><a href="#isbn13">isbn13</a>: <code>String</code></li>
+<li><a href="#oclcnumber">oclcNumber</a>: <code>String</code></li>
+<li><a href="#pages">pages</a>: <code>Number</code></li>
+<li><a href="#physicalformat">physicalFormat</a>: <code>String</code></li>
+<li><a href="#physicalformatdetail">physicalFormatDetail</a>: <code>String</code></li>
+<li><a href="#publishers">publishers</a>: <code>Array</code></li>
+<li><a href="#editionrank">editionRank</a>: <code>Number</code></li>
+</ul>
+<h4 id="Example_1">Example<a class="anchor ml-2" href="#Example_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3id.org/bookwyrm/ns&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/book/5989&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;lastEditedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/users/rat&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Edition&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://example.com/author/417&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;first_published_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;published_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-09-15T00:00:00+00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Piranesi&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sort_title&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subtitle&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Piranesi&#39;s house is no ordinary building; its rooms are infinite, its corridors endless, its walls are lined with thousands upon thousands of statues, each one different from all the others.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;languages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;English&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;series&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;series_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;subjects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;subject_places&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;openlibrary_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OL29486417M&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;librarything_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;goodreads_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;isfdb&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;attachment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/images/covers/50202953._SX318_.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Image&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;isbn_10&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1526622424&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;isbn_13&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9781526622426&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;oclc_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;asin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;pages&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">272</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;physical_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;publishers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Bloomsbury Publishing Plc&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;work&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/book/5988&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="Author">Author<a class="anchor ml-2" href="#Author" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A creator of a <a href="#work">Work</a> or <a href="#edition">Edition</a>. This includes creative contributions such as editor, illustrator, or translator.</p>
+<h4 id="Properties_2">Properties<a class="anchor ml-2" href="#Properties_2" title="Permanent link">&para;</a></h4>
+<p>Inherits all the <a href="https://www.w3.org/ns/activitystreams#Object">Object</a> and <a href="#core-book-type-properties">Core book type</a> properties.</p>
+<p>In addition, an <code>Author</code> has the following extended properties:</p>
+<ul>
+<li><a href="#isni">isni</a>: <code>String</code></li>
+<li><a href="#gutenbergid">gutenbergId</a>: <code>String</code></li>
+<li><a href="#born">born</a>: <code>String</code></li>
+<li><a href="#died">died</a>: <code>String</code></li>
+<li><a href="#aliases">aliases</a>: <code>Array</code></li>
+<li><a href="#bio">bio</a>: <code>String</code></li>
+<li><a href="#wikipedialink">wikipediaLink</a>: <code>String</code></li>
+<li><a href="#website">website</a>: <code>String</code></li>
+</ul>
+<h4 id="Example_2">Example<a class="anchor ml-2" href="#Example_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3id.org/bookwyrm/ns&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/author/1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Author&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;openlibraryKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OL9388A&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;inventaireId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wd:Q692&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;librarythingKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shakespearewilliam&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;goodreadsKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;947&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bnfId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;119246079&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;viaf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;96994048&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;wikidata&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Q692&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;asin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B000APWKO4&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;isfdb&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;22499&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;lastEditedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/user/avid_reader&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;William Shakespeare&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;isni&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0000000121032683&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;born&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1564-04-19&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;died&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1616-04-22&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;aliases&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;p&gt;William Shakespeare was an English poet and playwright, widely regarded as the greatest writer in the English language and the world&#39;s pre-eminent dramatist.  He is often called England&#39;s national poet and the &amp;quot;Bard of Avon&amp;quot;.  His surviving works, including some collaborations, consist of 38 plays,[c]  154 sonnets, two long narrative poems, and several other poems. His plays have been translated into every major living language and are performed more often than those of any other playwright. He has invented over 1700 words and some of them are common, some of them are not. (&lt;a href=\&quot;https://en.wikipedia.org/wiki/William_Shakespeare\&quot;&gt;Source&lt;/a&gt;.)&lt;/p&gt;\n&lt;p&gt;Looking for the &#39;&lt;a href=\&quot;https://openlibrary.org/works/OL362289W/Plays\&quot;&gt;First Folio&lt;/a&gt;&#39;?&lt;/p&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;wikipediaLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://en.wikipedia.org/wiki/William_Shakespeare&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;website&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="Extended-Object-collection-item-types">Extended Object collection item types<a class="anchor ml-2" href="#Extended-Object-collection-item-types" title="Permanent link">&para;</a></h2>
+<h3 id="ShelfItem">ShelfItem<a class="anchor ml-2" href="#ShelfItem" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A <code>ShelfItem</code> represents an <a href="#edition">Edition</a> on a <a href="#shelf">Shelf</a>.</p>
+<h4 id="Properties_3">Properties<a class="anchor ml-2" href="#Properties_3" title="Permanent link">&para;</a></h4>
+<p>Inherits all the properties of <a href="https://www.w3.org/ns/activitystreams#Object">Object</a>.</p>
+<p>In addition, a <code>ShelfItem</code> has the following properties:</p>
+<ul>
+<li><a href="#book">book</a>: <code>@id</code></li>
+</ul>
+<h4 id="Example_3">Example<a class="anchor ml-2" href="#Example_3" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h3 id="ListItem">ListItem<a class="anchor ml-2" href="#ListItem" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A <code>ListItem</code> represents an <a href="#edition">Edition</a> on a <a href="#booklist">BookList</a>.</p>
+<h4 id="Properties_4">Properties<a class="anchor ml-2" href="#Properties_4" title="Permanent link">&para;</a></h4>
+<p>Inherits all the properties of <a href="https://www.w3.org/ns/activitystreams#Object">Object</a>.</p>
+<p>In addition, a <code>ListItem</code> has the following properties:</p>
+<ul>
+<li><a href="#book">book</a>: <code>@id</code></li>
+<li><a href="#notes">notes</a>: <code>String</code></li>
+<li><a href="#approved">approved</a>: <code>Boolean</code></li>
+<li><a href="#order">order</a>: <code>Number</code></li>
+</ul>
+<h4 id="Example_4">Example<a class="anchor ml-2" href="#Example_4" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h3 id="SuggestionListItem">SuggestionListItem<a class="anchor ml-2" href="#SuggestionListItem" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A <code>SuggestionListItem</code> represents a suggested <a href="#work">Work</a> on a <a href="#suggestionlist">SuggestionList</a>.</p>
+<h4 id="Properties_5">Properties<a class="anchor ml-2" href="#Properties_5" title="Permanent link">&para;</a></h4>
+<p>Inherits all the properties of <a href="https://www.w3.org/ns/activitystreams#Object">Object</a>.</p>
+<p>In addition, a <code>SuggestionListItem</code> has the following properties:</p>
+<ul>
+<li><a href="#book">book</a>: <code>@id</code></li>
+<li><a href="#notes">notes</a>: <code>String</code></li>
+</ul>
+<h4 id="Example_5">Example<a class="anchor ml-2" href="#Example_5" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h3 id="SeriesBook">SeriesBook<a class="anchor ml-2" href="#SeriesBook" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A <code>SeriesBook</code> represents the relationship of a <a href="#work">Work</a> to a <a href="#series">Series</a>.</p>
+<h4 id="Properties_6">Properties<a class="anchor ml-2" href="#Properties_6" title="Permanent link">&para;</a></h4>
+<p>Inherits all the properties of <a href="https://www.w3.org/ns/activitystreams#Object">Object</a>.</p>
+<p>In addition, a <code>SeriesBook</code> has the following properties:</p>
+<ul>
+<li><a href="#book">book</a>: <code>@id</code></li>
+<li><a href="#series_1">series</a>: <code>@id</code></li>
+<li><a href="#seriesnumber">seriesNumber</a>: <code>String</code></li>
+</ul>
+<h4 id="Example_6">Example<a class="anchor ml-2" href="#Example_6" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h2 id="Extended-Note-Types">Extended Note Types<a class="anchor ml-2" href="#Extended-Note-Types" title="Permanent link">&para;</a></h2>
+<p>These type are all extensions of the Activity Streams <a href="https://www.w3.org/ns/activitystreams#Note"><code>Note</code></a> object type.</p>
+<h3 id="GeneratedNote">GeneratedNote<a class="anchor ml-2" href="#GeneratedNote" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<DIV class="notification is-warning is-light has-text-centered">
+This type is under review and may be removed in a future version of BookWyrm
+</DIV>
+
+<p>An extended <code>Note</code> that is auto-generated by BookWyrm. For example, when a user adds a book to one of their shelves.</p>
+<p>There is no other difference between this type and a <a href="https://www.w3.org/ns/activitystreams#Note"><code>Note</code></a>.</p>
+<h3 id="Comment">Comment<a class="anchor ml-2" href="#Comment" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>An extended <code>Note</code> related to an <a href="#edition">Edition</a>.</p>
+<h4 id="Properties_7">Properties<a class="anchor ml-2" href="#Properties_7" title="Permanent link">&para;</a></h4>
+<p>Inherits all the properties of <a href="https://www.w3.org/ns/activitystreams#Note"><code>Note</code></a>.</p>
+<p>In addition, a <code>Comment</code> has the following extended properties:</p>
+<ul>
+<li><a href="#inreplytobook">inReplyToBook</a>: <code>@id</code></li>
+<li><a href="#readingstatus">readingStatus</a>: <code>String</code></li>
+<li><a href="#progress">progress</a>: <code>int</code></li>
+<li><a href="#progressmode">progressMode</a>: <code>String</code></li>
+</ul>
+<h4 id="Example_7">Example<a class="anchor ml-2" href="#Example_7" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;bw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3id.org/bookwyrm/ns/&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker/comment/9&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bw:Comment&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Note&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;published&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-06-30T21:43:46.013132+00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;attributedTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;p&gt;This is a very enjoyable book so far.&lt;/p&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://example.net/user/library_lurker/followers&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;cc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;replies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker/comment/9/replies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OrderedCollection&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;totalItems&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;first&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker/comment/9/replies?page=1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker/comment/9/replies?page=1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spoilers ahead!&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;attachment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;sensitive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:inReplyToBook&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/book/1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:readingStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;reading&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:progress&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:progressMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PG&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="Quotation">Quotation<a class="anchor ml-2" href="#Quotation" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A quotation from an <a href="#edition">Edition</a>.</p>
+<h4 id="Properties_8">Properties<a class="anchor ml-2" href="#Properties_8" title="Permanent link">&para;</a></h4>
+<p>Inherits all the properties of <a href="#comment"><code>Comment</code></a>.</p>
+<p>In addition, a <code>Quotation</code> has the following extended properties:</p>
+<ul>
+<li><a href="#quote">quote    </a>: <code>String</code></li>
+<li><a href="#position">position</a>: <code>Number</code></li>
+<li><a href="#positionmode">positionMode</a>: <code>String</code></li>
+</ul>
+<h3 id="Example_8">Example<a class="anchor ml-2" href="#Example_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;bw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3id.org/bookwyrm/ns/&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/mouse/quotation/13&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/mouse/quotation/13&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;inReplyTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;published&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-05-10T02:38:31.150343+00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;attributedTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/mouse&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams#Public&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;cc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://example.net/user/mouse/followers&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;sensitive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;I really like this quote&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bw:Quotation&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Note&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;replies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/mouse/quotation/13/replies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;first&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CollectionPage&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/mouse/quotation/13/replies?only_other_accounts=true&amp;page=true&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;partOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/mouse/quotation/13/replies&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;inReplyToBook&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/book/1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:quote&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;To be or not to be, that is the question.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:position&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:positionMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PCT&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="Rating">Rating<a class="anchor ml-2" href="#Rating" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A star rating indicating the actor's impression of the quality of an <a href="#edition">Edition</a>. This is essentially a review without any text.</p>
+<h4 id="Properties_9">Properties<a class="anchor ml-2" href="#Properties_9" title="Permanent link">&para;</a></h4>
+<p>Inherits the properties of <a href="#review">Review</a>, however <code>content</code> and <code>name</code> are not used. Although this type inherits from <code>Review</code>, the advertised Activity Streams type is <code>Note</code> rather than <code>Activity</code>.</p>
+<h4 id="Example_9">Example<a class="anchor ml-2" href="#Example_9" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;bw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3id.org/bookwyrm/ns/&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/user/mouse/reviewrating/123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;bw:Rating&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Note&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;published&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-08-05T15:37:46.054716+00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;attributedTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/user/mouse&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rated &lt;em&gt;&lt;a href=\&quot;https://example.com/book/36497\&quot;&gt;The outsider&lt;/a&gt;&lt;/em&gt;: 3 stars&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams#Public&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;cc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://example.com/user/mouse/followers&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;replies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/user/mouse/reviewrating/123/replies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OrderedCollection&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;totalItems&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;first&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/user/mouse/reviewrating/123/replies?page=1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/user/mouse/reviewrating/123/replies?page=1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;attachment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Document&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/images/previews/covers/_2EcfJ15.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stephen King: The outsider (AudiobookFormat, 2018)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Hashtag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;as:Hashtag&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;sensitive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:inReplyToBook&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/book/36497&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Review of \&quot;The outsider\&quot; (3 stars): None&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="Extended-Article-types">Extended Article types<a class="anchor ml-2" href="#Extended-Article-types" title="Permanent link">&para;</a></h2>
+<p>These types inherit all properties from <a href="https://www.w3.org/ns/activitystreams#Article">Article</a>.</p>
+<h3 id="Review">Review<a class="anchor ml-2" href="#Review" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A written review of an <a href="#edition">Edition</a>.</p>
+<h4 id="Properties_10">Properties<a class="anchor ml-2" href="#Properties_10" title="Permanent link">&para;</a></h4>
+<p>Inherits all properties from <a href="https://www.w3.org/ns/activitystreams#Article">Article</a>.</p>
+<p>In addition, a <code>Review</code> has the following extended properties:</p>
+<ul>
+<li><a href="#rating_1">rating</a>: <code>Number</code></li>
+</ul>
+<h4 id="Example_10">Example<a class="anchor ml-2" href="#Example_10" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;bw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3id.org/bookwyrm/ns/&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker/review/2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Review&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Article&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;published&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-06-30T21:43:46.013132+00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;attributedTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;p&gt;This is an enjoyable book with great characters.&lt;/p&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://example.net/user/library_lurker/followers&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;cc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;replies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker/review/2/replies&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OrderedCollection&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;totalItems&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;first&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker/review/2/replies?page=1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/library_lurker/review/2/replies?page=1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spoilers ahead!&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;attachment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;sensitive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:inReplyToBook&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/book/1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What a cracking read&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;bw:rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="Extended-OrderedCollection-types">Extended OrderedCollection types<a class="anchor ml-2" href="#Extended-OrderedCollection-types" title="Permanent link">&para;</a></h2>
+<p>These type are all based on the Activity Streams <a href="https://www.w3.org/ns/activitystreams#OrderedCollection"><code>OrderedCollection</code></a> core object types.</p>
+<h3 id="OrderedCollection-extended-properties">OrderedCollection extended properties<a class="anchor ml-2" href="#OrderedCollection-extended-properties" title="Permanent link">&para;</a></h3>
+<p>Types in this group have all the properties of <a href="https://www.w3.org/ns/activitystreams#OrderedCollection"><code>OrderedCollection</code></a>.</p>
+<p>In addition, all extended <code>OrderedCollection</code> types have the following properties:</p>
+<ul>
+<li><a href="#owner">owner</a>: <code>@id</code></li>
+</ul>
+<p>Other than <a href="#series">Series</a>, these types make use of the <code>to</code> and <code>cc</code> properties of <a href="https://www.w3.org/ns/activitystreams#Object"><code>Object</code></a> to enable privacy controlled collections.</p>
+<h3 id="Shelf">Shelf<a class="anchor ml-2" href="#Shelf" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<DIV class="notification is-warning is-light has-text-centered">
+This type is under review and may be removed in a future version of BookWyrm
+</DIV>
+
+<p>A <code>Shelf</code> is a collection of <a href="#edition">Edition</a> objects. Shelves are used to indicate the reading status of an <a href="#edition">Edition</a>.</p>
+<h4 id="Properties_11">Properties<a class="anchor ml-2" href="#Properties_11" title="Permanent link">&para;</a></h4>
+<p><code>Shelf</code> inherits all the <a href="#orderedcollection-extended-properties">OrderedCollection extended properties</a>.</p>
+<h4 id="Example_11">Example<a class="anchor ml-2" href="#Example_11" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/avid_reader/books/extraspecialbooks-5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shelf&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;totalItems&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;first&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/avid_reader/books/extraspecialbooks-5?page=1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;last&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/avid_reader/books/extraspecialbooks-5?page=1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Extra special books&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/avid_reader&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams#Public&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;cc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://example.net/user/avid_reader/followers&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="BookList">BookList<a class="anchor ml-2" href="#BookList" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A <code>BookList</code> is a collection of <a href="#edition">Edition</a> objects, grouped together by an <a href="https://www.w3.org/ns/activitystreams#actor">Actor</a> for any arbitrary reason. Items in a <code>BookList</code> are defined in <a href="#listitem">ListItem</a></p>
+<h4 id="Properties_12">Properties<a class="anchor ml-2" href="#Properties_12" title="Permanent link">&para;</a></h4>
+<p><code>BookList</code> inherits all the <a href="#orderedcollection-extended-properties">OrderedCollection extended properties</a>.</p>
+<p>In addition, <code>BookList</code> has the following properties:</p>
+<ul>
+<li><a href="#curation">curation</a>: <code>String</code></li>
+</ul>
+<h4 id="Example_12">Example<a class="anchor ml-2" href="#Example_12" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/list/1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BookList&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;totalItems&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;first&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/list/1?page=1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;last&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/list/1?page=1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My cool list&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.net/user/avid_reader&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams#Public&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;cc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;https://example.net/user/avid_reader/followers&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A list of books I like.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;curation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;curated&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.w3.org/ns/activitystreams&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="SuggestionList">SuggestionList<a class="anchor ml-2" href="#SuggestionList" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A <code>SuggestionList</code> is a collection of <a href="#suggestionlistitem">SuggestionListItem</a> objects that can be added to by any <a href="https://www.w3.org/ns/activitystreams#actor">Actor</a>. A <code>SuggestionList</code> represents suggested works that may be similar to a given <a href="#work">Work</a> identified by the <a href="#book">book</a> property.</p>
+<h4 id="Properties_13">Properties<a class="anchor ml-2" href="#Properties_13" title="Permanent link">&para;</a></h4>
+<p><code>SuggestionList</code> inherits all the <a href="#orderedcollection-extended-properties">OrderedCollection extended properties</a>.</p>
+<p>In addition, <code>SuggestionList</code> has the following properties:</p>
+<ul>
+<li><a href="#book">book</a>: <code>@id</code></li>
+</ul>
+<h4 id="Example_13">Example<a class="anchor ml-2" href="#Example_13" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h3 id="Series">Series<a class="anchor ml-2" href="#Series" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A <code>Series</code> is a collection of <a href="#seriesbook">SeriesBook</a> objects representing <a href="#work">Work</a> objects in a formal series. An example of a series is "The Lord of the Rings" by J.R.R. Tolkien.</p>
+<h4 id="Properties_14">Properties<a class="anchor ml-2" href="#Properties_14" title="Permanent link">&para;</a></h4>
+<p><code>Series</code> inherits all the <a href="#orderedcollection-extended-properties">OrderedCollection extended properties</a> but does <strong>not</strong> use <code>to</code> or <code>cc</code> from <a href="https://www.w3.org/ns/activitystreams#Object"><code>Object</code></a> as there is no concept of "privacy" for <code>Series</code> objects.</p>
+<ul>
+<li><a href="#alternativenames">alternativeNames</a>: <code>Array</code></li>
+</ul>
+<h4 id="Example_14">Example<a class="anchor ml-2" href="#Example_14" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h2 id="Properties_15">Properties<a class="anchor ml-2" href="#Properties_15" title="Permanent link">&para;</a></h2>
+<h3 id="aasin">aasin<a class="anchor ml-2" href="#aasin" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>An <a href="https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number">Amazon Standard Identification Number</a> for an Audible audiobook. The same audiobook may have a different ASIN when sold by Amazon directly.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#asin">asin</a></p>
+<h3 id="aliases">aliases<a class="anchor ml-2" href="#aliases" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Alternative names an author may be known by.</p>
+<p>Type: <code>Array</code> of <code>String</code>s</p>
+<p>Used on: <a href="#author">Author</a></p>
+<p>See also: <a href="#alternativenames">alternativeNames</a></p>
+<h3 id="alternativeNames">alternativeNames<a class="anchor ml-2" href="#alternativeNames" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Alternative names a series may be known by.</p>
+<p>Type: <code>Array</code> of <code>String</code>s</p>
+<p>Used on: <a href="#series">Series</a></p>
+<p>See also: <a href="#aliases">aliases</a></p>
+<h3 id="approved">approved<a class="anchor ml-2" href="#approved" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Indicates whether a <a href="#listitem">ListItem</a> has been approved for inclusion in a <a href="#booklist">BookList</a>. This is only relevant for lists where the value of <a href="#curation">curation</a> is <code>curated</code>.</p>
+<p>Type: <code>Boolean</code></p>
+<p>Used on: <a href="#listitem">ListItem</a></p>
+<h3 id="asin">asin<a class="anchor ml-2" href="#asin" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>An <a href="https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number">Amazon Standard Identification Number</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#aasin">aasin</a></p>
+<h3 id="authors">authors<a class="anchor ml-2" href="#authors" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The <a href="#author">Author</a>s associated with a <a href="#work">Work</a> or <a href="#edition">Edition</a>.</p>
+<p>Type: <code>Array</code> of <code>@id</code>s</p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<h3 id="bio">bio<a class="anchor ml-2" href="#bio" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Biographical information about an <a href="#author">Author</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#author">Author</a></p>
+<h3 id="bnfId">bnfId<a class="anchor ml-2" href="#bnfId" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Unique identifier assigned by the Bibliothèque nationale de France (National library of France).</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">gutenbergId</a>, <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="book">book<a class="anchor ml-2" href="#book" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A book related to another object. This may represent either a <a href="#work">Work</a> or an <a href="#edition">Edition</a> depending on the object it is a property of.</p>
+<p>Type: <code>@id</code></p>
+<p>Used on: <a href="#listitem">ListItem</a>, <a href="#seriesbook">SeriesBook</a>, <a href="#shelfitem">ShelfItem</a>, <a href="#suggestionlist">SuggestionList</a>, <a href="#suggestionlistitem">SuggestionListItem</a></p>
+<p>See also: <a href="#editions">editions</a>, <a href="#work_1">work</a></p>
+<h3 id="born">born<a class="anchor ml-2" href="#born" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The birth date of an <a href="#author">Author</a> in the format <code>YYYY-MM-DD</code>. This represents a date but takes the form of a string.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#author">Author</a></p>
+<p>See also: <a href="#died">died</a></p>
+<h3 id="cover">cover<a class="anchor ml-2" href="#cover" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The cover image for a book.</p>
+<p>Type: <a href="https://www.w3.org/ns/activitystreams#Document">Document</a></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<h3 id="curation">curation<a class="anchor ml-2" href="#curation" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The type of curation for a <a href="#booklist">BookList</a>. Possible values are:</p>
+<ul>
+<li><code>closed</code>: only the <a href="#owner">owner</a> may add items to the list</li>
+<li><code>open</code>: any other <a href="https://www.w3.org/ns/activitystreams#actor">Actor</a> may add to the list.</li>
+<li><code>curated</code>: Any other <a href="https://www.w3.org/ns/activitystreams#actor">Actor</a> may add to the list, however the item must be <a href="#approved">approved</a> by the <a href="#owner">owner</a>.</li>
+<li><code>group</code>: Any other member of the group may add to the list.</li>
+</ul>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#booklist">BookList</a></p>
+<p>Note: BookWyrm Groups are not currently ActivityPub objects.</p>
+<h3 id="description">description<a class="anchor ml-2" href="#description" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A brief description or blurb for a book.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>Note: This is used rather than <a href="https://www.w3.org/ns/activitystreams#summary">summary</a> because <a href="https://www.w3.org/ns/activitystreams#summary">summary</a> is widely used within the fediverse (including BookWyrm) as a "content warning" property.</p>
+<h3 id="died">died<a class="anchor ml-2" href="#died" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The date of death for an <a href="#author">Author</a> in the format <code>YYYY-MM-DD</code>. This represents a date but takes the form of a string.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#author">Author</a></p>
+<p>See also: <a href="#born">born</a></p>
+<h3 id="editionRank">editionRank<a class="anchor ml-2" href="#editionRank" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A preferential ranking for an <a href="#edition">Edition</a> in comparison to other editions with the same parent work, based on the completeness of the <a href="#edition">Edition</a> object's metadata. <a href="#edition">Edition</a> objects with more complete will have a higher rank represented by a lower integer. This is used to determine which edition will be considered the "default".</p>
+<p>Type: <code>Number</code></p>
+<p>Used on: <a href="#edition">Edition</a></p>
+<p>See also: <a href="#order">order</a></p>
+<h3 id="editions">editions<a class="anchor ml-2" href="#editions" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A list of <a href="#edition">Edition</a> objects that derive from a <a href="#work">Work</a>.</p>
+<p>Type: <code>Array</code> of <code>id</code>s</p>
+<p>Used on: <a href="#work">Work</a></p>
+<h3 id="fileLinks">fileLinks<a class="anchor ml-2" href="#fileLinks" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A list of URLs representing web locations for a digital copy of a book.</p>
+<p>Type: <code>Array</code> of <a href="https://www.w3.org/TR/url">URL</a> <code>String</code>s</p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<h3 id="finnaKey">finnaKey<a class="anchor ml-2" href="#finnaKey" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The <code>id</code> field for any record from the National Library of Finland's <a href="https://www.finna.fi/Content/about">Finna.fi</a> catalogue.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">gutenbergId</a>, <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="firstPublishedDate">firstPublishedDate<a class="anchor ml-2" href="#firstPublishedDate" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The first known publication date for a book in the format <code>YYYY-MM-DD</code>. This represents a date but takes the form of a string.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>See also: <a href="#publisheddate">publishedDate</a></p>
+<h3 id="goodreadsKey">goodreadsKey<a class="anchor ml-2" href="#goodreadsKey" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The unique identifier for any record from <a href="https://www.goodreads.com/">GoodReads</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#gutenbergid">gutenbergId</a>, <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="gutenbergId">gutenbergId<a class="anchor ml-2" href="#gutenbergId" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The unique identifier for an author from <a href="https://gutenberg.org">Project Gutenberg</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#author">Author</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="inReplyToBook">inReplyToBook<a class="anchor ml-2" href="#inReplyToBook" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Represents an <a href="#edition">Edition</a> that is the subject of the content of an object. For example the book that is being reviewed.</p>
+<p>Type: <code>@id</code></p>
+<p>Used on: <a href="#comment">Comment</a>, <a href="#quotation">Quotation</a>, <a href="#rating">Rating</a>, <a href="#review">Review</a></p>
+<h3 id="inventaireId">inventaireId<a class="anchor ml-2" href="#inventaireId" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The unique identifier for any record from <a href="https://inventaire.io">Inventaire</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>Note: Inventaire identifiers are <a href="https://wiki.inventaire.io/wiki/Entities_data#Data_sources">often, but not necessarily the same as wikidata ids</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="isbn10">isbn10<a class="anchor ml-2" href="#isbn10" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>An International Standard Book Number (ISBN). <code>isbn10</code> is the original 10-digit format for ISBNs.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="isbn13">isbn13<a class="anchor ml-2" href="#isbn13" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>An International Standard Book Number (ISBN). <code>isbn13</code> is the modern 13-digit format for ISBNs.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="isfdb">isfdb<a class="anchor ml-2" href="#isfdb" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The unique identifier for a record in the <a href="https://www.isfdb.org/">Internet Speculative Fiction Database</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="isni">isni<a class="anchor ml-2" href="#isni" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The <a href="https://isni.org/">International Standard Name Identifier</a> for an author.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#author">Author</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#lccn">lccn</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="languages">languages<a class="anchor ml-2" href="#languages" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A list of the languages in which a book has been published.</p>
+<p>Type: <code>Array</code> of <code>String</code>s.</p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>Note: This is an uncontrolled field and may itself be written in multiple languages.</p>
+<h3 id="lastEditedBy">lastEditedBy<a class="anchor ml-2" href="#lastEditedBy" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>An <a href="https://www.w3.org/ns/activitystreams#actor">actor</a> who last made changes to an object.</p>
+<p>Type: <code>@id</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<h3 id="lccn">lccn<a class="anchor ml-2" href="#lccn" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The <a href="https://en.wikipedia.org/wiki/Library_of_Congress_Control_Number">Library of Congress Control Number</a> for a work.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="librarythingKey">librarythingKey<a class="anchor ml-2" href="#librarythingKey" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A unique identifier from <a href="https://www.librarything.com/">Library Thing</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#lccn">lccn</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="librisKey">librisKey<a class="anchor ml-2" href="#librisKey" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Unique identifier from the Swedish libraries' union catalogue <a href="https://libris.kb.se">Libris</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#lccn">lccn</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<p>Used on: <a href="#author">Author</a>, <a href="#review">Review</a></p>
+<h3 id="notes">notes<a class="anchor ml-2" href="#notes" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A brief explanatory note.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#listitem">ListItem</a>, <a href="#suggestionlistitem">SuggestionListItem</a></p>
+<h3 id="oclcNumber">oclcNumber<a class="anchor ml-2" href="#oclcNumber" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Unique identifier for an edition recorded in <a href="https://www.oclc.org">OCLC</a>'s <a href="https://search.worldcat.org/">WorldCat</a>. This is formally known as the <a href="https://www.oclc.org/bibformats/en/fixedfield/oclc.html">OCLC Control Number</a> and may be recorded in other systems, especially library catalogues.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#edition">Edition</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#lccn">lccn</a>, <a href="#libriskey">librisKey</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="openlibraryKey">openlibraryKey<a class="anchor ml-2" href="#openlibraryKey" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Unique identifier for records from <a href="https://openlibrary.org/">Open Library</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#lccn">lccn</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#viaf">viaf</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="order">order<a class="anchor ml-2" href="#order" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>An item's place in a sequential order.</p>
+<p>Type: <code>Number</code></p>
+<p>Used on: <a href="#listitem">ListItem</a></p>
+<p>See also: <a href="#editionrank">editionRank</a></p>
+<h3 id="owner">owner<a class="anchor ml-2" href="#owner" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The <a href="https://www.w3.org/ns/activitystreams#actor">Actor</a> who created an object.</p>
+<p>Type: <code>@id</code></p>
+<p>Used on: <a href="#booklist">BookList</a>, <a href="#series">Series</a>, <a href="#shelf">Shelf</a>, <a href="#suggestionlist">SuggestionList</a></p>
+<h3 id="pages">pages<a class="anchor ml-2" href="#pages" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The number of pages in a book.</p>
+<p>Type: <code>Number</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<h3 id="physicalFormat">physicalFormat<a class="anchor ml-2" href="#physicalFormat" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The physical format of a book. For example "Paperback". This is a controlled field in the BookWyrm user interface. Options are:</p>
+<ul>
+<li><code>AudiobookFormat</code></li>
+<li><code>EBook</code></li>
+<li><code>GraphicNovel</code></li>
+<li><code>Hardcover</code></li>
+<li><code>Paperback</code></li>
+</ul>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<h3 id="physicalFormatDetail">physicalFormatDetail<a class="anchor ml-2" href="#physicalFormatDetail" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>More specific detail regarding the physical format of a book. For example "spiral bound". This is a free text field in the BookWyrm user interface.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<h3 id="position">position<a class="anchor ml-2" href="#position" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The position within a book in which a quote appears.</p>
+<p>Type: <code>Number</code></p>
+<p>Used on: <a href="#quotation">Quotation</a></p>
+<p>See also: <a href="#progress">progress</a></p>
+<h3 id="positionMode">positionMode<a class="anchor ml-2" href="#positionMode" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The measure that <a href="#position">position</a> represents. This is a controlled field in the BookWyrm user interface. Options are:</p>
+<ul>
+<li><code>PG</code> representing "pages"</li>
+<li><code>PCT</code> representing "percentage"</li>
+</ul>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#quotation">Quotation</a></p>
+<p>See also: <a href="#progressmode">progressMode</a></p>
+<h3 id="progress">progress<a class="anchor ml-2" href="#progress" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>How much of a book an <a href="https://www.w3.org/ns/activitystreams#actor">Actor</a> has read.</p>
+<p>Type: <code>Number</code></p>
+<p>Used on: <a href="#comment">Comment</a></p>
+<p>See also: <a href="position">position</a></p>
+<h3 id="progressMode">progressMode<a class="anchor ml-2" href="#progressMode" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The measure that <a href="#progress">progress</a> represents. This is a controlled field in the BookWyrm user interface. Options are:</p>
+<ul>
+<li><code>PG</code> representing "pages"</li>
+<li><code>PCT</code> representing "percentage"</li>
+</ul>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#comment">Comment</a></p>
+<p>See also: <a href="#positionmode">PositionMode</a></p>
+<h3 id="publishedDate">publishedDate<a class="anchor ml-2" href="#publishedDate" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The publication date for a specific book in the format <code>YYYY-MM-DD</code>. This represents a date but takes the form of a string.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>See also: <a href="#firstpublisheddate">firstPublishedDate</a></p>
+<h3 id="publishers">publishers<a class="anchor ml-2" href="#publishers" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A list of publishers of a book.</p>
+<p>Type: <code>Array</code> of <code>String</code>s</p>
+<p>Used on: <a href="#edition">Edition</a></p>
+<h3 id="quote">quote<a class="anchor ml-2" href="#quote" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The text of a quotation from a book.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#quotation">Quotation</a></p>
+<p>Note: <a href="#quotation">Quotation</a> objects can be coerced into a <a href="https://www.w3.org/ns/activitystreams#Note">Note</a>. Applications that implement <a href="https://w3id.org/fep/044f#quote">FEP-044f quote-posts</a> also have a <code>quote</code> property which references another <a href="https://www.w3.org/ns/activitystreams#Note">Note</a> by its id. Care should be taken to ensure the <code>quote</code> property is handled correctly according to each context.</p>
+<h3 id="rating">rating<a class="anchor ml-2" href="#rating" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A star rating indicating the <a href="https://www.w3.org/ns/activitystreams#actor">Actor</a>'s impression of the quality of an <a href="#edition">Edition</a>.</p>
+<p>Type: <code>Number</code></p>
+<p>Used on: <a href="#rating">Rating</a>, <a href="#review">Review</a></p>
+<h3 id="readingStatus">readingStatus<a class="anchor ml-2" href="#readingStatus" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A status indicating an <a href="https://www.w3.org/ns/activitystreams#actor">Actor</a>'s overall reading progress for an <a href="#edition">Edition</a>. This is a controlled field in the BookWyrm user interface. Options are:</p>
+<ul>
+<li><code>to-read</code></li>
+<li><code>reading</code></li>
+<li><code>read</code></li>
+<li><code>stopped-reading</code></li>
+</ul>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#comment">Comment</a></p>
+<p>Note: Currently there is a strong relationship between <a href="#readingstatus">readingStatus</a> and <a href="#shelfitem">ShelfItem</a>, and every BookWyrm user has a <a href="#shelf">Shelf</a> with an identifier that matches the reading status options listed above. This may change in future.</p>
+<p>See also: <a href="#shelfitem">ShelfItem</a></p>
+<h3 id="series">series<a class="anchor ml-2" href="#series" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The name of a series of books, or the <code>@id</code> of a <a href="#series">Series</a>.</p>
+<p>Type: <code>String</code> or <code>@id</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#seriesbook">SeriesBook</a></p>
+<p>Note: When used on <a href="#work">Work</a> or <a href="#edition">Edition</a>, <code>series</code> is a legacy property retained for backwards-compatibility. The correct way to identify <a href="#series">Series</a> objects associated with a <a href="#work">Work</a> is to dereference any associated <a href="#seriesbook">SeriesBook</a> objects and their <a href="#series_1">series</a> property.</p>
+<h3 id="seriesBooks">seriesBooks<a class="anchor ml-2" href="#seriesBooks" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A list of <a href="#seriesbook">SeriesBook</a> associated with a book.</p>
+<p>Type: <code>Array</code> of <code>@id</code>s</p>
+<p>Used on: <a href="#work">Work</a></p>
+<p>Note: This property was formerly also used on <a href="#edition">Edition</a>. Some BookWyrm instances may still send <a href="#edition">Edition</a> objects with the <code>seriesBook</code> property.</p>
+<h3 id="seriesNumber">seriesNumber<a class="anchor ml-2" href="#seriesNumber" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The name of a series of books, or the <code>@id</code> of a <a href="#series">Series</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#seriesbook">SeriesBook</a></p>
+<p>Note: When used on <a href="#work">Work</a> or <a href="#edition">Edition</a>, <code>seriesNumber</code> is a legacy property retained for backwards-compatibility. The correct way to identify the series number associated with a <a href="#work">Work</a> is to dereference any associated <a href="#seriesbook">SeriesBook</a> objects and their <a href="#seriesnumber">seriesNumber</a> property.</p>
+<h3 id="sortTitle">sortTitle<a class="anchor ml-2" href="#sortTitle" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A version of a book title used for the purposes of alphabetical sorting.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>Note: This property does not currently handle multi-lingual sorting.</p>
+<h3 id="subjectPlaces">subjectPlaces<a class="anchor ml-2" href="#subjectPlaces" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A list of geographic locations in which a book is set.</p>
+<p>Type: <code>Array</code> of <code>String</code>s</p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<h3 id="subjects">subjects<a class="anchor ml-2" href="#subjects" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A list of topics a book is about.</p>
+<p>Type: <code>Array</code> of <code>String</code>s</p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<h3 id="subtitle">subtitle<a class="anchor ml-2" href="#subtitle" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>A secondary part of the title of a book. Same as <a href="https://schema.org/alternativeHeadline">alternativeHeadline</a> or <a href="https://www.wikidata.org/wiki/Q1135389">subtitle</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>Note: this does <em>not</em> refer to an "alternative" title.</p>
+<p>See also: <a href="#title">title</a></p>
+<h3 id="title">title<a class="anchor ml-2" href="#title" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The title or name of a book.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a></p>
+<p>See also: <a href="#subtitle">subtitle</a></p>
+<h3 id="viaf">viaf<a class="anchor ml-2" href="#viaf" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Unique identifier from the <a href="https://viaf.org">The Virtual International Authority File</a></p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#lccn">lccn</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#wikidata">wikidata</a></p>
+<h3 id="website">website<a class="anchor ml-2" href="#website" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The personal website of an author.</p>
+<p>Type: <code>String</code> representing a <a href="https://www.w3.org/TR/url">URL</a></p>
+<p>Used on: <a href="#author">Author</a></p>
+<h3 id="wikidata">wikidata<a class="anchor ml-2" href="#wikidata" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>Unique identifier for a record from the <a href="https://www.wikidata.org">wikidata</a>.</p>
+<p>Type: <code>String</code></p>
+<p>Used on: <a href="#work">Work</a>, <a href="#edition">Edition</a>, <a href="#author">Author</a>, <a href="#series">Series</a></p>
+<p>See also: <a href="#bnfid">bnfId</a>, <a href="#finnakey">finnaKey</a>, <a href="#goodreadskey">goodreadsKey</a>, <a href="#gutenbergid">GutenbergId</a> <a href="#inventaireid">inventaireId</a>, <a href="#isbn10">isbn10</a>, <a href="#isbn13">isbn13</a>, <a href="#isfdb">isfdb</a>, <a href="#isni">isni</a>, <a href="#librarythingkey">librarythingKey</a>, <a href="#lccn">lccn</a>, <a href="#libriskey">librisKey</a>, <a href="#oclcnumber">oclcNumber</a>, <a href="#openlibrarykey">openlibraryKey</a>, <a href="#viaf">viaf</a></p>
+<h3 id="wikipediaLink">wikipediaLink<a class="anchor ml-2" href="#wikipediaLink" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The URL of a Wikipedia page.</p>
+<p>Type: <code>String</code> representing a <a href="https://www.w3.org/TR/url">URL</a></p>
+<p>Used on: <a href="#author">Author</a></p>
+<p>Note: As <a href="#author">Author</a> also has a <a href="#wikidata">wikidata</a> property which could be used to obtain Wikipedia URLs, this property may be removed in future.</p>
+<h3 id="work">work<a class="anchor ml-2" href="#work" title="Permanent link">&para;</a></h3>
+<p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
+<p>The parent <a href="#work">Work</a> of an <a href="#edition">Edition</a>.</p>
+<p>Type: <code>@id</code></p>
+<p>Used on: <a href="#edition">Edition</a></p>
+</section>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer id="contentinfo" class="footer">
+    <div class="container is-max-desktop">
+        <div class="mb-6">
+            <p>Can't find what you are looking for, or see something wrong? <a href='https://github.com/bookwyrm-social/documentation/issues'>Log an Issue to help us improve this documentation!</a></p>
+        </div>
+        <div class="columns">
+            <div class="column content">
+                <p>
+                    <strong>BookWyrm</strong> este un program colaborativ, anti-corporație, menținut de <a href='https://www.mousereeve.com/'>Mouse Reeve</a>.
+                </p>
+                <p>
+                    Susțineți BookWyrm pe <a href='https://www.patreon.com/bookwyrm' target='_blank'>Patreon</a>.
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Alăturați-vă</h3>
+                <p>
+                    <a href="https://github.com/bookwyrm-social">BookWyrm pe GitHub</a>
+                </p>
+                <p>
+                    <a href="https://github.com/bookwyrm-social/documentation/blob/main/content/vocabulary/bookwyrm-vocabulary.md">Contribuiți la această pagină</a>
+                </p>
+                <p>
+                    <a href="https://twitter.com/BookWyrmSocial" target="_blank">
+                        <span class="icon icon-twitter"><span class="is-sr-only">Twitter</span></span>
+                    </a>
+                    <a href="https://tech.lgbt/@bookwyrm" target="_blank" rel="me">
+                        <span class="icon icon-mastodon"><span class="is-sr-only">Mastodon</span></span>
+                    </a>
+                    <a href="https://www.patreon.com/bookwyrm" target="_blank">
+                        <span class="icon icon-patreon"><span class="is-sr-only">Patreon</span></span>
+                    </a>
+                </p>
+            </div>
+            <div class="column">
+                <h3 class="title is-6">Aflați mai multe</h3>
+                <p>
+                    <a href="https://docs.joinbookwyrm.com">Documentație</a>
+                </p>
+                <p>
+                    <a href="mailto:mousereeve@riseup.net">Contactați responsabilul</a>
+                </p>
+                <p>
+                    <a href="https://raw.githubusercontent.com/bookwyrm-social/join-bookwyrm/main/LICENSE.md">Licență</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var current_locale = "ro/";
+    var current_version = "";
+</script>
+<script src="/static/js/bookwyrm.js"></script>
+</body>
+</html>
