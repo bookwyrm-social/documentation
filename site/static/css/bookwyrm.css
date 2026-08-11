@@ -8,6 +8,19 @@
     .menu {
         background-color: var(--bulma-scheme-main-bis);
     }
+
+    .anchor {
+        color: #888888;
+        vertical-align: center;
+        font-size: 60%;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .anchor {
+            color: #666666;
+        }
+    }
+
 }
 
 @media (prefers-color-scheme: light) {
