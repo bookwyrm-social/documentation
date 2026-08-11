@@ -15,59 +15,65 @@ BookWyrm uses the Core and Extended types and properties outlined in the [Activi
 
 This page outlines a set of extended object types and properties for BookWyrm, where the Activity Streams Vocabulary is not sufficient for BookWyrm's needs.
 
+The identifier for this vocabulary is `https://www.w3id.org/BookWyrm/ns`.
+
+The Version 1.0 draft of this vocabulary was first published on 11 August 2026. Most types and properties were in use for several years prior to publication of the vocabulary, but not formally name-spaced.
+
 ## Extended Object book types
 
 The basic BookWyrm types are all extensions of the core Activity Streams [Object](https://www.w3.org/ns/activitystreams#Object) type.
 
 ### Core book type properties
 
-All types in this section ([Work](#work), [Edition](#edition), [Author](#author), [Series](#series)) have all the properties of [Object](https://www.w3.org/ns/activitystreams#Object).
+All types in this section ([Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)) have all the properties of [Object](https://www.w3.org/ns/activitystreams#Object).
 
 In addition, all types in this section have the following properties:
 
-- [openlibraryKey](#openlibrarykey): `String`
-- [inventaireId](#inventaireid): `String`
-- [finnaKey](#finnakey): `String`
-- [librisKey](#libriskey): `String`
-- [librarythingKey](#librarythingkey): `String`
-- [goodreadsKey](#goodreadskey): `String`
-- [bnfId](#bnfid): `String`
+- [openlibraryKey](#openlibraryKey): `String`
+- [inventaireId](#inventaireId): `String`
+- [finnaKey](#finnaKey): `String`
+- [librisKey](#librisKey): `String`
+- [librarythingKey](#librarythingKey): `String`
+- [goodreadsKey](#goodreadsKey): `String`
+- [bnfId](#bnfId): `String`
 - [viaf](#viaf): `String`
 - [wikidata](#wikidata): `String`
 - [asin](#asin): `String`
 - [aasin](#aasin): `String`
 - [isfdb](#isfdb): `String`
-- [lastEditedBy](#lasteditedby): `@id`
+- [lastEditedBy](#lastEditedBy): `@id`
 
 ### Extended book type properties
 
-In addition to the core properties above, [Work](#work) and [Edition](#edition) types have the following extended properties:
+In addition to the core properties above, [Work](#Work) and [Edition](#Edition) types have the following extended properties:
 
 - [title](#title): `String`
-- [sortTitle](#sorttitle): `String`
+- [sortTitle](#sortTitle): `String`
 - [subtitle](#subtitle): `String`
 - [description](#description): `String`
 - [languages](#languages): `Array`
-- [series](#series_1): `String`
-- [seriesNumber](#seriesnumber): `String`
-- [seriesBooks](#seriesbooks): `Array`
+- [series](#series): `String`
+- [seriesNumber](#seriesNumber): `String`
+- [seriesBooks](#seriesBooks): `Array`
 - [subjects](#subjects): `Array`
-- [subjectPlaces](#subjectplaces): `Array`
+- [subjectPlaces](#subjectPlaces): `Array`
 - [authors](#authors): `Array`
-- [firstPublishedDate](#firstpublisheddate): `String`
-- [publishedDate](#publisheddate): `String`
-- [fileLinks](#filelinks): `Array`
+- [firstPublishedDate](#firstPublishedDate): `String`
+- [publishedDate](#publishedDate): `String`
+- [fileLinks](#fileLinks): `Array`
 - [cover](#cover): `Document`
 
 ### Work
 
+`https://www.w3id.org/BookWyrm/ns#Work`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A bibliographic work, which manifests in the form of one or more [Edition](#edition)s.
+A bibliographic work, which manifests in the form of one or more [Edition](#Edition)s.
 
 #### Properties
 
-Inherits all the [Object](https://www.w3.org/ns/activitystreams#Object), [Core book type](#core-book-type-properties) and [Extended book type](#extended-book-type-properties) properties.
+Inherits all the [Object](https://www.w3.org/ns/activitystreams#Object), [Core book type](#Core-book-type-properties) and [Extended book type](#Extended-book-type-properties) properties.
 
 In addition, a `Work` has the following extended properties:
 
@@ -79,7 +85,7 @@ In addition, a `Work` has the following extended properties:
 ```json
 {
     "@context": [
-        "https://www.w3id.org/bookwyrm/ns",
+        "https://www.w3id.org/BookWyrm/ns",
         "https://www.w3.org/ns/activitystreams",
     ],
     "id": "https://example.com/book/5988",
@@ -118,9 +124,11 @@ In addition, a `Work` has the following extended properties:
 
 ### Edition
 
+`https://www.w3id.org/BookWyrm/ns#Edition`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-The manifestation of a [Work](#work) as a specific edition.
+The manifestation of a [Work](#Work) as a specific edition.
 
 #### Properties
 
@@ -128,22 +136,22 @@ Inherits all the [Object](https://www.w3.org/ns/activitystreams#Object), [Core b
 
 In addition, an `Edition` has the following extended properties:
 
-- [work](#work_1): `@id`
+- [work](#work): `@id`
 - [isbn10](#isbn10): `String`
 - [isbn13](#isbn13): `String`
-- [oclcNumber](#oclcnumber): `String`
+- [oclcNumber](#oclcNumber): `String`
 - [pages](#pages): `Number`
-- [physicalFormat](#physicalformat): `String`
-- [physicalFormatDetail](#physicalformatdetail): `String`
+- [physicalFormat](#physicalFormat): `String`
+- [physicalFormatDetail](#physicalFormatDetail): `String`
 - [publishers](#publishers): `Array`
-- [editionRank](#editionrank): `Number`
+- [editionRank](#editionRank): `Number`
 
 #### Example
 
 ```json
 {
     "@context": [
-        "https://www.w3id.org/bookwyrm/ns",
+        "https://www.w3id.org/BookWyrm/ns",
         "https://www.w3.org/ns/activitystreams",
     ],
     "id": "https://example.com/book/5989",
@@ -190,9 +198,11 @@ In addition, an `Edition` has the following extended properties:
 
 ### Author
 
+`https://www.w3id.org/BookWyrm/ns#Author`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A creator of a [Work](#work) or [Edition](#edition). This includes creative contributions such as editor, illustrator, or translator.
+A creator of a [Work](#Work) or [Edition](#Edition). This includes creative contributions such as editor, illustrator, or translator.
 
 #### Properties
 
@@ -201,12 +211,12 @@ Inherits all the [Object](https://www.w3.org/ns/activitystreams#Object) and [Cor
 In addition, an `Author` has the following extended properties:
 
 - [isni](#isni): `String`
-- [gutenbergId](#gutenbergid): `String`
+- [gutenbergId](#gutenbergId): `String`
 - [born](#born): `String`
 - [died](#died): `String`
 - [aliases](#aliases): `Array`
 - [bio](#bio): `String`
-- [wikipediaLink](#wikipedialink): `String`
+- [wikipediaLink](#wikipediaLink): `String`
 - [website](#website): `String`
 
 #### Example
@@ -214,7 +224,7 @@ In addition, an `Author` has the following extended properties:
 ```json
 {
     "@context": [
-        "https://www.w3id.org/bookwyrm/ns",
+        "https://www.w3id.org/BookWyrm/ns",
         "https://www.w3.org/ns/activitystreams",
     ],
     "id": "https://example.com/author/1",
@@ -244,9 +254,10 @@ In addition, an `Author` has the following extended properties:
 
 ### ShelfItem
 
+`https://www.w3id.org/BookWyrm/ns#ShelfItem`
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A `ShelfItem` represents an [Edition](#edition) on a [Shelf](#shelf).
+A `ShelfItem` represents an [Edition](#Edition) on a [Shelf](#Shelf).
 
 #### Properties
 
@@ -262,9 +273,11 @@ TODO
 
 ### ListItem
 
+`https://www.w3id.org/BookWyrm/ns#ListItem`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A `ListItem` represents an [Edition](#edition) on a [BookList](#booklist).
+A `ListItem` represents an [Edition](#Edition) on a [BookList](#BookList).
 
 #### Properties
 
@@ -283,9 +296,11 @@ TODO
 
 ### SuggestionListItem
 
+`https://www.w3id.org/BookWyrm/ns#SuggestionListItem`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A `SuggestionListItem` represents a suggested [Work](#work) on a [SuggestionList](#suggestionlist).
+A `SuggestionListItem` represents a suggested [Work](#Work) on a [SuggestionList](#SuggestionList).
 
 #### Properties
 
@@ -302,9 +317,11 @@ TODO
 
 ### SeriesBook
 
+`https://www.w3id.org/BookWyrm/ns#SeriesBook`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A `SeriesBook` represents the relationship of a [Work](#work) to a [Series](#series).
+A `SeriesBook` represents the relationship of a [Work](#Work) to a [Series](#Series).
 
 #### Properties
 
@@ -313,8 +330,8 @@ Inherits all the properties of [Object](https://www.w3.org/ns/activitystreams#Ob
 In addition, a `SeriesBook` has the following properties:
 
 - [book](#book): `@id`
-- [series](#series_1): `@id`
-- [seriesNumber](#seriesnumber): `String`
+- [series](#series): `@id`
+- [seriesNumber](#seriesNumber): `String`
 
 #### Example
 
@@ -325,6 +342,8 @@ TODO
 These type are all extensions of the Activity Streams [`Note`](https://www.w3.org/ns/activitystreams#Note) object type.
 
 ### GeneratedNote
+
+`https://www.w3id.org/BookWyrm/ns#GeneratedNote`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -338,9 +357,11 @@ There is no other difference between this type and a [`Note`](https://www.w3.org
 
 ### Comment
 
+`https://www.w3id.org/BookWyrm/ns#Comment`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-An extended `Note` related to an [Edition](#edition).
+An extended `Note` related to an [Edition](#Edition).
 
 #### Properties
 
@@ -348,10 +369,10 @@ Inherits all the properties of [`Note`](https://www.w3.org/ns/activitystreams#No
 
 In addition, a `Comment` has the following extended properties:
 
-- [inReplyToBook](#inreplytobook): `@id`
-- [readingStatus](#readingstatus): `String`
+- [inReplyToBook](#inReplyToBook): `@id`
+- [readingStatus](#readingStatus): `String`
 - [progress](#progress): `int`
-- [progressMode](#progressmode): `String`
+- [progressMode](#progressMode): `String`
 
 #### Example
 
@@ -359,7 +380,7 @@ In addition, a `Comment` has the following extended properties:
 {
     "@context": [
         "https://www.w3.org/ns/activitystreams",
-        {"bw": "https://www.w3id.org/bookwyrm/ns/"}
+        {"bw": "https://www.w3id.org/BookWyrm/ns/"}
     ],
     "id": "https://example.net/user/library_lurker/comment/9",
     "type": ["bw:Comment", "Note"],
@@ -389,9 +410,11 @@ In addition, a `Comment` has the following extended properties:
 
 ### Quotation
 
+`https://www.w3id.org/BookWyrm/ns#Quotation`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A quotation from an [Edition](#edition).
+A quotation from an [Edition](#Edition).
 
 #### Properties
 
@@ -399,9 +422,9 @@ Inherits all the properties of [`Comment`](#comment).
 
 In addition, a `Quotation` has the following extended properties:
 
-- [quote    ](#quote): `String`
+- [quote](#quote): `String`
 - [position](#position): `Number`
-- [positionMode](#positionmode): `String`
+- [positionMode](#positionMode): `String`
 
 ### Example
 
@@ -409,7 +432,7 @@ In addition, a `Quotation` has the following extended properties:
 {
     "@context": [
         "https://www.w3.org/ns/activitystreams",
-        {"bw": "https://www.w3id.org/bookwyrm/ns/"}
+        {"bw": "https://www.w3id.org/BookWyrm/ns/"}
     ],
     "id": "https://example.net/user/mouse/quotation/13",
     "url": "https://example.net/user/mouse/quotation/13",
@@ -444,13 +467,15 @@ In addition, a `Quotation` has the following extended properties:
 
 ### Rating
 
+`https://www.w3id.org/BookWyrm/ns#Rating`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A star rating indicating the actor's impression of the quality of an [Edition](#edition). This is essentially a review without any text.
+A star rating indicating the actor's impression of the quality of an [Edition](#Edition). This is essentially a review without any text.
 
 #### Properties
 
-Inherits the properties of [Review](#review), however `content` and `name` are not used. Although this type inherits from `Review`, the advertised Activity Streams type is `Note` rather than `Activity`.
+Inherits the properties of [Review](#Review), however `content` and `name` are not used. Although this type inherits from `Review`, the advertised Activity Streams type is `Note` rather than `Activity`.
 
 #### Example
 
@@ -458,7 +483,7 @@ Inherits the properties of [Review](#review), however `content` and `name` are n
 {
     "@context": [
         "https://www.w3.org/ns/activitystreams",
-        {"bw": "https://www.w3id.org/bookwyrm/ns/"}
+        {"bw": "https://www.w3id.org/BookWyrm/ns/"}
     ],
     "id": "https://example.com/user/mouse/reviewrating/123",
     "type": ["bw:Rating", "Note"],
@@ -504,9 +529,11 @@ These types inherit all properties from [Article](https://www.w3.org/ns/activity
 
 ### Review
 
+`https://www.w3id.org/BookWyrm/ns#Review`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A written review of an [Edition](#edition).
+A written review of an [Edition](#Edition).
 
 #### Properties
 
@@ -514,7 +541,7 @@ Inherits all properties from [Article](https://www.w3.org/ns/activitystreams#Art
 
 In addition, a `Review` has the following extended properties:
 
-- [rating](#rating_1): `Number`
+- [rating](#rating): `Number`
 
 #### Example
 
@@ -522,7 +549,7 @@ In addition, a `Review` has the following extended properties:
 {
     "@context": [
         "https://www.w3.org/ns/activitystreams",
-        {"bw": "https://www.w3id.org/bookwyrm/ns/"}
+        {"bw": "https://www.w3id.org/BookWyrm/ns/"}
     ],
     "id": "https://example.net/user/library_lurker/review/2",
     "type": ["Review", "Article"],
@@ -561,9 +588,11 @@ In addition, all extended `OrderedCollection` types have the following propertie
 
 - [owner](#owner): `@id`
 
-Other than [Series](#series), these types make use of the `to` and `cc` properties of [`Object`](https://www.w3.org/ns/activitystreams#Object) to enable privacy controlled collections.
+Other than [Series](#Series), these types make use of the `to` and `cc` properties of [`Object`](https://www.w3.org/ns/activitystreams#Object) to enable privacy controlled collections.
 
 ### Shelf
+
+`https://www.w3id.org/BookWyrm/ns#Shelf`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -571,11 +600,11 @@ _Included in version 1.0 of the BookWyrm vocabulary_
 This type is under review and may be removed in a future version of BookWyrm
 </DIV>
 
-A `Shelf` is a collection of [Edition](#edition) objects. Shelves are used to indicate the reading status of an [Edition](#edition).
+A `Shelf` is a collection of [Edition](#Edition) objects. Shelves are used to indicate the reading status of an [Edition](#Edition).
 
 #### Properties
 
-`Shelf` inherits all the [OrderedCollection extended properties](#orderedcollection-extended-properties).
+`Shelf` inherits all the [OrderedCollection extended properties](#Orderedcollection-extended-properties).
 
 #### Example
 
@@ -600,13 +629,15 @@ A `Shelf` is a collection of [Edition](#edition) objects. Shelves are used to in
 
 ### BookList
 
+`https://www.w3id.org/BookWyrm/ns#BookList`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A `BookList` is a collection of [Edition](#edition) objects, grouped together by an [Actor](https://www.w3.org/ns/activitystreams#actor) for any arbitrary reason. Items in a `BookList` are defined in [ListItem](#listitem)
+A `BookList` is a collection of [Edition](#Edition) objects, grouped together by an [Actor](https://www.w3.org/ns/activitystreams#actor) for any arbitrary reason. Items in a `BookList` are defined in [ListItem](#ListItem)
 
 #### Properties
 
-`BookList` inherits all the [OrderedCollection extended properties](#orderedcollection-extended-properties).
+`BookList` inherits all the [OrderedCollection extended properties](#OrderedCollection-extended-properties).
 
 In addition, `BookList` has the following properties:
 
@@ -637,13 +668,15 @@ In addition, `BookList` has the following properties:
 
 ### SuggestionList
 
+`https://www.w3id.org/BookWyrm/ns#SuggestionList`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A `SuggestionList` is a collection of [SuggestionListItem](#suggestionlistitem) objects that can be added to by any [Actor](https://www.w3.org/ns/activitystreams#actor). A `SuggestionList` represents suggested works that may be similar to a given [Work](#work) identified by the [book](#book) property.
+A `SuggestionList` is a collection of [SuggestionListItem](#SuggestionListItem) objects that can be added to by any [Actor](https://www.w3.org/ns/activitystreams#actor). A `SuggestionList` represents suggested works that may be similar to a given [Work](#Work) identified by the [book](#book) property.
 
 #### Properties
 
-`SuggestionList` inherits all the [OrderedCollection extended properties](#orderedcollection-extended-properties).
+`SuggestionList` inherits all the [OrderedCollection extended properties](#OrderedCollection-extended-properties).
 
 In addition, `SuggestionList` has the following properties:
 
@@ -655,15 +688,17 @@ TODO
 
 ### Series
 
+`https://www.w3id.org/BookWyrm/ns#Series`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A `Series` is a collection of [SeriesBook](#seriesbook) objects representing [Work](#work) objects in a formal series. An example of a series is "The Lord of the Rings" by J.R.R. Tolkien.
+A `Series` is a collection of [SeriesBook](#SeriesBook) objects representing [Work](#Work) objects in a formal series. An example of a series is "The Lord of the Rings" by J.R.R. Tolkien.
 
 #### Properties
 
-`Series` inherits all the [OrderedCollection extended properties](#orderedcollection-extended-properties) but does **not** use `to` or `cc` from [`Object`](https://www.w3.org/ns/activitystreams#Object) as there is no concept of "privacy" for `Series` objects.
+`Series` inherits all the [OrderedCollection extended properties](#OrderedCollection-extended-properties) but does **not** use `to` or `cc` from [`Object`](https://www.w3.org/ns/activitystreams#Object) as there is no concept of "privacy" for `Series` objects.
 
-- [alternativeNames](#alternativenames): `Array`
+- [alternativeNames](#alternativeNames): `Array`
 
 #### Example
 
@@ -673,17 +708,21 @@ TODO
 
 ### aasin
 
+`https://www.w3id.org/BookWyrm/ns#aasin`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
 An [Amazon Standard Identification Number](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number) for an Audible audiobook. The same audiobook may have a different ASIN when sold by Amazon directly.
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
 See also: [asin](#asin)
 
 ### aliases
+
+`https://www.w3id.org/BookWyrm/ns#aliases`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -691,11 +730,13 @@ Alternative names an author may be known by.
 
 Type: `Array` of `String`s
 
-Used on: [Author](#author)
+Used on: [Author](#Author)
 
-See also: [alternativeNames](#alternativenames)
+See also: [alternativeNames](#alternativeNames)
 
 ### alternativeNames
+
+`https://www.w3id.org/BookWyrm/ns#alternativeNames`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -703,21 +744,25 @@ Alternative names a series may be known by.
 
 Type: `Array` of `String`s
 
-Used on: [Series](#series)
+Used on: [Series](#Series)
 
 See also: [aliases](#aliases)
 
 ### approved
 
+`https://www.w3id.org/BookWyrm/ns#approved`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-Indicates whether a [ListItem](#listitem) has been approved for inclusion in a [BookList](#booklist). This is only relevant for lists where the value of [curation](#curation) is `curated`.
+Indicates whether a [ListItem](#ListItem) has been approved for inclusion in a [BookList](#BookList). This is only relevant for lists where the value of [curation](#curation) is `curated`.
 
 Type: `Boolean`
 
-Used on: [ListItem](#listitem)
+Used on: [ListItem](#ListItem)
 
 ### asin
+
+`https://www.w3id.org/BookWyrm/ns#asin`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -725,31 +770,37 @@ An [Amazon Standard Identification Number](https://en.wikipedia.org/wiki/Amazon_
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
 See also: [aasin](#aasin)
 
 ### authors
 
+`https://www.w3id.org/BookWyrm/ns#authors`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-The [Author](#author)s associated with a [Work](#work) or [Edition](#edition).
+The [Author](#Author)s associated with a [Work](#Work) or [Edition](#Edition).
 
 Type: `Array` of `@id`s
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 ### bio
 
+`https://www.w3id.org/BookWyrm/ns#bio`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-Biographical information about an [Author](#author).
+Biographical information about an [Author](#Author).
 
 Type: `String`
 
-Used on: [Author](#author)
+Used on: [Author](#Author)
 
 ### bnfId
+
+`https://www.w3id.org/BookWyrm/ns#bnfId`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -757,35 +808,41 @@ Unique identifier assigned by the Bibliothèque nationale de France (National li
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [gutenbergId](#gutenbergId), [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### book
 
+`https://www.w3id.org/BookWyrm/ns#book`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A book related to another object. This may represent either a [Work](#work) or an [Edition](#edition) depending on the object it is a property of.
+A book related to another object. This may represent either a [Work](#Work) or an [Edition](#Edition) depending on the object it is a property of.
 
 Type: `@id`
 
-Used on: [ListItem](#listitem), [SeriesBook](#seriesbook), [ShelfItem](#shelfitem), [SuggestionList](#suggestionlist), [SuggestionListItem](#suggestionlistitem)
+Used on: [ListItem](#ListItem), [SeriesBook](#SeriesBook), [ShelfItem](#ShelfItem), [SuggestionList](#SuggestionList), [SuggestionListItem](#SuggestionListItem)
 
-See also: [editions](#editions), [work](#work_1)
+See also: [editions](#editions), [work](#work)
 
 ### born
 
+`https://www.w3id.org/BookWyrm/ns#born`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-The birth date of an [Author](#author) in the format `YYYY-MM-DD`. This represents a date but takes the form of a string.
+The birth date of an [Author](#Author) in the format `YYYY-MM-DD`. This represents a date but takes the form of a string.
 
 Type: `String`
 
-Used on: [Author](#author)
+Used on: [Author](#Author)
 
 See also: [died](#died)
 
 ### cover
+
+`https://www.w3id.org/BookWyrm/ns#cover`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -793,13 +850,15 @@ The cover image for a book.
 
 Type: [Document](https://www.w3.org/ns/activitystreams#Document)
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 ### curation
 
+`https://www.w3id.org/BookWyrm/ns#curation`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-The type of curation for a [BookList](#booklist). Possible values are:
+The type of curation for a [BookList](#BookList). Possible values are:
 
 - `closed`: only the [owner](#owner) may add items to the list
 - `open`: any other [Actor](https://www.w3.org/ns/activitystreams#actor) may add to the list.
@@ -808,11 +867,13 @@ The type of curation for a [BookList](#booklist). Possible values are:
 
 Type: `String`
 
-Used on: [BookList](#booklist)
+Used on: [BookList](#BookList)
 
 Note: BookWyrm Groups are not currently ActivityPub objects.
 
 ### description
+
+`https://www.w3id.org/BookWyrm/ns#description`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -820,45 +881,53 @@ A brief description or blurb for a book.
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 Note: This is used rather than [summary](https://www.w3.org/ns/activitystreams#summary) because [summary](https://www.w3.org/ns/activitystreams#summary) is widely used within the fediverse (including BookWyrm) as a "content warning" property.
 
 ### died
 
+`https://www.w3id.org/BookWyrm/ns#died`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-The date of death for an [Author](#author) in the format `YYYY-MM-DD`. This represents a date but takes the form of a string.
+The date of death for an [Author](#Author) in the format `YYYY-MM-DD`. This represents a date but takes the form of a string.
 
 Type: `String`
 
-Used on: [Author](#author)
+Used on: [Author](#Author)
 
 See also: [born](#born)
 
 ### editionRank
 
+`https://www.w3id.org/BookWyrm/ns#editionRank`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A preferential ranking for an [Edition](#edition) in comparison to other editions with the same parent work, based on the completeness of the [Edition](#edition) object's metadata. [Edition](#edition) objects with more complete will have a higher rank represented by a lower integer. This is used to determine which edition will be considered the "default".
+A preferential ranking for an [Edition](#Edition) in comparison to other editions with the same parent work, based on the completeness of the [Edition](#Edition) object's metadata. [Edition](#Edition) objects with more complete will have a higher rank represented by a lower integer. This is used to determine which edition will be considered the "default".
 
 Type: `Number`
 
-Used on: [Edition](#edition)
+Used on: [Edition](#Edition)
 
 See also: [order](#order)
 
 ### editions
 
+`https://www.w3id.org/BookWyrm/ns#editions`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A list of [Edition](#edition) objects that derive from a [Work](#work).
+A list of [Edition](#Edition) objects that derive from a [Work](#Work).
 
 Type: `Array` of `id`s
 
-Used on: [Work](#work)
+Used on: [Work](#Work)
 
 ### fileLinks
+
+`https://www.w3id.org/BookWyrm/ns#fileLinks`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -866,9 +935,11 @@ A list of URLs representing web locations for a digital copy of a book.
 
 Type: `Array` of [URL](https://www.w3.org/TR/url) `String`s
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 ### finnaKey
+
+`https://www.w3id.org/BookWyrm/ns#finnaKey`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -876,11 +947,13 @@ The `id` field for any record from the National Library of Finland's [Finna.fi](
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [bnfId](#bnfid), [goodreadsKey](#goodreadskey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [goodreadsKey](#goodreadsKey), [gutenbergId](#gutenbergId), [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### firstPublishedDate
+
+`https://www.w3id.org/BookWyrm/ns#firstPublishedDate`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -888,11 +961,13 @@ The first known publication date for a book in the format `YYYY-MM-DD`. This rep
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
-See also: [publishedDate](#publisheddate)
+See also: [publishedDate](#publishedDate)
 
 ### goodreadsKey
+
+`https://www.w3id.org/BookWyrm/ns#goodreadsKey`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -900,11 +975,13 @@ The unique identifier for any record from [GoodReads](https://www.goodreads.com/
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [gutenbergId](#gutenbergid), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [gutenbergId](#gutenbergId), [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### gutenbergId
+
+`https://www.w3id.org/BookWyrm/ns#gutenbergId`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -912,21 +989,25 @@ The unique identifier for an author from [Project Gutenberg](https://gutenberg.o
 
 Type: `String`
 
-Used on: [Author](#author)
+Used on: [Author](#Author)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### inReplyToBook
 
+`https://www.w3id.org/BookWyrm/ns#inReplyToBook`
+
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-Represents an [Edition](#edition) that is the subject of the content of an object. For example the book that is being reviewed.
+Represents an [Edition](#Edition) that is the subject of the content of an object. For example the book that is being reviewed.
 
 Type: `@id`
 
-Used on: [Comment](#comment), [Quotation](#quotation), [Rating](#rating), [Review](#review)
+Used on: [Comment](#Comment), [Quotation](#Quotation), [Rating](#Rating), [Review](#Review)
 
 ### inventaireId
+
+`https://www.w3id.org/BookWyrm/ns#inventaireId`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -934,13 +1015,15 @@ The unique identifier for any record from [Inventaire](https://inventaire.io).
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
 Note: Inventaire identifiers are [often, but not necessarily the same as wikidata ids](https://wiki.inventaire.io/wiki/Entities_data#Data_sources)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### isbn10
+
+`https://www.w3id.org/BookWyrm/ns#isbn10`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -948,11 +1031,13 @@ An International Standard Book Number (ISBN). `isbn10` is the original 10-digit 
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### isbn13
+
+`https://www.w3id.org/BookWyrm/ns#isbn13`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -960,11 +1045,13 @@ An International Standard Book Number (ISBN). `isbn13` is the modern 13-digit fo
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### isfdb
+
+`https://www.w3id.org/BookWyrm/ns#isfdb`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -972,11 +1059,13 @@ The unique identifier for a record in the [Internet Speculative Fiction Database
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### isni
+
+`https://www.w3id.org/BookWyrm/ns#isni`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -984,11 +1073,13 @@ The [International Standard Name Identifier](https://isni.org/) for an author.
 
 Type: `String`
 
-Used on: [Author](#author)
+Used on: [Author](#Author)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [lccn](#lccn), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [lccn](#lccn), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### languages
+
+`https://www.w3id.org/BookWyrm/ns#languages`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -996,11 +1087,13 @@ A list of the languages in which a book has been published.
 
 Type: `Array` of `String`s.
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 Note: This is an uncontrolled field and may itself be written in multiple languages.
 
 ### lastEditedBy
+
+`https://www.w3id.org/BookWyrm/ns#lastEditedBy`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -1008,9 +1101,11 @@ An [actor](https://www.w3.org/ns/activitystreams#actor) who last made changes to
 
 Type: `@id`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
 ### lccn
+
+`https://www.w3id.org/BookWyrm/ns#lccn`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -1018,11 +1113,13 @@ The [Library of Congress Control Number](https://en.wikipedia.org/wiki/Library_o
 
 Type: `String`
 
-Used on: [Work](#work)
+Used on: [Work](#Work)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingKey), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### librarythingKey
+
+`https://www.w3id.org/BookWyrm/ns#librarythingKey`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -1030,11 +1127,13 @@ A unique identifier from [Library Thing](https://www.librarything.com/).
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [lccn](#lccn), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### librisKey
+
+`https://www.w3id.org/BookWyrm/ns#librisKey`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -1042,13 +1141,15 @@ Unique identifier from the Swedish libraries' union catalogue [Libris](https://l
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingKey), [lccn](#lccn), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
-Used on: [Author](#author), [Review](#review)
+Used on: [Author](#Author), [Review](#Review)
 
 ### notes
+
+`https://www.w3id.org/BookWyrm/ns#notes`
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
@@ -1056,7 +1157,7 @@ A brief explanatory note.
 
 Type: `String`
 
-Used on: [ListItem](#listitem), [SuggestionListItem](#suggestionlistitem)
+Used on: [ListItem](#ListItem), [SuggestionListItem](#SuggestionListItem)
 
 ### oclcNumber
 
@@ -1066,9 +1167,9 @@ Unique identifier for an edition recorded in [OCLC](https://www.oclc.org)'s [Wor
 
 Type: `String`
 
-Used on: [Edition](#edition)
+Used on: [Edition](#Edition)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [openlibraryKey](#openlibrarykey), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingKey), [lccn](#lccn), [librisKey](#librisKey), [openlibraryKey](#openlibraryKey), [viaf](#viaf), [wikidata](#wikidata)
 
 ### openlibraryKey
 
@@ -1078,9 +1179,9 @@ Unique identifier for records from [Open Library](https://openlibrary.org/).
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [viaf](#viaf), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingKey), [lccn](#lccn), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [viaf](#viaf), [wikidata](#wikidata)
 
 ### order
 
@@ -1090,9 +1191,9 @@ An item's place in a sequential order.
 
 Type: `Number`
 
-Used on: [ListItem](#listitem)
+Used on: [ListItem](#ListItem)
 
-See also: [editionRank](#editionrank)
+See also: [editionRank](#editionRank)
 
 ### owner
 
@@ -1102,7 +1203,7 @@ The [Actor](https://www.w3.org/ns/activitystreams#actor) who created an object.
 
 Type: `@id`
 
-Used on: [BookList](#booklist), [Series](#series), [Shelf](#shelf), [SuggestionList](#suggestionlist)
+Used on: [BookList](#BookList), [Series](#Series), [Shelf](#Shelf), [SuggestionList](#SuggestionList)
 
 ### pages
 
@@ -1112,7 +1213,7 @@ The number of pages in a book.
 
 Type: `Number`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 ### physicalFormat
 
@@ -1128,7 +1229,7 @@ The physical format of a book. For example "Paperback". This is a controlled fie
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 ### physicalFormatDetail
 
@@ -1138,7 +1239,7 @@ More specific detail regarding the physical format of a book. For example "spira
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 ### position
 
@@ -1148,7 +1249,7 @@ The position within a book in which a quote appears.
 
 Type: `Number`
 
-Used on: [Quotation](#quotation)
+Used on: [Quotation](#Quotation)
 
 See also: [progress](#progress)
 
@@ -1163,7 +1264,7 @@ The measure that [position](#position) represents. This is a controlled field in
 
 Type: `String`
 
-Used on: [Quotation](#quotation)
+Used on: [Quotation](#Quotation)
 
 See also: [progressMode](#progressmode)
 
@@ -1175,7 +1276,7 @@ How much of a book an [Actor](https://www.w3.org/ns/activitystreams#actor) has r
 
 Type: `Number`
 
-Used on: [Comment](#comment)
+Used on: [Comment](#Comment)
 
 See also: [position](position)
 
@@ -1190,7 +1291,7 @@ The measure that [progress](#progress) represents. This is a controlled field in
 
 Type: `String`
 
-Used on: [Comment](#comment)
+Used on: [Comment](#Comment)
 
 See also: [PositionMode](#positionmode)
 
@@ -1202,9 +1303,9 @@ The publication date for a specific book in the format `YYYY-MM-DD`. This repres
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
-See also: [firstPublishedDate](#firstpublisheddate)
+See also: [firstPublishedDate](#firstPublishedDate)
 
 ### publishers
 
@@ -1214,7 +1315,7 @@ A list of publishers of a book.
 
 Type: `Array` of `String`s
 
-Used on: [Edition](#edition)
+Used on: [Edition](#Edition)
 
 ### quote
 
@@ -1224,25 +1325,25 @@ The text of a quotation from a book.
 
 Type: `String`
 
-Used on: [Quotation](#quotation)
+Used on: [Quotation](#Quotation)
 
-Note: [Quotation](#quotation) objects can be coerced into a [Note](https://www.w3.org/ns/activitystreams#Note). Applications that implement [FEP-044f quote-posts](https://w3id.org/fep/044f#quote) also have a `quote` property which references another [Note](https://www.w3.org/ns/activitystreams#Note) by its id. Care should be taken to ensure the `quote` property is handled correctly according to each context.
+Note: [Quotation](#Quotation) objects can be coerced into a [Note](https://www.w3.org/ns/activitystreams#Note). Applications that implement [FEP-044f quote-posts](https://w3id.org/fep/044f#quote) also have a `quote` property which references another [Note](https://www.w3.org/ns/activitystreams#Note) by its id. Care should be taken to ensure the `quote` property is handled correctly according to each context.
 
 ### rating
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A star rating indicating the [Actor](https://www.w3.org/ns/activitystreams#actor)'s impression of the quality of an [Edition](#edition).
+A star rating indicating the [Actor](https://www.w3.org/ns/activitystreams#actor)'s impression of the quality of an [Edition](#Edition).
 
 Type: `Number`
 
-Used on: [Rating](#rating), [Review](#review)
+Used on: [Rating](#Rating), [Review](#Review)
 
 ### readingStatus
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A status indicating an [Actor](https://www.w3.org/ns/activitystreams#actor)'s overall reading progress for an [Edition](#edition). This is a controlled field in the BookWyrm user interface. Options are:
+A status indicating an [Actor](https://www.w3.org/ns/activitystreams#actor)'s overall reading progress for an [Edition](#Edition). This is a controlled field in the BookWyrm user interface. Options are:
 
 - `to-read`
 - `reading`
@@ -1251,47 +1352,47 @@ A status indicating an [Actor](https://www.w3.org/ns/activitystreams#actor)'s ov
 
 Type: `String`
 
-Used on: [Comment](#comment)
+Used on: [Comment](#Comment)
 
-Note: Currently there is a strong relationship between [readingStatus](#readingstatus) and [ShelfItem](#shelfitem), and every BookWyrm user has a [Shelf](#shelf) with an identifier that matches the reading status options listed above. This may change in future.
+Note: Currently there is a strong relationship between [readingStatus](#readingstatus) and [ShelfItem](#ShelfItem), and every BookWyrm user has a [Shelf](#Shelf) with an identifier that matches the reading status options listed above. This may change in future.
 
-See also: [ShelfItem](#shelfitem)
+See also: [ShelfItem](#ShelfItem)
 
 ### series
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-The name of a series of books, or the `@id` of a [Series](#series).
+The name of a series of books, or the `@id` of a [Series](#Series).
 
 Type: `String` or `@id`
 
-Used on: [Work](#work), [Edition](#edition), [SeriesBook](#seriesbook)
+Used on: [Work](#Work), [Edition](#Edition), [SeriesBook](#SeriesBook)
 
-Note: When used on [Work](#work) or [Edition](#edition), `series` is a legacy property retained for backwards-compatibility. The correct way to identify [Series](#series) objects associated with a [Work](#work) is to dereference any associated [SeriesBook](#seriesbook) objects and their [series](#series_1) property.
+Note: When used on [Work](#Work) or [Edition](#Edition), `series` is a legacy property retained for backwards-compatibility. The correct way to identify [Series](#Series) objects associated with a [Work](#Work) is to dereference any associated [SeriesBook](#SeriesBook) objects and their [series](#series) property.
 
 ### seriesBooks
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-A list of [SeriesBook](#seriesbook) associated with a book.
+A list of [SeriesBook](#SeriesBook) associated with a book.
 
 Type: `Array` of `@id`s
 
-Used on: [Work](#work)
+Used on: [Work](#Work)
 
-Note: This property was formerly also used on [Edition](#edition). Some BookWyrm instances may still send [Edition](#edition) objects with the `seriesBook` property.
+Note: This property was formerly also used on [Edition](#Edition). Some BookWyrm instances may still send [Edition](#Edition) objects with the `seriesBooks` property, which will always be empty.
 
 ### seriesNumber
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-The name of a series of books, or the `@id` of a [Series](#series).
+The name of a series of books, or the `@id` of a [Series](#Series).
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [SeriesBook](#seriesbook)
+Used on: [Work](#Work), [Edition](#Edition), [SeriesBook](#SeriesBook)
 
-Note: When used on [Work](#work) or [Edition](#edition), `seriesNumber` is a legacy property retained for backwards-compatibility. The correct way to identify the series number associated with a [Work](#work) is to dereference any associated [SeriesBook](#seriesbook) objects and their [seriesNumber](#seriesnumber) property.
+Note: When used on [Work](#Work) or [Edition](#Edition), `seriesNumber` is a legacy property retained for backwards-compatibility. The correct way to identify the series number associated with a [Work](#Work) is to dereference any associated [SeriesBook](#SeriesBook) objects and their [seriesNumber](#seriesNumber) property.
 
 ### sortTitle
 
@@ -1301,7 +1402,7 @@ A version of a book title used for the purposes of alphabetical sorting.
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 Note: This property does not currently handle multi-lingual sorting.
 
@@ -1313,7 +1414,7 @@ A list of geographic locations in which a book is set.
 
 Type: `Array` of `String`s
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 ### subjects
 
@@ -1323,7 +1424,7 @@ A list of topics a book is about.
 
 Type: `Array` of `String`s
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 ### subtitle
 
@@ -1333,7 +1434,7 @@ A secondary part of the title of a book. Same as [alternativeHeadline](https://s
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 Note: this does _not_ refer to an "alternative" title.
 
@@ -1347,7 +1448,7 @@ The title or name of a book.
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition)
+Used on: [Work](#Work), [Edition](#Edition)
 
 See also: [subtitle](#subtitle)
 
@@ -1359,9 +1460,9 @@ Unique identifier from the [The Virtual International Authority File](https://vi
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [wikidata](#wikidata)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingKey), [lccn](#lccn), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [wikidata](#wikidata)
 
 ### website
 
@@ -1371,7 +1472,7 @@ The personal website of an author.
 
 Type: `String` representing a [URL](https://www.w3.org/TR/url)
 
-Used on: [Author](#author)
+Used on: [Author](#Author)
 
 ### wikidata
 
@@ -1381,9 +1482,9 @@ Unique identifier for a record from the [wikidata](https://www.wikidata.org).
 
 Type: `String`
 
-Used on: [Work](#work), [Edition](#edition), [Author](#author), [Series](#series)
+Used on: [Work](#Work), [Edition](#Edition), [Author](#Author), [Series](#Series)
 
-See also: [bnfId](#bnfid), [finnaKey](#finnakey), [goodreadsKey](#goodreadskey), [GutenbergId](#gutenbergid) [inventaireId](#inventaireid), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingkey), [lccn](#lccn), [librisKey](#libriskey), [oclcNumber](#oclcnumber), [openlibraryKey](#openlibrarykey), [viaf](#viaf)
+See also: [bnfId](#bnfid), [finnaKey](#finnaKey), [goodreadsKey](#goodreadsKey), [GutenbergId](#GutenbergId) [inventaireId](#inventaireId), [isbn10](#isbn10), [isbn13](#isbn13), [isfdb](#isfdb), [isni](#isni), [librarythingKey](#librarythingKey), [lccn](#lccn), [librisKey](#librisKey), [oclcNumber](#oclcNumber), [openlibraryKey](#openlibraryKey), [viaf](#viaf)
 
 ### wikipediaLink
 
@@ -1393,16 +1494,16 @@ The URL of a Wikipedia page.
 
 Type: `String` representing a [URL](https://www.w3.org/TR/url)
 
-Used on: [Author](#author)
+Used on: [Author](#Author)
 
-Note: As [Author](#author) also has a [wikidata](#wikidata) property which could be used to obtain Wikipedia URLs, this property may be removed in future.
+Note: As [Author](#Author) also has a [wikidata](#wikidata) property which could be used to obtain Wikipedia URLs, this property may be removed in future.
 
 ### work
 
 _Included in version 1.0 of the BookWyrm vocabulary_
 
-The parent [Work](#work) of an [Edition](#edition).
+The parent [Work](#Work) of an [Edition](#Edition).
 
 Type: `@id`
 
-Used on: [Edition](#edition)
+Used on: [Edition](#Edition)
