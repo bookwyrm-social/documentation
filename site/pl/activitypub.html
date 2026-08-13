@@ -2782,8 +2782,8 @@ ActivityPub
 <section class="block content">
     <p>BookWyrm korzysta z protokołu <a href="http://activitypub.rocks/">ActivityPub</a> do wysyłania i odbierania aktywności użytkownika pomiędzy instancjami BookWyrm oraz innymi usługami, które korzystają z ActivityPub, takimi jak <a href="https://joinmastodon.org/">Mastodon</a>. Do obsługi danych na temat książek BookWyrm posiada kilka rozszerzonych typów Aktywności, które nie są częścią standardu, ale są czytelne dla innych instancji BookWyrm.</p>
 <p>To view the ActivityPub data for a BookWyrm entity (user, book, list, etc) you can usually add <code>.json</code> to the end of the URL. e.g. <code>https://www.example.com/user/sam.json</code> and see the JSON in your web browser or via an http request (e.g. using <code>curl</code>).</p>
-<h2 id="Aktywności-i-obiekty">Aktywności i obiekty<a class="anchor ml-2" href="#Aktywności-i-obiekty" title="Permanent link">&para;</a></h2>
-<h3 id="Użytkownicy-i-stosunki">Użytkownicy i stosunki<a class="anchor ml-2" href="#Użytkownicy-i-stosunki" title="Permanent link">&para;</a></h3>
+<h2 id="aktywnosci-i-obiekty">Aktywności i obiekty<a class="anchor ml-2" href="#aktywnosci-i-obiekty" title="Permanent link">&para;</a></h2>
+<h3 id="uzytkownicy-i-stosunki">Użytkownicy i stosunki<a class="anchor ml-2" href="#uzytkownicy-i-stosunki" title="Permanent link">&para;</a></h3>
 <p>Interakcje stosunków między użytkownikami są zgodne ze specyfikacją ActivityPub.</p>
 <ul>
 <li><code>Obserwuj</code>: poproś o otrzymywanie statusów od użytkownika oraz przeglądanie ich statusów, które mogą wyświetlić tylko obserwujący</li>
@@ -2795,15 +2795,15 @@ ActivityPub
 <li><code>Cofnij</code>: anuluje <code>Obserwowanie</code> lub <code>Zablokowanie</code></li>
 <li><code>Move</code>: communicate that a user has changed their ID and has moved to a new server. Most ActivityPub software will "follow" the user to the new identity. BookWyrm sends a notification to followers and requires them to confirm they want to follow the user to their new identity.</li>
 </ul>
-<h3 id="Statusy">Statusy<a class="anchor ml-2" href="#Statusy" title="Permanent link">&para;</a></h3>
-<h4 id="Typy-obiektów">Typy obiektów<a class="anchor ml-2" href="#Typy-obiektów" title="Permanent link">&para;</a></h4>
+<h3 id="statusy">Statusy<a class="anchor ml-2" href="#statusy" title="Permanent link">&para;</a></h3>
+<h4 id="typy-obiektow">Typy obiektów<a class="anchor ml-2" href="#typy-obiektow" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>Notatka</code>: W usługach takich jak Mastodon, <code>Notatki</code> są podstawowym typem statusów. Zawierają treść wiadomości, załączniki, wzmianki o użytkownikach oraz są odpowiedziami na inne statusy dowolnego typu. Within BookWyrm, <code>Note</code>s can only be created as direct messages or as replies to other statuses.</li>
 <li><code>Review</code>: A review is a status in response to a book (indicated by the <code>inReplyToBook</code> field), which has a title, body, and numerical rating between 0 (not rated) and 5.</li>
 <li><code>Komentarz</code>: komentarz do książki wspomina o książce i zawiera treść.</li>
 <li><code>Quotation</code>: A quote has a message body, an excerpt from a book, and mentions a book.</li>
 </ul>
-<h4 id="Aktywności">Aktywności<a class="anchor ml-2" href="#Aktywności" title="Permanent link">&para;</a></h4>
+<h4 id="aktywnosci">Aktywności<a class="anchor ml-2" href="#aktywnosci" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><code>Tworzenie</code>: zapisuje nowy status w bazie danych.</p>
@@ -2821,37 +2821,37 @@ ActivityPub
 <li><code>Ogłoś</code>: Promuje status do osi czasu podmiotu</li>
 <li><code>Cofnij</code>: Anuluje <code>Polub</code> lub <code>Ogłoś</code></li>
 </ul>
-<h3 id="Kolekcje">Kolekcje<a class="anchor ml-2" href="#Kolekcje" title="Permanent link">&para;</a></h3>
+<h3 id="kolekcje">Kolekcje<a class="anchor ml-2" href="#kolekcje" title="Permanent link">&para;</a></h3>
 <p>Listy oraz książki użytkownika są reprezentowane przez <a href="https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection"><code>OrderedCollection</code></a></p>
-<h4 id="Obiekty">Obiekty<a class="anchor ml-2" href="#Obiekty" title="Permanent link">&para;</a></h4>
+<h4 id="obiekty">Obiekty<a class="anchor ml-2" href="#obiekty" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>Półka</code>: Kolekcja książek użytkownika. By default, every user has a <code>to-read</code>, <code>reading</code>, <code>stop-reading</code> and <code>read</code> shelf which are used to track reading progress.</li>
 <li><code>Lista</code>: Kolekcja książek, która może zawierać elementy od użytkowników innych niż jej autor.</li>
 </ul>
-<h4 id="Aktywności_1">Aktywności<a class="anchor ml-2" href="#Aktywności_1" title="Permanent link">&para;</a></h4>
+<h4 id="aktywnosci_1">Aktywności<a class="anchor ml-2" href="#aktywnosci_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>Utwórz</code>: Dodaje półkę lub listę do bazy danych.</li>
 <li><code>Usuń</code>: Usuwa półkę lub listę.</li>
 <li><code>Dodaj</code>: Dodaje książkę na półkę lub do listy.</li>
 <li><code>Usuń</code>: Usuwa książkę z półki lub listy.</li>
 </ul>
-<h2 id="Alternatywna-serializacja">Alternatywna serializacja<a class="anchor ml-2" href="#Alternatywna-serializacja" title="Permanent link">&para;</a></h2>
+<h2 id="alternatywna-serializacja">Alternatywna serializacja<a class="anchor ml-2" href="#alternatywna-serializacja" title="Permanent link">&para;</a></h2>
 <p>BookWyrm wykorzystuje niestandardowe typy obiektów (<code>Recenzja</code>, <code>Komentarz</code>, <code>Cytat</code>), które nie są obsługiwane przez ActivityPub, dlatego statusy są zamieniane na standardowe typy, gdy są wysyłane do lub wyświetlane w usługach poza BookWyrm. <code>Recenzja</code> jest konwertowana na <code>Artykuł</code>, a <code>Komentarz</code> oraz <code>Cytat</code> są konwertowane na <code>Notatki</code> z odnośnikiem do książki oraz załączonym obrazem okładki.</p>
 <p>This may change in future in favor of the more ActivityPub-compliant <a href="https://www.w3.org/TR/activitystreams-core/#fig-following-is-an-example-object-that-uses-the-id-and-type-properties-to-express-the-global-identifier-and-object-type">extended Object types</a> listed alongside core ActivityPub types.</p>
-<h2 id="Making-ActivityPub-aware-models">Making ActivityPub-aware models<a class="anchor ml-2" href="#Making-ActivityPub-aware-models" title="Permanent link">&para;</a></h2>
+<h2 id="making-activitypub-aware-models">Making ActivityPub-aware models<a class="anchor ml-2" href="#making-activitypub-aware-models" title="Permanent link">&para;</a></h2>
 <p>The way BookWyrm sends and receives ActivityPub objects can be confusing for developers who are new to BookWyrm. It is mostly controlled by:</p>
 <ul>
 <li>Functions and <a href="https://docs.python.org/3/library/dataclasses.html">data classes</a> outlined in the <a href="https://github.com/bookwyrm-social/bookwyrm/tree/main/bookwyrm/activitypub">activitypub</a> directory</li>
 <li>The <a href="https://github.com/bookwyrm-social/bookwyrm/blob/c458cdcb992a36f3c4a06752499461c3dd991e07/bookwyrm/models/activitypub_mixin.py#L40">ActivitypubMixin</a> and its children for models that are serializable for ActivityPub requests</li>
 </ul>
-<h3 id="Serializing-data-to-and-from-ActivityPub-JSON">Serializing data to and from ActivityPub JSON<a class="anchor ml-2" href="#Serializing-data-to-and-from-ActivityPub-JSON" title="Permanent link">&para;</a></h3>
+<h3 id="serializing-data-to-and-from-activitypub-json">Serializing data to and from ActivityPub JSON<a class="anchor ml-2" href="#serializing-data-to-and-from-activitypub-json" title="Permanent link">&para;</a></h3>
 <p>BookWyrm needs to know how to <em>serialize</em> the data from the model into an ActivityPub JSON-LD object.</p>
 <p>The <code>/activitypub/base_activity.py</code> file provides the core functions that turn ActivityPub JSON-LD strings into usable Django model objects, and vice-versa. We do this by creating a data class in <code>bookwyrm/activitypub</code>, and defining how the model should be serialized by providing an <code>activity_serializer</code> value in the model, which points to the relevant data class. From <code>ActivityObject</code> we inherit <code>id</code> and <code>type</code>, and two <em>class methods</em>:</p>
 <p><strong><code>to_model</code></strong></p>
 <p>This method takes an ActivityPub JSON string and tries to turn it into a BookWyrm model object, finding an existing object wherever possible. This is how we process <strong>incoming</strong> ActivityPub objects.</p>
 <p><strong><code>serialize</code></strong></p>
 <p>This method takes a BookWyrm model object, and turns it into a valid ActivityPub JSON string using the dataclass definitions. This is how we process <strong>outgoing</strong> ActivityPub objects.</p>
-<h3 id="Example-Users">Example - Users<a class="anchor ml-2" href="#Example-Users" title="Permanent link">&para;</a></h3>
+<h3 id="example-users">Example - Users<a class="anchor ml-2" href="#example-users" title="Permanent link">&para;</a></h3>
 <p>A BookWyrm user <a href="https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py">is defined in <code>models/user.py</code></a>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;a user who wants to read books&quot;&quot;&quot;</span>

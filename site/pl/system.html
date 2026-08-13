@@ -311,22 +311,22 @@ System Monitoring
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Imports">Imports</a>
+                  <a class="navbar-item" href="#imports">Imports</a>
                   
               
-                  <a class="navbar-item" href="#Celery-Status">Celery Status</a>
+                  <a class="navbar-item" href="#celery-status">Celery Status</a>
                   
               
-                  <a class="navbar-item" href="#Scheduled-Tasks">Scheduled Tasks</a>
+                  <a class="navbar-item" href="#scheduled-tasks">Scheduled Tasks</a>
                   
               
-                  <a class="navbar-item" href="#Email-configuration">Email configuration</a>
+                  <a class="navbar-item" href="#email-configuration">Email configuration</a>
                   
               
-                  <a class="navbar-item" href="#Connectors">Connectors</a>
+                  <a class="navbar-item" href="#connectors">Connectors</a>
                   
               
-                  <a class="navbar-item" href="#Files-maintenance">Files maintenance</a>
+                  <a class="navbar-item" href="#files-maintenance">Files maintenance</a>
                   
               
             </div>
@@ -345,18 +345,18 @@ System Monitoring
                 
 <section class="block content">
     <p>The <code>Admin &gt; System</code> menu provides instance admins with a number of system monitoring features, and configuration options for background tasks.</p>
-<h2 id="Imports">Imports<a class="anchor ml-2" href="#Imports" title="Permanent link">&para;</a></h2>
+<h2 id="imports">Imports<a class="anchor ml-2" href="#imports" title="Permanent link">&para;</a></h2>
 <p>From the <strong>Imports</strong> page you can manage imports for books and both imports and exports for users. user exports are disabled by default. From this page you can monitor and, if necessary, cancel Book and User imports if they are causing errors, as well as setting limits on how often users can run imports. This is important if your instance is suffering performance problems due to a large number of import or export background jobs.</p>
-<h2 id="Celery-Status">Celery Status<a class="anchor ml-2" href="#Celery-Status" title="Permanent link">&para;</a></h2>
+<h2 id="celery-status">Celery Status<a class="anchor ml-2" href="#celery-status" title="Permanent link">&para;</a></h2>
 <p>The <strong>Celery Status</strong> page provides an overview of celery tasks and can provide an indication of which queues may be causing issues if your instance has become slow. From this page you can also clear entire queues and tasks, however this is generally a last resort as it may lead to data loss.</p>
-<h2 id="Scheduled-Tasks">Scheduled Tasks<a class="anchor ml-2" href="#Scheduled-Tasks" title="Permanent link">&para;</a></h2>
+<h2 id="scheduled-tasks">Scheduled Tasks<a class="anchor ml-2" href="#scheduled-tasks" title="Permanent link">&para;</a></h2>
 <p>You can monitor tasks schedules at <code>Admin &gt; System &gt; Scheduled Tasks</code>. Tasks are triggered from other pages.</p>
-<h2 id="Email-configuration">Email configuration<a class="anchor ml-2" href="#Email-configuration" title="Permanent link">&para;</a></h2>
+<h2 id="email-configuration">Email configuration<a class="anchor ml-2" href="#email-configuration" title="Permanent link">&para;</a></h2>
 <p>Check your outgoing email configuration here, and trigger a test email. This page may move in future.</p>
-<h2 id="Connectors">Connectors<a class="anchor ml-2" href="#Connectors" title="Permanent link">&para;</a></h2>
+<h2 id="connectors">Connectors<a class="anchor ml-2" href="#connectors" title="Permanent link">&para;</a></h2>
 <p>Connectors are sources of data about books and authors. From this page you can enable or disable connectors, and set their priority. Other BookWyrm servers, Inventaire, and Open Library are enabled by default.</p>
 <p>The priority determines the order in which search results appear. The highest priority is 1. The default priority is 2. Connector settings only determine whether a connector will be used to deliver search results. To handle federation and moderation, see <code>Admin &gt; Federation</code> or <code>Admin &gt; Moderation</code>.</p>
-<h2 id="Files-maintenance">Files maintenance<a class="anchor ml-2" href="#Files-maintenance" title="Permanent link">&para;</a></h2>
+<h2 id="files-maintenance">Files maintenance<a class="anchor ml-2" href="#files-maintenance" title="Permanent link">&para;</a></h2>
 <p>This section is where you can configure a number of background jobs related to export and import files, and book cover images.</p>
 <p>At <strong>Schedule file deletion</strong> you can schedule a regular job to delete user import and export files that have reached their expiry age. The expiry age is determined at <strong>Export file expiration</strong>.</p>
 <p>The <strong>Find book covers from connectors</strong> section can help you with two different but related problems.</p>

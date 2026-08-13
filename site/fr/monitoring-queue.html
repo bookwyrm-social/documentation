@@ -311,13 +311,13 @@ Suivi de la file d'attente
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Celery">Celery</a>
+                  <a class="navbar-item" href="#celery">Celery</a>
                   
               
-                  <a class="navbar-item" href="#Flower">Flower</a>
+                  <a class="navbar-item" href="#flower">Flower</a>
                   
                       
-                      <a class="navbar-item" href="#Tâches"><span class="pl-4">Tâches</span></a>
+                      <a class="navbar-item" href="#taches"><span class="pl-4">Tâches</span></a>
                       
                   
               
@@ -337,16 +337,16 @@ Suivi de la file d'attente
                 
 <section class="block content">
     <p>Il peut arriver que votre instance tourne au ralenti. One option would be to inspect the queue to see whether some jobs hang. Lisez ce qui suit afin de savoir comment.</p>
-<h2 id="Celery">Celery<a class="anchor ml-2" href="#Celery" title="Permanent link">&para;</a></h2>
+<h2 id="celery">Celery<a class="anchor ml-2" href="#celery" title="Permanent link">&para;</a></h2>
 <p>BookWyrm uses <a href="https://docs.celeryq.dev/en/stable/">Celery</a> to manage background jobs.</p>
 <p>By default this <a href="https://docs.celeryq.dev/en/stable/userguide/concurrency/gevent.html">uses gevent</a> to run 1000 concurrent tasks with greenlet under a single worker. This allow for high throughput of tasks whilst restricting Celery to using a single CPU core, reducing the risk of CPU and RAM overload. If your BookWyrm instance requires more workers, you can increase this with the <a href="https://docs.docker.com/reference/cli/docker/compose/up/"><code>--scale</code></a> flag applied to the <code>celery_worker</code> service:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>--scale<span class="w"> </span><span class="nv">celery_worker</span><span class="o">=</span><span class="m">3</span>
 </code></pre></div>
 
-<h2 id="Flower">Flower<a class="anchor ml-2" href="#Flower" title="Permanent link">&para;</a></h2>
+<h2 id="flower">Flower<a class="anchor ml-2" href="#flower" title="Permanent link">&para;</a></h2>
 <p>To watch Celery jobs in real-time BookWyrm uses <a href="https://flower.readthedocs.io/en/latest/">Flower</a>.</p>
 <p>By default you can view flower logs from <code>https://example.com/flower/</code>. You will need to enter the login name and password from your <code>.env</code> file. Celery can help to troubleshoot problems you may be having with your task queue.</p>
-<h3 id="Tâches">Tâches<a class="anchor ml-2" href="#Tâches" title="Permanent link">&para;</a></h3>
+<h3 id="taches">Tâches<a class="anchor ml-2" href="#taches" title="Permanent link">&para;</a></h3>
 <p>If you want to know which actions are sent to celery, you can find <a href="https://github.com/bookwyrm-social/bookwyrm/search?q=%40app.task"><code>@app.task</code> annotated</a> tasks in the codebase.</p>
 </section>
 

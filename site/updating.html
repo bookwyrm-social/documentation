@@ -303,7 +303,7 @@ Updating Your Instance
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Re-building-activity-streams">Re-building activity streams</a>
+                  <a class="navbar-item" href="#re-building-activity-streams">Re-building activity streams</a>
                   
               
             </div>
@@ -330,7 +330,7 @@ Updating Your Instance
 <li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> loads any updated static files (such as the JavaScript and CSS)</li>
 <li><code>docker-compose down; docker-compose up -d</code> will restart all the docker containers and make use of the newly built images (Attention: downtime during the restart)</li>
 </ul>
-<h2 id="Re-building-activity-streams">Re-building activity streams<a class="anchor ml-2" href="#Re-building-activity-streams" title="Permanent link">&para;</a></h2>
+<h2 id="re-building-activity-streams">Re-building activity streams<a class="anchor ml-2" href="#re-building-activity-streams" title="Permanent link">&para;</a></h2>
 <p>Feeds for each user are stored in Redis. To re-populate a stream, use the management command:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>populate_streams
 <span class="c1"># Or use docker-compose directly</span>

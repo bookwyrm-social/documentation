@@ -311,16 +311,16 @@ User Migration and Aliases
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Exporting-account-data">Exporting account data</a>
+                  <a class="navbar-item" href="#exporting-account-data">Exporting account data</a>
                   
               
-                  <a class="navbar-item" href="#Aliases">Aliases</a>
+                  <a class="navbar-item" href="#aliases">Aliases</a>
                   
               
-                  <a class="navbar-item" href="#Moving-an-account">Moving an account</a>
+                  <a class="navbar-item" href="#moving-an-account">Moving an account</a>
                   
               
-                  <a class="navbar-item" href="#Importing-account-data">Importing account data</a>
+                  <a class="navbar-item" href="#importing-account-data">Importing account data</a>
                   
               
             </div>
@@ -339,7 +339,7 @@ User Migration and Aliases
                 
 <section class="block content">
     <p>You can migrate your account between BookWyrm instances, and/or set up an <em>alias</em> between any ActivityPub account and your BookWyrm acccount.</p>
-<h2 id="Exporting-account-data">Exporting account data<a class="anchor ml-2" href="#Exporting-account-data" title="Permanent link">&para;</a></h2>
+<h2 id="exporting-account-data">Exporting account data<a class="anchor ml-2" href="#exporting-account-data" title="Permanent link">&para;</a></h2>
 <p>You can export your account data at any time, however there will be a limit on how often you can do this, set by your instance admin. When you create an export file a process will run in the background and you will be notified when it is completed and ready for download. Export files are in <code>tar.gz</code> format.</p>
 <p>Account export files include:</p>
 <ul>
@@ -360,14 +360,14 @@ User Migration and Aliases
 <li>Groups</li>
 <li>Favorites</li>
 </ul>
-<h2 id="Aliases">Aliases<a class="anchor ml-2" href="#Aliases" title="Permanent link">&para;</a></h2>
+<h2 id="aliases">Aliases<a class="anchor ml-2" href="#aliases" title="Permanent link">&para;</a></h2>
 <p>An <em>alias</em> indicates to ActivityPub software that two accounts represent and are controlled by the same person. You can assign any ActivityPub account as an alias of your BookWyrm account by navigating to <code>Settings - Aliases</code>.</p>
 <p>Setting an account as an alias is easily reversible, and is required to migrate accounts.</p>
-<h2 id="Moving-an-account">Moving an account<a class="anchor ml-2" href="#Moving-an-account" title="Permanent link">&para;</a></h2>
+<h2 id="moving-an-account">Moving an account<a class="anchor ml-2" href="#moving-an-account" title="Permanent link">&para;</a></h2>
 <p>You can "move" an account from one to another at <code>Settings - Move Account</code>. Moving your account will notify all your followers and direct them to follow the new (target) account - including followers from non-BookWyrm servers. If you also want to move your user data, see "Importing account data" below.</p>
 <p>Your old (origin) account will be marked as moved and will not be discoverable or usable unless you undo the move, which you can do at any time, however any followers who have migrated their follow from the old account to the new account will no longer be following your old account.</p>
 <p>You <em>must</em> set the old (source) user as an alias of the new (target) user in the settings of the target account for a <code>Move</code> to work.</p>
-<h2 id="Importing-account-data">Importing account data<a class="anchor ml-2" href="#Importing-account-data" title="Permanent link">&para;</a></h2>
+<h2 id="importing-account-data">Importing account data<a class="anchor ml-2" href="#importing-account-data" title="Permanent link">&para;</a></h2>
 <p>Once you have an export file you can import it into another BookWyrm instance. To do so, you must first set the new (target) account as an alias of the old (source) account, or <code>Move</code> the old account to the new one.</p>
 <p>It is important to read the instructions on the account import page as some data will be overwritten if selected. There is also a limit on how often you can import user data.</p>
 <ul>

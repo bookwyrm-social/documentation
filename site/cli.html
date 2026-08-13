@@ -303,7 +303,7 @@ Command Line Tool
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Development-commands">Development commands</a>
+                  <a class="navbar-item" href="#development-commands">Development commands</a>
                   
                       
                       <a class="navbar-item" href="#devcommand-args"><span class="pl-4">devcommand args</span></a>
@@ -312,13 +312,13 @@ Command Line Tool
                       
                       <a class="navbar-item" href="#pytest-args"><span class="pl-4">pytest [args]</span></a>
                       
-                      <a class="navbar-item" href="#Internationalisation-and-localisation"><span class="pl-4">Internationalisation and localisation</span></a>
+                      <a class="navbar-item" href="#internationalisation-and-localisation"><span class="pl-4">Internationalisation and localisation</span></a>
                       
-                      <a class="navbar-item" href="#Formatters-and-linters"><span class="pl-4">Formatters and linters</span></a>
+                      <a class="navbar-item" href="#formatters-and-linters"><span class="pl-4">Formatters and linters</span></a>
                       
                   
               
-                  <a class="navbar-item" href="#Dangerous-development-commands">Dangerous development commands</a>
+                  <a class="navbar-item" href="#dangerous-development-commands">Dangerous development commands</a>
                   
                       
                       <a class="navbar-item" href="#clean"><span class="pl-4">clean</span></a>
@@ -331,7 +331,7 @@ Command Line Tool
                       
                   
               
-                  <a class="navbar-item" href="#Dual-purpose-commands">Dual purpose commands</a>
+                  <a class="navbar-item" href="#dual-purpose-commands">Dual purpose commands</a>
                   
                       
                       <a class="navbar-item" href="#create_secrets"><span class="pl-4">create_secrets</span></a>
@@ -388,7 +388,7 @@ Command Line Tool
                       
                   
               
-                  <a class="navbar-item" href="#Production-only-commands">Production-only commands</a>
+                  <a class="navbar-item" href="#production-only-commands">Production-only commands</a>
                   
                       
                       <a class="navbar-item" href="#update"><span class="pl-4">update</span></a>
@@ -399,7 +399,7 @@ Command Line Tool
                       
                   
               
-                  <a class="navbar-item" href="#Utilities">Utilities</a>
+                  <a class="navbar-item" href="#utilities">Utilities</a>
                   
                       
                       <a class="navbar-item" href="#upgrade_db_version"><span class="pl-4">upgrade_db_version</span></a>
@@ -424,7 +424,7 @@ Command Line Tool
     <p>Bookwyrm developers and instance managers can use the <code>bw-dev</code> script for common tasks. This can make your commands shorter, easier to remember, and harder to mess up.</p>
 <p>Once you have installed Bookwyrm <a href="install-prod.html">in production</a> or <a href="https://docs.joinbookwyrm.com/install-dev.html#setting-up-the-developer-environment">in development</a>, you can run the script from the command line with <code>./bw-dev</code> followed by the subcommand you want to run.</p>
 <p>Some commands only run in development environments, most can be run in either development or production, and a small number should only be run in production. Development commands run in a dedicated Docker environment configured in <code>docker-compose.dev.yml</code>, whereas production commands run in the production environment configured in <code>docker-compose.yml</code>. Production containers and volumes have names starting with <code>bookwyrm</code>, and development containers and volumes start with <code>dev-wyrm</code></p>
-<h2 id="Development-commands">Development commands<a class="anchor ml-2" href="#Development-commands" title="Permanent link">&para;</a></h2>
+<h2 id="development-commands">Development commands<a class="anchor ml-2" href="#development-commands" title="Permanent link">&para;</a></h2>
 <p>These commands always run in the <code>dev-wyrm</code> container, without needing to use the <code>dev</code> prefix. They generally are commands that interact with the local file system.</p>
 <p>In the standard BookWyrm docker configuration, <code>dev-wyrm</code> uses a bind mount to link the BookWyrm directory on the host machine to the container file system.</p>
 <h3 id="devcommand-args">devcommand <em>args</em><a class="anchor ml-2" href="#devcommand-args" title="Permanent link">&para;</a></h3>
@@ -434,14 +434,14 @@ Command Line Tool
 <p>If your production BookWyrm has diverged from the production code for some reason and you need to use <code>makemigrations</code>, you will need to run this command against the development database, then <code>build</code> against production. See <a href="https://github.com/bookwyrm-social/bookwyrm/issues/3919">this issue for more detail</a>.</p>
 <h3 id="pytest-args">pytest [args]<a class="anchor ml-2" href="#pytest-args" title="Permanent link">&para;</a></h3>
 <p>Run tests with <code>pytest</code>. You can add pytest arguments to this command to check only a certain directory or file, or include logging (<code>-s</code>), omit coverage reports (<code>--no-cov</code>) etc.</p>
-<h3 id="Internationalisation-and-localisation">Internationalisation and localisation<a class="anchor ml-2" href="#Internationalisation-and-localisation" title="Permanent link">&para;</a></h3>
+<h3 id="internationalisation-and-localisation">Internationalisation and localisation<a class="anchor ml-2" href="#internationalisation-and-localisation" title="Permanent link">&para;</a></h3>
 <h4 id="makemessages">makemessages<a class="anchor ml-2" href="#makemessages" title="Permanent link">&para;</a></h4>
 <p>Finds all translation strings in the app and puts them in the one reference file, <code>locale/en_US/LC_MESSAGES/django.po</code>. After you have run <code>makemessages</code> you need to run <code>compilemessages</code> to compile the translations. See <a href="https://docs.djangoproject.com/en/5.2/ref/django-admin/#makemessages">Django's makemessages</a>.</p>
 <h4 id="compilemessages">compilemessages<a class="anchor ml-2" href="#compilemessages" title="Permanent link">&para;</a></h4>
 <p>Compiles translation files. See <a href="https://docs.djangoproject.com/en/5.2/ref/django-admin/#compilemessages">Django's compilemessages</a>.</p>
 <h4 id="update_locales">update_locales<a class="anchor ml-2" href="#update_locales" title="Permanent link">&para;</a></h4>
 <p>Runs <code>makemessages</code> followed by <code>compilemessages</code>.</p>
-<h3 id="Formatters-and-linters">Formatters and linters<a class="anchor ml-2" href="#Formatters-and-linters" title="Permanent link">&para;</a></h3>
+<h3 id="formatters-and-linters">Formatters and linters<a class="anchor ml-2" href="#formatters-and-linters" title="Permanent link">&para;</a></h3>
 <h4 id="mypy">mypy<a class="anchor ml-2" href="#mypy" title="Permanent link">&para;</a></h4>
 <p>Runs the <a href="https://www.mypy-lang.org"><code>mypy</code> type checker</a>. We are gradually adding type checking to the BookWyrm codebase. This is not required for code contributions, but is encouraged.</p>
 <h4 id="ruff">ruff<a class="anchor ml-2" href="#ruff" title="Permanent link">&para;</a></h4>
@@ -460,7 +460,7 @@ Command Line Tool
 <p>BookWyrm uses <a href="https://stylelint.io/">Stylelint</a> to keep the CSS files consistently styled. Run <code>stylelint</code> before committing changes to scripts to automatically format your code.</p>
 <h4 id="formatters">formatters<a class="anchor ml-2" href="#formatters" title="Permanent link">&para;</a></h4>
 <p>This command runs all code formatters (<code>ruff format</code>, <code>ruff check</code>, <code>prettier</code>,<code>eslint</code>  and <code>stylelint</code>) in one go.</p>
-<h2 id="Dangerous-development-commands">Dangerous development commands<a class="anchor ml-2" href="#Dangerous-development-commands" title="Permanent link">&para;</a></h2>
+<h2 id="dangerous-development-commands">Dangerous development commands<a class="anchor ml-2" href="#dangerous-development-commands" title="Permanent link">&para;</a></h2>
 <p>These commands only run if you use the <code>dev</code> prefix. This ensures that they run in the <code>dev-wyrm</code> container, but also serves as a reminder that they should not run in production. These commands can be dangerous or highly destructive and you should ensure you understand what they do before using them!</p>
 <h3 id="clean">clean<a class="anchor ml-2" href="#clean" title="Permanent link">&para;</a></h3>
 <p>Remove all stopped Docker containers.</p>
@@ -476,7 +476,7 @@ docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
 <h3 id="service_ports_web-args">service_ports_web <em>args</em><a class="anchor ml-2" href="#service_ports_web-args" title="Permanent link">&para;</a></h3>
 <p>Run an arbitrary command in the <code>web</code> container (represented above by <code>args</code>) with ports exposed. This is useful if you want to run <code>pdb</code> tests because <code>runweb</code> will not expose the <code>pdb</code> prompt.</p>
 <p>Equivalent to <code>docker-compose run --rm --service-ports web</code>.</p>
-<h2 id="Dual-purpose-commands">Dual purpose commands<a class="anchor ml-2" href="#Dual-purpose-commands" title="Permanent link">&para;</a></h2>
+<h2 id="dual-purpose-commands">Dual purpose commands<a class="anchor ml-2" href="#dual-purpose-commands" title="Permanent link">&para;</a></h2>
 <p>These commands are designed to run in production, but can be prefixed with <code>dev</code> to run in the development environment (i.e. in the <code>dev-wrym</code> containers). For example <code>./bw-dev dev migrate</code> or <code>./bw-dev dev up -d</code></p>
 <h3 id="create_secrets">create_secrets<a class="anchor ml-2" href="#create_secrets" title="Permanent link">&para;</a></h3>
 <p>Automatically populates your <code>.env</code> file with random cryptographically secure values for the following secret keys:</p>
@@ -545,7 +545,7 @@ docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
 <p>Confirms a users email, sets the user to active.</p>
 <h3 id="docker_cache_cleanup">docker_cache_cleanup<a class="anchor ml-2" href="#docker_cache_cleanup" title="Permanent link">&para;</a></h3>
 <p>Prunes all docker build caches older than 24 hours, and reports space taken by Docker containers, images, volumes, and build caches.</p>
-<h2 id="Production-only-commands">Production-only commands<a class="anchor ml-2" href="#Production-only-commands" title="Permanent link">&para;</a></h2>
+<h2 id="production-only-commands">Production-only commands<a class="anchor ml-2" href="#production-only-commands" title="Permanent link">&para;</a></h2>
 <p>You would not normally use these commands in development. When developing, be cautious with the s3 commands as they may incur unexpected data transfer costs, or potentially overwrite production data.</p>
 <p><em>Setting up S3 compatible storage</em></p>
 <p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses django-storages to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
@@ -557,7 +557,7 @@ docker-compose<span class="w"> </span>rm<span class="w"> </span>-f
 <p>Migrate all uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use for initial upload to an empty bucket.</p>
 <h3 id="sync_media_to_s3">sync_media_to_s3<a class="anchor ml-2" href="#sync_media_to_s3" title="Permanent link">&para;</a></h3>
 <p>Sync new or changed uploaded media from an existing BookWyrm installation to an S3-compatible "bucket". Use to ensure all local files are uploaded to an existing bucket.</p>
-<h2 id="Utilities">Utilities<a class="anchor ml-2" href="#Utilities" title="Permanent link">&para;</a></h2>
+<h2 id="utilities">Utilities<a class="anchor ml-2" href="#utilities" title="Permanent link">&para;</a></h2>
 <p>These commands are designed for one-off needs.</p>
 <h3 id="upgrade_db_version">upgrade_db_version<a class="anchor ml-2" href="#upgrade_db_version" title="Permanent link">&para;</a></h3>
 <p>Runs a Postgres database upgrade to Postgres version <code>17</code>. This was introduced in BookWyrm <code>v0.8.0</code>, where Django was upgraded to version <code>5.2</code> and the minimum required Postgres version moved to version <code>14</code>, with <code>17</code> preferred.</p>

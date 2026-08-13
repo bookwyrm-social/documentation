@@ -1989,7 +1989,7 @@ Fonctionnalités optionnelles
                 
 <section class="block content">
     <p>Certaines fonctionnalités de BookWyrm doivent être activées pour fonctionner.</p>
-<h2 id="Prévisualisation-dimages">Prévisualisation d'images<a class="anchor ml-2" href="#Prévisualisation-dimages" title="Permanent link">&para;</a></h2>
+<h2 id="previsualisation-dimages">Prévisualisation d'images<a class="anchor ml-2" href="#previsualisation-dimages" title="Permanent link">&para;</a></h2>
 <p>Par défault, BookWyrm utilise le logo de l'instance (ou le logo par défault) en tant qu'image d'aperçu OpenGraph. Une autre option est d'activer la création d'aperçus pour les livres, les utilisateur-ices et le site web.</p>
 <p>Les images d'aperçu seront dimensionnées pour les grandes images OpenGraph (utilisé par Twitter sous le nom <code>summary_large_image</code>). Selon le type d'image, son contenu sera :</p>
 <ul>
@@ -2003,13 +2003,13 @@ Fonctionnalités optionnelles
 <li>image de l'utilisateur-ice : lorsque le nom d'affichage ou la photo de profil sont modifiés</li>
 <li>image du livre : lorsque le titre, l'auteur-e ou la couverture sont modifiés, ou quand une nouvelle note est ajoutée</li>
 </ul>
-<h3 id="Activer-la-prévisualisation-des-images">Activer la prévisualisation des images<a class="anchor ml-2" href="#Activer-la-prévisualisation-des-images" title="Permanent link">&para;</a></h3>
+<h3 id="activer-la-previsualisation-des-images">Activer la prévisualisation des images<a class="anchor ml-2" href="#activer-la-previsualisation-des-images" title="Permanent link">&para;</a></h3>
 <p>Pour activer cette fonctionnalité avec les paramètres par défaut, il faut décommenter (retirer le <code>#</code> au début de) la ligne <code>ENABLE_PREVIEW_IMAGES=true</code> dans le fichier <code>.env</code>. Tous les nouveaux événements de mise à jour précédemment mentionnés provoqueront la génération de l'image correspondante.</p>
 <p>Des exemples pour ces images peuvent être consultés dans <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">la description de la pull request de cette fonctionnalité</a>.</p>
-<h3 id="Générer-les-images-de-prévisualisation">Générer les images de prévisualisation<a class="anchor ml-2" href="#Générer-les-images-de-prévisualisation" title="Permanent link">&para;</a></h3>
+<h3 id="generer-les-images-de-previsualisation">Générer les images de prévisualisation<a class="anchor ml-2" href="#generer-les-images-de-previsualisation" title="Permanent link">&para;</a></h3>
 <p>Si ce paramètre est activé après le démarrage de l'instance, certaines images pourraient ne pas avoir été générées. Une commande a été ajoutée pour automatiser la génération d'images. Afin d'éviter une surconsommation de ressources en générant <strong>BEAUCOUP</strong> d'images, il faut passer l'argument <code>--all</code> (ou <code>-a</code>) au lancement de la génération des images de prévisualisation pour toustes les utilisateur·ices et livres. Sans cet argument, seules les prévisualisations du site seront générées.</p>
 <p>Les images de prévisualisation des utilisateur·ices et des livres seront générées de manière asynchrone : la tâche sera envoyée à Flower. Un certain temps peut être nécessaire avant que toutes les images de prévisualisation des utilisateur·ices et des livres soient disponibles. Si vous avez un bon livre 📖, un chaton 🐱 ou un gâteau 🍰, c'est le moment parfait pour leur accorder de l'attention 💖.</p>
-<h3 id="Paramètres-facultatifs">Paramètres facultatifs<a class="anchor ml-2" href="#Paramètres-facultatifs" title="Permanent link">&para;</a></h3>
+<h3 id="parametres-facultatifs">Paramètres facultatifs<a class="anchor ml-2" href="#parametres-facultatifs" title="Permanent link">&para;</a></h3>
 <p>Alors comme ça vous voulez personnaliser vos images de prévisualisation ? Voici les possibilités :</p>
 <ul>
 <li><code>PREVIEW_BG_COLOR</code> définit la couleur de fond de l'image de prévisualisation. Il est possible de mettre une valeur de couleur, comme <code>#b00cc0</code>, ou les valeurs suivantes : <code>use_dominant_color_light</code> ou <code>use_dominant_color_dark</code>. Cela va extraire une couleur dominante de la couverture du livre et l'utiliser, respectivement pour le thème clair ou sombre.</li>
@@ -2018,7 +2018,7 @@ Fonctionnalités optionnelles
 <li><code>PREVIEW_DEFAULT_COVER_COLOR</code> définit la couleur des livres sans couvertures.</li>
 </ul>
 <p>Toutes les variables de couleur acceptent des valeurs reconnues par le module <code>ImageColor</code> de Pillow : <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">En apprendre plus sur les noms de couleurs dans Pillow</a>.</p>
-<h3 id="Supprimer-les-images-de-prévisualisation-pour-les-comptes-externes">Supprimer les images de prévisualisation pour les comptes externes<a class="anchor ml-2" href="#Supprimer-les-images-de-prévisualisation-pour-les-comptes-externes" title="Permanent link">&para;</a></h3>
+<h3 id="supprimer-les-images-de-previsualisation-pour-les-comptes-externes">Supprimer les images de prévisualisation pour les comptes externes<a class="anchor ml-2" href="#supprimer-les-images-de-previsualisation-pour-les-comptes-externes" title="Permanent link">&para;</a></h3>
 <p>Avant BookWyrm 0.5.4, des images de prévisualisation étaient générées pour les comptes externes. Comme c'était couteux en termes d'espace disque et de puissance de calcul, cela a été interrompu. Si vous souhaitez supprimer en masse toutes les images précédemment générées pour les comptes distants, une nouvelle commande a été ajoutée :</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>remove_remote_user_preview_images
 </code></pre></div>

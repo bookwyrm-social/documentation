@@ -1854,7 +1854,7 @@ Optional features
                 
 <section class="block content">
     <p>Unele funcționalități BookWyrm trebuie să fie activate pentru a funcționa.</p>
-<h2 id="Previzualizarea-generării-de-imagine">Previzualizarea generării de imagine<a class="anchor ml-2" href="#Previzualizarea-generării-de-imagine" title="Permanent link">&para;</a></h2>
+<h2 id="previzualizarea-generarii-de-imagine">Previzualizarea generării de imagine<a class="anchor ml-2" href="#previzualizarea-generarii-de-imagine" title="Permanent link">&para;</a></h2>
 <p>În mod implicit, BookWyrm folosește logo-ul instanței (sau logo-ul de bază) ca imagine de previzualizare OpenGraph. Ca alternativă, puteți activa generarea de imagini de previzualizare pentru cărți, utilizatori și site-uri web.</p>
 <p>Imaginile de previzualizare vor fi dimensionate pentru imagini OpenGraph mari (folosite de Twitter sub denumirea de <code>summay_large_image</code>). Depinzând de tipul imaginii, conținutul va fi:</p>
 <ul>
@@ -1868,13 +1868,13 @@ Optional features
 <li>imaginea de utilizator: când numele afișat sau avatarul au fost schimbate</li>
 <li>imaginea de carte: când titlul/titlurile, autorul/autorii sau coperta au fost schimbați sau o nouă recenzie este adăugată</li>
 </ul>
-<h3 id="Activați-imaginile-de-previzualizare">Activați imaginile de previzualizare<a class="anchor ml-2" href="#Activați-imaginile-de-previzualizare" title="Permanent link">&para;</a></h3>
+<h3 id="activati-imaginile-de-previzualizare">Activați imaginile de previzualizare<a class="anchor ml-2" href="#activati-imaginile-de-previzualizare" title="Permanent link">&para;</a></h3>
 <p>Pentru a activa această funcționalitate cu setările implicite, trebuie să decomentați (să înlăturați <code>#</code> din fața) liniei <code>ENABLE_PREVIEW_IMAGES=true</code> în fișierul dvs. <code>.env</code>. Toate evenimentele noi de actualizare menționate anterior vor cauza generarea imaginii corespunzătoare.</p>
 <p>Exemple pentru aceste imaginii pot fi vizualizate pe <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1142#pullrequest-651683886-permalink">descrierea cererii de extragere a funcționalității</a>.</p>
-<h3 id="Generarea-imaginilor-de-previzualizare">Generarea imaginilor de previzualizare<a class="anchor ml-2" href="#Generarea-imaginilor-de-previzualizare" title="Permanent link">&para;</a></h3>
+<h3 id="generarea-imaginilor-de-previzualizare">Generarea imaginilor de previzualizare<a class="anchor ml-2" href="#generarea-imaginilor-de-previzualizare" title="Permanent link">&para;</a></h3>
 <p>Dacă activați această setare după ce instanța dvs. a fost pornită, s-ar putea ca unele imagini să nu fi fost generate. O comandă a fost adăugată pentru a automatiza generarea de imagini. Pentru a preveni consumarea excesivă de resurse prin generarea <strong>MULTOR</strong> imagini, trebuie să transmiteți argumentul <code>--all</code> (sau <code>-a</code>) pentru a începe generarea imaginilor de previzualizare pentru toți utilizatorii și toate cărțile. Fără acest argument, numai previzualizarea site-ului va fi generată.</p>
 <p>Imaginile de previzualizare pentru utilizatori și cărți vor fi generate asincron: sarcina va fi trimisă către Flower. S-ar putea să fie nevoie de ceva timp ca toate cărțile și toți utilizatorii să aibă o imagine de previzualizare funcțională. Dacă aveți o carte bună 📖, un pisoi 🐱 sau o prăjitură 🍰, acum este momentul perfect pentru a le acorda ceva atenție 💖.</p>
-<h3 id="Setări-opționale">Setări opționale<a class="anchor ml-2" href="#Setări-opționale" title="Permanent link">&para;</a></h3>
+<h3 id="setari-optionale">Setări opționale<a class="anchor ml-2" href="#setari-optionale" title="Permanent link">&para;</a></h3>
 <p>Deci vreți să vă personalizați imaginile de previzualizare? Iată câteva opțiuni:</p>
 <ul>
 <li><code>PREVIEW_BG_COLOR</code> va seta culoarea de fundal a imaginii de previzualizare. Puteți furniza o valoare de culoare, precum <code>#b00cc0</code> sau următoarele valori: <code>use_dominant_color_light</code> sau <code>use_dominant_color_dark</code>. Acestea vor extrage culoarea dominantă a coperții cărții și o vor folosi într-o temă deschisă, respectiv întunecată.</li>
@@ -1883,7 +1883,7 @@ Optional features
 <li><code>PREVIEW_DEFAULT_COVER_COLOR</code> va seta culoarea pentru cărțile fără copertă.</li>
 </ul>
 <p>Toate variabilele de culoare acceptă valori care pot fi recunoscute ca atare de modulul <code>ImageColor</code> a lui Pillow: <a href="https://pillow.readthedocs.io/en/stable/reference/ImageColor.html#color-names">Aflați mai multe despre numele de culori Pillow</a>.</p>
-<h3 id="Removing-preview-images-for-remote-users">Removing preview images for remote users<a class="anchor ml-2" href="#Removing-preview-images-for-remote-users" title="Permanent link">&para;</a></h3>
+<h3 id="removing-preview-images-for-remote-users">Removing preview images for remote users<a class="anchor ml-2" href="#removing-preview-images-for-remote-users" title="Permanent link">&para;</a></h3>
 <p>Prior to BookWyrm 0.5.4, preview images were generated for remote users. As it was wasteful in terms of disk space and computing power, that generation has been stopped. If you wish to delete in bulk all the images that were previously generated for remote users, a new command was added:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>remove_remote_user_preview_images
 </code></pre></div>

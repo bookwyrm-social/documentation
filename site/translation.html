@@ -303,16 +303,16 @@ Translations
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Contributing-to-translations">Contributing to translations</a>
+                  <a class="navbar-item" href="#contributing-to-translations">Contributing to translations</a>
                   
               
-                  <a class="navbar-item" href="#Gender-neutral-language">Gender-neutral language</a>
+                  <a class="navbar-item" href="#gender-neutral-language">Gender-neutral language</a>
                   
               
-                  <a class="navbar-item" href="#Making-templates-translatable">Making templates translatable</a>
+                  <a class="navbar-item" href="#making-templates-translatable">Making templates translatable</a>
                   
                       
-                      <a class="navbar-item" href="#Examples"><span class="pl-4">Examples</span></a>
+                      <a class="navbar-item" href="#examples"><span class="pl-4">Examples</span></a>
                       
                   
               
@@ -331,13 +331,13 @@ Translations
                 </header>
                 
 <section class="block content">
-    <h2 id="Contributing-to-translations">Contributing to translations<a class="anchor ml-2" href="#Contributing-to-translations" title="Permanent link">&para;</a></h2>
+    <h2 id="contributing-to-translations">Contributing to translations<a class="anchor ml-2" href="#contributing-to-translations" title="Permanent link">&para;</a></h2>
 <p>You can join the BookWyrm translation project at <a href="https://translate.joinbookwyrm.com/">translate.joinbookwyrm.com</a>.</p>
-<h2 id="Gender-neutral-language">Gender-neutral language<a class="anchor ml-2" href="#Gender-neutral-language" title="Permanent link">&para;</a></h2>
+<h2 id="gender-neutral-language">Gender-neutral language<a class="anchor ml-2" href="#gender-neutral-language" title="Permanent link">&para;</a></h2>
 <p>Wherever possible, BookWyrm translations should use gender-neutral language. This applies even if a language defaults to male as a neutral gender, or if it uses something similar to "he/she". It's also important for translations to be clear, concise, and legible to a screen reader, and sometimes these goals are in conflict; there isn't a perfect, one-size-fits all answer, and the solution depends on the language.</p>
 <p>As a guiding principal, try to place a higher value on inclusive and gender-neutral language than on formal correctness or officially approved style guides. In English, for example, many formal style guides require a singular "she" or "he" pronoun to be used when referring to an individual, but it would be better in BookWyrm to use the gender-neutral singular "they" instead.</p>
 <p>If you aren't sure how best to approach a translation problem, comment on the translation or open a <a href="https://translate.joinbookwyrm.com/project/bookwyrm/discussions">discussion topic</a> to address broader-scale questions.</p>
-<h2 id="Making-templates-translatable">Making templates translatable<a class="anchor ml-2" href="#Making-templates-translatable" title="Permanent link">&para;</a></h2>
+<h2 id="making-templates-translatable">Making templates translatable<a class="anchor ml-2" href="#making-templates-translatable" title="Permanent link">&para;</a></h2>
 <p>Bookwyrm takes advantage of Django's translation functionality to enable page content to change depending on the user's chosen display language. The Django documentation <a href="https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#internationalization-in-template-code">provides a helpful explanation</a> of how this works, but here is the short version:</p>
 <ul>
 <li>all template text should include translation template tags</li>
@@ -345,7 +345,7 @@ Translations
 <li>If the text block is literal text, you can use the template tag <code>{% trans %}</code></li>
 <li>If the text block includes variables, you should use the template tag pair <code>{% blocktrans %}</code> and <code>{% endblocktrans %}</code>. If you are including padding whitespace or line breaks, use <code>trimmed</code> to automatically remove it when the locale file is generated: <code>{% blocktrans trimmed %}</code></li>
 </ul>
-<h3 id="Examples">Examples<a class="anchor ml-2" href="#Examples" title="Permanent link">&para;</a></h3>
+<h3 id="examples">Examples<a class="anchor ml-2" href="#examples" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>

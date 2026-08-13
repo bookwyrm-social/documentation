@@ -311,16 +311,16 @@ Ajout de livres
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Importing-data-about-your-books-and-reading">Importing data about your books and reading</a>
+                  <a class="navbar-item" href="#importing-data-about-your-books-and-reading">Importing data about your books and reading</a>
                   
               
-                  <a class="navbar-item" href="#Chargement-de-livres-à-partir-dautres-catalogues">Chargement de livres à partir d'autres catalogues</a>
+                  <a class="navbar-item" href="#chargement-de-livres-a-partir-dautres-catalogues">Chargement de livres à partir d'autres catalogues</a>
                   
               
-                  <a class="navbar-item" href="#Ajout-dune-nouvelle-édition">Ajout d'une nouvelle édition</a>
+                  <a class="navbar-item" href="#ajout-dune-nouvelle-edition">Ajout d'une nouvelle édition</a>
                   
               
-                  <a class="navbar-item" href="#Ajouter-un-nouveau-livre">Ajouter un nouveau livre</a>
+                  <a class="navbar-item" href="#ajouter-un-nouveau-livre">Ajouter un nouveau livre</a>
                   
               
             </div>
@@ -339,7 +339,7 @@ Ajout de livres
                 
 <section class="block content">
     <p>Il y a plusieurs façons d'ajouter des livres à votre instance BookWyrm ! Quand vous ne trouvez pas le livre que vous cherchez, essayez ces options dans l'ordre -- il vaut mieux importer un livre que d'en créer un à partir de zéro.</p>
-<h2 id="Importing-data-about-your-books-and-reading">Importing data about your books and reading<a class="anchor ml-2" href="#Importing-data-about-your-books-and-reading" title="Permanent link">&para;</a></h2>
+<h2 id="importing-data-about-your-books-and-reading">Importing data about your books and reading<a class="anchor ml-2" href="#importing-data-about-your-books-and-reading" title="Permanent link">&para;</a></h2>
 <p>If you're coming to BookWyrm from another platform for tracking books and reading, you may want to import your books and reading data. Currently BookWyrm is capable of importing export files from the following platforms:</p>
 <ul>
 <li>Calibre (CSV)</li>
@@ -351,11 +351,11 @@ Ajout de livres
 </ul>
 <p>Under 'Settings' navigate to 'Import Book List', select the matching data source, select your file and, if relevant, select whether to import reviews and what privacy setting to give them. When you press 'Import' a background task will begin to import your data. You will be notified when it has finished.</p>
 <p>It is important to understand that the import process does not import data directly from the other service - in many cases (e.g. Goodreads) this is not possible. When you import a data file, BookWyrm will search the local database, connected BookWyrm servers, and selected public data sources to find a match. For this reason, BookWyrm may not be able to import all of your data. We are always looking for new data sources with free and open APIs, especially for data about books in languages other than English. If you are aware of such a data source, please consider <a href="https://github.com/bookwyrm-social/bookwyrm/issues">creating an Issue</a>,</p>
-<h2 id="Chargement-de-livres-à-partir-dautres-catalogues">Chargement de livres à partir d'autres catalogues<a class="anchor ml-2" href="#Chargement-de-livres-à-partir-dautres-catalogues" title="Permanent link">&para;</a></h2>
+<h2 id="chargement-de-livres-a-partir-dautres-catalogues">Chargement de livres à partir d'autres catalogues<a class="anchor ml-2" href="#chargement-de-livres-a-partir-dautres-catalogues" title="Permanent link">&para;</a></h2>
 <p>If the book you're looking for isn't available on your BookWyrm instance, there are a few different ways to add it. La meilleure manière est de l'importer depuis une source externe -- votre instance peut charger des livres depuis d'autres instances BookWyrm, ainsi que d'<a href="http://openlibrary.org/">OpenLibrary</a> et <a href="http://inventaire.io/">Inventaire</a>. S'il n'y a pas de résultats de recherche à votre requête, ces sources seront automatiquement interrogées, et les réponses s'afficheront avec un bouton « <strong>Importer le livre</strong> ». S'il y a des résultats de recherche locaux qui ne sont pas ceux que vous recherchez, vous pouvez cliquer sur le lien «<strong>Charger les résultats d’autres catalogues</strong>» pour charger plus de résultats.</p>
-<h2 id="Ajout-dune-nouvelle-édition">Ajout d'une nouvelle édition<a class="anchor ml-2" href="#Ajout-dune-nouvelle-édition" title="Permanent link">&para;</a></h2>
+<h2 id="ajout-dune-nouvelle-edition">Ajout d'une nouvelle édition<a class="anchor ml-2" href="#ajout-dune-nouvelle-edition" title="Permanent link">&para;</a></h2>
 <p>Si vous avez trouvé le livre que vous cherchiez mais pas dans la bonne édition, vous pouvez ajouter une autre édition à l’œuvre à partir de la liste des éditions. Cliquez sur le lien en dessous de la description qui vous indique le nombre d'éditions (par exemple, « <strong>4 éditions</strong> »). En bas de la liste des éditions il y a un bouton pour « <strong>Ajouter une nouvelle édition</strong> ».</p>
-<h2 id="Ajouter-un-nouveau-livre">Ajouter un nouveau livre<a class="anchor ml-2" href="#Ajouter-un-nouveau-livre" title="Permanent link">&para;</a></h2>
+<h2 id="ajouter-un-nouveau-livre">Ajouter un nouveau livre<a class="anchor ml-2" href="#ajouter-un-nouveau-livre" title="Permanent link">&para;</a></h2>
 <p>Une fois que vous avez essayé sans succès de rechercher votre livre, de l'importez depuis un autre catalogue, et de trouver d'autres éditions de ce livre, vous pouvez ajouter un nouveau livre manuellement. Le lien pour ajouter manuellement un livre se trouve au bas de la page de recherche lorsque les résultats des catalogues externes sont affichés. You can also navigate directly to <code>/create-book</code> on your instance.</p>
 </section>
 

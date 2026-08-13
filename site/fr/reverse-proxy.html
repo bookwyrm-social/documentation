@@ -965,7 +965,7 @@ Using a Reverse-Proxy
                 </header>
                 
 <section class="block content">
-    <h2 id="Faire-fonctionner-BookWyrm-derrière-un-proxy-inverse">Faire fonctionner BookWyrm derrière un proxy inverse<a class="anchor ml-2" href="#Faire-fonctionner-BookWyrm-derrière-un-proxy-inverse" title="Permanent link">&para;</a></h2>
+    <h2 id="faire-fonctionner-bookwyrm-derriere-un-proxy-inverse">Faire fonctionner BookWyrm derrière un proxy inverse<a class="anchor ml-2" href="#faire-fonctionner-bookwyrm-derriere-un-proxy-inverse" title="Permanent link">&para;</a></h2>
 <p>Si un autre serveur web est installé sur la machine, il serait préférable que ce dernier fasse proxy pour les requêtes vers BookWyrm.</p>
 <p>La configuration par défaut de BookWyrm a déjà un serveur Nginx qui sert de proxy pour les requêtes vers l'application Django gérant le SSL et servant directement les fichiers statiques. Les fichiers statiques sont stockés dans un volume Docker accessible par plusieurs services BookWyrm, il est donc déconseillé de complétement retirer ce serveur.</p>
 <p>Pour faire fonctionner BookWyrm derrière un proxy inverse, les changements suivants doivent être faits :</p>
@@ -978,7 +978,7 @@ Using a Reverse-Proxy
 </ul>
 <p>À partir de là, il est possible de suivre <a href="#server-setup">les instructions d'installation</a> telles quelles. Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code> directly as this is handled by your proxy server).</p>
 <p>Les étapes pour configurer un proxy inverse dépendent du serveur.</p>
-<h4 id="Nginx">Nginx<a class="anchor ml-2" href="#Nginx" title="Permanent link">&para;</a></h4>
+<h4 id="nginx">Nginx<a class="anchor ml-2" href="#nginx" title="Permanent link">&para;</a></h4>
 <p>Avant de pouvoir configurer Nginx, il faudra trouver son dossier de configuration, qui dépend de la plateforme et de la manière dont Nginx a été installé. Voir <a href="http://nginx.org/en/docs/beginners_guide.html">le guide de Nginx</a> pour plus de détails.</p>
 <p>Pour configurer le serveur :</p>
 <ul>

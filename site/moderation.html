@@ -303,32 +303,32 @@ Moderation
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#User-actions">User actions</a>
+                  <a class="navbar-item" href="#user-actions">User actions</a>
                   
                       
-                      <a class="navbar-item" href="#Blocking"><span class="pl-4">Blocking</span></a>
+                      <a class="navbar-item" href="#blocking"><span class="pl-4">Blocking</span></a>
                       
-                      <a class="navbar-item" href="#Reports"><span class="pl-4">Reports</span></a>
-                      
-                  
-              
-                  <a class="navbar-item" href="#Auto-moderation">Auto-moderation</a>
-                  
-              
-                  <a class="navbar-item" href="#Instance-level-moderation">Instance-level moderation</a>
-                  
-                      
-                      <a class="navbar-item" href="#Manual-instance-blocks"><span class="pl-4">Manual instance blocks</span></a>
-                      
-                      <a class="navbar-item" href="#FediBlock-lists"><span class="pl-4">FediBlock lists</span></a>
-                      
-                      <a class="navbar-item" href="#Email-and-IP-block-lists"><span class="pl-4">Email and IP block lists</span></a>
-                      
-                      <a class="navbar-item" href="#Link-Domains"><span class="pl-4">Link Domains</span></a>
+                      <a class="navbar-item" href="#reports"><span class="pl-4">Reports</span></a>
                       
                   
               
-                  <a class="navbar-item" href="#Disabling-federation">Disabling federation</a>
+                  <a class="navbar-item" href="#auto-moderation">Auto-moderation</a>
+                  
+              
+                  <a class="navbar-item" href="#instance-level-moderation">Instance-level moderation</a>
+                  
+                      
+                      <a class="navbar-item" href="#manual-instance-blocks"><span class="pl-4">Manual instance blocks</span></a>
+                      
+                      <a class="navbar-item" href="#fediblock-lists"><span class="pl-4">FediBlock lists</span></a>
+                      
+                      <a class="navbar-item" href="#email-and-ip-block-lists"><span class="pl-4">Email and IP block lists</span></a>
+                      
+                      <a class="navbar-item" href="#link-domains"><span class="pl-4">Link Domains</span></a>
+                      
+                  
+              
+                  <a class="navbar-item" href="#disabling-federation">Disabling federation</a>
                   
               
             </div>
@@ -346,30 +346,30 @@ Moderation
                 </header>
                 
 <section class="block content">
-    <h2 id="User-actions">User actions<a class="anchor ml-2" href="#User-actions" title="Permanent link">&para;</a></h2>
-<h3 id="Blocking">Blocking<a class="anchor ml-2" href="#Blocking" title="Permanent link">&para;</a></h3>
+    <h2 id="user-actions">User actions<a class="anchor ml-2" href="#user-actions" title="Permanent link">&para;</a></h2>
+<h3 id="blocking">Blocking<a class="anchor ml-2" href="#blocking" title="Permanent link">&para;</a></h3>
 <p>Users have the option to block other users on their own, without a moderator intervening. From the "Federated Servers" admin view, administrators can see how many users from an instance have been blocked by local users.</p>
-<h3 id="Reports">Reports<a class="anchor ml-2" href="#Reports" title="Permanent link">&para;</a></h3>
+<h3 id="reports">Reports<a class="anchor ml-2" href="#reports" title="Permanent link">&para;</a></h3>
 <p>Users can report statuses or users from the "more options" menu in the footer of posts and the follow/unfollow buttons for users. When a report is made, all users with admin permissions will receive a notification.</p>
 <p>To manage reports, go to <code>Admin &gt; Moderation &gt; Reports</code>.</p>
 <p>When a report is made, there are a few options how the moderator can respond.
 - Send a direct message to the reported user.
 - Delete the reported status.
 - Deactivate the user. For local users, this will make them unable to log in, and their account will not be shown in the application. For remote users, the server will reject any incoming activities from this user, and they will not be shown in searches.</p>
-<h2 id="Auto-moderation">Auto-moderation<a class="anchor ml-2" href="#Auto-moderation" title="Permanent link">&para;</a></h2>
+<h2 id="auto-moderation">Auto-moderation<a class="anchor ml-2" href="#auto-moderation" title="Permanent link">&para;</a></h2>
 <p>Auto-moderation rules will create reports for any local user or status with fields matching the provided string. Users or statuses that have already been reported (regardless of whether the report was resolved) will not be flagged. To set up auto-moderation, go to <code>Admin &gt; Moderation &gt; Auto-Moderation Rules</code>.</p>
-<h2 id="Instance-level-moderation">Instance-level moderation<a class="anchor ml-2" href="#Instance-level-moderation" title="Permanent link">&para;</a></h2>
-<h3 id="Manual-instance-blocks">Manual instance blocks<a class="anchor ml-2" href="#Manual-instance-blocks" title="Permanent link">&para;</a></h3>
+<h2 id="instance-level-moderation">Instance-level moderation<a class="anchor ml-2" href="#instance-level-moderation" title="Permanent link">&para;</a></h2>
+<h3 id="manual-instance-blocks">Manual instance blocks<a class="anchor ml-2" href="#manual-instance-blocks" title="Permanent link">&para;</a></h3>
 <p>Moderators can block entire instances. This will prevent any activities from coming in from that instance, and deactivate all accounts from that instance locally. To block an instance go to <code>Admin &gt; Federated Instances</code> and find the instance you wish to block. See <code>Managing BookWyrm &gt; Federation</code> for more information.</p>
 <p>If the instance is un-blocked, all the users who were deactivated by the block will be re-activated.</p>
-<h3 id="FediBlock-lists">FediBlock lists<a class="anchor ml-2" href="#FediBlock-lists" title="Permanent link">&para;</a></h3>
+<h3 id="fediblock-lists">FediBlock lists<a class="anchor ml-2" href="#fediblock-lists" title="Permanent link">&para;</a></h3>
 <p>Moderators can also upload <em>FediBlock</em> formatted blocklists to block servers in bulk. To do this, go to <code>Federation &gt; Federated Instances</code> and click on "Add instance".</p>
-<h3 id="Email-and-IP-block-lists">Email and IP block lists<a class="anchor ml-2" href="#Email-and-IP-block-lists" title="Permanent link">&para;</a></h3>
+<h3 id="email-and-ip-block-lists">Email and IP block lists<a class="anchor ml-2" href="#email-and-ip-block-lists" title="Permanent link">&para;</a></h3>
 <p>You can block signups from a given email domain at <code>Admin &gt; Moderation &gt; Email Blocklist</code>. When someone tries to register with an email from a domain in your email blocklist, no account will be created. The registration process will appear to have worked.</p>
 <p>An IP block list will block all traffic from the IP address. Requests to any part of your instance from these IPs will receive a 404 response.</p>
-<h3 id="Link-Domains">Link Domains<a class="anchor ml-2" href="#Link-Domains" title="Permanent link">&para;</a></h3>
+<h3 id="link-domains">Link Domains<a class="anchor ml-2" href="#link-domains" title="Permanent link">&para;</a></h3>
 <p>Users can add a link to a book download for any book. Link domains must be approved before they are shown on book pages in order to avoid spam and malicious links. You can approve link domains at <code>Admin &gt; Moderation &gt; Link Domains</code>.</p>
-<h2 id="Disabling-federation">Disabling federation<a class="anchor ml-2" href="#Disabling-federation" title="Permanent link">&para;</a></h2>
+<h2 id="disabling-federation">Disabling federation<a class="anchor ml-2" href="#disabling-federation" title="Permanent link">&para;</a></h2>
 <p>Administrators and moderators can disable federation completely. This will prevent any further communication inwards or outwards, however existing data will be retained in the database. Disabling federation does not prevent connectors from importing books, however it will restrict all statuses (reviews, comments etc) to only users on your instance, or anything those users import manually (e.g. via a Goodreads CSV import).</p>
 <p>To disable federation, go to <code>Admin &gt; Federation &gt; Federation Settings</code>.</p>
 </section>

@@ -1353,14 +1353,14 @@ Installing in Production
                 
 <section class="block content">
     <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.</p>
-<h2 id="Server-setup">Server setup<a class="anchor ml-2" href="#Server-setup" title="Permanent link">&para;</a></h2>
+<h2 id="server-setup">Server setup<a class="anchor ml-2" href="#server-setup" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Get a domain name and set up DNS for your server. You'll need to point the nameservers of your domain on your DNS provider to the server where you'll be hosting BookWyrm. Here are instructions for <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Skonfiguruj swój serwer z odpowiednimi zasadami zapory do uruchamiania aplikacji internetowych (ten zestaw instrukcji został przetestowany na Ubuntu 20.04). Oto instrukcje dla <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Set up an email service (such as <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) and the appropriate SMTP/DNS settings. Use the service's documentation for configuring your DNS</li>
 <li><a href="https://docs.docker.com/compose/install/">Install Docker and docker-compose</a></li>
 </ul>
-<h2 id="Zainstaluj-i-skonfiguruj-BookWyrm">Zainstaluj i skonfiguruj BookWyrm<a class="anchor ml-2" href="#Zainstaluj-i-skonfiguruj-BookWyrm" title="Permanent link">&para;</a></h2>
+<h2 id="zainstaluj-i-skonfiguruj-bookwyrm">Zainstaluj i skonfiguruj BookWyrm<a class="anchor ml-2" href="#zainstaluj-i-skonfiguruj-bookwyrm" title="Permanent link">&para;</a></h2>
 <p>There are several repos in the BookWyrm org, including documentation, a static landing page, and the actual Bookwyrm code. To run BookWyrm, you want the actual app code which is in <a href="https://github.com/bookwyrm-social/bookwyrm">bookwyrm-social/bookwyrm</a>.</p>
 <p>The <code>production</code> branch of BookWyrm contains a number of tools not on the <code>main</code> branch that are suited for running in production, such as <code>docker-compose</code> changes to update the default commands or configuration of containers, and individual changes to container config to enable things like SSL or regular backups.</p>
 <p>Instructions for running BookWyrm in production:</p>
@@ -1409,7 +1409,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li>The application should be running at your domain. When you load the domain, you should get a configuration page which confirms your instance settings, and a form to create an admin account. Use your admin code to register.</li>
 </ul>
 <p>Gratulacje! Udało się!! Skonfiguruj swoją instancję jak tylko chcesz.</p>
-<h2 id="Kopie-zapasowe">Kopie zapasowe<a class="anchor ml-2" href="#Kopie-zapasowe" title="Permanent link">&para;</a></h2>
+<h2 id="kopie-zapasowe">Kopie zapasowe<a class="anchor ml-2" href="#kopie-zapasowe" title="Permanent link">&para;</a></h2>
 <p>BookWyrm's db service dumps a backup copy of its database to its <code>/backups</code> directory daily at midnight UTC. Backups are named <code>backup__%Y-%m-%d.sql</code>.</p>
 <p>The db service has an optional script for periodically pruning the backups directory so that all recent daily backups are kept, but for older backups, only weekly or monthly backups are kept. Aby aktywować ten skrypt:</p>
 <ul>
@@ -1421,7 +1421,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li>Run <code>docker-compose ps</code> to confirm the db service's full name (it's probably <code>bookwyrm_db_1</code>.</li>
 <li>Run <code>docker cp &lt;container_name&gt;:/backups &lt;host machine path&gt;</code></li>
 </ul>
-<h2 id="Konflikty-portów">Konflikty portów<a class="anchor ml-2" href="#Konflikty-portów" title="Permanent link">&para;</a></h2>
+<h2 id="konflikty-portow">Konflikty portów<a class="anchor ml-2" href="#konflikty-portow" title="Permanent link">&para;</a></h2>
 <p>BookWyrm posiada wiele usług, które działają na ich domyślnych portach. Oznacza to, że w zależności od tego, co jeszcze działa na Twoim komputerze hosta, możesz napotkać błędy podczas kompilowania lub uruchamiania BookWyrm, gdy próby powiązania z tymi portami zakończą się niepowodzeniem.</p>
 <p>Jeśli tak się stanie, należy zmienić konfigurację, aby usługi działały na różnych portach. Może to wymagać jednej lub więcej zmian w następujących plikach:</p>
 <ul>
@@ -1430,7 +1430,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li><code>.env</code> (Tworzysz ten plik podczas konfiguracji)</li>
 </ul>
 <p>If you are already running a web-server on your machine, you will need to set up a reverse-proxy.</p>
-<h2 id="Get-Connected">Get Connected<a class="anchor ml-2" href="#Get-Connected" title="Permanent link">&para;</a></h2>
+<h2 id="get-connected">Get Connected<a class="anchor ml-2" href="#get-connected" title="Permanent link">&para;</a></h2>
 <p>Because BookWyrm is a young project, we're still working towards a stable release schedule, and there are a lot of bugs and breaking changes. There is a GitHub team which can be tagged when there's something important to know about an update, which you can join by sharing your GitHub username. Istnieje kilka sposobów na kontakt:</p>
 <ul>
 <li>Open an issue or pull request to add your instance to the <a href="https://joinbookwyrm.com/instances/">official list</a></li>

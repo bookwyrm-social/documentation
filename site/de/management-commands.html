@@ -311,16 +311,16 @@ Verwaltungs-Befehle
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Objekte-zusammenführen">Objekte zusammenführen</a>
+                  <a class="navbar-item" href="#objekte-zusammenfuhren">Objekte zusammenführen</a>
                   
                       
-                      <a class="navbar-item" href="#Editionen-zusammenführen"><span class="pl-4">Editionen zusammenführen</span></a>
+                      <a class="navbar-item" href="#editionen-zusammenfuhren"><span class="pl-4">Editionen zusammenführen</span></a>
                       
-                      <a class="navbar-item" href="#Autorinnen-zusammenführen"><span class="pl-4">Autor*innen zusammenführen</span></a>
+                      <a class="navbar-item" href="#autorinnen-zusammenfuhren"><span class="pl-4">Autor*innen zusammenführen</span></a>
                       
                   
               
-                  <a class="navbar-item" href="#ISBNs-berichtigen">ISBNs berichtigen</a>
+                  <a class="navbar-item" href="#isbns-berichtigen">ISBNs berichtigen</a>
                   
               
             </div>
@@ -339,17 +339,17 @@ Verwaltungs-Befehle
                 
 <section class="block content">
     <p>Im Verzeichnis <code>bookwyrm/management/commands</code> gibt es einige Befehle, um die Datenbank der Instanz zu bearbeiten. Einige davon werden hier dokumentiert.</p>
-<h2 id="Objekte-zusammenführen">Objekte zusammenführen<a class="anchor ml-2" href="#Objekte-zusammenführen" title="Permanent link">&para;</a></h2>
+<h2 id="objekte-zusammenfuhren">Objekte zusammenführen<a class="anchor ml-2" href="#objekte-zusammenfuhren" title="Permanent link">&para;</a></h2>
 <p>Es geschieht recht oft, dass eine Instanz doppelte Bücher, Autor_innen oder Editionen vorhält, die zwar separat erscheinen, aber eigentlich nur verschiedene Editionen desselben Werks sind. Das passiert, wenn Editionen ohne gleichnamige Identifikationsmerkmale importiert werden oder Benutzer_innen Fehler machen. Es gab außerdem vor Version 0.7.5 einen Bug, der eine große Zahl doppelter Bücher, Editionen und Autor*innen erstellte. Unglücklicherweise gibt es bis auf Weiteres keine Oberfläche, um dies zu korrigieren. In Fällen, in denen die Bücher wichtig für deine Instanz sind, kannst du aber diese Verwaltungs-Befehle nutzen, um manche der Probleme zu beheben. Voraussetzung hierfür ist Version 0.6.2 oder neuer.</p>
 <p>Bitte sei besonders vorsichtig, wenn du diese Befehle ausführst, da es im Falle eines Fehlers keinen Weg gibt, die Aktion rückgängig zu machen.</p>
-<h3 id="Editionen-zusammenführen">Editionen zusammenführen<a class="anchor ml-2" href="#Editionen-zusammenführen" title="Permanent link">&para;</a></h3>
+<h3 id="editionen-zusammenfuhren">Editionen zusammenführen<a class="anchor ml-2" href="#editionen-zusammenfuhren" title="Permanent link">&para;</a></h3>
 <p>Wenn eine Edition eines Buches zweimal in der Datenbank auftaucht und du sicher bist, dass sie tatsächlich dieselbe Edition meinen, kannst du sie mit einem Befehl wie diesem zusammenführen:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev runweb python manage.py merge_editions --canonical=27 --other=38
 </code></pre></div>
 
 <p>Dies wird alle fehlenden Informationen von Edition 38 (die andere, engl. „other“) zu Edition 27 (die kanonische, engl. „canonical“) übertragen und dann die andere Edition löschen. Wenn es ein Feld in beiden Editionen gibt, werden die Daten der kanonischen Edition behalten. Wenn die andere Edition Teil einer Liste ist, Kommentare hat oder rezensiert wurde, werden diese Informationen künftig ebenfalls auf die kanonische Edition verweisen.</p>
 <p>Du kannst die Nummern für den Befehl herausfinden, indem du die Seite eines Buches besuchst und die Zahl in der URL anschaust.</p>
-<h3 id="Autorinnen-zusammenführen">Autor*innen zusammenführen<a class="anchor ml-2" href="#Autorinnen-zusammenführen" title="Permanent link">&para;</a></h3>
+<h3 id="autorinnen-zusammenfuhren">Autor*innen zusammenführen<a class="anchor ml-2" href="#autorinnen-zusammenfuhren" title="Permanent link">&para;</a></h3>
 <p>Du kannst potenziell doppelte Autor*innen mit <code>show_duplicate_authors</code> identifizieren:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>runweb<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>show_duplicate_authors
 </code></pre></div>
@@ -360,7 +360,7 @@ Verwaltungs-Befehle
 </code></pre></div>
 
 <p>Wie bei den Editionen werden zusätzliche Informationen des anderen Eintrags zum kanonischen Eintrag kopiert und dann wird der andere Eintrag gelöscht. Alle Bücher, die der_die andere Autor_in geschrieben hat, werden mit dem kanonischen Eintrag verknüpft. Du kannst die Nummern für den Befehl herausfinden, indem du die Seite der Autor*innen besuchst und die Zahl in der URL anschaust.</p>
-<h2 id="ISBNs-berichtigen">ISBNs berichtigen<a class="anchor ml-2" href="#ISBNs-berichtigen" title="Permanent link">&para;</a></h2>
+<h2 id="isbns-berichtigen">ISBNs berichtigen<a class="anchor ml-2" href="#isbns-berichtigen" title="Permanent link">&para;</a></h2>
 <p>In Version 0.8.0 gab es einen Bug, der unter bestimmten Bedingungen ISBN10-Einträge mit 11 Stellen generierte. Dies wurde in einer Datenmigration in Version 0.8.1 behoben, aber aus diversen Gründen kann es notwendig sein, händisch einen Aufräumbefehl auszuführen, um alle fehlerhaften ISBNs in deiner lokalen Datenbank zu berichtigen:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>runweb<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>fix_isbn10_entries
 </code></pre></div>

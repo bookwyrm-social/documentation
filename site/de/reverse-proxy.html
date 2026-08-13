@@ -923,7 +923,7 @@ Using a Reverse-Proxy
                 </header>
                 
 <section class="block content">
-    <h2 id="BookWyrm-hinter-einem-Reverse-Proxy-ausführen">BookWyrm hinter einem Reverse-Proxy ausführen<a class="anchor ml-2" href="#BookWyrm-hinter-einem-Reverse-Proxy-ausführen" title="Permanent link">&para;</a></h2>
+    <h2 id="bookwyrm-hinter-einem-reverse-proxy-ausfuhren">BookWyrm hinter einem Reverse-Proxy ausführen<a class="anchor ml-2" href="#bookwyrm-hinter-einem-reverse-proxy-ausfuhren" title="Permanent link">&para;</a></h2>
 <p>Wenn du einen anderen Webserver auf Ihrem Rechner betreibst, solltest du ihn als Proxy für Web-Anfragen an BookWyrm einrichten.</p>
 <p>Die Standardkonfiguration von BookWyrm hat bereits einen nginx-Server, der Anfragen an die Django-App weiterleitet, die SSL verarbeitet und statische Dateien direkt bedient. Die statischen Dateien werden in einem Docker Volume gespeichert, auf das mehrere BookWyrm Dienste zugreifen, daher wird es nicht empfohlen, diesen Server komplett zu entfernen.</p>
 <p>Um BookWyrm hinter einem Reverse-Proxy auszuführen, führe folgende Änderungen aus:</p>
@@ -936,7 +936,7 @@ Using a Reverse-Proxy
 </ul>
 <p>An dieser Stelle folge den Anweisungen <a href="#server-setup">Setup</a> wie aufgeführt. Once docker is running, you can access your BookWyrm instance at <code>http://localhost:8001</code> (<strong>NOTE:</strong> your server is not accessible over <code>https</code> directly as this is handled by your proxy server).</p>
 <p>Schritte zum Einrichten eines Reverse-Proxys sind vom Server abhängig.</p>
-<h4 id="Nginx">Nginx<a class="anchor ml-2" href="#Nginx" title="Permanent link">&para;</a></h4>
+<h4 id="nginx">Nginx<a class="anchor ml-2" href="#nginx" title="Permanent link">&para;</a></h4>
 <p>Bevor du nginx einrichten kannst, musst du Ihr nginx-Konfigurationsverzeichnis finden, das abhängig von deiner Plattform und nginx-Installation ist. Weitere Informationen findest du im <a href="http://nginx.org/en/docs/beginners_guide.html">nginx Guide</a>.</p>
 <p>Um deinen Server einzurichten:</p>
 <ul>

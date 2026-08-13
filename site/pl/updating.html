@@ -694,7 +694,7 @@ Aktualizowanie instancji
 <li><code>docker-compose run --rm web python manage.py collectstatic --no-input</code> wczytuje wszelkie zaktualizowane pliki statyczne (takie jak JavaScript i CSS)</li>
 <li><code>docker-compose down; docker-compose up -d</code> ponownie uruchamia wszystkie kontenery dockera i wczytuje nowo skompilowane obrazy (Uwaga: przestoje podczas ponownego uruchamiania)</li>
 </ul>
-<h2 id="Odbudowa-strumieni-aktywności">Odbudowa strumieni aktywności<a class="anchor ml-2" href="#Odbudowa-strumieni-aktywności" title="Permanent link">&para;</a></h2>
+<h2 id="odbudowa-strumieni-aktywnosci">Odbudowa strumieni aktywności<a class="anchor ml-2" href="#odbudowa-strumieni-aktywnosci" title="Permanent link">&para;</a></h2>
 <p>Kanały każdego użytkownika są przechowywane w bazie danych Redis. Aby ponownie wypełnić strumień, użyj polecenia zarządzania:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>populate_streams
 <span class="c1"># Lub użyj bezpośrednio docker-compose</span>

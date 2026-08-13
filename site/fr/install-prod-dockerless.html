@@ -311,16 +311,16 @@ Installation sans Docker
 
             <div class="navbar-dropdown is-hidden-touch " id="toc-dropdown">
               
-                  <a class="navbar-item" href="#Configuration-du-serveur">Configuration du serveur</a>
+                  <a class="navbar-item" href="#configuration-du-serveur">Configuration du serveur</a>
                   
               
-                  <a class="navbar-item" href="#Installez-et-configurez-BookWyrm">Installez et configurez BookWyrm</a>
+                  <a class="navbar-item" href="#installez-et-configurez-bookwyrm">Installez et configurez BookWyrm</a>
                   
               
-                  <a class="navbar-item" href="#Finding-log-files">Finding log files</a>
+                  <a class="navbar-item" href="#finding-log-files">Finding log files</a>
                   
               
-                  <a class="navbar-item" href="#Participer">Participer</a>
+                  <a class="navbar-item" href="#participer">Participer</a>
                   
               
             </div>
@@ -341,14 +341,14 @@ Installation sans Docker
     <p>This project is still young and isn't, at the moment, very stable, so please proceed with caution when running in production.</p>
 <p>This method of installation is more involved, and therefore is for more experienced admins. <strong>Docker install is the recommended method</strong> as there may not be much support available for Dockerless installation. If you have expertise in this area, we would love your help to improve this documentation!</p>
 <p>This install method assumes you already have ssl configured with certificates available.</p>
-<h2 id="Configuration-du-serveur">Configuration du serveur<a class="anchor ml-2" href="#Configuration-du-serveur" title="Permanent link">&para;</a></h2>
+<h2 id="configuration-du-serveur">Configuration du serveur<a class="anchor ml-2" href="#configuration-du-serveur" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Obtenez un nom de domaine et configurez le DNS pour votre serveur. Vous devez faire pointer les serveurs de noms de domaine de votre fournisseur DNS vers le serveur où vous allez héberger BookWyrm. Voici les instructions pour <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">DigitalOcean</a></li>
 <li>Configurez votre serveur avec des pare-feu appropriés pour l'exécution d'une application web (ces instructions ont été testées avec Ubuntu 20.04). Voici les instructions pour <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04">DigitalOcean</a></li>
 <li>Configurez un service de messagerie (tel que <a href="https://documentation.mailgun.com/en/latest/quickstart.html">Mailgun</a>) et les paramètres SMTP/DNS appropriés. Utilisez la documentation du service pour la configuration de votre DNS</li>
 <li>Installez les dépendances. On debian this could look like <code>apt install postgresql redis nginx python3-venv python3-pip python3-dev libpq-dev gunicorn gettext-base</code></li>
 </ul>
-<h2 id="Installez-et-configurez-BookWyrm">Installez et configurez BookWyrm<a class="anchor ml-2" href="#Installez-et-configurez-BookWyrm" title="Permanent link">&para;</a></h2>
+<h2 id="installez-et-configurez-bookwyrm">Installez et configurez BookWyrm<a class="anchor ml-2" href="#installez-et-configurez-bookwyrm" title="Permanent link">&para;</a></h2>
 <p>La branche <code>production</code> de BookWyrm contient un certain nombre d'outils qui ne sont pas sur la branche <code>main</code>, prévus pour fonctionner en production, tels que des modifications de <code>docker-compose</code> pour mettre à jour les commandes par défaut ou la configuration des conteneurs, ou des modifications spécifiques à des containers pour activer des fonctionnalités telles que SSL ou des sauvegardes régulières. Tous ces changements n'ont pas nécessairement un impact sur l'installation sans docker, mais la branche <code>production</code> est néanmoins recommandée</p>
 <p>Instructions pour l'exécution de BookWyrm en production sans Docker :</p>
 <ul>
@@ -451,7 +451,7 @@ c6c35779-af3a-4091-b330-c026610920d6
 <li>The application should now be running at your domain. When you load the domain, you should get a configuration page to confirm your instance settings, and a form to create an admin account. Utilisez votre code d'administration pour vous inscrire.</li>
 </ul>
 <p>Congrats! You did it!! Configure your instance however you'd like.</p>
-<h2 id="Finding-log-files">Finding log files<a class="anchor ml-2" href="#Finding-log-files" title="Permanent link">&para;</a></h2>
+<h2 id="finding-log-files">Finding log files<a class="anchor ml-2" href="#finding-log-files" title="Permanent link">&para;</a></h2>
 <p>Like all software, BookWyrm can contain bugs, and often these bugs are in the Python code and easiest to reproduce by getting more context from the logs.</p>
 <p>If you use the provided <code>systemd</code> service configurations from <code>contrib/systemd</code> you will be able to read the logs with <code>journalctl</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># viewing logs of the web process</span>
@@ -466,7 +466,7 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>bookwyrm-scheduler
 
 <p>Feel free to explore additional ways of slicing and dicing logs with flags documented in <code>journalctl --help</code>.</p>
 <p>While BookWyrm's application logs will most often be enough, you can find logs for other services like Nginx, PostgreSQL, or Redis are usually in <code>.log</code> files located somewhere in <code>/var/logs</code>.</p>
-<h2 id="Participer">Participer<a class="anchor ml-2" href="#Participer" title="Permanent link">&para;</a></h2>
+<h2 id="participer">Participer<a class="anchor ml-2" href="#participer" title="Permanent link">&para;</a></h2>
 <p>Voir <a href="https://joinbookwyrm.com/get-involved/">Participer</a> pour plus de détails.</p>
 </section>
 

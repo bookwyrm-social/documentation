@@ -3357,11 +3357,11 @@ External Storage
                 
 <section class="block content">
     <p>By default, BookWyrm uses local storage for static assets (favicon, default avatar, etc.), and media (user avatars, book covers, etc.), but you can use an external storage service to serve these files. BookWyrm uses <code>django-storages</code> to handle external storage, such as S3-compatible services, Apache Libcloud or SFTP.</p>
-<h2 id="S3-compatible-Services">S3-compatible Services<a class="anchor ml-2" href="#S3-compatible-Services" title="Permanent link">&para;</a></h2>
-<h3 id="Setup">Setup<a class="anchor ml-2" href="#Setup" title="Permanent link">&para;</a></h3>
+<h2 id="s3-compatible-services">S3-compatible Services<a class="anchor ml-2" href="#s3-compatible-services" title="Permanent link">&para;</a></h2>
+<h3 id="setup">Setup<a class="anchor ml-2" href="#setup" title="Permanent link">&para;</a></h3>
 <p>Create a bucket at your S3-compatible service of choice, along with an Access Key ID and a Secret Access Key. These can be self hosted, like <a href="https://ceph.io/en/">Ceph</a> (LGPL 2.1/3.0) or <a href="https://min.io/">MinIO</a> (GNU AGPL v3.0), or commercial (<a href="https://www.scaleway.com/en/docs/object-storage-feature/">Scaleway</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-digitalocean-space-and-api-key">Digital Ocean</a>…).</p>
 <p>This guide has been tested against Scaleway Object Storage. If you use another service, please share your experience (especially if you had to take different steps) by filing an Issue on the <a href="https://github.com/bookwyrm-social/documentation">BookWyrm Documentation</a> repository.</p>
-<h3 id="Co-Cię-czeka">Co Cię czeka<a class="anchor ml-2" href="#Co-Cię-czeka" title="Permanent link">&para;</a></h3>
+<h3 id="co-cie-czeka">Co Cię czeka<a class="anchor ml-2" href="#co-cie-czeka" title="Permanent link">&para;</a></h3>
 <p>Jeśli rozpoczynasz nową instancję BookWyrm, proces będzie zawierał:</p>
 <ul>
 <li>Konfigurację usługi pamięci zewnętrznej</li>
@@ -3377,7 +3377,7 @@ External Storage
 <li>Restart your BookWyrm instance</li>
 <li>Update the instance connector</li>
 </ul>
-<h3 id="BookWyrm-Settings">BookWyrm Settings<a class="anchor ml-2" href="#BookWyrm-Settings" title="Permanent link">&para;</a></h3>
+<h3 id="bookwyrm-settings">BookWyrm Settings<a class="anchor ml-2" href="#bookwyrm-settings" title="Permanent link">&para;</a></h3>
 <p>Edit your <code>.env</code> file by uncommenting the following lines:</p>
 <ul>
 <li><code>AWS_ACCESS_KEY_ID</code>: your access key ID</li>
@@ -3400,13 +3400,13 @@ External Storage
 <div class="highlight"><pre><span></span><code><span class="nv">AWS_DEFAULT_ACL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 </code></pre></div>
 
-<h3 id="Copying-local-media-to-external-storage">Copying local media to external storage<a class="anchor ml-2" href="#Copying-local-media-to-external-storage" title="Permanent link">&para;</a></h3>
+<h3 id="copying-local-media-to-external-storage">Copying local media to external storage<a class="anchor ml-2" href="#copying-local-media-to-external-storage" title="Permanent link">&para;</a></h3>
 <p>If your BookWyrm instance is already running and media have been uploaded (user avatars, book covers…), you will need to migrate uploaded media to your bucket.</p>
 <p>To zadanie wykonywane jest poleceniem:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>copy_media_to_s3
 </code></pre></div>
 
-<h3 id="Aktywowanie-pamięci-zewnętrznej-dla-BookWyrm">Aktywowanie pamięci zewnętrznej dla BookWyrm<a class="anchor ml-2" href="#Aktywowanie-pamięci-zewnętrznej-dla-BookWyrm" title="Permanent link">&para;</a></h3>
+<h3 id="aktywowanie-pamieci-zewnetrznej-dla-bookwyrm">Aktywowanie pamięci zewnętrznej dla BookWyrm<a class="anchor ml-2" href="#aktywowanie-pamieci-zewnetrznej-dla-bookwyrm" title="Permanent link">&para;</a></h3>
 <p>To enable the S3-compatible external storage, you will have to edit your <code>.env</code> file by changing the property value for <code>USE_S3</code> from <code>false</code> to <code>true</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">USE_S3</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
@@ -3419,13 +3419,13 @@ External Storage
 <span class="nv">USE_S3_FOR_EXPORTS</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 
-<h4 id="Static-assets">Static assets<a class="anchor ml-2" href="#Static-assets" title="Permanent link">&para;</a></h4>
+<h4 id="static-assets">Static assets<a class="anchor ml-2" href="#static-assets" title="Permanent link">&para;</a></h4>
 <p>Then, you will need to run the following commands to compile the themes and copy all static assets to your S3 bucket:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>compile_themes
 ./bw-dev<span class="w"> </span>collectstatic
 </code></pre></div>
 
-<h4 id="CORS-settings">CORS settings<a class="anchor ml-2" href="#CORS-settings" title="Permanent link">&para;</a></h4>
+<h4 id="cors-settings">CORS settings<a class="anchor ml-2" href="#cors-settings" title="Permanent link">&para;</a></h4>
 <p>Once the static assets are collected, you will need to set up CORS for your bucket.</p>
 <p>Some services like Digital Ocean provide an interface to set it up, see <a href="https://docs.digitalocean.com/products/spaces/how-to/configure-cors/">Digital Ocean doc: How to Configure CORS</a>.</p>
 <p>If your service doesn’t provide an interface, you can still set up CORS with the command line.</p>
@@ -3449,18 +3449,18 @@ External Storage
 </code></pre></div>
 
 <p>No output means it should be good.</p>
-<h3 id="Additional-Step-for-Linode-Object-Storage-Users">Additional Step for Linode Object Storage Users<a class="anchor ml-2" href="#Additional-Step-for-Linode-Object-Storage-Users" title="Permanent link">&para;</a></h3>
+<h3 id="additional-step-for-linode-object-storage-users">Additional Step for Linode Object Storage Users<a class="anchor ml-2" href="#additional-step-for-linode-object-storage-users" title="Permanent link">&para;</a></h3>
 <p>For Linode, you now need to make an alteration to the <code>.env</code> to ensure that the generated links to your storage objects are correct. If you miss this step, all the links to images and static files (like css) will be broken. To fix this, you need to now insert the bucket-name into the <code>AWS_S3_CUSTOM_DOMAIN</code>, for example if your <code>AWS_STORAGE_BUCKET_NAME</code> is <code>"my-bookwyrm-bucket"</code>, then set it to:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">AWS_S3_CUSTOM_DOMAIN</span><span class="o">=</span>my-bookwyrm-bucket.cluster-id.linodeobjects.com
 </code></pre></div>
 
 <p><em>Note</em>: From this point on, any bw-dev copy or sync commands will place objects into an incorrect location in your object store, so if you need to use them, revert to the previous setting, run and re-enable.</p>
-<h3 id="User-export-and-import-files">User export and import files<a class="anchor ml-2" href="#User-export-and-import-files" title="Permanent link">&para;</a></h3>
+<h3 id="user-export-and-import-files">User export and import files<a class="anchor ml-2" href="#user-export-and-import-files" title="Permanent link">&para;</a></h3>
 <p>After <code>v0.7.5</code>, user export and import files are saved to local storage even if <code>USE_S3</code> is set to <code>true</code>. Generally it is safer to use local storage for these files, and keep your used storage under control by setting up the task to periodically delete old export and import files.</p>
 <p>If you are running a large instance you may prefer to use S3 for these files as well. If so, you will need to set the environment variable <code>USE_S3_FOR_EXPORTS</code> to <code>true</code>.</p>
-<h3 id="New-Instance">New Instance<a class="anchor ml-2" href="#New-Instance" title="Permanent link">&para;</a></h3>
+<h3 id="new-instance">New Instance<a class="anchor ml-2" href="#new-instance" title="Permanent link">&para;</a></h3>
 <p>If you are starting a new BookWyrm instance, you can go back to the setup instructions right now: [<a href="install-prod.html">Docker</a>] [<a href="install-prod-dockerless.html">Dockerless</a>]. If not, keep on reading.</p>
-<h3 id="Restarting-your-instance">Restarting your instance<a class="anchor ml-2" href="#Restarting-your-instance" title="Permanent link">&para;</a></h3>
+<h3 id="restarting-your-instance">Restarting your instance<a class="anchor ml-2" href="#restarting-your-instance" title="Permanent link">&para;</a></h3>
 <p>Once the media migration has been done and the static assets are collected, you can load the new <code>.env</code> configuration and restart your instance with:</p>
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
@@ -3475,7 +3475,7 @@ External Storage
 <div class="highlight"><pre><span></span><code>./bw-dev<span class="w"> </span>sync_media_to_s3
 </code></pre></div>
 
-<h3 id="Updating-the-instance-connector">Updating the instance connector<a class="anchor ml-2" href="#Updating-the-instance-connector" title="Permanent link">&para;</a></h3>
+<h3 id="updating-the-instance-connector">Updating the instance connector<a class="anchor ml-2" href="#updating-the-instance-connector" title="Permanent link">&para;</a></h3>
 <p><em>Note: You can skip this step if you're running an updated version of BookWyrm; in September 2021 the "self connector" was removed in <a href="https://github.com/bookwyrm-social/bookwyrm/pull/1413">PR #1413</a></em></p>
 <p>In order for the right URL to be used when displaying local book search results, we have to modify the value for the cover images URL base.</p>
 <p>Connector data can be accessed through the Django admin interface, located at the url <code>http://MY_DOMAIN_NAME/admin</code>. The connector for your own instance is the first record in the database, so you can access the connector with this URL: <code>https://MY_DOMAIN_NAME/admin/bookwyrm/connector/1/change/</code>.</p>
