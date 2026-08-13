@@ -6,6 +6,7 @@ import re
 import sys
 
 from jinja2 import Environment, FileSystemLoader
+from markdown.extensions import toc
 from markdown import Markdown
 import yaml
 
@@ -17,9 +18,10 @@ env.install_gettext_translations(i18n)
 
 
 def bw_slugify(value: str, separator: str) -> str:
-    """ Slugify a string, to make it URL friendly. """
-    value = re.sub(r'[^\w\s-]', '', value).strip()
-    return re.sub(r'[{}\s]+'.format(separator), separator, value)
+    """Slugify a string, to make it URL friendly."""
+    value = re.sub(r"[^\w\s-]", "", value).strip()
+    return re.sub(r"[{}\s]+".format(separator), separator, value)
+
 
 def get_page_metadata(locale_slug, page, version_slug=False):
     """title/order etc for a page
@@ -102,11 +104,16 @@ def get_site_data(locale_slug, locale_code, page, version_slug=False):
     return template_data
 
 
-def format_markdown(file_path):
+def format_markdown(file_path, lower=True):
     """go from markdown to html, extracting headers"""
     with open(file_path, "r", encoding="utf-8") as page_markdown:
         first_line = page_markdown.readline()
         dashed_header_format = first_line == "---\n"
+
+    if lower:
+        slugify = toc.slugify
+    else:
+        slugify = bw_slugify
 
     with open(file_path, "r", encoding="utf-8") as markdown_content:
         md = Markdown(
@@ -116,8 +123,8 @@ def format_markdown(file_path):
                 "toc": {
                     "permalink": True,
                     "permalink_class": "anchor ml-2",
-                    "slugify": bw_slugify
-                    },
+                    "slugify": slugify,
+                },
             },
         )
 
@@ -176,7 +183,10 @@ if __name__ == "__main__":
                     f"{LOCALIZED_SITE_PATH}{output_path}", "w+", encoding="utf-8"
                 ) as render_file:
                     data = get_site_data(SLUG, locale["code"], content_path, version)
-                    formatted_md = format_markdown(content_path)
+                    if content_path.split("/")[-2] == "vocabulary":
+                        formatted_md = format_markdown(content_path, lower=False)
+                    else:
+                        formatted_md = format_markdown(content_path)
                     data["content"] = formatted_md["body"]
                     data["toc"] = formatted_md["toc"]
                     data["path"] = (
