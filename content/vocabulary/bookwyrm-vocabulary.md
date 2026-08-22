@@ -265,7 +265,18 @@ In addition, a `ShelfItem` has the following properties:
 
 #### Example
 
-TODO
+```json
+{
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://www.w3id.org/BookWyrm/ns/"
+    ],
+    "id": "http://example.com/shelfbook/1",
+    "type": "ShelfItem",
+    "actor": "http://example.com/user/bookwyrm.instance.actor",
+    "book": "http://example.com/book/2"
+}
+```
 
 ### ListItem
 `https://www.w3id.org/BookWyrm/ns#ListItem`
@@ -287,7 +298,21 @@ In addition, a `ListItem` has the following properties:
 
 #### Example
 
-TODO
+```json
+{
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://www.w3id.org/BookWyrm/ns/"
+    ],
+    "id": "http://example.com/shelfbook/1",
+    "type": "ListItem",
+    "actor": "http://example.com/user/bookwyrm.instance.actor",
+    "book": "http://example.com/book/2",
+    "notes": "I added this to the list because I like it",
+    "approved": true,
+    "order": 3
+}
+```
 
 ### SuggestionListItem
 `https://www.w3id.org/BookWyrm/ns#SuggestionListItem`
@@ -307,7 +332,19 @@ In addition, a `SuggestionListItem` has the following properties:
 
 #### Example
 
-TODO
+```json
+{
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://www.w3id.org/BookWyrm/ns/"
+    ],
+    "id": "http://example.com/shelfbook/1",
+    "type": "SuggestionListItem",
+    "actor": "http://example.com/user/bookwyrm.instance.actor",
+    "book": "http://example.com/book/2",
+    "notes": "If you loved that you will love this"
+}
+```
 
 ### SeriesBook
 `https://www.w3id.org/BookWyrm/ns#SeriesBook`
@@ -328,8 +365,20 @@ In addition, a `SeriesBook` has the following properties:
 
 #### Example
 
-TODO
-
+```json
+{
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://www.w3id.org/BookWyrm/ns/"
+    ],
+    "id": "http://example.com/seriesbook/1",
+    "type": "SeriesBook",
+    "actor": "http://example.com/user/bookwyrm.instance.actor",
+    "book": "http://example.com/book/2",
+    "series": "http://example.com/series/1",
+    "seriesNumber": "99"
+}
+```
 
 ## Extended Note Types
 
@@ -372,7 +421,8 @@ In addition, a `Comment` has the following extended properties:
 {
     "@context": [
         "https://www.w3.org/ns/activitystreams",
-        {"bw": "https://www.w3id.org/BookWyrm/ns/"}
+        {"bw": "https://www.w3id.org/BookWyrm/ns/"},
+        { "Hashtag": "as:Hashtag" }
     ],
     "id": "https://example.net/user/library_lurker/comment/9",
     "type": ["bw:Comment", "Note"],
@@ -422,7 +472,8 @@ In addition, a `Quotation` has the following extended properties:
 {
     "@context": [
         "https://www.w3.org/ns/activitystreams",
-        {"bw": "https://www.w3id.org/BookWyrm/ns/"}
+        {"bw": "https://www.w3id.org/BookWyrm/ns/"},
+        { "Hashtag": "as:Hashtag" }
     ],
     "id": "https://example.net/user/mouse/quotation/13",
     "url": "https://example.net/user/mouse/quotation/13",
@@ -472,7 +523,8 @@ Inherits the properties of [Review](#Review), however `content` and `name` are n
 {
     "@context": [
         "https://www.w3.org/ns/activitystreams",
-        {"bw": "https://www.w3id.org/BookWyrm/ns/"}
+        {"bw": "https://www.w3id.org/BookWyrm/ns/"},
+        { "Hashtag": "as:Hashtag" }
     ],
     "id": "https://example.com/user/mouse/reviewrating/123",
     "type": ["bw:Rating", "Note"],
@@ -538,7 +590,8 @@ In addition, a `Review` has the following extended properties:
 {
     "@context": [
         "https://www.w3.org/ns/activitystreams",
-        {"bw": "https://www.w3id.org/BookWyrm/ns/"}
+        {"bw": "https://www.w3id.org/BookWyrm/ns/"},
+        { "Hashtag": "as:Hashtag" }
     ],
     "id": "https://example.net/user/library_lurker/review/2",
     "type": ["Review", "Article"],
@@ -598,6 +651,10 @@ A `Shelf` is a collection of [Edition](#Edition) objects. Shelves are used to in
 
 ```json
 {
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://www.w3id.org/BookWyrm/ns/"
+    ],
     "id": "https://example.net/user/avid_reader/books/extraspecialbooks-5",
     "type": "Shelf",
     "totalItems": 0,
@@ -610,8 +667,7 @@ A `Shelf` is a collection of [Edition](#Edition) objects. Shelves are used to in
     ],
     "cc": [
         "https://example.net/user/avid_reader/followers"
-    ],
-    "@context": "https://www.w3.org/ns/activitystreams"
+    ]
 }
 ```
 
@@ -634,6 +690,10 @@ In addition, `BookList` has the following properties:
 
 ```json
 {
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://www.w3id.org/BookWyrm/ns/"
+    ],
     "id": "https://example.net/list/1",
     "type": "BookList",
     "totalItems": 0,
@@ -648,8 +708,7 @@ In addition, `BookList` has the following properties:
         "https://example.net/user/avid_reader/followers"
     ],
     "summary": "A list of books I like.",
-    "curation": "curated",
-    "@context": "https://www.w3.org/ns/activitystreams"
+    "curation": "curated"
 }
 ```
 
@@ -670,7 +729,29 @@ In addition, `SuggestionList` has the following properties:
 
 #### Example
 
-TODO
+```json
+{
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://www.w3id.org/BookWyrm/ns/"
+    ],
+    "id": "http://example.com/book/4/suggestions",
+    "type": "SuggestionList",
+    "totalItems": 1,
+    "first": "http://example.com/book/4/suggestions?page=1",
+    "last": "http://example.com/book/4/suggestions?page=1",
+    "owner": "http://example.com/user/bookwyrm.instance.actor",
+    "to": [
+        "https://www.w3.org/ns/activitystreams#Public"
+    ],
+    "cc": [
+        "http://example.com/user/bookwyrm.instance.actor/followers"
+    ],
+    "book": {
+        ...
+    }
+}
+```
 
 ### Series
 `https://www.w3id.org/BookWyrm/ns#Series`
@@ -687,7 +768,22 @@ A `Series` is a collection of [SeriesBook](#SeriesBook) objects representing [Wo
 
 #### Example
 
-TODO
+```json
+{
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        "https://www.w3id.org/BookWyrm/ns/"
+    ],
+    "id": "http://example.com/series/1",
+    "type": "Series",
+    "totalItems": 1,
+    "first": "http://example.com/series/1?page=1",
+    "last": "http://example.com/series/1?page=1",
+    "name": "An interesting series of books",
+    "actor": "http://example.com/user/bookwyrm.instance.actor",
+    "alternativeNames": []
+}
+```
 
 ## Properties
 
