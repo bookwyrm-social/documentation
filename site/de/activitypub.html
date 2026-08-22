@@ -191,11 +191,11 @@ ActivityPub
             </li>
             
             <li>
-                <a href="/v0.8.5/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.8.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
             </li>
             
             <li>
-                <a href="/v0.8.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
+                <a href="/v0.8.5/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -3021,7 +3021,7 @@ ActivityPub
 <h3 id="beispiel-nutzerinnen"><a class="headerlink" href="#beispiel-nutzerinnen">Beispiel: Nutzer*innen</a></h3>
 <p>Ein<em>e BookWyrm-Nutzer</em>in wird <a href="https://github.com/bookwyrm-social/bookwyrm/blob/main/bookwyrm/models/user.py">in <code>models/user.py</code> definiert</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">OrderedCollectionPageMixin</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;a user who wants to read books&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""a user who wants to read books"""</span>
 </code></pre></div>
 
 <p>Beachte, dass unsere Unterklasse von <code>OrderedCollectionPageMixin</code> erbt. Dieses wiederum erbt von <code>ObjectMixin</code>, welches von <code>ActivitypubMixin</code> erbt. Das mag umständlich erscheinen, aber diese Vererbungskette erlaubt uns, Code-Duplikate zu vermeiden, wenn unsere ActivityPub-Objekte konkreter werden. <code>AbstractUser</code> ist <a href="https://docs.djangoproject.com/en/5.1/topics/auth/customizing/#specifying-custom-user-model">ein Django-Modell, das dazu gedacht ist, durch Unterklassen erweitert zu werden</a>, was uns Dinge wie gehashte Passwort-Anmeldungen und Berechtigungsebenen "von Haus aus" mitgibt.</p>
@@ -3033,7 +3033,7 @@ ActivityPub
 <p>Die Definition der Datenklasse für<code>activitypub.Person</code> findet sich in <code>/activitypub/person.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">(</span><span class="n">ActivityObject</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;actor activitypub json&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""actor activitypub json"""</span>
 
     <span class="n">preferredUsername</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">inbox</span><span class="p">:</span> <span class="nb">str</span>
@@ -3051,11 +3051,11 @@ ActivityPub
     <span class="n">hideFollows</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">movedTo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">alsoKnownAs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Person&quot;</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"Person"</span>
 </code></pre></div>
 
 <p>Du wirst bemerken, dass diese Felder nicht perfekt zu den Feldern im Modell <code>User</code> passen. Wenn du in deinem Modell einen Feldnamen hast, der im ActivityPub-Objekt anders heißen muss (z. B., um mit Python-Namenskonventionen im Modell übereinzustimmen, aber gleichzeitig auch mit JSON-Namenskonventionen), kannst du ein <code>activitypub_field</code> in der Definition des Modellfeldes angeben:</p>
-<div class="highlight"><pre><span></span><code><span class="n">followers_url</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">activitypub_field</span><span class="o">=</span><span class="s2">&quot;followers&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">followers_url</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">activitypub_field</span><span class="o">=</span><span class="s2">"followers"</span><span class="p">)</span>
 </code></pre></div>
 </section>
 
