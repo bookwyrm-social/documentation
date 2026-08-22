@@ -204,11 +204,11 @@
             </li>
             
             <li>
-                <a href="/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
             <li>
-                <a href="/pt-br/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+                <a href="/pt-br/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -1250,11 +1250,11 @@
 <li>Se o bloco de texto tiver variáveis, você deve usar o par de tags <code>{% blocktrans %}</code> e <code>{% endblocktrans %}</code>. Se você estiver usando espaços em brancos ou quebras de linha, use <code>trimmed</code> para removê-los automaticamente quando o arquivo de localização for gerado: <code>{% blocktrans trimmed %}</code></li>
 </ul>
 <h3 id="exemplos">Exemplos<a class="anchor ml-2" href="#exemplos" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;Esta lista está vazia&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans "Esta lista está vazia" %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Adicionado por <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ user_path }}&quot;</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    Adicionado por <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"{{ user_path }}"</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     {% endblocktrans %}
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div>
