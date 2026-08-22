@@ -211,11 +211,11 @@ External Storage
             </li>
             
             <li>
-                <a href="/v0.8.2/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.8.2/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
             <li>
-                <a href="/v0.8.2/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+                <a href="/v0.8.2/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -3427,7 +3427,7 @@ External Storage
 <li>For Linode Object Storage, set this to the cluster domain, e.g. <code>"https://eu-central-1.linodeobjects.com"</code></li>
 </ul>
 <p>For many S3 compatible services, the default <code>ACL</code> is <code>"public-read"</code>, and this is what BookWyrm defaults to. If you are using Backblaze (B2) you need to explicitly set the default ACL to be empty in your <code>.env</code> file:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">AWS_DEFAULT_ACL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">AWS_DEFAULT_ACL</span><span class="o">=</span><span class="s2">""</span>
 </code></pre></div>
 
 <h3 id="copiati-fisierele-media-locale-pe-stocarea-externa"><a class="headerlink" href="#copiati-fisierele-media-locale-pe-stocarea-externa">Copiați fișierele media locale pe stocarea externă</a></h3>
@@ -3461,13 +3461,13 @@ External Storage
 <p>Dacă serviciul dvs. nu oferă o interfață, încă puteți configura CORS în linia de comandă.</p>
 <p>Creați un fișier numit <code>cors.json</code> cu conținutul următor:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;CORSRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"CORSRules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;AllowedOrigins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;https://MY_DOMAIN_NAME&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://www.MY_DOMAIN_NAME&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;AllowedHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;AllowedMethods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELETE&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;MaxAgeSeconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ExposeHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Etag&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">"AllowedOrigins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://MY_DOMAIN_NAME"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://www.MY_DOMAIN_NAME"</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">"AllowedHeaders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"*"</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">"AllowedMethods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s2">"HEAD"</span><span class="p">,</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s2">"PUT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"DELETE"</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">"MaxAgeSeconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"ExposeHeaders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Etag"</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
@@ -3496,7 +3496,7 @@ External Storage
 </code></pre></div>
 
 <p>Dacă totul decurge cum trebuie, stocarea dvs. a fost schimbată fără timp de oprire. Dacă unele fonturi lipsesc (și consola JS a navigatorului dvs. vă arată alerte CORS), atunci ceva a mers greșit <a href="#cors-settings">here</a>. În acest caz, ar fi bine să verificați antetele unei cereri HTTP cu un fișier al „găleții” dvs:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>OPTIONS<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Origin: http://MY_DOMAIN_NAME&#39;</span><span class="w"> </span>http://BUCKET_URL/static/images/logo-small.png<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Access-Control-Request-Method: GET&quot;</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>OPTIONS<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Origin: http://MY_DOMAIN_NAME'</span><span class="w"> </span>http://BUCKET_URL/static/images/logo-small.png<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Access-Control-Request-Method: GET"</span>
 </code></pre></div>
 
 <p>Înlocuiți <code>MY_DOMAIN_NAME</code> cu numele domeniului instanței dvs., <code>BUCKET_URL</code> cu URL-ul pentru găleata dvs. Puteți înlocui calea fișierului co orice altă cale validă pentru găleata dvs.</p>

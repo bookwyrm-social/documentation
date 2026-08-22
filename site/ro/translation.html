@@ -211,11 +211,11 @@ Translations
             </li>
             
             <li>
-                <a href="/v0.8.2/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.8.2/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
             </li>
             
             <li>
-                <a href="/v0.8.2/ro/debug_toolbar.html" class="has-background-inherit" >Django Debug Toolbar</a>
+                <a href="/v0.8.2/ro/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -1181,11 +1181,11 @@ Translations
 <li>Dacă blocul de text include variabile, ar trebui să folosiți perechea de taguri șablon <code>{% blocktrans %}</code> și <code>{% endblocktrans %}</code>. Dacă includeți spațiu alb sau treceri la linie nouă, folosiți <code>trimmed</code> pentru a le înlătura automat când fișierul de localizare este generat: <code>{% blocktrans trimmed %}</code></li>
 </ul>
 <h3 id="exemple"><a class="headerlink" href="#exemple">Exemple</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans "This list is currently empty" %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    Added by <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ user_path }}&quot;</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    Added by <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"{{ user_path }}"</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     {% endblocktrans %}
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div>
