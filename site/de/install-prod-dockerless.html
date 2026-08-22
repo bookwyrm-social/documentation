@@ -211,11 +211,11 @@ Installation ohne Docker
             </li>
             
             <li>
-                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.7.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
+                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -313,9 +313,9 @@ chown<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/cache
 </li>
 <li>Erstelle die Bookwyrm-PostgreSQL-Datenbank. Stelle sicher, dass du das Passwort zu dem änderst, das du in deiner <code>.env</code>-Konfiguration angegeben hast: <code>sudo -i -u postgres psql</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;securedbypassword123&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">'securedbypassword123'</span><span class="p">;</span>
 
-<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">TEMPLATE</span><span class="w"> </span><span class="n">template0</span><span class="w"> </span><span class="k">ENCODING</span><span class="w"> </span><span class="s1">&#39;UNICODE&#39;</span><span class="p">;</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">TEMPLATE</span><span class="w"> </span><span class="n">template0</span><span class="w"> </span><span class="k">ENCODING</span><span class="w"> </span><span class="s1">'UNICODE'</span><span class="p">;</span>
 
 <span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">bookwyrm</span><span class="w"> </span><span class="k">OWNER</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">bookwyrm</span><span class="p">;</span>
 

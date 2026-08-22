@@ -211,11 +211,11 @@
             </li>
             
             <li>
-                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
+                <a href="/v0.7.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
             </li>
             
             <li>
-                <a href="/v0.7.5/de/debug_toolbar.html" class="has-background-inherit" >Django Debug-Symbolleiste</a>
+                <a href="/v0.7.5/de/install-dev.html" class="has-background-inherit" >Developer Environment</a>
             </li>
             
         </ul>
@@ -260,11 +260,11 @@
 <li>Wenn der Textblock Variablen enthält, solltest du das Template-Tag-Paar <code>{% blocktrans %}</code> und <code>{% endblocktrans %}</code> verwenden. Wenn du Leerzeichen oder Zeilenumbrüche einbaust, nutze <code>gekürzt</code>, um es automatisch zu entfernen, wenn die Sprachdatei generiert wird: <code>{% blocktrans trimmed %}</code></li>
 </ul>
 <h3 id="beispiele"><a class="headerlink" href="#beispiele">Beispiele</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans &quot;This list is currently empty&quot; %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{% trans "This list is currently empty" %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
     {% blocktrans trimmed with username=item.user.display_name user_path=item.user.local_path %}
-    hinzugefügt von <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ user_path }}&quot;</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    hinzugefügt von <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"{{ user_path }}"</span><span class="p">&gt;</span>{{ username }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     {% endblocktrans %}
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </code></pre></div>
