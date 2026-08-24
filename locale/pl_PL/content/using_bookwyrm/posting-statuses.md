@@ -27,7 +27,7 @@ Spoiler alerts (also known as content warnings) are useful to give people a warn
 
 #### Star ratings
 
-A star rating can be added to reviews, or added on its own by clicking the stars below a book. It is a 5-star scale, and half stars can be added by double clicking on the star. For example, if you want to rate 2.5 stars, you'd click on 3 stars then click again on the third star to make it half. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
+A star rating can be added to reviews, or added on its own by clicking the stars below a book. Star ratings can include half-stars. So you can click on the first half of the third star to rate something 2.5 stars. The minimum rating is one half of a star, or 0.5 stars. When viewing a book or reviews, the star ratings are hidden until the user selects "Show rating".
 
 ### Aktualizacje statusu czytania
 
