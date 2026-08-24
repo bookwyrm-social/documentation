@@ -694,7 +694,18 @@ BookWyrm Vocabulary v1.0
 <li><a href="#book">book</a>: <code>@id</code></li>
 </ul>
 <h4 id="example_3"><a class="headerlink" href="#example_3">Example</a></h4>
-<p>TODO</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/shelfbook/1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShelfItem"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"actor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/user/bookwyrm.instance.actor"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"book"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/book/2"</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <h3 id="listitem"><a class="headerlink" href="#listitem">ListItem</a></h3>
 <p><code>https://www.w3id.org/BookWyrm/ns#ListItem</code></p>
 <p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
@@ -709,7 +720,21 @@ BookWyrm Vocabulary v1.0
 <li><a href="#order">order</a>: <code>Number</code></li>
 </ul>
 <h4 id="example_4"><a class="headerlink" href="#example_4">Example</a></h4>
-<p>TODO</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/shelfbook/1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ListItem"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"actor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/user/bookwyrm.instance.actor"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"book"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/book/2"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I added this to the list because I like it"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"approved"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <h3 id="suggestionlistitem"><a class="headerlink" href="#suggestionlistitem">SuggestionListItem</a></h3>
 <p><code>https://www.w3id.org/BookWyrm/ns#SuggestionListItem</code></p>
 <p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
@@ -722,7 +747,19 @@ BookWyrm Vocabulary v1.0
 <li><a href="#notes">notes</a>: <code>String</code></li>
 </ul>
 <h4 id="example_5"><a class="headerlink" href="#example_5">Example</a></h4>
-<p>TODO</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/shelfbook/1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SuggestionListItem"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"actor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/user/bookwyrm.instance.actor"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"book"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/book/2"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"If you loved that you will love this"</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <h3 id="seriesbook"><a class="headerlink" href="#seriesbook">SeriesBook</a></h3>
 <p><code>https://www.w3id.org/BookWyrm/ns#SeriesBook</code></p>
 <p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
@@ -736,7 +773,20 @@ BookWyrm Vocabulary v1.0
 <li><a href="#seriesNumber">seriesNumber</a>: <code>String</code></li>
 </ul>
 <h4 id="example_6"><a class="headerlink" href="#example_6">Example</a></h4>
-<p>TODO</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/seriesbook/1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SeriesBook"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"actor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/user/bookwyrm.instance.actor"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"book"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/book/2"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"series"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/series/1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"seriesNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99"</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <h2 id="extended-note-types"><a class="headerlink" href="#extended-note-types">Extended Note Types</a></h2>
 <p>These type are all extensions of the Activity Streams <a href="https://www.w3.org/ns/activitystreams#Note"><code>Note</code></a> object type.</p>
 <h3 id="generatednote"><a class="headerlink" href="#generatednote">GeneratedNote</a></h3>
@@ -765,7 +815,8 @@ This type is under review and may be removed in a future version of BookWyrm
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
-<span class="w">        </span><span class="p">{</span><span class="nt">"bw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span><span class="p">}</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">"bw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"Hashtag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as:Hashtag"</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.net/user/library_lurker/comment/9"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"bw:Comment"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Note"</span><span class="p">],</span>
@@ -809,7 +860,8 @@ This type is under review and may be removed in a future version of BookWyrm
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
-<span class="w">        </span><span class="p">{</span><span class="nt">"bw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span><span class="p">}</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">"bw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"Hashtag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as:Hashtag"</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.net/user/mouse/quotation/13"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.net/user/mouse/quotation/13"</span><span class="p">,</span>
@@ -852,7 +904,8 @@ This type is under review and may be removed in a future version of BookWyrm
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
-<span class="w">        </span><span class="p">{</span><span class="nt">"bw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span><span class="p">}</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">"bw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"Hashtag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as:Hashtag"</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/user/mouse/reviewrating/123"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"bw:Rating"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Note"</span><span class="p">],</span>
@@ -908,7 +961,8 @@ This type is under review and may be removed in a future version of BookWyrm
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
-<span class="w">        </span><span class="p">{</span><span class="nt">"bw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span><span class="p">}</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">"bw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"Hashtag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as:Hashtag"</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.net/user/library_lurker/review/2"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Review"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Article"</span><span class="p">],</span>
@@ -956,6 +1010,10 @@ This type is under review and may be removed in a future version of BookWyrm
 <p><code>Shelf</code> inherits all the <a href="#Orderedcollection-extended-properties">OrderedCollection extended properties</a>.</p>
 <h4 id="example_11"><a class="headerlink" href="#example_11">Example</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span>
+<span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.net/user/avid_reader/books/extraspecialbooks-5"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shelf"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"totalItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -968,8 +1026,7 @@ This type is under review and may be removed in a future version of BookWyrm
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"cc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="s2">"https://example.net/user/avid_reader/followers"</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -985,6 +1042,10 @@ This type is under review and may be removed in a future version of BookWyrm
 </ul>
 <h4 id="example_12"><a class="headerlink" href="#example_12">Example</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span>
+<span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.net/list/1"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BookList"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"totalItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -999,8 +1060,7 @@ This type is under review and may be removed in a future version of BookWyrm
 <span class="w">        </span><span class="s2">"https://example.net/user/avid_reader/followers"</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A list of books I like."</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"curation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"curated"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span>
+<span class="w">    </span><span class="nt">"curation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"curated"</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -1015,7 +1075,29 @@ This type is under review and may be removed in a future version of BookWyrm
 <li><a href="#book">book</a>: <code>@id</code></li>
 </ul>
 <h4 id="example_13"><a class="headerlink" href="#example_13">Example</a></h4>
-<p>TODO</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/book/4/suggestions"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SuggestionList"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"totalItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/book/4/suggestions?page=1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/book/4/suggestions?page=1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/user/bookwyrm.instance.actor"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams#Public"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"cc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"http://example.com/user/bookwyrm.instance.actor/followers"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"book"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="err">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <h3 id="series"><a class="headerlink" href="#series">Series</a></h3>
 <p><code>https://www.w3id.org/BookWyrm/ns#Series</code></p>
 <p><em>Included in version 1.0 of the BookWyrm vocabulary</em></p>
@@ -1026,7 +1108,22 @@ This type is under review and may be removed in a future version of BookWyrm
 <li><a href="#alternativeNames">alternativeNames</a>: <code>Array</code></li>
 </ul>
 <h4 id="example_14"><a class="headerlink" href="#example_14">Example</a></h4>
-<p>TODO</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"https://www.w3id.org/BookWyrm/ns/"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/series/1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Series"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"totalItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/series/1?page=1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/series/1?page=1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An interesting series of books"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"actor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/user/bookwyrm.instance.actor"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"alternativeNames"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <h2 id="properties_15"><a class="headerlink" href="#properties_15">Properties</a></h2>
 <h3 id="aasin"><a class="headerlink" href="#aasin">aasin</a></h3>
 <p><code>https://www.w3id.org/BookWyrm/ns#aasin</code></p>
