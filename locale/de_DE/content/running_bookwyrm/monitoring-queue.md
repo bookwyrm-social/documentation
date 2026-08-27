@@ -8,9 +8,9 @@ Es kann passieren, dass deine Instanz langsam ist. Eine Option wäre es, die War
 
 ## Celery
 
-BookWyrm uses [Celery](https://docs.celeryq.dev/en/stable/) to manage background jobs.
+BookWyrm nutzt [Celery](https://docs.celeryq.dev/en/stable/), um Hintergrundjobs zu verwalten.
 
-By default this [uses gevent](https://docs.celeryq.dev/en/stable/userguide/concurrency/gevent.html) to run 1000 concurrent tasks with greenlet under a single worker. This allow for high throughput of tasks whilst restricting Celery to using a single CPU core, reducing the risk of CPU and RAM overload. If your BookWyrm instance requires more workers, you can increase this with the [`--scale`](https://docs.docker.com/reference/cli/docker/compose/up/) flag applied to the `celery_worker` service:
+Standardmäßig [nutzt es gevent](https://docs.celeryq.dev/en/stable/userguide/concurrency/gevent.html), um 1000 nebenläufige Tasks mit greenlet auf einem einzelnen Worker auszuführen. Das erlaubt einen hohen Taks-Durchsatz, während Celery auf einen einzelnen CPU-Kern beschränkt bleibt, wodurch das Risiko einer CPU- und RAM-Überlastung verringert wird. Wenn deine BookWyrm-Instanz mehr Worker braucht, kannst du die Anzahl mit der [`--scale`](https://docs.docker.com/reference/cli/docker/compose/up/)-Flag an den Befehl zum Starten des `celery_worker`-Dienstes übergeben:
 
 ```sh
 ./bw-dev up --scale celery_worker=3
