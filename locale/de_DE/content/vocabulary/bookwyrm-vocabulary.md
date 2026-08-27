@@ -1,5 +1,5 @@
 ---
-Title: BookWyrm Vocabulary v1.0
+Title: BookWyrm-Terminologie v1.0
 Date: 2026-08-09
 Order: 1
 ---
