@@ -75,11 +75,11 @@ USE_S3=true
 
 **Beachte** dass nach `v0.7.5` angenommen wird, dass aller Datenverkehr über HTTPS läuft. Du musst also sicherstellen, dass dein externer Speicher ebenfalls über HTTPS ausgeliefert wird.
 
-From BookWyrm version `0.8.5` all user export files are saved to the local file system by default, even if you are using S3 storage for everything else. This choice was made to avoid inadvertently serving user export files in public buckets and to reduce network traffic to S3 storage for files that are unlikely to be needed more than once.
+Ab BookWyrm-Version `0.8.5` werden alle Export-Dateien für Nutzer*innen standardmäßig im lokalen Dateisystem abgelegt, selbst wenn du für alles andere einen S3-Storage verwendest. Wir haben uns dafür entschieden, um zu vermeiden, dass Nutzer*innen-Exporte versehentlich in öffentlichen Buckets landen und um den Netzwerk-Traffic zum S3-Storage für solche Dateien zu reduzieren, die wahrscheinlich nur einmal benötigt werden.
 
-Old user export and import files can be [automatically deleted using a scheduled job](system.html#files-maintenance), to ensure your local storage does not fill up with old export files.
+Alte Export- und Import-Dateien für Nutzer*innen können [automatisch über einen geplanten Job gelöscht werden](system.html#files-maintenance), damit dein lokaler Speicher nicht mit alten Export-Dateien vollläuft.
 
-Whilst local storage is the default and recommended, you can use s3 for these files as well. If you wish to use S3 storage for user export and import files, you also need to set `USE_S3_FOR_EXPORTS` to `true` in your `.env` config file:
+Obwohl der lokale Speicher standardmäßig ausgewählt und empfohlen ist, kannst du auch für diese Dateien S3 verwenden. Wenn du einen S3-Storage für Export- und Import-Dateien von Nutzer*innen verwenden möchtest, musst du den Wert von `USE_S3_FOR_EXPORTS` in deiner `.env`-Konfigurationsdatei auf `true` setzen:
 
 ```sh
 USE_S3=true
