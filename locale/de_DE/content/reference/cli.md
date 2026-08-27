@@ -1,5 +1,5 @@
 ---
-Title: Command Line Tool
+Title: Kommandozeilen-Werkzeuge
 Date: 2025-04-28
 Order: 2
 ---
