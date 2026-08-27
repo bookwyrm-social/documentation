@@ -1,5 +1,5 @@
 - - -
-Title: Developer Environment Date: 2026-07-20 Order: 5
+Title: Entwicklungsumgebung Date: 2026-07-20 Order: 5
 - - -
 
 ## Voraussetzungen
