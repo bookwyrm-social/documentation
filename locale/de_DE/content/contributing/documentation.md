@@ -75,7 +75,7 @@ Wenn deine Pull Request übernommen wird, wird [die Dokumentation](https://docs.
 
 Wenn du eine neue Seite hinzufügst, wirst du einige Metadaten angeben und andere Seite anpassen müssen.
 
-At the top of each markdown file is the "frontmatter" in `yaml` format:
+Am Anfang jeder Markdown-Datei befindet sich die Titelei im `yaml`-Format:
 
 ```yaml
 Title: Dokumentation
@@ -119,7 +119,7 @@ Dieser Befehl startet einen lokalen Web-Server unter `http://[::1]:8080/`, damit
 
 ### ruff
 
-We use [ruff](https://docs.astral.sh/ruff/) for linting and formatting. Ensure that you run `./bw-dev ruff` before pushing your pull request if you made any changes to Python files in the documentation repository. You can try auto-fixing any linting issues with `./bw-dev ruff-fix`.
+Wir benutzen [ruff](https://docs.astral.sh/ruff/) zum Linten und Formatieren. Stelle sicher, dass du `./bw-dev ruff` ausführst, bevor du deine Pull-Request hochlädst, sofern du Änderungen an den Python-Dateien im Dokumentations-Repository vorgenommen hast. Du kannst ausprobieren, Linting-Fehler mit `./bw-dev ruff-fix` automatisch beheben zu lassen.
 
 ## Hinweise für Dokumentations-Maintainer
 
