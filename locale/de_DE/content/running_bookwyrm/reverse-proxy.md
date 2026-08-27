@@ -1,5 +1,5 @@
 - - -
-Title: Using a Reverse-Proxy Date: 2021-05-11 Order: 5
+Title: Einen Reverse-Proxy verwenden Date: 2021-05-11 Order: 5
 - - -
 
 ## BookWyrm hinter einem Reverse-Proxy ausführen
@@ -10,10 +10,10 @@ Die Standardkonfiguration von BookWyrm hat bereits einen nginx-Server, der Anfra
 Um BookWyrm hinter einem Reverse-Proxy auszuführen, führe folgende Änderungen aus:
 
 - In `.env`:
-    - change `NGINX_SETUP=reverse_proxy`
-    - set `PORT=8001` or another port number of your choice
+    - setze `NGINX_SETUP=reverse_proxy`
+    - setze `PORT=8001` oder eine andere Portnummer deiner Wahl
 
-An dieser Stelle folge den Anweisungen [Setup](#server-setup) wie aufgeführt. Once docker is running, you can access your BookWyrm instance at `http://localhost:8001` (**NOTE:** your server is not accessible over `https` directly as this is handled by your proxy server).
+An dieser Stelle folge den Anweisungen [Setup](#server-setup) wie aufgeführt. Sobald Docker läuft, kannst du auf deine BookWyrm-Instanz unter `http://localhost:8001` aufrufen (**HINWEIS:** Dein Server ist nicht über `https` erreichbar, da dies von deinem Proxy-Server geregelt wird).
 
 Schritte zum Einrichten eines Reverse-Proxys sind vom Server abhängig.
 
@@ -99,6 +99,6 @@ server {
 
 Wenn alles richtig funktioniert hat, sollte deine BookWyrm-Instanz nun extern zugänglich sein.
 
-_**Note**: the `proxy_set_header Host $host;` is essential; if you do not include it, incoming messages from federated servers will be rejected._
+_**Hinweis**: `proxy_set_header Host $host;` ist essenziell. Fehlt diese Zeile, werden eingehende Nachrichten von föderierten Servern abgelehnt._
 
-_**Note**: the location of the ssl certificates may vary depending on the OS of your server_
+_**Hinweis**: Der Ort des SSL-Zertifikats kann je nach Betriebssystem auf deinem Server variieren_
