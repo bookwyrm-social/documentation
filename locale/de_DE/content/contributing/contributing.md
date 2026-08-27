@@ -1,41 +1,41 @@
 - - -
-Title: How to Contribute Date: 2025-04-9 Order: 1
+Title: Beitragen Date: 2025-04-9 Order: 1
 - - -
 
-## Before you start
+## Bevor es losgeht
 
-Our goal is to make BookWyrm a kind and welcoming place where everyone can contribute to the success of the project.
+Unser Ziel ist es, dass BookWyrm ein freundlicher und einladender Ort ist, an dem jede*r zum Erfolg des Projekts beitragen kann.
 
-### Code of conduct
-Ensure you are aware of and agree to our [Code of Conduct](https://github.com/bookwyrm-social/bookwyrm/blob/main/CODE_OF_CONDUCT.md).
+### Verhaltenskodex
+Stelle sicher, dass du mit unserem [Verhaltenskodex](https://github.com/bookwyrm-social/bookwyrm/blob/main/CODE_OF_CONDUCT.md) vertraut bist und ihm zustimmst.
 
-### License
-Please note that the BookWyrm project is licensed under the [Anti-capitalist Software License](https://github.com/bookwyrm-social/bookwyrm/blob/main/LICENSE.md). This license will apply to any contributions you make.
+### Lizenz
+Bitte beachte, dass das BookWyrm-Projekt unter der [Anti-capitalist Software License](https://github.com/bookwyrm-social/bookwyrm/blob/main/LICENSE.md) lizensiert ist. Diese Lizenz gilt für alle deine Beiträge.
 
-### Generative "AI"
-Meaningful human interaction is the whole point of BookWyrm. We do not accept AI-generated code or documentation. If you are unsure how something in BookWyrm works, please ask for help – we are keen to help other humans to understand and contribute to the project.
+### Generative "KI"
+Sinnstiftende menschliche Interaktion ist das Kernanliegen von BookWyrm. Wir akzeptieren weder KI-generierten Code noch KI-generierte Dokumentation. Wenn du dir unsicher bist, wie etwas in BookWyrm funktioniert, bitte frag nach Hilfe – wir helfen anderen Menschen gern dabei, das Projekt zu verstehen und zu unterstützen.
 
-### Project governance
-Bigger-picture and non-technical decision-making is coordinated on our [Loomio](https://decisions.joinbookwyrm.com/explore) group. Everyone who uses BookWyrm is encouraged to take part.
+### Projektleitung
+Entscheidungen, die das große Ganze betreffen und nicht technischer Natur sind, werden in unserer [Loomio](https://decisions.joinbookwyrm.com/explore)-Gruppe koordiniert. Wir ermuntern jede Person, die BookWyrm verwendet, zur Teilnahme.
 
-## Where to ask for and offer help
+## Wo Hilfe angefragt und angeboten wird
 
 ### Matrix
-If you have a question or suggestion about anything to do with BookWyrm, the best place for a quick response is [our Matrix chat room](https://app.element.io/#/room/#bookwyrm:matrix.org).
+Wenn du eine Frage oder einen Vorschlag zu irgendetwas hast, was mit BookWyrm zu tun hat, ist der beste Ort für eine schnelle Antwort [unser Matrix-Chat](https://app.element.io/#/room/#bookwyrm:matrix.org).
 
-If you are a maintainer of a BookWyrm server (aka "instance"), you can also ask to join the additional Matrix chat room specifically for instance admins.
+Wenn du einen BookWyrm-Server (auch als "Instanz" bekannt) verwaltest, kannst du darum bitten, dem zusätzlichen Matrix-Chat speziell für Instanz-Administrator*innen hinzugefügt zu werden.
 
 ### GitHub
-You can create a GitHub issue to [improve our documentation](https://github.com/bookwyrm-social/documentation/issues), or to [report a bug or request a new feature in the main project](https://github.com/bookwyrm-social/bookwyrm).
+Du kannst einen GitHub-Issue anlegen, um [unsere Dokumentation zu verbessern](https://github.com/bookwyrm-social/documentation/issues), [einen Fehler zu melden oder eine neue Funktion für das Hauptprojekt vorzuschlagen](https://github.com/bookwyrm-social/bookwyrm).
 
-## Ways you can contribute
+## Wie du beitragen kannst
 
-There are many ways you can contribute to this project, regardless of your technical or coding expertise.
+Es gibt viele Wege, um zu diesem Projekt beizutragen, unabhängig von deinen Technik- und Programmierfertigkeiten.
 
-### Report things that are confusing
-We want BookWyrm to be a fun experience that is intuitive to understand. If you're confused by something, it's probably because it is confusing! You can help improve our [documentation](https://docs.joinbookwyrm.com) and Guided Tour as well as the platform itself.
+### Verwirrende Dinge melden
+Wir möchten, dass BookWyrm eine unterhaltsame Erfahrung bietet, die sich intuitiv erschließt. Wenn dich dabei etwas verwirrt, dann vermutlich deshalb, weil es tatsächlich verwirrend ist! Du kannst uns helfen, unsere [Dokumentation](https://docs.joinbookwyrm.com) und unsere Führung durch die Software sowie die Plattform selbst zu verbessern.
 
-### Report bugs
+### Fehler melden
 You can [report bugs](https://github.com/bookwyrm-social/bookwyrm/issues) by clicking "New Issue". The more information you can provide, the easier it will be to understand the problem and squash that bug!
 
 It's a good idea to search the Issues for key words associated with your bug first because someone else may have already reported it.
