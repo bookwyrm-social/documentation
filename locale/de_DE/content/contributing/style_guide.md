@@ -1,5 +1,5 @@
 - - -
-Title: Style Guide Date: 2021-10-20 Order: 3
+Title: Stilleitfaden Date: 2021-10-20 Order: 3
 - - -
 
 ## Pull Requests
@@ -10,7 +10,7 @@ Wenn du nicht weißt, wie man etwas fixt oder etwas nicht schaffst: Kein Problem
 
 Pull-Anfragen müssen alle automatisierten Prüfungen bestehen, bevor sie übernommen werden können - dazu gehören Stil-Prüfungen, globale Linter, eine Sicherheitsprüfung und Unit-Tests.
 
-There are several `./bw-dev` commands you may find helpful for linting and testing prior to pushing your pull request. See [Command Line Tool](cli.html) for all the options available.
+Es gibt mehrere `./bw-dev`, die hilfreich sein können, um vor dem Pushen einer Pull Request zu linten und zu testen. Siehe [Kommandozeilen-Werkzeuge](cli.html) für alle verfügbaren Optionen.
 
 ## Linten
 
@@ -50,7 +50,7 @@ Wir verwenden [stylelint](https://stylelint.io), um alle CSS-Regeln zu überprü
 
 Bookwyrm hat zum Ziel, so umfassend und zugänglich wie möglich zu sein.
 
-Überprüfen Sie die [Checkliste für inklusives Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist [A11Y-101](https://www.a11y-101.com/development) ebenfalls eine nützliche Quelle. For information on how to make your page templates multi-lingual, see the [Translations section](/translation.html).
+Überprüfen Sie die [Checkliste für inklusives Web Design](https://github.com/bookwyrm-social/bookwyrm/discussions/1354) bevor du einen Pull-Reuqest erstellst. Für Barrierefreiheit ist [A11Y-101](https://www.a11y-101.com/development) ebenfalls eine nützliche Quelle. Für Informationen, wie du deine Seitenvorlagen mehrsprachig gestalten kannst, siehe den [Abschnitt zu Übersetzungen](/translation.html).
 
 Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, sind:
 
@@ -64,6 +64,6 @@ Einige besondere Dinge, die Bookwyrm-Beitragende für nützlich erachtet haben, 
 * Verwende ein `<button>` Element für alles, was existiert, um eine JavaScript-Aktion auszulösen (z.B. ein Formular verstecken oder enthüllen) oder eine `POST`-Anfrage senden (z.B. ein Formular übermitteln)
 * Verwende ein `<a>`-Element für alles, was eine `GET`-Anfrage auslöst. Normalerweise sollte ein Ankerelement (`<a>`) nicht als Button (`class="button"`) dargestellt werden, obwohl es einige Ausnahmen gibt, wie z. B. "Abbrechen"-Buttons. Falls Sie Zweifel haben, fragen Sie in Ihrer Pull-Anfrage um Rat
 
-#### Translations
+#### Übersetzungen
 
-BookWyrm is an international project and aims to be inclusive of as many languages as possible. All user-facing messages and templates should follow the advice on [translations and gendered language](translation.html).
+BookWyrm ist ein internationales Projekt und setzt sich zum Ziel, so viele Sprachen wie möglich einzuschließen. Alle für Nutzer*innen sichtbare Nachrichten und Templates sollten dem Hinweis zu [Übersetzungen und geschlechtergerechte Sprache](translation.html) folgen.
