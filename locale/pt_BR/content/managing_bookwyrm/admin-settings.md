@@ -4,7 +4,7 @@ Date: 2021-04-18
 Order: 5
 ---
 
-## Announcements
+## Comunicados
 
 You can create an **Announcement** from `Admin > Instance Settings > Announcements`. Announcements appear as a banner at the top of every page until a user dismisses them. Announcements can be used for anything, but generally would be used to alert users to expected down time or changes to configuration.
 
