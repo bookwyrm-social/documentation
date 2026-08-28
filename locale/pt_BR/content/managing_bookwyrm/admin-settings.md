@@ -1,23 +1,23 @@
 ---
-Title: Instance Settings
-Date: 2021-04-18
+Title: Configurações do Servidor
+Date: 18-04-2021
 Order: 5
 ---
 
 ## Comunicados
 
-You can create an **Announcement** from `Admin > Instance Settings > Announcements`. Announcements appear as a banner at the top of every page until a user dismisses them. Announcements can be used for anything, but generally would be used to alert users to expected down time or changes to configuration.
+Você pode criar um comunicado acessando "Admin. > Configurações de Instância > Comunicados". Comunicados aparecem como uma notificação no topo da página até que um usuário os feche. Comunicados podem ser usados para qualquer finalidade, mas, em geral, servem para alertar os usuários sobre interrupções programadas ou alterações na configuração.
 
-Announcements can be related to a particular date (e.g. a scheduled upgrade or down time), and you can also schedule the announcement itself to begin and/or end on a given date.
+Comunicados podem estar relacionados a uma data específica (por exemplo, uma atualização programada ou período de instabilidade), e você também pode programa-lo para começar e/ou terminar em uma determinada data.
 
-## Site Settings
+## Configurações do Site
 
-When you first set up your instance you will be directed to the **Site Settings** page. Here you can edit your basic instance information including name, description, a code of conduct, and other details. This is also where you can upload a logo, set up footer details, and select a default theme.
+Ao configurar seu servidor pela primeira vez, você será direcionado para a página **Configurações do Site** Aqui você pode editar informação básica do servidor incluindo nome, descrição, código de conduta e outros detalhes. É aqui também que você pode fazer o “upload” de uma logo, configurar os detalhes do rodapé e selecionar um tema padrão.
 
-## Registration
+## Registro
 
-The **Registration** page of the Instance Settings section is where you can enable or disable registration, decide whether to require users to confirm their email address, allow or disallow invite requests, and set a question for invite requests (useful for slowing down or identifying automated requests).
+A página de **Registro** da seção de Configurações do Servidor é o local para habilitar ou desabilitar registros, definir se obriga usuários a confirmar o endereço de email, permitir ou não solicitações de convite, e definir uma pergunta para solicitações de convite (útil para desacelerar ou identificar solicitações automáticas).
 
-## Themes
+## Temas
 
-BookWyrm comes with default themes, however you can add your own custom theme. Themes should be `.scss` files.
+BoorWyrm vem com temas padrão, no entanto, você pode adicionar seu tema personalizado.  Temas devem ser arquivos do tipo ".scss".
