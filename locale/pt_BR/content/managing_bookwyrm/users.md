@@ -1,12 +1,12 @@
 ---
-Title: Managing users
-Date: 2026-01-18
+Title: Gerenciando usuários
+Date: 18-01-2026
 Order: 1
 ---
 
-## Managing individual users
+## Gerenciando usuários individuais
 
-Administrators and moderators can manage indidual users from `Settings > Manage Users > Users`. This page shows all users in your database including local, federated, and deleted users. You can filter/search for indivual users, and by clicking on their username you will see the management page for an individual user. From here you may:
+Administradores e moderadores podem administrar usuários individuais em "Configurações > Gerenciar usuários > Usuários". Essa página exibe todos os usuários em seu banco de dados, incluindo usuários locais, federados e deletados. You can filter/search for indivual users, and by clicking on their username you will see the management page for an individual user. From here you may:
 
 - Send a direct message
 - Suspend the user
