@@ -15,26 +15,26 @@ _Wenn du zu BookWyrm beiträgst, ohne Docker zu verwenden, würden wir uns freue
 1. Kopiere den [BookWyrm-Quellcode von GitHub](https://github.com/bookwyrm-social/bookwyrm). Du kannst [einen Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) des Projekts erstellen und [dann `git clone` ausführen, um den Quellcode](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) auf deinen Computer herunterzuladen.
 2. Gehe in das Verzeichnis auf deinem Computer, das den Quellcode enthält. Von jetzt an arbeitest du in diesem Verzeichnis.
 3. Die Entwicklung wird auf dem `main`-Branch durchgeführt. Stelle also sicher, dass du diesen Branch ausgecheckt hast: `git checkout main`
-4. Set up your development environment variables file by copying the example environment files (`.env.example` and `.env.dev.example`) into new files named `.env` and `env.dev`. In der Kommandozeile kannst du das wie folgt tun:
+4. Setze deine Umgebungsvariablen fürs Entwickeln, indem du die Beispiel-Umgebungsdateien (`.env.example` und `.env.dev.example`) kopierst und als neue Dateien `.env` und `env.dev` einfügst. In der Kommandozeile kannst du das wie folgt tun:
 
 ```{ .sh }
 cp .env.example .env
 cp .env.dev.example .env.dev
 ```
 
-Most environment variables are set in the `.env` file, used in production, but for some development workflows that is overridden by the `env.dev` file. When developing for BookWyrm, you will need both files.
+Die meisten Umgebungsvariablen werden in der `.env`-Datei gesetzt, die in der Produktionsumgebung verwendet wird. Aber für manche Entwicklungsvorgänge werden diese Einstellungen von der `env.dev`-Datei überschrieben. Wenn du BookWyrm entwickelst, wirst du beide Dateien benötigen.
 
 ### Bauen und ausführen
 
 1. Führe Folgendes über die Kommandozeile aus:
 
 ```{ .sh }
-./bw-dev create_secrets # Create the secrets file with random values. You only need to do this once.
-./bw-dev dev up --build # Build and start development stack
-./bw-dev dev runweb python manage.py admin_code # Shows the admin-code for initial setup. You only need to do this once.
+./bw-dev create_secrets # Datei mit Geheimnissen mit Zufallszahlen füllen. Du musst dies nur einmalig tun.
+./bw-dev dev up --build # Baue und starte den Entwicklungs-Stack
+./bw-dev dev runweb python manage.py admin_code # Zeigt den Admin-Code für die Ersteinrichtung. You only need to do this once.
 ```
 
-1. Once the build is complete, you can access the instance at `http://localhost:1333`. If you have removed the `PORT` value in `.env.dev` this will be `http://localhost`. If you have changed the port, swap out `1333` for the port you are using.
+1. Sobald der Prozess abgeschlossen ist, kannst du die Instanz unter `http://localhost:1333` erreichen. Falls du den `PORT`-Wert in `.env.dev` entfernt hast, ist dies `http://localhost`. Falls du den Port geändert hast, ersetze `1333` mit dem Port, den du verwendest.
 2. Du kannst nun deinen Administrations-Schlüssel eingeben und einen Administrations-Account anlegen. Ab hier funktioniert alles so, wie es in "BookWyrm betreiben" beschrieben ist.
 
 Wenn du neugierig bist: Das `./bw-dev`-Kommando ist ein simples Shell-Script, das verschiedene andere Tools ansteuert. Du könntest es überspringen und direkt `docker-compose build` oder `docker-compose up` laufen lassen, wenn du möchtest. `./bw-dev` kombiniert diese Aufrufe der Einfachheit halber an einem gemeinsamen Ort. Führe das Skript ohne Argumente aus, um eine Liste der verfügbaren Kommandos zu erhalten, lies die [zugehörige Seite in der Dokumentation](/cli.html) oder öffne das Skript und sieh genau, was jedes Kommando tut!
@@ -58,16 +58,16 @@ Jedes Mal, wenn du CSS oder JavaScript bearbeitest, musst du Djangos `collectsta
 
 Wenn du [yarn installiert](https://yarnpkg.com/getting-started/install) hast, kannst du `yarn watch:static` ausführen, um das vorherige Skript bei jeder Änderung automatisch im Verzeichnis `bookwyrm/static` ausführen zu lassen.
 
-## Run code-linters and formatters
+## Code-Linter und -Formatierer ausführen
 
-Before submitting patch, you should check ruff and other formatting tools. For those to work nicely, you should make sure you have development web-container and dev-tools build.
+Bevor du einen Patch abschickst, solltest du ruff und andere Formatierwerkzeuge zu Hilfe nehmen. Damit diese gut funktioniere, solltest du sicherstellen, dass du den Entwicklungs-Webcontainer und die dev-tools gebaut hast.
 
 ```{ .sh}
-./bw-dev dev build # This is needed only once, if you haven't run dev stack previously
-./bw-dev dev build dev-tools # This is needed only once and if you change pyproject.toml or Dockerfile
+./bw-dev dev build # Dies wird nur einmalig benötigt, wenn du den Entwicklungs-Stack vorher noch nicht ausgeführt hast
+./bw-dev dev build dev-tools # Dies wird nur einmalig benötigt sowie wann immer du pyproject.toml oder Dockerfile änderst
 ```
 
-After those commands, you can run formatters and pytest and mypy with bw-dev command:
+Nach diesen Befehlen kannst du Formatierer, pytest und mypy mit dem Befehl bw-dev ausführen:
 
 ```{ .sh}
 ./bw-dev formatters
@@ -75,12 +75,12 @@ After those commands, you can run formatters and pytest and mypy with bw-dev com
 ./bw-dev pytest
 ```
 
-## Run development code behind ngrok or other tunneling/proxy service
+## Entwicklungscode hinter ngrok oder einem anderen Tunnel-/Proxy-Dienst ausführen
 
 In `.env.dev`:
 
 1. Wenn du einen Tunneling-Dienst oder Proxy wie [ngrok](https://ngrok.com) verwendest, ändere die `DOMAIN` zu der Domain, die du verwendest (z. B. `abcd-1234.ngrok-free.app`).
-2. If you need to use a particular port other than 1333, change PORT to wanted port (e.g. `PORT=1333`).
+2. Wenn du einen anderen Port als 1333 verwenden musst, ändere PORT auf den gewünschten Port ab (z.B. `PORT=1333`).
 
 Prüfe, ob du [alle notwendigen Einstellungen getroffen hast](/environment.html#required-environment-settings), bevor du fortfährst.
 
@@ -88,4 +88,4 @@ Wenn du versuchst, deinen Administrations-Account anzulegen, und eine Nachricht 
 
 ## E-Mail (optional)
 
-Wenn du ausprobieren möchtest, E-Mails zu versenden, wirst du [passende, echte Werte](/environment.html#email-configuration) im Bereich "E-Mail-Konfiguration" angeben müssen. Du musst nichts an der [separaten Einstellung `EMAIL`](/environment.html#email) ändern. These settings are in `.env` -file
+Wenn du ausprobieren möchtest, E-Mails zu versenden, wirst du [passende, echte Werte](/environment.html#email-configuration) im Bereich "E-Mail-Konfiguration" angeben müssen. Du musst nichts an der [separaten Einstellung `EMAIL`](/environment.html#email) ändern. Diese Einstellungen sind in der `.env`-Datei
