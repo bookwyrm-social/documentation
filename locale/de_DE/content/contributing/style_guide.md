@@ -20,7 +20,7 @@ Wir verwenden [EditorConfig](https://editorconfig.org), um konsistente Einrücku
 
 ### Python
 
-#### Formatting and linting
+#### Formatieren und Linten
 
 BookWyrm uses [ruff](https://docs.astral.sh/ruff) for both code linting (checking for errors) and formatting (ensuring code style is consistent). All new pull requests are checked with GitHub actions, and you can automatically fix code style problems by running `./bw-dev ruff`. For linting errors, you can try `./bw-dev ruff-fix` to automatically fix errors, though this may not always be possible.
 
